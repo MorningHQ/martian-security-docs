@@ -213,12 +213,76 @@
         "Clean original strict-CI exit0 has not been established",
         "Combined model-based redteam execution and hosted GitHub runner execution remain unverified"
       ]
+    },
+    {
+      "task": "Evaluation project lifecycle",
+      "result": "passed in isolated local QA",
+      "observed": [
+        "Owner created Teaching regressions through New evaluation project; actual201 and ready state",
+        "The run selector offered the same organization-published datasets in the new project",
+        "EV-1005 completed three real target calls:2passed/1failed; target counter17 to20",
+        "Full refresh retained the selected project and run; Default showed prior runs and excluded EV-1005",
+        "Owner archive returned200; full refresh retained an archived warning, disabled Run eval and readable historical answer pairs",
+        "Score saved outputs opened read-only with disabled criteria/Apply scorers; Close dialog remained available",
+        "Member navigated to Traces with the archived project preserved and read three retained native traces200",
+        "Actual member/viewer create/archive requests returned403; owner target admission to archived project returned409; target counter stayed20"
+      ],
+      "remaining": []
+    },
+    {
+      "task": "Code-suite versions and monitoring",
+      "result": "passed for code criteria in isolated local QA",
+      "observed": [
+        "Created Response format checks v1 with containment pass-rate threshold 1, mean-length ceiling 80 and full coverage",
+        "Applied v1 to three saved responses; six assessments completed with native IDs, persisted telemetry, full coverage and no errors; both gates passed",
+        "Created immutable v2 with mean-length ceiling 3 and applied it to the same saved answers; all six assessments persisted while the mean of 11/3 failed the newer gate",
+        "Canonical exact-match results stayed at three passes; v1 retained its original threshold, digest and passing gate after v2 creation and application",
+        "Monitoring retained both versions; Open run initially selected the latest v2 job, and explicitly selecting the historical Assessment job restored v1 and its passing policy",
+        "Viewer suite fields/save controls were disabled and the valid suite-creation API request returned 403",
+        "The actual teaching-target request counter remained 20 across saved-output scoring and inspection"
+      ],
+      "remaining": [
+        "Model criteria require the separately unqualified model-judging path"
+      ]
+    },
+    {
+      "task": "Native trace filters and saved views",
+      "result": "named read/view paths passed; positive conversation grouping remains unqualified",
+      "observed": [
+        "Member applied HELLO content and OK state filters in the archived teaching project; the real search returned one matching native trace",
+        "Opened Trace details from the table, inspected two native spans and every details tab, and downloaded the actual native payload; missing model/token/event information remained unavailable",
+        "Actual filtered JSON and CSV each contained the same one trace and the JSON export reported complete coverage",
+        "Private and organization views saved the query, reordered columns and comfortable density; refresh opened the default view and explicit saved-view reselection restored the saved settings",
+        "Viewer could read the organization view but had no save/update/delete controls; administrator could not access another user's private view; stale revision update returned 409",
+        "Creator updated the private view to revision 2, confirmed its deletion through the UI, and verified its absence after refresh while the shared view remained",
+        "An initial view save hit a database statement timeout and showed Failed to fetch; the current saved-view list was checked empty before one fresh save succeeded",
+        "Sessions search returned zero sessions and one ungrouped trace for the applied selection; released SDK uploads do not forward native conversation session metadata",
+        "With a separately ready native context, another authenticated organization could not read the customer-owned trace404 while its owning organization read200"
+      ],
+      "remaining": [
+        "Positive multi-turn session grouping needs an approved session-bearing tracing integration; an SDK CI session UUID is a different identifier"
+      ]
+    },
+    {
+      "task": "Quality-issue investigation and triage",
+      "result": "passed for named local QA selection, role and triage paths",
+      "observed": [
+        "The complete eleven-trace selection grouped one failed exact_match and two failed valid_json Boolean signals; the failed numeric suite gate was not converted into a Boolean issue",
+        "Inspected the actual punctuation-regression native trace: output 4. versus expected 4, two spans and unavailable model usage",
+        "Owner saved Investigating for that trace; native readback after full refresh retained the exact rationale, actor and timestamp",
+        "Member dismissed one expected plain-text/JSON-criterion mismatch; refresh retained the member-attributed decision without changing the saved answer",
+        "Content search 2 + 2 narrowed the selection to three traces and the same investigated issue, with complete coverage",
+        "Viewer could inspect evidence but could not select traces in the writable Default project; its valid triage POST returned 403",
+        "The initial foreign-read fixture lacked its own ready Evals context and was not counted as a privacy denial. Supported guarded setup then established a separate ready native context: own search200, foreign trace404 and owning customer same-trace read200"
+      ],
+      "remaining": []
     }
   ],
   "knownEnvironmentLimits": [
     "Sandbox orchestrator is not configured in this QA stack; GET /v1/connectors returns503 and the sidebar may report stale data. No mock catalog is substituted.",
     "Current local model credentials are denied Bedrock inference; real model-based assessment/judge and sandbox seed-generation qualification remain pending AWS sign-in refresh.",
     "These local results do not attest to deployment parity or availability in a customer AWS-beta organization.",
-    "An earlier member run had uncertain item/finalization acknowledgements. Supported administrator telemetry-only reconciliation later confirmed saved evidence with zero target calls; no target replay repaired it."
+    "An earlier member run had uncertain item/finalization acknowledgements. Supported administrator telemetry-only reconciliation later confirmed saved evidence with zero target calls; no target replay repaired it.",
+    "Released SDK 0.1.2 dataset/checks uploads do not forward native conversation session metadata. The tested empty state is distinct from positive multi-turn session qualification."
   ]
 }

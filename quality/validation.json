@@ -11,7 +11,7 @@
     {
       "scope": "Original Hermes link/anchor/asset/base checker",
       "result": "passed",
-      "details": "3,110 local links/anchors/assets/base-path references checked with zero failures"
+      "details": "3,157 local links/anchors/assets/base-path references checked with zero failures"
     },
     {
       "scope": "Released SDK0.1.2 install, download and Git tutorial",
@@ -25,8 +25,8 @@
     },
     {
       "scope": "Simulated first-time-reader and documentation browser review",
-      "result": "passed for current SDK update in local production preview; earlier published-site checks retained",
-      "details": "AI simulated novice review; no human participant. SDK installation/Evals/CI checked at1440x1000 and390x844 in light/dark themes: search navigation, deep refresh, full-size1440x1000 CI image, exact browser-downloaded twelve-file ZIP and seven example GETs passed with no page-wide overflow or docs console errors. Fixed contradictory inline field names and clarified that the account-free preview needs only installation step1; hosted configuration is separate. Original strict-CI exit1 and later recovery remain distinct."
+      "result": "passed for current Evals update in local production preview; earlier SDK and published-site checks retained",
+      "details": "AI simulated novice review; no human participant. Projects, code suites, traces/views and quality-issue guides passed desktop1440x1000 and narrow390x844 review, light/dark themes, mobile menu, deep refresh, full-size/inline imagery, and search scoring suite with the correct first result. The missing explicit v2 application step was fixed and rechecked before the failed-gate image. Final post-build checks had no overflow or docs console errors. One image404 during an in-place preview rebuild was retained in the review report and resolved by fresh final readback. Original strict SDK CI failure and pending conversation-session qualification remain explicit."
     },
     {
       "scope": "Real customer onboarding, HTTP adapter and first evaluation",
@@ -38,7 +38,7 @@
     {
       "scope": "Real screenshot registry",
       "result": "passed",
-      "details": "41 registered references to 36 unique 1440x1000 application PNGs; local SHA-256, guide/stage, role/environment/date/source provenance and manual secret review retained."
+      "details": "55 registered references to 50 unique 1440x1000 application PNGs; local hashes, exact guide/stage, role/environment/date/source provenance and manual secret review retained."
     },
     {
       "scope": "Canonical changed-target comparison",
@@ -50,7 +50,7 @@
     {
       "scope": "Complete end-to-end qualification audit",
       "result": "incomplete; audit correctly fails",
-      "details": "32 task guides: 7 verified in named local QA environments, 7 partial, 18 pending; 57 required screenshot references and 25 full walkthrough qualifications remain outstanding. No release gate was disabled."
+      "details": "32 task guides: 10 verified in named local QA environments, 7 partial, 15 pending. The strict release audit still reports 47 pending screenshot references and 22 unverified full walkthroughs (70 findings). No gate was disabled."
     },
     {
       "scope": "Console-import example contract regression",
@@ -63,6 +63,20 @@
       "result": "setup and tests passed; original strictCIexit1 preserved; retained exports recovered",
       "record": "quality/walkthroughs.json",
       "details": "Scoped key creation/identity/authority/revocation checked; two SDK tests passed with persisted session and dataset2passes. Existing-session export and separate native finalization recovered without callback rerun. Original require-export receipt remains failed."
+    },
+    {
+      "scope": "Project lifecycle, code suites and quality triage",
+      "environment": "Real pinned isolated local QA services and synthetic accounts",
+      "result": "passed for named paths",
+      "record": "quality/walkthroughs.json",
+      "details": "Ready custom project and real three-record run retained across scope changes/refresh/archive. Code-suite v1/v2 completed twelve persisted assessments with distinct correct gates and unchanged history. Owner/member triage and viewer write boundaries passed."
+    },
+    {
+      "scope": "Native trace reads, views, exports and tenant boundaries",
+      "environment": "Real isolated local QA with two separately ready native contexts",
+      "result": "named read/view paths passed; positive conversation sessions unqualified",
+      "record": "quality/walkthroughs.json",
+      "details": "One filtered native trace, all inspector tabs, actual payload and matching CSV/JSON1 exports, private/shared view save/reselect/update/delete and role/privacy/revision guards passed. A separate ready organization received404 for the same trace its owning customer read200. Initial view-save500/absence readback/recovery retained; SDK does not forward native conversation metadata."
     }
   ],
   "remainingGaps": [

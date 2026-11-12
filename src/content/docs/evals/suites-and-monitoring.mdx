@@ -25,12 +25,12 @@ Saving a suite makes no model calls. Applying code criteria uses saved outputs. 
 3. Enter **Suite name**, for example **Response format checks**.
 4. Select **Contains expected text** and **Response length (characters)**.
 5. For `contains_expected`, set **Quality threshold** to `1`, **Better when** to **Higher**, and **Minimum coverage** to `1`.
-6. For `response_length`, choose a meaningful character ceiling for your own task, set **Better when** to **Lower**, and keep **Minimum coverage** at `1`. For the short answers in the first-run tutorial, an example ceiling is `80`.
+6. For `response_length`, choose a ceiling for the **mean character count**, set **Better when** to **Lower**, and keep **Minimum coverage** at `1`. For the short answers in the first-run tutorial, an example mean ceiling is `80`.
 7. Click **Create suite** and confirm that version 1 is selected.
 
 <Screenshot id="evals-suites-definition" />
 
-A Boolean threshold is a pass rate from `0` to `1`. A response-length threshold is a character count. Minimum coverage is also `0` to `1`; full coverage prevents missing/error assessments from being treated as satisfactory evidence. A blank threshold means that criterion has no configured gate; it is not an implicit passing gate.
+A Boolean threshold is a pass rate from `0` to `1`. A response-length threshold compares the **mean** across evaluated records; it is not a maximum allowed for every response. Inspect the range and individual results when outliers matter. Minimum coverage is also `0` to `1`; full coverage prevents missing/error assessments from being treated as satisfactory evidence. A blank threshold means that criterion has no configured gate; it is not an implicit passing gate.
 
 ## 2. Apply an exact suite version
 
@@ -41,6 +41,8 @@ A Boolean threshold is a pass rate from `0` to `1`. A response-length threshold 
 5. Click **Apply scorers** and wait for completion.
 6. Select the resulting **Assessment job** and open the run’s **Overview** to inspect its scorecard, thresholds, coverage and gate results.
 
+<Screenshot id="evals-suites-apply" />
+
 <Screenshot id="evals-suites-scorecard" />
 
 A gate can be **Passed**, **Failed**, **Insufficient coverage** or **Unconfigured**. Job completion and gate success are different: a finished job may show a failed or unconfigured gate. Review the actual values and coverage before acting on the summary.
@@ -48,9 +50,15 @@ A gate can be **Passed**, **Failed**, **Insufficient coverage** or **Unconfigure
 ## 3. Create a new version without changing history
 
 1. Return to **Scoring suites** and choose the prior version in **Edit suite version**.
-2. Change the relevant criteria, instructions or thresholds.
+2. Change the relevant criteria, instructions or thresholds. For this teaching example, lower `response_length` from `80` to `3`, retaining its **Lower** direction and full coverage.
 3. Click **Save version 2**.
-4. Reopen an earlier scoring job and confirm it still records version 1 and its original definition.
+4. Repeat [Apply an exact suite version](#2-apply-an-exact-suite-version), selecting **Response format checks · v2** on the **same completed run**. Wait for the new scoring job to finish and inspect its **Overview**.
+
+In the teaching example, version 2 lowers the mean response-length ceiling from `80` to `3`. The same three saved answers have mean length about `3.67`, so this newer gate fails while their canonical exact-match results remain passed. The earlier version 1 job still retains its passing `80`-character policy.
+
+<Screenshot id="evals-suites-failed-gate" />
+
+5. In **Assessment job**, select the earlier version 1 job and confirm that it still records version 1 and its original definition.
 
 Use the same historical suite version when you want a [paired comparison](/martian-security-docs/evals/compare/) under an unchanged policy. A different version may be intentionally useful, but it is a different scoring definition.
 
@@ -58,8 +66,9 @@ Use the same historical suite version when you want a [paired comparison](/marti
 
 1. Open **Evals → Overview** and choose **Monitoring**.
 2. Read **Scoring history**, including the run, scoring definition, job status and quality gate.
-3. Choose **Open run** for a specific entry and inspect its result-level evidence.
-4. Refresh and confirm the saved job, suite version and gate result remain available.
+3. Select a history entry to expand its scorecard, then choose **Open run**.
+4. In the opened run's **Assessment job**, select the matching suite version and time. **Open run** initially shows that run's latest job, which may use a newer policy than the history entry you opened.
+5. Refresh, reselect that historical job if needed, and confirm its suite version and gate result remain available.
 
 <Screenshot id="evals-suites-monitoring" />
 

@@ -16,6 +16,8 @@ Use projects to group evaluation runs, traces, judge definitions and review work
 
 Use an organization with ready Evals setup in the current beta console. Any customer role can browse authorized projects. Creating or archiving a project requires **owner** or **admin** access. A project is an evaluation grouping, not another organization or a permission grant to a different tenant.
 
+To verify run history in the new project, have an approved agent and a small published dataset ready. Complete the setup in [your first evaluation](/martian-security-docs/evals/first-run/) if these are missing.
+
 ## 1. Select a project
 
 1. Open **Evals** and locate the organization/project toolbar above the page title.
@@ -41,9 +43,10 @@ Creating a project establishes its evaluation context; it does not call an agent
 ## 3. Verify retained scope
 
 1. Refresh the page and confirm the named project is still selected.
-2. Open a run created in that project and confirm its run code and dataset identity.
-3. Change to **Default** and check that the project-specific run list changes.
-4. Return to the named project and confirm its saved work remains available.
+2. If the project is empty, click **Run eval** and follow [Configure the run](/martian-security-docs/evals/first-run/#2-configure-the-run), keeping your new project selected instead of Default. Use the approved agent and small published dataset prepared above, then wait for the admitted run to finish.
+3. Open that run and confirm its run code and dataset identity.
+4. Change to **Default** and check that the project-specific run list changes.
+5. Return to the named project and confirm its saved work remains available.
 
 An empty project list can reflect unavailable Evals setup, not an absence of permission to the whole console. Use **Refresh setup** after the underlying issue has been resolved. A URL naming an unavailable project is not sufficient to grant access.
 

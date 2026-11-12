@@ -38,7 +38,7 @@ Start with a narrow, known request or recent time window. An empty selection is 
 4. Expand **Trace assessments and metadata** to inspect retained feedback and identifiers.
 5. Choose **Download native payload** when you need the retained native evidence for an authorized review.
 
-For a trace attached to an evaluation result, you can also open the run's **Results → Inspect → View trace**. The capture below shows that result-drawer path, including its native span explorer and recorded input/output. The trace-table workflow above remains separately tracked in the verification record.
+The capture below shows **Trace details** opened from the filtered trace table, with two native spans and the recorded input/output. For a trace attached to an evaluation result, you can also use the run's **Results → Inspect → View trace** path.
 
 <Screenshot id="evals-traces-inspector" />
 
@@ -55,15 +55,21 @@ A missing usage field is not zero usage. Reported model names, costs and span ev
 
 Sessions require a reported session ID. A set of independent dataset requests is not automatically a multi-turn conversation. If you see **No sessions recorded**, inspect individual traces and confirm that the target/instrumentation reports the session identifiers you expect.
 
+An SDK **CI session** identifies a pytest upload; it is a different identifier from a conversation session. SDK 0.1.2 dataset and inline-check uploads do not forward local trace session metadata. The teaching example below therefore has **0 sessions and 1 matching trace without a session ID**. Positive conversation grouping requires an approved session-bearing tracing integration and remains outside this tutorial's verified path.
+
+<Screenshot id="evals-traces-no-sessions" />
+
 ## 4. Save a useful view
 
 1. As a member/admin/owner, choose **Display**; its accessible action is **Columns and view settings**.
 2. In **Display and saved views**, select columns, move them into a useful order, and choose **Compact rows** if desired.
 3. Enter **View name** and choose **Visibility**: **Private** or **Organization**.
 4. Click **Save new view**. Select it later using **Saved trace view**.
-5. Refresh and confirm the saved filters, columns and density are restored. **Update view** saves an authorized revision; **Delete view** requires confirmation.
+5. After refreshing, select the view again in **Saved trace view**, then confirm its saved filters, columns and density. Refreshing opens the default view; it does not automatically reselect your last saved view. **Update view** saves an authorized revision; **Delete view** requires confirmation.
 
 Private views belong to their creator. Organization views are readable by the organization; mutation still requires ownership or administrator authority. Saving a view does not save a reusable native pagination cursor or grant new trace access.
+
+<Screenshot id="evals-traces-saved-view" />
 
 ## 5. Export a complete bounded selection
 
@@ -77,5 +83,7 @@ Trace exports support up to 1,000 matching traces and reject an oversized select
 ## Failures and recovery
 
 Use **Refresh traces** after a temporary read failure. A stale cursor or changed session can require starting the search again. Quote/backslash content searches can be constrained by the native stored representation; use a distinctive simpler term, IDs or structured filters when needed. Reading/exporting evidence cannot repair missing telemetry and should not trigger a replacement target run.
+
+If a view save reports **Failed to fetch** or another uncertain result, refresh and inspect **Saved trace view** before saving again. A new save can create another view; confirm whether the earlier one exists first.
 
 Next, [review saved responses](/martian-security-docs/evals/human-reviews/) or [triage quality issues](/martian-security-docs/evals/quality-issues/).

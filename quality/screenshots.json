@@ -460,29 +460,6 @@
       "sha256": "db1b6bab5f9971bf674c79b32b0f3f3e76ace9d9d255a09588ee6a375384c8a6"
     },
     {
-      "id": "evals-traces-inspector",
-      "file": "evals-traces-inspector.png",
-      "alt": "Native trace explorer with exact-match and actual target-chat spans plus retained READY input and output.",
-      "caption": "View trace shows two native spans for this record, including martian.target.chat. The deterministic callback has no model spans; reported token usage remains Unavailable.",
-      "width": 1440,
-      "height": 1000,
-      "guideSteps": [
-        "evals/traces-and-sessions: 2. Inspect native execution evidence, documented alternate Results \u2192 Inspect \u2192 View trace path, Inputs / outputs"
-      ],
-      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
-      "role": "Organization owner; platform_admin false",
-      "capturedAt": "2026-11-13T01:40:30.511565+08:00",
-      "sourceRevisions": {
-        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
-        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
-        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
-      },
-      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
-      "validationStatus": "Real page observed after actual API actions; manually inspected for secrets. Complete guide qualification remains tracked separately.",
-      "reviewedForSecrets": true,
-      "sha256": "3aceebd63713c1beb3f94452a99f37acd4e856b446751e86dcd677a7afcb9145"
-    },
-    {
       "id": "workspace-invite-form",
       "file": "workspace-invite-form.png",
       "alt": "Owner invitation form for a synthetic member before generating a private link.",
@@ -948,6 +925,351 @@
       "validationStatus": "Real UI following actual key, dataset and SDK/API actions; manually inspected for secrets. Original strict CI exit 1 and later evidence recovery are distinguished.",
       "reviewedForSecrets": true,
       "sha256": "8146b64c7f9c395c74580648be00c4a889cd3467d66d96b51bf19fe468b95ce2"
+    },
+    {
+      "id": "evals-projects-selector",
+      "file": "evals-projects-selector.png",
+      "alt": "Default project selected above the real retained run list.",
+      "caption": "The Project control selects the evaluation context. Default shows the earlier runs; the separate Teaching regressions project retained EV-1005.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/projects: 1. Select a project, after step 3"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow 3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T05:32:13.197822+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual owner project creation, scoped real evaluation, archive and refreshed retained history. Manually inspected for readable framing and secrets; no fabricated UI.",
+      "reviewedForSecrets": true,
+      "sha256": "19fa8be9448775ba6a02a7c7e93b13e0a90ace029ff0e11716a92da0c6325064"
+    },
+    {
+      "id": "evals-projects-create",
+      "file": "evals-projects-create.png",
+      "alt": "New evaluation project form with a synthetic name and description.",
+      "caption": "Enter a name and description, then create the project once. This capture is the reviewed form before submission; the actual request created a ready project.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/projects: 2. Create a project, before step 3"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow 3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T05:12:59.046656+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual owner project creation, scoped real evaluation, archive and refreshed retained history. Manually inspected for readable framing and secrets; no fabricated UI.",
+      "reviewedForSecrets": true,
+      "sha256": "589d3dc831bc3da58f3b549f8eadbe049d71dba7d77c952df60c715684dc713a"
+    },
+    {
+      "id": "evals-projects-archive",
+      "file": "evals-projects-archive.png",
+      "alt": "Archived Teaching regressions project retains completed EV-1005 and disables Run eval.",
+      "caption": "After archiving and a full refresh, the historical run remains readable and Run eval is disabled. The example retains a changed-callback run with two passes and one failure; archiving does not rescore it. There is no restore interface.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/projects: 4. Archive a finished project, after step 5"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow 3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T05:19:28.203021+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual owner project creation, scoped real evaluation, archive and refreshed retained history. Manually inspected for readable framing and secrets; no fabricated UI.",
+      "reviewedForSecrets": true,
+      "sha256": "a07fbecf39048e155b6d00fa7f2ffe04b721041352e760527d1e7e1b1eee6fb2"
+    },
+    {
+      "id": "evals-suites-definition",
+      "file": "evals-suites-definition.png",
+      "alt": "Saved code-only suite version1 with explicit pass-rate, mean-length and full-coverage thresholds.",
+      "caption": "Response format checks v1 pins containment at 1 and mean response length at most 80 characters, with full coverage. Saving this definition makes no model calls.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/suites-and-monitoring: 1. Create a small code-scoring suite, after step 7"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T05:35:36.537597+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "981d295167810c00ec8b7b265f4d4e6418cf3e46581f9c07cff548c27ef697b7"
+    },
+    {
+      "id": "evals-suites-apply",
+      "file": "evals-suites-apply.png",
+      "alt": "Saved-output scoring dialog selects Response format checks v1 and locks its two code criteria.",
+      "caption": "Select the exact suite version before applying it. The pinned code criteria are locked; this job scores saved responses without calling the teaching target again.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/suites-and-monitoring: 2. Apply an exact suite version, before step 5"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T05:36:11.061019+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "793591c97af826b9408e6af76a5d00739ec8ddd8250e9854c73ab530b0d72189"
+    },
+    {
+      "id": "evals-suites-scorecard",
+      "file": "evals-suites-scorecard.png",
+      "alt": "Version1 code-suite scorecard passes both gates with three of three records evaluated.",
+      "caption": "The completed v1 job has full coverage and no missing or error scores. Its response-length gate compares a mean of 3.67 with the ceiling of 80; the recorded range is 1\u20135.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/suites-and-monitoring: 2. Apply an exact suite version, after step 6"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T05:40:28.418910+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "3d2b01b7aebd40cda6399f457d3a5a3009b32110b855501e94bd0fb75f6df209"
+    },
+    {
+      "id": "evals-suites-failed-gate",
+      "file": "evals-suites-failed-gate.png",
+      "alt": "Version2 completes scoring but fails the stricter mean-length quality gate while exact-match results remain passed.",
+      "caption": "The newer ceiling of 3 fails against the same mean of 3.67. Job completion, quality-gate success and canonical exact-match results are separate outcomes; v1 remains unchanged.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/suites-and-monitoring: 3. Create a new version without changing history, after step 4"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T05:47:57.521726+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "9135be99b38e66431a10e6b2086535885e2d35e9e363ac42dadc195ce9253809"
+    },
+    {
+      "id": "evals-suites-monitoring",
+      "file": "evals-suites-monitoring.png",
+      "alt": "Monitoring retains completed v1 passed and v2 failed jobs, with the older scorecard expanded.",
+      "caption": "Select a history entry to inspect its retained definition and gate. Open run starts on the latest job, so reselect the historical Assessment job when following an older entry.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/suites-and-monitoring: 4. Inspect monitoring history, after step 3"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T05:49:52.214923+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "785a3aea3ee6eb3e8e1754a6a4668fbd7b416024a113f711c97fa775072288e0"
+    },
+    {
+      "id": "evals-traces-filtered",
+      "file": "evals-traces-filtered.png",
+      "alt": "HELLO content and OK state filters select one real retained native trace in the archived teaching project.",
+      "caption": "The applied HELLO and OK filters return one recorded request. Archiving preserves this evidence; reading it does not rerun the target.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/traces-and-sessions: 1. Find the trace selection, after step 5"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization member; platform_admin false",
+      "capturedAt": "2026-11-13T06:18:15.491585+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "89f00f2d3e06225344f27059f82943d3f617b2f1a5ce7662c6d5b0eccfdd8544"
+    },
+    {
+      "id": "evals-traces-inspector",
+      "file": "evals-traces-table-inspector.png",
+      "alt": "Trace details opened from the filtered table shows two native spans and retained HELLO input with hello output.",
+      "caption": "The trace-table inspector retains the real input/output and two spans. There are 0 model spans and reported tokens are unavailable; missing usage is not zero usage.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/traces-and-sessions: 2. Inspect native execution evidence, after step 3"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization member; platform_admin false",
+      "capturedAt": "2026-11-13T05:52:04.661858+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "5af913d24bed700a0da4c92382d0cf97e0d36c4faedc0cfa817905119f2fa55a"
+    },
+    {
+      "id": "evals-traces-no-sessions",
+      "file": "evals-traces-no-sessions.png",
+      "alt": "Sessions reports zero recorded sessions and one matching trace without a session ID.",
+      "caption": "This bounded selection contains one independent evaluation request and no conversation session ID. It verifies the empty state; positive multi-turn grouping remains unqualified.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/traces-and-sessions: 3. Group recorded conversations, no-session limit after the steps"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization member; platform_admin false",
+      "capturedAt": "2026-11-13T05:52:05.551020+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "948bcba1d97d2dbd4aa2631e4a59ccef8b8e7d8779fc6e647768e86e07d0f22d"
+    },
+    {
+      "id": "evals-traces-saved-view",
+      "file": "evals-traces-saved-view.png",
+      "alt": "Display and saved views shows the retained organization view with chosen columns and comfortable row density.",
+      "caption": "The member-created organization view retains its filters, column order and density. After refresh, reselect it in Saved trace view to restore those settings.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/traces-and-sessions: 4. Save a useful view, after step 5"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization member; platform_admin false",
+      "capturedAt": "2026-11-13T06:02:53.544234+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "c450f3e527e601d5efa92acf13541ac499d97533216d5089e8e885e4e131a201"
+    },
+    {
+      "id": "evals-issues-groups",
+      "file": "evals-issues-groups.png",
+      "alt": "Actual failed exact-match and JSON Boolean groups are found across eleven retained traces.",
+      "caption": "The candidate output is [4.] and the expected answer is [4]. The trace executed OK; its Boolean quality assessment failed. Numeric gate failures are not automatically Boolean issue groups.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/quality-issues: 1. Find the issue selection, after step 3"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T06:02:24.123184+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "919f1f545475efd893ad111cb8769a1bafd113d2481b350b8192f13317fba812"
+    },
+    {
+      "id": "evals-issues-triage",
+      "file": "evals-issues-triage.png",
+      "alt": "Triage form selects investigating and records a concrete punctuation-regression rationale.",
+      "caption": "Record the observed difference and an appropriate status before saving. This form concerns retained teaching evidence, not a verified security finding or a deployment fix.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/quality-issues: 3. Record a triage decision, before step 5"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T06:04:45.235728+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "009a055f83126f8023e50feb5ad246c102d94c714ddcba59603c746ed72a527d"
+    },
+    {
+      "id": "evals-issues-retained",
+      "file": "evals-issues-retained.png",
+      "alt": "The exact-match issue retains Investigating after a full refresh.",
+      "caption": "The refreshed selection retains Investigating for the same trace. Native readback also retained the account, rationale and timestamp; triage did not change the saved output.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/quality-issues: 4. Verify the decision remains recorded, after step 3"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow3.16.1; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T06:07:28.287723+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Named pinned local QA releases; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
+      "reviewedForSecrets": true,
+      "sha256": "ad99e665972fbf905576f26bfa3cd5c134f8c279406621da8f0054d59e77a3c6"
     }
   ]
 }

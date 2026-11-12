@@ -129,6 +129,6 @@ Dataset tests are **client-executed/server-scored**. Inline scorer checks are **
 - Do not set a remote `MLFLOW_TRACKING_URI`. Do not publish `.martian-local-mlflow/` as a CI artifact. Retain the safe receipt instead.
 - `--require-export` waits for bounded export confirmation. An export problem does not justify rerunning the target; inspect the saved session and available **Retry export** action first.
 
-If the tests pass and upload is persisted but required export fails, preserve the original failed receipt. An owner/admin can use **Retry export** in **CI sessions**, then **Refresh** to inspect the retained export. A separate dataset-run telemetry warning needs administrator investigation of that run. Recovering saved evidence does not change the original command's exit code; record recovery separately.
+If the tests pass and upload is persisted but required export fails, preserve the original failed receipt. An owner/admin can use **Retry export** in **CI sessions**, then **Refresh** to inspect the retained export. For a separate dataset-run telemetry warning, contact your workspace operator or [Martian support](/martian-security-docs/get-started/access/); it needs investigation of that run. Recovering saved evidence does not change the original command's exit code; record recovery separately.
 
 Continue with [red teaming](/martian-security-docs/sdk/redteam/) or [combined CI](/martian-security-docs/sdk/ci/). For the browser-run workflow, see [your first evaluation](/martian-security-docs/evals/first-run/).
