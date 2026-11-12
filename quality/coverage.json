@@ -132,7 +132,7 @@
         "OPTIONS /chat connectivity",
         "sync/async local callback returning nonempty text"
       ],
-      "qualification": "partial",
+      "qualification": "verified",
       "screenshots": [
         "agents-http-adapter-settings",
         "agents-http-adapter-approved"
@@ -141,12 +141,14 @@
         {
           "id": "agents-http-adapter-settings",
           "caption": "Real HTTP onboarding form with chat/health URLs and safe authentication selection; never capture the credential.",
-          "alt": "HTTP adapter onboarding settings with public chat and health URLs."
+          "alt": "HTTP adapter onboarding settings with public chat and health URLs.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "agents-http-adapter-approved",
           "caption": "Approved HTTP connection showing active status and readiness after actual validation and page refresh.",
-          "alt": "Active approved HTTP adapter connection and assessment readiness."
+          "alt": "Active approved HTTP adapter connection and assessment readiness.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -162,11 +164,13 @@
           "date": "2026-11-13",
           "record": "quality/walkthroughs.json",
           "observedPath": "Teaching HTTP target",
-          "result": "passed for the named path; remaining guide checks explicitly pending"
+          "result": "passed for the deterministic callback, protected public HTTPS and real console Evals path"
         }
       ],
-      "validationStatus": "The downloadable teaching adapter passed real public HTTPS, bearer-failure, console approval and three-record Evals checks in isolated local QA. This temporary test ingress does not qualify the separate Caddy hosting recipe.",
-      "environment": "Isolated local QA; synthetic organization; current pinned source baseline"
+      "validationStatus": "Exact downloadable callback/server passed real public TLS and bearer checks, owner UI save/validate/approve, refresh and three-record Backend/Agents execution. The tested Docker Desktop Quick Tunnel recipe is documented; the Caddy alternative remains source-reviewed.",
+      "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA + public HTTPS"
     },
     {
       "id": "agents/sandbox-bindings",
@@ -1125,7 +1129,7 @@
       "id": "evals/compare",
       "role": "all customer roles read/export",
       "route": "/#/evals/compare",
-      "environment": "qualification pending; current beta customer source",
+      "environment": "Isolated local QA; real pinned application and synthetic changed callback",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1149,19 +1153,19 @@
           "id": "evals-compare-selection",
           "caption": "Distinct completed baseline and candidate with compatible scoring selection.",
           "alt": "Distinct completed baseline and candidate with compatible scoring selection",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-compare-results",
           "caption": "Paired comparison showing coverage and actual record-level changes.",
           "alt": "Paired comparison showing coverage and actual record-level changes",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-compare-trace",
           "caption": "Native trace inspected from the retained comparison context.",
           "alt": "Native trace inspected from the retained comparison context",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -1171,10 +1175,17 @@
         "Export comparison and inspect rows",
         "Verify incompatible definitions/dataset identity are not treated as comparable"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "In isolated local QA, distinct same-dataset runs paired all three records with one deliberate regression and two unchanged scores. Both native traces, CSV3/filteredCSV1, refresh, same-run and one-sided-job guards passed without extra target calls. Supplementary scoring-job compatibility and incompatible dataset/definition checks remain pending.",
+      "qualification": "partial",
       "documentationRoute": "/martian-security-docs/evals/compare/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Canonical run comparison",
+          "result": "passed for the named canonical path; supplementary compatibility pending"
+        }
+      ]
     },
     {
       "id": "evals/datasets",
@@ -1206,19 +1217,19 @@
           "id": "evals-datasets-import",
           "caption": "Import preview showing new and updated records before applying the file.",
           "alt": "Import preview showing new and updated records before applying the file",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-datasets-validation",
           "caption": "Draft records and automatic usable/missing-value/version summary.",
           "alt": "Draft records and automatic usable/missing-value/version summary",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-datasets-publication",
           "caption": "Reviewed dataset publication and immutable Published result.",
           "alt": "Reviewed dataset publication and immutable Published result",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-datasets-copy",
@@ -1251,7 +1262,7 @@
       "id": "evals/first-run",
       "role": "owner/admin to prepare dataset; member+ to run; viewer can read",
       "route": "/#/evals",
-      "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
+      "environment": "Isolated local QA; real pinned Backend, Agents and MLflow; synthetic organization",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1277,25 +1288,25 @@
           "id": "evals-first-run-dataset",
           "caption": "Published three-record synthetic dataset before target execution.",
           "alt": "Published three-record synthetic dataset before target execution",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-first-run-form",
           "caption": "Run an evaluation with the approved HTTP agent, chosen dataset and target-call budget.",
           "alt": "Run an evaluation with the approved HTTP agent, chosen dataset and target-call budget",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-first-run-progress",
           "caption": "Actual target evaluation progressing through the small dataset.",
           "alt": "Actual target evaluation progressing through the small dataset",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-first-run-results",
           "caption": "Completed run with retained expected/actual outputs and exact-match results.",
           "alt": "Completed run with retained expected/actual outputs and exact-match results",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -1305,23 +1316,25 @@
         "Inspect trace/provenance and refresh retained run",
         "Verify viewer cannot launch"
       ],
-      "validationStatus": "The complete owner tutorial passed with three actual HTTP responses, native trace/provenance and retained results after refresh in isolated local QA. Viewer launch-denial qualification remains pending.",
-      "qualification": "partial",
+      "validationStatus": "The three-record owner tutorial passed with actual HTTP responses, retained exact-match results, native trace/provenance and viewer launch denial in isolated local QA.",
+      "qualification": "verified",
       "documentationRoute": "/martian-security-docs/evals/first-run/",
       "validation": [
         {
           "date": "2026-11-13",
           "record": "quality/walkthroughs.json",
           "observedPath": "First evaluation",
-          "result": "passed for the named path; remaining guide checks explicitly pending"
+          "result": "passed in the named local QA environment; does not attest to hosted beta parity"
         }
-      ]
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA"
     },
     {
       "id": "evals/human-reviews",
       "role": "member+ reviews own/unassigned work; owner/admin assigns others",
       "route": "/#/evals/reviews",
-      "environment": "qualification pending; current beta customer source",
+      "environment": "Isolated local QA; real pinned Backend, Agents and MLflow; synthetic organization",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1339,26 +1352,27 @@
       "screenshots": [
         "evals-reviews-queue",
         "evals-reviews-answer",
-        "evals-reviews-complete"
+        "evals-reviews-complete",
+        "evals-reviews-questions"
       ],
       "screenshotStages": [
         {
           "id": "evals-reviews-queue",
           "caption": "Review queue configuration with selected results and required typed questions.",
           "alt": "Review queue configuration with selected results and required typed questions",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-reviews-answer",
           "caption": "Human answer and explanation for an actual saved evaluation result.",
           "alt": "Human answer and explanation for an actual saved evaluation result",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-reviews-complete",
           "caption": "Queue summary showing all required latest answers verified and Complete.",
           "alt": "Queue summary showing all required latest answers verified and Complete",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -1369,16 +1383,25 @@
         "Refresh queue and inspect retained attribution/history",
         "Verify foreign reviewer assignment is denied for member"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "A real queue with Boolean, numeric, categorical and text answers reached Complete with four latest native feedback records verified. Refresh/history attribution, immutable question reuse/versioning and member reassignment denial passed.",
+      "qualification": "verified",
       "documentationRoute": "/martian-security-docs/evals/human-reviews/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Typed human-review workflow",
+          "result": "passed in the named local QA environment; does not attest to hosted beta parity"
+        }
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA"
     },
     {
       "id": "evals/judging",
       "role": "member+ applies; owner/admin defines native judges",
       "route": "/#/evals/judges",
-      "environment": "qualification pending; current beta customer source",
+      "environment": "Isolated local QA; synthetic organization",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1396,14 +1419,15 @@
       "screenshots": [
         "evals-judging-code",
         "evals-judging-definition",
-        "evals-judging-feedback"
+        "evals-judging-feedback",
+        "evals-judging-code-feedback"
       ],
       "screenshotStages": [
         {
           "id": "evals-judging-code",
           "caption": "Saved-output code criteria selected without a new target request.",
           "alt": "Saved-output code criteria selected without a new target request",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-judging-definition",
@@ -1425,10 +1449,17 @@
         "Verify persisted typed feedback and rationale after refresh",
         "Verify disabled model readiness and viewer mutation boundary"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "In isolated local QA, three saved-output code criteria produced nine persisted assessments with the real target request count unchanged at 14. Viewer and disabled-model controls passed. Custom model definition/version and model-judge execution remain pending.",
+      "qualification": "partial",
       "documentationRoute": "/martian-security-docs/evals/judging/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Saved-output code scoring",
+          "result": "code scoring and role boundaries passed; model path pending"
+        }
+      ]
     },
     {
       "id": "evals/projects",
@@ -1541,7 +1572,7 @@
       "id": "evals/results-and-scores",
       "role": "all customer roles read/export; member+ for supplementary mutations",
       "route": "/#/evals",
-      "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
+      "environment": "Isolated local QA; real pinned Backend, Agents and MLflow; synthetic organization",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1558,26 +1589,27 @@
       "screenshots": [
         "evals-results-table",
         "evals-results-inspector",
-        "evals-results-provenance"
+        "evals-results-provenance",
+        "evals-results-supplementary"
       ],
       "screenshotStages": [
         {
           "id": "evals-results-table",
           "caption": "Saved record-level outputs, exact-match states and filter controls.",
           "alt": "Saved record-level outputs, exact-match states and filter controls",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-results-inspector",
           "caption": "Evaluation item showing input, expected answer, response and assessments.",
           "alt": "Evaluation item showing input, expected answer, response and assessments",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-results-provenance",
           "caption": "Retained evaluation provenance and available version/native readback.",
           "alt": "Retained evaluation provenance and available version/native readback",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -1587,17 +1619,19 @@
         "Export current filtered records and independently count them",
         "Inspect provenance and refresh retained run"
       ],
-      "validationStatus": "Results, a native trace, provenance, filtered JSON and full CSV downloads passed in isolated local QA. Supplementary scoring and role-boundary qualification remain pending.",
-      "qualification": "partial",
+      "validationStatus": "Results, native trace/provenance, filtered exports, nine persisted supplementary code assessments and original exact-match results passed after refresh. Viewer read-only controls were checked.",
+      "qualification": "verified",
       "documentationRoute": "/martian-security-docs/evals/results-and-scores/",
       "validation": [
         {
           "date": "2026-11-13",
           "record": "quality/walkthroughs.json",
-          "observedPath": "Result filters and downloads",
-          "result": "passed for the named path; remaining guide checks explicitly pending"
+          "observedPath": "Results and supplementary code scores",
+          "result": "passed in the named local QA environment; does not attest to hosted beta parity"
         }
-      ]
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA"
     },
     {
       "id": "evals/stopping-and-recovery",
@@ -1745,7 +1779,7 @@
           "id": "evals-traces-inspector",
           "caption": "Native trace details showing retained inputs, outputs and span evidence.",
           "alt": "Native trace details showing retained inputs, outputs and span evidence",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-traces-sessions",
@@ -1790,24 +1824,27 @@
         "access-invitation",
         "access-sign-in",
         "access-workspace",
-        "access-ready"
+        "access-ready",
+        "access-viewer-results"
       ],
       "requiredValidation": [
         "Follow the numbered guide against a real backend",
         "Check expected visible outcomes and persisted state after refresh",
         "Inspect relevant permission/failure boundaries"
       ],
-      "qualification": "partial",
-      "validationStatus": "Owner invitation, sign-in and page-refresh checks passed in isolated local QA. Teammate invitations and role-boundary checks remain pending.",
-      "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
+      "qualification": "verified",
+      "validationStatus": "Owner/member/viewer invitations, actual sign-in and retained roles passed. Wrong-password, anonymous access, consumed links and cross-organization boundaries were checked through real endpoints.",
+      "environment": "Isolated local QA; real pinned Backend, Agents and MLflow; synthetic organization",
       "validation": [
         {
           "date": "2026-11-13",
           "record": "quality/walkthroughs.json",
-          "observedPath": "Owner enrollment and access",
-          "result": "passed for the named path; remaining guide checks explicitly pending"
+          "observedPath": "Owner and teammate enrollment and access",
+          "result": "passed in the named local QA environment; does not attest to hosted beta parity"
         }
-      ]
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA"
     },
     {
       "id": "get-started/concepts",
@@ -2209,8 +2246,8 @@
         "workspace-accept-invitation",
         "workspace-team"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "verified",
+      "validationStatus": "Owner-issued member/viewer invitations, actual acceptance and sign-in, retained Team roles, viewer boundaries and consumed/replaced/revoked link rejection passed. Manual delivery only; email delivery and natural expiry were not exercised.",
       "documentationRoute": "/martian-security-docs/workspace/team-and-roles/",
       "role": "owner, admin",
       "route": "/#/team",
@@ -2229,21 +2266,28 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
+        "realBackendWalkthrough": "passed for manual delivery",
+        "screenshots": "captured",
         "remainingGaps": [
-          "Actual safe Team/form/acceptance screenshots",
-          "Live acceptance and retained member role",
-          "No screenshot of bearer link or secret",
-          "No unauthorized external email"
+          "Configured email delivery and natural token expiry are not part of this local fixture."
         ]
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Owner and teammate enrollment and access",
+          "result": "passed for manual invitation delivery and the recorded role/link boundaries"
+        }
+      ],
       "screenshots": [
         "workspace-invite-form",
         "workspace-accept-invitation",
         "workspace-team"
-      ]
+      ],
+      "environment": "Isolated local QA; synthetic organization",
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA"
     }
   ]
 }

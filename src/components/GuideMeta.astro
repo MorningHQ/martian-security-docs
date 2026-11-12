@@ -13,7 +13,7 @@ const supportedVersion = id.startsWith('sdk/') ? 'SDK 0.1.2' : 'Current beta con
   <span aria-hidden="true">·</span>
   <span>{guide?.role ?? 'See prerequisites below'}</span>
   <span aria-hidden="true">·</span>
-  <span>{verified ? `Walkthrough verified ${guide?.verifiedAt ?? '2026-11-12'}` : partial ? 'Walkthrough partly verified' : 'Walkthrough verification in progress'}</span>
+  <span>{verified ? `Verified ${guide.verifiedAt} · ${guide.verifiedEnvironment}` : partial ? 'Walkthrough partly verified' : 'Walkthrough verification in progress'}</span>
   <a href={`${base}/reference/verification/`}>Verification details</a>
 </div>
 {!verified && <aside data-pagefind-ignore class="qualification-note">{partial ? guide?.validationStatus : 'The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.'}</aside>}

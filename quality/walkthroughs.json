@@ -7,20 +7,25 @@
     "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
     "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
   },
-  "role": "Organization owner, platform_admin false",
+  "role": "Organization owner (platform_admin false), member and viewer in the synthetic organization",
   "observedPaths": [
     {
-      "task": "Owner enrollment and access",
-      "result": "passed for the owner path",
+      "task": "Owner and teammate enrollment and access",
+      "result": "passed in isolated local QA",
       "observed": [
         "Manual owner invitation accepted through actual UI; POST /v1/auth/invitations/accept returned201",
         "Organization creation completed and Evals provisioned",
         "Customer sign-in returned200; Default project and owner role visible",
-        "Reload retained customer workspace and published content"
+        "Reload retained customer workspace and published content",
+        "Owner issued separate manual member and viewer invitations; no email was sent",
+        "Recipients accepted through actual UI and signed in; Team retained owner/member/viewer roles after refresh",
+        "Viewer could read EV-1001 but Run eval and saved-output mutation controls were disabled; valid launch and draft-write API requests returned403",
+        "Member launched a real three-record evaluation; member draft authoring returned201 and publication returned403",
+        "Anonymous reads and wrong-password sign-in returned401; another organization could not read a foreign agent (404)",
+        "Consumed member/viewer invitation previews returned410",
+        "Link replacement was initially rate-limited429; after the one-minute cooldown, replacement returned200, old link410, new link200, revocation200 and revoked link410"
       ],
-      "remaining": [
-        "Existing-organization member/viewer invitation and denial checks"
-      ]
+      "remaining": []
     },
     {
       "task": "Teaching HTTP target",
@@ -31,7 +36,8 @@
         "Missing and wrong bearer each returned401",
         "Downloaded preflight.py passed over public HTTPS using the host OS CA bundle",
         "Real owner UI saved connection201, validated200 and approved200",
-        "Active / Ready for assessments survived a full page refresh"
+        "Active / Ready for assessments survived a full page refresh",
+        "Exact Docker Desktop Quick Tunnel image/command is now included; Caddy remains an explicitly source-reviewed alternative"
       ],
       "remaining": [
         "MCP/browser execution and credential-rotation/disable boundaries are separate pending checks"
@@ -45,11 +51,12 @@
         "Selected actual first-evaluation.jsonl in browser file chooser",
         "Preview3 new /0 updated; actual Import produced3 usable records",
         "Published after adding supported private manifest storage to isolated QA infrastructure",
-        "Reopened published version after full refresh; READY, HELLO and4 retained"
+        "Reopened published version after full refresh; READY, HELLO and4 retained",
+        "Member draft authoring was allowed; publication was denied403 with its real current revision/hash"
       ],
       "contentSha256": "8251bde88c0183c607c9456ef678a7c3f99a8dcd71b9cd09cb9e83837a749282",
       "remaining": [
-        "CSV/JSON variant imports, editor revisions, Martian-copy and role denial checks"
+        "CSV/JSON variant imports, editor revisions and Martian-copy checks"
       ]
     },
     {
@@ -63,32 +70,92 @@
         "Actual outputs READY, HELLO and4 match expectations",
         "Native provenance FINISHED and matching published dataset content hash",
         "Opened real native trace with eval.exact_match and martian.target.chat spans and retained input/output",
-        "Full page refresh retained terminal state and all3 results"
+        "Full page refresh retained terminal state and all3 results",
+        "Viewer Run eval control disabled; valid launch request denied403"
       ],
-      "remaining": [
-        "Viewer launch denial"
-      ]
+      "remaining": []
     },
     {
-      "task": "Result filters and downloads",
+      "task": "Results and supplementary code scores",
       "result": "passed for real displayed selection",
       "observed": [
         "READY search reduced visible results to1",
         "Downloaded JSON through actual Export JSON action contained1 READY item and original whole-run counters",
-        "Cleared filter; actual Export CSV download contained3 rows and expected result/feedback columns"
+        "Cleared filter; actual Export CSV download contained3 rows and expected result/feedback columns",
+        "Applied three code criteria to the retained run; nine assessments persisted natively",
+        "READY retained its canonical pass while contains-expected=true, valid-JSON=false and response-length=5",
+        "Full refresh retained the original results and code feedback",
+        "Viewer could inspect saved results but could not apply scorers"
       ],
       "downloadSha256": {
         "evals-first-run-filtered.json": "17b834899dc26496e9f17153231a313880028af91fb4d6227a53bcf58d2c6573",
         "evals-first-run.csv": "27fc6dae36896762d5c2d24303d6d5b0b1a8f27651fc051ff8289cadf348c5db"
       },
       "remaining": [
-        "Supplementary code/model scores, review feedback and role boundaries remain tracked separately"
+        "Model-based judging and unrelated advanced workflows are tracked separately"
+      ]
+    },
+    {
+      "task": "Saved-output code scoring",
+      "result": "passed for three deterministic code criteria",
+      "observed": [
+        "Actual UI selected Contains expected text, Valid JSON and Response length; scoring job completed",
+        "All nine additional assessments had native IDs, no errors and telemetry_state persisted",
+        "The real public tunnel request counter remained14 before and after scoring; the target was not called again",
+        "Disabled model criteria were labelled Requires operator setup; viewer controls were read-only"
+      ],
+      "remaining": [
+        "Typed custom judge definition/version and real model-judge execution"
+      ]
+    },
+    {
+      "task": "Typed human-review workflow",
+      "result": "passed for the recorded synthetic queue and question-version path",
+      "observed": [
+        "Owner created one-record Teaching response review with four required typed questions assigned to the member",
+        "Member saved Boolean true, numeric5, category READY and an evidence-based text answer with explanations",
+        "All four latest assessment records had real native IDs and persisted telemetry",
+        "Reconcile native queue returned202; later refresh showed Complete, one completed record and four verified answers",
+        "Full page refresh retained completion; review history attributed the saved answers to Docs Demo Member",
+        "Member reassignment to another active teammate was disabled in UI and denied403 by the real API",
+        "Owner saved reusable docs_format v1, used it in another queue, then created v2; earlier queue retained v1 wording in actual UI and API",
+        "Real target request count stayed14 throughout review and question authoring",
+        "Sync saved feedback on the superseded numeric assessment returned202 for the existing assessment ID; it remained pending at acknowledgement. No fresh review was submitted for synchronization."
+      ],
+      "fixtureObservation": "A delayed numeric-save acknowledgement was followed by a manual resubmission, creating an additional history entry. The four latest required answers were verified; one superseded numeric assessment remained pending. The guide now says to wait and read the latest state before another submission.",
+      "humanParticipation": "AI operated synthetic QA accounts; no independent human reviewer participated.",
+      "remaining": []
+    },
+    {
+      "task": "Canonical run comparison",
+      "result": "passed for canonical comparison; advanced compatibility pending",
+      "baseline": "EV-1001",
+      "candidate": "EV-1003",
+      "observed": [
+        "Restarted only the task-owned teaching callback with comparison_agent:answer, preserving bearer, port and HTTPS origin",
+        "Owner declared actual callback file SHA as customer_declared, then launched one new three-record target evaluation",
+        "EV-1003 completed with2 passed /1 failed /0 errors /0 skipped; actual outputs were space-padded ready, hello and4.",
+        "Same immutable dataset content hash was admitted; target request counter increased14\u219217 for the three real requests",
+        "Canonical comparison returned compatible true, three paired records,0 improved /1 regressed /2 unchanged /0 not comparable",
+        "Opened and downloaded both real native traces for the arithmetic record; target-chat outputs were4 and4.",
+        "Export comparison downloaded3 rows; regressed filter downloaded exactly1 row containing expected4, baseline4 and candidate4.",
+        "Full page refresh and reselection retained the same paired coverage and counts",
+        "Same-run and one-sided scoring-job selections disabled Compare runs",
+        "After comparison/export/review-sync reads, the real target request count remained17",
+        "Actual candidate provenance readback reported native FINISHED with passed2/failed1, the matching dataset SHA and customer-declared callback revision; model/prompt versions remained Not reported"
+      ],
+      "candidateArtifactRevision": "sha256:a02d7aa2b636f424a7a80300d65df311d0c1f540e36af05342df76a5a437d1ce",
+      "revisionSource": "customer_declared; not independently attested by the endpoint",
+      "remaining": [
+        "Compatible supplementary assessment-job comparison",
+        "Incompatible dataset/definition guard with real fixtures"
       ]
     }
   ],
   "knownEnvironmentLimits": [
     "Sandbox orchestrator is not configured in this QA stack; GET /v1/connectors returns503 and the sidebar may report stale data. No mock catalog is substituted.",
     "Current local model credentials are denied Bedrock inference; real model-based assessment/judge and sandbox seed-generation qualification remain pending AWS sign-in refresh.",
-    "These local results do not attest to deployment parity or availability in a customer AWS-beta organization."
+    "These local results do not attest to deployment parity or availability in a customer AWS-beta organization.",
+    "A second member-run evaluation produced three canonical passes and later native FINISHED, but individual telemetry acknowledgements included unknown/unavailable states. That run was retained and not replayed as a telemetry repair; EV-1001 is the confirmed trace fixture."
   ]
 }

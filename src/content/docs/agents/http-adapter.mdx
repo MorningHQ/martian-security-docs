@@ -18,7 +18,7 @@ The supplied callback is deterministic teaching code, not an LLM. It recognizes 
 
 - Local preflight needs Python **3.12 or newer** and a terminal. No third-party Python package or provider account is required.
 - Hosted onboarding requires an **Owner** or **Admin**, the [current qualification status](/martian-security-docs/reference/verification/), and a public HTTPS host reachable from Martian's servers. Localhost is not reachable merely because the console opens in your browser.
-- For the included HTTPS recipe, supply a dedicated Linux test host, a public DNS name pointing to it, reachable ports 80/443, and a current stable Caddy installation. The [complete hosting instructions in the download](/martian-security-docs/examples/http-agent/README.md) explain TLS, process lifetime and external preflight. This example does not provision those resources.
+- For the tested disposable HTTPS recipe, use Docker Desktop and outbound internet access. Alternatively, supply a dedicated Linux host, public DNS, reachable ports 80/443 and Caddy. The [complete hosting instructions](/martian-security-docs/examples/http-agent/README.md) explain both options; the Caddy alternative is source-reviewed rather than walkthrough-tested.
 - If public hosting is unavailable, use [SDK local evaluations](/martian-security-docs/sdk/evaluations/) instead. The callback and its provider credentials can remain in your own process.
 
 ## 1. Download and start the service
@@ -48,8 +48,8 @@ The wire request is a JSON object containing `campaign_id`, `target_id`, `conver
 ## 2. Protect and host the endpoint
 
 1. Inject a strong adapter-specific token as `MARTIAN_ADAPTER_TOKEN` and restart the server. `/chat` now requires `Authorization: Bearer ...`; `/health` stays public. This is separate from a Martian API key and a provider key.
-2. Copy the example onto your dedicated public test host. Keep its Python listener at `127.0.0.1:8765` behind HTTPS ingress.
-3. Follow the supplied `Caddyfile.example` recipe: replace its hostname with your public DNS name, ensure DNS/network prerequisites, and run the reverse proxy. Caddy provides trusted public TLS when those prerequisites are met. Keep both processes running throughout the test. [Caddy HTTPS requirements](https://caddyserver.com/docs/automatic-https)
+2. For the disposable tutorial on Docker Desktop, keep the protected Python service running locally and start the [exact tested tunnel command in the README](/martian-security-docs/examples/http-agent/README.md). Use the generated `https://…trycloudflare.com` origin; it needs no account or domain. Keep both processes running. [Quick Tunnel limits](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/)
+3. For a durable host instead, follow `Caddyfile.example`: use your public DNS name and satisfy its DNS/network prerequisites. Keep Python on the host's loopback address behind ingress. [Caddy HTTPS requirements](https://caddyserver.com/docs/automatic-https)
 4. From another machine/network, run the README's authenticated HTTPS curl checks and:
 
 ```sh
@@ -57,6 +57,8 @@ python3 preflight.py --origin https://YOUR-PUBLIC-HOST
 ```
 
 Expect the same verified health/READY responses with certificate validation enabled. A private address, local certificate, login page, redirect or timeout does not satisfy this prerequisite. A successful external preflight still needs Martian's own connection validation and actual target execution.
+
+Keep a tutorial tunnel running through onboarding and evaluation. If its hostname changes, onboard a replacement connection with the new URLs, validate and approve it, and select that registration for future runs. Saved endpoint URLs cannot be edited in place.
 
 ## 3. Register the real HTTPS address
 
