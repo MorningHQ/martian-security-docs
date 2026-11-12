@@ -12,7 +12,7 @@ for (const entry of registry.screenshots) {
   if (screenshots.has(entry.id)) failures.push(`Duplicate screenshot id: ${entry.id}`);
   screenshots.set(entry.id, entry);
   const file = path.join(root, 'public/media/screenshots', entry.file);
-  if (!entry.alt || !entry.caption || !entry.environment || !entry.role || !entry.capturedAt || !entry.sourceRevisions || !entry.validationStatus || !entry.reviewedForSecrets) failures.push(`${entry.id}: incomplete provenance`);
+  if (!entry.alt || !entry.caption || !entry.guideSteps?.length || !entry.environment || !entry.role || !entry.capturedAt || !entry.sourceRevisions || !entry.validationStatus || !entry.reviewedForSecrets) failures.push(`${entry.id}: incomplete provenance`);
   if (entry.width !== 1440 || entry.height !== 1000) failures.push(`${entry.id}: inconsistent application viewport`);
   if (!existsSync(file)) failures.push(`${entry.id}: missing image file`);
   else if (createHash('sha256').update(readFileSync(file)).digest('hex') !== entry.sha256) failures.push(`${entry.id}: capture hash mismatch`);
@@ -32,7 +32,7 @@ for (const guide of coverage.guides) {
     if (!screenshots.has(id)) { pendingScreenshots++; if (release || guide.qualification === 'verified') failures.push(`${guide.id}: required real screenshot ${id} not captured`); }
   }
   if (guide.qualification !== 'verified') pending.push(guide.id);
-  if (release && (!guide.validation?.length || !guide.verifiedAt)) failures.push(`${guide.id}: missing walkthrough evidence`);
+  if ((release || guide.qualification === 'verified') && (!guide.validation?.length || !guide.verifiedAt || !guide.verifiedEnvironment)) failures.push(`${guide.id}: missing walkthrough evidence, date or environment`);
 }
 function sourceFiles(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap(entry => {

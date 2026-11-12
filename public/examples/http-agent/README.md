@@ -68,7 +68,41 @@ credential only after restart; update/revalidate the Martian connection as well.
 servers, so a laptop's `127.0.0.1`, a private/VPN-only address or local self-signed
 certificate does not satisfy hosted onboarding.
 
-For the concrete foreground recipe below, provide:
+### A. Disposable Docker Desktop tutorial tunnel
+
+For the synthetic tutorial on a machine running Docker Desktop, keep the
+bearer-protected Python service on `127.0.0.1:8765` and run this in another
+terminal. This uses the exact Cloudflare image digest tested for the walkthrough:
+
+```sh
+docker run --rm --name martian-http-demo-tunnel \
+  cloudflare/cloudflared@sha256:b94b96edf2c9c4360f8879c8580cfaa99077f19c849ec595ca2f711b27d4f344 \
+  tunnel --no-autoupdate --protocol http2 \
+  --url http://host.docker.internal:8765
+```
+
+Read the generated `https://…trycloudflare.com` origin from the tunnel's terminal.
+It needs no Cloudflare account or domain. Keep both processes running. The
+hostname changes when a new tunnel is created. Saved connection endpoints cannot
+be edited: onboard a replacement with the new chat/health URLs, validate and
+approve it, then select that registration for future runs. Retain historical runs
+and disable the old connection when retiring it. This forwards only the teaching adapter. Never point
+it at the Martian backend, a credential service or another private application.
+
+This exact Docker Desktop path passed trusted public HTTPS preflight, bearer
+rejections, actual Martian validation and three-record target execution in the
+recorded local QA environment. `host.docker.internal` is the Docker Desktop host
+address; this command is not a generic Linux Docker networking recipe.
+
+[Cloudflare Quick Tunnels](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/)
+are for temporary development/testing, with no availability guarantee. They have
+a 200 concurrent-request limit and do not support SSE. This adapter uses normal
+JSON requests and does not need SSE. Use your approved durable ingress for a
+persistent endpoint.
+
+### B. Dedicated host with Caddy
+
+For the alternative foreground Caddy recipe, provide:
 
 1. A customer-controlled **dedicated Linux test host** with Python 3.12+ and this
    directory copied onto it. Keep the process available for the whole run.
@@ -104,10 +138,12 @@ tutorial does not provision a server, DNS, firewall or long-running service for
 you. See [Caddy's reverse proxy recipe](https://caddyserver.com/docs/quick-starts/reverse-proxy)
 and [automatic HTTPS prerequisites](https://caddyserver.com/docs/automatic-https).
 
+### Verify either HTTPS origin
+
 From a **different machine/network**, with the adapter token injected there:
 
 ```sh
-export MARTIAN_ADAPTER_ORIGIN='https://agent.YOUR-DOMAIN'
+export MARTIAN_ADAPTER_ORIGIN='https://YOUR-PUBLIC-HOST'
 curl --fail-with-body --silent --show-error "$MARTIAN_ADAPTER_ORIGIN/health"
 python3 -c 'import json, os; print("header = " + json.dumps("Authorization: Bearer " + os.environ["MARTIAN_ADAPTER_TOKEN"]))' |
   curl --config - --fail-with-body --silent --show-error \
@@ -120,7 +156,9 @@ These commands keep certificate verification enabled and do not follow redirects
 Expect the same health/READY response. A redirect to login, HTML page, certificate
 error or timeout is a failed preflight, not a usable chat endpoint.
 
-If you do not have public HTTPS hosting, use the SDK's local-callback workflow
+Use the generated tunnel origin or your configured DNS origin above. The Caddy
+alternative is source-reviewed; it was not used for the recorded walkthrough.
+If neither public HTTPS option is available, use the SDK's local-callback workflow
 instead. A platform API key or browser session cannot make localhost reachable.
 
 ## 4. Onboard and evaluate
@@ -138,6 +176,29 @@ does not by itself verify the POST response format. A real, bounded Evals run is
 the next end-to-end check. Import `first-evaluation.jsonl`, publish it, explicitly
 select the **Default** project and follow the first-evaluation guide. Its three
 records match the default deterministic callback.
+
+## 5. Optional comparison variant
+
+After retaining a successful baseline, stop only your tutorial adapter and restart
+it with the same bearer, port and HTTPS tunnel:
+
+```sh
+python3 server.py --host 127.0.0.1 --port 8765 --callback comparison_agent:answer
+```
+
+Keep the original published dataset unchanged. The variant deliberately returns
+` ready `, `hello` and `4.` for its three tutorial inputs. Canonical exact match
+trims outer whitespace and ignores case, so the intended result is two passes
+and one punctuation failure. This is a new target evaluation of changed code,
+not a retry to repair telemetry. The baseline preflight expects `READY` exactly;
+run that preflight before switching callbacks.
+
+An owner/admin can record the deployed callback's revision in the agent's
+Connection tab using **Current deployed code or build revision → Save revision**.
+This is a customer declaration, not independent endpoint attestation. Run the
+same dataset once and compare the retained baseline and candidate. Changing the
+callback preserves the registration; do not claim that an agent ID proves which
+binary or prompt was deployed.
 
 ## Request/response contract
 

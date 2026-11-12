@@ -18,6 +18,8 @@ Any customer role can compare authorized runs in the current beta console. You n
 
 For a small example, run the [first evaluation](/martian-security-docs/evals/first-run/) dataset twice, within your authorized target-call budget. Identical results are a valid outcome. To measure a deliberate agent change, retain the tested revision in your own release process and the connection’s declared artifact information.
 
+If you used the downloadable HTTP teaching adapter, its [optional comparison variant](/martian-security-docs/examples/http-agent/README.md) gives a reproducible change. Retain the baseline, restart only that adapter with `comparison_agent:answer` and the same bearer/tunnel, record the changed revision, and run the unchanged dataset once. It returns ` ready `, `hello` and `4.`: two canonical passes and one deliberate punctuation failure. A declared revision records your assertion; it is not independent endpoint attestation.
+
 ## 1. Choose the pair
 
 1. Open **Evals → Compare** and confirm the project.
@@ -44,6 +46,8 @@ For canonical exact match:
 Use **Search comparison**, **Comparison criterion** and **Comparison change** to narrow the table. Inspect the expected answer beside both outputs before concluding that a change is useful.
 
 <Screenshot id="evals-compare-results" />
+
+In the recorded teaching example, all three records pair: **0 improved, 1 regressed, 2 unchanged**. The READY and HELLO text changed but their exact-match outcomes did not. The extra period in `4.` caused the regression; inspect the outputs before generalizing from that count.
 
 ## 3. Compare supplementary assessment jobs
 

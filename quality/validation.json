@@ -11,7 +11,7 @@
     {
       "scope": "Original Hermes link/anchor/asset/base checker",
       "result": "passed",
-      "details": "2,974 local links/anchors/assets/base-path references checked with zero failures"
+      "details": "3,087 local links/anchors/assets/base-path references checked with zero failures"
     },
     {
       "scope": "Released SDK0.1.2 install, download and Git tutorial",
@@ -21,23 +21,40 @@
     {
       "scope": "HTTP adapter example real-socket/auth/failure checks",
       "result": "passed",
-      "details": "23 checks; no console registration or public HTTPS deployment qualification"
+      "details": "23 focused service/auth/failure checks; real public HTTPS and console execution are recorded separately below."
     },
     {
       "scope": "Simulated first-time-reader and documentation browser review",
-      "result": "passed after targeted fixes; publication of draft fixes pending",
-      "details": "AI simulated novice review, no human participant. Live desktop/narrow navigation, search, themes, focus, full-size image and deep refresh passed. Follow-up local light/dark1440x1000 and390x844 checks confirmed naturally wrapping comparison rows, no overflow, explicit source-baseline link and zero docs console errors."
+      "result": "passed against published PR2 and local follow-up edits",
+      "details": "AI simulated novice review, no human participant. Live PR2 desktop/narrow navigation, natural search, themes, focus, full-size images and deep refresh passed; light/dark1440x1000 and390x844 showed no overflow or docs console errors. Question reuse instructions now explain removing the unused default question."
     },
     {
       "scope": "Real customer onboarding, HTTP adapter and first evaluation",
       "environment": "Isolated local QA; real pinned Frontend, Backend, Agents and MLflow3.16.1; synthetic Martian Docs Lab organization. No API interception or fabricated UI.",
-      "result": "passed for the named owner paths; full-guide audit remains pending",
+      "result": "passed for named owner/member/viewer paths in local QA",
       "record": "quality/walkthroughs.json",
-      "details": "Owner invitation/sign-in, public HTTPS and bearer401 checks, actual HTTP save/validate/approve, JSONL import/publication, EV-1001 three passed answers, native FINISHED/two-span trace, after-refresh retained results, filtered JSON1 and CSV3 downloads."
+      "details": "Owner and teammate enrollment, manual invitation lifecycle, real HTTP onboarding, dataset JSONL publication, EV-1001 with three passed responses and native traces, filtered exports, code scoring without extra target calls, four typed reviews persisted/completed, immutable review question reuse and recorded role/auth/tenant boundaries. Hosted beta parity is not attested."
+    },
+    {
+      "scope": "Real screenshot registry",
+      "result": "passed",
+      "details": "35 registered references to31 unique1440x1000 application PNGs; local SHA-256, guide/stage, role/environment/date/source provenance and manual secret review retained."
+    },
+    {
+      "scope": "Canonical changed-target comparison",
+      "environment": "Isolated local QA and actual temporary public HTTPS teaching adapter",
+      "result": "passed for canonical path; advanced compatibility pending",
+      "record": "quality/walkthroughs.json",
+      "details": "Actual changed callback completed2passes/1failure, native FINISHED and pinned customer-declared SHA. Compared three paired records with one regression; both native outputs, CSV3/filteredCSV1, refresh and selection guards checked. Target counter14\u219217 for execution and stayed17 during inspection."
+    },
+    {
+      "scope": "Complete end-to-end qualification audit",
+      "result": "incomplete; audit correctly fails",
+      "details": "32task guides:6verified in namedlocalQA environments,5partial,21pending;63required screenshot references and26full walkthrough qualifications remain outstanding. No release gate was disabled."
     }
   ],
   "remainingGaps": [
-    "Viewer/member/admin boundaries, advanced Evals and remaining real application journeys/screenshots are still being qualified.",
+    "Remaining interfaces, advanced Evals, red teaming and their application screenshots still need qualification.",
     "Real-service SDK hosted execution and key scopes remain pending.",
     "Model-based assessments/judges and seed generation require working inference access; AWS sign-in refresh requested.",
     "Sandbox orchestration/readiness is not available in the SDK-derived local QA stack; connectors503 is recorded.",

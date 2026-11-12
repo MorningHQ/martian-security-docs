@@ -9,7 +9,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "get-started/access: Sign in and check access, step 1"
+        "get-started/access: Sign in and check access, after step 1"
       ],
       "environment": "AWS beta",
       "role": "Signed out",
@@ -30,7 +30,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "get-started/access: relevant numbered stage"
+        "get-started/access: Join your workspace, step 2 (owner organization form)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Invited owner (signed out)",
@@ -53,7 +53,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "get-started/access: relevant numbered stage"
+        "get-started/access: Join your workspace, steps 3\u20134 (completion and sign-in address)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Invited owner (signed out)",
@@ -76,7 +76,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "get-started/access: relevant numbered stage"
+        "get-started/access: Sign in and check access, after step 4"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -99,7 +99,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/datasets: relevant numbered stage"
+        "evals/datasets: 2. Import or add records, step 2 (preview before Import)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -122,7 +122,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/datasets: relevant numbered stage"
+        "evals/datasets: 3. Check automatic validation, observed stage"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -145,7 +145,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/datasets: relevant numbered stage"
+        "evals/datasets: 4. Publish and verify the version, step 4"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -168,7 +168,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/first-run: relevant numbered stage"
+        "evals/first-run: 1. Prepare a small published dataset, after step 5"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -191,7 +191,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "agents/connections: relevant numbered stage"
+        "agents/connections: Register the target, steps 2\u20133 (before entering the private credential)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -214,7 +214,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "agents/http-adapter: relevant numbered stage"
+        "agents/http-adapter: 3. Register the real HTTPS address, steps 2\u20133 (before entering the private credential)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -237,7 +237,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "agents/connections: relevant numbered stage"
+        "agents/connections: Validate and approve, step 1 (saved draft before Validate connection)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -260,7 +260,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "agents/connections: relevant numbered stage"
+        "agents/connections: Validate and approve, step 4 (successful validation before approval)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -283,7 +283,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "agents/connections: relevant numbered stage"
+        "agents/connections: Validate and approve, step 5 (active after refresh)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -306,7 +306,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "agents/http-adapter: relevant numbered stage"
+        "agents/http-adapter: 3. Register the real HTTPS address, step 5"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -329,7 +329,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/first-run: relevant numbered stage"
+        "evals/first-run: 2. Configure the run, steps 2\u20134 (before Start evaluation)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -352,7 +352,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/first-run: relevant numbered stage"
+        "evals/first-run: 3. Follow execution, observed stage"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -375,7 +375,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/first-run: relevant numbered stage"
+        "evals/first-run: 4. Inspect and verify the saved result, after step 4"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -398,7 +398,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/results-and-scores: relevant numbered stage"
+        "evals/results-and-scores: 1. Open and filter a run, after step 4"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -421,7 +421,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/results-and-scores: relevant numbered stage"
+        "evals/results-and-scores: 2. Inspect a record, after step 4"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -444,7 +444,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/results-and-scores: relevant numbered stage"
+        "evals/results-and-scores: 4. Inspect provenance and export, after step 4"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -467,7 +467,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/traces-and-sessions: relevant numbered stage"
+        "evals/traces-and-sessions: 2. Inspect native execution evidence, documented alternate Results \u2192 Inspect \u2192 View trace path, Inputs / outputs"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -481,6 +481,328 @@
       "validationStatus": "Real page observed after actual API actions; manually inspected for secrets. Complete guide qualification remains tracked separately.",
       "reviewedForSecrets": true,
       "sha256": "3aceebd63713c1beb3f94452a99f37acd4e856b446751e86dcd677a7afcb9145"
+    },
+    {
+      "id": "workspace-invite-form",
+      "file": "workspace-invite-form.png",
+      "alt": "Owner invitation form for a synthetic member before generating a private link.",
+      "caption": "Choose the recipient and role before generating an invitation. No live invitation link or password appears in this capture.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "workspace/team-and-roles: Invite a teammate, after step 3"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T01:47:48.296573+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "4913d560f308ffe9ec14866a29b0a831ce4897586d4079b41d89d6fe86f80eb8"
+    },
+    {
+      "id": "workspace-accept-invitation",
+      "file": "workspace-accept-invitation.png",
+      "alt": "Real member invitation acceptance form with empty password fields.",
+      "caption": "The signed-out recipient confirms Martian Docs Lab and the member role before joining. The private invitation URL is outside the captured page.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "workspace/team-and-roles: Accept an invitation and sign in, step 2 (existing organization member)"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Invited member; signed out",
+      "capturedAt": "2026-11-13T01:51:44.066278+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "b2fbd8a00cb26d9290723be05701574c6916d325d2cf3dbc0748b3d432ea0a1a"
+    },
+    {
+      "id": "workspace-team",
+      "file": "workspace-team.png",
+      "alt": "Retained Team list with synthetic owner, member and viewer accounts.",
+      "caption": "After signing in, the member can read all three retained organization roles. Invitation administration is reserved for owners/admins.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "workspace/team-and-roles: Accept an invitation and sign in, after step 5"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization member",
+      "capturedAt": "2026-11-13T03:18:45.055073+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "2eed4a7da85238e05e02160b6e368c72c6288a34efd01c42ef102caa866e2951"
+    },
+    {
+      "id": "access-viewer-results",
+      "file": "access-viewer-results.png",
+      "alt": "Viewer reading completed evaluation results with Run eval disabled.",
+      "caption": "A viewer can inspect the three saved results. Run eval is disabled; the real launch API also rejects this role.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "get-started/access: Verify and recover, observed stage"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization viewer",
+      "capturedAt": "2026-11-13T02:08:40.708097+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "75519598e54dd0843562fcd61862b7d7c363df1a36497f0719722b5de2cd1111"
+    },
+    {
+      "id": "evals-judging-code",
+      "file": "evals-judging-code.png",
+      "alt": "Three saved-output code criteria selected, with model criteria unavailable.",
+      "caption": "Contains expected text, Valid JSON and Response length score retained answers. Model options require operator setup in this QA environment.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/judging: 1. Apply a code criterion, step 4 (before Apply scorers)"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T02:21:52.226232+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "75673ee49ea88d8222d7da97d832dc765133c38069661edc01806ef147145dec"
+    },
+    {
+      "id": "evals-judging-code-feedback",
+      "file": "evals-code-feedback.png",
+      "alt": "Persisted native code feedback for the saved READY response.",
+      "caption": "READY contains the expected text and has five characters, but is not valid JSON. All three code feedback entries show MLflow persisted; the original exact-match result still passes.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/judging: 1. Apply a code criterion, after step 5"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T02:27:02.772127+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "bbc413d1ee7bb314588e0eb1d16faf9e4548f5d226d753f7410f2c157eabd75a"
+    },
+    {
+      "id": "evals-results-supplementary",
+      "file": "evals-code-feedback.png",
+      "alt": "Original passing result alongside three separate persisted code assessments.",
+      "caption": "Supplementary code assessments do not replace canonical exact match. A JSON-syntax failure and a passing exact-match answer can both be correct under their different definitions.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/results-and-scores: 3. Interpret supplementary scores, observed stage"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T02:27:02.772127+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "bbc413d1ee7bb314588e0eb1d16faf9e4548f5d226d753f7410f2c157eabd75a"
+    },
+    {
+      "id": "evals-reviews-queue",
+      "file": "evals-reviews-queue.png",
+      "alt": "Real queue form defining required questions for one selected teaching response.",
+      "caption": "Create a small queue and define distinct required criteria. Additional question fields continue below the visible part of this real form.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/human-reviews: 1. Create the review queue, steps 3\u20136 (before Create queue)"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T02:40:44.219854+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "e8f545fd7824d4a42c396181a762a94e7f05f6bc851856d5349603931ab50c84"
+    },
+    {
+      "id": "evals-reviews-answer",
+      "file": "evals-reviews-answer.png",
+      "alt": "Member text answer and explanation saved for the READY evaluation item.",
+      "caption": "The member saved a text answer with an evidence-based explanation. This capture still shows MLflow pending for that answer; verify native persistence and queue completion in the next step.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/human-reviews: 2. Answer a required question, after step 5"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization member",
+      "capturedAt": "2026-11-13T03:14:45.468165+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "ff62a85453cbb1e3875f4b7eaa081f87fc63c8862c07c481bb555f0c0bf21e88"
+    },
+    {
+      "id": "evals-reviews-complete",
+      "file": "evals-reviews-complete.png",
+      "alt": "Completed review queue with four verified typed answers after a full page refresh.",
+      "caption": "Complete means all four latest answers are verified: text, category READY, numeric 5 and Boolean Pass. These persisted answers are attributed to the synthetic member account.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/human-reviews: 3. Verify queue completion, after step 5"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization member",
+      "capturedAt": "2026-11-13T03:17:34.626493+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "aeedb6bfc86ea6871ada0cd21443f5ace81c06f27a9f48beac2283f41dfa67e6"
+    },
+    {
+      "id": "evals-reviews-questions",
+      "file": "evals-reviews-questions.png",
+      "alt": "Reusable Boolean review question at immutable version two.",
+      "caption": "Create next version saved v2. The earlier queue retained the original v1 wording in both actual UI and API readback.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/human-reviews: 4. Reuse a stable question definition, step 4"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T03:20:46.627958+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "657c9264e9f23de600fdca733b825b94f9df8683ec7f8ab86a1e7491d716b37a"
+    },
+    {
+      "id": "evals-compare-selection",
+      "file": "evals-compare-selection.png",
+      "alt": "Distinct baseline EV-1001 and changed candidate EV-1003 with canonical exact match selected.",
+      "caption": "Choose the completed baseline and candidate from the same immutable dataset. This comparison selects canonical exact match on both sides.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/compare: 1. Choose the pair, steps 2\u20134 (before Compare runs)"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T03:32:45.063813+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "87780f986a61adf426c45002b6ec93fe8aec0181e11822f21e795ca4ebbc9b57"
+    },
+    {
+      "id": "evals-compare-results",
+      "file": "evals-compare-results.png",
+      "alt": "Three paired teaching records with one regression and two unchanged exact-match outcomes.",
+      "caption": "READY and HELLO changed case or whitespace without changing their passing scores. The deliberate 4. response failed against 4, producing one regression with full three-record paired coverage.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/compare: 2. Read paired coverage and changes, observed stage"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T03:33:16.928216+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "9f547a2a35178c7d30fe7114cfe48301bb1f660ffeff7a668aa117e85d000118"
+    },
+    {
+      "id": "evals-compare-trace",
+      "file": "evals-compare-trace.png",
+      "alt": "Candidate native trace opened from the punctuation regression and retaining output \u201c4.\u201d.",
+      "caption": "The candidate native trace retains \u201c4.\u201d for the same arithmetic input; the baseline trace retained \u201c4\u201d. Both contexts were inspected. Reported tokens remain Unavailable for this deterministic callback.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/compare: 4. Follow evidence and retain the comparison, steps 1\u20132 (candidate native context)"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T03:35:56.538175+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "bbead055a032c34398c2cda9dc64a5debf1455faf5b595a7387003b3cb3d5c69"
     }
   ]
 }

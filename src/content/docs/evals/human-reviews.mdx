@@ -24,7 +24,7 @@ Choose a small set of synthetic results for the first queue. Each queue accepts 
 2. Click **Create review queue**; the action includes the selected-record count.
 3. Enter **Queue name**.
 4. Define the first required question using **Criterion**, **Question** and **Answer type**. Use Boolean, numeric, categorical or text; set the applicable numeric bounds or category labels.
-5. Use **Add required question** for another criterion, or select **Reusable question** and choose **Add saved question**.
+5. Use **Add required question** for another criterion, or select **Reusable question** and choose **Add saved question**. A saved question is appended; remove the unused default question with **Remove question 1** if you want only the saved rubric.
 6. Confirm **Assign reviewer**. Keep yourself or an unassigned workflow unless you have administrator authority to assign another person.
 7. Click **Create queue**.
 
@@ -63,13 +63,16 @@ For two results with three required questions, six latest answers must be comple
 3. When creating another queue, select that version using **Reusable question → Add saved question**.
 4. To change the definition later, choose **Create next version**. Existing queues retain their original question versions.
 
+<Screenshot id="evals-reviews-questions" />
+
 Question versions let reviewers use the same rubric consistently. They do not cause existing completed answers to be rewritten.
 
 ## Failures and recovery
 
 - For a stale review, reload the latest answer before editing; do not overwrite another reviewer’s work with an old revision.
-- Use **Retry saved review** after an unresolved acknowledgement. The same saved submission is inspected before another is admitted.
+- If a save acknowledgement is delayed, wait and refresh the latest review before submitting another edit; another submission can create an additional history entry. Use **Retry saved review** after an unresolved acknowledgement. The same saved submission is inspected before another is admitted.
 - A non-admin cannot reassign work currently assigned to someone else. Ask an owner/admin to change the assignment.
+- If a saved answer shows **MLflow pending**, use **Sync saved feedback** to retry that retained assessment, then recheck the queue. Do not use **Save review** again merely to synchronize feedback.
 - A queue waiting for native feedback can show pending synchronization after local answers exist. **Reconcile native queue**, when offered, checks its recorded feedback. Preserve unresolved evidence for administrator review rather than marking it complete manually.
 - A rating is an attributed opinion under a rubric. It does not independently prove an exploit, permission boundary or business-side effect.
 

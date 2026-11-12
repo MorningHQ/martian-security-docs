@@ -30,6 +30,10 @@ Model judging additionally must be enabled in your organization’s environment 
 
 Only the saved outputs are scored. **Valid JSON** is a syntax check, not your business schema. **Contains expected text** is a substring check, not semantic correctness. Response length counts Unicode characters. Choose criteria that actually measure the property you care about.
 
+Inspect a result's **Assessments** after the job completes. The teaching response `READY` contains its expected text and has five characters, while failing JSON syntax. Its original exact-match result still passes. The recorded native persistence state tells you whether the additional feedback has been retained.
+
+<Screenshot id="evals-judging-code-feedback" />
+
 ## 2. Define a custom model rubric
 
 1. As an owner/admin, open **Evals → Judges** and click **New judge**.
