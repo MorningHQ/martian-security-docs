@@ -1464,8 +1464,8 @@
     {
       "id": "evals/projects",
       "role": "owner/admin creates/archives; all customer roles browse",
-      "route": "/#/evals/overview",
-      "environment": "qualification pending; current beta customer source",
+      "route": "/#/evals",
+      "environment": "Real pinned local QA services; synthetic organization and disposable project",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1487,19 +1487,19 @@
           "id": "evals-projects-selector",
           "caption": "Organization/project toolbar identifying the selected evaluation context.",
           "alt": "Organization/project toolbar identifying the selected evaluation context",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-projects-create",
           "caption": "New evaluation project form with synthetic name and description.",
           "alt": "New evaluation project form with synthetic name and description",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-projects-archive",
           "caption": "Archived disposable project with retained history and new-work warning.",
           "alt": "Archived disposable project with retained history and new-work warning",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -1509,16 +1509,45 @@
         "Archive only disposable finished project and verify retained history",
         "Verify member/viewer project-mutation restrictions"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "Owner created a ready project, ran its three-record evaluation, switched scopes, refreshed and archived it. Historical results/traces remained readable; new work was disabled. Member/viewer creation and archive requests403; owner archived target admission409.",
+      "qualification": "verified",
       "documentationRoute": "/martian-security-docs/evals/projects/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Evaluation project lifecycle",
+          "result": "passed in named local QA"
+        }
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA",
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "paths": [
+            "src/components/EvalsScope.jsx",
+            "src/pages/Evals.jsx",
+            "src/lib/eval-explorer.js"
+          ]
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "paths": [
+            "app/api/evals_explorer.py",
+            "app/api/evals.py",
+            "app/integrations/registry.py"
+          ]
+        }
+      ]
     },
     {
       "id": "evals/quality-issues",
       "role": "all customer roles browse; member+ triages",
       "route": "/#/evals/issues",
-      "environment": "qualification pending; current beta customer source",
+      "environment": "Real pinned local QA services and synthetic organization",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1541,19 +1570,19 @@
           "id": "evals-issues-groups",
           "caption": "Recorded quality-issue group backed by actual failure evidence.",
           "alt": "Recorded quality-issue group backed by actual failure evidence",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-issues-triage",
           "caption": "Triage form selecting a concrete status and rationale for real traces.",
           "alt": "Triage form selecting a concrete status and rationale for real traces",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-issues-retained",
           "caption": "Saved triage status retained after refreshing the same issue selection.",
           "alt": "Saved triage status retained after refreshing the same issue selection",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -1563,10 +1592,37 @@
         "Refresh/reopen and verify retained triage",
         "Verify bounded coverage labels and viewer mutation restrictions"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "Real Boolean failure groups, native evidence, owner investigation/member dismissal, attributed retained decisions, filtered coverage and viewer write rejection passed in isolated local QA. A separately ready organization could read its own native context but received404 for the same customer-owned trace that its owning organization read200.",
+      "qualification": "verified",
       "documentationRoute": "/martian-security-docs/evals/quality-issues/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Quality-issue investigation and triage",
+          "result": "passed for the named path and environment"
+        }
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA",
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "paths": [
+            "src/pages/EvalExplorer.jsx",
+            "src/lib/eval-explorer.js"
+          ]
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "paths": [
+            "app/api/evals_explorer.py",
+            "app/evals_explorer.py"
+          ]
+        }
+      ]
     },
     {
       "id": "evals/results-and-scores",
@@ -1692,7 +1748,7 @@
       "id": "evals/suites-and-monitoring",
       "role": "member+ versions/applies suites; all customer roles read monitoring",
       "route": "/#/evals/suites",
-      "environment": "qualification pending; current beta customer source",
+      "environment": "Real pinned local QA services and synthetic organization",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1709,26 +1765,28 @@
       "screenshots": [
         "evals-suites-definition",
         "evals-suites-scorecard",
-        "evals-suites-monitoring"
+        "evals-suites-monitoring",
+        "evals-suites-apply",
+        "evals-suites-failed-gate"
       ],
       "screenshotStages": [
         {
           "id": "evals-suites-definition",
           "caption": "Reusable versioned code criteria and explicit threshold/coverage policy.",
           "alt": "Reusable versioned code criteria and explicit threshold/coverage policy",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-suites-scorecard",
           "caption": "Saved-output suite job scorecard with actual coverage and gate outcomes.",
           "alt": "Saved-output suite job scorecard with actual coverage and gate outcomes",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-suites-monitoring",
           "caption": "Retained scoring history linking job definitions and quality gates to runs.",
           "alt": "Retained scoring history linking job definitions and quality gates to runs",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -1738,10 +1796,40 @@
         "Create next version and confirm old job retains original",
         "Open Overview to Monitoring and follow persisted run/job history"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "Code-only suite creation, exact-version application, full native feedback, passing/failed gates, immutable prior policy, monitoring and viewer restrictions passed. Model criteria remain covered by the separately partial judging guide.",
+      "qualification": "verified",
       "documentationRoute": "/martian-security-docs/evals/suites-and-monitoring/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Code-suite versions and monitoring",
+          "result": "passed for the named path and environment"
+        }
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA (code criteria)",
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "paths": [
+            "src/pages/EvalSuites.jsx",
+            "src/components/EvalQuality.jsx",
+            "src/components/EvalsWorkbench.jsx",
+            "src/pages/EvalMonitoring.jsx"
+          ]
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "paths": [
+            "app/api/evals_quality.py",
+            "app/evals_quality.py",
+            "app/api/evals_workbench.py"
+          ]
+        }
+      ]
     },
     {
       "id": "evals/traces-and-sessions",
@@ -1766,14 +1854,16 @@
       "screenshots": [
         "evals-traces-filtered",
         "evals-traces-inspector",
-        "evals-traces-sessions"
+        "evals-traces-sessions",
+        "evals-traces-no-sessions",
+        "evals-traces-saved-view"
       ],
       "screenshotStages": [
         {
           "id": "evals-traces-filtered",
           "caption": "Real matching native traces with applied content or structured filters.",
           "alt": "Real matching native traces with applied content or structured filters",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-traces-inspector",
@@ -1796,7 +1886,7 @@
         "Verify private versus org shared view visibility",
         "Download and count bounded export without mocking"
       ],
-      "validationStatus": "A retained native evaluation trace with two spans and actual input/output was inspected in isolated local QA. Explorer filters, saved views and session grouping remain pending.",
+      "validationStatus": "Real content/state filters, table-native inspection, payload/CSV/JSON downloads, private/organization view lifecycle and access boundaries passed in isolated local QA. A view-save database timeout was retained and recovered after absence readback. SDK 0.1.2 does not forward native session metadata: 0 sessions and 1 ungrouped trace were observed. Positive conversation grouping remains unverified.",
       "qualification": "partial",
       "documentationRoute": "/martian-security-docs/evals/traces-and-sessions/",
       "validation": [
@@ -1805,6 +1895,41 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "First evaluation",
           "result": "passed for the named path; remaining guide checks explicitly pending"
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Native trace filters and saved views",
+          "result": "named read/view paths passed; positive conversation grouping remains pending"
+        }
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "paths": [
+            "src/pages/EvalExplorer.jsx",
+            "src/components/EvalsScope.jsx",
+            "src/lib/eval-explorer.js"
+          ]
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "paths": [
+            "app/api/evals_explorer.py",
+            "app/evals_explorer.py",
+            "app/evals_explorer_schema.py"
+          ]
+        },
+        {
+          "repository": "MorningHQ/martian-redteam",
+          "commit": "8fb884cbfea0a2cee78eee02eda615d8823b7718",
+          "paths": [
+            "src/martian/evals/plugin.py",
+            "src/martian/evals/session.py",
+            "docs/customer-integration.md"
+          ]
         }
       ]
     },
