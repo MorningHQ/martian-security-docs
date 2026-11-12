@@ -24,7 +24,7 @@ For a stateless first connection, start with the [HTTP adapter](/martian-securit
 - An HTTP agent whose registration includes **Session API base (optional)** and its matching **Session-management bearer token**. An existing registration without them must be replaced with one configured for session management; the endpoint fields are fixed after saving.
 - A [saved environment](/martian-security-docs/environments/create-and-launch/) containing only connector `stripe`, with its supported `paypal` simulation Ready and a synthetic account/transaction ledger. The payment account needs at least one transaction, no existing duplicate refund per capture, and an authorized paid order if you intend to investigate duplicate refunds.
 - Your operator's sandbox DNS/TLS and runtime services are available. The agent can reach the supplied run-scoped MCP gateway over its approved network path.
-- The matching application/source release shown above. The example's fixed system mapping must match your environment before you use it.
+- The matching [application/source baseline](/martian-security-docs/reference/verification/#source-baseline). The example's fixed system mapping must match your environment before you use it.
 
 ## 1. Find the actual system, environment and agent IDs
 

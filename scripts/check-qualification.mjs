@@ -47,5 +47,5 @@ for (const file of sourceFiles('src/content/docs')) {
   }
 }
 if (release && pending.length) failures.push(`${pending.length} guide walkthroughs remain unverified`);
-console.log(JSON.stringify({ guides: guides.size, capturedScreenshots: screenshots.size, pendingScreenshotReferences: pendingScreenshots, pendingWalkthroughs: pending, releaseAudit: release, failures }, null, 2));
+console.log(JSON.stringify({ guides: guides.size, capturedScreenshotReferences: screenshots.size, uniqueCapturedImages: new Set(registry.screenshots.map(entry => entry.file)).size, pendingScreenshotReferences: pendingScreenshots, pendingWalkthroughs: pending, releaseAudit: release, failures }, null, 2));
 if (failures.length) process.exitCode = 1;

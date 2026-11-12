@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-13",
+  "environment": "Isolated local QA; real pinned Frontend, Backend, Agents and MLflow3.16.1; synthetic Martian Docs Lab organization. No API interception or fabricated UI.",
+  "sourceRevisions": {
+    "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+    "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+    "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+  },
+  "role": "Organization owner, platform_admin false",
+  "observedPaths": [
+    {
+      "task": "Owner enrollment and access",
+      "result": "passed for the owner path",
+      "observed": [
+        "Manual owner invitation accepted through actual UI; POST /v1/auth/invitations/accept returned201",
+        "Organization creation completed and Evals provisioned",
+        "Customer sign-in returned200; Default project and owner role visible",
+        "Reload retained customer workspace and published content"
+      ],
+      "remaining": [
+        "Existing-organization member/viewer invitation and denial checks"
+      ]
+    },
+    {
+      "task": "Teaching HTTP target",
+      "result": "passed for public HTTPS and HTTP onboarding",
+      "observed": [
+        "Exact downloadable server.py and demo_agent:answer running behind temporary HTTPS",
+        "GET /health200 and POST /chat200 with READY; TLS verification enabled",
+        "Missing and wrong bearer each returned401",
+        "Downloaded preflight.py passed over public HTTPS using the host OS CA bundle",
+        "Real owner UI saved connection201, validated200 and approved200",
+        "Active / Ready for assessments survived a full page refresh"
+      ],
+      "remaining": [
+        "MCP/browser execution and credential-rotation/disable boundaries are separate pending checks"
+      ]
+    },
+    {
+      "task": "Three-record dataset",
+      "result": "passed for JSONL import, publication and readback",
+      "observed": [
+        "Created First evaluation draft",
+        "Selected actual first-evaluation.jsonl in browser file chooser",
+        "Preview3 new /0 updated; actual Import produced3 usable records",
+        "Published after adding supported private manifest storage to isolated QA infrastructure",
+        "Reopened published version after full refresh; READY, HELLO and4 retained"
+      ],
+      "contentSha256": "8251bde88c0183c607c9456ef678a7c3f99a8dcd71b9cd09cb9e83837a749282",
+      "remaining": [
+        "CSV/JSON variant imports, editor revisions, Martian-copy and role denial checks"
+      ]
+    },
+    {
+      "task": "First evaluation",
+      "result": "passed for the owner tutorial path",
+      "runCode": "EV-1001",
+      "observed": [
+        "Launched through actual Run an evaluation UI; POST /v1/evals returned202",
+        "Approved HTTP target and pinned three-record dataset selected with100-row ceiling",
+        "Observed actual Running state, then Completed with3 passed /0 failed /0 errors /0 skipped",
+        "Actual outputs READY, HELLO and4 match expectations",
+        "Native provenance FINISHED and matching published dataset content hash",
+        "Opened real native trace with eval.exact_match and martian.target.chat spans and retained input/output",
+        "Full page refresh retained terminal state and all3 results"
+      ],
+      "remaining": [
+        "Viewer launch denial"
+      ]
+    },
+    {
+      "task": "Result filters and downloads",
+      "result": "passed for real displayed selection",
+      "observed": [
+        "READY search reduced visible results to1",
+        "Downloaded JSON through actual Export JSON action contained1 READY item and original whole-run counters",
+        "Cleared filter; actual Export CSV download contained3 rows and expected result/feedback columns"
+      ],
+      "downloadSha256": {
+        "evals-first-run-filtered.json": "17b834899dc26496e9f17153231a313880028af91fb4d6227a53bcf58d2c6573",
+        "evals-first-run.csv": "27fc6dae36896762d5c2d24303d6d5b0b1a8f27651fc051ff8289cadf348c5db"
+      },
+      "remaining": [
+        "Supplementary code/model scores, review feedback and role boundaries remain tracked separately"
+      ]
+    }
+  ],
+  "knownEnvironmentLimits": [
+    "Sandbox orchestrator is not configured in this QA stack; GET /v1/connectors returns503 and the sidebar may report stale data. No mock catalog is substituted.",
+    "Current local model credentials are denied Bedrock inference; real model-based assessment/judge and sandbox seed-generation qualification remain pending AWS sign-in refresh.",
+    "These local results do not attest to deployment parity or availability in a customer AWS-beta organization."
+  ]
+}

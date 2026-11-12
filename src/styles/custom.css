@@ -138,6 +138,14 @@ starlight-toc a[aria-current='true'] { color: var(--sl-color-white); font-weight
 .start-path .path-arrow { font-size: 20px; color: var(--sl-color-gray-3); }
 @media (max-width: 49.99rem) { .start-path { padding: 1rem; grid-template-columns: 1.4rem 1fr auto; gap: .65rem; } .guide-meta a { margin-left: 0; } }
 
+.workflow-options { display: grid; gap: 0; margin-block: 1.25rem; border: 1px solid var(--sl-color-hairline); border-radius: 8px; }
+.workflow-options > div { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: 1rem 1.15rem; }
+.workflow-options > div + div { margin-top: 0; border-top: 1px solid var(--sl-color-hairline); }
+.workflow-options dt { font-size: 12.5px; font-weight: 600; color: var(--sl-color-white); }
+.workflow-options dd { margin: 0; font-size: 12.5px; line-height: 1.7; color: var(--sl-color-gray-3); }
+.workflow-options dd p { margin: 0; }
+.workflow-options dd p + p { margin-top: .3rem; }
+.workflow-options .workflow-question { color: var(--sl-color-white); }
 @media (max-width: 49.99rem) {
-  .workflow-comparison :is(th,td):nth-child(2) { white-space: nowrap; overflow-wrap: normal; word-break: normal; min-width: 6.75rem; }
+  .workflow-options > div { grid-template-columns: 1fr; gap: .45rem; padding: 1rem; }
 }

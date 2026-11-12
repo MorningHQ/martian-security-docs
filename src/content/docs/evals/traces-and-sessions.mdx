@@ -14,7 +14,7 @@ Use the trace explorer to follow recorded requests and inspect the spans, inputs
 
 ## Before you start
 
-Any customer role can inspect authorized native traces in the release shown above. Your organization must have ready Evals setup and retained trace evidence in the selected project. **Members** or higher can save views; viewers can use organization-shared views. You do not need a separate MLflow login or MLflow credentials.
+Any customer role can inspect authorized native traces in the current beta console. Your organization must have ready Evals setup and retained trace evidence in the selected project. **Members** or higher can save views; viewers can use organization-shared views. You do not need a separate MLflow login or MLflow credentials.
 
 Complete a [first evaluation](/martian-security-docs/evals/first-run/) to create fresh evidence. Not every request reports a session, user, token count, cost or model identity. Missing fields stay unavailable.
 
@@ -37,6 +37,8 @@ Start with a narrow, known request or recent time window. An empty selection is 
 3. Inspect available **Overview**, **Messages**, **Attributes**, **Events** and **Usage** tabs. Use the span/tree or timeline controls shown by the inspector for the recorded trace structure.
 4. Expand **Trace assessments and metadata** to inspect retained feedback and identifiers.
 5. Choose **Download native payload** when you need the retained native evidence for an authorized review.
+
+For a trace attached to an evaluation result, you can also open the run's **Results → Inspect → View trace**. The capture below shows that result-drawer path, including its native span explorer and recorded input/output. The trace-table workflow above remains separately tracked in the verification record.
 
 <Screenshot id="evals-traces-inspector" />
 
