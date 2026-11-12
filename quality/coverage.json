@@ -2004,7 +2004,7 @@
         "sdk-ci-session",
         "sdk-ci-test-results"
       ],
-      "qualification": "pending",
+      "qualification": "partial",
       "sources": [
         {
           "repository": "MorningHQ/martian-redteam",
@@ -2027,13 +2027,21 @@
           ]
         }
       ],
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "validationStatus": "In isolated local QA, both Evals tests passed and the dataset result/session were retained. The original required-export command exited1; supported recovery later confirmed native exports without rerunning callbacks. A clean original strict-CI pass, combined model-based execution and hosted GitHub runner execution remain unverified.",
       "requiredValidation": [
         "Verify released commands and configuration",
         "Exercise hosted real-service success and relevant failure paths",
         "Verify retained reports and UI state after refresh"
       ],
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Released SDK Evals and retained CI recovery",
+          "result": "tests, persistence and recovery passed; original strict gate exit1 is preserved"
+        }
+      ],
+      "environment": "Released SDK 0.1.2 and real isolated local QA Backend/MLflow"
     },
     {
       "id": "sdk/evaluations",
@@ -2055,9 +2063,10 @@
       ],
       "screenshots": [
         "sdk-evaluation-result",
-        "sdk-ci-test-results"
+        "sdk-ci-test-results",
+        "sdk-dataset-published"
       ],
-      "qualification": "pending",
+      "qualification": "partial",
       "sources": [
         {
           "repository": "MorningHQ/martian-redteam",
@@ -2080,13 +2089,21 @@
           ]
         }
       ],
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "validationStatus": "In isolated local QA, both Evals tests passed and the dataset result/session were retained. The original required-export command exited1; supported recovery later confirmed native exports without rerunning callbacks. A clean original strict-CI pass, combined model-based execution and hosted GitHub runner execution remain unverified.",
       "requiredValidation": [
         "Verify released commands and configuration",
         "Exercise hosted real-service success and relevant failure paths",
         "Verify retained reports and UI state after refresh"
       ],
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Released SDK Evals and retained CI recovery",
+          "result": "tests, persistence and recovery passed; original strict gate exit1 is preserved"
+        }
+      ],
+      "environment": "Released SDK 0.1.2 and real isolated local QA Backend/MLflow"
     },
     {
       "id": "sdk/install-and-configure",
@@ -2109,7 +2126,7 @@
         "sdk-api-keys",
         "sdk-create-key"
       ],
-      "qualification": "pending",
+      "qualification": "verified",
       "sources": [
         {
           "repository": "MorningHQ/martian-redteam",
@@ -2132,13 +2149,23 @@
           ]
         }
       ],
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "validationStatus": "Released installation/config validation, owner-created scoped key, actual SDK agent lookup, metadata readback, machine/console authority separation and post-revocation401/lookup exit2 passed.",
       "requiredValidation": [
         "Verify released commands and configuration",
         "Exercise hosted real-service success and relevant failure paths",
         "Verify retained reports and UI state after refresh"
       ],
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Released SDK setup and key boundaries",
+          "result": "passed in the named local QA environment"
+        }
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA; SDK 0.1.2",
+      "environment": "Released SDK 0.1.2 with the real isolated QA Backend and synthetic organization"
     },
     {
       "id": "sdk/redteam",

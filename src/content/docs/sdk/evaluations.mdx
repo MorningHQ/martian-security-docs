@@ -14,10 +14,10 @@ Use `martian.evals` to run your prediction function locally and record regressio
 
 ## Before you start
 
-- Complete [SDK installation and configuration](/martian-security-docs/sdk/install-and-configure/) and use **`martian-sdk[evals]==0.1.2`**, Python 3.12+, from the tutorial **Git repository root** prepared there. The source must be committed before taking its revision for a persisted result.
+- For the local preview, complete only [installation step 1](/martian-security-docs/sdk/install-and-configure/#1-download-the-runnable-tutorial-and-install-the-release). Use **`martian-sdk[evals]==0.1.2`**, Python 3.12+, from the tutorial **Git repository root** prepared there.
 - The included `demo_agent.answer` is a deterministic support program. It demonstrates wiring and repeatable assertions; it is not an LLM or evidence about a production agent.
 - A local inline preview needs no platform account or model API key.
-- Hosted persistence needs a compatible enabled organization, a key with `evals:read`, `evals:write`, `ci:read`, and `ci:write`, and an organization-owned agent UUID/tested Git revision. Dataset restrictions must permit the dataset below.
+- Before hosted persistence, complete the remaining [SDK configuration](/martian-security-docs/sdk/install-and-configure/#2-open-api-key-management). It needs a compatible enabled organization, a key with `evals:read`, `evals:write`, `ci:read`, and `ci:write`, and an organization-owned agent UUID/tested Git revision. Commit the source before taking that revision. Dataset restrictions must permit the dataset below.
 - Members may author dataset drafts; an **owner/admin publishes** the version used by this tutorial. Use [dataset authoring](/martian-security-docs/evals/datasets/) for the exact import/validation/publication flow.
 
 ## 1. Run the free local preview
@@ -68,7 +68,9 @@ Keep `@mlflow.trace` and the final assertion. `assert result.passed` is not a su
 
 1. In the intended organization, open **Evals → Datasets**.
 2. Follow [dataset authoring](/martian-security-docs/evals/datasets/) to import [support-regressions.jsonl](/martian-security-docs/examples/sdk/support-regressions.jsonl).
-3. Name the dataset **`docs-support-regressions`**, validate it, and have an owner/admin publish the version.
+3. Name the dataset **`docs-support-regressions`**, confirm automatic validation reports **2 usable in runs**, and have an owner/admin publish the version. The download uses console import fields `input` and `expected_output`; the inline Python example above uses nested `inputs.message` and `expectations.expected_response` fields.
+
+<Screenshot id="sdk-dataset-published" />
 4. Verify that both active records have the exact tutorial questions and expected answers. If you used another name, set `DEMO_DATASET_NAME` to that published name.
 
 The dataset is small enough to inspect completely. The callback answers these two questions; replace it and the test data together when moving to your own application.
@@ -126,5 +128,7 @@ Dataset tests are **client-executed/server-scored**. Inline scorer checks are **
 - SDK dataset CI pulls are capped at **100 active records per dataset test**. Checks support up to **100 rows and 20 scorers** per test; sessions support **100 tests and 1,000 combined rows/probes**, within the request-body limit. These limits differ from the console's admitted run budgets.
 - Do not set a remote `MLFLOW_TRACKING_URI`. Do not publish `.martian-local-mlflow/` as a CI artifact. Retain the safe receipt instead.
 - `--require-export` waits for bounded export confirmation. An export problem does not justify rerunning the target; inspect the saved session and available **Retry export** action first.
+
+If the tests pass and upload is persisted but required export fails, preserve the original failed receipt. An owner/admin can use **Retry export** in **CI sessions**, then **Refresh** to inspect the retained export. A separate dataset-run telemetry warning needs administrator investigation of that run. Recovering saved evidence does not change the original command's exit code; record recovery separately.
 
 Continue with [red teaming](/martian-security-docs/sdk/redteam/) or [combined CI](/martian-security-docs/sdk/ci/). For the browser-run workflow, see [your first evaluation](/martian-security-docs/evals/first-run/).

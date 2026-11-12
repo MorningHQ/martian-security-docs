@@ -11,12 +11,12 @@
     {
       "scope": "Original Hermes link/anchor/asset/base checker",
       "result": "passed",
-      "details": "3,087 local links/anchors/assets/base-path references checked with zero failures"
+      "details": "3,110 local links/anchors/assets/base-path references checked with zero failures"
     },
     {
       "scope": "Released SDK0.1.2 install, download and Git tutorial",
       "result": "passed",
-      "details": "Fresh tutorial extraction, isolated Git repository, exact pip install, real local two-record MLflow evaluation and19 command/setup checks; hosted services not exercised"
+      "details": "Fresh twelve-file tutorial extraction, isolated Git repository, exact pip install, local two-record MLflow evaluation and 19 command/setup checks; real Backend key/Evals/CI checks are recorded separately below."
     },
     {
       "scope": "HTTP adapter example real-socket/auth/failure checks",
@@ -25,8 +25,8 @@
     },
     {
       "scope": "Simulated first-time-reader and documentation browser review",
-      "result": "passed against published PR2 and local follow-up edits",
-      "details": "AI simulated novice review, no human participant. Live PR2 desktop/narrow navigation, natural search, themes, focus, full-size images and deep refresh passed; light/dark1440x1000 and390x844 showed no overflow or docs console errors. Question reuse instructions now explain removing the unused default question."
+      "result": "passed for current SDK update in local production preview; earlier published-site checks retained",
+      "details": "AI simulated novice review; no human participant. SDK installation/Evals/CI checked at1440x1000 and390x844 in light/dark themes: search navigation, deep refresh, full-size1440x1000 CI image, exact browser-downloaded twelve-file ZIP and seven example GETs passed with no page-wide overflow or docs console errors. Fixed contradictory inline field names and clarified that the account-free preview needs only installation step1; hosted configuration is separate. Original strict-CI exit1 and later recovery remain distinct."
     },
     {
       "scope": "Real customer onboarding, HTTP adapter and first evaluation",
@@ -38,7 +38,7 @@
     {
       "scope": "Real screenshot registry",
       "result": "passed",
-      "details": "35 registered references to31 unique1440x1000 application PNGs; local SHA-256, guide/stage, role/environment/date/source provenance and manual secret review retained."
+      "details": "41 registered references to 36 unique 1440x1000 application PNGs; local SHA-256, guide/stage, role/environment/date/source provenance and manual secret review retained."
     },
     {
       "scope": "Canonical changed-target comparison",
@@ -50,12 +50,24 @@
     {
       "scope": "Complete end-to-end qualification audit",
       "result": "incomplete; audit correctly fails",
-      "details": "32task guides:6verified in namedlocalQA environments,5partial,21pending;63required screenshot references and26full walkthrough qualifications remain outstanding. No release gate was disabled."
+      "details": "32 task guides: 7 verified in named local QA environments, 7 partial, 18 pending; 57 required screenshot references and 25 full walkthrough qualifications remain outstanding. No release gate was disabled."
+    },
+    {
+      "scope": "Console-import example contract regression",
+      "result": "passed",
+      "details": "The real console rejected the original SDK prompt/expected import schema. Corrected input/expected_output records imported/published successfully. New static guard accepts both downloads/five records and rejects the original faulty fixture."
+    },
+    {
+      "scope": "Released SDK0.1.2 real Backend key, Evals and export recovery",
+      "environment": "Isolated local QA, real Backend/MLflow and synthetic organization",
+      "result": "setup and tests passed; original strictCIexit1 preserved; retained exports recovered",
+      "record": "quality/walkthroughs.json",
+      "details": "Scoped key creation/identity/authority/revocation checked; two SDK tests passed with persisted session and dataset2passes. Existing-session export and separate native finalization recovered without callback rerun. Original require-export receipt remains failed."
     }
   ],
   "remainingGaps": [
     "Remaining interfaces, advanced Evals, red teaming and their application screenshots still need qualification.",
-    "Real-service SDK hosted execution and key scopes remain pending.",
+    "SDK setup/key boundaries and Evals persistence/recovery passed in local QA. A clean original strict-CI pass, combined model-based execution and hosted GitHub runner execution remain unverified.",
     "Model-based assessments/judges and seed generation require working inference access; AWS sign-in refresh requested.",
     "Sandbox orchestration/readiness is not available in the SDK-derived local QA stack; connectors503 is recorded.",
     "Local QA proves the named pinned-source behavior, not hosted AWS-beta parity."

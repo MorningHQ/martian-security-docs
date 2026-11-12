@@ -5,8 +5,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "node scripts/check-docs.mjs && node scripts/check-qualification.mjs",
-    "check:release": "node scripts/check-docs.mjs && node scripts/check-qualification.mjs --release"
+    "check": "node scripts/check-docs.mjs && node scripts/check-qualification.mjs && node scripts/check-examples.mjs",
+    "check:release": "node scripts/check-docs.mjs && node scripts/check-examples.mjs && node scripts/check-qualification.mjs --release",
+    "check:examples": "node scripts/check-examples.mjs"
   },
   "keywords": [],
   "author": "",

@@ -803,6 +803,151 @@
       "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
       "reviewedForSecrets": true,
       "sha256": "bbead055a032c34398c2cda9dc64a5debf1455faf5b595a7387003b3cb3d5c69"
+    },
+    {
+      "id": "sdk-api-keys",
+      "file": "sdk-api-keys.png",
+      "alt": "Actual SDK key metadata with four Evals and CI permissions and an agent restriction.",
+      "caption": "The owner can manage SDK keys on Evals \u2192 Runs. This list shows permissions, restriction, expiry and a prefix; the once-shown credential was closed and is absent from the image.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/install-and-configure: 2. Open API-key management, after step 3"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow 3.16.1; released SDK 0.1.2; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false. SDK execution used a separate scoped machine key.",
+      "capturedAt": "2026-11-13T04:24:12.631539+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Named local QA releases and actual installed SDK 0.1.2; not an AWS-beta deployment attestation.",
+      "validationStatus": "Real UI following actual key, dataset and SDK/API actions; manually inspected for secrets. Original strict CI exit 1 and later evidence recovery are distinguished.",
+      "reviewedForSecrets": true,
+      "sha256": "bb355b056560d0d2dbe1fb0bda261bbbfa529fe34104fd416ec02ceb93879398"
+    },
+    {
+      "id": "sdk-create-key",
+      "file": "sdk-key-form.png",
+      "alt": "Create API key form with four Evals and CI permissions, a one-day expiry and the teaching agent restriction.",
+      "caption": "Choose permissions and an existing registration before creating the key. Hosted redteam is disabled in this QA environment. This capture precedes credential generation.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/install-and-configure: 3. Choose the smallest useful permissions, before Create API key and credential disclosure"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow 3.16.1; released SDK 0.1.2; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false. SDK execution used a separate scoped machine key.",
+      "capturedAt": "2026-11-13T03:47:13.822893+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Named local QA releases and actual installed SDK 0.1.2; not an AWS-beta deployment attestation.",
+      "validationStatus": "Real UI following actual key, dataset and SDK/API actions; manually inspected for secrets. Original strict CI exit 1 and later evidence recovery are distinguished.",
+      "reviewedForSecrets": true,
+      "sha256": "eafa1c4e1dc8bd4cd1a4aaf1670e3ef1b438c381e33fcca6a34c180271df3e9d"
+    },
+    {
+      "id": "sdk-dataset-published",
+      "file": "sdk-dataset-published.png",
+      "alt": "Corrected SDK tutorial dataset published with two usable synthetic support records.",
+      "caption": "The console accepted input/expected_output import fields and published both records. The SDK loads this dataset by its published name; the inline Python example uses nested inputs.message and expectations.expected_response fields.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/evaluations: 3. Publish the two-record tutorial dataset, after step 3"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow 3.16.1; released SDK 0.1.2; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false. SDK execution used a separate scoped machine key.",
+      "capturedAt": "2026-11-13T04:28:49.377491+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Named local QA releases and actual installed SDK 0.1.2; not an AWS-beta deployment attestation.",
+      "validationStatus": "Real UI following actual key, dataset and SDK/API actions; manually inspected for secrets. Original strict CI exit 1 and later evidence recovery are distinguished.",
+      "reviewedForSecrets": true,
+      "sha256": "b3b4bc5bdf3cde027cf08e9963e131e147565330696d0475864adacf8d2e5df9"
+    },
+    {
+      "id": "sdk-evaluation-result",
+      "file": "sdk-evaluation-result.png",
+      "alt": "Retained EV-1004 SDK dataset run with two matching answers and two canonical passes after refresh.",
+      "caption": "The released SDK executed its local callback and Backend scored both outputs. The recorded results survived refresh; native finalization was recovered separately without another callback execution.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/evaluations: 5. Verify the retained result, after step 3"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow 3.16.1; released SDK 0.1.2; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false. SDK execution used a separate scoped machine key.",
+      "capturedAt": "2026-11-13T04:53:49.529266+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Named local QA releases and actual installed SDK 0.1.2; not an AWS-beta deployment attestation.",
+      "validationStatus": "Real UI following actual key, dataset and SDK/API actions; manually inspected for secrets. Original strict CI exit 1 and later evidence recovery are distinguished.",
+      "reviewedForSecrets": true,
+      "sha256": "79ae28aae23af3f044d34cd0fa5ab22d5316047c77a5cdca2721c17d5c946326"
+    },
+    {
+      "id": "sdk-ci-session",
+      "file": "sdk-ci-test-results.png",
+      "alt": "Evals-only CI session with two passed tests and its retained export recovered to Exported to MLflow.",
+      "caption": "The Evals-only session is exported after owner recovery. Its original strict CLI receipt still records exit 1; this image does not establish a clean original gate or a combined redteam run.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/ci: 5. Verify the saved console session, after step 3"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow 3.16.1; released SDK 0.1.2; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false. SDK execution used a separate scoped machine key.",
+      "capturedAt": "2026-11-13T04:48:21.798343+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Named local QA releases and actual installed SDK 0.1.2; not an AWS-beta deployment attestation.",
+      "validationStatus": "Real UI following actual key, dataset and SDK/API actions; manually inspected for secrets. Original strict CI exit 1 and later evidence recovery are distinguished.",
+      "reviewedForSecrets": true,
+      "sha256": "8146b64c7f9c395c74580648be00c4a889cd3467d66d96b51bf19fe468b95ce2"
+    },
+    {
+      "id": "sdk-ci-test-results",
+      "file": "sdk-ci-test-results.png",
+      "alt": "Expanded saved CI session containing a dataset test and an inline scorer-check test.",
+      "caption": "Show tests retains the server-scored dataset result and the client-scored inline checks. Inline content is represented by digests. The stored export was recovered without running the tests again.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/ci: 5. Verify the saved console session, after step 6",
+        "sdk/evaluations: 5. Verify the retained result, after step 4"
+      ],
+      "environment": "Isolated local QA: real pinned Frontend/Backend/Agents and MLflow 3.16.1; released SDK 0.1.2; synthetic Martian Docs Lab",
+      "role": "Organization owner; platform_admin false. SDK execution used a separate scoped machine key.",
+      "capturedAt": "2026-11-13T04:48:21.798343+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Named local QA releases and actual installed SDK 0.1.2; not an AWS-beta deployment attestation.",
+      "validationStatus": "Real UI following actual key, dataset and SDK/API actions; manually inspected for secrets. Original strict CI exit 1 and later evidence recovery are distinguished.",
+      "reviewedForSecrets": true,
+      "sha256": "8146b64c7f9c395c74580648be00c4a889cd3467d66d96b51bf19fe468b95ce2"
     }
   ]
 }

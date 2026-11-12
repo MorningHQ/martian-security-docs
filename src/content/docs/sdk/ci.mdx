@@ -121,6 +121,8 @@ Dataset tests are labelled **pinned dataset** with client-executed/server-scored
 
 If export is retryable and your role permits it, **Retry export** retries delivery of retained evidence. It does not repeat the evaluation or attack. Preserve the original session ID while investigating.
 
+The retry acknowledgement can still contain the previous failed state while work is queued. Use **Refresh** and wait for **Exported to MLflow**; avoid overlapping retries. Keep an original `exit_code: 1` receipt unchanged even if the retained export is later recovered. A dataset run's telemetry is separate from the session's checks export, so inspect both when either reports a warning.
+
 ## 6. Add the trusted CI workflow
 
 In the already prepared tutorial Git repository, install [github-actions.yml](/martian-security-docs/examples/sdk/github-actions.yml) at its GitHub Actions path and commit the workflow together with the required source:
