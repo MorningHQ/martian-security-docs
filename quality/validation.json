@@ -25,14 +25,22 @@
     },
     {
       "scope": "Simulated first-time-reader and documentation browser review",
-      "result": "passed with fixes in progress",
-      "details": "Desktop1440x1000 and narrow390x844 navigation/search/themes/focus/full-size image/deep refresh passed; mobile label wrapping/search boilerplate/pending notices/version context being corrected"
+      "result": "passed after targeted fixes; publication of draft fixes pending",
+      "details": "AI simulated novice review, no human participant. Live desktop/narrow navigation, search, themes, focus, full-size image and deep refresh passed. Follow-up local light/dark1440x1000 and390x844 checks confirmed naturally wrapping comparison rows, no overflow, explicit source-baseline link and zero docs console errors."
+    },
+    {
+      "scope": "Real customer onboarding, HTTP adapter and first evaluation",
+      "environment": "Isolated local QA; real pinned Frontend, Backend, Agents and MLflow3.16.1; synthetic Martian Docs Lab organization. No API interception or fabricated UI.",
+      "result": "passed for the named owner paths; full-guide audit remains pending",
+      "record": "quality/walkthroughs.json",
+      "details": "Owner invitation/sign-in, public HTTPS and bearer401 checks, actual HTTP save/validate/approve, JSONL import/publication, EV-1001 three passed answers, native FINISHED/two-span trace, after-refresh retained results, filtered JSON1 and CSV3 downloads."
     }
   ],
   "remainingGaps": [
-    "Authenticated beta application workflows and screenshots require test access; AWS login refresh requested.",
-    "Real-service SDK hosted execution and API-key scope boundaries remain pending.",
-    "A new isolated real Backend/Agents/MLflow stack has started and applied schema0049 with synthetic bootstrap owner; workflow qualification is next.",
-    "Screenshots and complete guide walkthroughs remain pending; source-only instructions are labelled."
+    "Viewer/member/admin boundaries, advanced Evals and remaining real application journeys/screenshots are still being qualified.",
+    "Real-service SDK hosted execution and key scopes remain pending.",
+    "Model-based assessments/judges and seed generation require working inference access; AWS sign-in refresh requested.",
+    "Sandbox orchestration/readiness is not available in the SDK-derived local QA stack; connectors503 is recorded.",
+    "Local QA proves the named pinned-source behavior, not hosted AWS-beta parity."
   ]
 }

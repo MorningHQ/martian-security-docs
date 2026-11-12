@@ -70,8 +70,8 @@
         "agents-approval",
         "agents-ready"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "partial",
+      "validationStatus": "The HTTP connection path passed real HTTPS validation, approval and refresh in isolated local QA. MCP/browser execution and credential rotation/disable checks remain pending.",
       "documentationRoute": "/martian-security-docs/agents/connections/",
       "role": "owner, admin",
       "route": "/#/agents/onboard",
@@ -98,7 +98,14 @@
           "Rotation and disable boundary"
         ]
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Teaching HTTP target",
+          "result": "passed for the named path; remaining guide checks explicitly pending"
+        }
+      ],
       "screenshots": [
         "agents-details",
         "agents-browser-details",
@@ -106,7 +113,8 @@
         "agents-mcp-approval",
         "agents-approval",
         "agents-ready"
-      ]
+      ],
+      "environment": "Isolated local QA; synthetic organization; current pinned source baseline"
     },
     {
       "id": "agents/http-adapter",
@@ -124,7 +132,7 @@
         "OPTIONS /chat connectivity",
         "sync/async local callback returning nonempty text"
       ],
-      "qualification": "pending",
+      "qualification": "partial",
       "screenshots": [
         "agents-http-adapter-settings",
         "agents-http-adapter-approved"
@@ -149,8 +157,16 @@
         "Run three-record Evals dataset through real Backend/Agents and confirm retained outputs; source example alone does not prove this"
       ],
       "documentationRoute": "/martian-security-docs/agents/http-adapter/",
-      "validation": [],
-      "validationStatus": "Local real-socket example verified; public HTTPS and real console onboarding pending."
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Teaching HTTP target",
+          "result": "passed for the named path; remaining guide checks explicitly pending"
+        }
+      ],
+      "validationStatus": "The downloadable teaching adapter passed real public HTTPS, bearer-failure, console approval and three-record Evals checks in isolated local QA. This temporary test ingress does not qualify the separate Caddy hosting recipe.",
+      "environment": "Isolated local QA; synthetic organization; current pinned source baseline"
     },
     {
       "id": "agents/sandbox-bindings",
@@ -1164,7 +1180,7 @@
       "id": "evals/datasets",
       "role": "member+ edits; owner/admin publishes; viewer reads published",
       "route": "/#/evals/datasets",
-      "environment": "qualification pending; current beta customer source",
+      "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1219,16 +1235,23 @@
         "Refresh retained records/version",
         "Verify viewer edit and member publish restrictions"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "JSONL import, automatic validation, publication and after-refresh readback passed in isolated local QA. Other import formats, editing, Martian dataset copying and role-boundary checks remain pending.",
+      "qualification": "partial",
       "documentationRoute": "/martian-security-docs/evals/datasets/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Three-record dataset",
+          "result": "passed for the named path; remaining guide checks explicitly pending"
+        }
+      ]
     },
     {
       "id": "evals/first-run",
       "role": "owner/admin to prepare dataset; member+ to run; viewer can read",
       "route": "/#/evals",
-      "environment": "qualification pending; current beta customer source",
+      "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1282,10 +1305,17 @@
         "Inspect trace/provenance and refresh retained run",
         "Verify viewer cannot launch"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "The complete owner tutorial passed with three actual HTTP responses, native trace/provenance and retained results after refresh in isolated local QA. Viewer launch-denial qualification remains pending.",
+      "qualification": "partial",
       "documentationRoute": "/martian-security-docs/evals/first-run/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "First evaluation",
+          "result": "passed for the named path; remaining guide checks explicitly pending"
+        }
+      ]
     },
     {
       "id": "evals/human-reviews",
@@ -1511,7 +1541,7 @@
       "id": "evals/results-and-scores",
       "role": "all customer roles read/export; member+ for supplementary mutations",
       "route": "/#/evals",
-      "environment": "qualification pending; current beta customer source",
+      "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1557,10 +1587,17 @@
         "Export current filtered records and independently count them",
         "Inspect provenance and refresh retained run"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "Results, a native trace, provenance, filtered JSON and full CSV downloads passed in isolated local QA. Supplementary scoring and role-boundary qualification remain pending.",
+      "qualification": "partial",
       "documentationRoute": "/martian-security-docs/evals/results-and-scores/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Result filters and downloads",
+          "result": "passed for the named path; remaining guide checks explicitly pending"
+        }
+      ]
     },
     {
       "id": "evals/stopping-and-recovery",
@@ -1676,7 +1713,7 @@
       "id": "evals/traces-and-sessions",
       "role": "all customer roles read/export; member+ saves views",
       "route": "/#/evals/traces",
-      "environment": "qualification pending; current beta customer source",
+      "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1725,10 +1762,17 @@
         "Verify private versus org shared view visibility",
         "Download and count bounded export without mocking"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "A retained native evaluation trace with two spans and actual input/output was inspected in isolated local QA. Explorer filters, saved views and session grouping remain pending.",
+      "qualification": "partial",
       "documentationRoute": "/martian-security-docs/evals/traces-and-sessions/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "First evaluation",
+          "result": "passed for the named path; remaining guide checks explicitly pending"
+        }
+      ]
     },
     {
       "id": "get-started/access",
@@ -1745,15 +1789,25 @@
       "screenshots": [
         "access-invitation",
         "access-sign-in",
-        "access-workspace"
+        "access-workspace",
+        "access-ready"
       ],
       "requiredValidation": [
         "Follow the numbered guide against a real backend",
         "Check expected visible outcomes and persisted state after refresh",
         "Inspect relevant permission/failure boundaries"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough pending."
+      "qualification": "partial",
+      "validationStatus": "Owner invitation, sign-in and page-refresh checks passed in isolated local QA. Teammate invitations and role-boundary checks remain pending.",
+      "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Owner enrollment and access",
+          "result": "passed for the named path; remaining guide checks explicitly pending"
+        }
+      ]
     },
     {
       "id": "get-started/concepts",

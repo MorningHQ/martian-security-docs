@@ -25,15 +25,20 @@ New to Martian? [Accept your invitation and sign in](/martian-security-docs/get-
 
 ## Choose the evidence you need
 
-<div class="workflow-comparison">
-
-| Your question | Use | What you receive |
-| --- | --- | --- |
-| Can an attacker steer this agent outside its intended rules? | Red teaming | A bounded assessment with recorded attempts, findings and verification evidence |
-| Does this version answer a known set of cases correctly? | Evals | Dataset-version-pinned results, scores, comparisons and reviews |
-| Should this tested revision pass my development checks? | SDK and CI | Local test results, retained reports and a recorded gate outcome when configured |
-
-</div>
+<dl class="workflow-options">
+  <div>
+    <dt>Red teaming</dt>
+    <dd><p class="workflow-question">Can an attacker steer this agent outside its intended rules?</p><p>A bounded assessment with recorded attempts, findings and verification evidence.</p></dd>
+  </div>
+  <div>
+    <dt>Evals</dt>
+    <dd><p class="workflow-question">Does this version answer a known set of cases correctly?</p><p>Dataset-version-pinned results, scores, comparisons and reviews.</p></dd>
+  </div>
+  <div>
+    <dt>SDK and CI</dt>
+    <dd><p class="workflow-question">Should this tested revision pass my development checks?</p><p>Local test results, retained reports and a recorded gate outcome when configured.</p></dd>
+  </div>
+</dl>
 
 <Diagram id="assessment" caption="The first assessment moves from an approved connection to evidence you can inspect. A finding’s strength depends on the verification actually recorded." />
 

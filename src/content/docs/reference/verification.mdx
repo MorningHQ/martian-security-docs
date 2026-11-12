@@ -17,6 +17,22 @@ The site is being published iteratively. Each task guide shows its current walkt
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 
+## Observed walkthroughs — 13 November 2026
+
+The isolated QA application uses the source baseline below, real Backend/Agents release images and MLflow 3.16.1. The organization, accounts, target and dataset contain synthetic data. These checks do not attest to a hosted customer workspace.
+
+- An invited organization owner created a workspace, signed in, opened the Default Evals project and retained access after refresh.
+- The downloadable HTTP adapter passed trusted HTTPS health/chat checks and rejected missing or incorrect bearer credentials. The owner saved, validated and approved its actual connection; active readiness survived refresh.
+- The owner imported three JSONL records, published them and reopened their immutable content after refresh.
+- **EV-1001** executed the three actual HTTP requests and retained **3 passed, 0 failed, 0 errors, 0 skipped**. Native provenance reported **FINISHED**, with the same dataset content hash. The first record's native trace contains exact-match and target-chat spans with the observed input/output.
+- The actual result controls downloaded one filtered READY record as JSON and all three records as CSV. The terminal run and answers survived a full page refresh.
+
+The teaching callback is deterministic. Passing this example verifies wiring and retained evidence; it does not establish production model quality or security. Teammate roles, other interfaces, advanced Evals, SDK hosted execution and the remaining screenshot-dependent journeys are still being qualified. Partly verified guides identify those limits above their steps.
+
+The local QA stack has no sandbox orchestrator: its connector request returns 503 and the sidebar may report stale data. Model-based workflows also await working inference access. These are recorded environment limitations, with no substituted catalog or invented results.
+
+The beginner and visual review is an **AI-simulated novice review**, with no human participant. Desktop and narrow navigation, search, themes, image viewing and keyboard checks passed. Follow-up light/dark checks at 1440 × 1000 and 390 × 844 verified the revised comparison layout and explicit source-baseline links without overflow or documentation console errors.
+
 ## Source baseline
 
 | Component | Reviewed source revision |
@@ -35,6 +51,7 @@ The public repository retains the guide coverage matrix, screenshot provenance a
 - [Guide coverage](https://github.com/MorningHQ/martian-security-docs/blob/main/quality/coverage.json)
 - [Screenshot provenance](https://github.com/MorningHQ/martian-security-docs/blob/main/quality/screenshots.json)
 - [Validation results](https://github.com/MorningHQ/martian-security-docs/blob/main/quality/validation.json)
+- [Observed application walkthroughs](https://github.com/MorningHQ/martian-security-docs/blob/main/quality/walkthroughs.json)
 
 ## Availability distinctions
 
