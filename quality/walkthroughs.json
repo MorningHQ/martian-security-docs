@@ -150,12 +150,75 @@
         "Compatible supplementary assessment-job comparison",
         "Incompatible dataset/definition guard with real fixtures"
       ]
+    },
+    {
+      "task": "Released SDK setup and key boundaries",
+      "result": "passed for SDK0.1.2 setup in isolated local QA",
+      "observed": [
+        "Verified released0.1.2 installation and configured tutorial in a clean isolated Git checkout",
+        "Owner created a one-day machine key with four Evals/CI scopes and an existing agent restriction; one-time secret stored privately and closed before captures",
+        "Actual key_agent_id.py returned the exact bound registration UUID; GET /v1/sdk/capabilities200",
+        "Scoped machine key could not authenticate as a console user (GET /v1/overview401); anonymous capability lookup401",
+        "Actual redteam validate command returned0 without calling a model or target",
+        "Owner revoked the temporary key204; its next capability request returned401 and the real lookup helper exited2 with an HTTP401 error"
+      ],
+      "remaining": []
+    },
+    {
+      "task": "SDK console import contract",
+      "result": "passed after correcting the downloadable file",
+      "observed": [
+        "The original SDK download used prompt/expected fields; actual console upload rejected both records",
+        "Corrected the public example and complete twelve-file ZIP to id/input/expected_output/status",
+        "Actual corrected upload preview2 new /0 updated; Import retained2 usable records",
+        "After supported telemetry drain recovery, owner published the same reviewed draft and observed Published after full refresh",
+        "Added a static console-import contract check for both tutorial datasets; original faulty SDK fixture fails and all five corrected teaching records pass",
+        "Final reader review corrected README field names to match the tested nested inline SDK fields; executable examples were unchanged"
+      ],
+      "publishedContentSha256": "e2c798397ace309cd418aac5eb3b6f3b593a8945555b3a8f6f176594da592a7d",
+      "exampleArchiveSha256": "b42507b94b9ff5ccb5ee57ac01aff920fded8f73d857179c5a893927eb7ab1c6",
+      "remaining": []
+    },
+    {
+      "task": "Released SDK Evals and retained CI recovery",
+      "result": "tests and retained evidence recovered; original strict CLI gate remains failed",
+      "sdkVersion": "0.1.2",
+      "exampleGitRevision": "1aa675f4537ade5cd4d60b77662d97c40ece7423",
+      "datasetRun": "EV-1004",
+      "observed": [
+        "Invoked the released Evals-only martian ci command once with --require-export",
+        "Pytest2passed: two published dataset responses were client-executed/server-scored, and two inline scorer rows were client-executed/client-scored",
+        "Backend saved the CI session with upload persisted and verdict passed, but required export initially failed; original CLI exit1 and failed receipt remain unchanged",
+        "Owner opened actual CI sessions/Show tests and verified both test kinds and their attribution",
+        "One supported Retry export on the same session returned202; later machine readback and actual UI Refresh reported Exported to MLflow",
+        "Read-only delivery inspection confirmed run/artifact/metrics/finish phases persisted for the existing checks export",
+        "Supported platform-admin telemetry-only recovery reconciled the separate dataset run with zero target calls; machine readback export_error became empty",
+        "EV-1004 retained two expected/actual answer pairs after full refresh; native provenance reported FINISHED and two passed metrics",
+        "SDK run provenance reported a native dataset digest, but full dataset content SHA, artifact, model and prompt versions remained unavailable/not reported",
+        "Teaching HTTPS target counter stayed17 during SDK callback execution and recovery; the SDK executed its local callback and did not dial that registered endpoint"
+      ],
+      "originalReceipt": {
+        "state": "failed",
+        "exit_code": 1,
+        "upload": "persisted",
+        "verdict": "passed",
+        "export_state": "failed"
+      },
+      "laterRetainedEvidence": {
+        "sessionExport": "exported",
+        "datasetNativeStatus": "FINISHED",
+        "datasetExportError": ""
+      },
+      "remaining": [
+        "Clean original strict-CI exit0 has not been established",
+        "Combined model-based redteam execution and hosted GitHub runner execution remain unverified"
+      ]
     }
   ],
   "knownEnvironmentLimits": [
     "Sandbox orchestrator is not configured in this QA stack; GET /v1/connectors returns503 and the sidebar may report stale data. No mock catalog is substituted.",
     "Current local model credentials are denied Bedrock inference; real model-based assessment/judge and sandbox seed-generation qualification remain pending AWS sign-in refresh.",
     "These local results do not attest to deployment parity or availability in a customer AWS-beta organization.",
-    "A second member-run evaluation produced three canonical passes and later native FINISHED, but individual telemetry acknowledgements included unknown/unavailable states. That run was retained and not replayed as a telemetry repair; EV-1001 is the confirmed trace fixture."
+    "An earlier member run had uncertain item/finalization acknowledgements. Supported administrator telemetry-only reconciliation later confirmed saved evidence with zero target calls; no target replay repaired it."
   ]
 }

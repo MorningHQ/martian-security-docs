@@ -67,7 +67,7 @@ private: its SQLite store contains the local inputs, expected values and outputs
    `ci:write` and `ci:read`; hosted red teaming additionally needs `redteam:run`.
    Respect any agent or dataset restrictions on the key.
 3. For dataset/combined examples, import `support-regressions.jsonl` as
-   `docs-support-regressions` in Evals Datasets, validate and publish it. Members
+   `docs-support-regressions` in Evals Datasets, check automatic validation and publish it. Members
    may author drafts; publication requires owner/admin. Alternatively set
    `DEMO_DATASET_NAME` to a compatible published dataset name.
 4. For persisted CI, select the intended existing registration by name in the
@@ -105,6 +105,12 @@ connection or attest that the callback is the same deployed binary.
 required except loopback development. A local callback's provider/target keys are
 separate credentials. A Martian API key neither authorizes those providers nor
 grants console administration. Do not set a remote `MLFLOW_TRACKING_URI`.
+
+The import file uses the console contract: `id`, `input`, `expected_output` and
+`status`. The inline SDK test instead uses nested `inputs.message` and
+`expectations.expected_response` fields. In **Import records**, choose **File (up to 20 MiB)**, verify the
+preview shows two new records, then import and publish. Automatic validation
+should report two usable records; there is no separate Validate button.
 
 ## Dataset evaluation and persisted checks
 
