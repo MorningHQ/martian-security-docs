@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "screenshots": [
+    {
+      "id": "access-sign-in",
+      "file": "access-sign-in.png",
+      "alt": "Martian Security sign-in screen with empty Email and Password fields",
+      "caption": "Sign in with your invited workspace account. A new account needs an invitation. Actual beta screen, 12 November 2026.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "get-started/access: Sign in and check access, step 1"
+      ],
+      "environment": "AWS beta",
+      "role": "Signed out",
+      "capturedAt": "2026-11-12",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30"
+      },
+      "sourceMatchesDeployment": "not yet attested",
+      "validationStatus": "Observed real page; authentication walkthrough pending",
+      "reviewedForSecrets": true,
+      "sha256": "ab5c3c954b2aebcafc03a2dd163730dc4a5a73d3faf91d5ed605000706a7194a"
+    }
+  ]
+}

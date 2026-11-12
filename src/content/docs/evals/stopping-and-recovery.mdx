@@ -1,0 +1,77 @@
+---
+title: Stop runs and recover uncertain work
+description: Stop target evaluations or saved-output scoring cooperatively, preserve retained evidence, and resolve uncertain submissions safely.
+sidebar:
+  order: 11
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+
+<GuideMeta id="evals/stopping-and-recovery" />
+
+Request a bounded stop without discarding results that have already arrived, and distinguish an unresolved acknowledgement from a new launch. This guide covers customer controls in the release shown above; it does not require internal worker, database or MLflow administration.
+
+## Before you start
+
+**Members**, **admins** and **owners** can request stops for authorized work. A **viewer** can inspect status and retained evidence. A target run must still be queued or running; scoring must still have an active job.
+
+Use a deliberately bounded, authorized example when learning the controls. A stop is cooperative: a target request or model judgment already admitted can finish and may incur its normal charge. Stop is not a way to revoke an already sent request or undo external side effects.
+
+## 1. Stop a target evaluation
+
+1. Open **Evals → Runs** in the active run’s project.
+2. Locate its `EV-` progress row and finished-record count.
+3. Click **Stop after current request** once.
+4. Observe **Stopping after the current request**. Wait for the in-flight request and finalization to finish.
+
+<Screenshot id="evals-stopping-request" />
+
+A queued run may stop before sending any request. An active run retains the current response and skips the selected records that have not been started. Other projects share the same organization-wide target-run admission limit.
+
+## 2. Verify the cancelled result
+
+1. Open the run detail and wait for **Cancelled**.
+2. Inspect retained responses and **Skipped** rows. Do not count skipped records as passing checks.
+3. Open **Evaluation provenance** and inspect the native run state when available; a verified cancelled native run is recorded as **KILLED**.
+4. Refresh and reopen the same run. Confirm its terminal state and retained rows remain available.
+
+<Screenshot id="evals-stopping-cancelled" />
+
+A cancellation acknowledgement is intent to stop, not proof that all physical work has ended. Wait for the terminal run state and relevant evidence before launching another evaluation. If the run has already finished, the UI/API can reject a late stop and keep its recorded result.
+
+## 3. Stop saved-output scoring
+
+1. Open the completed target run and its **Score saved outputs** dialog.
+2. While a scoring job is active, click **Stop scoring after current judgment**.
+3. Observe **Stopping after the current judgment** and wait for the job to finish stopping.
+4. Inspect the selected **Assessment job** and the assessments already retained. Refresh and confirm the same job state and saved feedback.
+
+<Screenshot id="evals-stopping-scoring" />
+
+This stops supplementary scoring, not the target run that already completed. The in-flight judgment can finish; retained assessments are preserved, and unscored results remain missing. Partial coverage must not be interpreted as a passing full-run gate.
+
+## 4. Resolve an uncertain acknowledgement
+
+A network failure can occur after the service accepted a request but before the browser received its response. Use the action tied to the saved request:
+
+| Screen | Action |
+| --- | --- |
+| Target-run launch | **Retry saved launch** |
+| Saved-output scoring | **Retry saved scoring request** |
+| Human answer | **Retry saved review** |
+| Suite/queue mutation | **Retry saved request**, when offered |
+| Project creation | **Retry project setup**, when offered |
+
+Keep the original configuration while reconciling. These actions reuse the saved request identity to inspect/admit the same operation; they are not a request to run the target or paid model repeatedly until it passes. A request identity cannot be reused with different content.
+
+## 5. Handle setup, publication or telemetry failures
+
+- **Dataset updates are in progress**: new runs are paused while publication completes. Existing admitted runs may finish. An owner/admin can inspect **Datasets → Publish activity** for a stalled operation; use the [dataset recovery guidance](/martian-security-docs/evals/datasets/#failures-and-recovery).
+- **Refresh setup**: refreshes the readiness read after the underlying problem is resolved. It cannot authorize an unapproved connection or create missing model access.
+- Saved results with telemetry errors need administrator review. Retain the run/job code and error, rather than deleting evidence or rerunning the target to repair export.
+- A rotated, changed, expired or revoked agent connection can stop later target calls. Revalidate/approve through [Agents](/martian-security-docs/agents/connections/) before admitting new work.
+
+If uncertainty remains after refreshing and reconciling the saved request, give your administrator the run code, job identity, time and displayed error. Avoid including tokens, passwords or unneeded response content in support messages.
+
+Next, [inspect retained results](/martian-security-docs/evals/results-and-scores/) or [start another bounded evaluation](/martian-security-docs/evals/first-run/) once the organization is ready for new work.

@@ -1,0 +1,18 @@
+{
+  "session_id": "00000000-0000-4000-8000-000000000001",
+  "campaign_id": "00000000-0000-4000-8000-000000000001",
+  "target_id": "agent-00000000-0000-4000-8000-000000000002",
+  "expires_at": "2030-01-01T00:00:00Z",
+  "mcp_connections": [
+    {
+      "name": "stripe",
+      "url": "https://approved-backend.example.com/v1/assessment-sessions/00000000-0000-4000-8000-000000000001/mcp/stripe",
+      "headers": {
+        "Authorization": "Bearer REPLACE_WITH_PLATFORM_ISSUED_RUN_CAPABILITY"
+      },
+      "allowed_tools": [
+        "api_tools_call"
+      ]
+    }
+  ]
+}

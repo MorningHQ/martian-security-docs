@@ -1,0 +1,15 @@
+{
+  "reviewedAt": "2026-11-12",
+  "repositories": {
+    "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+    "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+    "MorningHQ/martian-agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+    "MorningHQ/martian-evals": "60c25994958105db4baa91f377ba46c24fdf253d",
+    "MorningHQ/martian-redteam": "8fb884cbfea0a2cee78eee02eda615d8823b7718",
+    "MorningHQ/martian-hermes-docs": "3593a4bae03e96cf6c7597ececf99fbfc32997ae"
+  },
+  "releasedSDK": {
+    "version": "0.1.2",
+    "wheelSHA256": "57dc1115d3b5cb8333146131b116835b986889d599485abfc402f2070b93d3e9"
+  }
+}

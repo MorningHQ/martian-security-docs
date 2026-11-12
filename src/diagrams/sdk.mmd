@@ -1,0 +1,5 @@
+flowchart LR
+    T[Your tests and local callback]:::access --> S[Martian SDK]:::agent
+    S --> B[Platform authorization]:::tool
+    B --> P[Probe generation and judging]:::external
+    S --> R[Reports and CI exit result]:::target

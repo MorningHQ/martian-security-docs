@@ -1,0 +1,2195 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-13",
+  "guides": [
+    {
+      "id": "agents/connections",
+      "title": "Connect an agent",
+      "description": "Register, validate and approve an HTTP, MCP or browser target, then manage its connection safely.",
+      "customerTask": "Register, validate and approve an HTTP, MCP or browser target, then manage its connection safely.",
+      "requiredRoles": [
+        "owner",
+        "admin"
+      ],
+      "uiRoute": "/#/agents/onboard",
+      "supportedInterfaces": [
+        "martian_http",
+        "mcp",
+        "browser"
+      ],
+      "prerequisites": [
+        "Authorized public HTTPS target",
+        "Protocol-compatible target API",
+        "Target credential when required",
+        "Owner/admin approval authority"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/AgentOnboard.jsx",
+          "line": 17
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/AgentDrawer.jsx",
+          "line": 359
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/agents.py",
+          "line": 75
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/agent_connections.py",
+          "line": 479
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/schemas.py",
+          "line": 428
+        }
+      ],
+      "numberedTaskStages": [
+        "Save Details draft",
+        "Validate actual target",
+        "Select MCP tool/argument when applicable",
+        "Approve and refresh",
+        "Verify rotation/disable using disposable target"
+      ],
+      "screenshotIds": [
+        "agents-details",
+        "agents-browser-details",
+        "agents-validation",
+        "agents-mcp-approval",
+        "agents-approval",
+        "agents-ready"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/agents/connections/",
+      "role": "owner, admin",
+      "route": "/#/agents/onboard",
+      "interfaces": [
+        "martian_http",
+        "mcp",
+        "browser"
+      ],
+      "requiredValidation": [
+        "Save Details draft",
+        "Validate actual target",
+        "Select MCP tool/argument when applicable",
+        "Approve and refresh",
+        "Verify rotation/disable using disposable target"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Real HTTP/MCP/browser validation and approval screenshots",
+          "After-refresh connection readback",
+          "Member/viewer denial",
+          "Rotation and disable boundary"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "agents-details",
+        "agents-browser-details",
+        "agents-validation",
+        "agents-mcp-approval",
+        "agents-approval",
+        "agents-ready"
+      ]
+    },
+    {
+      "id": "agents/http-adapter",
+      "role": "Local adapter: customer developer; console onboarding: Owner/Admin",
+      "route": "/#/agents/onboard",
+      "prerequisites": [
+        "Python 3.12+ for local service",
+        "Public trusted HTTPS host reachable from Martian for hosted onboarding",
+        "Owner/Admin in the intended ready organization",
+        "Adapter-specific bearer credential when auth is enabled"
+      ],
+      "interfaces": [
+        "martian-http-chat-v1 POST JSON",
+        "GET /health",
+        "OPTIONS /chat connectivity",
+        "sync/async local callback returning nonempty text"
+      ],
+      "qualification": "pending",
+      "screenshots": [
+        "agents-http-adapter-settings",
+        "agents-http-adapter-approved"
+      ],
+      "screenshotStages": [
+        {
+          "id": "agents-http-adapter-settings",
+          "caption": "Real HTTP onboarding form with chat/health URLs and safe authentication selection; never capture the credential.",
+          "alt": "HTTP adapter onboarding settings with public chat and health URLs."
+        },
+        {
+          "id": "agents-http-adapter-approved",
+          "caption": "Approved HTTP connection showing active status and readiness after actual validation and page refresh.",
+          "alt": "Active approved HTTP adapter connection and assessment readiness."
+        }
+      ],
+      "requiredValidation": [
+        "Deploy/reach the example over trusted public HTTPS with no redirect bypass",
+        "Verify public success, missing/wrong bearer and real chat response",
+        "Use actual Owner/Admin UI to save, validate and approve the endpoint",
+        "Refresh/read back persisted connection and approval",
+        "Run three-record Evals dataset through real Backend/Agents and confirm retained outputs; source example alone does not prove this"
+      ],
+      "documentationRoute": "/martian-security-docs/agents/http-adapter/",
+      "validation": [],
+      "validationStatus": "Local real-socket example verified; public HTTPS and real console onboarding pending."
+    },
+    {
+      "id": "agents/sandbox-bindings",
+      "title": "Connect an agent to sandbox systems",
+      "description": "Configure approved sandbox accounts, tool access and independent checks for a session-capable assessment agent.",
+      "customerTask": "Configure approved sandbox accounts, tool access and independent checks for a session-capable assessment agent.",
+      "requiredRoles": [
+        "owner",
+        "admin"
+      ],
+      "uiRoute": "/#/agents",
+      "supportedInterfaces": [
+        "martian_http_with_session_management"
+      ],
+      "prerequisites": [
+        "Session-capable HTTP target",
+        "Supported environment systems",
+        "Approved synthetic accounts and exact allowed tools",
+        "Independent checks for business outcomes"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/AgentDrawer.jsx",
+          "line": 126
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/agents.py",
+          "line": 852
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/assessments.py",
+          "line": 590
+        }
+      ],
+      "numberedTaskStages": [
+        "Open Connection and template bundle",
+        "Save complete bindings",
+        "Validate and approve again",
+        "Inspect safe configured summaries",
+        "Qualify admitted independent outcome checks"
+      ],
+      "screenshotIds": [
+        "agents-sandbox-bindings"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/agents/sandbox-bindings/",
+      "role": "owner, admin",
+      "route": "/#/agents",
+      "interfaces": [
+        "martian_http_with_session_management"
+      ],
+      "requiredValidation": [
+        "Open Connection and template bundle",
+        "Save complete bindings",
+        "Validate and approve again",
+        "Inspect safe configured summaries",
+        "Qualify admitted independent outcome checks"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Approved integration/bindings screenshot without write-only details",
+          "Real sandbox-backed walkthrough and baseline/effect readback"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "agents-sandbox-bindings"
+      ]
+    },
+    {
+      "id": "assessments/configure",
+      "title": "Configure a red-team assessment",
+      "description": "Choose the current wizard's environment, agent, goals, coverage and execution settings without overstating readiness.",
+      "customerTask": "Choose the current wizard's environment, agent, goals, coverage and execution settings without overstating readiness.",
+      "requiredRoles": [
+        "member",
+        "admin",
+        "owner"
+      ],
+      "uiRoute": "/#/assessment",
+      "supportedInterfaces": [
+        "HTTP/MCP endpoint assessment",
+        "browser endpoint-only data/control",
+        "session-capable HTTP sandbox assessment"
+      ],
+      "prerequisites": [
+        "Active approved connection",
+        "Organization admission readiness",
+        "Technique catalogue",
+        "Ready bound worlds for sandbox mode"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/Assessment.jsx",
+          "line": 30
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/lib/taxonomy.js",
+          "line": 100
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/assessments.py",
+          "line": 269
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/schemas.py",
+          "line": 702
+        }
+      ],
+      "numberedTaskStages": [
+        "Environment or endpoint-only",
+        "Agent",
+        "Goals",
+        "Tests coverage/identity/budget",
+        "Start once and verify saved scope"
+      ],
+      "screenshotIds": [
+        "assessment-environment-agent",
+        "assessment-goals",
+        "assessment-tests"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/assessments/configure/",
+      "role": "member, admin, owner",
+      "route": "/#/assessment",
+      "interfaces": [
+        "HTTP/MCP endpoint assessment",
+        "browser endpoint-only data/control",
+        "session-capable HTTP sandbox assessment"
+      ],
+      "requiredValidation": [
+        "Environment or endpoint-only",
+        "Agent",
+        "Goals",
+        "Tests coverage/identity/budget",
+        "Start once and verify saved scope"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Live current wizard and selected target screenshots",
+          "Actual admission with matching saved scope",
+          "Pack readiness and unsupported-mode boundaries"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "assessment-environment-agent",
+        "assessment-goals",
+        "assessment-tests"
+      ]
+    },
+    {
+      "id": "assessments/evidence-and-results",
+      "title": "Inspect assessment evidence and results",
+      "description": "Read reports, trace turns, findings, probe coverage and independent outcome checks at the correct evidence level.",
+      "customerTask": "Read reports, trace turns, findings, probe coverage and independent outcome checks at the correct evidence level.",
+      "requiredRoles": [
+        "viewer",
+        "member",
+        "admin",
+        "owner"
+      ],
+      "uiRoute": "/#/runs/<run-id>",
+      "supportedInterfaces": [
+        "legacy_v2",
+        "shadow_v3 when enabled",
+        "mlflow_v3 when enabled"
+      ],
+      "prerequisites": [
+        "Accessible retained run",
+        "Actual stored evidence mode and content"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/Assessment.jsx",
+          "line": 826
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/RunTrace.jsx",
+          "line": 690
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/tracing/AssessmentReview.jsx",
+          "line": 528
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/assessment_execution.py",
+          "line": 642
+        }
+      ],
+      "numberedTaskStages": [
+        "Report summary",
+        "Trace/review",
+        "Coverage",
+        "Findings",
+        "Outcome checks",
+        "Revision and export scope",
+        "Refresh evidence persistence"
+      ],
+      "screenshotIds": [
+        "assessment-report",
+        "assessment-coverage",
+        "assessment-trace",
+        "assessment-outcome-checks"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/assessments/evidence-and-results/",
+      "role": "viewer, member, admin, owner",
+      "route": "/#/runs/<run-id>",
+      "interfaces": [
+        "legacy_v2",
+        "shadow_v3 when enabled",
+        "mlflow_v3 when enabled"
+      ],
+      "requiredValidation": [
+        "Report summary",
+        "Trace/review",
+        "Coverage",
+        "Findings",
+        "Outcome checks",
+        "Revision and export scope",
+        "Refresh evidence persistence"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Actual reports/turn/coverage/outcome-check screenshots",
+          "Returned export content inspected",
+          "Current storage mode recorded",
+          "Read-only inspection creates no target calls"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "assessment-report",
+        "assessment-coverage",
+        "assessment-trace",
+        "assessment-outcome-checks"
+      ]
+    },
+    {
+      "id": "assessments/history-and-exports",
+      "title": "Find recorded runs and export reports",
+      "description": "Use Assessments, Findings, Reports and Replay to inspect persisted history and choose the appropriate export.",
+      "customerTask": "Use Assessments, Findings, Reports and Replay to inspect persisted history and choose the appropriate export.",
+      "requiredRoles": [
+        "viewer",
+        "member",
+        "admin",
+        "owner"
+      ],
+      "uiRoute": "/#/replay",
+      "supportedInterfaces": [
+        "recorded_history_and_exports"
+      ],
+      "prerequisites": [
+        "Retained organization run",
+        "Finished report or published review revision for appropriate export"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/History.jsx",
+          "line": 38
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/History.jsx",
+          "line": 98
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/Replay.jsx",
+          "line": 105
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/RunTrace.jsx",
+          "line": 684
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/tracing/AssessmentReview.jsx",
+          "line": 567
+        }
+      ],
+      "numberedTaskStages": [
+        "Find run in Assessments/Replay",
+        "Open retained evidence",
+        "Download run JSON report",
+        "Inspect legacy-page vs modern redacted-bundle scope",
+        "Refresh and match retained IDs"
+      ],
+      "screenshotIds": [
+        "assessment-replay",
+        "assessment-reports"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/assessments/history-and-exports/",
+      "role": "viewer, member, admin, owner",
+      "route": "/#/replay",
+      "interfaces": [
+        "recorded_history_and_exports"
+      ],
+      "requiredValidation": [
+        "Find run in Assessments/Replay",
+        "Open retained evidence",
+        "Download run JSON report",
+        "Inspect legacy-page vs modern redacted-bundle scope",
+        "Refresh and match retained IDs"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Actual Replay/Reports screenshots",
+          "Download and inspect real exported JSON/ZIP",
+          "Match run and evidence revision",
+          "History reads do not re-execute"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "assessment-replay",
+        "assessment-reports"
+      ]
+    },
+    {
+      "id": "assessments/progress-and-cancellation",
+      "title": "Follow progress and stop a run",
+      "description": "Track an admitted assessment, distinguish execution from security outcome and handle cancellation or uncertain submission.",
+      "customerTask": "Track an admitted assessment, distinguish execution from security outcome and handle cancellation or uncertain submission.",
+      "requiredRoles": [
+        "member",
+        "admin",
+        "owner"
+      ],
+      "uiRoute": "/#/runs/<run-id>",
+      "supportedInterfaces": [
+        "admitted_assessment"
+      ],
+      "prerequisites": [
+        "Actual bounded admitted campaign",
+        "Known run identity"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/Assessment.jsx",
+          "line": 752
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/RunTrace.jsx",
+          "line": 559
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/assessments.py",
+          "line": 919
+        }
+      ],
+      "numberedTaskStages": [
+        "Open live run",
+        "Inspect outcome/execution separately",
+        "Request stop",
+        "Wait for terminal/recovery state",
+        "Refresh saved run"
+      ],
+      "screenshotIds": [
+        "assessment-run",
+        "assessment-stopped"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/assessments/progress-and-cancellation/",
+      "role": "member, admin, owner",
+      "route": "/#/runs/<run-id>",
+      "interfaces": [
+        "admitted_assessment"
+      ],
+      "requiredValidation": [
+        "Open live run",
+        "Inspect outcome/execution separately",
+        "Request stop",
+        "Wait for terminal/recovery state",
+        "Refresh saved run"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Live progress screenshot",
+          "Real cancellation request and persisted terminal state",
+          "Uncertain-admission same-request readback",
+          "No claim that acknowledgment proves provider completion"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "assessment-run",
+        "assessment-stopped"
+      ]
+    },
+    {
+      "id": "assessments/reproduction-and-limits",
+      "title": "Understand reproduction and coverage limits",
+      "description": "Distinguish observed replies, independently verified effects, clean reproduction, negative controls and incomplete coverage.",
+      "customerTask": "Distinguish observed replies, independently verified effects, clean reproduction, negative controls and incomplete coverage.",
+      "requiredRoles": [
+        "viewer",
+        "member",
+        "admin",
+        "owner"
+      ],
+      "uiRoute": "/#/runs/<run-id>",
+      "supportedInterfaces": [
+        "recorded_verification_receipts"
+      ],
+      "prerequisites": [
+        "Recorded admitted scope",
+        "Trusted-oracle evidence and verification receipts",
+        "Restored world receipts for clean business-state reproduction"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/martian-agents",
+          "commit": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+          "path": "src/martian_runtime/graph/workflow.py",
+          "line": 2509
+        },
+        {
+          "repository": "MorningHQ/martian-agents",
+          "commit": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+          "path": "src/martian_runtime/graph/workflow.py",
+          "line": 2619
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/assessment_verification.py",
+          "line": 269
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/assessment_execution.py",
+          "line": 642
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/RunTrace.jsx",
+          "line": 284
+        }
+      ],
+      "numberedTaskStages": [
+        "Inspect actual reproduction status",
+        "Inspect world baseline/epoch receipts",
+        "Read control result",
+        "Distinguish model narrative from independent effect",
+        "Review coverage and budgets"
+      ],
+      "screenshotIds": [
+        "assessment-verification",
+        "assessment-outcome-checks"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/assessments/reproduction-and-limits/",
+      "role": "viewer, member, admin, owner",
+      "route": "/#/runs/<run-id>",
+      "interfaces": [
+        "recorded_verification_receipts"
+      ],
+      "requiredValidation": [
+        "Inspect actual reproduction status",
+        "Inspect world baseline/epoch receipts",
+        "Read control result",
+        "Distinguish model narrative from independent effect",
+        "Review coverage and budgets"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Actual verification and outcome screenshots",
+          "Record exact repetition/control evidence and uncertainty",
+          "Do not copy stale docs/usage.md unimplemented claim"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "assessment-verification",
+        "assessment-outcome-checks"
+      ]
+    },
+    {
+      "id": "discovery/call-gates",
+      "title": "Review and activate an SDK call block",
+      "description": "Enroll a customer-operated gate, review one exact target, activate a timed block and resume calls without confusing it with network isolation.",
+      "customerTask": "Enroll a customer-operated gate, review one exact target, activate a timed block and resume calls without confusing it with network isolation.",
+      "requiredRoles": [
+        "owner",
+        "admin"
+      ],
+      "uiRoute": "/#/discovery?tab=kill-switch",
+      "supportedInterfaces": [
+        "customer_operated_sdk_call_gate_v1",
+        "non_executable_containment_preview"
+      ],
+      "prerequisites": [
+        "Enabled runtime binding",
+        "Compatible SDK/API",
+        "Exact customer-pinned assignment",
+        "Separate gate/runtime credentials",
+        "Fresh actual SDK process"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/DiscoveryCallGate.jsx",
+          "line": 118
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/DiscoveryControls.jsx",
+          "line": 131
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "docs/discovery.md",
+          "line": 196
+        },
+        {
+          "repository": "MorningHQ/martian-redteam",
+          "commit": "8fb884cbfea0a2cee78eee02eda615d8823b7718",
+          "path": "docs/customer-integration.md",
+          "line": 158
+        }
+      ],
+      "numberedTaskStages": [
+        "Enroll exact synthetic tool",
+        "Install real SDK gate",
+        "Review exact call/duration/reason",
+        "Activate with live process",
+        "Verify callable not entered and SDK acknowledgment",
+        "Resume/expiry and retained recovery",
+        "Inspect distinct non-executable preview"
+      ],
+      "screenshotIds": [
+        "discovery-gate-enrollment",
+        "discovery-gate-review",
+        "discovery-gate-active",
+        "discovery-gate-resumed",
+        "discovery-containment-preview"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/discovery/call-gates/",
+      "role": "owner, admin",
+      "route": "/#/discovery?tab=kill-switch",
+      "interfaces": [
+        "customer_operated_sdk_call_gate_v1",
+        "non_executable_containment_preview"
+      ],
+      "requiredValidation": [
+        "Enroll exact synthetic tool",
+        "Install real SDK gate",
+        "Review exact call/duration/reason",
+        "Activate with live process",
+        "Verify callable not entered and SDK acknowledgment",
+        "Resume/expiry and retained recovery",
+        "Inspect distinct non-executable preview"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Fresh released-package example execution and real gate demo against Backend",
+          "Real gate demo against Backend",
+          "Actual review/active/resumed/preview screenshots",
+          "Check persisted controls/audit and local callable behavior",
+          "Never expose setup credential panel"
+        ],
+        "releasedPackageImports": {
+          "distribution": "martian-sdk",
+          "version": "0.1.2",
+          "result": "passed-existing-release-consumer-environment",
+          "scope": "RuntimeCallGate, GateAssignment, RuntimeReporter and exception imports; constructor signatures; no network operations"
+        },
+        "pythonSnippetAst": "passed"
+      },
+      "validation": [],
+      "screenshots": [
+        "discovery-gate-enrollment",
+        "discovery-gate-review",
+        "discovery-gate-active",
+        "discovery-gate-resumed",
+        "discovery-containment-preview"
+      ]
+    },
+    {
+      "id": "discovery/inventory",
+      "title": "Connect sources and inspect inventory",
+      "description": "Enroll an authorized read-only source, follow collection status and distinguish observed agents from candidates and supporting workloads.",
+      "customerTask": "Enroll an authorized read-only source, follow collection status and distinguish observed agents from candidates and supporting workloads.",
+      "requiredRoles": [
+        "owner",
+        "admin"
+      ],
+      "uiRoute": "/#/discovery?tab=sources",
+      "supportedInterfaces": [
+        "authorized_infrastructure_collection"
+      ],
+      "prerequisites": [
+        "Authorized provider scope",
+        "Installed customer or configured hosted collector",
+        "Read-only provider access"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/DiscoverySources.jsx",
+          "line": 72
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/DiscoveryOverview.jsx",
+          "line": 53
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "docs/discovery.md",
+          "line": 71
+        }
+      ],
+      "numberedTaskStages": [
+        "Enroll authorized scope",
+        "Save credential privately and close panel",
+        "Run actual authorized collector",
+        "Inspect collection status and inventory",
+        "Refresh source/freshness",
+        "Pause/resume collection boundary"
+      ],
+      "screenshotIds": [
+        "discovery-source-form",
+        "discovery-sources",
+        "discovery-inventory"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/discovery/inventory/",
+      "role": "owner, admin",
+      "route": "/#/discovery?tab=sources",
+      "interfaces": [
+        "authorized_infrastructure_collection"
+      ],
+      "requiredValidation": [
+        "Enroll authorized scope",
+        "Save credential privately and close panel",
+        "Run actual authorized collector",
+        "Inspect collection status and inventory",
+        "Refresh source/freshness",
+        "Pause/resume collection boundary"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Actual safe source setup/retained collection/inventory screenshots",
+          "Real authorized inventory receipt",
+          "No synthetic model-call invention",
+          "Collector installation contract verified separately"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "discovery-source-form",
+        "discovery-sources",
+        "discovery-inventory"
+      ]
+    },
+    {
+      "id": "discovery/runtime-and-blast-radius",
+      "title": "Inspect runtime activity and blast radius",
+      "description": "Connect a reporter to one workload version, inspect observed calls and compare them with collected access evidence.",
+      "customerTask": "Connect a reporter to one workload version, inspect observed calls and compare them with collected access evidence.",
+      "requiredRoles": [
+        "owner",
+        "admin"
+      ],
+      "uiRoute": "/#/discovery",
+      "supportedInterfaces": [
+        "instrumented_runtime_reporting",
+        "collected_access_evidence"
+      ],
+      "prerequisites": [
+        "Collected workload",
+        "Compatible real SDK reporter",
+        "Separate runtime credential",
+        "Actual application instrumentation"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/DiscoveryRuntimeSetup.jsx",
+          "line": 56
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/DiscoveryRuntime.jsx",
+          "line": 53
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/DiscoveryOverview.jsx",
+          "line": 62
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "docs/discovery.md",
+          "line": 134
+        },
+        {
+          "repository": "MorningHQ/martian-redteam",
+          "commit": "8fb884cbfea0a2cee78eee02eda615d8823b7718",
+          "path": "docs/customer-integration.md",
+          "line": 60
+        }
+      ],
+      "numberedTaskStages": [
+        "Enroll exact deployment/environment/version binding",
+        "Save private credential",
+        "Run real instrumented application",
+        "Inspect actual target/resource reports",
+        "Compare collected Blast radius evidence",
+        "Refresh binding/window"
+      ],
+      "screenshotIds": [
+        "discovery-runtime-setup",
+        "discovery-runtime",
+        "discovery-blast-radius"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/discovery/runtime-and-blast-radius/",
+      "role": "owner, admin",
+      "route": "/#/discovery",
+      "interfaces": [
+        "instrumented_runtime_reporting",
+        "collected_access_evidence"
+      ],
+      "requiredValidation": [
+        "Enroll exact deployment/environment/version binding",
+        "Save private credential",
+        "Run real instrumented application",
+        "Inspect actual target/resource reports",
+        "Compare collected Blast radius evidence",
+        "Refresh binding/window"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Actual reporter enrollment/runtime/Blast-radius screenshots",
+          "Real customer-side emitted calls retained",
+          "Delivery counters and bounded coverage checked",
+          "Effective-access/business-effect claims remain excluded"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "discovery-runtime-setup",
+        "discovery-runtime",
+        "discovery-blast-radius"
+      ]
+    },
+    {
+      "id": "environments/create-and-launch",
+      "title": "Create and launch an environment",
+      "description": "Save a supported business environment, prepare synthetic data, launch sandboxes and verify assessment readiness.",
+      "customerTask": "Save a supported business environment, prepare synthetic data, launch sandboxes and verify assessment readiness.",
+      "requiredRoles": [
+        "member",
+        "admin",
+        "owner"
+      ],
+      "uiRoute": "/#/environments",
+      "supportedInterfaces": [
+        "supported_sandbox_simulations"
+      ],
+      "prerequisites": [
+        "Authorized sandbox DNS/TLS scope",
+        "Working orchestrator/images",
+        "Configured reachable generator for model-generated data"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/EnvironmentEditor.jsx",
+          "line": 416
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/Environments.jsx",
+          "line": 154
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/EnvironmentDataDrawer.jsx",
+          "line": 83
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/SandboxDrawer.jsx",
+          "line": 78
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/environments.py",
+          "line": 83
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/data.py",
+          "line": 824
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/sandboxes.py",
+          "line": 556
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/schemas.py",
+          "line": 287
+        }
+      ],
+      "numberedTaskStages": [
+        "Create supported environment",
+        "Inspect optional synthetic inputs",
+        "Generate or reuse data",
+        "Launch auto-selected seed",
+        "Verify every required sandbox Ready",
+        "Refresh and inspect lifetime",
+        "Stop or extend bounded sandbox"
+      ],
+      "screenshotIds": [
+        "environments-create",
+        "environments-data",
+        "environments-ready"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/environments/create-and-launch/",
+      "role": "member, admin, owner",
+      "route": "/#/environments",
+      "interfaces": [
+        "supported_sandbox_simulations"
+      ],
+      "requiredValidation": [
+        "Create supported environment",
+        "Inspect optional synthetic inputs",
+        "Generate or reuse data",
+        "Launch auto-selected seed",
+        "Verify every required sandbox Ready",
+        "Refresh and inspect lifetime",
+        "Stop or extend bounded sandbox"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Real creation/data generation/ready screenshots",
+          "After-refresh retained revision/data/instance states",
+          "Viewer write denial",
+          "No credential-bearing Accounts captures"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "environments-create",
+        "environments-data",
+        "environments-ready"
+      ]
+    },
+    {
+      "id": "evals/compare",
+      "role": "all customer roles read/export",
+      "route": "/#/evals/compare",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Two completed runs in selected project",
+        "Same immutable dataset identity and inputs/expectations",
+        "Optional matching finished scoring definitions"
+      ],
+      "interfaces": [
+        "saved runs",
+        "CSV"
+      ],
+      "screenshots": [
+        "evals-compare-selection",
+        "evals-compare-results",
+        "evals-compare-trace"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-compare-selection",
+          "caption": "Distinct completed baseline and candidate with compatible scoring selection.",
+          "alt": "Distinct completed baseline and candidate with compatible scoring selection",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-compare-results",
+          "caption": "Paired comparison showing coverage and actual record-level changes.",
+          "alt": "Paired comparison showing coverage and actual record-level changes",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-compare-trace",
+          "caption": "Native trace inspected from the retained comparison context.",
+          "alt": "Native trace inspected from the retained comparison context",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Compare actual distinct run pair",
+        "Verify paired coverage and record-level changes",
+        "Inspect both native trace contexts",
+        "Export comparison and inspect rows",
+        "Verify incompatible definitions/dataset identity are not treated as comparable"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/compare/",
+      "validation": []
+    },
+    {
+      "id": "evals/datasets",
+      "role": "member+ edits; owner/admin publishes; viewer reads published",
+      "route": "/#/evals/datasets",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Ready Evals organization",
+        "Synthetic JSON/JSONL/CSV import",
+        "Owner/admin available for publication"
+      ],
+      "interfaces": [
+        "JSON",
+        "JSONL/NDJSON",
+        "CSV"
+      ],
+      "screenshots": [
+        "evals-datasets-import",
+        "evals-datasets-validation",
+        "evals-datasets-publication",
+        "evals-datasets-copy"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-datasets-import",
+          "caption": "Import preview showing new and updated records before applying the file.",
+          "alt": "Import preview showing new and updated records before applying the file",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-datasets-validation",
+          "caption": "Draft records and automatic usable/missing-value/version summary.",
+          "alt": "Draft records and automatic usable/missing-value/version summary",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-datasets-publication",
+          "caption": "Reviewed dataset publication and immutable Published result.",
+          "alt": "Reviewed dataset publication and immutable Published result",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-datasets-copy",
+          "caption": "Editable organization draft copied from a read-only Martian dataset.",
+          "alt": "Editable organization draft copied from a read-only Martian dataset",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Preview and apply real import",
+        "Edit/save and inspect automatic validation summary",
+        "Publish and verify immutable native content readback",
+        "Copy a real Martian dataset into editable org draft",
+        "Refresh retained records/version",
+        "Verify viewer edit and member publish restrictions"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/datasets/",
+      "validation": []
+    },
+    {
+      "id": "evals/first-run",
+      "role": "owner/admin to prepare dataset; member+ to run; viewer can read",
+      "route": "/#/evals",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Ready organization Evals setup",
+        "Ready project",
+        "Approved active stateless HTTP chat agent",
+        "Three-record synthetic dataset published by owner/admin",
+        "Authorized target-call budget"
+      ],
+      "interfaces": [
+        "stateless HTTP"
+      ],
+      "screenshots": [
+        "evals-first-run-dataset",
+        "evals-first-run-form",
+        "evals-first-run-progress",
+        "evals-first-run-results"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-first-run-dataset",
+          "caption": "Published three-record synthetic dataset before target execution.",
+          "alt": "Published three-record synthetic dataset before target execution",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-first-run-form",
+          "caption": "Run an evaluation with the approved HTTP agent, chosen dataset and target-call budget.",
+          "alt": "Run an evaluation with the approved HTTP agent, chosen dataset and target-call budget",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-first-run-progress",
+          "caption": "Actual target evaluation progressing through the small dataset.",
+          "alt": "Actual target evaluation progressing through the small dataset",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-first-run-results",
+          "caption": "Completed run with retained expected/actual outputs and exact-match results.",
+          "alt": "Completed run with retained expected/actual outputs and exact-match results",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Create/publish and reopen the tiny dataset",
+        "Launch through UI and observe actual target requests",
+        "Verify terminal state, record outputs and exact-match values",
+        "Inspect trace/provenance and refresh retained run",
+        "Verify viewer cannot launch"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/first-run/",
+      "validation": []
+    },
+    {
+      "id": "evals/human-reviews",
+      "role": "member+ reviews own/unassigned work; owner/admin assigns others",
+      "route": "/#/evals/reviews",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Completed run in writable project",
+        "Active non-viewer reviewer",
+        "One to eight valid required questions",
+        "At most 100 selected records"
+      ],
+      "interfaces": [
+        "saved outputs",
+        "typed human feedback"
+      ],
+      "screenshots": [
+        "evals-reviews-queue",
+        "evals-reviews-answer",
+        "evals-reviews-complete"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-reviews-queue",
+          "caption": "Review queue configuration with selected results and required typed questions.",
+          "alt": "Review queue configuration with selected results and required typed questions",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-reviews-answer",
+          "caption": "Human answer and explanation for an actual saved evaluation result.",
+          "alt": "Human answer and explanation for an actual saved evaluation result",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-reviews-complete",
+          "caption": "Queue summary showing all required latest answers verified and Complete.",
+          "alt": "Queue summary showing all required latest answers verified and Complete",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Create real queue and required questions",
+        "Save typed answer/explanation and verify native feedback",
+        "Complete all required answers and read verified queue completion",
+        "Version reusable question without changing earlier queue",
+        "Refresh queue and inspect retained attribution/history",
+        "Verify foreign reviewer assignment is denied for member"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/human-reviews/",
+      "validation": []
+    },
+    {
+      "id": "evals/judging",
+      "role": "member+ applies; owner/admin defines native judges",
+      "route": "/#/evals/judges",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Completed run in writable project",
+        "Enabled model judging and authorized provider spending for model examples",
+        "Owner/admin for custom immutable judge creation"
+      ],
+      "interfaces": [
+        "saved outputs",
+        "code criteria",
+        "configured model judging"
+      ],
+      "screenshots": [
+        "evals-judging-code",
+        "evals-judging-definition",
+        "evals-judging-feedback"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-judging-code",
+          "caption": "Saved-output code criteria selected without a new target request.",
+          "alt": "Saved-output code criteria selected without a new target request",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-judging-definition",
+          "caption": "Typed immutable custom model-judge definition before or after saving.",
+          "alt": "Typed immutable custom model-judge definition before or after saving",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-judging-feedback",
+          "caption": "Persisted typed judge feedback with recorded rationale and version identity.",
+          "alt": "Persisted typed judge feedback with recorded rationale and version identity",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Apply code criteria with target counter unchanged",
+        "Create and read back typed custom judge definition/version",
+        "Apply explicit historical native judge with model-cost acknowledgement",
+        "Verify persisted typed feedback and rationale after refresh",
+        "Verify disabled model readiness and viewer mutation boundary"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/judging/",
+      "validation": []
+    },
+    {
+      "id": "evals/projects",
+      "role": "owner/admin creates/archives; all customer roles browse",
+      "route": "/#/evals/overview",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Ready organization Evals setup",
+        "Disposable named project for archive example"
+      ],
+      "interfaces": [
+        "customer console"
+      ],
+      "screenshots": [
+        "evals-projects-selector",
+        "evals-projects-create",
+        "evals-projects-archive"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-projects-selector",
+          "caption": "Organization/project toolbar identifying the selected evaluation context.",
+          "alt": "Organization/project toolbar identifying the selected evaluation context",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-projects-create",
+          "caption": "New evaluation project form with synthetic name and description.",
+          "alt": "New evaluation project form with synthetic name and description",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-projects-archive",
+          "caption": "Archived disposable project with retained history and new-work warning.",
+          "alt": "Archived disposable project with retained history and new-work warning",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Create and select named project",
+        "Navigate/refresh with preserved project scope",
+        "Verify org-shared dataset availability",
+        "Archive only disposable finished project and verify retained history",
+        "Verify member/viewer project-mutation restrictions"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/projects/",
+      "validation": []
+    },
+    {
+      "id": "evals/quality-issues",
+      "role": "all customer roles browse; member+ triages",
+      "route": "/#/evals/issues",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Retained real native trace with explicit failed Boolean assessment or execution error",
+        "Writable project for triage"
+      ],
+      "interfaces": [
+        "recorded native errors",
+        "Boolean quality feedback"
+      ],
+      "screenshots": [
+        "evals-issues-groups",
+        "evals-issues-triage",
+        "evals-issues-retained"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-issues-groups",
+          "caption": "Recorded quality-issue group backed by actual failure evidence.",
+          "alt": "Recorded quality-issue group backed by actual failure evidence",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-issues-triage",
+          "caption": "Triage form selecting a concrete status and rationale for real traces.",
+          "alt": "Triage form selecting a concrete status and rationale for real traces",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-issues-retained",
+          "caption": "Saved triage status retained after refreshing the same issue selection.",
+          "alt": "Saved triage status retained after refreshing the same issue selection",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Search and inspect actual issue signal",
+        "Open actual native trace evidence",
+        "Save triage status with rationale and attribution",
+        "Refresh/reopen and verify retained triage",
+        "Verify bounded coverage labels and viewer mutation restrictions"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/quality-issues/",
+      "validation": []
+    },
+    {
+      "id": "evals/results-and-scores",
+      "role": "all customer roles read/export; member+ for supplementary mutations",
+      "route": "/#/evals",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Saved completed evaluation",
+        "Retained record-level results and available native trace/provenance"
+      ],
+      "interfaces": [
+        "saved results",
+        "CSV",
+        "JSON"
+      ],
+      "screenshots": [
+        "evals-results-table",
+        "evals-results-inspector",
+        "evals-results-provenance"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-results-table",
+          "caption": "Saved record-level outputs, exact-match states and filter controls.",
+          "alt": "Saved record-level outputs, exact-match states and filter controls",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-results-inspector",
+          "caption": "Evaluation item showing input, expected answer, response and assessments.",
+          "alt": "Evaluation item showing input, expected answer, response and assessments",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-results-provenance",
+          "caption": "Retained evaluation provenance and available version/native readback.",
+          "alt": "Retained evaluation provenance and available version/native readback",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Inspect result states and actual/expected outputs",
+        "Open record drawer and trace",
+        "Inspect canonical versus supplementary scores",
+        "Export current filtered records and independently count them",
+        "Inspect provenance and refresh retained run"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/results-and-scores/",
+      "validation": []
+    },
+    {
+      "id": "evals/stopping-and-recovery",
+      "role": "member+ stops; all customer roles inspect retained work",
+      "route": "/#/evals",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Authorized active bounded target evaluation for target-stop example",
+        "Active saved-output scoring job for scoring-stop example",
+        "Potential real unresolved acknowledgement only if naturally observed"
+      ],
+      "interfaces": [
+        "stateless HTTP target run",
+        "saved-output scoring"
+      ],
+      "screenshots": [
+        "evals-stopping-request",
+        "evals-stopping-cancelled",
+        "evals-stopping-scoring"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-stopping-request",
+          "caption": "Active evaluation with cooperative Stop after current request control.",
+          "alt": "Active evaluation with cooperative Stop after current request control",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-stopping-cancelled",
+          "caption": "Cancelled evaluation retaining completed responses and skipped remaining rows.",
+          "alt": "Cancelled evaluation retaining completed responses and skipped remaining rows",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-stopping-scoring",
+          "caption": "Actual scoring job stopping after its in-flight judgment while retaining feedback.",
+          "alt": "Actual scoring job stopping after its in-flight judgment while retaining feedback",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Request real target stop during active/queued execution",
+        "Verify terminal Cancelled, skipped records and native KILLED where available",
+        "Refresh retained partial results",
+        "Request scoring stop while actual judgment is active and verify retained feedback",
+        "Inspect natural uncertainty if present; do not fabricate or intercept APIs to invent a state"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/stopping-and-recovery/",
+      "validation": []
+    },
+    {
+      "id": "evals/suites-and-monitoring",
+      "role": "member+ versions/applies suites; all customer roles read monitoring",
+      "route": "/#/evals/suites",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Ready organization",
+        "Completed run in writable project for application",
+        "Code criteria for no-model example"
+      ],
+      "interfaces": [
+        "saved-output code scoring",
+        "optional configured model judging"
+      ],
+      "screenshots": [
+        "evals-suites-definition",
+        "evals-suites-scorecard",
+        "evals-suites-monitoring"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-suites-definition",
+          "caption": "Reusable versioned code criteria and explicit threshold/coverage policy.",
+          "alt": "Reusable versioned code criteria and explicit threshold/coverage policy",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-suites-scorecard",
+          "caption": "Saved-output suite job scorecard with actual coverage and gate outcomes.",
+          "alt": "Saved-output suite job scorecard with actual coverage and gate outcomes",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-suites-monitoring",
+          "caption": "Retained scoring history linking job definitions and quality gates to runs.",
+          "alt": "Retained scoring history linking job definitions and quality gates to runs",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Create immutable suite with explicit thresholds/coverage",
+        "Apply exact historical suite version to saved outputs",
+        "Verify actual scorecard coverage and gate outcome",
+        "Create next version and confirm old job retains original",
+        "Open Overview to Monitoring and follow persisted run/job history"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/suites-and-monitoring/",
+      "validation": []
+    },
+    {
+      "id": "evals/traces-and-sessions",
+      "role": "all customer roles read/export; member+ saves views",
+      "route": "/#/evals/traces",
+      "environment": "qualification pending; current beta customer source",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Ready org Evals setup",
+        "Retained native traces in selected project",
+        "Reported session IDs for session-group example"
+      ],
+      "interfaces": [
+        "native traces",
+        "native payload",
+        "CSV",
+        "JSON"
+      ],
+      "screenshots": [
+        "evals-traces-filtered",
+        "evals-traces-inspector",
+        "evals-traces-sessions"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-traces-filtered",
+          "caption": "Real matching native traces with applied content or structured filters.",
+          "alt": "Real matching native traces with applied content or structured filters",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-traces-inspector",
+          "caption": "Native trace details showing retained inputs, outputs and span evidence.",
+          "alt": "Native trace details showing retained inputs, outputs and span evidence",
+          "validationStatus": "pending actual capture and walkthrough"
+        },
+        {
+          "id": "evals-traces-sessions",
+          "caption": "Recorded sessions and turns grouped by a reported session ID.",
+          "alt": "Recorded sessions and turns grouped by a reported session ID",
+          "validationStatus": "pending actual capture and walkthrough"
+        }
+      ],
+      "requiredValidation": [
+        "Apply real content/structured filters and check visible matching traces",
+        "Inspect native inputs/outputs and other available tabs",
+        "Group by reported session and inspect turns",
+        "Save view and verify settings after refresh",
+        "Verify private versus org shared view visibility",
+        "Download and count bounded export without mocking"
+      ],
+      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
+      "qualification": "pending",
+      "documentationRoute": "/martian-security-docs/evals/traces-and-sessions/",
+      "validation": []
+    },
+    {
+      "id": "get-started/access",
+      "role": "All invited customer roles",
+      "route": "/#/overview",
+      "documentationRoute": "/martian-security-docs/get-started/access/",
+      "interfaces": [
+        "Current beta console"
+      ],
+      "prerequisites": [
+        "Access to the correct organization",
+        "Authorized synthetic test data and an approved target where execution is required"
+      ],
+      "screenshots": [
+        "access-invitation",
+        "access-sign-in",
+        "access-workspace"
+      ],
+      "requiredValidation": [
+        "Follow the numbered guide against a real backend",
+        "Check expected visible outcomes and persisted state after refresh",
+        "Inspect relevant permission/failure boundaries"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough pending."
+    },
+    {
+      "id": "get-started/concepts",
+      "role": "All customer roles",
+      "route": "/#/overview",
+      "documentationRoute": "/martian-security-docs/get-started/concepts/",
+      "interfaces": [
+        "Current beta console"
+      ],
+      "prerequisites": [
+        "Access to the correct organization",
+        "Authorized synthetic test data and an approved target where execution is required"
+      ],
+      "screenshots": [],
+      "requiredValidation": [
+        "Follow the numbered guide against a real backend",
+        "Check expected visible outcomes and persisted state after refresh",
+        "Inspect relevant permission/failure boundaries"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough pending."
+    },
+    {
+      "id": "get-started/first-assessment",
+      "role": "Member, admin or owner; admin required for connection approval",
+      "route": "/#/assessment",
+      "documentationRoute": "/martian-security-docs/get-started/first-assessment/",
+      "interfaces": [
+        "Current beta console"
+      ],
+      "prerequisites": [
+        "Access to the correct organization",
+        "Authorized synthetic test data and an approved target where execution is required"
+      ],
+      "screenshots": [
+        "first-assessment-environment",
+        "first-assessment-agent",
+        "first-assessment-goals",
+        "first-assessment-tests",
+        "first-assessment-running",
+        "first-assessment-report",
+        "first-assessment-trace"
+      ],
+      "requiredValidation": [
+        "Follow the numbered guide against a real backend",
+        "Check expected visible outcomes and persisted state after refresh",
+        "Inspect relevant permission/failure boundaries"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough pending."
+    },
+    {
+      "id": "library/coverage",
+      "title": "Use the Attack Library and coverage views",
+      "description": "Explore catalogued techniques, distinguish runnable coverage from reference material and understand the current Threat Intel view.",
+      "customerTask": "Explore catalogued techniques, distinguish runnable coverage from reference material and understand the current Threat Intel view.",
+      "requiredRoles": [
+        "viewer",
+        "member",
+        "admin",
+        "owner"
+      ],
+      "uiRoute": "/#/library",
+      "supportedInterfaces": [
+        "stored_customer_catalogue",
+        "threat_intel_coverage_view"
+      ],
+      "prerequisites": [
+        "Loaded Backend catalogue",
+        "Approved agent and member role for execution"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/AttackLibrary.jsx",
+          "line": 29
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/ThreatIntel.jsx",
+          "line": 10
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/library.py",
+          "line": 13
+        }
+      ],
+      "numberedTaskStages": [
+        "Inspect available versus unavailable technique",
+        "Choose actual technique in Tests",
+        "Compare requested and executed coverage",
+        "Inspect current no-live-feed view",
+        "Refresh catalogue"
+      ],
+      "screenshotIds": [
+        "library-coverage",
+        "library-threat-intel"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/library/coverage/",
+      "role": "viewer, member, admin, owner",
+      "route": "/#/library",
+      "interfaces": [
+        "stored_customer_catalogue",
+        "threat_intel_coverage_view"
+      ],
+      "requiredValidation": [
+        "Inspect available versus unavailable technique",
+        "Choose actual technique in Tests",
+        "Compare requested and executed coverage",
+        "Inspect current no-live-feed view",
+        "Refresh catalogue"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Actual coverage/Threat Intel screenshots",
+          "Catalogue and technique IDs match Backend",
+          "Unavailable items not presented as executable",
+          "No claim of live Wiki mirroring or live threat feed"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "library-coverage",
+        "library-threat-intel"
+      ]
+    },
+    {
+      "id": "sdk/ci",
+      "guide": "Gate CI on Evals and redteam",
+      "role": "Scoped machine key; owner/admin issues key and publishes tutorial dataset",
+      "route": "/#/evals",
+      "documentationRoute": "/martian-security-docs/sdk/ci/",
+      "interfaces": [
+        "martian ci CLI",
+        "martian.ci Python runner",
+        "One serial pytest session",
+        "Backend dataset/session persistence and bounded export readback"
+      ],
+      "prerequisites": [
+        "SDK 0.1.2 evals extra",
+        "Published two-record tutorial dataset",
+        "Validated one-probe redteam.yaml and trusted local callback",
+        "All five evals/CI/redteam capabilities with matching restrictions",
+        "Enabled/configured hosted service, organization agent UUID, tested revision",
+        "Trusted CI refs and secret policy"
+      ],
+      "screenshots": [
+        "sdk-ci-session",
+        "sdk-ci-test-results"
+      ],
+      "qualification": "pending",
+      "sources": [
+        {
+          "repository": "MorningHQ/martian-redteam",
+          "commit": "8fb884cbfea0a2cee78eee02eda615d8823b7718",
+          "paths": [
+            "src/martian/cli.py",
+            "src/martian/ci.py",
+            "src/martian/evals",
+            "src/martian/redteam",
+            "docs/sdk-and-ci.md"
+          ]
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "paths": [
+            "src/pages/Evals.jsx",
+            "src/components/EvalCiTokens.jsx",
+            "src/components/CiSessions.jsx"
+          ]
+        }
+      ],
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "requiredValidation": [
+        "Verify released commands and configuration",
+        "Exercise hosted real-service success and relevant failure paths",
+        "Verify retained reports and UI state after refresh"
+      ],
+      "validation": []
+    },
+    {
+      "id": "sdk/evaluations",
+      "guide": "Evaluate with Python",
+      "role": "No account for local preview; scoped machine key for persistence; owner/admin publishes dataset",
+      "route": "/#/evals",
+      "documentationRoute": "/martian-security-docs/sdk/evaluations/",
+      "interfaces": [
+        "Local traced Python prediction callable",
+        "martian.evals",
+        "martian ci",
+        "Published Backend dataset and result/session APIs"
+      ],
+      "prerequisites": [
+        "SDK 0.1.2 evals extra",
+        "Published docs-support-regressions two-record dataset",
+        "evals:read, evals:write, ci:read, ci:write",
+        "Organization agent UUID and tested Git revision for persistence"
+      ],
+      "screenshots": [
+        "sdk-evaluation-result",
+        "sdk-ci-test-results"
+      ],
+      "qualification": "pending",
+      "sources": [
+        {
+          "repository": "MorningHQ/martian-redteam",
+          "commit": "8fb884cbfea0a2cee78eee02eda615d8823b7718",
+          "paths": [
+            "src/martian/cli.py",
+            "src/martian/ci.py",
+            "src/martian/evals",
+            "src/martian/redteam",
+            "docs/sdk-and-ci.md"
+          ]
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "paths": [
+            "src/pages/Evals.jsx",
+            "src/components/EvalCiTokens.jsx",
+            "src/components/CiSessions.jsx"
+          ]
+        }
+      ],
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "requiredValidation": [
+        "Verify released commands and configuration",
+        "Exercise hosted real-service success and relevant failure paths",
+        "Verify retained reports and UI state after refresh"
+      ],
+      "validation": []
+    },
+    {
+      "id": "sdk/install-and-configure",
+      "guide": "Install and configure the SDK",
+      "role": "Owner/admin to create a key; scoped machine key for SDK execution",
+      "route": "/#/evals",
+      "documentationRoute": "/martian-security-docs/sdk/install-and-configure/",
+      "interfaces": [
+        "Released Python package 0.1.2",
+        "CLI",
+        "Backend machine API over HTTPS or loopback development"
+      ],
+      "prerequisites": [
+        "Python >=3.12",
+        "Approved Backend origin",
+        "Organization access",
+        "Compatible Backend services; hosted-redteam readiness for redteam scope"
+      ],
+      "screenshots": [
+        "sdk-api-keys",
+        "sdk-create-key"
+      ],
+      "qualification": "pending",
+      "sources": [
+        {
+          "repository": "MorningHQ/martian-redteam",
+          "commit": "8fb884cbfea0a2cee78eee02eda615d8823b7718",
+          "paths": [
+            "src/martian/cli.py",
+            "src/martian/ci.py",
+            "src/martian/evals",
+            "src/martian/redteam",
+            "docs/sdk-and-ci.md"
+          ]
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "paths": [
+            "src/pages/Evals.jsx",
+            "src/components/EvalCiTokens.jsx",
+            "src/components/CiSessions.jsx"
+          ]
+        }
+      ],
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "requiredValidation": [
+        "Verify released commands and configuration",
+        "Exercise hosted real-service success and relevant failure paths",
+        "Verify retained reports and UI state after refresh"
+      ],
+      "validation": []
+    },
+    {
+      "id": "sdk/redteam",
+      "guide": "Run a redteam probe",
+      "role": "Owner/admin issues key; machine key with redteam:run executes",
+      "route": "/#/evals",
+      "documentationRoute": "/martian-security-docs/sdk/redteam/",
+      "interfaces": [
+        "Synchronous/asynchronous local str or Turn callback",
+        "Modern martian.redteam Python API",
+        "martian redteam CLI",
+        "Backend hosted simulation/judging"
+      ],
+      "prerequisites": [
+        "SDK 0.1.2",
+        "Approved Backend origin and redteam:run key",
+        "Organization enabled/configured for hosted redteam",
+        "Trusted callback, bounded single-probe configuration, approved model allowance",
+        "CI scopes and agent/revision only for optional persistence"
+      ],
+      "screenshots": [
+        "sdk-redteam-result"
+      ],
+      "qualification": "pending",
+      "sources": [
+        {
+          "repository": "MorningHQ/martian-redteam",
+          "commit": "8fb884cbfea0a2cee78eee02eda615d8823b7718",
+          "paths": [
+            "src/martian/cli.py",
+            "src/martian/ci.py",
+            "src/martian/evals",
+            "src/martian/redteam",
+            "docs/sdk-and-ci.md"
+          ]
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "paths": [
+            "src/pages/Evals.jsx",
+            "src/components/EvalCiTokens.jsx",
+            "src/components/CiSessions.jsx"
+          ]
+        }
+      ],
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "requiredValidation": [
+        "Verify released commands and configuration",
+        "Exercise hosted real-service success and relevant failure paths",
+        "Verify retained reports and UI state after refresh"
+      ],
+      "validation": []
+    },
+    {
+      "id": "workspace/team-and-roles",
+      "title": "Invite teammates and understand roles",
+      "description": "Join the correct workspace, issue a scoped team invitation and understand the owner, admin, member and viewer boundaries.",
+      "customerTask": "Join the correct workspace, issue a scoped team invitation and understand the owner, admin, member and viewer boundaries.",
+      "requiredRoles": [
+        "owner",
+        "admin"
+      ],
+      "uiRoute": "/#/team",
+      "supportedInterfaces": [
+        "team_invitations",
+        "invitation_acceptance",
+        "organization_roles"
+      ],
+      "prerequisites": [
+        "Correct organization host",
+        "Synthetic recipient for QA",
+        "Manual or explicitly authorized email delivery"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/Invitations.jsx",
+          "line": 24
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/AcceptInvitation.jsx",
+          "line": 49
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/deps.py",
+          "line": 105
+        }
+      ],
+      "numberedTaskStages": [
+        "Choose invite recipient and role",
+        "Issue manual link privately",
+        "Accept synthetic teammate invitation",
+        "Sign in at correct tenant host",
+        "Refresh retained member role",
+        "Verify stale/revoked/reused link and viewer boundaries"
+      ],
+      "screenshotIds": [
+        "workspace-invite-form",
+        "workspace-accept-invitation",
+        "workspace-team"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "documentationRoute": "/martian-security-docs/workspace/team-and-roles/",
+      "role": "owner, admin",
+      "route": "/#/team",
+      "interfaces": [
+        "team_invitations",
+        "invitation_acceptance",
+        "organization_roles"
+      ],
+      "requiredValidation": [
+        "Choose invite recipient and role",
+        "Issue manual link privately",
+        "Accept synthetic teammate invitation",
+        "Sign in at correct tenant host",
+        "Refresh retained member role",
+        "Verify stale/revoked/reused link and viewer boundaries"
+      ],
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "pending",
+        "screenshots": "pending",
+        "remainingGaps": [
+          "Actual safe Team/form/acceptance screenshots",
+          "Live acceptance and retained member role",
+          "No screenshot of bearer link or secret",
+          "No unauthorized external email"
+        ]
+      },
+      "validation": [],
+      "screenshots": [
+        "workspace-invite-form",
+        "workspace-accept-invitation",
+        "workspace-team"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+---
+title: "Glossary"
+description: "Plain definitions for the words used in Martian customer workflows."
+sidebar:
+  order: 5
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+import Diagram from '../../../components/Diagram.astro';
+
+| Term | Meaning |
+| --- | --- |
+| Agent | The application or callback being tested, with its own intended rules and tools |
+| Assessment | A bounded security test against an authorized agent |
+| Attack technique | A supported way to try to cause an unwanted outcome |
+| Assurance pack | A published scenario-backed option with specific compatibility and outcome-check requirements |
+| Baseline | The chosen reference run or observed starting state; its meaning depends on the workflow |
+| Call gate | Customer SDK enforcement at entry to an explicitly enrolled named model/tool call |
+| Connection | Approved interface/address/credential contract for reaching an agent |
+| Dataset | A collection of inputs and expected answers |
+| Dataset version | An immutable published dataset snapshot |
+| Endpoint-only | Assessment scope limited to the agent’s exposed interface |
+| Environment | A saved configuration of isolated synthetic business systems |
+| Evals | Dataset-based response evaluation and related saved-output analysis |
+| Exact match | Equality after stripping surrounding whitespace and ignoring case |
+| Finding | A recorded observed problem with its evidence and verification limits |
+| Judge | A configured scorer that returns typed feedback, sometimes using a model |
+| Outcome check | A supported independent observation of the relevant business state |
+| Project | An organization-scoped Evals grouping for runs and related work |
+| Provenance | Recorded identities, versions, authorizations and revisions explaining where results came from |
+| Replay | Inspection of retained execution evidence; it does not itself mean a new live execution |
+| Reproduction | A distinct repeat of a test under the recorded verification conditions |
+| Review queue | Selected saved results and their required human questions |
+| Sandbox | An isolated running copy of a supported synthetic business application |
+| Scorer | A defined calculation or judgment applied to a result |
+| Seed data | Synthetic records used to initialize a sandbox world |
+| Session | A grouping of recorded conversation turns when that identity was captured |
+| Suite | An immutable versioned set of scoring criteria and quality thresholds |
+| Trace | A retained execution/message record and its associated attributes/evidence |
+| Viewer / member / admin / owner | Customer roles with different allowed actions |
+
+[Choose a workflow](/martian-security-docs/get-started/concepts/) or [check permissions](/martian-security-docs/reference/permissions/).

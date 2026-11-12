@@ -1,0 +1,130 @@
+---
+title: Evaluate with Python
+description: Run a free local Evals preview, then evaluate a published dataset and verify its saved Backend result.
+sidebar:
+  order: 2
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+
+<GuideMeta id="sdk/evaluations" />
+
+Use `martian.evals` to run your prediction function locally and record regression results. Start with a free two-record preview, then use a published dataset whose outputs Backend can score independently.
+
+## Before you start
+
+- Complete [SDK installation and configuration](/martian-security-docs/sdk/install-and-configure/) and use **`martian-sdk[evals]==0.1.2`**, Python 3.12+, from the tutorial **Git repository root** prepared there. The source must be committed before taking its revision for a persisted result.
+- The included `demo_agent.answer` is a deterministic support program. It demonstrates wiring and repeatable assertions; it is not an LLM or evidence about a production agent.
+- A local inline preview needs no platform account or model API key.
+- Hosted persistence needs a compatible enabled organization, a key with `evals:read`, `evals:write`, `ci:read`, and `ci:write`, and an organization-owned agent UUID/tested Git revision. Dataset restrictions must permit the dataset below.
+- Members may author dataset drafts; an **owner/admin publishes** the version used by this tutorial. Use [dataset authoring](/martian-security-docs/evals/datasets/) for the exact import/validation/publication flow.
+
+## 1. Run the free local preview
+
+```sh
+MARTIAN_EVALS_OFFLINE=1 \
+MARTIAN_EVALS_STORE_DIR="$PWD/.martian-local-mlflow" \
+.venv/bin/martian evals run tests/evals/test_quality.py -q
+```
+
+Expect **one passing test with two evaluated records** and exit `0`. This runs the actual local MLflow evaluator, callback, traces and exact-match scorer. It uploads nothing to Backend.
+
+Inspect `.martian-local-mlflow/martian-session.json`: it should say `state: offline`, `upload: offline`, and have no Backend session ID. A successful preview is not a persisted CI pass. Keep the whole MLflow store private because it includes inputs, expected values, outputs and traces.
+
+## 2. Understand the complete test
+
+The tutorial's [quality test](/martian-security-docs/examples/sdk/tests/evals/test_quality.py) traces the local callback and asserts all required score rows:
+
+```python
+import mlflow
+from demo_agent import answer
+from martian.evals import assert_checks, evaluate, exact_match
+
+@mlflow.trace(name="support_agent", span_type="AGENT")
+def predict(message: str) -> str:
+    return answer(message)
+
+@mlflow.test
+def test_support_hours():
+    result = evaluate(
+        data=[{
+            "inputs": {"message": "What are your support hours?"},
+            "expectations": {
+                "expected_response": "Monday to Friday, 09:00–17:00 UTC."
+            },
+        }],
+        predict_fn=predict,
+        scorers=[exact_match],
+    )
+    assert_checks(result)
+```
+
+`exact_match` strips leading/trailing whitespace and compares case-folded text. It does not judge meaning or accept an otherwise useful paraphrase. For numeric or arbitrary-label scorers, `assert_checks` requires an explicit `pass_if` rule; Boolean and supported yes/no scores can be interpreted directly.
+
+Keep `@mlflow.trace` and the final assertion. `assert result.passed` is not a substitute: missing scores or an unasserted evaluation must fail the gate. The SDK's plugin also prevents trace validation from making an extra first-row prediction.
+
+## 3. Publish the two-record tutorial dataset
+
+1. In the intended organization, open **Evals → Datasets**.
+2. Follow [dataset authoring](/martian-security-docs/evals/datasets/) to import [support-regressions.jsonl](/martian-security-docs/examples/sdk/support-regressions.jsonl).
+3. Name the dataset **`docs-support-regressions`**, validate it, and have an owner/admin publish the version.
+4. Verify that both active records have the exact tutorial questions and expected answers. If you used another name, set `DEMO_DATASET_NAME` to that published name.
+
+The dataset is small enough to inspect completely. The callback answers these two questions; replace it and the test data together when moving to your own application.
+
+## 4. Execute and persist the evaluation
+
+Set the connection and CI attribution from the installation guide. Ensure `MARTIAN_EVALS_OFFLINE` is not enabled for this command; the one-command preview above does not leave it set.
+
+```sh
+.venv/bin/martian ci --evals-path tests/evals --require-export --output results/evals
+```
+
+This executes the tutorial's inline checks and published-dataset test in one session. The dataset test is complete and available as [test_dataset.py](/martian-security-docs/examples/sdk/tests/evals/test_dataset.py):
+
+```python
+import os
+import mlflow
+from demo_agent import answer
+from martian.evals import assert_gate, evaluate, exact_match, load_dataset
+
+@mlflow.trace(name="dataset_agent", span_type="AGENT")
+def predict(message: str) -> str:
+    return answer(message)
+
+@mlflow.test
+def test_published_dataset():
+    data = load_dataset(
+        os.environ.get("DEMO_DATASET_NAME", "docs-support-regressions")
+    )
+    result = evaluate(data=data, predict_fn=predict, scorers=[exact_match])
+    assert_gate(result, data)
+```
+
+`load_dataset` returns pinned active rows. Predictions execute in your process. Backend receives outputs, verifies the pin, computes canonical exact-match scores and retains the run. The local MLflow store supports evaluation; the SDK never receives your organization's hosted MLflow credentials.
+
+## 5. Verify the retained result
+
+1. Inspect `results/evals/ci-session.json`. A complete success has `state: passed`, `exit_code: 0`, `upload: persisted`, and a nonempty `session_id`.
+2. Open **Evals → Runs** in the console and find the saved dataset run.
+3. Open it, inspect the two records and their pass/fail values, then refresh the page. The result should remain available with its dataset version, agent and revision attribution.
+
+<Screenshot id="sdk-evaluation-result" />
+
+4. Select **Evals** in the main sidebar to return to its default **Runs** view. In the organization-wide **CI sessions** section, select **Refresh**, locate the tested commit, and select **Show tests**. Verify that both tutorial tests are present. This organization-wide section is hidden while a specific Evals project is selected.
+
+<Screenshot id="sdk-ci-test-results" />
+
+Dataset tests are **client-executed/server-scored**. Inline scorer checks are **client-executed/client-scored**. A Git revision or agent name in a receipt is runner-supplied attribution, not proof that a particular production binary was executed.
+
+## Failures and limits
+
+- A missing dataset, missing read scope, incompatible restriction or stale pin prevents a valid dataset gate. Fix the selection or access and preserve the failed attempt's receipt.
+- A wrong answer, missing score, target error, skipped/deselected required test, swallowed gate exception or missing final assertion fails the gate. Do not lower thresholds to hide incomplete execution.
+- Strict policy requires every pinned row to pass. A lower declared threshold can produce a visibly **relaxed** verdict; it does not excuse missing rows or execution errors.
+- SDK dataset CI pulls are capped at **100 active records per dataset test**. Checks support up to **100 rows and 20 scorers** per test; sessions support **100 tests and 1,000 combined rows/probes**, within the request-body limit. These limits differ from the console's admitted run budgets.
+- Do not set a remote `MLFLOW_TRACKING_URI`. Do not publish `.martian-local-mlflow/` as a CI artifact. Retain the safe receipt instead.
+- `--require-export` waits for bounded export confirmation. An export problem does not justify rerunning the target; inspect the saved session and available **Retry export** action first.
+
+Continue with [red teaming](/martian-security-docs/sdk/redteam/) or [combined CI](/martian-security-docs/sdk/ci/). For the browser-run workflow, see [your first evaluation](/martian-security-docs/evals/first-run/).

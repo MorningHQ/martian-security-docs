@@ -1,0 +1,79 @@
+---
+title: Inspect traces and sessions
+description: Search native trace evidence, inspect spans, group recorded sessions, save views and export bounded results.
+sidebar:
+  order: 6
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+
+<GuideMeta id="evals/traces-and-sessions" />
+
+Use the trace explorer to follow recorded requests and inspect the spans, inputs, outputs and assessments behind an evaluation. Group by a reported session ID when you need a conversation view. These reads do not execute a target again.
+
+## Before you start
+
+Any customer role can inspect authorized native traces in the release shown above. Your organization must have ready Evals setup and retained trace evidence in the selected project. **Members** or higher can save views; viewers can use organization-shared views. You do not need a separate MLflow login or MLflow credentials.
+
+Complete a [first evaluation](/martian-security-docs/evals/first-run/) to create fresh evidence. Not every request reports a session, user, token count, cost or model identity. Missing fields stay unavailable.
+
+## 1. Find the trace selection
+
+1. Open **Evals → Traces** and confirm the project.
+2. Enter distinctive input/output text in **Search trace content**.
+3. Choose **Trace state** or **Trace order** if needed.
+4. Open **More filters** for **Session ID**, **User ID**, **Minimum latency (ms)**, **Time window**, **Boolean assessment** and **Assessment value**.
+5. Click **Apply filters** and read the applied-filter summary and coverage note. Use **Reset** to clear filters deliberately.
+
+<Screenshot id="evals-traces-filtered" />
+
+Start with a narrow, known request or recent time window. An empty selection is not proof that the agent never ran; confirm the organization, project, filters and trace retention.
+
+## 2. Inspect native execution evidence
+
+1. Open a trace from the table to display **Trace details**.
+2. Begin with **Inputs / outputs** and compare the recorded values with the saved evaluation result.
+3. Inspect available **Overview**, **Messages**, **Attributes**, **Events** and **Usage** tabs. Use the span/tree or timeline controls shown by the inspector for the recorded trace structure.
+4. Expand **Trace assessments and metadata** to inspect retained feedback and identifiers.
+5. Choose **Download native payload** when you need the retained native evidence for an authorized review.
+
+<Screenshot id="evals-traces-inspector" />
+
+A missing usage field is not zero usage. Reported model names, costs and span events describe what was retained; they do not independently verify billing, deployed code or a business-side effect. Treat trace downloads as potentially sensitive and share them according to your organization’s policy.
+
+## 3. Group recorded conversations
+
+1. Return to Traces and set **Group traces by** to **Group by session**.
+2. Inspect each session’s turns, errors and first/last recorded times.
+3. Choose **View turns** to inspect one session while retaining its applied filters.
+4. Use **Ungroup traces** to return to individual traces.
+
+<Screenshot id="evals-traces-sessions" />
+
+Sessions require a reported session ID. A set of independent dataset requests is not automatically a multi-turn conversation. If you see **No sessions recorded**, inspect individual traces and confirm that the target/instrumentation reports the session identifiers you expect.
+
+## 4. Save a useful view
+
+1. As a member/admin/owner, choose **Display**; its accessible action is **Columns and view settings**.
+2. In **Display and saved views**, select columns, move them into a useful order, and choose **Compact rows** if desired.
+3. Enter **View name** and choose **Visibility**: **Private** or **Organization**.
+4. Click **Save new view**. Select it later using **Saved trace view**.
+5. Refresh and confirm the saved filters, columns and density are restored. **Update view** saves an authorized revision; **Delete view** requires confirmation.
+
+Private views belong to their creator. Organization views are readable by the organization; mutation still requires ownership or administrator authority. Saving a view does not save a reusable native pagination cursor or grant new trace access.
+
+## 5. Export a complete bounded selection
+
+1. Apply filters that produce the selection you want.
+2. Choose **Export CSV** or **Export JSON**.
+3. Inspect the downloaded count and identities against the selection and its coverage note.
+4. If the export is too large, narrow the filters and export again.
+
+Trace exports support up to 1,000 matching traces and reject an oversized selection instead of silently returning the first 1,000. Overview, session grouping and quality-issue aggregates also inspect bounded selections; read their incomplete-coverage labels. Trace table pages contain up to 100 rows.
+
+## Failures and recovery
+
+Use **Refresh traces** after a temporary read failure. A stale cursor or changed session can require starting the search again. Quote/backslash content searches can be constrained by the native stored representation; use a distinctive simpler term, IDs or structured filters when needed. Reading/exporting evidence cannot repair missing telemetry and should not trigger a replacement target run.
+
+Next, [review saved responses](/martian-security-docs/evals/human-reviews/) or [triage quality issues](/martian-security-docs/evals/quality-issues/).

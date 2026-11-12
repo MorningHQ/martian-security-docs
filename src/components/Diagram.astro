@@ -1,0 +1,27 @@
+---
+import { diagramImage, type DiagramId } from '../diagrams';
+interface Props { id: DiagramId; caption: string; }
+const { id, caption } = Astro.props;
+const desktop = diagramImage(id);
+const mobile = diagramImage(id, true);
+const path = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/media/diagrams/${id}`;
+const desktopUrl = `${path}.svg?v=${desktop.version}`;
+const mobileUrl = `${path}-mobile.svg?v=${mobile.version}`;
+const sourceUrl = `${path}.mmd?v=${desktop.version}`;
+---
+
+<figure class="doc-visual diagram">
+  <div class="diagram-scroll" tabindex="0" role="region" aria-label={`${desktop.title} — scroll to explore`}>
+    <a href={desktopUrl} target="_blank" rel="noopener" aria-label={`Open full-size diagram: ${desktop.title}`}>
+      <picture style={`--diagram-width: ${desktop.width}px; --diagram-mobile-width: ${mobile.width}px;`}>
+        <source media="(max-width: 49.99rem)" srcset={mobileUrl} width={mobile.width} height={mobile.height} />
+        <img src={desktopUrl} alt={desktop.description} width={desktop.width} height={desktop.height} loading="lazy" decoding="async" />
+      </picture>
+    </a>
+  </div>
+  <figcaption>
+    {caption}
+    <a class="visual-open" href={desktopUrl} target="_blank" rel="noopener" aria-label={`Open full-size diagram: ${desktop.title} (opens in a new tab)`}>Open full size <span aria-hidden="true">↗</span></a>
+    <a class="visual-open" href={sourceUrl} download={`${id}.mmd`} aria-label={`Download Mermaid source: ${desktop.title}`}>Mermaid source <span aria-hidden="true">↓</span></a>
+  </figcaption>
+</figure>

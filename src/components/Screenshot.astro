@@ -1,0 +1,14 @@
+---
+import registry from '../../quality/screenshots.json';
+interface Props { id: string; }
+const { id } = Astro.props;
+const capture = registry.screenshots.find((item) => item.id === id);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const src = capture ? `${base}/media/screenshots/${capture.file}` : null;
+---
+{capture && src ? <figure class="doc-visual screenshot" data-screenshot-id={id}>
+  <a href={src} target="_blank" rel="noopener" aria-label={`Open screenshot: ${capture.alt}`}>
+    <img src={src} alt={capture.alt} width={capture.width} height={capture.height} loading="lazy" decoding="async" />
+  </a>
+  <figcaption>{capture.caption} <a class="visual-open" href={src} target="_blank" rel="noopener">Open full size <span aria-hidden="true">↗</span></a></figcaption>
+</figure> : null}

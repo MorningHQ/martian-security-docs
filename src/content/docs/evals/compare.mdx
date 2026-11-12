@@ -1,0 +1,75 @@
+---
+title: Compare evaluation runs
+description: Pair records from two completed runs, inspect output changes, and compare compatible scoring jobs.
+sidebar:
+  order: 5
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+
+<GuideMeta id="evals/compare" />
+
+Compare a baseline with a candidate to see which recorded checks improved, regressed or stayed unchanged. The comparison uses dataset record identities and retained outputs; opening it does not call either target again.
+
+## Before you start
+
+Any customer role can compare authorized runs in the environment and release shown above. You need two **Completed** runs in the selected project. Use the same immutable dataset version with unchanged inputs and expectations. A new publication with another dataset identity is not interchangeable merely because its display name is the same.
+
+For a small example, run the [first evaluation](/martian-security-docs/evals/first-run/) dataset twice, within your authorized target-call budget. Identical results are a valid outcome. To measure a deliberate agent change, retain the tested revision in your own release process and the connection’s declared artifact information.
+
+## 1. Choose the pair
+
+1. Open **Evals → Compare** and confirm the project.
+2. In **Baseline**, choose the earlier run you want to retain as the reference.
+3. In **Candidate**, choose the other completed run. The UI requires two different runs.
+4. Leave both scoring-job selectors at **Canonical exact match** for the initial comparison.
+5. Click **Compare runs**.
+
+<Screenshot id="evals-compare-selection" />
+
+## 2. Read paired coverage and changes
+
+Read the paired-record count and the baseline/candidate coverage before interpreting the summary. Records absent from one run, unfinished/error outcomes, and other incompatible records are **Not comparable**, not automatically failures or improvements.
+
+For canonical exact match:
+
+| Change | Meaning |
+| --- | --- |
+| Improved | The baseline failed and the candidate passed for the paired record. |
+| Regressed | The baseline passed and the candidate failed. |
+| Unchanged | The paired pass/fail outcome is the same. The answer text may still differ. |
+| Not comparable | A valid paired outcome is unavailable or the run/dataset contract differs. |
+
+Use **Search comparison**, **Comparison criterion** and **Comparison change** to narrow the table. Inspect the expected answer beside both outputs before concluding that a change is useful.
+
+<Screenshot id="evals-compare-results" />
+
+## 3. Compare supplementary assessment jobs
+
+1. Choose a finished **Baseline scoring job** and a finished **Candidate scoring job**. Select both; selecting only one is not a complete comparison.
+2. Use jobs with matching scorer definitions, instructions, thresholds and native judge versions. Applying the same historical suite version to each saved run is one way to keep definitions consistent.
+3. Click **Compare runs** again and choose the desired **Comparison criterion**.
+4. Open **Baseline and candidate scorecards** when available to inspect both coverage and scores.
+
+A different rubric or gate policy can change a score without changing the response. Martian reports incompatible definitions rather than treating them as a valid paired quality comparison. Text/category changes retain their type; they are not silently converted into a numerical improvement.
+
+## 4. Follow evidence and retain the comparison
+
+1. Use the baseline or candidate trace action on a paired record to inspect its **Trace details**.
+2. Check the recorded input/output and available attributes, then close the inspector to return to the same comparison context.
+3. Use **Export comparison** to retain the currently filtered comparison.
+4. Refresh, select the same run pair and scoring jobs, and compare again. Confirm the retained run identities and expected paired coverage.
+
+<Screenshot id="evals-compare-trace" />
+
+**Open candidate** returns to the candidate’s saved run detail. The [results guide](/martian-security-docs/evals/results-and-scores/) explains exports and provenance for an individual run.
+
+## Failures and limits
+
+- **No completed runs**: complete two supported target evaluations in this project first.
+- **Comparison unavailable**: read the reason. Different immutable dataset identities, changed inputs/expectations or different scoring definitions cannot be repaired by changing the table order.
+- A run truncated at its target-call budget may have only partial paired coverage. Check the coverage note before generalizing.
+- Missing model/prompt revision metadata stays missing. A comparison does not independently attest what code was deployed behind an endpoint.
+
+Next, [inspect traces and sessions](/martian-security-docs/evals/traces-and-sessions/) or [define consistent scoring suites](/martian-security-docs/evals/suites-and-monitoring/).

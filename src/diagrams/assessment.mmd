@@ -1,0 +1,5 @@
+flowchart LR
+    C[Connect an agent]:::access --> E[Choose endpoint or sandbox]:::tool
+    E --> G[Choose goals and tests]:::agent
+    G --> R[Run a bounded assessment]:::external
+    R --> V[Inspect evidence and outcomes]:::target

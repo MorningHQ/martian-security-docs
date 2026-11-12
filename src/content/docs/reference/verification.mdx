@@ -1,0 +1,43 @@
+---
+title: "Guide verification record"
+description: "Review source revisions, real captures, completed checks and remaining gaps."
+sidebar:
+  order: 6
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+import Diagram from '../../../components/Diagram.astro';
+
+These guides are being qualified against actual running application/backend states with synthetic data. A source review, an observed screen and a completed end-to-end run are recorded separately. A pending walkthrough is not a passed walkthrough.
+
+## Current publication status
+
+The site is being published iteratively. Each task guide shows its current walkthrough status above the instructions. The initial public build includes source-reviewed instructions; authenticated captures and complete execution checks are added as they pass.
+
+The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
+
+## Source baseline
+
+| Component | Reviewed source revision |
+| --- | --- |
+| Frontend | 06d0d0c96a9627c383b85670929dfe8bdc33aa30 |
+| Backend | 01343fa93feb518f6c7cd1928b63a01d2ec5ee0b |
+| Agents | f7de3e068d66fe478f642d43a658ed9b3ed321f5 |
+| Evals service | 60c25994958105db4baa91f377ba46c24fdf253d |
+| SDK release | martian-sdk 0.1.2 |
+| Hermes styling foundation | 3593a4bae03e96cf6c7597ececf99fbfc32997ae |
+
+## Inspectable records
+
+The public repository retains the guide coverage matrix, screenshot provenance and validation results under quality/. Source revision records describe the inspected implementation; they do not by themselves prove which image is deployed in a particular workspace.
+
+- [Guide coverage](https://github.com/MorningHQ/martian-security-docs/blob/main/quality/coverage.json)
+- [Screenshot provenance](https://github.com/MorningHQ/martian-security-docs/blob/main/quality/screenshots.json)
+- [Validation results](https://github.com/MorningHQ/martian-security-docs/blob/main/quality/validation.json)
+
+## Availability distinctions
+
+**Verified** means the recorded guide walkthrough passed against its named environment. **Source reviewed** means implementation was inspected but its live walkthrough remains pending. **Preview** describes a visible non-enforcing or otherwise limited capability. **Unsupported** means the current contract does not provide that operation. The guides preserve these boundaries.
+
+Product gaps already identified include the Pipeline view’s illustrative martian scan text, unsupported target interfaces for dataset Evals, a Threat Intel view without a live feed, and network containment that remains a preview. Use the actual supported SDK CLI and controls documented here.

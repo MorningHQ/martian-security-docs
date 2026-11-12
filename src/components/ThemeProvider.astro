@@ -1,0 +1,13 @@
+---
+import Default from '@astrojs/starlight/components/ThemeProvider.astro';
+---
+
+<script is:inline>
+  // Start on Martian's paper surface; retain every subsequent theme choice.
+  try {
+    if (localStorage.getItem('starlight-theme') === null) {
+      localStorage.setItem('starlight-theme', 'light');
+    }
+  } catch {}
+</script>
+<Default {...Astro.props}><slot /></Default>
