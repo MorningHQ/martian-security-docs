@@ -1,0 +1,74 @@
+---
+title: Score saved outputs and define judges
+description: Apply code criteria or versioned model rubrics to completed outputs with explicit cost and provenance controls.
+sidebar:
+  order: 7
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+
+<GuideMeta id="evals/judging" />
+
+Add supplementary assessments to a completed evaluation without sending its prompts to the target again. Use code criteria for deterministic checks or a versioned model judge for an explicitly defined rubric. The original canonical exact-match results remain intact.
+
+## Before you start
+
+Use a **Completed** run in a writable project in the environment and release shown above. **Members**, **admins** and **owners** can apply scorers. Creating or versioning a custom judge requires **owner** or **admin** access.
+
+Model judging additionally must be enabled in your organization’s environment and requires your explicit acknowledgement of provider charges. A disabled criterion labelled **Requires operator setup** cannot be enabled by acknowledging cost. Ask your administrator about availability. Reading or editing a judge definition does not itself invoke the model.
+
+## 1. Apply a code criterion
+
+1. Open **Evals → Runs** and select a completed run.
+2. Click **Score saved outputs**.
+3. Leave **Suite version** at **Ad hoc criteria**.
+4. Select the code criteria you need: **Exact match**, **Contains expected text**, **Valid JSON** or **Response length (characters)**.
+5. Click **Apply scorers** once and wait for the saved-output job to finish.
+
+<Screenshot id="evals-judging-code" />
+
+Only the saved outputs are scored. **Valid JSON** is a syntax check, not your business schema. **Contains expected text** is a substring check, not semantic correctness. Response length counts Unicode characters. Choose criteria that actually measure the property you care about.
+
+## 2. Define a custom model rubric
+
+1. As an owner/admin, open **Evals → Judges** and click **New judge**.
+2. Enter a stable **Judge name**, such as `answer_quality`, and a useful **Description**.
+3. Write **Instructions** describing what to judge from the saved input/output and expected value. For example:
+
+```text
+Assess whether {{ outputs }} answers {{ inputs }} with the required factual
+content from {{ expectations }}. Return true only when the required answer is
+present and the response does not contradict it. Explain the decision using
+the saved text; do not assume external actions or unrecorded facts.
+```
+
+4. Choose **Output type**: `boolean`, `numeric`, `categorical` or `text`. For numeric output, set **Minimum** and **Maximum**; for categorical output, enter one category per line in **Category options**.
+5. Click **Save version 1**. Reopen the judge and confirm the saved immutable version.
+
+<Screenshot id="evals-judging-definition" />
+
+A judge name begins with a lowercase letter and uses lowercase letters, digits or underscores. Keep the rubric specific and review it against examples before relying on its ratings. Saving a rubric does not establish judge accuracy.
+
+## 3. Apply a particular judge version
+
+1. Return to the completed run and open **Score saved outputs**.
+2. Under **Ad hoc criteria**, select the custom judge. Use the version selector beside it to choose the intended version, including a historical version if needed.
+3. If you choose **Policy compliance judge**, fill **Policy guidelines**.
+4. Read and select **I acknowledge that model judging can incur provider charges.**
+5. Click **Apply scorers** and wait for the job’s terminal state.
+6. Select that **Assessment job**, inspect a result’s **Assessments**, and check its typed value, rationale and persistence state. Refresh and verify the same job and feedback remain recorded.
+
+<Screenshot id="evals-judging-feedback" />
+
+To revise a rubric, open Judges and choose **Create next version**. Existing scoring jobs retain their original definition and version. Do not describe a change in rubric as a change in the target’s answer.
+
+## Interpret and recover
+
+Boolean results can form pass rates; numeric, category and text outputs retain their own types. Coverage and errors matter alongside scores. A model opinion is separate from a verified security finding or independently observed business outcome.
+
+A scoring request supports one to seven unique criteria. One active scoring job is allowed per organization. Completed runs are required. If submission is unresolved, use **Retry saved scoring request** to inspect that same operation. Stop controls are cooperative and may allow the in-flight judgment to finish; see [stopping and recovery](/martian-security-docs/evals/stopping-and-recovery/).
+
+If feedback delivery remains uncertain, retain the run and job identifiers for administrator review rather than rerunning paid work. Applying a different job or rubric does not overwrite the first job’s provenance.
+
+Next, [apply a reusable suite](/martian-security-docs/evals/suites-and-monitoring/) or [collect human reviews](/martian-security-docs/evals/human-reviews/).

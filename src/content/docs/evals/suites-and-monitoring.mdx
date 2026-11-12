@@ -1,0 +1,75 @@
+---
+title: Use scoring suites and monitoring
+description: Save immutable scoring criteria and thresholds, apply an exact suite version, and inspect retained quality-gate history.
+sidebar:
+  order: 9
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+
+<GuideMeta id="evals/suites-and-monitoring" />
+
+Save criteria and quality thresholds as a reusable suite, apply a particular version to completed outputs, and monitor its retained jobs and gate outcomes. This keeps a quality policy consistent across runs instead of rebuilding it differently each time.
+
+## Before you start
+
+Use the organization and release shown above. **Members**, **admins** and **owners** can create/version suites and apply them to completed runs. Any customer role can inspect authorized monitoring history. Have a completed evaluation in a writable project and understand the [meaning of its scores](/martian-security-docs/evals/results-and-scores/).
+
+Saving a suite makes no model calls. Applying code criteria uses saved outputs. Applying model criteria additionally needs enabled model judging and explicit cost acknowledgement. Custom registered judges are applied separately from these built-in-criterion suite definitions.
+
+## 1. Create a small code-scoring suite
+
+1. Open **Evals → Judges**, then choose **Scoring suites**.
+2. In **Suite definition**, choose **New suite** if another version is selected.
+3. Enter **Suite name**, for example **Response format checks**.
+4. Select **Contains expected text** and **Response length (characters)**.
+5. For `contains_expected`, set **Quality threshold** to `1`, **Better when** to **Higher**, and **Minimum coverage** to `1`.
+6. For `response_length`, choose a meaningful character ceiling for your own task, set **Better when** to **Lower**, and keep **Minimum coverage** at `1`. For the short answers in the first-run tutorial, an example ceiling is `80`.
+7. Click **Create suite** and confirm that version 1 is selected.
+
+<Screenshot id="evals-suites-definition" />
+
+A Boolean threshold is a pass rate from `0` to `1`. A response-length threshold is a character count. Minimum coverage is also `0` to `1`; full coverage prevents missing/error assessments from being treated as satisfactory evidence. A blank threshold means that criterion has no configured gate; it is not an implicit passing gate.
+
+## 2. Apply an exact suite version
+
+1. Open a completed run and choose **Score saved outputs**.
+2. In **Suite version**, select **Response format checks · v1**.
+3. Confirm the pinned criteria and any policy instructions. Their controls are locked to the suite definition.
+4. If the chosen suite includes model criteria, read and select the provider-charge acknowledgement. The example code-only suite does not require a model call.
+5. Click **Apply scorers** and wait for completion.
+6. Select the resulting **Assessment job** and open the run’s **Overview** to inspect its scorecard, thresholds, coverage and gate results.
+
+<Screenshot id="evals-suites-scorecard" />
+
+A gate can be **Passed**, **Failed**, **Insufficient coverage** or **Unconfigured**. Job completion and gate success are different: a finished job may show a failed or unconfigured gate. Review the actual values and coverage before acting on the summary.
+
+## 3. Create a new version without changing history
+
+1. Return to **Scoring suites** and choose the prior version in **Edit suite version**.
+2. Change the relevant criteria, instructions or thresholds.
+3. Click **Save version 2**.
+4. Reopen an earlier scoring job and confirm it still records version 1 and its original definition.
+
+Use the same historical suite version when you want a [paired comparison](/martian-security-docs/evals/compare/) under an unchanged policy. A different version may be intentionally useful, but it is a different scoring definition.
+
+## 4. Inspect monitoring history
+
+1. Open **Evals → Overview** and choose **Monitoring**.
+2. Read **Scoring history**, including the run, scoring definition, job status and quality gate.
+3. Choose **Open run** for a specific entry and inspect its result-level evidence.
+4. Refresh and confirm the saved job, suite version and gate result remain available.
+
+<Screenshot id="evals-suites-monitoring" />
+
+Monitoring here is saved-output scoring history. It does not automatically schedule production target calls, continuously test a deployment, or establish model drift. Those claims require separate instrumentation and an explicitly supported execution workflow.
+
+## Failures and recovery
+
+- A stale suite-version edit requires reloading the latest saved definition before another version is admitted.
+- **Retry saved request** checks an unresolved suite save. Do not create a different suite merely to bypass an uncertain response.
+- One scoring job per organization can be active at a time. Wait for it to finish or use the [cooperative scoring stop](/martian-security-docs/evals/stopping-and-recovery/).
+- A policy criterion requires its policy instructions. Missing assessments, provider errors and incomplete coverage need review; they are not Boolean passes.
+
+Next, [compare matching suite jobs](/martian-security-docs/evals/compare/) or [triage recorded quality issues](/martian-security-docs/evals/quality-issues/).

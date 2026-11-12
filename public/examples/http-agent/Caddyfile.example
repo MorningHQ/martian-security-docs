@@ -1,0 +1,5 @@
+# Replace this name with a public DNS name that points to your server.
+# Caddy needs inbound ports 80 and 443 and persistent certificate storage.
+agent.example.com {
+    reverse_proxy 127.0.0.1:8765
+}

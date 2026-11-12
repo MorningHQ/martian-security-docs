@@ -1,0 +1,7 @@
+flowchart LR
+    U[Customer]:::access --> A[Martian console]:::agent
+    A --> B[Customer API]:::tool
+    B --> R[Assessment execution]:::external
+    B --> Q[Evaluation results]:::storage
+    R --> T[Approved agent target]:::target
+    Q --> M[Organization evaluation workspace]:::storage

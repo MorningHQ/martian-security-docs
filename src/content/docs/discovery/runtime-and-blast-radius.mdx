@@ -1,0 +1,64 @@
+---
+title: Inspect runtime activity and blast radius
+description: Connect a reporter to one workload version, inspect observed calls and compare them with collected access evidence.
+sidebar:
+  order: 2
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+
+<GuideMeta id="discovery/runtime-and-blast-radius" />
+
+Follow application-reported model/tool activity for one deployment and compare it with collected potential access. Success means the intended binding receives real instrumented calls and you can trace each visible relationship to its evidence and time boundary.
+
+## Before you start
+
+An **Owner** or **Admin** enrolls reporting. Any signed-in tenant user can inspect accessible evidence. First [connect an authorized infrastructure source](/martian-security-docs/discovery/inventory/) and collect the workload. Install the compatible Martian SDK in that customer application and explicitly instrument its normal model/tool calls. Do not report invented calls to make a diagram look complete.
+
+Deployment, environment and version labels attribute reports; they do not attest the running binary. Use a separate binding for each intended environment/version and keep assessment traffic distinguishable from other traffic.
+
+## Connect runtime reporting
+
+1. Open **Discovery → Sources → Runtime reporting**, then **Connect runtime reporter**.
+2. Use **Find workload**, choose **Discovered workload**, then enter **Deployment label**, **Environment** and **Deployed version**. The first 50 search matches are listed; narrow the search if necessary.
+3. Click **Create runtime binding**.
+
+<Screenshot id="discovery-runtime-setup" />
+
+4. Privately save the Binding ID and once-shown **Runtime credential**. Mount the credential as a read-only secret file in that workload and configure its SDK reporter with the trusted Backend HTTPS origin and binding. Click **Credential saved** to clear the credential panel.
+5. Start one reporter per customer application process, create a trace for each invocation and instrument the actual model/tool calls. A successful report is metadata about that call, not an assertion that a downstream business action happened.
+6. Run a bounded legitimate synthetic task through the real application. Check its reporter delivery counters/logs and retained binding after refresh. Missing dashboard events do not establish that no calls occurred: delivery can fail or be dropped.
+
+## Inspect the runtime map
+
+1. Open **Discovery → Overview → Runtime activity**, or the record's Runtime activity view.
+2. Select **Deployment / environment / version** and **Time window**: **Last hour**, **Last 24 hours** or **Last 7 days**.
+3. Read **Where calls went**. Select a model/tool to inspect its configured name, counts, outcomes and recent reports. Use **Previous connections** / **Next connections** when additional targets are available.
+
+<Screenshot id="discovery-runtime" />
+
+4. For a resource link, inspect its service/type, opaque reference, reported action, outcome and time. These links require explicit response-ID mappings in the customer integration. Use **Previous resources** / **Next resources** to page the displayed links.
+5. Check the bounds: aggregate counts cover a displayed latest-500-event window and individual details the latest 50 events. A selected aggregate can have no corresponding row in that smaller recent-event window. Resource/action links page by 12 for displayed tools.
+6. Refresh with the same binding/window and confirm that the actual synthetic call remains in retained evidence.
+
+## Compare configured reach
+
+1. Switch to **Blast radius** and retain the exact deployment binding. Read the collection receipt/time and freshness of its access evidence.
+2. Inspect runtime-reported domains, collected identity/permission paths and shared configured peers separately. Open the relevant resource or evidence row to see its source and matching limitations.
+3. Use record details such as **Configured access**, **Network evidence**, and **Hosting & identity** to answer their specific evidence questions. A network window or an RBAC policy is not a substitute for an independently verified business effect.
+
+<Screenshot id="discovery-blast-radius" />
+
+4. If a card links an assessment to this deployment, inspect the operator approval, artifact-equivalence declaration and drift status. An operator-attested mapping does not independently prove the deployed binary equals the assessed artifact.
+5. Treat any quantified sandbox loss sample or time-window projection as its labeled conditional scenario. Diagram distance, group size and ring placement are not a risk score or effective-access proof.
+
+## Failure, freshness and limits
+
+- **No runtime reporters connected** needs enrollment and actual instrumentation, not another inventory refresh.
+- **Revoke reporting** rejects future uploads while retaining history. It does not stop the application, block a call or revoke an independently enrolled call gate.
+- A reporter credential cannot authorize assessments or read console records. Source and gate credentials are separate.
+- Opaque resource references remain within their binding. Unmapped resources, errors and downstream effects can be unknown; do not merge them across deployments by name.
+- Customer-reported success, configured permissions and TCP observations do not independently establish effective access, complete capture or business impact.
+
+Continue with [SDK call gates](/martian-security-docs/discovery/call-gates/) or [assessment outcome verification](/martian-security-docs/assessments/reproduction-and-limits/).

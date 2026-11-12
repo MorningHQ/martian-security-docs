@@ -1,0 +1,87 @@
+---
+title: Create and publish datasets
+description: Import, edit, validate and version organization datasets, and make editable copies of Martian datasets.
+sidebar:
+  order: 2
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+
+<GuideMeta id="evals/datasets" />
+
+Build a reviewed set of input/expected-output records, then publish an immutable version that your team can select in Evals. Draft edits do not change the version pinned by an earlier run.
+
+## Before you start
+
+Use the customer Evals environment and release shown above. Your organization’s setup must be **Ready**. **Members**, **admins** and **owners** can author drafts; **admins** and **owners** publish organization datasets. **Viewers** browse published datasets without editing them. See [permissions](/martian-security-docs/reference/permissions/).
+
+Use synthetic records for a tutorial. Confirm that you have permission to send their inputs to the chosen target before running them. Dataset creation and import do not call your target.
+
+## 1. Create the draft
+
+1. Open **Evals → Datasets** and confirm the organization and project in the toolbar.
+2. Click **New dataset**.
+3. Enter a **Name** and optional **Description**, then click **Create draft**.
+
+Names cannot contain `/` or control characters. The `martian:` prefix is reserved for read-only Martian datasets. Choose an organization name such as **Support response checks**.
+
+## 2. Import or add records
+
+1. Choose **Import file**, then select a JSON, JSONL/NDJSON or CSV file up to 20 MiB.
+2. Inspect the preview’s new, updated and final record counts. Matching record IDs update existing draft records; other IDs add records.
+3. Click **Import** to apply the previewed file.
+
+<Screenshot id="evals-datasets-import" />
+
+A minimal JSONL file is:
+
+```jsonl
+{"id":"answer-one","input":"Reply with only READY.","expected_output":"READY","status":"ACTIVE"}
+{"id":"answer-two","input":"Reply with only HELLO.","expected_output":"HELLO","status":"ACTIVE"}
+```
+
+JSON accepts a bare record array or an object containing `items`. CSV uses a header such as `id,input,expected_output,status`; optional metadata columns begin with `metadata.`. In JSON/JSONL, `metadata` must be an object. Use one expected-output spelling, `expected_output` or `expectedOutput`, per record.
+
+You can also choose **Add record**, enter **Record ID**, **Input**, **Expected output**, **Status** and optional metadata, then save. Select a row’s **Edit** action to change it and **Save record** to retain the revision. **Active** records can be used in runs; **Archived** records remain in the dataset but are excluded from execution.
+
+## 3. Check automatic validation
+
+The draft editor automatically displays **records**, **usable in runs**, **archived**, missing input/expected-output counts and a **Version** hash. There is no separate Validate button.
+
+<Screenshot id="evals-datasets-validation" />
+
+For a straightforward exact-match dataset, use nonempty input and expected-output strings. Review missing values before publishing. An entire invalid upload is rejected, so an import error does not mean that its valid-looking rows were partially applied.
+
+A draft supports up to 100,000 records, while an individual evaluation selects at most 1,000 active records. Keep tutorial datasets small. See [limits](/martian-security-docs/reference/limits/) before importing a large corpus.
+
+## 4. Publish and verify the version
+
+1. As an owner/admin, click **Publish**.
+2. Review the record count, usable count and version hash.
+3. Enter a meaningful **Rationale** of 8–2,000 characters and confirm **Publish**.
+4. Wait for **Published**. New evaluation admission for the organization pauses while publication finishes; earlier runs keep their original pinned version.
+5. Open the dataset from **Published datasets**, inspect its records, refresh, and confirm the same published version is available.
+
+<Screenshot id="evals-datasets-publication" />
+
+A publication hash identifies the reviewed content. It does not prove that a particular agent passed those records.
+
+## 5. Revise or copy a published dataset
+
+On an organization dataset, choose **Edit** to open a draft populated with its records. Edit and publish the draft to create another version. A published draft itself is read-only.
+
+For a `martian:` dataset, choose **Copy to my datasets**. The editable copy belongs to your organization; the original Martian dataset stays read-only. Review and publish the copy before using your changes in a run.
+
+<Screenshot id="evals-datasets-copy" />
+
+From completed run results, you can also select up to 100 rows, choose **Add selected to dataset**, pick an existing draft or **New draft…**, and choose whether expected outputs come from the original expectation or the agent’s actual answer. Review actual answers before accepting them as future ground truth.
+
+## Failures and recovery
+
+- For a stale revision or “reload” error, refresh the draft and review intervening edits before retrying.
+- Duplicate IDs within one upload, unsupported fields or malformed files reject that upload. Correct the reported rows and preview again.
+- If publication becomes **Stalled** or **Needs review**, an owner/admin can inspect **Publish activity** and its **Publish operations**. Resume or abort only after reviewing what was submitted; do not assert that a native creation was never sent unless that is established.
+- **Discard** removes unpublished draft work. Deleting draft records does not remove earlier published versions.
+
+Next, [run the dataset](/martian-security-docs/evals/first-run/) or [organize evaluation projects](/martian-security-docs/evals/projects/).

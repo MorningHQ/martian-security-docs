@@ -1,0 +1,5 @@
+flowchart LR
+    D[Publish a dataset version]:::storage --> R[Run approved HTTP agent]:::agent
+    R --> O[Retain inputs and outputs]:::tool
+    O --> S[Score saved results]:::external
+    S --> H[Review and compare]:::target

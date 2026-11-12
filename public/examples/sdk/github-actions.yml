@@ -1,0 +1,64 @@
+# Copy to .github/workflows/martian-checks.yml in the customer repository.
+# Use trusted code/refs. Create and publish docs-support-regressions first.
+# Commit demo_agent.py, pytest.ini, redteam.yaml and tests/evals at the repository root.
+# The complete copy/adaptation instructions are in README.md and the public SDK CI guide.
+name: Martian agent checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: martian-checks-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  agent-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    # Configure the environment's allowed refs and protection policy available to your plan.
+    environment: agent-evals
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: "0.10.0"
+          python-version: "3.12"
+      - name: Install the verified released SDK
+        run: |
+          uv venv .venv
+          uv pip install --python .venv --index-url https://pypi.org/simple 'martian-sdk[evals]==0.1.2'
+          .venv/bin/martian --version
+          .venv/bin/martian redteam validate redteam.yaml
+      - name: Run one persisted Evals and redteam session
+        env:
+          MARTIAN_API_URL: ${{ vars.MARTIAN_API_URL }}
+          MARTIAN_API_TOKEN: ${{ secrets.MARTIAN_API_TOKEN }}
+          MARTIAN_AGENT_ID: ${{ vars.MARTIAN_AGENT_ID }}
+          MARTIAN_EVALS_GIT_SHA: ${{ github.sha }}
+          MARTIAN_EVALS_STORE_DIR: ${{ runner.temp }}/martian-local-mlflow
+          DEMO_DATASET_NAME: docs-support-regressions
+          MARTIAN_REPORT_INCLUDE_CONTENT: "0"
+          MARTIAN_EVALS_REDACT_INPUTS: "1"
+          MARTIAN_EVALS_REDACT_OUTPUTS: "1"
+        run: >-
+          .venv/bin/martian ci --evals-path tests/evals
+          --redteam-config redteam.yaml --require-export --output results
+      - name: Keep safe reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: martian-safe-results
+          path: |
+            results/ci-session.json
+            results/redteam/risk-assessment.json
+            results/redteam/risk-assessment.md
+            results/redteam/probes.jsonl
+          retention-days: 3
+          if-no-files-found: error

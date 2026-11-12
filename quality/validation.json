@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-13",
+  "checks": [
+    {
+      "scope": "Production Astro build and Pagefind index",
+      "environment": "Node26.13.1 / Astro7.4.11 / Starlight0.42.11",
+      "result": "passed",
+      "details": "40 pages built successfully with static diagrams and Pagefind indexing"
+    },
+    {
+      "scope": "Original Hermes link/anchor/asset/base checker",
+      "result": "passed",
+      "details": "2,974 local links/anchors/assets/base-path references checked with zero failures"
+    },
+    {
+      "scope": "Released SDK0.1.2 install, download and Git tutorial",
+      "result": "passed",
+      "details": "Fresh tutorial extraction, isolated Git repository, exact pip install, real local two-record MLflow evaluation and19 command/setup checks; hosted services not exercised"
+    },
+    {
+      "scope": "HTTP adapter example real-socket/auth/failure checks",
+      "result": "passed",
+      "details": "23 checks; no console registration or public HTTPS deployment qualification"
+    },
+    {
+      "scope": "Simulated first-time-reader and documentation browser review",
+      "result": "passed with fixes in progress",
+      "details": "Desktop1440x1000 and narrow390x844 navigation/search/themes/focus/full-size image/deep refresh passed; mobile label wrapping/search boilerplate/pending notices/version context being corrected"
+    }
+  ],
+  "remainingGaps": [
+    "Authenticated beta application workflows and screenshots require test access; AWS login refresh requested.",
+    "Real-service SDK hosted execution and API-key scope boundaries remain pending.",
+    "A new isolated real Backend/Agents/MLflow stack has started and applied schema0049 with synthetic bootstrap owner; workflow qualification is next.",
+    "Screenshots and complete guide walkthroughs remain pending; source-only instructions are labelled."
+  ]
+}

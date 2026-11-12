@@ -1,0 +1,69 @@
+---
+title: Organize evaluation projects
+description: Select, create and archive projects while preserving organization boundaries and historical evaluation evidence.
+sidebar:
+  order: 3
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+
+<GuideMeta id="evals/projects" />
+
+Use projects to group evaluation runs, traces, judge definitions and review work inside your organization. The project selector determines the context for the Evals page you are viewing. Published datasets are shared across the organization’s projects.
+
+## Before you start
+
+Use an organization with ready Evals setup in the release shown above. Any customer role can browse authorized projects. Creating or archiving a project requires **owner** or **admin** access. A project is an evaluation grouping, not another organization or a permission grant to a different tenant.
+
+## 1. Select a project
+
+1. Open **Evals** and locate the organization/project toolbar above the page title.
+2. Check the organization name and your role.
+3. Open **Project** and choose **Default** or a named ready project.
+4. Move between **Runs**, **Traces** and other Evals sections. The selected project remains part of that navigation.
+
+<Screenshot id="evals-projects-selector" />
+
+Runs and trace views are project scoped. Datasets remain available across projects in the same organization. Selecting another project does not copy datasets or give you access to another organization.
+
+## 2. Create a project
+
+1. As an owner/admin, click **New project**.
+2. In **New evaluation project**, enter a **Name** and optional **Description** that describe the evaluation work.
+3. Click **Create project** once.
+4. Wait for the new project to appear selected in the toolbar. Open **Runs** to begin work in it.
+
+<Screenshot id="evals-projects-create" />
+
+Creating a project establishes its evaluation context; it does not call an agent or run a model judge. If setup returns an unresolved response, use **Retry project setup** to inspect the saved setup request rather than creating an identically named replacement.
+
+## 3. Verify retained scope
+
+1. Refresh the page and confirm the named project is still selected.
+2. Open a run created in that project and confirm its run code and dataset identity.
+3. Change to **Default** and check that the project-specific run list changes.
+4. Return to the named project and confirm its saved work remains available.
+
+An empty project list can reflect unavailable Evals setup, not an absence of permission to the whole console. Use **Refresh setup** after the underlying issue has been resolved. A URL naming an unavailable project is not sufficient to grant access.
+
+## 4. Archive a finished project
+
+Archiving is an administrative terminal state in the current console: there is no restore interface. Use it only when the team is finished admitting new work to that project.
+
+1. Select a custom ready project. The Default context does not expose the same archive action.
+2. Wait for its active target evaluation or scoring work to finish.
+3. Choose the toolbar’s **Archive project** action.
+4. Read **Archive project?** and confirm **Archive project**.
+5. Verify the archived-project warning and refresh. Historical runs and traces remain readable, while new evaluation work is disabled for that project.
+
+<Screenshot id="evals-projects-archive" />
+
+## Failures and limits
+
+- A project whose state is not ready cannot admit new evaluation work.
+- Active target or scoring jobs can prevent archiving. Let them finish or use their documented cooperative stop controls before retrying.
+- Archiving does not delete historical evidence or revoke an agent connection. Manage connections through [Agents](/martian-security-docs/agents/connections/).
+- Organization-wide concurrency still applies across projects: creating projects does not create extra target-run capacity.
+
+Next, [run an evaluation](/martian-security-docs/evals/first-run/) or [inspect traces and sessions](/martian-security-docs/evals/traces-and-sessions/).

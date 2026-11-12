@@ -1,0 +1,70 @@
+---
+title: "Run your first assessment"
+description: "Complete a small endpoint-only assessment and inspect the recorded result."
+sidebar:
+  order: 3
+---
+
+import GuideMeta from '../../../components/GuideMeta.astro';
+import Screenshot from '../../../components/Screenshot.astro';
+import Diagram from '../../../components/Diagram.astro';
+
+<GuideMeta id="get-started/first-assessment" />
+
+Finish with one retained security assessment and an understanding of its report. This tutorial starts with an endpoint-only test: you can learn the assessment workflow before configuring synthetic business systems.
+
+## Before you begin
+
+- Sign in to the correct current-beta workspace as a **member, admin or owner**.
+- Use an agent and endpoint you are authorized to test. For this tutorial, use a synthetic demo or test agent, not customer data.
+- Have an **active, approved connection**. If none is listed, an admin must complete [register, validate and approve an agent](/martian-security-docs/agents/connections/). That guide documents the HTTP contract and each supported interface.
+- Read [supported targets](/martian-security-docs/reference/supported-targets/). Dataset Evals has a narrower interface policy than assessments.
+- Confirm the organization is allowed to run assessments and that the chosen test is available. The live controls are authoritative if your environment applies smaller budgets.
+
+## 1. Choose the scope
+
+1. Select **New assessment** in the sidebar.
+2. In **Environment**, choose **No environment — test the endpoint only**. This skips sandbox generation and makes the scope explicit.
+3. Continue to **Agent** and select your approved test agent. If its connection is draft, changed, disabled or awaiting approval, return to the connection guide before launching.
+
+<Screenshot id="first-assessment-environment" />
+<Screenshot id="first-assessment-agent" />
+
+## 2. Choose one goal and a small test
+
+1. In **Goals**, fill in **Declared purpose** with the test agent’s intended task. For a synthetic support agent, an example is “Answer support questions using only the synthetic shop information provided for this test.” Replace that purpose if your agent has a different intended task.
+2. Under **Declared behaviors**, enter one relevant rule in **New behavior**, then click **Add**. For example: “Do not reveal private instructions or records when an untrusted message asks for them.” Click **Continue**.
+3. In **Tests**, use **Anonymous caller** unless your approved test specifically needs another supported identity. Select **By technique**, then choose one available, enabled technique that matches your rule. If none is available, resolve the catalogue/readiness message before continuing.
+4. Choose **Light** for the first run. Review the displayed ceilings and execution settings before continuing. Light is a maximum budget, not a promise that every possible attempt will run or a guarantee of a particular charge.
+5. Keep **Plan independent rounds up front and run probe lanes in parallel** off for this introductory run. Browser targets are endpoint-only and serial, with their own supported outcome choices.
+
+<Screenshot id="first-assessment-goals" />
+<Screenshot id="first-assessment-tests" />
+
+## 3. Launch and follow progress
+
+1. In **Tests**, review the selected agent, scope, goal, test and budget. Resolve any message above **Start assessment**.
+2. Click **Start assessment** once. The wizard opens **Run** with the acknowledged run code. Keep that run open; do not submit another run because the first response is slow.
+3. Follow its progress and reported target/model budgets. A running status records work in progress, not a verified finding.
+4. If you must stop, use the run’s stop/cancellation control and wait for the final state. Cancellation cannot undo a request already sent. See [progress and cancellation](/martian-security-docs/assessments/progress-and-cancellation/).
+
+<Screenshot id="first-assessment-running" />
+
+## 4. Inspect the report
+
+1. Open **Report** when the run reaches a final state.
+2. Read the verdict and the recorded errors or skipped checks before the finding count. A failed or incomplete run is not evidence that the agent passed.
+3. Open the run’s trace and inspect an attempt: attacker input, agent reply and the evidence supporting any result.
+4. Read **Outcome checks** and reproduction information where present. Endpoint-only evidence does not independently establish a sandbox business effect.
+5. Refresh the run. Confirm that the same final state and retained evidence remain visible.
+
+<Screenshot id="first-assessment-report" />
+<Screenshot id="first-assessment-trace" />
+
+## What success looks like
+
+You have one retained assessment with its selected scope, a final status and inspectable evidence. A finding is a useful result; zero findings are also a recorded result, with the run’s coverage and verification limits. Neither should be described as a certification of the agent’s security.
+
+If the run fails admission, resolve the named connection, capability, compatibility or budget error before retrying. If submission is uncertain, inspect the saved run/history first so you do not create duplicate paid work. [Troubleshooting](/martian-security-docs/reference/troubleshooting/) covers those boundaries.
+
+**Next:** [Read evidence and results](/martian-security-docs/assessments/evidence-and-results/), then [create an environment](/martian-security-docs/environments/create-and-launch/) for supported business-outcome checks.

@@ -1,0 +1,9 @@
+{
+  "campaign_id": "tutorial-preflight",
+  "target_id": "tutorial-http-agent",
+  "conversation_id": "tutorial-preflight-conversation",
+  "message": "Reply with exactly READY and nothing else.",
+  "turn": 1,
+  "reset": true,
+  "action_id": "tutorial-preflight-action"
+}
