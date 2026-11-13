@@ -1270,6 +1270,351 @@
       "validationStatus": "Actual saved-output code scoring, project-scoped native reads, saved-view metadata or issue triage as described. Manually inspected for framing and secrets; no fabricated UI or API interception.",
       "reviewedForSecrets": true,
       "sha256": "ad99e665972fbf905576f26bfa3cd5c134f8c279406621da8f0054d59e77a3c6"
+    },
+    {
+      "id": "evals-compare-suite-numeric",
+      "file": "evals-compare-suite-numeric.png",
+      "alt": "Matching suite v1 jobs, response_length and two filtered regressions.",
+      "caption": "The same v1 definitions pair all three saved records. Selecting response_length and regressed shows the two longer candidate outputs and deltas of 2 and 1.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/compare: 3. Compare supplementary assessment jobs"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:13:23.125703+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "81ce5d471f1f698f128539c6d4c2ea4874ba45f895da36563f20b72674f1d0d2"
+    },
+    {
+      "id": "evals-compare-suite-scorecards",
+      "file": "evals-compare-suite-scorecards.png",
+      "alt": "Baseline and candidate suite scorecards with full coverage and passing mean-length gates.",
+      "caption": "Both v1 scorecards have complete coverage and pass the mean-length ceiling of 80. Their different means do not erase the two record-level increases.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/compare: 3. Compare supplementary assessment jobs"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:13:45.687622+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "cc4d92075f65db931414e0c92afbfd798a02385ef5a52d72c3ac247b7dbbe621"
+    },
+    {
+      "id": "evals-compare-incompatible-suite",
+      "file": "evals-compare-incompatible-suite.png",
+      "alt": "Different suite policies show Comparison unavailable and three supplementary Not Comparable records.",
+      "caption": "Baseline v2 and candidate v1 have different threshold policies. The response_length view reports three Not Comparable records and unavailable deltas.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/compare: 3. Compare supplementary assessment jobs"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:14:37.333604+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "3da6b6368424ee9676b69f4cb2f358277d40efed96d9990e7a79f4dd527533ba"
+    },
+    {
+      "id": "evals-stopping-scoring",
+      "file": "evals-stopping-scoring.png",
+      "alt": "Real code-scoring job with Stopping after the current judgment and eight of twelve assessments scored.",
+      "caption": "The stop was acknowledged while eight of twelve code assessments had been produced. The configuration stays disabled while stopping. A separate local setup warning was visible behind the dialog; the retained source run remained Completed.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/stopping-and-recovery: 3. Stop saved-output scoring"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:29:33.276679+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "eea97ccb04e524f2446125d15c0e4bd1e880fe71532b59b33cb7281f07e4df87"
+    },
+    {
+      "id": "evals-stopping-scorecard",
+      "file": "evals-stopping-scorecard.png",
+      "alt": "Cancelled scoring job retains two-thirds coverage while the source run keeps three canonical passes.",
+      "caption": "After refresh and explicit selection of the cancelled job, each of four criteria shows two of three records evaluated and one missing value. All eight retained assessments had native IDs; the original target run still had three canonical passes.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/stopping-and-recovery: 3. Stop saved-output scoring"
+      ],
+      "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:32:20.920075+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "8784a959560253c174165b5f8fde8200429d1dbb24e0cfe0318bca6b3140609e"
+    },
+    {
+      "id": "evals-stopping-request",
+      "file": "evals-stopping-request-positive.png",
+      "alt": "Real stopping intent with one completed record and another response pending.",
+      "caption": "EV-1007 shows Stopping after the current request after the first record passed. The next response is still pending; acknowledgement alone is not terminal completion.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/stopping-and-recovery: 1. Stop a target evaluation"
+      ],
+      "environment": "Isolated local QA: real pinned Backend, Agents and MLflow; synthetic Martian Docs Lab organization. The stop example uses supported 90-second item/target budgets; model opinions use actual Bedrock inference.",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:48:33.643800+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. Shipped local worker release/manifest verified unchanged. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "af2522882aa329170a35b63dfbad596ec90a4221f90fae8c12c618e3df46ae1e"
+    },
+    {
+      "id": "evals-stopping-cancelled",
+      "file": "evals-stopping-cancelled.png",
+      "alt": "Cancelled evaluation retaining two passing responses and one skipped record.",
+      "caption": "After refresh, the same cancelled run retains READY/HELLO responses, two passes, zero errors and one unstarted skipped record. Two requests reached the actual teaching target.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/stopping-and-recovery: 2. Verify the cancelled result"
+      ],
+      "environment": "Isolated local QA: real pinned Backend, Agents and MLflow; synthetic Martian Docs Lab organization. The stop example uses supported 90-second item/target budgets; model opinions use actual Bedrock inference.",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:50:45.167930+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. Shipped local worker release/manifest verified unchanged. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "f21130bc3edbcdebe63062568be223f6cc3312c3181dd050ee2297661bf7cc3e"
+    },
+    {
+      "id": "evals-stopping-native-killed",
+      "file": "evals-stopping-native-killed.png",
+      "alt": "Verified native KILLED provenance and matching two-pass, one-skipped metrics.",
+      "caption": "Native provenance independently reads KILLED for this retained cancelled run, with two passed, zero failed, one skipped and zero errored metrics. The callback revision is explicitly customer-declared.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/stopping-and-recovery: 2. Verify the cancelled result"
+      ],
+      "environment": "Isolated local QA: real pinned Backend, Agents and MLflow; synthetic Martian Docs Lab organization. The stop example uses supported 90-second item/target budgets; model opinions use actual Bedrock inference.",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:50:47.999809+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. Shipped local worker release/manifest verified unchanged. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "6131dcb507953b50eae0a0712ff1db63de43a17154fc661b6454e3125b177bb1"
+    },
+    {
+      "id": "evals-model-judges-selection",
+      "file": "evals-model-judges-selection.png",
+      "alt": "Available correctness and safety judges selected with provider-cost acknowledgement.",
+      "caption": "The real local QA environment exposes both model judges. Only correctness and safety are selected, and the owner has acknowledged provider charges before admission.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/judging: 2. Add built-in model opinions"
+      ],
+      "environment": "Isolated local QA: real pinned Backend, Agents and MLflow; synthetic Martian Docs Lab organization. The stop example uses supported 90-second item/target budgets; model opinions use actual Bedrock inference.",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:37:45.827627+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. Shipped local worker release/manifest verified unchanged. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "dc09c949ec25a05b8ff030f8aef56cd182c4f8a921f7c46dc20ef5acae06e89c"
+    },
+    {
+      "id": "evals-model-judges-feedback",
+      "file": "evals-model-judges-feedback.png",
+      "alt": "Real correctness and safety model opinions with retained feedback and source identity.",
+      "caption": "The saved READY result has true safety and correctness opinions, explanations and persisted MLflow feedback. Assessment identity records the Bedrock GLM-5 judge revision. One pending feedback delivery was reconciled without requesting another judgment.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/judging: 2. Add built-in model opinions"
+      ],
+      "environment": "Isolated local QA: real pinned Backend, Agents and MLflow; synthetic Martian Docs Lab organization. The stop example uses supported 90-second item/target budgets; model opinions use actual Bedrock inference.",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:47:22.854946+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from clean pinned Git archive; Backend/Agents use matching release images. Shipped local worker release/manifest verified unchanged. This is not an AWS-beta deployment attestation.",
+      "validationStatus": "Observed real application state following actual API actions; image manually inspected for secrets. Guide qualification is tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "d3172db493d3ddeb7dbb22cf2b4bbe467ead32cdba8ac0210afcf794cd7d0bd5"
+    },
+    {
+      "id": "evals-judging-definition",
+      "file": "evals-judging-definition.png",
+      "alt": "Real Boolean custom-judge definition with a stable name and saved-text instructions.",
+      "caption": "Owner enters the docs_answer_present Boolean rubric before Save version 1. Saving the definition invokes no judging model.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/judging: 3. Define a custom model rubric"
+      ],
+      "environment": "Isolated local QA: pinned real Backend, Agents and MLflow; actual Bedrock GLM-5 judging; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T07:59:10.426177+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from a clean pinned archive; Backend/Agents use matching release images and the unchanged shipped local worker release/manifest. Not an AWS-beta deployment attestation.",
+      "validationStatus": "Real observed application state, actual API operations and retained evidence; image manually reviewed for secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "57aec05449b5d815a3129e2641de0e8cdb4889733e4ea78c6f56f2ccfe83857c"
+    },
+    {
+      "id": "evals-judging-feedback",
+      "file": "evals-judging-feedback.png",
+      "alt": "Two persisted opinions on the same punctuation response with different retained definition identities.",
+      "caption": "V2 rejects the extra period while the earlier v1 accepts the required answer. Both native feedback records, rationales, jobs and definition digests remain visible. The identical engine-v2 source suffix is separate from each rubric version.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/judging: 4. Apply a particular judge version"
+      ],
+      "environment": "Isolated local QA: pinned real Backend, Agents and MLflow; actual Bedrock GLM-5 judging; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T08:21:02.113863+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from a clean pinned archive; Backend/Agents use matching release images and the unchanged shipped local worker release/manifest. Not an AWS-beta deployment attestation.",
+      "validationStatus": "Real observed application state, actual API operations and retained evidence; image manually reviewed for secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "e59a61f487ad4eacd5950ef5f746e39a9a3a0c207ce5d152bf7efd78caf8f328"
+    },
+    {
+      "id": "evals-judging-next-version",
+      "file": "evals-judging-next-version.png",
+      "alt": "Create version 2 preserves the judge name while allowing stricter instructions.",
+      "caption": "The immutable judge name remains disabled. Owner prepares a stricter Boolean v2 rubric requiring expected case and punctuation, then saves it as a new version.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/judging: 4. Apply a particular judge version"
+      ],
+      "environment": "Isolated local QA: pinned real Backend, Agents and MLflow; actual Bedrock GLM-5 judging; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T08:05:09.218060+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from a clean pinned archive; Backend/Agents use matching release images and the unchanged shipped local worker release/manifest. Not an AWS-beta deployment attestation.",
+      "validationStatus": "Real observed application state, actual API operations and retained evidence; image manually reviewed for secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "49d881193d1921fa1708c153e5a4333ea2795db4917e6eeec3bbacfbdb86c6cd"
+    },
+    {
+      "id": "evals-judging-historical-version",
+      "file": "evals-judging-historical-version.png",
+      "alt": "Latest catalogue label v2 with historical v1 selected for execution.",
+      "caption": "The checkbox label identifies the latest catalogue version; the adjacent selector pins v1. This actual selection was admitted against baseline EV-1001 after v2 existed and retained three native v1 assessments.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/judging: 4. Apply a particular judge version"
+      ],
+      "environment": "Isolated local QA: pinned real Backend, Agents and MLflow; actual Bedrock GLM-5 judging; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T08:22:19.225942+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from a clean pinned archive; Backend/Agents use matching release images and the unchanged shipped local worker release/manifest. Not an AWS-beta deployment attestation.",
+      "validationStatus": "Real observed application state, actual API operations and retained evidence; image manually reviewed for secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "0e0721ff36f6417b4ffd2c72c3017337b29735ccdf136790fa1ed0b3711fde79"
+    },
+    {
+      "id": "evals-judging-version-history",
+      "file": "evals-judging-version-history.png",
+      "alt": "Read-back version history retaining the stricter v2 and original v1 definitions.",
+      "caption": "The real Version history panel retains both Boolean definitions, their original instructions and capture-time creation dates. Saving v2 did not replace v1.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/judging: 4. Apply a particular judge version"
+      ],
+      "environment": "Isolated local QA: pinned real Backend, Agents and MLflow; actual Bedrock GLM-5 judging; synthetic Martian Docs Lab organization",
+      "role": "Organization owner; platform_admin false",
+      "capturedAt": "2026-11-13T08:29:14.555226+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Frontend served from a clean pinned archive; Backend/Agents use matching release images and the unchanged shipped local worker release/manifest. Not an AWS-beta deployment attestation.",
+      "validationStatus": "Real observed application state, actual API operations and retained evidence; image manually reviewed for secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "d3d1bdbae537c0bd69ba161abf0b8d492ce44853cb53fb1c740e2033a8ca6af3"
     }
   ]
 }

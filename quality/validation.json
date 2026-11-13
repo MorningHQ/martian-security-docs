@@ -3,15 +3,19 @@
   "updatedAt": "2026-11-13",
   "checks": [
     {
-      "scope": "Production Astro build and Pagefind index",
+      "scope": "Historical PR5: Production Astro build and Pagefind index",
       "environment": "Node26.13.1 / Astro7.4.11 / Starlight0.42.11",
       "result": "passed",
-      "details": "40 pages built successfully with static diagrams and Pagefind indexing"
+      "details": "40 pages built successfully with static diagrams and Pagefind indexing",
+      "historical": true,
+      "milestone": "PR5"
     },
     {
-      "scope": "Original Hermes link/anchor/asset/base checker",
+      "scope": "Historical PR5: Original Hermes link/anchor/asset/base checker",
       "result": "passed",
-      "details": "3,157 local links/anchors/assets/base-path references checked with zero failures"
+      "details": "3,157 local links/anchors/assets/base-path references checked with zero failures",
+      "historical": true,
+      "milestone": "PR5"
     },
     {
       "scope": "Released SDK0.1.2 install, download and Git tutorial",
@@ -24,9 +28,11 @@
       "details": "23 focused service/auth/failure checks; real public HTTPS and console execution are recorded separately below."
     },
     {
-      "scope": "Simulated first-time-reader and documentation browser review",
+      "scope": "Historical PR5: Simulated first-time-reader and documentation browser review",
       "result": "passed for current Evals update in local production preview; earlier SDK and published-site checks retained",
-      "details": "AI simulated novice review; no human participant. Projects, code suites, traces/views and quality-issue guides passed desktop1440x1000 and narrow390x844 review, light/dark themes, mobile menu, deep refresh, full-size/inline imagery, and search scoring suite with the correct first result. The missing explicit v2 application step was fixed and rechecked before the failed-gate image. Final post-build checks had no overflow or docs console errors. One image404 during an in-place preview rebuild was retained in the review report and resolved by fresh final readback. Original strict SDK CI failure and pending conversation-session qualification remain explicit."
+      "details": "AI simulated novice review; no human participant. Projects, code suites, traces/views and quality-issue guides passed desktop1440x1000 and narrow390x844 review, light/dark themes, mobile menu, deep refresh, full-size/inline imagery, and search scoring suite with the correct first result. The missing explicit v2 application step was fixed and rechecked before the failed-gate image. Final post-build checks had no overflow or docs console errors. One image404 during an in-place preview rebuild was retained in the review report and resolved by fresh final readback. Original strict SDK CI failure and pending conversation-session qualification remain explicit.",
+      "historical": true,
+      "milestone": "PR5"
     },
     {
       "scope": "Real customer onboarding, HTTP adapter and first evaluation",
@@ -36,9 +42,11 @@
       "details": "Owner and teammate enrollment, manual invitation lifecycle, real HTTP onboarding, dataset JSONL publication, EV-1001 with three passed responses and native traces, filtered exports, code scoring without extra target calls, four typed reviews persisted/completed, immutable review question reuse and recorded role/auth/tenant boundaries. Hosted beta parity is not attested."
     },
     {
-      "scope": "Real screenshot registry",
+      "scope": "Historical PR5: Real screenshot registry",
       "result": "passed",
-      "details": "55 registered references to 50 unique 1440x1000 application PNGs; local hashes, exact guide/stage, role/environment/date/source provenance and manual secret review retained."
+      "details": "55 registered references to 50 unique 1440x1000 application PNGs; local hashes, exact guide/stage, role/environment/date/source provenance and manual secret review retained.",
+      "historical": true,
+      "milestone": "PR5"
     },
     {
       "scope": "Canonical changed-target comparison",
@@ -48,9 +56,11 @@
       "details": "Actual changed callback completed2passes/1failure, native FINISHED and pinned customer-declared SHA. Compared three paired records with one regression; both native outputs, CSV3/filteredCSV1, refresh and selection guards checked. Target counter14\u219217 for execution and stayed17 during inspection."
     },
     {
-      "scope": "Complete end-to-end qualification audit",
+      "scope": "Historical PR5: Complete end-to-end qualification audit",
       "result": "incomplete; audit correctly fails",
-      "details": "32 task guides: 10 verified in named local QA environments, 7 partial, 15 pending. The strict release audit still reports 47 pending screenshot references and 22 unverified full walkthroughs (70 findings). No gate was disabled."
+      "details": "32 task guides: 10 verified in named local QA environments, 7 partial, 15 pending. The strict release audit still reports 47 pending screenshot references and 22 unverified full walkthroughs (70 findings). No gate was disabled.",
+      "historical": true,
+      "milestone": "PR5"
     },
     {
       "scope": "Console-import example contract regression",
@@ -77,12 +87,65 @@
       "result": "named read/view paths passed; positive conversation sessions unqualified",
       "record": "quality/walkthroughs.json",
       "details": "One filtered native trace, all inspector tabs, actual payload and matching CSV/JSON1 exports, private/shared view save/reselect/update/delete and role/privacy/revision guards passed. A separate ready organization received404 for the same trace its owning customer read200. Initial view-save500/absence readback/recovery retained; SDK does not forward native conversation metadata."
+    },
+    {
+      "scope": "Supplementary comparison compatibility",
+      "environment": "Real isolated local QA",
+      "result": "passed",
+      "record": "quality/walkthroughs.json",
+      "details": "Matching suite-v1 jobs, numeric and Boolean criterion changes, both passing scorecards, filtered CSV2 and refresh/reselection passed; definition and dataset mismatches remained not comparable without replaying targets."
+    },
+    {
+      "scope": "Cooperative saved-output scoring stop",
+      "environment": "Real isolated local QA",
+      "result": "passed for code criteria; target success retention pending",
+      "record": "quality/walkthroughs.json",
+      "details": "Actual202 stop at 8/12 retained eight native assessments with zero errors after refresh and two-thirds coverage. The source target run stayed completed. Separate target cancellation retained two errors/one skip/native KILLED and telemetry-only recovery0targetcalls."
+    },
+    {
+      "scope": "Positive target stop and authority boundaries",
+      "environment": "Real isolated local QA; supported 90-second item/target budgets",
+      "result": "passed",
+      "record": "quality/walkthroughs.json",
+      "details": "Actual UI stop retained two successful responses and one skipped record, native KILLED, refresh persistence and exactly two target requests. Owner/member intent readback202, viewer403, foreign404 and late409 passed."
+    },
+    {
+      "scope": "Built-in model opinions and native delivery",
+      "environment": "Real isolated application stack with actual Bedrock GLM-5 inference",
+      "result": "passed for built-in correctness/safety; custom versions pending",
+      "record": "quality/walkthroughs.json",
+      "details": "Three saved responses produced six Boolean model opinions with zero errors. One existing feedback delivery was synchronized; final readback had all six native IDs. Source target outputs/canonical outcomes were unchanged."
+    },
+    {
+      "scope": "Immutable custom Boolean rubric versions and historical execution",
+      "environment": "Real isolated local QA and actual Bedrock GLM-5 inference",
+      "result": "passed for the named Boolean path",
+      "record": "quality/walkthroughs.json",
+      "details": "Custom v1/v2 and explicit historical-v1 jobs produced nine persisted native model assessments in addition to six built-in values. Existing deliveries were synchronized without paid reruns. Version history, actual JSON exports, compatible same-v1 comparison and cost/role/tenant/stale-version guards passed. No target replay."
+    },
+    {
+      "scope": "PR6 production build and documentation checks",
+      "environment": "Node26 production build; real isolated QA evidence tracked separately",
+      "result": "passed; full qualification remains incomplete",
+      "details": "Astro built 40 pages and Pagefind indexed 40 files. Default checks passed 3215 links/assets/anchors/base paths plus both console-import examples (5 records). Registry has 70 captured references/65 unique PNGs; 13 guides verified in named local QA, 5 partial, 14 pending. Strict release audit remains failing with 42 pending screenshot references, 19 unverified full guides and 62 findings; no qualification gate was weakened."
+    },
+    {
+      "scope": "PR6 AI-simulated novice and aesthetic review",
+      "environment": "Production preview; desktop1440 and narrow390; light/dark; no human participant",
+      "result": "passed after two content handoff/limitation fixes",
+      "details": "Independent reviewer inspected all15 new PNGs at native1440x1000 and inline, checked stop/judge-version search, full-size image opening, nested refresh, theme persistence, actual HTTP ZIP9 download and README/asset links. No overflow or documentation console/network failure. Explicit v2 save/apply sequence and built-in-only suite-gate scope passed final rendered recheck; punctuation polished afterward."
+    },
+    {
+      "scope": "PR6 independent source, asset and evidence review",
+      "environment": "Exact pinned product sources, changed docs/assets and explicitly named nonsecret QA receipts",
+      "result": "no outstanding P1/P2",
+      "details": "All15 new PNG hashes/dimensions and metadata chunks checked; HTTPZIP9 matches loose files and tested slow-callback SHA. Positive cancellation, partial code stop, comparisons, all15 distinct persisted model native IDs and role/cost/version/tenant guards agree with receipts. Custom-suite guidance and historical aggregate labels corrected. Exact reviewed-file snapshot is retained separately."
     }
   ],
   "remainingGaps": [
     "Remaining interfaces, advanced Evals, red teaming and their application screenshots still need qualification.",
     "SDK setup/key boundaries and Evals persistence/recovery passed in local QA. A clean original strict-CI pass, combined model-based execution and hosted GitHub runner execution remain unverified.",
-    "Model-based assessments/judges and seed generation require working inference access; AWS sign-in refresh requested.",
+    "Working inference, matching local worker readiness and the Boolean model-judge walkthrough are established. Remaining assessments, SDK redteam and seed-generation stages still need actual walkthrough evidence.",
     "Sandbox orchestration/readiness is not available in the SDK-derived local QA stack; connectors503 is recorded.",
     "Local QA proves the named pinned-source behavior, not hosted AWS-beta parity."
   ]

@@ -18,6 +18,8 @@ Request a bounded stop without discarding results that have already arrived, and
 
 Use a deliberately bounded, authorized example when learning the controls. A stop is cooperative: a target request or model judgment already admitted can finish and may incur its normal charge. Stop is not a way to revoke an already sent request or undo external side effects.
 
+For optional practice with the [HTTP teaching adapter](/martian-security-docs/agents/http-adapter/), its [complete example README](/martian-security-docs/examples/http-agent/README.md) includes `slow_agent:answer`. That genuine callback waits ten seconds. Confirm deadline headroom with your administrator before using it; the recorded local QA success used a 90-second request budget. Keep the original three-record dataset and stop after at least one record finishes.
+
 ## 1. Stop a target evaluation
 
 1. Open **Evals → Runs** in the active run’s project.
@@ -33,16 +35,22 @@ A queued run may stop before sending any request. An active run retains the curr
 
 1. Open the run detail and wait for **Cancelled**.
 2. Inspect retained responses and **Skipped** rows. Do not count skipped records as passing checks.
-3. Open **Evaluation provenance** and inspect the native run state when available; a verified cancelled native run is recorded as **KILLED**.
+3. Open **Evaluation provenance** and inspect the native run state when available; a verified cancelled native run is recorded as **KILLED**. A queued stop can finish before a native run exists.
 4. Refresh and reopen the same run. Confirm its terminal state and retained rows remain available.
 
 <Screenshot id="evals-stopping-cancelled" />
 
+In the recorded success, the stop was requested after the first record finished. The second in-flight response also arrived: **2 Passed, 0 Errors, 1 Skipped** remained after refresh. Native provenance showed **KILLED** with the same counts. Two actual requests reached the teaching target.
+
+<Screenshot id="evals-stopping-native-killed" />
+
 A cancellation acknowledgement is intent to stop, not proof that all physical work has ended. Wait for the terminal run state and relevant evidence before launching another evaluation. If the run has already finished, the UI/API can reject a late stop and keep its recorded result.
+
+A cancelled run can also retain target errors. An earlier local attempt had two errors and one skipped record; its native state was still KILLED. Read the retained rows and any telemetry warning before interpreting cancellation as a successful target interaction.
 
 ## 3. Stop saved-output scoring
 
-1. Open the completed target run and its **Score saved outputs** dialog.
+1. Open the completed target run and its **Score saved outputs** dialog. After **Apply scorers** admits a job, the dialog closes; reopen **Score saved outputs** while that job is still active.
 2. While a scoring job is active, click **Stop scoring after current judgment**.
 3. Observe **Stopping after the current judgment** and wait for the job to finish stopping.
 4. Inspect the selected **Assessment job** and the assessments already retained. Refresh and confirm the same job state and saved feedback.
@@ -50,6 +58,10 @@ A cancellation acknowledgement is intent to stop, not proof that all physical wo
 <Screenshot id="evals-stopping-scoring" />
 
 This stops supplementary scoring, not the target run that already completed. The in-flight judgment can finish; retained assessments are preserved, and unscored results remain missing. Partial coverage must not be interpreted as a passing full-run gate.
+
+In the recorded code-only example, four criteria were selected for three saved responses. The stop was accepted at **8/12 scored**. The same cancelled job retained eight native assessments after refresh, with **2 of 3 evaluated** for each criterion and one missing value. The original target run still had three canonical passes. Here, “scored” counts assessments, including failing Boolean values; it does not count passing records.
+
+<Screenshot id="evals-stopping-scorecard" />
 
 ## 4. Resolve an uncertain acknowledgement
 

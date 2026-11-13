@@ -1146,7 +1146,10 @@
       "screenshots": [
         "evals-compare-selection",
         "evals-compare-results",
-        "evals-compare-trace"
+        "evals-compare-trace",
+        "evals-compare-suite-numeric",
+        "evals-compare-suite-scorecards",
+        "evals-compare-incompatible-suite"
       ],
       "screenshotStages": [
         {
@@ -1166,6 +1169,24 @@
           "caption": "Native trace inspected from the retained comparison context.",
           "alt": "Native trace inspected from the retained comparison context",
           "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+        },
+        {
+          "id": "evals-compare-suite-numeric",
+          "caption": "The same v1 definitions pair all three saved records. Selecting response_length and regressed shows the two longer candidate outputs and deltas of 2 and 1.",
+          "alt": "Matching suite v1 jobs, response_length and two filtered regressions.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+        },
+        {
+          "id": "evals-compare-suite-scorecards",
+          "caption": "Both v1 scorecards have complete coverage and pass the mean-length ceiling of 80. Their different means do not erase the two record-level increases.",
+          "alt": "Baseline and candidate suite scorecards with full coverage and passing mean-length gates.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+        },
+        {
+          "id": "evals-compare-incompatible-suite",
+          "caption": "Baseline v2 and candidate v1 have different threshold policies. The response_length view reports three Not Comparable records and unavailable deltas.",
+          "alt": "Different suite policies show Comparison unavailable and three supplementary Not Comparable records.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -1175,8 +1196,8 @@
         "Export comparison and inspect rows",
         "Verify incompatible definitions/dataset identity are not treated as comparable"
       ],
-      "validationStatus": "In isolated local QA, distinct same-dataset runs paired all three records with one deliberate regression and two unchanged scores. Both native traces, CSV3/filteredCSV1, refresh, same-run and one-sided-job guards passed without extra target calls. Supplementary scoring-job compatibility and incompatible dataset/definition checks remain pending.",
-      "qualification": "partial",
+      "validationStatus": "Canonical and matching v1 supplementary comparison, both native trace contexts, criterion/filter/export readback, refresh/reselection and same-run/one-sided-job guards passed. Changed suite policies return compatible false and three supplementary Not Comparable rows; different datasets return zero paired and five Not Comparable rows. Comparison/scoring did not replay the target.",
+      "qualification": "verified",
       "documentationRoute": "/martian-security-docs/evals/compare/",
       "validation": [
         {
@@ -1184,8 +1205,16 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "Canonical run comparison",
           "result": "passed for the named canonical path; supplementary compatibility pending"
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Supplementary comparison compatibility",
+          "result": "passed in the named isolated local QA environment"
         }
-      ]
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA"
     },
     {
       "id": "evals/datasets",
@@ -1420,7 +1449,12 @@
         "evals-judging-code",
         "evals-judging-definition",
         "evals-judging-feedback",
-        "evals-judging-code-feedback"
+        "evals-judging-code-feedback",
+        "evals-model-judges-selection",
+        "evals-model-judges-feedback",
+        "evals-judging-next-version",
+        "evals-judging-historical-version",
+        "evals-judging-version-history"
       ],
       "screenshotStages": [
         {
@@ -1431,15 +1465,45 @@
         },
         {
           "id": "evals-judging-definition",
-          "caption": "Typed immutable custom model-judge definition before or after saving.",
-          "alt": "Typed immutable custom model-judge definition before or after saving",
-          "validationStatus": "pending actual capture and walkthrough"
+          "caption": "Owner enters the docs_answer_present Boolean rubric before Save version 1. Saving the definition invokes no judging model.",
+          "alt": "Real Boolean custom-judge definition with a stable name and saved-text instructions.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-judging-feedback",
-          "caption": "Persisted typed judge feedback with recorded rationale and version identity.",
-          "alt": "Persisted typed judge feedback with recorded rationale and version identity",
-          "validationStatus": "pending actual capture and walkthrough"
+          "caption": "V2 rejects the extra period while the earlier v1 accepts the required answer. Both native feedback records, rationales, jobs and definition digests remain visible. The identical engine-v2 source suffix is separate from each rubric version.",
+          "alt": "Two persisted opinions on the same punctuation response with different retained definition identities.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+        },
+        {
+          "id": "evals-model-judges-selection",
+          "caption": "The real local QA environment exposes both model judges. Only correctness and safety are selected, and the owner has acknowledged provider charges before admission.",
+          "alt": "Available correctness and safety judges selected with provider-cost acknowledgement.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+        },
+        {
+          "id": "evals-model-judges-feedback",
+          "caption": "The saved READY result has true safety and correctness opinions, explanations and persisted MLflow feedback. Assessment identity records the Bedrock GLM-5 judge revision. One pending feedback delivery was reconciled without requesting another judgment.",
+          "alt": "Real correctness and safety model opinions with retained feedback and source identity.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+        },
+        {
+          "id": "evals-judging-next-version",
+          "caption": "The immutable judge name remains disabled. Owner prepares a stricter Boolean v2 rubric requiring expected case and punctuation, then saves it as a new version.",
+          "alt": "Create version 2 preserves the judge name while allowing stricter instructions.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+        },
+        {
+          "id": "evals-judging-historical-version",
+          "caption": "The checkbox label identifies the latest catalogue version; the adjacent selector pins v1. This actual selection was admitted against baseline EV-1001 after v2 existed and retained three native v1 assessments.",
+          "alt": "Latest catalogue label v2 with historical v1 selected for execution.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+        },
+        {
+          "id": "evals-judging-version-history",
+          "caption": "The real Version history panel retains both Boolean definitions, their original instructions and capture-time creation dates. Saving v2 did not replace v1.",
+          "alt": "Read-back version history retaining the stricter v2 and original v1 definitions.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -1449,8 +1513,8 @@
         "Verify persisted typed feedback and rationale after refresh",
         "Verify disabled model readiness and viewer mutation boundary"
       ],
-      "validationStatus": "In isolated local QA, three saved-output code criteria produced nine persisted assessments with the real target request count unchanged at 14. Viewer and disabled-model controls passed. Custom model definition/version and model-judge execution remain pending.",
-      "qualification": "partial",
+      "validationStatus": "Code scoring, built-in correctness/safety and Boolean custom v1/v2/historical-v1 execution passed without target replay. Fifteen model assessments retained native IDs; three existing deliveries needed one explicit sync each. Version history, exact JSON export provenance, refresh, model cost422, stale version409, member definition403, viewer application403/read200 and foreign run404 passed. Numeric/category/text model execution is outside this recorded Boolean walkthrough.",
+      "qualification": "verified",
       "documentationRoute": "/martian-security-docs/evals/judging/",
       "validation": [
         {
@@ -1458,8 +1522,22 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "Saved-output code scoring",
           "result": "code scoring and role boundaries passed; model path pending"
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Built-in model opinions and retained feedback",
+          "result": "passed for the named built-in path; custom-version workflow remains pending"
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Immutable custom Boolean rubric versions and historical execution",
+          "result": "passed in the named isolated local QA environment"
         }
-      ]
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA (code + Boolean model rubrics)"
     },
     {
       "id": "evals/projects",
@@ -1693,7 +1771,7 @@
       "id": "evals/stopping-and-recovery",
       "role": "member+ stops; all customer roles inspect retained work",
       "route": "/#/evals",
-      "environment": "qualification pending; current beta customer source",
+      "environment": "Isolated local QA; genuine target cancellation and code-scoring stop",
       "sourceRevisions": {
         "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
         "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
@@ -1710,26 +1788,40 @@
       "screenshots": [
         "evals-stopping-request",
         "evals-stopping-cancelled",
-        "evals-stopping-scoring"
+        "evals-stopping-scoring",
+        "evals-stopping-scorecard",
+        "evals-stopping-native-killed"
       ],
       "screenshotStages": [
         {
           "id": "evals-stopping-request",
-          "caption": "Active evaluation with cooperative Stop after current request control.",
-          "alt": "Active evaluation with cooperative Stop after current request control",
-          "validationStatus": "pending actual capture and walkthrough"
+          "caption": "EV-1007 shows Stopping after the current request after the first record passed. The next response is still pending; acknowledgement alone is not terminal completion.",
+          "alt": "Real stopping intent with one completed record and another response pending.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-stopping-cancelled",
-          "caption": "Cancelled evaluation retaining completed responses and skipped remaining rows.",
-          "alt": "Cancelled evaluation retaining completed responses and skipped remaining rows",
-          "validationStatus": "pending actual capture and walkthrough"
+          "caption": "After refresh, the same cancelled run retains READY/HELLO responses, two passes, zero errors and one unstarted skipped record. Two requests reached the actual teaching target.",
+          "alt": "Cancelled evaluation retaining two passing responses and one skipped record.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         },
         {
           "id": "evals-stopping-scoring",
-          "caption": "Actual scoring job stopping after its in-flight judgment while retaining feedback.",
-          "alt": "Actual scoring job stopping after its in-flight judgment while retaining feedback",
-          "validationStatus": "pending actual capture and walkthrough"
+          "caption": "The stop was acknowledged while eight of twelve code assessments had been produced. The configuration stays disabled while stopping. A separate local setup warning was visible behind the dialog; the retained source run remained Completed.",
+          "alt": "Real code-scoring job with Stopping after the current judgment and eight of twelve assessments scored.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+        },
+        {
+          "id": "evals-stopping-scorecard",
+          "caption": "After refresh and explicit selection of the cancelled job, each of four criteria shows two of three records evaluated and one missing value. All eight retained assessments had native IDs; the original target run still had three canonical passes.",
+          "alt": "Cancelled scoring job retains two-thirds coverage while the source run keeps three canonical passes.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+        },
+        {
+          "id": "evals-stopping-native-killed",
+          "caption": "Native provenance independently reads KILLED for this retained cancelled run, with two passed, zero failed, one skipped and zero errored metrics. The callback revision is explicitly customer-declared.",
+          "alt": "Verified native KILLED provenance and matching two-pass, one-skipped metrics.",
+          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
         }
       ],
       "requiredValidation": [
@@ -1739,10 +1831,25 @@
         "Request scoring stop while actual judgment is active and verify retained feedback",
         "Inspect natural uncertainty if present; do not fabricate or intercept APIs to invent a state"
       ],
-      "validationStatus": "source reviewed; live walkthrough and screenshots pending",
-      "qualification": "pending",
+      "validationStatus": "Real HTTP stop retained two successful responses, one skipped record, zero errors and matching native KILLED after refresh under supported 90-second QA budgets. Code stop retained eight native assessments with partial coverage and unchanged target results. Owner/member same-intent readback202, viewer denial403, foreign denial404 and first-late-stop409 passed. Original timeout case and telemetry-only recovery are retained separately.",
+      "qualification": "verified",
       "documentationRoute": "/martian-security-docs/evals/stopping-and-recovery/",
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Cooperative saved-output scoring stop",
+          "result": "passed for code scoring; target failure evidence retained separately"
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Positive target stop and authority boundaries",
+          "result": "passed in named isolated local QA environment"
+        }
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA (HTTP + code criteria)"
     },
     {
       "id": "evals/suites-and-monitoring",

@@ -276,11 +276,97 @@
         "The initial foreign-read fixture lacked its own ready Evals context and was not counted as a privacy denial. Supported guarded setup then established a separate ready native context: own search200, foreign trace404 and owning customer same-trace read200"
       ],
       "remaining": []
+    },
+    {
+      "task": "Supplementary comparison compatibility",
+      "result": "passed in isolated local QA",
+      "observed": [
+        "Applied the same immutable suite v1 to EV-1003: six persisted native assessments, zero errors and unchanged canonical outcomes",
+        "EV-1001 v1 versus EV-1003 v1 paired three records; containment had three unchanged values, response length had two regressions and one unchanged value, and both mean-length gates passed",
+        "Actual filtered response-length CSV contained two regression rows with both job identities, values, deltas and code source IDs",
+        "Selecting v2 versus v1 returned HTTP200 compatible false; the supplementary criterion showed three Not Comparable rows while canonical results remained separately inspectable",
+        "Different immutable three-record and two-record datasets returned HTTP200 compatible false, zero paired records and five Not Comparable union rows",
+        "Full refresh and explicit reselection retained both historical jobs and the same criterion changes; target counter remained 20 through the comparison checks"
+      ],
+      "remaining": []
+    },
+    {
+      "task": "Cooperative saved-output scoring stop",
+      "result": "passed for code criteria in isolated local QA",
+      "observed": [
+        "Owner applied four code criteria to the three completed EV-1001 saved outputs, then used the real Stop scoring after current judgment control at 8/12",
+        "Stop returned202 with persisted intent; the UI showed Stopping after the current judgment",
+        "The exact job finished Cancelled with eight native persisted assessments and zero errors; full refresh and explicit job reselection retained two of three evaluated records for each criterion",
+        "Original EV-1001 remained Completed with three canonical passes; the independent teaching-target counter stayed 21 during this scoring-only path"
+      ],
+      "remaining": [
+        "A positive target-response retention example and the remaining stop role boundaries are not established by this code-only check."
+      ]
+    },
+    {
+      "task": "Cancelled target failure and telemetry reconciliation",
+      "result": "cancellation observed; positive in-flight response retention incomplete",
+      "observed": [
+        "A genuine ten-second teaching callback was started under its newly declared source revision; EV-1006 was admitted with the existing immutable three-record dataset",
+        "The real target stop returned202 and the UI showed stopping intent; terminal Cancelled retained one timed-out record, one downstream403 error and one unstarted skipped record",
+        "Native provenance read200 with KILLED and matching two-error/one-skipped metrics; the original finalization-outcome-unknown warning was preserved in the first receipt",
+        "Existing attributed administrator telemetry-only reconciliation exited0 and made zero target calls; no callback was rerun to repair export",
+        "Only one request reached the teaching target, changing its observed tunnel count20 to21"
+      ],
+      "remaining": [
+        "No successful target response was retained in this first stopping attempt.",
+        "The later local configuration uses supported 90-second item/target budgets; a fresh positive stop example remains to be tested."
+      ]
+    },
+    {
+      "task": "Positive target stop and authority boundaries",
+      "result": "passed in isolated local QA with supported 90-second item/target budgets",
+      "observed": [
+        "EV-1007 was admitted against the genuine ten-second teaching callback and unchanged three-record dataset; the UI requested stop after one record finished",
+        "The current second request completed; terminal Cancelled retained two passed responses, zero errors and one unstarted skipped record",
+        "Full refresh retained the same results; native provenance read KILLED with matching metrics and no telemetry warning",
+        "The actual teaching-target counter changed 21 to 23, exactly two requests; no further target/model work was admitted by stop-boundary checks",
+        "Owner and member existing-intent readbacks returned202; viewer could read the cancelled run but both stop writes returned403",
+        "A separately ready organization received404 for both foreign stop routes; first late stops on completed target and model-scoring jobs returned409"
+      ],
+      "remaining": []
+    },
+    {
+      "task": "Built-in model opinions and retained feedback",
+      "result": "passed for correctness/safety in isolated local QA",
+      "observed": [
+        "After authorized AWS sign-in refresh, the unchanged shipped worker release/manifest passed readiness; real GLM-5 and Flash access checks succeeded",
+        "Owner selected correctness and safety on three existing EV-1001 responses and acknowledged provider cost; job completed with six Boolean values and zero judgment errors",
+        "All six opinions were true for the benign teaching inputs, with source bedrock/zai.glm-5@martian-eval-judge-v1; original exact-match outcomes were unchanged",
+        "The first receipt had five persisted native assessments and one pending safety feedback. One real Sync saved feedback returned202; final readback retained all six native IDs without another paid job",
+        "Full browser refresh, explicit job selection and result inspection retained model explanations and source identity"
+      ],
+      "remaining": [
+        "Custom rubric/version creation, execution and remaining role boundaries are qualified separately."
+      ]
+    },
+    {
+      "task": "Immutable custom Boolean rubric versions and historical execution",
+      "result": "passed in isolated local QA; Boolean model path",
+      "observed": [
+        "Owner created docs_answer_present v1 and stricter v2 through the actual UI, each201 with one native scorer identity and distinct immutable versions",
+        "On unchanged EV-1003 saved outputs, v1 produced three true opinions and v2 produced three false opinions; both jobs completed with zero judgment errors and retained their own definitions",
+        "One feedback delivery in each of these jobs was pending. One exact Sync saved feedback per assessment returned202; final refreshed UI and actual JSON exports retained all six native IDs and correct native version1/2 metadata without another paid judgment",
+        "After v2 existed, owner explicitly selected historical v1 on baseline EV-1001, acknowledged cost and admitted one distinct three-record job; it retained three true native assessments and version1, not the latest definition",
+        "Read-back Version history retained both instructions. Historical-v1 versus candidate-v1 comparison returned compatible true, three paired records and three unchanged Boolean values",
+        "Source suffix martian-eval-judge-v2 identifies engine revision; actual exported provenance martian.native_scorer_version separately retains rubric version1/2",
+        "Missing cost acknowledgement returned422, stale expected version409, member definition write403 and viewer model admission403; viewer could read both saved versions with200",
+        "A separately ready organization saw no foreign custom judge in its own catalogue and received404 for foreign-run scoring admission",
+        "All model judging used saved outputs; actual HTTP teaching-target counter remained23"
+      ],
+      "remaining": [
+        "Numeric, categorical and text model execution were not exercised in this Boolean walkthrough; their editor/source options are distinct from this qualification."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
     "Sandbox orchestrator is not configured in this QA stack; GET /v1/connectors returns503 and the sidebar may report stale data. No mock catalog is substituted.",
-    "Current local model credentials are denied Bedrock inference; real model-based assessment/judge and sandbox seed-generation qualification remain pending AWS sign-in refresh.",
+    "AWS sign-in was refreshed and both shipped Bedrock models passed bounded real access checks. The unchanged shipped worker profile is ready in isolated local QA; remaining model/SDK/assessment walkthrough stages are qualified separately.",
     "These local results do not attest to deployment parity or availability in a customer AWS-beta organization.",
     "An earlier member run had uncertain item/finalization acknowledgements. Supported administrator telemetry-only reconciliation later confirmed saved evidence with zero target calls; no target replay repaired it.",
     "Released SDK 0.1.2 dataset/checks uploads do not forward native conversation session metadata. The tested empty state is distinct from positive multi-turn session qualification."
