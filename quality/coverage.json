@@ -2559,6 +2559,59 @@
       }
     },
     {
+      "id": "sdk/local-evals",
+      "guide": "Run evals locally with a suite file",
+      "sdkVersion": "0.1.3",
+      "role": "Any developer; no Martian account; own model key for LLM judges",
+      "route": "Local command line; no console route",
+      "documentationRoute": "/sdk/local-evals/",
+      "interfaces": [
+        "martian evals run with a YAML suite file",
+        "JSONL and CSV case files",
+        "Deterministic checks and LLM judges in martian.evals",
+        "Local results.jsonl, summary.json, junit.xml and MLflow store"
+      ],
+      "prerequisites": [
+        "Python 3.12 or newer",
+        "SDK 0.1.3 evals extra from public PyPI",
+        "A model provider key only when the suite uses an LLM judge"
+      ],
+      "screenshots": [],
+      "qualification": "verified",
+      "sources": [
+        {
+          "repository": "MorningHQ/martian-redteam",
+          "commit": "f3caf8bcc5f8aad176d2c843562fe468cd755218",
+          "paths": [
+            "src/martian/cli.py",
+            "src/martian/evals/runner.py",
+            "src/martian/evals/checks.py",
+            "src/martian/evals/judges.py",
+            "src/martian/evals/_judge_transport.py",
+            "src/martian/evals/evaluate.py",
+            "docs/evals.md"
+          ]
+        }
+      ],
+      "validationStatus": "Every command in the guide was run with martian-sdk 0.1.3 installed from public PyPI: the downloadable example's first run (exit 1, one failing case), the resumed and fresh reruns after the documented fix (exit 0), the result files, the options, an unknown suite key, a missing expectation value, a CSV file with stored replies, one run with a real LLM judge through an OpenAI-compatible endpoint, and one run logging to a temporary local MLflow 3.16.1 server. This is a command-line guide with no console screens, so it has no screenshots. Only one judge model and one provider route were exercised.",
+      "requiredValidation": [
+        "Run every documented command against the released package from public PyPI",
+        "Exercise the documented failure and resume behaviour",
+        "Run at least one suite with a real LLM judge"
+      ],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/validation.json",
+          "observedPath": "Released SDK 0.1.3 local suite-file runs, example download and LLM judge",
+          "result": "all documented commands produced the documented output and exit codes"
+        }
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Local run; SDK 0.1.3 from public PyPI",
+      "environment": "Local Linux workstation; Python 3.12.14; martian-sdk 0.1.3 from public PyPI; judge model GLM 5 on Amazon Bedrock through its OpenAI-compatible endpoint; no Martian platform services"
+    },
+    {
       "id": "sdk/install-and-configure",
       "guide": "Install and configure the SDK",
       "role": "Owner/admin to create a key; scoped machine key for SDK execution",
