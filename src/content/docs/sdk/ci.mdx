@@ -210,7 +210,7 @@ A [suite file](/sdk/local-evals/) provides a lighter check for CI that runs with
 .venv/bin/martian evals run evals.yaml --fresh --output eval-results
 ```
 
-The command exits `0` when every case passes, `1` when a case fails and `2` when a case has no verdict or the suite file is invalid. Publish `eval-results/junit.xml` to your CI system's test report. A suite that uses an LLM judge needs that provider's key as a CI secret; a suite of deterministic checks needs no secret at all.
+The command exits `0` when every case passes, `1` when a case fails and `2` when a case has no verdict or the suite file is invalid. Review the failure reasons in `eval-results/junit.xml` before publishing it to a suitably restricted test report. A suite that uses an LLM judge or a credentialed callback needs those secrets and trusted code; keep them out of unreviewed pull requests. The deterministic teaching suite needs no secret.
 
 This run is separate from the persisted gate on this page. It creates no CI session, has no agent or revision attribution and does not appear in the console. Keep `martian ci` as the recorded gate for trusted branches.
 

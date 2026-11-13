@@ -42,6 +42,8 @@ Download selects JSON evidence for the matching run code. MR-1002 retained INCON
 
 ## Failure and recovery
 
+If **Refresh review** still offers no published revision, ask your workspace owner or Martian operator who manages review publication. Include the run code, displayed review revision/status and error, without credentials or private payloads. Refresh reads availability; it does not publish an artifact. Keep the available run/legacy JSON as its separately described evidence scope; it is not a substitute for a published redacted review ZIP.
+
 -   **No finished reports on this page** may mean your current page/filter contains no terminal run. Search or page to the intended run; it does not establish that all organization history is empty.
 -   A failed download should retain an error. Retry the read after checking service/evidence availability; downloading does not justify starting a new assessment.
 -   Missing retained content or expired artifact custody cannot be reconstructed by a screenshot of an old report. Keep the availability limitation visible.

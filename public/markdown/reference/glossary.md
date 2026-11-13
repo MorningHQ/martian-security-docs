@@ -22,6 +22,10 @@ Source: [Web version](https://docs.martiansecurity.ai/reference/glossary/)
 | Finding | A recorded observed problem with its evidence and verification limits |
 | Judge | A configured scorer that returns typed feedback, sometimes using a model |
 | Outcome check | A supported independent observation of the relevant business state |
+| Oracle | A trusted check of the claimed outcome, independent of the attacking model’s opinion |
+| Carrier / implant | The message, document or tool descriptor carrying an untrusted attack payload, and the payload inserted into it |
+| No-implant control | A comparable test without that inserted payload, used to check whether the effect depends on the attack |
+| World epoch | An identifier for a particular initialized or restored sandbox state; different epochs can represent different test worlds |
 | Project | An organization-scoped Evals grouping for runs and related work |
 | Provenance | Recorded identities, versions, authorizations and revisions explaining where results came from |
 | Replay | Inspection of retained execution evidence; it does not itself mean a new live execution |

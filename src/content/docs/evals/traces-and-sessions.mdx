@@ -44,6 +44,8 @@ The capture below shows **Trace details** opened from the filtered trace table, 
 
 A missing usage field is not zero usage. Reported model names, costs and span events describe what was retained; they do not independently verify billing, deployed code or a business-side effect. Treat trace downloads as potentially sensitive and share them according to your organization’s policy.
 
+To add a human rating or expected behavior, use the separate [native annotation workflow](/evals/trace-annotations/). It appends an assessment rather than editing recorded outputs or a dataset answer. That write workflow has its own pending qualification.
+
 ## 3. Group recorded conversations
 
 The example below uses a separate synthetic HTTP application with native MLflow 3.16.1 instrumentation and an operator-provisioned application writer. Two actual requests stored `BLUE`, then recalled it. Each request produced a separate completed trace with the same reported session ID. This verifies the conversation view; it does not qualify SDK 0.1.2 ingestion or model behavior. Viewing these records in Martian needs only your normal customer sign-in.

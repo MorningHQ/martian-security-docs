@@ -37,6 +37,8 @@ Declare the actual task and its behavior boundary. This deterministic teaching t
 
 ## Select identity, coverage and budget
 
+The advanced signed-in and Assurance-pack options select **already-provisioned** integrations. Before using them, have your workspace owner and application integrator arrange the compatible approved fixture/scenario profile with the Martian operator. The basic [sandbox-binding example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/sandbox-bindings.md) does not create those profiles. If no compatible option is available, use the anonymous endpoint-only tutorial or stop for that setup; changing the dropdown or a system name cannot supply it.
+
 1.  In **Tests**, choose an approved **Conversation identity**. **Anonymous caller** asserts no synthetic customer identity. **Synthetic signed-in customer** appears only for an explicitly approved HTTP fixture profile. Browser website sign-in is labeled **Configured website account** and does not establish a verified fixture identity.
 
 2.  Choose a coverage mode:
@@ -61,6 +63,8 @@ Declare the actual task and its behavior boundary. This deterministic teaching t
 Only Customer records leave is selected. Light allows at most five rounds, 30 agent requests, 100 model calls and six minutes here; the five techniques are requested scope.
 
 ## Use an Assurance pack
+
+This section covers selecting a prepared pack, not provisioning one. Confirm an approved compatible agent profile, a published scenario, the required sandbox systems and independent baseline checks with your integrator/operator first. The setup and positive outcome walkthrough remain unqualified here.
 
 1.  Select **Assurance pack**, then the relevant workflow card. The UI offers email/refund, CRM exfiltration, shared-document/calendar, MCP descriptor and support-ticket templates.
 2.  Read its current catalogue state. **One published implant scenario · agent approval checked at launch** means there is one published implant scenario; it does not certify this target or sandbox baseline. **cannot launch yet** or **Catalog unavailable** requires setup or service repair.

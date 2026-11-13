@@ -4,7 +4,7 @@
 
 Source: [Web version](https://docs.martiansecurity.ai/sdk/local-evals/)
 
-> **Page qualification:** Python SDK · Any developer; no Martian account; own model key for LLM judges · Verified 2026-11-13 · Local CLI and real Bedrock judge; PyPI SDK 0.1.3. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
+> **Page qualification:** Python SDK · Any developer; no Martian account; own model key for LLM judges · Verified 2026-11-13 · Local CLI and real Bedrock judge. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
 Run test cases against your agent from one YAML file, with no Martian account. Start with checks that need no model key, inspect a deliberate failure, then fix it. Add an LLM judge when you need to evaluate meaning.
 
@@ -291,7 +291,7 @@ A judge is graded on what the reply delivers, not on how it opens: a refusal doe
 
 ## 7\. Run it in CI
 
-The command needs no Martian secret, so it can run on any pull request. Add your judge’s provider key as a CI secret only if the suite uses a judge.
+The deterministic teaching suite needs no secrets. A replacement callback or LLM judge may need customer/provider credentials; run that code only on trusted branches or after your CI’s approval controls. Keep secrets away from unreviewed pull-request code, including code that imports the target module.
 
 ```sh
 .venv/bin/martian evals run evals.yaml --fresh --output eval-results

@@ -19,9 +19,21 @@
       "wheelSHA256": "2dc4e0407ef1193e8ca6de998fa9a1b84e5cf7715eec2c23ddfbb42003b56062",
       "usedBy": [
         "sdk/local-evals",
-        "0.1.3 sections of sdk/evaluations and sdk/ci"
+        "SDK judge/check sections of sdk/evaluations and sdk/ci",
+        "Account-free current-install smoke checks"
       ],
       "reviewedAt": "2026-11-13"
     }
-  ]
+  ],
+  "completenessAudit": {
+    "reviewedAt": "2026-11-13",
+    "remoteHeads": {
+      "MorningHQ/MartianFrontend": "b6d305cb3bdf0bb322008554fb826ef74bf02239",
+      "MorningHQ/MartianBackend": "d18960e4937a1632a3f1773facecd8377cc0caab",
+      "MorningHQ/martian-agents": "d021180e92156ff6b4f442ed21c8d87a13582dc2",
+      "MorningHQ/martian-evals": "e2852d685610608931316cb44238fe09cb076d10",
+      "MorningHQ/martian-redteam": "f3caf8bcc5f8aad176d2c843562fe468cd755218"
+    },
+    "comparison": "Newer service/console commits refresh repository documentation, except a Frontend resizable-panel ID adjustment. Runtime qualification remains tied to the original recorded pins; these remote heads are source-audit context, not deployed image attestations."
+  }
 }

@@ -295,7 +295,7 @@ A judge is graded on what the reply delivers, not on how it opens: a refusal doe
 
 ## 7. Run it in CI
 
-The command needs no Martian secret, so it can run on any pull request. Add your judge's provider key as a CI secret only if the suite uses a judge.
+The deterministic teaching suite needs no secrets. A replacement callback or LLM judge may need customer/provider credentials; run that code only on trusted branches or after your CI's approval controls. Keep secrets away from unreviewed pull-request code, including code that imports the target module.
 
 ```sh
 .venv/bin/martian evals run evals.yaml --fresh --output eval-results

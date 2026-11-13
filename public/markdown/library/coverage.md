@@ -24,6 +24,8 @@ MT-01 is in the runnable library. Its illustrative payload and taxonomy labels d
 
 The observed catalogue offered **MT-01 Direct instruction override** as **In the library**, with **Add to assessment** enabled. **MT-20 Session hijack** was a **Declared gap**, with that action disabled. These are catalogue states, not findings about the teaching target.
 
+The source-visible **Add to assessment** shortcut opens the wizard’s Tests step in **By technique** mode with that technique selected. Confirm the preselection, then review Environment, Agent and Goals before launching. This shortcut is separate from the manually selected path below and was not independently exercised in the recorded catalogue walkthrough.
+
 ![MT-20 Session hijack declared gap with Add to assessment disabled](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/library-gap.png)
 
 MT-20 remains a Declared gap. Its disabled Add to assessment action keeps reference coverage separate from runnable tests.

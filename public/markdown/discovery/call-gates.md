@@ -43,7 +43,7 @@ import os
 from pathlib import Path
 
 from martian_redteam.call_gate import CallBlocked, GateUnavailable, RuntimeCallGate
-from martian_redteam.call_gate_schema import GateAssignment
+from martian_redteam.call_gate_schema import CallTarget, GateAssignment
 from martian_redteam.runtime import RuntimeReporter
 
 
@@ -56,6 +56,9 @@ async def main():
     assignment = GateAssignment.model_validate_json(
         Path(os.environ["MARTIAN_GATE_ASSIGNMENT_FILE"]).read_bytes()
     )
+    expected_target = CallTarget(kind="tool", system="docs_demo", name="lookup")
+    if expected_target not in assignment.targets:
+        raise SystemExit("Assignment does not enroll the docs_demo/lookup tool")
     gate = RuntimeCallGate(origin, assignment, Path(os.environ["MARTIAN_GATE_TOKEN_FILE"]))
     reporter = RuntimeReporter(
         origin,
@@ -87,7 +90,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-Run `python call_gate_demo.py` while completing the review below. It performs at most 36 local tool attempts over about three minutes. A customer integration substitutes its normal authorized callable inside the guarded block. Never call that provider/tool in the blocked or unavailable exception handlers. SDK-bound MCP tools use the same gate when given the corresponding runtime trace.
+Run `python call_gate_demo.py` while completing the review below. It performs at most 36 local tool attempts over about three minutes. The membership check stops a mismatched assignment before any callable runs: targets outside an assignment are intentionally outside its gate. When adapting the example, keep enrollment, this check and the guarded target identical. A customer integration substitutes its normal authorized callable inside the guarded block. Never call that provider/tool in the blocked or unavailable exception handlers. SDK-bound MCP tools use the same gate when given the corresponding runtime trace.
 
 ## Review and activate a timed block
 

@@ -98,6 +98,15 @@ These examples describe the wire format; they are not an assessment result. A di
 3. To change a credential, use **Rotate credential → Rotate**. Browser rotation also requires the website username. Rotation returns the connection to draft and revokes its active approval/leases: validate and approve again before testing.
 4. Use **Disable** to disable the connection and revoke its assessment authority. To change a saved endpoint, onboard a replacement connection. Retain historical runs when retiring a registration.
 
+## Delete a retired registration
+
+This lifecycle path is source reviewed; the verified HTTP onboarding does not qualify deletion.
+
+1. As an owner/admin, confirm the organization and exact agent on **Agents**. **Disable** removes connection authority; deleting the registration is a separate action.
+2. Check for active or unresolved assessments and active evaluations. Resolve their recorded state through supported recovery before deletion; do not reset an uncertain run to remove the guard.
+3. Choose **Delete** on the intended agent row, read the confirmation, then choose **Delete agent** for that registration.
+4. Refresh Agents and confirm it is absent. Saved connection credentials are removed and past assessments, evaluations and findings remain. Deleting a registration does not shut down the customer application.
+
 ## Failure and recovery
 
 - A draft, disabled, expired or unapproved connection cannot launch a new assessment. Resume onboarding or ask an Owner/Admin to approve the correct target.
