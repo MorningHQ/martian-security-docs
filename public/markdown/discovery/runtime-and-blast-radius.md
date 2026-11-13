@@ -26,6 +26,37 @@ Deployment, environment and version labels attribute reports; they do not attest
 5.  Start one reporter per customer application process, create a trace for each invocation and instrument the actual model/tool calls. A successful report is metadata about that call, not an assertion that a downstream business action happened.
 6.  Run a bounded legitimate synthetic task through the real application. Check its reporter delivery counters/logs and retained binding after refresh. Missing dashboard events do not establish that no calls occurred: delivery can fail or be dropped.
 
+## Integrate one real call
+
+[Download report\_once.py](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/examples/runtime-reporting/report_once.py) for a bounded integration using the SDK’s `martian_redteam.runtime.RuntimeReporter`. Install the [SDK](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/install-and-configure.md) in the intended enrolled workload, alongside your application’s dependencies. This example is source reviewed and locally checked for imports/setup failure; real Discovery delivery remains unqualified.
+
+Use a trusted module that exposes your existing real model/tool call as a sync or async function. The JSON input file supplies its keyword arguments. Do not put business requests at module import time. Run the helper only in the workload/version that the binding actually describes, using a legitimate authorized synthetic task.
+
+```sh
+export MARTIAN_API_URL='https://YOUR-APPROVED-BACKEND-ORIGIN'
+export MARTIAN_RUNTIME_BINDING_ID='YOUR-BINDING-UUID'
+export MARTIAN_RUNTIME_TOKEN_FILE='/absolute/private/runtime-credential'
+.venv/bin/python report_once.py \
+  --callback-file ./my_tools.py --callback-function lookup_order \
+  --input-file ./private-test-input.json \
+  --kind tool --system support --name lookup_order
+```
+
+Replace the file/function and trusted kind/system/name with your real integration. For `lookup_order(order_id=...)`, the private input file is a JSON object such as `{"order_id":"YOUR-AUTHORIZED-TEST-ORDER"}`. The runtime credential is distinct from the platform SDK key; the reporter does not load a `.env` file.
+
+The helper starts one reporter, creates one trace and places the **actual callable** inside `trace.call(...)`. It marks success only after the function returns, waits a bounded interval for the reporter’s single delivery attempt, then closes. Its own summary contains trace ID and delivery counters rather than inputs, outputs or secrets; keep any logs written by your application private too. An async application should reuse one reporter per process instead of starting this helper for each production request. Configure timeouts in the real callback/client; the reporter does not cancel a blocked synchronous business request.
+
+| Exit | Interpretation |
+| --- | --- |
+| 0 | Callable completed and the metadata upload was acknowledged; inspect the corresponding retained event |
+| 1 | The callable raised an error; inspect the private application evidence and delivery counters |
+| 2 | Setup failed before the observed call |
+| 3 | Callable completed, but metadata delivery was not confirmed |
+
+Reporting is separate from business execution. **Do not repeat the callable merely because delivery failed or the dashboard is empty.** `close()` is not a flush/retry: pending or uncertain delivery can be lost and is reflected in `delivery_failed` / `dropped`. Compare the printed trace ID, exact binding, time and call target with retained Runtime activity after refresh; counters alone do not establish business effects.
+
+This minimal integration emits call metadata. Resource links require explicit response-ID mapping through `RuntimeResourceRule` / `trace.resources(...)`; native Kubernetes request matching is a separate opt-in (`native_kubernetes=True` with actual request metadata). Neither is enabled or claimed by this helper. Ask the integrator for mappings supported by your real client contract before relying on those map layers.
+
 ## Inspect the runtime map
 
 1.  Open **Discovery → Overview → Runtime activity**, or the record’s Runtime activity view.
@@ -53,4 +84,4 @@ Deployment, environment and version labels attribute reports; they do not attest
 -   Opaque resource references remain within their binding. Unmapped resources, errors and downstream effects can be unknown; do not merge them across deployments by name.
 -   Customer-reported success, configured permissions and TCP observations do not independently establish effective access, complete capture or business impact.
 
-Continue with [SDK call gates](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md) or [assessment outcome verification](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/reproduction-and-limits.md).
+Continue with [network observer setup](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/network-observation.md), [SDK call gates](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md) or [assessment outcome verification](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/reproduction-and-limits.md).

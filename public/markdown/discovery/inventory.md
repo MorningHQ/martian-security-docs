@@ -35,7 +35,9 @@ This beta QA Owner can inspect the source form, but no cluster alias is authoriz
 
 5.  Install/run the approved collector with that assignment and private credential in its authorized environment. Use the installation package and instructions supplied for your deployment; an enrollment alone is not collection. For hosted collection, the configured hosted reader performs the work.
 
-6.  Inspect **Your sources**, collection mode, collection state, interval and **Last success**. Use **Collect now** only for an enabled, authorized source. Refresh and check that the same source and inventory persist.
+6.  Inspect **Your sources**, collection mode, collection state, interval and **Last success**. Use **Collect now** only for an enabled, authorized source. It queues the next collector poll; it does not itself collect inventory.
+
+7.  Wait for a distinct collection run and a newer completion / **Last success** time. Inspect its complete, partial or failed coverage and the retained workload identities, then refresh. A queued response or an unchanged old inventory snapshot is not evidence of a new successful collection. If the collector cannot run, fix that prerequisite instead of repeatedly selecting Collect now.
 
 
 ## Review inventory and evidence
@@ -55,4 +57,4 @@ This beta QA Owner can inspect the source form, but no cluster alias is authoriz
 -   Revoking a runtime reporter is a different operation from pausing inventory collection. Separate historical identity evidence from recent activity.
 -   Network observations do not promote a workload into an agent or prove that every connection succeeded.
 
-Continue with [runtime reporting and blast radius](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/runtime-and-blast-radius.md) and [call gates](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md). Review [permissions](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/permissions.md) and [limits](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/limits.md) before interpreting coverage.
+Network capture and continuous observers have a separate [setup and lifecycle](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/network-observation.md); inventory-reader credentials do not install node sensors. Continue with [runtime reporting and blast radius](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/runtime-and-blast-radius.md) and [call gates](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md). Review [permissions](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/permissions.md) and [limits](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/limits.md) before interpreting coverage.

@@ -82,6 +82,15 @@ The selected environment reports Sandboxes ready with Gmail running. This is sim
 
 Sandbox details can show seeded account credentials. Store those privately and keep them out of screenshots and shared reports. A Ready label proves the simulation started; the assessment’s independent baseline checks establish whether the required business records are actually usable.
 
-The walkthrough’s first instance expired naturally. A separate lifecycle instance was deliberately launched once for the Gmail/extension/stop checks; an uncertain launch was not resubmitted to obtain a clean result. If your organization reports **No authorized clusters**, ask its operator to provision sandbox access before launching.
+The walkthrough’s first instance expired naturally. A separate lifecycle instance was deliberately launched once for the Gmail/extension/stop checks; an uncertain launch was not resubmitted to obtain a clean result. **Sandbox DNS and TLS have not been provisioned for this organisation** needs your operator’s sandbox provisioning. Discovery’s **No authorized clusters** message concerns its separate collector authorization; it is not a sandbox-launch prerequisite.
+
+## Delete a custom environment
+
+This management path is source reviewed; deletion was not part of the captured Gmail lifecycle.
+
+1.  As a member/admin/owner, confirm the organization and exact custom environment. Sample environments cannot be deleted.
+2.  Stop its live sandbox instances and wait until they are no longer live. A stop acknowledgement alone does not clear the deletion guard.
+3.  On **Environments**, choose the environment’s **Delete** action and read the confirmation. Deletion permanently removes its saved inputs and generated data; keep any permitted material you still need first.
+4.  Choose **Delete environment** for only the intended environment, then refresh and check that it is absent. Past assessments and findings remain. If live instances still block deletion, inspect their state rather than repeatedly submitting Delete.
 
 Continue with [agent sandbox bindings](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/sandbox-bindings.md) and [configure an assessment](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/configure.md).

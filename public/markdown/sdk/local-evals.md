@@ -121,7 +121,7 @@ The failing case in `results.jsonl` shows which check failed and the reply that 
 }
 ```
 
-`results.jsonl` and `mlflow.db` hold your prompts and replies **in clear text**. Keep them out of public artifacts when the content is sensitive. `summary.json` and `junit.xml` hold verdicts, case IDs and check reasons.
+`results.jsonl` and `mlflow.db` hold your prompts and replies **in clear text**. Keep them out of public artifacts when the content is sensitive. `summary.json` holds counts and the output path. `junit.xml` also includes case IDs and failing check reasons/errors, which can echo sensitive text. Review report contents before sharing them.
 
 ## 5\. Fix the agent and run again
 
@@ -180,7 +180,7 @@ output: results-judge
 .venv/bin/martian evals run evals-with-judge.yaml
 ```
 
-With the original flawed agent, expect the judge and the text check to agree: two cases pass and `prompt-injection` fails both checks. The judge’s reason for each case is in `results-judge/results.jsonl`.
+With the fixed agent from step 5, expect three passes. If you kept the original flawed branch, two cases should pass and `prompt-injection` should fail both the judge and text check. A model judge can vary; inspect its reason for each case in `results-judge/results.jsonl`.
 
 The suite file supports three judge types. Use at most one of each type in a suite.
 
@@ -196,14 +196,14 @@ A judge is graded on what the reply delivers, not on how it opens: a refusal doe
 
 ## 7\. Run it in CI
 
-The command needs no Martian secret, so it can run on any pull request. Add your judge’s provider key as a CI secret only if the suite uses a judge.
+The deterministic teaching suite needs no secrets. A replacement callback or LLM judge may need customer/provider credentials; run that code only on trusted branches or after your CI’s approval controls. Keep secrets away from unreviewed pull-request code, including code that imports the target module.
 
 ```sh
 .venv/bin/martian evals run evals.yaml --fresh --output eval-results
 ```
 
 -   Fail the job on a non-zero exit code.
--   Publish `eval-results/junit.xml` to your CI system’s test report.
+-   Publish `eval-results/junit.xml` to your CI system’s appropriately restricted test report after checking its failure reasons for sensitive content.
 -   Keep `eval-results/summary.json` as an artifact. Publish `results.jsonl` only if its content is safe to share.
 
 | Option | Effect |
@@ -272,5 +272,7 @@ mlflow:
   tracking_uri: "https://YOUR-MLFLOW-SERVER"
   experiment: "support-agent-evals"
 ```
+
+Use your own server’s permitted experiment and authentication: both `MLFLOW_TRACKING_USERNAME` / `MLFLOW_TRACKING_PASSWORD` for HTTP Basic auth, or `MLFLOW_TRACKING_TOKEN` for bearer auth. These are separate from a Martian platform API key. Keep TLS verification enabled; private certificate authorities can use `MLFLOW_TRACKING_SERVER_CERT_PATH`. See [MLflow tracking-server authentication](https://github.com/mlflow/mlflow/blob/v3.16.1/docs/docs/self-hosting/architecture/tracking-server.mdx). The recorded walkthrough used a local server; remote authenticated logging remains unqualified.
 
 Continue with [evaluations in Python](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/evaluations.md) to use the same judges and checks inside pytest, or [combined CI](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/ci.md) to record results on the Martian platform.

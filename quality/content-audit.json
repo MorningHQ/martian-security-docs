@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-13",
+  "scope": "Every public source page and rendered article; content/source audit, not full product or hosted parity signoff",
+  "aiReview": true,
+  "humanParticipant": false,
+  "sourceRecord": "quality/sources.json",
+  "pages": [
+    {
+      "page": "404",
+      "title": "Page not found",
+      "contentReview": "reviewed",
+      "renderCheck": "47-page build/link check and real public custom404",
+      "walkthroughQualification": "reference or navigation"
+    },
+    {
+      "page": "agents/connections",
+      "title": "Connect an agent",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "partial"
+    },
+    {
+      "page": "agents/http-adapter",
+      "title": "Add an HTTP chat adapter",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "agents/sandbox-bindings",
+      "title": "Connect an agent to sandbox systems",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "pending"
+    },
+    {
+      "page": "assessments/configure",
+      "title": "Configure a red-team assessment",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "partial"
+    },
+    {
+      "page": "assessments/evidence-and-results",
+      "title": "Inspect assessment evidence and results",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "partial"
+    },
+    {
+      "page": "assessments/history-and-exports",
+      "title": "Find recorded runs and export reports",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "partial"
+    },
+    {
+      "page": "assessments/progress-and-cancellation",
+      "title": "Follow progress and stop a run",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "partial"
+    },
+    {
+      "page": "assessments/reproduction-and-limits",
+      "title": "Understand reproduction and coverage limits",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "partial"
+    },
+    {
+      "page": "discovery/call-gates",
+      "title": "Review and activate an SDK call block",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "pending"
+    },
+    {
+      "page": "discovery/inventory",
+      "title": "Connect sources and inspect inventory",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "partial"
+    },
+    {
+      "page": "discovery/network-observation",
+      "title": "Set up network observation",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "pending"
+    },
+    {
+      "page": "discovery/runtime-and-blast-radius",
+      "title": "Inspect runtime activity and blast radius",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "pending"
+    },
+    {
+      "page": "environments/create-and-launch",
+      "title": "Create and launch an environment",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "partial"
+    },
+    {
+      "page": "evals/compare",
+      "title": "Compare evaluation runs",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "evals/datasets",
+      "title": "Create and publish datasets",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "partial"
+    },
+    {
+      "page": "evals/first-run",
+      "title": "Run your first evaluation",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "evals/human-reviews",
+      "title": "Collect human reviews",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "evals/judging",
+      "title": "Score saved outputs and define judges",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "evals/overview",
+      "title": "Read the Evals dashboard",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "pending"
+    },
+    {
+      "page": "evals/projects",
+      "title": "Organize evaluation projects",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "evals/quality-issues",
+      "title": "Investigate quality issues",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "evals/regression-cases",
+      "title": "Turn failed results into regression cases",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "evals/results-and-scores",
+      "title": "Understand results and scores",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "evals/stopping-and-recovery",
+      "title": "Stop runs and recover uncertain work",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "evals/suites-and-monitoring",
+      "title": "Use scoring suites and monitoring",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "evals/trace-annotations",
+      "title": "Annotate a native trace",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "pending"
+    },
+    {
+      "page": "evals/traces-and-sessions",
+      "title": "Inspect traces and sessions",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "get-started/access",
+      "title": "Accept an invitation and sign in",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "get-started/concepts",
+      "title": "Red teaming and Evals",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "get-started/first-assessment",
+      "title": "Run your first assessment",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "index",
+      "title": "Martian Security",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "reference or navigation"
+    },
+    {
+      "page": "library/coverage",
+      "title": "Use the Attack Library and coverage views",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "reference/console-navigation",
+      "title": "Find your way around the console",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "reference or navigation"
+    },
+    {
+      "page": "reference/glossary",
+      "title": "Glossary",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "reference or navigation"
+    },
+    {
+      "page": "reference/limits",
+      "title": "Budgets, limits and evidence",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "reference or navigation"
+    },
+    {
+      "page": "reference/permissions",
+      "title": "Roles and permissions",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "reference or navigation"
+    },
+    {
+      "page": "reference/supported-targets",
+      "title": "Supported agent targets",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "reference or navigation"
+    },
+    {
+      "page": "reference/troubleshooting",
+      "title": "Troubleshooting",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "reference or navigation"
+    },
+    {
+      "page": "reference/using-with-agents",
+      "title": "Use these docs with an AI assistant",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "reference or navigation"
+    },
+    {
+      "page": "reference/verification",
+      "title": "Guide verification record",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "reference or navigation"
+    },
+    {
+      "page": "sdk/ci",
+      "title": "Gate CI on Evals and redteam",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "sdk/evaluations",
+      "title": "Evaluate with Python",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "sdk/install-and-configure",
+      "title": "Install and configure the SDK",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "sdk/local-evals",
+      "title": "Run evals locally with a suite file",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "sdk/redteam",
+      "title": "Run a redteam probe",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    },
+    {
+      "page": "workspace/team-and-roles",
+      "title": "Invite teammates and understand roles",
+      "contentReview": "reviewed",
+      "renderCheck": "passed desktop1440light/mobile390dark real browser",
+      "walkthroughQualification": "verified"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C01",
+      "status": "content corrected",
+      "issue": "Missing project Evals dashboard semantics",
+      "resolution": "Added dedicated Overview guide; trace/error/usage/typed-feedback coverage and read failures explicit"
+    },
+    {
+      "id": "C02",
+      "status": "content corrected",
+      "issue": "Missing native human trace annotation workflow",
+      "resolution": "Added separate Feedback/Expectation guide with same-submission retry and immutable-history limits"
+    },
+    {
+      "id": "C03",
+      "status": "content corrected",
+      "issue": "Missing one-time/continuous network-observer enrollment",
+      "resolution": "Added separate source/node/sensor prerequisites, private grant lifecycle,receipt handoff,health/retention/revocation guide"
+    },
+    {
+      "id": "C04",
+      "status": "content corrected",
+      "issue": "Discovery alias conflated with sandbox launch authorization",
+      "resolution": "Separated sandbox DNS/TLS provisioning from Discovery collector authorization"
+    },
+    {
+      "id": "C05",
+      "status": "content corrected",
+      "issue": "Wrong call-gate assignment could leave demo target outside enforcement",
+      "resolution": "Added exact CallTarget membership guard; actual SDK models rejected wrong assignment before any callable"
+    },
+    {
+      "id": "C06",
+      "status": "content corrected",
+      "issue": "Runtime reporter integration incomplete",
+      "resolution": "Added complete one-call helper and explicit counters/close/loss/readback contract; real delivery remains pending"
+    },
+    {
+      "id": "C07",
+      "status": "content corrected",
+      "issue": "Agent and custom environment deletion tasks missing",
+      "resolution": "Added exact Delete/confirmation,active-work/live-instance guards and retained-versus-removed data boundaries"
+    },
+    {
+      "id": "C08",
+      "status": "content corrected",
+      "issue": "Collect now mistaken for completed collection",
+      "resolution": "Require distinct completed receipt/new Last success and actual coverage; queue acknowledgement is insufficient"
+    },
+    {
+      "id": "C09",
+      "status": "content corrected",
+      "issue": "Advanced scenario/identity prerequisite links were circular",
+      "resolution": "Added explicit already-provisioned fixture/scenario and owner/integrator/operator handoff"
+    },
+    {
+      "id": "C10",
+      "status": "content corrected",
+      "issue": "Recorded review artifact availability handoff unclear",
+      "resolution": "Added operator publication handoff and explicit distinction from legacy JSON export"
+    },
+    {
+      "id": "C11",
+      "status": "content corrected",
+      "issue": "Evidence vocabulary and navigation incomplete",
+      "resolution": "Defined oracle/carrier/implant/control/world epoch; added complete customer console map and library shortcut distinction"
+    },
+    {
+      "id": "C12",
+      "status": "content corrected",
+      "issue": "Local SDK artifact privacy and follow-on judge expectation incomplete",
+      "resolution": "Clarified JUnit reasons may contain private data, trusted secret-bearing CI,three-pass fixed-agent expectation,remote MLflow auth and pytest-versus-suite storage"
+    },
+    {
+      "id": "C13",
+      "status": "content corrected",
+      "issue": "Stale validation/provenance summaries",
+      "resolution": "Marked PR16 pre-publication checks historical,recorded actual publication,corrected unpinned current ZIP versus original receipt and judging scope"
+    },
+    {
+      "id": "C14",
+      "status": "content corrected",
+      "issue": "Runtime helper setup errors and disappearing revoke control",
+      "resolution": "Safe phase-preserving error boundary and actual pre-entry validation checks;revoke-before-clear versus later authorized API explicit"
+    }
+  ],
+  "validation": {
+    "builtPages": 47,
+    "articlesInBrowserSweep": 46,
+    "viewports": [
+      "1440x1000 light",
+      "390x844 dark"
+    ],
+    "renderErrors": [],
+    "failedRequests": [],
+    "httpFailures": [],
+    "allRenderedCodePayloads": 59,
+    "renderedScreenshotCaptions": 117,
+    "actualSearch": "annotations result opened new guide and showed pending qualification",
+    "actualPublic404": "HTTP404,Page not found,return-to-overview link",
+    "runtimeHelper": "Actual SDK imports/3 setup rejection cases;no business callback or upload",
+    "gateGuard": "Actual SDK wrong/matching target assignment preflight;no Backend decision or callable",
+    "runtimeAttempt": "Own synthetic Owner authentication200;Evals Overview read failed and supported refresh timed out;no annotation mutation",
+    "initialPublishedSweep": "42 articles rendered without content/console/HTTP failure;two responsive SVG navigation aborts retained;final local46 sweep had no failed requests"
+  },
+  "qualification": {
+    "fullyQualified": false,
+    "verified": 22,
+    "partial": 9,
+    "pending": 6,
+    "pendingWalkthroughs": [
+      "agents/connections",
+      "agents/sandbox-bindings",
+      "assessments/configure",
+      "assessments/evidence-and-results",
+      "assessments/history-and-exports",
+      "assessments/progress-and-cancellation",
+      "assessments/reproduction-and-limits",
+      "discovery/call-gates",
+      "discovery/inventory",
+      "discovery/runtime-and-blast-radius",
+      "environments/create-and-launch",
+      "evals/datasets",
+      "evals/overview",
+      "evals/trace-annotations",
+      "discovery/network-observation"
+    ],
+    "missingScreenshotReferences": 24,
+    "strictReleaseFindings": 40,
+    "structuralFailures": [],
+    "blockers": [
+      "Compatible authorized Discovery source/collector and privileged sensors not available",
+      "Native Overview read timeout prevents new dashboard/annotation proof",
+      "Existing sandbox business-effect,assurance/reproduction,assessment cancellation and remaining connection/dataset flows unqualified",
+      "Custom-domain trusted HTTPS still fails hostname validation;separate GitHub agent mirror works"
+    ]
+  },
+  "runtimeExampleSHA256": "56de419e5a4b54db1a0024c45925fc72bbc8b0cb820fd90ca30cf8cef41e3619"
+}

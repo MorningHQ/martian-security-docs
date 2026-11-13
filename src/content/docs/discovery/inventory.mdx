@@ -32,7 +32,8 @@ The beta QA organization shown below has **No authorized clusters**. Its source 
 
 4. For a customer-side collector, save its once-shown credential privately and **Download scope assignment** or **Download assignment**. The assignment describes scope; the separate credential authenticates the collector. Close the credential panel before making screenshots or sharing the screen.
 5. Install/run the approved collector with that assignment and private credential in its authorized environment. Use the installation package and instructions supplied for your deployment; an enrollment alone is not collection. For hosted collection, the configured hosted reader performs the work.
-6. Inspect **Your sources**, collection mode, collection state, interval and **Last success**. Use **Collect now** only for an enabled, authorized source. Refresh and check that the same source and inventory persist.
+6. Inspect **Your sources**, collection mode, collection state, interval and **Last success**. Use **Collect now** only for an enabled, authorized source. It queues the next collector poll; it does not itself collect inventory.
+7. Wait for a distinct collection run and a newer completion / **Last success** time. Inspect its complete, partial or failed coverage and the retained workload identities, then refresh. A queued response or an unchanged old inventory snapshot is not evidence of a new successful collection. If the collector cannot run, fix that prerequisite instead of repeatedly selecting Collect now.
 
 <Screenshot id="discovery-sources" />
 
@@ -55,4 +56,4 @@ The beta QA organization shown below has **No authorized clusters**. Its source 
 - Revoking a runtime reporter is a different operation from pausing inventory collection. Separate historical identity evidence from recent activity.
 - Network observations do not promote a workload into an agent or prove that every connection succeeded.
 
-Continue with [runtime reporting and blast radius](/discovery/runtime-and-blast-radius/) and [call gates](/discovery/call-gates/). Review [permissions](/reference/permissions/) and [limits](/reference/limits/) before interpreting coverage.
+Network capture and continuous observers have a separate [setup and lifecycle](/discovery/network-observation/); inventory-reader credentials do not install node sensors. Continue with [runtime reporting and blast radius](/discovery/runtime-and-blast-radius/) and [call gates](/discovery/call-gates/). Review [permissions](/reference/permissions/) and [limits](/reference/limits/) before interpreting coverage.

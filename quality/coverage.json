@@ -2021,7 +2021,7 @@
         "Create next version and confirm old job retains original",
         "Open Overview to Monitoring and follow persisted run/job history"
       ],
-      "validationStatus": "Code-only suite creation, exact-version application, full native feedback, passing/failed gates, immutable prior policy, monitoring and viewer restrictions passed. Model criteria remain covered by the separately partial judging guide.",
+      "validationStatus": "Code-only suite creation, exact-version application, full native feedback, passing/failed gates, immutable prior policy, monitoring and viewer restrictions passed. Model criteria are covered separately by the judging guide in its named Boolean scope; non-Boolean model execution remains unqualified.",
       "qualification": "verified",
       "documentationRoute": "/evals/suites-and-monitoring/",
       "validation": [
@@ -2964,6 +2964,197 @@
           ]
         }
       ]
+    },
+    {
+      "id": "evals/overview",
+      "title": "Read the Evals dashboard",
+      "description": "Read the Evals dashboard",
+      "customerTask": "Read the Evals dashboard",
+      "role": "Any customer role",
+      "requiredRoles": [
+        "viewer",
+        "member",
+        "admin",
+        "owner"
+      ],
+      "route": "/#/evals/overview",
+      "uiRoute": "/#/evals/overview",
+      "supportedInterfaces": [
+        "current_beta_console"
+      ],
+      "prerequisites": [
+        "Ready project with native traces",
+        "Read selected scope and aggregate coverage"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/pages/EvalExplorer.jsx",
+          "line": 1
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/evals_explorer.py",
+          "line": 1
+        }
+      ],
+      "numberedTaskStages": [
+        "Select filters and refresh",
+        "Read request/error/latency coverage",
+        "Read recorded usage and typed quality summary"
+      ],
+      "screenshots": [
+        "evals-project-overview",
+        "evals-overview-recorded-usage"
+      ],
+      "screenshotIds": [
+        "evals-project-overview",
+        "evals-overview-recorded-usage"
+      ],
+      "requiredValidation": [
+        "Select filters and refresh",
+        "Read request/error/latency coverage",
+        "Read recorded usage and typed quality summary"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed. Latest own native QA login succeeded, but the Overview read returned Failed to fetch and the single supported refresh timed out. Dashboard values and images remain unqualified.",
+      "validation": []
+    },
+    {
+      "id": "evals/trace-annotations",
+      "title": "Annotate a native trace",
+      "description": "Annotate a native trace",
+      "customerTask": "Annotate a native trace",
+      "role": "member/admin/owner writes; authorized roles read",
+      "requiredRoles": [
+        "member",
+        "admin",
+        "owner"
+      ],
+      "route": "/#/evals/traces",
+      "uiRoute": "/#/evals/traces",
+      "supportedInterfaces": [
+        "current_beta_console"
+      ],
+      "prerequisites": [
+        "Ready writable owned project",
+        "Existing retained trace",
+        "Member or higher for a write"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/TraceAnnotations.jsx",
+          "line": 1
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/evals_explorer.py",
+          "line": 1
+        }
+      ],
+      "numberedTaskStages": [
+        "Open native annotation form",
+        "Save typed feedback or expectation once",
+        "Verify native author/value after refresh",
+        "Retry the same uncertain submission"
+      ],
+      "screenshots": [
+        "evals-trace-annotation-form",
+        "evals-trace-annotation-saved"
+      ],
+      "screenshotIds": [
+        "evals-trace-annotation-form",
+        "evals-trace-annotation-saved"
+      ],
+      "requiredValidation": [
+        "Open native annotation form",
+        "Save typed feedback or expectation once",
+        "Verify native author/value after refresh",
+        "Retry the same uncertain submission"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed only. No annotation write was attempted during the latest QA read failure. Existing verified native-session reads do not qualify this write workflow.",
+      "validation": []
+    },
+    {
+      "id": "discovery/network-observation",
+      "title": "Set up network observation",
+      "description": "Set up network observation",
+      "customerTask": "Set up network observation",
+      "role": "owner/admin manages; authorized roles read",
+      "requiredRoles": [
+        "owner",
+        "admin"
+      ],
+      "route": "/#/discovery?tab=sources",
+      "uiRoute": "/#/discovery?tab=sources",
+      "supportedInterfaces": [
+        "current_beta_console"
+      ],
+      "prerequisites": [
+        "Enabled authorized customer Kubernetes source",
+        "Compatible collected workload identities",
+        "Authorized exact nodes",
+        "Operator-installed privileged sensors and customer-run observer"
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/DiscoveryNetworkSetup.jsx",
+          "line": 1
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "path": "src/components/DiscoveryObserverSetup.jsx",
+          "line": 1
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/network.py",
+          "line": 1
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/network_live.py",
+          "line": 1
+        }
+      ],
+      "numberedTaskStages": [
+        "Prepare bounded capture grant and save private credential",
+        "Enroll continuous observer with exact node/namespace scope",
+        "Install approved customer process separately",
+        "Read fresh windows and reporting health",
+        "Revoke reporting and stop/remove processes separately"
+      ],
+      "screenshots": [
+        "discovery-network-capture-grant",
+        "discovery-continuous-observer",
+        "discovery-network-reporting-health"
+      ],
+      "screenshotIds": [
+        "discovery-network-capture-grant",
+        "discovery-continuous-observer",
+        "discovery-network-reporting-health"
+      ],
+      "requiredValidation": [
+        "Prepare bounded capture grant and save private credential",
+        "Enroll continuous observer with exact node/namespace scope",
+        "Install approved customer process separately",
+        "Read fresh windows and reporting health",
+        "Revoke reporting and stop/remove processes separately"
+      ],
+      "qualification": "pending",
+      "validationStatus": "Source reviewed only. No eligible authorized QA source/compatible collector and no privileged sensors were provisioned. No capture, observer or reporting success is claimed.",
+      "validation": []
     }
   ]
 }

@@ -54,6 +54,8 @@ flowchart LR
 
 ## Explore the product
 
+Use the [console map](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/console-navigation.md) to find each customer area, including the Evals dashboard, account menu and features that remain templates or previews.
+
 -   [Agents and connections](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/connections.md) — registration, validation and approval.
 -   [Environments](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/environments/create-and-launch.md) — synthetic seed data and sandbox readiness.
 -   [Discovery](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/inventory.md) — inventory and runtime evidence.
@@ -171,6 +173,15 @@ These examples describe the wire format; they are not an assessment result. A di
 2.  Inspect status, endpoint, approver and declared deployed revision. **Current deployed code or build revision → Save revision** records your declaration; Martian does not independently read the target’s build ID.
 3.  To change a credential, use **Rotate credential → Rotate**. Browser rotation also requires the website username. Rotation returns the connection to draft and revokes its active approval/leases: validate and approve again before testing.
 4.  Use **Disable** to disable the connection and revoke its assessment authority. To change a saved endpoint, onboard a replacement connection. Retain historical runs when retiring a registration.
+
+## Delete a retired registration
+
+This lifecycle path is source reviewed; the verified HTTP onboarding does not qualify deletion.
+
+1.  As an owner/admin, confirm the organization and exact agent on **Agents**. **Disable** removes connection authority; deleting the registration is a separate action.
+2.  Check for active or unresolved assessments and active evaluations. Resolve their recorded state through supported recovery before deletion; do not reset an uncertain run to remove the guard.
+3.  Choose **Delete** on the intended agent row, read the confirmation, then choose **Delete agent** for that registration.
+4.  Refresh Agents and confirm it is absent. Saved connection credentials are removed and past assessments, evaluations and findings remain. Deleting a registration does not shut down the customer application.
 
 ## Failure and recovery
 
@@ -625,6 +636,8 @@ Declare the actual task and its behavior boundary. This deterministic teaching t
 
 ## Select identity, coverage and budget
 
+The advanced signed-in and Assurance-pack options select **already-provisioned** integrations. Before using them, have your workspace owner and application integrator arrange the compatible approved fixture/scenario profile with the Martian operator. The basic [sandbox-binding example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/sandbox-bindings.md) does not create those profiles. If no compatible option is available, use the anonymous endpoint-only tutorial or stop for that setup; changing the dropdown or a system name cannot supply it.
+
 1.  In **Tests**, choose an approved **Conversation identity**. **Anonymous caller** asserts no synthetic customer identity. **Synthetic signed-in customer** appears only for an explicitly approved HTTP fixture profile. Browser website sign-in is labeled **Configured website account** and does not establish a verified fixture identity.
 
 2.  Choose a coverage mode:
@@ -649,6 +662,8 @@ Declare the actual task and its behavior boundary. This deterministic teaching t
 Only Customer records leave is selected. Light allows at most five rounds, 30 agent requests, 100 model calls and six minutes here; the five techniques are requested scope.
 
 ## Use an Assurance pack
+
+This section covers selecting a prepared pack, not provisioning one. Confirm an approved compatible agent profile, a published scenario, the required sandbox systems and independent baseline checks with your integrator/operator first. The setup and positive outcome walkthrough remain unqualified here.
 
 1.  Select **Assurance pack**, then the relevant workflow card. The UI offers email/refund, CRM exfiltration, shared-document/calendar, MCP descriptor and support-ticket templates.
 2.  Read its current catalogue state. **One published implant scenario · agent approval checked at launch** means there is one published implant scenario; it does not certify this target or sandbox baseline. **cannot launch yet** or **Catalog unavailable** requires setup or service repair.
@@ -781,6 +796,8 @@ Download selects JSON evidence for the matching run code. MR-1002 retained INCON
 
 ## Failure and recovery
 
+If **Refresh review** still offers no published revision, ask your workspace owner or Martian operator who manages review publication. Include the run code, displayed review revision/status and error, without credentials or private payloads. Refresh reads availability; it does not publish an artifact. Keep the available run/legacy JSON as its separately described evidence scope; it is not a substitute for a published redacted review ZIP.
+
 -   **No finished reports on this page** may mean your current page/filter contains no terminal run. Search or page to the intended run; it does not establish that all organization history is empty.
 -   A failed download should retain an error. Retry the read after checking service/evidence availability; downloading does not justify starting a new assessment.
 -   Missing retained content or expired artifact custody cannot be reconstructed by a screenshot of an old report. Keep the availability limitation visible.
@@ -868,6 +885,8 @@ Any tenant role can inspect a retained run it can access. You need an actual run
 
 ## Review the reproduction claim
 
+The [glossary](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/glossary.md) defines oracle, world epoch, carrier/implant and no-implant control. These terms identify different evidence checks; they are not interchangeable labels for a passed run.
+
 1.  Open the run and read **Security outcome** separately from **Assessment execution**. A completed bounded search may have findings, no findings or inconclusive coverage; completion does not certify the agent.
 2.  Open a verification row or the versioned **Verification receipts** section. Inspect **Reproduction status**, repetitions, successful reproductions, target calls, evidence and the control result.
 
@@ -953,7 +972,7 @@ import os
 from pathlib import Path
 
 from martian_redteam.call_gate import CallBlocked, GateUnavailable, RuntimeCallGate
-from martian_redteam.call_gate_schema import GateAssignment
+from martian_redteam.call_gate_schema import CallTarget, GateAssignment
 from martian_redteam.runtime import RuntimeReporter
 
 
@@ -966,6 +985,9 @@ async def main():
     assignment = GateAssignment.model_validate_json(
         Path(os.environ["MARTIAN_GATE_ASSIGNMENT_FILE"]).read_bytes()
     )
+    expected_target = CallTarget(kind="tool", system="docs_demo", name="lookup")
+    if expected_target not in assignment.targets:
+        raise SystemExit("Assignment does not enroll the docs_demo/lookup tool")
     gate = RuntimeCallGate(origin, assignment, Path(os.environ["MARTIAN_GATE_TOKEN_FILE"]))
     reporter = RuntimeReporter(
         origin,
@@ -997,7 +1019,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-Run `python call_gate_demo.py` while completing the review below. It performs at most 36 local tool attempts over about three minutes. A customer integration substitutes its normal authorized callable inside the guarded block. Never call that provider/tool in the blocked or unavailable exception handlers. SDK-bound MCP tools use the same gate when given the corresponding runtime trace.
+Run `python call_gate_demo.py` while completing the review below. It performs at most 36 local tool attempts over about three minutes. The membership check stops a mismatched assignment before any callable runs: targets outside an assignment are intentionally outside its gate. When adapting the example, keep enrollment, this check and the guarded target identical. A customer integration substitutes its normal authorized callable inside the guarded block. Never call that provider/tool in the blocked or unavailable exception handlers. SDK-bound MCP tools use the same gate when given the corresponding runtime trace.
 
 ## Review and activate a timed block
 
@@ -1071,7 +1093,9 @@ This beta QA Owner can inspect the source form, but no cluster alias is authoriz
 
 5.  Install/run the approved collector with that assignment and private credential in its authorized environment. Use the installation package and instructions supplied for your deployment; an enrollment alone is not collection. For hosted collection, the configured hosted reader performs the work.
 
-6.  Inspect **Your sources**, collection mode, collection state, interval and **Last success**. Use **Collect now** only for an enabled, authorized source. Refresh and check that the same source and inventory persist.
+6.  Inspect **Your sources**, collection mode, collection state, interval and **Last success**. Use **Collect now** only for an enabled, authorized source. It queues the next collector poll; it does not itself collect inventory.
+
+7.  Wait for a distinct collection run and a newer completion / **Last success** time. Inspect its complete, partial or failed coverage and the retained workload identities, then refresh. A queued response or an unchanged old inventory snapshot is not evidence of a new successful collection. If the collector cannot run, fix that prerequisite instead of repeatedly selecting Collect now.
 
 
 ## Review inventory and evidence
@@ -1091,7 +1115,66 @@ This beta QA Owner can inspect the source form, but no cluster alias is authoriz
 -   Revoking a runtime reporter is a different operation from pausing inventory collection. Separate historical identity evidence from recent activity.
 -   Network observations do not promote a workload into an agent or prove that every connection succeeded.
 
-Continue with [runtime reporting and blast radius](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/runtime-and-blast-radius.md) and [call gates](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md). Review [permissions](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/permissions.md) and [limits](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/limits.md) before interpreting coverage.
+Network capture and continuous observers have a separate [setup and lifecycle](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/network-observation.md); inventory-reader credentials do not install node sensors. Continue with [runtime reporting and blast radius](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/runtime-and-blast-radius.md) and [call gates](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md). Review [permissions](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/permissions.md) and [limits](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/limits.md) before interpreting coverage.
+
+---
+
+# Set up network observation
+
+> Prepare a short-lived capture grant or enroll a continuous customer observer, then inspect reporting health and evidence limits.
+
+Source: [Web version](https://docs.martiansecurity.ai/discovery/network-observation/)
+
+> **Page qualification:** Current beta console · owner/admin manages; authorized roles read · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
+
+> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+
+Observe scoped TCP activity from customer-operated Kubernetes sensors. A one-time capture and a continuous observer have separate grants and lifecycles. Neither grants model/tool reporting, blocks calls or activates network isolation.
+
+## Before you start
+
+An **owner/admin** manages grants and observers; authorized customer users inspect retained evidence. First obtain an enabled **customer Kubernetes source**, compatible collected workload identities, exact authorized nodes and a customer cluster operator who can install the approved privileged sensors and observer process.
+
+Inventory read permission does not grant privileged node access. The console does not install or start sensors. Obtain the compatible observer package and installation procedure from your operator; this customer guide covers its console enrollment and evidence checks. The recorded QA source had no authorized cluster, so capture, installation and live reporting remain unqualified.
+
+## 1\. Prepare a one-time capture
+
+1.  Open **Discovery → Sources → Network capture**, then **Prepare capture grant**.
+2.  Choose **Customer Kubernetes source** and enter exact comma-separated **Observer nodes**.
+3.  Select **Capture duration**: 30 seconds, 60 seconds, 2 minutes or 5 minutes.
+4.  Choose **Create capture grant**. This pins scope/current workload identities and prepares an upload grant; it does not start capture.
+5.  Save the once-shown **Capture upload credential** privately and use **Download capture assignment**. The assignment excludes the secret. Select **Credential saved** to clear it from the screen.
+
+6.  Have the authorized operator run the scoped observer with that assignment, credential and trusted Backend origin. The upload grant expires after 15 minutes; do not widen scope or change the endpoint to bypass an error.
+7.  Ask the operator to return the capture ID and retained result receipt after the observer finishes. An authorized workspace user can retrieve the receipt through `GET /v1/discovery/network-captures/{capture_id}`; the setup form does not open it automatically. Inspect scope, observed time and omission/attribution diagnostics. An issued grant or an empty result is not proof of a successful capture or an idle workload.
+
+**Revoke this upload grant** is available while the once-shown grant panel is open. **Credential saved** clears that panel and its revoke button; retain the capture ID privately. For later revocation, an owner/admin uses the authorized `DELETE /v1/discovery/network-captures/{capture_id}` API or asks the workspace operator to do so. Revocation prevents further uploads. Stop the customer-side capture process through its operator procedure as well; it does not stop customer applications or remove sensors.
+
+## 2\. Connect a continuous observer
+
+1.  Under **Continuous network reporting**, choose **Connect continuous observer**.
+2.  Select **Observer source**, enter the exact **Node scope** and **Service metadata namespaces**, then choose **Upload interval**, **Credential lifetime** and **Window retention**.
+3.  Choose **Register observer**. Privately save **Observer upload credential**, use **Download observer assignment**, then select **Observer credential saved**.
+
+4.  Have the operator install/configure the separately approved sensors and customer-run process using that exact assignment. Registration alone does not start them or change workload permissions.
+5.  On **Discovery → Overview**, inspect **Where workloads connect** and choose the intended **Observer**. **Manage observer** returns to its registration.
+6.  Read last contact, reporting/stale state, credential expiry and the expected reporting interval. Expand **Latest observer health** for each node’s sensor readiness, stream status, input events, omitted events and diagnostics.
+
+7.  Confirm a newly completed window and its sequence/time after the process reports. Refresh and verify retained evidence. A Ready Pod or running process does not establish complete kernel capture.
+
+## 3\. Stop reporting and retain the right evidence
+
+Choose **Revoke observer reporting** for the intended registration when retiring it. New windows are rejected and a connected observer exits at its next request. Stop/remove customer-side processes and node sensors separately through the cluster operator. Existing customer workloads keep running; retained windows follow their retention policy.
+
+## Failures and limits
+
+-   **No eligible sources:** authorize and enable the customer Kubernetes source first. Setup lists the first 50 eligible candidates; do not substitute an unrelated source.
+-   **No continuous observer report available / No recent activity window:** check real installation, credential validity, scope and reporting before concluding no activity occurred.
+-   Service matching uses collected ClusterIP/port evidence. TCP observation does not identify application requests, infer tools or prove a successful business action.
+-   The live view is bounded to 60 windows and 500 connection groups. Read truncation/omission notices and observed time; process restarts can leave gaps. Kernel loss can remain unknown.
+-   Credential expiry, retention and last contact are different boundaries. An old retained capture does not establish current reporting health.
+
+Continue with [runtime call metadata](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/runtime-and-blast-radius.md), [inventory collection](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/inventory.md) or [SDK call controls](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md).
 
 ---
 
@@ -1123,6 +1206,37 @@ Deployment, environment and version labels attribute reports; they do not attest
 5.  Start one reporter per customer application process, create a trace for each invocation and instrument the actual model/tool calls. A successful report is metadata about that call, not an assertion that a downstream business action happened.
 6.  Run a bounded legitimate synthetic task through the real application. Check its reporter delivery counters/logs and retained binding after refresh. Missing dashboard events do not establish that no calls occurred: delivery can fail or be dropped.
 
+## Integrate one real call
+
+[Download report\_once.py](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/examples/runtime-reporting/report_once.py) for a bounded integration using the SDK’s `martian_redteam.runtime.RuntimeReporter`. Install the [SDK](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/install-and-configure.md) in the intended enrolled workload, alongside your application’s dependencies. This example is source reviewed and locally checked for imports/setup failure; real Discovery delivery remains unqualified.
+
+Use a trusted module that exposes your existing real model/tool call as a sync or async function. The JSON input file supplies its keyword arguments. Do not put business requests at module import time. Run the helper only in the workload/version that the binding actually describes, using a legitimate authorized synthetic task.
+
+```sh
+export MARTIAN_API_URL='https://YOUR-APPROVED-BACKEND-ORIGIN'
+export MARTIAN_RUNTIME_BINDING_ID='YOUR-BINDING-UUID'
+export MARTIAN_RUNTIME_TOKEN_FILE='/absolute/private/runtime-credential'
+.venv/bin/python report_once.py \
+  --callback-file ./my_tools.py --callback-function lookup_order \
+  --input-file ./private-test-input.json \
+  --kind tool --system support --name lookup_order
+```
+
+Replace the file/function and trusted kind/system/name with your real integration. For `lookup_order(order_id=...)`, the private input file is a JSON object such as `{"order_id":"YOUR-AUTHORIZED-TEST-ORDER"}`. The runtime credential is distinct from the platform SDK key; the reporter does not load a `.env` file.
+
+The helper starts one reporter, creates one trace and places the **actual callable** inside `trace.call(...)`. It marks success only after the function returns, waits a bounded interval for the reporter’s single delivery attempt, then closes. Its own summary contains trace ID and delivery counters rather than inputs, outputs or secrets; keep any logs written by your application private too. An async application should reuse one reporter per process instead of starting this helper for each production request. Configure timeouts in the real callback/client; the reporter does not cancel a blocked synchronous business request.
+
+| Exit | Interpretation |
+| --- | --- |
+| 0 | Callable completed and the metadata upload was acknowledged; inspect the corresponding retained event |
+| 1 | The callable raised an error; inspect the private application evidence and delivery counters |
+| 2 | Setup failed before the observed call |
+| 3 | Callable completed, but metadata delivery was not confirmed |
+
+Reporting is separate from business execution. **Do not repeat the callable merely because delivery failed or the dashboard is empty.** `close()` is not a flush/retry: pending or uncertain delivery can be lost and is reflected in `delivery_failed` / `dropped`. Compare the printed trace ID, exact binding, time and call target with retained Runtime activity after refresh; counters alone do not establish business effects.
+
+This minimal integration emits call metadata. Resource links require explicit response-ID mapping through `RuntimeResourceRule` / `trace.resources(...)`; native Kubernetes request matching is a separate opt-in (`native_kubernetes=True` with actual request metadata). Neither is enabled or claimed by this helper. Ask the integrator for mappings supported by your real client contract before relying on those map layers.
+
 ## Inspect the runtime map
 
 1.  Open **Discovery → Overview → Runtime activity**, or the record’s Runtime activity view.
@@ -1150,7 +1264,7 @@ Deployment, environment and version labels attribute reports; they do not attest
 -   Opaque resource references remain within their binding. Unmapped resources, errors and downstream effects can be unknown; do not merge them across deployments by name.
 -   Customer-reported success, configured permissions and TCP observations do not independently establish effective access, complete capture or business impact.
 
-Continue with [SDK call gates](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md) or [assessment outcome verification](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/reproduction-and-limits.md).
+Continue with [network observer setup](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/network-observation.md), [SDK call gates](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md) or [assessment outcome verification](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/reproduction-and-limits.md).
 
 ---
 
@@ -1238,7 +1352,16 @@ The selected environment reports Sandboxes ready with Gmail running. This is sim
 
 Sandbox details can show seeded account credentials. Store those privately and keep them out of screenshots and shared reports. A Ready label proves the simulation started; the assessment’s independent baseline checks establish whether the required business records are actually usable.
 
-The walkthrough’s first instance expired naturally. A separate lifecycle instance was deliberately launched once for the Gmail/extension/stop checks; an uncertain launch was not resubmitted to obtain a clean result. If your organization reports **No authorized clusters**, ask its operator to provision sandbox access before launching.
+The walkthrough’s first instance expired naturally. A separate lifecycle instance was deliberately launched once for the Gmail/extension/stop checks; an uncertain launch was not resubmitted to obtain a clean result. **Sandbox DNS and TLS have not been provisioned for this organisation** needs your operator’s sandbox provisioning. Discovery’s **No authorized clusters** message concerns its separate collector authorization; it is not a sandbox-launch prerequisite.
+
+## Delete a custom environment
+
+This management path is source reviewed; deletion was not part of the captured Gmail lifecycle.
+
+1.  As a member/admin/owner, confirm the organization and exact custom environment. Sample environments cannot be deleted.
+2.  Stop its live sandbox instances and wait until they are no longer live. A stop acknowledgement alone does not clear the deletion guard.
+3.  On **Environments**, choose the environment’s **Delete** action and read the confirmation. Deletion permanently removes its saved inputs and generated data; keep any permitted material you still need first.
+4.  Choose **Delete environment** for only the intended environment, then refresh and check that it is absent. Past assessments and findings remain. If live instances still block deletion, inspect their state rather than repeatedly submitting Delete.
 
 Continue with [agent sandbox bindings](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/sandbox-bindings.md) and [configure an assessment](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/configure.md).
 
@@ -1788,6 +1911,63 @@ Next, [apply a reusable suite](https://raw.githubusercontent.com/MorningHQ/marti
 
 ---
 
+# Read the Evals dashboard
+
+> Interpret project trace volume, errors, latency, recorded usage and typed quality summaries without rerunning a target.
+
+Source: [Web version](https://docs.martiansecurity.ai/evals/overview/)
+
+> **Page qualification:** Current beta console · Any customer role · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
+
+> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+
+Use the project dashboard to understand the native traces retained for your selected scope. It summarizes recorded activity; it does not launch an evaluation or schedule model calls.
+
+## Before you start
+
+Any customer role can read authorized evidence. Choose a ready Evals project with retained native traces. This is **Evals → Overview**, distinct from an individual evaluation run’s Overview tab and from saved-score Monitoring.
+
+The instructions below are source reviewed. In the latest synthetic QA attempt, sign-in succeeded but the overview request timed out; dashboard values and screenshots were not newly qualified.
+
+## 1\. Choose the trace selection
+
+1.  Open **Evals → Overview** and confirm the organization and **Project**.
+2.  Use **Search trace content**, **Trace state** and **Trace order** to select the activity you need.
+3.  Open **Filters** (accessible name **More filters**) for session, user, time, latency or assessment criteria.
+4.  Choose **Apply filters**. Read the applied scope and incomplete-coverage notice before interpreting totals. **Refresh overview** rereads the selection.
+
+## 2\. Read performance and usage
+
+| Metric | Meaning |
+| --- | --- |
+| Requests | Matching recorded native traces, rather than a count of every provider call or evaluation case |
+| Error rate | The share with recorded ERROR trace state; a failed quality check is a separate result |
+| P50 / P95 latency | Percentiles of reported trace durations |
+| Trace volume | Recorded activity over time; it is not a future execution schedule |
+| Total tokens / Total cost (USD) | Reported usage in the matching traces, accompanied by reporting coverage |
+
+1.  In **Recorded usage**, check how many traces reported tokens and cost.
+2.  Treat missing reports as unavailable. No reported bill is not an independently established zero bill; partial coverage is not total provider spend.
+3.  Check the selected time window and coverage again before comparing two selections.
+
+## 3\. Interpret Quality summary
+
+1.  Read **Assessment**, **Type**, **Recorded values** and **Result** together.
+2.  Boolean feedback can show pass rates. Numeric feedback can show means. Categorical/text values retain their recorded-value counts rather than becoming pass percentages.
+3.  [Inspect the underlying traces](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/traces-and-sessions.md) when a summary needs explanation. Use [native annotations](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/trace-annotations.md) when you intend to add a human opinion or expectation.
+
+These are native feedback aggregates. They do not replace canonical exact-match results, a versioned suite gate or verified security outcomes. For gate history, choose **Monitoring** and follow [suites and monitoring](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/suites-and-monitoring.md).
+
+## Failures and limits
+
+-   Aggregates inspect at most 1,000 matching traces. Narrow the selection when coverage is incomplete; do not describe a bounded sample as all history.
+-   After a read error, use **Refresh overview** and retain the scope/error if it persists. Reading the dashboard does not repair missing instrumentation.
+-   An empty selection can mean missing telemetry or restrictive filters. It does not establish that the application made no requests.
+
+Continue with [trace inspection](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/traces-and-sessions.md) or [individual run results](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/results-and-scores.md).
+
+---
+
 # Organize evaluation projects
 
 > Select, create and archive projects while preserving organization boundaries and historical evaluation evidence.
@@ -2083,6 +2263,8 @@ Save or resolve an edited human review before navigating away when the drawer re
 
 ## 3\. Interpret supplementary scores
 
+For project-wide trace volume, latency, recorded usage and typed quality aggregates, use the separate [Evals dashboard guide](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/overview.md). The run-level Overview below describes this evaluation’s saved assessment jobs.
+
 Open the run’s **Overview** and choose the relevant **Assessment job**. Supplementary criteria do not replace the original exact-match result:
 
 -   **Contains expected text** checks a case-insensitive expected substring.
@@ -2288,6 +2470,8 @@ Use the same historical suite version when you want a [paired comparison](https:
 
 ## 4\. Inspect monitoring history
 
+Project [Overview](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/overview.md) summarizes native trace activity and feedback. Monitoring on this page summarizes saved scoring jobs and gates; the two views answer different questions.
+
 1.  Open **Evals → Overview** and choose **Monitoring**.
 2.  Read **Scoring history**, including the run, scoring definition, job status and quality gate.
 3.  Select a history entry to expand its scorecard, then choose **Open run**.
@@ -2308,6 +2492,61 @@ Monitoring here is saved-output scoring history. It does not automatically sched
 -   A policy criterion requires its policy instructions. Missing assessments, provider errors and incomplete coverage need review; they are not Boolean passes.
 
 Next, [compare matching suite jobs](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/compare.md) or [triage recorded quality issues](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/quality-issues.md).
+
+---
+
+# Annotate a native trace
+
+> Add typed human feedback or an expectation to a retained trace and recover an uncertain save without creating a duplicate.
+
+Source: [Web version](https://docs.martiansecurity.ai/evals/trace-annotations/)
+
+> **Page qualification:** Current beta console · member/admin/owner writes; authorized roles read · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
+
+> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+
+Attach a human opinion or expected behavior to a native trace, including a conversation trace that has no dataset evaluation run. This is separate from [assigned human-review queues](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/human-reviews.md). Saving an annotation does not execute a target or model.
+
+## Before you start
+
+Any authorized customer role can read annotations. A **member/admin/owner** can add one in a ready, writable project. Archived projects are read-only. Start from an existing trace you are authorized to inspect.
+
+This write workflow is source reviewed; it was not exercised by the earlier verified trace/session reading walkthrough. The latest QA overview read timed out, and no annotation write was attempted during that check.
+
+## 1\. Open the annotation form
+
+1.  Open **Evals → Traces**, confirm **Project**, and open the intended trace’s **Trace details**.
+2.  Choose **Add annotation** in **Annotations**.
+3.  Select **Annotation type**: **Feedback** or **Expectation**.
+4.  Enter **Name**: start with a lowercase letter, then use lowercase letters, digits or underscores, up to 60 characters. `exact_match` is reserved.
+
+## 2\. Enter the value and save once
+
+| Type | Fields | Use it for |
+| --- | --- | --- |
+| Feedback → Pass or fail | Rating: Pass / Fail; optional rationale | A Boolean human judgment |
+| Feedback → Number | Numeric rating; optional rationale | A numeric human judgment |
+| Feedback → Text | Feedback text; optional rationale | A textual observation |
+| Expectation | Expected response or behavior | Text describing what should have happened |
+
+1.  Choose **Value type** for Feedback and enter its **Rating** or **Feedback text**. **Rationale (optional)** supports up to 2,000 characters.
+2.  For Expectation, enter **Expected response or behavior**, up to 4,000 characters. It has no separate rationale field.
+3.  Review the trace, name, type and value, then select **Save annotation** once. **Close** leaves the form without submitting it.
+4.  Read the saved annotation’s type, value and author. Refresh and reopen the same trace to confirm it remains in **Annotations**.
+
+## 3\. Recover an uncertain save
+
+An uncertain response can leave the form locked to its original submission. Use **Retry annotation** for that same submission; it retains the request identity and reads back the corresponding native assessment.
+
+If that form/browser intent is no longer available, reopen the trace and inspect its existing annotations before beginning a fresh submission. A new submission creates another annotation rather than editing the previous one. The current UI does not offer annotation edit/delete; do not use repeated fresh saves as a retry strategy.
+
+## Understand what changed
+
+Feedback and Expectation are retained human assessments. They do not rewrite span inputs/outputs, published dataset answers, canonical evaluation results, a scoring job or a review queue. Feedback can contribute to the native dashboard’s typed quality summary; Boolean false feedback can contribute to Quality issues. Expectation text is not projected as a feedback score.
+
+A human annotation is an opinion or expectation, not a model judgment or independently verified security finding. Keep sensitive values within the trace’s authorized audience.
+
+Continue with [Evals dashboard summaries](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/overview.md) or [quality issues](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/quality-issues.md).
 
 ---
 
@@ -2356,6 +2595,8 @@ The capture below shows **Trace details** opened from the filtered trace table, 
 The trace-table inspector retains the real input/output and two spans. There are 0 model spans and reported tokens are unavailable; missing usage is not zero usage.
 
 A missing usage field is not zero usage. Reported model names, costs and span events describe what was retained; they do not independently verify billing, deployed code or a business-side effect. Treat trace downloads as potentially sensitive and share them according to your organization’s policy.
+
+To add a human rating or expected behavior, use the separate [native annotation workflow](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/trace-annotations.md). It appends an assessment rather than editing recorded outputs or a dataset answer. That write workflow has its own pending qualification.
 
 ## 3\. Group recorded conversations
 
@@ -2654,6 +2895,8 @@ MT-01 is in the runnable library. Its illustrative payload and taxonomy labels d
 
 The observed catalogue offered **MT-01 Direct instruction override** as **In the library**, with **Add to assessment** enabled. **MT-20 Session hijack** was a **Declared gap**, with that action disabled. These are catalogue states, not findings about the teaching target.
 
+The source-visible **Add to assessment** shortcut opens the wizard’s Tests step in **By technique** mode with that technique selected. Confirm the preselection, then review Environment, Agent and Goals before launching. This shortcut is separate from the manually selected path below and was not independently exercised in the recorded catalogue walkthrough.
+
 ![MT-20 Session hijack declared gap with Add to assessment disabled](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/library-gap.png)
 
 MT-20 remains a Declared gap. Its disabled Add to assessment action keeps reference coverage separate from runnable tests.
@@ -2685,6 +2928,47 @@ Continue with [configure an assessment](https://raw.githubusercontent.com/Mornin
 
 ---
 
+# Find your way around the console
+
+> Locate every customer console area, its guide and the boundary between available workflows, templates and previews.
+
+Source: [Web version](https://docs.martiansecurity.ai/reference/console-navigation/)
+
+The console sidebar groups current work, adversary material, history and organization access. This map follows the inspected customer interface; controls can additionally depend on your role, project and readiness. Use [verification records](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md) to see which walkthroughs were actually exercised.
+
+| Console area | What to do there | Guide |
+| --- | --- | --- |
+| Overview | Inspect the displayed agent page’s latest standing, declared reach and recorded coverage; a held result is not a general security guarantee | [Evidence and coverage](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md) |
+| New assessment | Configure one approved, bounded security test | [First assessment](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/get-started/first-assessment.md) and [wizard options](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/configure.md) |
+| Evals | Work with datasets, runs, traces, summaries, judges and reviews | [First evaluation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/first-run.md) and [Evals dashboard](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/overview.md) |
+| Agents | Register, validate, approve and manage authorized connections | [Connections](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/connections.md) |
+| Discovery | Collect inventory; inspect runtime/network evidence and explicitly enrolled call controls | [Sources](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/inventory.md), [runtime](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/runtime-and-blast-radius.md), [network observation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/network-observation.md) and [call gates](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md) |
+| Replay | Read retained assessment evidence without executing it again | [History and exports](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/history-and-exports.md) |
+| Environments | Prepare synthetic systems and manage their sandbox lifecycle | [Environments](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/environments/create-and-launch.md) |
+| Pipeline | Download an illustrative policy template; its displayed `martian scan` command is not a supported SDK command | [Supported SDK/CI workflow](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/ci.md) |
+| Attack Library | Inspect catalogue availability, taxonomy and declared gaps, then choose supported tests | [Library coverage](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/library/coverage.md) |
+| Threat Intel | Inspect the feed state; the recorded interface has no live feed connected | [Library and feed limits](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/library/coverage.md) |
+| Assessments / Findings / Reports | Find saved runs, inspect observations and download the appropriate retained evidence | [Reports and exports](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/history-and-exports.md) |
+| Team | Invite teammates and inspect organization roles | [Team and roles](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/workspace/team-and-roles.md) |
+
+## Inside Evals
+
+-   **Overview** summarizes matching native traces; it is separate from a run’s Overview and from **Monitoring**.
+-   **Traces** opens native evidence, conversations, saved views and [human annotations](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/trace-annotations.md).
+-   **Runs** holds canonical evaluation results and the organization-wide CI sessions area; **Compare** pairs saved runs.
+-   **Datasets** holds published versions and drafts. **Judges** manages saved-output criteria. **Reviews** holds assigned questions; **Quality issues** groups recorded error/failed-Boolean signals.
+-   **Scoring suites** and **Monitoring** provide versioned criteria and gate history. [Choose a named project](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/projects.md) deliberately; project selection changes the accessible scope.
+
+## Account menu
+
+The account control at the bottom of the sidebar opens **Profile**, **Theme** and **Sign out**. Profile shows your signed-in identity, role, organization and reported Agents-runtime provisioning status. It is not an account-editing or credential-issuance form. A provisioning label alone does not prove all target, model or sandbox services are ready.
+
+**Master admin** appears only for platform operators. Organization creation/global catalogue administration and infrastructure installation remain separate from these customer tasks; ask the relevant operator when those prerequisites are absent.
+
+Continue with [roles](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/permissions.md), [supported targets](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/supported-targets.md) or [troubleshooting](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/troubleshooting.md).
+
+---
+
 # Glossary
 
 > Plain definitions for the words used in Martian customer workflows.
@@ -2709,6 +2993,10 @@ Source: [Web version](https://docs.martiansecurity.ai/reference/glossary/)
 | Finding | A recorded observed problem with its evidence and verification limits |
 | Judge | A configured scorer that returns typed feedback, sometimes using a model |
 | Outcome check | A supported independent observation of the relevant business state |
+| Oracle | A trusted check of the claimed outcome, independent of the attacking model’s opinion |
+| Carrier / implant | The message, document or tool descriptor carrying an untrusted attack payload, and the payload inserted into it |
+| No-implant control | A comparable test without that inserted payload, used to check whether the effect depends on the attack |
+| World epoch | An identifier for a particular initialized or restored sandbox state; different epochs can represent different test worlds |
 | Project | An organization-scoped Evals grouping for runs and related work |
 | Provenance | Recorded identities, versions, authorizations and revisions explaining where results came from |
 | Replay | Inspection of retained execution evidence; it does not itself mean a new live execution |
@@ -2924,9 +3212,11 @@ These guides are being qualified against actual running application/backend stat
 
 The site is being published iteratively. Each task guide shows its current walkthrough status above the instructions. The initial public build includes source-reviewed instructions; authenticated captures and complete execution checks are added as they pass.
 
-Of **34 task guides**, **22 are verified**, **9 are partly verified** and **3 await walkthrough verification**. The screenshot record contains **116 captured references** across **104 unique PNGs**. These counts come from the current coverage and screenshot manifests.
+Of **37 task guides**, **22 are verified**, **9 are partly verified** and **6 await walkthrough verification**. The screenshot record contains **116 captured references** across **104 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
+
+The latest completeness audit added the missing project dashboard, native annotation and network-observer instructions and a [console map](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/console-navigation.md). Those three new task guides are source reviewed and await runtime qualification. A fresh synthetic QA sign-in succeeded, but Evals Overview returned a read failure and its supported refresh timed out; no annotation was submitted. The existing Discovery authorization/collector and privileged-sensor prerequisites were not bypassed. Earlier successful walkthroughs below remain historical evidence for their named paths.
 
 ## Observed walkthroughs — 13 November 2026
 
@@ -2944,7 +3234,7 @@ The isolated QA application uses the source baseline below, real Backend/Agents 
 -   The SDK’s two Evals tests passed and retained **EV-1004** plus its CI session. The original `--require-export` command exited **1** because native export had not completed. Supported recovery later confirmed the stored session export and dataset finalization without running the callbacks again. The original failed receipt is preserved.
 -   A distinct Evals-only SDK session retained **EV-1009** and passed its original `--require-export` command with exit **0**, **2 of 2 tests passed**, **persisted** upload and **exported** evidence. Its saved receipt and server readback agreed. These were local callbacks, separate from remote-target Evals and the earlier failure/recovery.
 -   The SDK’s Python and CLI redteam entry points were each executed once with one planned probe. Both exited **0**, with one score of **1**, no execution errors and four succeeded, settled native generation/judging operations. A separate combined attempt saved **2 of 4 tests passed**, **Failed**, and **Exported to MLflow**. Generation was uncertain to its runner; a later read of that same operation confirmed success. No target/judging stage followed, and the original failed CI verdict was retained.
--   The exact public SDK tutorial ZIP subsequently passed a distinct combined CLI qualification on a GitHub-hosted Ubuntu runner: original **exit 0**, **3 of 3 test groups passed**, **persisted** upload and **exported** evidence. Independent readback confirmed three **FINISHED** native runs, exactly two settled model calls, unchanged tutorial files, safe metadata artifacts and own-resource cleanup. The [public receipt](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/examples/validation/sdk-ci-0.1.2-2026-11-13.json) records SDK/wheel/ZIP/source hashes and the run/attempt. The extracted customer workflow was not itself dispatched; its installation and CLI path ran in a reviewed disposable qualification wrapper.
+-   An earlier published SDK tutorial snapshot passed a distinct combined CLI qualification on a GitHub-hosted Ubuntu runner: original **exit 0**, **3 of 3 test groups passed**, **persisted** upload and **exported** evidence. Independent readback confirmed three **FINISHED** native runs, exactly two settled model calls, tutorial files unchanged within that qualification, safe metadata artifacts and own-resource cleanup. The [public receipt](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/examples/validation/sdk-ci-0.1.2-2026-11-13.json) records those original SDK/wheel/ZIP/source hashes and the run/attempt. The current download has a refreshed unpinned installation; it is not the historical hashed ZIP. The extracted customer workflow was not itself dispatched; its installation and CLI path ran in a reviewed disposable qualification wrapper.
 -   Released **SDK 0.1.3** was installed from public PyPI and every command in the [local suite-file guide](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/local-evals.md) was run: the example’s failing first run, the resumed and fresh reruns, the result files, one run with a real LLM judge through an OpenAI-compatible endpoint, and one run logging to a temporary local MLflow server. The existing tutorial’s account-free steps were also repeated on 0.1.3. Persisted Evals, hosted red teaming and combined CI were **not** re-run on 0.1.3; their qualification remains on 0.1.2.
 -   **MR-1002** completed a real anonymous, serial, endpoint-only disclosure assessment in **1 minute 56 seconds**, using **3 agent requests** and **15 model calls**. It retained three refusal turns, one unverified attempt, an attempted/unverifiable probe and zero findings; its security outcome remained **INCONCLUSIVE**. Trace refresh and two actual JSON exports agreed with its state and scope. No deterministic oracle, sandbox actions or reviewed knowledge references were available. Member/viewer reads passed; viewer launch/stop and foreign-organization reads/writes were denied.
 -   An earlier assessment was rejected before native campaign creation because the own QA worker’s three-round ceiling was smaller than the console’s five-round Light profile. Supported local ceilings were aligned without changing the shipped model profile. A later cancellation trial, **MR-1003**, ended **Needs attention** after an HTTP 530 teaching-tunnel failure before its stop control could be used. Its uncertain action remains recorded; no invented response or replacement execution resolved it. Positive cooperative cancellation remains unverified.
@@ -3231,7 +3521,7 @@ A [suite file](https://raw.githubusercontent.com/MorningHQ/martian-security-docs
 .venv/bin/martian evals run evals.yaml --fresh --output eval-results
 ```
 
-The command exits `0` when every case passes, `1` when a case fails and `2` when a case has no verdict or the suite file is invalid. Publish `eval-results/junit.xml` to your CI system’s test report. A suite that uses an LLM judge needs that provider’s key as a CI secret; a suite of deterministic checks needs no secret at all.
+The command exits `0` when every case passes, `1` when a case fails and `2` when a case has no verdict or the suite file is invalid. Review the failure reasons in `eval-results/junit.xml` before publishing it to a suitably restricted test report. A suite that uses an LLM judge or a credentialed callback needs those secrets and trusted code; keep them out of unreviewed pull requests. The deterministic teaching suite needs no secret.
 
 This run is separate from the persisted gate on this page. It creates no CI session, has no agent or revision attribution and does not appear in the console. Keep `martian ci` as the recorded gate for trusted branches.
 
@@ -3467,7 +3757,7 @@ To run a whole file of cases without writing tests, use a [suite file](https://r
 -   Strict policy requires every pinned row to pass. A lower declared threshold can produce a visibly **relaxed** verdict; it does not excuse missing rows or execution errors.
 -   SDK dataset CI pulls are capped at **100 active records per dataset test**. Checks support up to **100 rows and 20 scorers** per test; sessions support **100 tests and 1,000 combined rows/probes**, within the request-body limit. These limits differ from the console’s admitted run budgets.
 -   These limits apply to tests recorded through the gate. A [local suite-file run](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/local-evals.md) has no row limit and records nothing on the platform.
--   Do not set a remote `MLFLOW_TRACKING_URI`. Do not publish `.martian-local-mlflow/` as a CI artifact. Retain the safe receipt instead.
+-   The pytest/persisted-gate path on this page uses a private local MLflow store. Do not substitute a remote `MLFLOW_TRACKING_URI` for that path or publish `.martian-local-mlflow/` as a CI artifact. The separate [suite-file runner](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/local-evals.md#failures-and-limits) can explicitly log to your own MLflow server. Retain the persisted gate’s safe receipt.
 -   `--require-export` waits for bounded export confirmation. An export problem does not justify rerunning the target; inspect the saved session and available **Retry export** action first.
 
 If the tests pass and upload is persisted but required export fails, preserve the original failed receipt. An owner/admin can use **Retry export** in **CI sessions**, then **Refresh** to inspect the retained export. For a separate dataset-run telemetry warning, contact your workspace operator or [Martian support](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/get-started/access.md); it needs investigation of that run. Recovering saved evidence does not change the original command’s exit code; record recovery separately.
@@ -3773,7 +4063,7 @@ The failing case in `results.jsonl` shows which check failed and the reply that 
 }
 ```
 
-`results.jsonl` and `mlflow.db` hold your prompts and replies **in clear text**. Keep them out of public artifacts when the content is sensitive. `summary.json` and `junit.xml` hold verdicts, case IDs and check reasons.
+`results.jsonl` and `mlflow.db` hold your prompts and replies **in clear text**. Keep them out of public artifacts when the content is sensitive. `summary.json` holds counts and the output path. `junit.xml` also includes case IDs and failing check reasons/errors, which can echo sensitive text. Review report contents before sharing them.
 
 ## 5\. Fix the agent and run again
 
@@ -3832,7 +4122,7 @@ output: results-judge
 .venv/bin/martian evals run evals-with-judge.yaml
 ```
 
-With the original flawed agent, expect the judge and the text check to agree: two cases pass and `prompt-injection` fails both checks. The judge’s reason for each case is in `results-judge/results.jsonl`.
+With the fixed agent from step 5, expect three passes. If you kept the original flawed branch, two cases should pass and `prompt-injection` should fail both the judge and text check. A model judge can vary; inspect its reason for each case in `results-judge/results.jsonl`.
 
 The suite file supports three judge types. Use at most one of each type in a suite.
 
@@ -3848,14 +4138,14 @@ A judge is graded on what the reply delivers, not on how it opens: a refusal doe
 
 ## 7\. Run it in CI
 
-The command needs no Martian secret, so it can run on any pull request. Add your judge’s provider key as a CI secret only if the suite uses a judge.
+The deterministic teaching suite needs no secrets. A replacement callback or LLM judge may need customer/provider credentials; run that code only on trusted branches or after your CI’s approval controls. Keep secrets away from unreviewed pull-request code, including code that imports the target module.
 
 ```sh
 .venv/bin/martian evals run evals.yaml --fresh --output eval-results
 ```
 
 -   Fail the job on a non-zero exit code.
--   Publish `eval-results/junit.xml` to your CI system’s test report.
+-   Publish `eval-results/junit.xml` to your CI system’s appropriately restricted test report after checking its failure reasons for sensitive content.
 -   Keep `eval-results/summary.json` as an artifact. Publish `results.jsonl` only if its content is safe to share.
 
 | Option | Effect |
@@ -3924,6 +4214,8 @@ mlflow:
   tracking_uri: "https://YOUR-MLFLOW-SERVER"
   experiment: "support-agent-evals"
 ```
+
+Use your own server’s permitted experiment and authentication: both `MLFLOW_TRACKING_USERNAME` / `MLFLOW_TRACKING_PASSWORD` for HTTP Basic auth, or `MLFLOW_TRACKING_TOKEN` for bearer auth. These are separate from a Martian platform API key. Keep TLS verification enabled; private certificate authorities can use `MLFLOW_TRACKING_SERVER_CERT_PATH`. See [MLflow tracking-server authentication](https://github.com/mlflow/mlflow/blob/v3.16.1/docs/docs/self-hosting/architecture/tracking-server.mdx). The recorded walkthrough used a local server; remote authenticated logging remains unqualified.
 
 Continue with [evaluations in Python](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/evaluations.md) to use the same judges and checks inside pytest, or [combined CI](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/ci.md) to record results on the Martian platform.
 

@@ -68,6 +68,8 @@ Use the same historical suite version when you want a [paired comparison](https:
 
 ## 4\. Inspect monitoring history
 
+Project [Overview](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/overview.md) summarizes native trace activity and feedback. Monitoring on this page summarizes saved scoring jobs and gates; the two views answer different questions.
+
 1.  Open **Evals → Overview** and choose **Monitoring**.
 2.  Read **Scoring history**, including the run, scoring definition, job status and quality gate.
 3.  Select a history entry to expand its scorecard, then choose **Open run**.

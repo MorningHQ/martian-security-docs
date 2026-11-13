@@ -48,6 +48,8 @@ Save or resolve an edited human review before navigating away when the drawer re
 
 ## 3\. Interpret supplementary scores
 
+For project-wide trace volume, latency, recorded usage and typed quality aggregates, use the separate [Evals dashboard guide](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/overview.md). The run-level Overview below describes this evaluation’s saved assessment jobs.
+
 Open the run’s **Overview** and choose the relevant **Assessment job**. Supplementary criteria do not replace the original exact-match result:
 
 -   **Contains expected text** checks a case-insensitive expected substring.
