@@ -285,6 +285,18 @@
       "environment": "Current production dist root preview127.0.0.1:4330;canonicalhttpsdocs.martiansecurity.ai;1440desktop/390dark",
       "result": "Passed bounded local root-path follow-up; hosted HTTPS remains incomplete; no human participant",
       "details": "Bothrootroutes/canonicals,no stale same-origin projectprefixlinks,realPagefindconversationturns7results/traceguidefirst/actualclick,all8inlineimages,native+Discoveryfullsize1440\u00d71000,390darknoglobaloverflow,Verificationlinkand21/9/3+116/104counters passed. Docsconsole0errorswarnings;final26rootdocsrequestsall200/304. RawnativePNGtabrootfavicon.ico404retainedasnonblocking. Twoadditionalignoredcaptures;initialfullreviewpreserved. NoTLSbypassorhosting/productactionsbyreviewer."
+    },
+    {
+      "scope": "PR13 actual Pages publication and public HTTP content",
+      "environment": "mainab0a85be4e7493bf64de4f41317ad2fe076e97c9;Pages43420381890;publicHTTPdocs.martiansecurity.ai",
+      "result": "Pages build/deploy and171HTTPcontentchecks passed;trustedHTTPS remains incomplete",
+      "details": "PRCI43420221155/buildpassed;Pages43420381890/build+deploysuccess. Wholemergedtreeand11frozenfilehashesmatchreviewedhead. PublicHTTPreadback171resourcespassed,includingall104PNGhashes,allroutes/diagrams/searchassets,SDKreceiptandHTTP9/SDK12exactZIPmembers. TrustedHTTPSprobe2026-11-13T12:08:18Z stillhostnamecertificate mismatch. HTTPcontentreadbackdoesnotqualifytrustedHTTPSorhostedbrowserbehavior."
+    },
+    {
+      "scope": "Readable code blocks and exact clipboard controls",
+      "environment": "Node26;41-page root production preview;ExpressiveCodebuiltin;1440\u00d71000/390\u00d7844lightdark",
+      "result": "Build/defaultchecks,42exactcopypayloads,threeactualclipboardchecks andboundedvisualreview passed",
+      "details": "RetainedexistingExpressiveCodeclipboard/fallback/livefeedbackandbothGithubthemes;removedforcedmonochrometokens/bodyfont. Buildtimeheaderspreserveexplicit titles,showlanguageandvisibleCopylabel;no new dependency/clientclipboardimplementation. All42renderedcopy payloadsacrossHTTP/JSON/JSONL/Python/shell/text/YAMLmatchsourcefencesexactly,includingquotes/backslashes/newlines/indentation;no examplecodechanged. ActualmouseShell/config/install andkeyboardEnterPythoncopiesmatchedclipboardwithCopiedfeedback;visible2pxorangefocus. IndependentAI-novicevisualreview(nohuman)passeddesktop/narrowthemes,headers/font/syntax,alwaysvisibleCopy,internalhscroll/no pageoverflow,deeprefresh,realPagefindinstallSDK10results/intendedguidefirst/clickandYAMLsample. Reviewerleftclipboarduntouched. Finalsample15requestsall200;console0errorswarnings. Sixignoredvisualcapturesretained. HostedHTTPfallbackwillbecheckedafterdeployment;trustedHTTPSisstillindependentlyblocked."
     }
   ],
   "remainingGaps": [

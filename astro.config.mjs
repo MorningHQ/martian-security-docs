@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import { siteOrigin, siteBase, documentationRepository } from './site.config.mjs';
+import { martianCodeBlocks } from './src/lib/code-blocks.mjs';
 
 export default defineConfig({
   site: siteOrigin,
@@ -20,24 +21,34 @@ export default defineConfig({
     customCss: ['./src/styles/custom.css'],
     expressiveCode: {
       themes: ['github-dark', 'github-light'],
-      defaultProps: { wrap: true, frame: 'none' },
+      plugins: [martianCodeBlocks],
+      defaultProps: { wrap: false, frame: 'code' },
+      frames: {
+        showCopyToClipboardButton: true,
+        extractFileNameFromCode: false,
+        removeCommentsWhenCopyingTerminalFrames: false,
+      },
       styleOverrides: {
-        borderRadius: '8px',
+        borderRadius: '10px',
         borderColor: 'var(--sl-color-hairline)',
-        codeFontFamily: 'Inter Variable, Inter, sans-serif',
+        codeFontFamily: 'var(--sl-font-mono)',
         uiFontFamily: 'Inter Variable, Inter, sans-serif',
         codeFontSize: '0.8125rem',
-        codeLineHeight: '1.65',
-        codePaddingBlock: '0.875rem',
-        codeBackground: '#0C0A09',
-        codeForeground: '#F5F3F1',
+        codeLineHeight: '1.75',
+        codePaddingBlock: '1rem',
+        codeBackground: 'var(--code-block-bg)',
         frames: {
           shadowColor: 'transparent',
-          editorBackground: '#0C0A09',
-          terminalBackground: '#0C0A09',
+          editorBackground: 'var(--code-block-bg)',
+          editorTabBarBackground: 'var(--code-block-header)',
+          editorTabBarBorderBottomColor: 'var(--sl-color-hairline)',
+          editorActiveTabBackground: 'transparent',
+          editorActiveTabForeground: 'var(--sl-color-gray-2)',
+          editorActiveTabIndicatorHeight: '0px',
+          terminalBackground: 'var(--code-block-bg)',
           terminalTitlebarDotsOpacity: '0',
-          terminalTitlebarBackground: '#0C0A09',
-          terminalTitlebarForeground: '#F5F3F1',
+          terminalTitlebarBackground: 'var(--code-block-header)',
+          terminalTitlebarForeground: 'var(--sl-color-gray-2)',
         },
       },
     },
