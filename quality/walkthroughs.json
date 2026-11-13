@@ -247,7 +247,7 @@
     },
     {
       "task": "Native trace filters and saved views",
-      "result": "named read/view paths passed; positive conversation grouping remains unqualified",
+      "result": "Earlier checkpoint: named read/view paths passed; native session grouping was not then qualified. See the subsequent genuine native HTTP conversation check.",
       "observed": [
         "Member applied HELLO content and OK state filters in the archived teaching project; the real search returned one matching native trace",
         "Opened Trace details from the table, inspected two native spans and every details tab, and downloaded the actual native payload; missing model/token/event information remained unavailable",
@@ -260,7 +260,7 @@
         "With a separately ready native context, another authenticated organization could not read the customer-owned trace404 while its owning organization read200"
       ],
       "remaining": [
-        "Positive multi-turn session grouping needs an approved session-bearing tracing integration; an SDK CI session UUID is a different identifier"
+        "Positive multi-turn session grouping needs an approved session-bearing tracing integration; an SDK CI session UUID is a different identifier Subsequent native-integration qualification is recorded separately below."
       ]
     },
     {
@@ -512,6 +512,36 @@
         "Actual-output substitution, publication and later evaluation of the cases were not executed in this task.",
         "Existing stalled publication operations and uncertain MR1003 remain preserved."
       ]
+    },
+    {
+      "task": "Genuine native HTTP conversation and session viewing",
+      "result": "passed named local read/session workflow with separately provisioned native MLflow instrumentation",
+      "observed": [
+        "Normal manual invitation201/accept201 created a fresh own QA organization with ready/unpaused Evals and empty native traces. Existing paused organizations and uncertain operations were untouched.",
+        "A dedicated non-admin native application user received only fresh-workspace USE and EDIT on its exact existing mapped evaluation experiment. This is tenant-scoped operator provisioning, not an experiment-only or Martian API-key self-service claim. Backend service credentials were not supplied to the app.",
+        "MLflow3.16.1 traced two actual HTTP requests once each: remember BLUE returned Stored BLUE; recall read real process memory and returned BLUE. Unauthorized request returned401 before the callback. No LLM or model call was made.",
+        "Independent Backend search/detail and direct native reads confirmed two distinct completed OK root traces, two real spans each, immutable shared session metadata and native end timestamps. Native model/token/cost fields remained unavailable.",
+        "Actual UI Session ID filter/Group by session showed one session/2turns/0errors/ungrouped0/complete bounded coverage. View turns showed both stored request/output pairs; both inspectors rendered actual inputs/outputs and memory spans. Ungroup traces returned both rows.",
+        "Initial trace/view UI read timeouts502 and observer mistakes are retained. Supported Refresh traces recovered200 without callback replay. Final full-page refresh retained both traces with nine observed Evals responses all200; subsequent first-turn/group/ungroup navigation had nine more Evals responses all200 and no page errors.",
+        "Known background connector requests still returned503 in this local stack; this is not a failure-free whole-application console history. Three new native1440x1000captures were individually inspected."
+      ],
+      "remaining": [
+        "Released Martian SDK0.1.2/API keys do not issue native writer credentials or provide equivalent arbitrary application-trace ingestion. This is a separately provisioned native integration.",
+        "The deterministic memory fixture does not establish model behavior, production security, deployment attestation or session authorization from the grouping string."
+      ]
+    },
+    {
+      "task": "Beta Discovery authorization and contract prerequisites",
+      "result": "partial; actual blocked form and deployed contract checked, no collection",
+      "observed": [
+        "Own synthetic beta QA Owner/non-platform-admin opened Discovery/Sources/Connect source/Add a read-only source. The Kubernetes selector had no approved alias, No authorized clusters was visible and Create source was disabled.",
+        "A read-only pod check hashed app/discovery_schema.py, app/api/discovery.py and app/config.py; all matched pinned Backend01343fa9. AgentObservation lacks kubernetes_state and WireModel forbids extra fields. The available collector snapshot emits that field, so this pair cannot support the requested real Kubernetes collection.",
+        "One real1440x1000safe form image was captured with no source creation, credential issuance, inventory insertion, runtime event invention or hosted configuration/IAM change."
+      ],
+      "remaining": [
+        "A compatible collector/Backend pair, organization-approved scope and reachable real reader are independent prerequisites.",
+        "Enrollment, actual collection, retained inventory and source lifecycle remain unverified. No WIP Backend or stripped observation was substituted."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
@@ -523,6 +553,7 @@
     "Own QA initially had default admission ceilings3rounds/3drafts while console Light requested5/5. The original rejection is retained; supported own-QA ceilings were aligned without changing shipped model profile or hosted runtime.",
     "The MR-1003 teaching-tunnel HTTP530 action remains uncertain and preserved. Positive cooperative cancellation is not established by that terminal failure.",
     "A transient Evals readiness warning during initial route loading cleared before final EV-1009 render/refreshed readback; known unconfigured connector/sidebar errors remain separate from these completed flows.",
-    "Hosted beta own provisioned Gmail environment passed the named built-in lifecycle; shared data generation failed before QA. New QA organization Evals/cluster readiness remains unavailable. This does not repair the unconfigured local orchestrator or attest whole hosted deployment parity."
+    "Hosted beta own provisioned Gmail environment passed the named built-in lifecycle; shared data generation failed before QA. New QA organization Evals/cluster readiness remains unavailable. This does not repair the unconfigured local orchestrator or attest whole hosted deployment parity.",
+    "Positive native sessions are now qualified only through a fresh separately provisioned MLflow3.16.1 application writer. SDK0.1.2 uploads remain a separate sessionless path. Initial UI evaluation-service read timeouts and background local connectors503 are preserved."
   ]
 }

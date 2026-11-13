@@ -18,13 +18,17 @@ Any signed-in tenant user can inspect accessible inventory. **Owner** or **Admin
 
 Source collection, runtime reporting and assessment connections have separate credentials and purposes. Creating a source does not start a process or stop an agent.
 
+:::caution[Check collection readiness first]
+The beta QA organization shown below has **No authorized clusters**. Its source form was inspected, but enrollment and collection could not be exercised. Ask your operator for an authorized scope and a collector compatible with your deployment before continuing. For this beta QA check, the available collector snapshot and the attested Backend revision have an incompatible Kubernetes observation contract; entering a cluster name cannot resolve that prerequisite.
+:::
+
 ## Enroll a read-only source
 
-1. Open **Discovery → Sources** and choose the add-source action to open **Add a read-only source**.
+1. Open **Discovery → Sources** and choose **Connect source** to open **Add a read-only source**.
 2. Select the supported provider and enter its authorized scope. For Kubernetes, choose an authorized cluster and namespaces. For AWS Bedrock, enter the approved account, regions and **Read-only role ARN**. An empty authorized-cluster list needs operator setup first.
-3. Review the scope and click **Create source**.
-
 <Screenshot id="discovery-source-form" />
+
+3. Once an authorized scope is available, review it and click **Create source**. If the form says **No authorized clusters**, stop here and request the operator setup; the captured form has **Create source** disabled.
 
 4. For a customer-side collector, save its once-shown credential privately and **Download scope assignment** or **Download assignment**. The assignment describes scope; the separate credential authenticates the collector. Close the credential panel before making screenshots or sharing the screen.
 5. Install/run the approved collector with that assignment and private credential in its authorized environment. Use the installation package and instructions supplied for your deployment; an enrollment alone is not collection. For hosted collection, the configured hosted reader performs the work.

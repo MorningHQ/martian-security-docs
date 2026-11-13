@@ -84,7 +84,7 @@
     {
       "scope": "Native trace reads, views, exports and tenant boundaries",
       "environment": "Real isolated local QA with two separately ready native contexts",
-      "result": "named read/view paths passed; positive conversation sessions unqualified",
+      "result": "Earlier checkpoint: named read/view paths passed; positive native sessions were then unqualified. See subsequent native HTTP conversation qualification.",
       "record": "quality/walkthroughs.json",
       "details": "One filtered native trace, all inspector tabs, actual payload and matching CSV/JSON1 exports, private/shared view save/reselect/update/delete and role/privacy/revision guards passed. A separate ready organization received404 for the same trace its owning customer read200. Initial view-save500/absence readback/recovery retained; SDK does not forward native conversation metadata."
     },
@@ -249,14 +249,32 @@
       "environment": "Node26;41-page production site; exact rendered shell/Python3 command with native synthetic export",
       "result": "production build, Pagefind, default checks, conversion command and diff check passed",
       "details": "41pages built/indexed;3466link/anchor/assetreferences,112registeredcapturedIDs/100uniquePNGs and five import-example records passed. Exact guide conversion command exited0 and output semantically equaled nativeexport.items, preserving all values/metadata. Coverage33guides:20verified/9partial/4pending. Strict full-release audit remains enabled and intentionally fails with19pending screenshotreferences/13unverifiedfullguides/33findings."
+    },
+    {
+      "scope": "Native HTTP conversation/session and beta Discovery prerequisites",
+      "environment": "Isolated local QA with MLflow3.16.1; separate own hosted-beta QA blocked form; pinned owning source",
+      "result": "Named native session workflow passed; Discovery enrollment/collection remain partial",
+      "details": "Two actual once-only HTTP stateful turns persisted as two completed native roots/two spans each. Independent native/Backend search/details and UI filter/group/turns/both inspectors/ungroup/full refresh passed. Initial read timeouts preserved; latest refresh9/9Evals200 and final navigation9/9Evals200/no page errors. Background local connectors503 remain. Dedicated nonadmin app writer uses fresh-workspaceUSE+exact experimentEDIT; this is separately provisioned native ingestion, not SDK0.1.2/API-key self-service. Beta ownQA Noauthorizedclusters/Createdisabled observed; actual three owning Discovery file hashes match pinned Backend, incompatible with available collector observation field. No enrollment/collection/runtime-source/IAM change."
+    },
+    {
+      "scope": "PR12 build, links, import fixtures and four capture files",
+      "environment": "Node26;41-page production build; native1440\u00d71000PNG captures",
+      "result": "production build/Pagefind, default checks, PNG integrity and diff check passed; full-release audit remains incomplete",
+      "details": "41pages;3478local link/anchor/asset refs;116captured IDs/104uniquePNGs;two console-import fixtures/fiverecords. Four new PNGs retain original capture bytes, valid CRCs/dimensions, no textual/EXIF metadata and individual visual/secret review. Coverage33guides:21verified/9partial/3pending. Strict release audit remains enabled and fails for17pending screenshot refs/12unverified full guides/30findings."
+    },
+    {
+      "scope": "PR12 independent source and AI-simulated novice/aesthetic review",
+      "environment": "Pinned source/private real-operation receipts;production preview1440\u00d71000 and390\u00d7844 light/dark",
+      "result": "No outstanding P1/P2; caption contradiction resolved; no human participant",
+      "details": "Independent session review confirmed real once-only HTTP state callbacks, native completed root/spans/metadata, separate scoped native writer and actual Backend/UIreadback. Independent Discovery review confirmed attested schema/provider scope caveat and actual blocked form. Momreview caught old SDKempty-statecaption saying positivegroupingunqualified; caption now explicitly contrasts separateSDK0.1.2no-ID path with newlyqualifiednativeexample. Rendered action/figuresequence2/3/4confirmed. Bothguides/all4newfullsize1440images,390lightdark/noglobaloverflow,naturalsearchconversationturns/authorizedclusters(intendedguidefirst),anchors/deeprefreshanddynamiccounts passed. Docsconsole/image-tab0errorswarnings. Final50-requesttail200/304exceptoneduplicateverificationGET ERR_ABORTEDwithmatchingGET200/page-rendered. FourteenignoredQA capturesretained. No productactions by reviewers."
     }
   ],
   "remainingGaps": [
-    "Four guides still await walkthrough qualification: sandbox bindings and three Discovery workflows. Environment creation/lifecycle is partly verified in the named hosted-beta Gmail scope.",
-    "Twenty guides are verified in their named local/CI scope; nine are partial. Remaining screenshot references and full walkthroughs stay enforced by the strict release audit.",
+    "Three guides await walkthrough qualification: sandbox bindings and the runtime/call-gate Discovery workflows. Source enrollment is now partial with its actual blocked form; environment lifecycle remains partial in the named hosted-beta Gmail scope.",
+    "Twenty-one guides are verified in named local/CI scopes; nine are partial. Remaining screenshot references and full walkthroughs stay enforced by the strict release audit.",
     "Sandbox-backed verified effects, fresh-world repetitions/negative controls and published artifact-backed Recorded review/domain/redacted-bundle exports remain unverified.",
     "MR-1003 retains an uncertain teaching-tunnel action; positive cooperative cancellation and evidence-based resolution are not yet qualified.",
-    "Dataset second-version publication, successful generated/personal worlds, positive native conversation-session grouping, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification.",
-    "Local QA demonstrates the named pinned-source behavior, not hosted AWS-beta parity. Local sandbox orchestration is unavailable (connectors503)."
+    "Dataset second-version publication, successful generated/personal worlds, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification. Native session views are verified through separately provisioned instrumentation; SDK0.1.2 native-ingestion/credential issuance is not provided.",
+    "Local QA demonstrates named pinned-source behavior, not whole hosted AWS-beta parity. Local orchestration is unavailable (connectors503), initial native-view reads had recoverable timeouts, and Discovery needs a compatible collector/Backend pair plus operator-approved scope."
   ]
 }
