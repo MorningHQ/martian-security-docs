@@ -5,15 +5,15 @@ sidebar:
   order: 6
 ---
 
-import GuideMeta from '../../../components/GuideMeta.astro';
-import Screenshot from '../../../components/Screenshot.astro';
-import Diagram from '../../../components/Diagram.astro';
+import QualificationSummary from '../../../components/QualificationSummary.astro';
 
 These guides are being qualified against actual running application/backend states with synthetic data. A source review, an observed screen and a completed end-to-end run are recorded separately. A pending walkthrough is not a passed walkthrough.
 
 ## Current publication status
 
 The site is being published iteratively. Each task guide shows its current walkthrough status above the instructions. The initial public build includes source-reviewed instructions; authenticated captures and complete execution checks are added as they pass.
+
+<QualificationSummary />
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 
@@ -33,14 +33,18 @@ The isolated QA application uses the source baseline below, real Backend/Agents 
 - The SDK's two Evals tests passed and retained **EV-1004** plus its CI session. The original `--require-export` command exited **1** because native export had not completed. Supported recovery later confirmed the stored session export and dataset finalization without running the callbacks again. The original failed receipt is preserved; a clean original strict-CI pass remains unverified.
 - A named project retained **EV-1005**, with three real target requests and two passes/one failure. Switching projects and refreshing preserved scope. Archiving retained its results and three native traces while rejecting new target admission. Member/viewer project writes were denied.
 - A code suite's **v1** passed both gates with six persisted assessments. **v2** tightened the mean-length ceiling and correctly failed while the canonical results stayed passed. The earlier policy and monitoring history remained unchanged. Saved-output scoring made no additional teaching-target requests.
+- Same-dataset comparisons paired three records under the same saved-output policy. Different policy versions were marked incompatible; a different dataset produced five unpaired, not-comparable rows. Filtered exports were checked, and the same comparison was reproduced after refresh and explicit reselection. The custom Boolean rubric also compared compatible v1 jobs after v2 had been saved.
+- Stopping **EV-1007** retained **2 passed, 0 errors, 1 skipped** and native **KILLED** provenance after refresh. Its two requests used a configured 90-second request budget. Stopping supplementary code scoring retained **8 of 12** assessments, with explicit partial coverage; the completed source run stayed unchanged. An earlier target-stop attempt retained its timeout errors and was reconciled without new target calls.
+- Working Bedrock access and the shipped worker completed six built-in and nine custom/historical Boolean model assessments. All **15 distinct native assessments** were confirmed persisted. Three delayed delivery acknowledgements were resolved through **Sync saved feedback**, without rerunning paid judging or calling the teaching target. Custom rubric v1 passed the three candidate answers; stricter v2 failed all three. Applying historical v1 after saving v2 retained its original definition. Native rubric versions remain distinct from the judge engine's revision label.
+- Model judging rejected a missing cost acknowledgement, stale judge-version updates, unauthorized role writes and cross-organization run access. Numeric, categorical and text model-rubric execution remains unverified.
 - Trace filters, native inspection, bounded CSV/JSON exports and private/shared view lifecycle passed. A view-save timeout was preserved; a fresh save followed an explicit absence check. The SDK does not forward conversation-session metadata in these uploads: the tested selection showed **0 sessions / 1 ungrouped trace**, and positive conversation grouping remains unverified.
 - Real Boolean failure groups supported owner investigation and member dismissal. Refresh retained their rationale, account and timestamp. Viewer triage was denied. After a separate organization had a ready native context, it received **404** for the same trace its owning customer read with **200**. These quality signals are separate from verified security findings.
 
-The teaching callbacks are deterministic. These checks verify wiring and retained evidence; they do not establish production model quality or security. Other interfaces, advanced Evals, combined SDK/model execution and the remaining screenshot-dependent journeys are still being qualified. Verified labels name the local QA environment. Partly verified guides identify their remaining limits above the steps.
+The teaching callbacks are deterministic. These checks verify wiring and retained evidence; they do not establish production model quality or security. Other interfaces, SDK red teaming and combined CI, the first assessment, and the remaining screenshot-dependent journeys are still being qualified. Verified labels name the local QA environment. Partly verified guides identify their remaining limits above the steps.
 
 A second three-record member run initially retained canonical passes while some telemetry acknowledgements were uncertain. Administrator reconciliation later confirmed the saved evidence with **zero target calls**. A stalled, never-submitted SDK dataset publication was safely aborted and its restored draft published after that recovery. A manually repeated numeric review save after a delayed acknowledgement also produced an additional history entry; queue completion was checked against its four latest verified answers.
 
-The local QA stack has no sandbox orchestrator: its connector request returns 503 and the sidebar may report stale data. Model-based workflows also await working inference access. These are recorded environment limitations, with no substituted catalog or invented results.
+The local QA stack has no sandbox orchestrator: its connector request returns 503 and the sidebar may report stale data. Sandbox-backed workflows remain unverified in this environment. No substituted catalog or invented results are used.
 
 The beginner and visual review is an **AI-simulated novice review**, with no human participant. Desktop and narrow navigation, search, themes, image viewing and keyboard checks passed. Follow-up light/dark checks at 1440 × 1000 and 390 × 844 verified the revised comparison layout and explicit source-baseline links without overflow or documentation console errors.
 
