@@ -15,8 +15,8 @@ Connect a customer-controlled test agent so Martian can send an approved assessm
 ## Before you start
 
 - Use an **Owner** or **Admin** account. Members can assess approved agents; they cannot approve a new connection.
-- Have a staging endpoint you are authorized to test, its declared purpose, and any target credential. For hosted connections, use a public HTTPS address. An arbitrary model-provider URL needs an adapter for the contract below. Use the [HTTP adapter guide](/martian-security-docs/agents/http-adapter/) when your application does not yet implement that chat contract.
-- Use the current beta console; see the [source baseline](/martian-security-docs/reference/verification/#source-baseline). Protocol support differs by workflow:
+- Have a staging endpoint you are authorized to test, its declared purpose, and any target credential. For hosted connections, use a public HTTPS address. An arbitrary model-provider URL needs an adapter for the contract below. Use the [HTTP adapter guide](/agents/http-adapter/) when your application does not yet implement that chat contract.
+- Use the current beta console; see the [source baseline](/reference/verification/#source-baseline). Protocol support differs by workflow:
 
 | Connection | Red-team assessments | Dataset Evals |
 | --- | --- | --- |
@@ -105,4 +105,4 @@ These examples describe the wire format; they are not an assessment result. A di
 - Missing session-management fields are acceptable for endpoint-only testing. Sandbox-backed testing needs the additional approved integration; selecting an environment alone does not connect tools.
 - Keep target credentials in a secret manager. Do not put them in URLs, screenshots, example code or support exports.
 
-Continue with [your first assessment](/martian-security-docs/get-started/first-assessment/) or [sandbox bindings](/martian-security-docs/agents/sandbox-bindings/). Check [roles and permissions](/martian-security-docs/reference/permissions/) before delegating setup.
+Continue with [your first assessment](/get-started/first-assessment/) or [sandbox bindings](/agents/sandbox-bindings/). Check [roles and permissions](/reference/permissions/) before delegating setup.

@@ -16,9 +16,9 @@ Compare a baseline with a candidate to see which recorded checks improved, regre
 
 Any customer role can compare authorized runs in the current beta console. You need two **Completed** runs in the selected project. Use the same immutable dataset version with unchanged inputs and expectations. A new publication with another dataset identity is not interchangeable merely because its display name is the same.
 
-For a small example, run the [first evaluation](/martian-security-docs/evals/first-run/) dataset twice, within your authorized target-call budget. Identical results are a valid outcome. To measure a deliberate agent change, retain the tested revision in your own release process and the connection’s declared artifact information.
+For a small example, run the [first evaluation](/evals/first-run/) dataset twice, within your authorized target-call budget. Identical results are a valid outcome. To measure a deliberate agent change, retain the tested revision in your own release process and the connection’s declared artifact information.
 
-If you used the downloadable HTTP teaching adapter, its [optional comparison variant](/martian-security-docs/examples/http-agent/README.md) gives a reproducible change. Retain the baseline, restart only that adapter with `comparison_agent:answer` and the same bearer/tunnel, record the changed revision, and run the unchanged dataset once. It returns ` ready `, `hello` and `4.`: two canonical passes and one deliberate punctuation failure. A declared revision records your assertion; it is not independent endpoint attestation.
+If you used the downloadable HTTP teaching adapter, its [optional comparison variant](/examples/http-agent/README.md) gives a reproducible change. Retain the baseline, restart only that adapter with `comparison_agent:answer` and the same bearer/tunnel, record the changed revision, and run the unchanged dataset once. It returns ` ready `, `hello` and `4.`: two canonical passes and one deliberate punctuation failure. A declared revision records your assertion; it is not independent endpoint attestation.
 
 ## 1. Choose the pair
 
@@ -84,7 +84,7 @@ Text/category changes retain their type; they are not silently converted into a 
 
 <Screenshot id="evals-compare-trace" />
 
-**Open candidate** returns to the candidate’s saved run detail. The [results guide](/martian-security-docs/evals/results-and-scores/) explains exports and provenance for an individual run.
+**Open candidate** returns to the candidate’s saved run detail. The [results guide](/evals/results-and-scores/) explains exports and provenance for an individual run.
 
 ## Failures and limits
 
@@ -93,4 +93,4 @@ Text/category changes retain their type; they are not silently converted into a 
 - A run truncated at its target-call budget may have only partial paired coverage. Check the coverage note before generalizing.
 - Missing model/prompt revision metadata stays missing. A comparison does not independently attest what code was deployed behind an endpoint.
 
-Next, [inspect traces and sessions](/martian-security-docs/evals/traces-and-sessions/) or [define consistent scoring suites](/martian-security-docs/evals/suites-and-monitoring/).
+Next, [inspect traces and sessions](/evals/traces-and-sessions/) or [define consistent scoring suites](/evals/suites-and-monitoring/).

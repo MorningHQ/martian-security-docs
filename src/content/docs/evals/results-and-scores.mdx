@@ -14,7 +14,7 @@ Read a saved evaluation from its overall execution state down to an individual i
 
 ## Before you start
 
-Any customer role can inspect authorized saved runs in the current beta console. Complete a [first evaluation](/martian-security-docs/evals/first-run/) and confirm the correct project. Applying additional scoring or changing human reviews requires **member** access or higher; this guide’s read/export steps do not send new target requests.
+Any customer role can inspect authorized saved runs in the current beta console. Complete a [first evaluation](/evals/first-run/) and confirm the correct project. Applying additional scoring or changing human reviews requires **member** access or higher; this guide’s read/export steps do not send new target requests.
 
 ## 1. Open and filter a run
 
@@ -44,7 +44,7 @@ Exact match compares the response and expected string after trimming outer white
 
 <Screenshot id="evals-results-inspector" />
 
-Save or resolve an edited human review before navigating away when the drawer reports **Review changes pending**. Read [human reviews](/martian-security-docs/evals/human-reviews/) before assigning ratings.
+Save or resolve an edited human review before navigating away when the drawer reports **Review changes pending**. Read [human reviews](/evals/human-reviews/) before assigning ratings.
 
 ## 3. Interpret supplementary scores
 
@@ -55,7 +55,7 @@ Open the run’s **Overview** and choose the relevant **Assessment job**. Supple
 - **Response length (characters)** reports Unicode character count.
 - Model judges and human ratings record opinions or rubric results with their own source and definition.
 
-Boolean criteria can show pass rates and coverage. Numeric criteria retain numeric summaries; categorical and text values are not converted into a Boolean pass rate. A missing assessment is not a passing value. See [saved-output judging](/martian-security-docs/evals/judging/) and [suites and quality gates](/martian-security-docs/evals/suites-and-monitoring/).
+Boolean criteria can show pass rates and coverage. Numeric criteria retain numeric summaries; categorical and text values are not converted into a Boolean pass rate. A missing assessment is not a passing value. See [saved-output judging](/evals/judging/) and [suites and quality gates](/evals/suites-and-monitoring/).
 
 <Screenshot id="evals-results-supplementary" />
 
@@ -77,4 +77,4 @@ Dataset versions and declared artifact revisions describe what was recorded at a
 - Latency and token/cost data describe recorded values. Missing usage is not zero usage and is not an independently verified bill.
 - Quality scores, human opinions and model opinions are separate from verified adversarial findings.
 
-Next, [compare runs](/martian-security-docs/evals/compare/) or [inspect native traces](/martian-security-docs/evals/traces-and-sessions/).
+Next, [compare runs](/evals/compare/) or [inspect native traces](/evals/traces-and-sessions/).

@@ -14,7 +14,7 @@ Save criteria and quality thresholds as a reusable suite, apply a particular ver
 
 ## Before you start
 
-Use your organization in the current beta console. **Members**, **admins** and **owners** can create/version suites and apply them to completed runs. Any customer role can inspect authorized monitoring history. Have a completed evaluation in a writable project and understand the [meaning of its scores](/martian-security-docs/evals/results-and-scores/).
+Use your organization in the current beta console. **Members**, **admins** and **owners** can create/version suites and apply them to completed runs. Any customer role can inspect authorized monitoring history. Have a completed evaluation in a writable project and understand the [meaning of its scores](/evals/results-and-scores/).
 
 Saving a suite makes no model calls. Applying code criteria uses saved outputs. Applying model criteria additionally needs enabled model judging and explicit cost acknowledgement. Custom registered judges are applied separately from these built-in-criterion suite definitions.
 
@@ -60,7 +60,7 @@ In the teaching example, version 2 lowers the mean response-length ceiling from 
 
 5. In **Assessment job**, select the earlier version 1 job and confirm that it still records version 1 and its original definition.
 
-Use the same historical suite version when you want a [paired comparison](/martian-security-docs/evals/compare/) under an unchanged policy. A different version may be intentionally useful, but it is a different scoring definition.
+Use the same historical suite version when you want a [paired comparison](/evals/compare/) under an unchanged policy. A different version may be intentionally useful, but it is a different scoring definition.
 
 ## 4. Inspect monitoring history
 
@@ -78,7 +78,7 @@ Monitoring here is saved-output scoring history. It does not automatically sched
 
 - A stale suite-version edit requires reloading the latest saved definition before another version is admitted.
 - **Retry saved request** checks an unresolved suite save. Do not create a different suite merely to bypass an uncertain response.
-- One scoring job per organization can be active at a time. Wait for it to finish or use the [cooperative scoring stop](/martian-security-docs/evals/stopping-and-recovery/).
+- One scoring job per organization can be active at a time. Wait for it to finish or use the [cooperative scoring stop](/evals/stopping-and-recovery/).
 - A policy criterion requires its policy instructions. Missing assessments, provider errors and incomplete coverage need review; they are not Boolean passes.
 
-Next, [compare matching suite jobs](/martian-security-docs/evals/compare/) or [triage recorded quality issues](/martian-security-docs/evals/quality-issues/).
+Next, [compare matching suite jobs](/evals/compare/) or [triage recorded quality issues](/evals/quality-issues/).

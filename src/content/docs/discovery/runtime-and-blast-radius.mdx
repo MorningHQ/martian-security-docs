@@ -14,7 +14,7 @@ Follow application-reported model/tool activity for one deployment and compare i
 
 ## Before you start
 
-An **Owner** or **Admin** enrolls reporting. Any signed-in tenant user can inspect accessible evidence. First [connect an authorized infrastructure source](/martian-security-docs/discovery/inventory/) and collect the workload. Install the compatible Martian SDK in that customer application and explicitly instrument its normal model/tool calls. Do not report invented calls to make a diagram look complete.
+An **Owner** or **Admin** enrolls reporting. Any signed-in tenant user can inspect accessible evidence. First [connect an authorized infrastructure source](/discovery/inventory/) and collect the workload. Install the compatible Martian SDK in that customer application and explicitly instrument its normal model/tool calls. Do not report invented calls to make a diagram look complete.
 
 Deployment, environment and version labels attribute reports; they do not attest the running binary. Use a separate binding for each intended environment/version and keep assessment traffic distinguishable from other traffic.
 
@@ -61,4 +61,4 @@ Deployment, environment and version labels attribute reports; they do not attest
 - Opaque resource references remain within their binding. Unmapped resources, errors and downstream effects can be unknown; do not merge them across deployments by name.
 - Customer-reported success, configured permissions and TCP observations do not independently establish effective access, complete capture or business impact.
 
-Continue with [SDK call gates](/martian-security-docs/discovery/call-gates/) or [assessment outcome verification](/martian-security-docs/assessments/reproduction-and-limits/).
+Continue with [SDK call gates](/discovery/call-gates/) or [assessment outcome verification](/assessments/reproduction-and-limits/).

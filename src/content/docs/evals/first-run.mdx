@@ -16,10 +16,10 @@ An evaluation measures the behavior described by its dataset and scoring rules. 
 
 ## Before you start
 
-- Use the current beta console with Evals setup **Ready**; see the [source baseline](/martian-security-docs/reference/verification/#source-baseline). Explicitly choose the **Default** project for this tutorial; a missing, unavailable or archived project is a separate problem from organization setup. See [evaluation projects](/martian-security-docs/evals/projects/) if Default is unavailable.
+- Use the current beta console with Evals setup **Ready**; see the [source baseline](/reference/verification/#source-baseline). Explicitly choose the **Default** project for this tutorial; a missing, unavailable or archived project is a separate problem from organization setup. See [evaluation projects](/evals/projects/) if Default is unavailable.
 - Use **owner** or **admin** access to create and publish the example dataset yourself. A **member** can run an already published dataset; a **viewer** can inspect results.
-- [Register, validate and approve a stateless HTTP agent connection](/martian-security-docs/agents/connections/). Dataset Evals supports approved HTTP chat targets. MCP, browser and session-backed targets cannot run this tutorial.
-- If you need a complete teaching HTTP target, [run the callback adapter](/martian-security-docs/agents/http-adapter/). Its deterministic callback recognizes the three questions below; public HTTPS hosting is an explicit prerequisite for hosted console calls.
+- [Register, validate and approve a stateless HTTP agent connection](/agents/connections/). Dataset Evals supports approved HTTP chat targets. MCP, browser and session-backed targets cannot run this tutorial.
+- If you need a complete teaching HTTP target, [run the callback adapter](/agents/http-adapter/). Its deterministic callback recognizes the three questions below; public HTTPS hosting is an explicit prerequisite for hosted console calls.
 - Choose an agent that you are authorized to call. Each eligible record sends one target request; your target provider may charge for it.
 
 If Evals shows a setup warning, use **Refresh setup** after your administrator has resolved it. Refreshing cannot provision missing access by itself. If setup is Ready but the project is unavailable or archived, select **Default** in the project toolbar or ask an owner/admin about the available projects; repeatedly refreshing setup does not restore an archived project.
@@ -40,7 +40,7 @@ To make the example self-contained, save the following as `first-evaluation.json
 2. Choose **Import file**. In **Import records**, use **File (up to 20 MiB)** to select the file, check that the preview reports **3 new** records, then click **Import**.
 3. Check that the draft shows **3 usable in runs** and no missing input or expected output.
 4. Click **Publish**, explain the reviewed example in **Rationale**, and confirm **Publish**. Wait for **Published**.
-5. Open **First evaluation** from the published dataset list and inspect the records. The [dataset guide](/martian-security-docs/evals/datasets/) explains each authoring and publication control.
+5. Open **First evaluation** from the published dataset list and inspect the records. The [dataset guide](/evals/datasets/) explains each authoring and publication control.
 
 <Screenshot id="evals-first-run-dataset" />
 
@@ -60,7 +60,7 @@ The run receives an `EV-` code and opens its detail view. The progress indicator
 
 <Screenshot id="evals-first-run-progress" />
 
-Wait for **Completed**. If you need to stop, use **Stop after current request** and follow the [stopping guide](/martian-security-docs/evals/stopping-and-recovery/). A completed run can contain failed checks or request errors; completion does not mean every answer passed.
+Wait for **Completed**. If you need to stop, use **Stop after current request** and follow the [stopping guide](/evals/stopping-and-recovery/). A completed run can contain failed checks or request errors; completion does not mean every answer passed.
 
 ## 4. Inspect and verify the saved result
 
@@ -80,4 +80,4 @@ Exact match ignores leading/trailing whitespace and letter case. Extra explanati
 - **Unknown dataset**, empty dataset or skipped records: reopen the published dataset and verify active records have usable input and expected output.
 - **Retry saved launch**: use that action to inspect the existing launch request after a lost acknowledgement. Do not create another run to work around uncertainty.
 
-Next, [understand results and scores](/martian-security-docs/evals/results-and-scores/), [compare two runs](/martian-security-docs/evals/compare/), or [run evaluations from Python](/martian-security-docs/sdk/evaluations/).
+Next, [understand results and scores](/evals/results-and-scores/), [compare two runs](/evals/compare/), or [run evaluations from Python](/sdk/evaluations/).
