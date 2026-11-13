@@ -16,7 +16,7 @@ Attach a human opinion or expected behavior to a native trace, including a conve
 
 Any authorized customer role can read annotations. A **member/admin/owner** can add one in a ready, writable project. Archived projects are read-only. Start from an existing trace you are authorized to inspect.
 
-This write workflow is source reviewed; it was not exercised by the earlier verified trace/session reading walkthrough. The latest QA overview read timed out, and no annotation write was attempted during that check.
+The screenshots annotate the retained **recall → BLUE** trace from the [native conversation walkthrough](/evals/traces-and-sessions/#3-group-recorded-conversations). Adding feedback to that trace does not repeat either conversation turn.
 
 ## 1. Open the annotation form
 
@@ -39,13 +39,15 @@ This write workflow is source reviewed; it was not exercised by the earlier veri
 1. Choose **Value type** for Feedback and enter its **Rating** or **Feedback text**. **Rationale (optional)** supports up to 2,000 characters.
 2. For Expectation, enter **Expected response or behavior**, up to 4,000 characters. It has no separate rationale field.
 3. Review the trace, name, type and value, then select **Save annotation** once. **Close** leaves the form without submitting it.
-4. Read the saved annotation's type, value and author. Refresh and reopen the same trace to confirm it remains in **Annotations**.
+4. Read the saved annotation's type, value and author. Your own annotation shows **You**. Refresh and reopen the same trace to confirm it remains in **Annotations**.
 
 <Screenshot id="evals-trace-annotation-saved" />
 
 ## 3. Recover an uncertain save
 
 An uncertain response can leave the form locked to its original submission. Use **Retry annotation** for that same submission; it retains the request identity and reads back the corresponding native assessment.
+
+If the form closed successfully but a later trace read fails, use **Refresh traces**, reopen the trace and inspect **Annotations**. A read failure does not establish that the save failed.
 
 If that form/browser intent is no longer available, reopen the trace and inspect its existing annotations before beginning a fresh submission. A new submission creates another annotation rather than editing the previous one. The current UI does not offer annotation edit/delete; do not use repeated fresh saves as a retry strategy.
 

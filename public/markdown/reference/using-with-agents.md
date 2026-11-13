@@ -12,7 +12,7 @@ Every documentation page has **Copy page** above its title. It copies the articl
 2.  Select **Copy page** and paste it into your assistant’s chat.
 3.  To share a link instead, open the arrow beside **Copy page** and select **Copy agent link**. Paste the link into your chat and ask the assistant to read it.
 
-The agent link opens a public, plain-text Markdown copy on GitHub. It needs no account, JavaScript or product access. This separate HTTPS route also works while the documentation domain’s HTTPS certificate is being provisioned. The content includes a link back to the web version.
+The agent link opens a public, plain-text Markdown copy on GitHub. It needs no account, JavaScript or product access. This is an independent HTTPS access path alongside the documentation website. The content includes a link back to the web version.
 
 **View Markdown** opens the same plain-text page. Use it if your browser blocks clipboard access, or if JavaScript is disabled. Select and copy its text manually.
 

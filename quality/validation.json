@@ -411,16 +411,33 @@
       "environment": "Integrated mainbe439478/PR17;Node26;released PyPI SDK0.1.3;real local browser",
       "result": "Preserved concurrent source/qualification;integrated default checks and bounded SDK readback passed",
       "details": "Preserved seven-file ZIP/corrected agent+suite,all independent model/test receipts,customer-only screenshot policy and separate SDK0.1.2 console illustration. All seven ZIP members equal public files;own actual original suite exited1 and corrected suite0 without model/platform calls. Integrated SDK page copied exactly,loaded its one customer image,had no1440/390overflow and no numeric SDK badge. Network guide pending notice visually inspected. Integrated artifacts cover46articles/66exactcodepayloads/118renderedcaptions. Previous47source-page audit and40strict findings remain;no pending evidence was promoted."
+    },
+    {
+      "scope": "Public HTTPS recovery and complete deployed resource readback",
+      "environment": "Published docs main be84c08fce1b0cf93d2288ce81211c2fb64b2fea; Pages 43443592795; actual docs.martiansecurity.ai; 13 November 2026",
+      "result": "All 262 deployed-resource checks plus eight separate generated-diagram checks passed with certificate/hostname validation enabled; browser confirmed secure context",
+      "details": "All 46 public articles advertised their exact Markdown alternatives and Copy page actions; same-origin Markdown, trusted GitHub mirror, both agent indexes, all 104 unique customer PNGs, diagrams and linked SDK/runtime example assets matched local bytes. Eight generated diagram SVGs also passed exact-byte HTTPS readback. HTTP root and the earlier GitHub Pages URL redirected to canonical HTTPS; nested dashboard loaded in a secure real browser. curl system trust returned ssl_verify_result=0. The host Python installation lacks its default CA file; the full verifier explicitly used the OS CA bundle /etc/ssl/cert.pem. No certificate bypass, domain, DNS or Pages settings were changed."
+    },
+    {
+      "scope": "Native dashboard and trace-annotation qualification after completeness audit",
+      "environment": "Isolated own synthetic QA; actual Frontend60300/Backend60323/MLflow3.16.1; recorded source pins; Owner/non-platform-admin",
+      "result": "Dashboard selection/usage/typed summary and four typed annotation UI writes passed with native retention and real API boundaries",
+      "details": "Two retained traces; content/state/session/order and true-feedback filters; native200 refresh/readback; four UI201 saves; same-ID replay201, changed-content409, invalid/reserved-name422, anonymous401, viewer403 and foreign-Owner404. Five independent retention assertions and all eight contract checks passed. Original inputs/outputs/spans/usage unchanged; no new target/model execution. Four actual1440x1000 Martian UI images individually viewed, hashed and registered. Backend was restarted once to release task-owned stalled connections, without image/config/database/tenant/guard changes. Intermittent502/read timeouts remain preserved; normal read refresh recovered. Raw-name-versus-humanized-label and missing-dialog automation failures occurred before further submissions and were corrected without repeating writes. The UI uncertain-form Retry shortcut was not artificially induced; its request identity API contract was tested. No independent human participant."
+    },
+    {
+      "scope": "Native-guide follow-up rendered novice and aesthetic review",
+      "environment": "Current production build preview;1440x1000 light and390x844 dark;real browser and native clipboard;AI-simulated review by the author",
+      "result": "Four changed articles,all four new images,real search and exact page/agent-link copy passed;no human participant",
+      "details": "Dashboard,annotations,using-with-agents and verification pages rendered without page-wide overflow,image failures,console warnings/errors,failed requests or HTTP failures. The two task guides show their named isolated-QA verification; four new captures are readable with captions/full-size links. Search opened the annotation guide. Copy page matched the generated Markdown byte-for-byte,including qualification and screenshots;Copy agent link matched its advertised secure mirror URL. Direct desktop/mobile screenshots were visually inspected. The owner read/write prerequisite,concrete trace example,typed summary labels,save-once and read-failure recovery are clear. No new reader P1/P2 found in this bounded author review;the earlier complete47-page audit remains separately recorded."
     }
   ],
   "remainingGaps": [
-    "Six guides await walkthrough qualification: sandbox bindings, runtime/call-gate Discovery, network observation, Evals Overview and native trace annotations. Source enrollment and the named hosted-beta Gmail lifecycle remain partial.",
-    "Twenty-two guides are verified in named local/CI scopes; nine are partial and six pending. Remaining screenshot references and full walkthroughs stay enforced by the strict release audit.",
+    "Four guides await walkthrough qualification: sandbox bindings, runtime Discovery, call-gates and network observation. Source enrollment and the named hosted-beta Gmail lifecycle remain partial.",
+    "Twenty-four guides are verified in named local/CI scopes; nine are partial and four pending. Twenty remaining screenshot references and thirteen full walkthroughs stay enforced by the strict release audit.",
     "Sandbox-backed verified effects, fresh-world repetitions/negative controls and published artifact-backed Recorded review/domain/redacted-bundle exports remain unverified.",
     "MR-1003 retains an uncertain teaching-tunnel action; positive cooperative cancellation and evidence-based resolution are not yet qualified.",
     "Dataset second-version publication, successful generated/personal worlds, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification. Native session views are verified through separately provisioned instrumentation; SDK0.1.2 native-ingestion/credential issuance is not provided.",
-    "Local QA demonstrates named pinned-source behavior, not whole hosted AWS-beta parity. Local orchestration is unavailable (connectors503), initial native-view reads had recoverable timeouts, and Discovery needs a compatible collector/Backend pair plus operator-approved scope.",
-    "Custom-domain trusted HTTPS, HTTPS enforcement and final hosted-browser checks remain incomplete while GitHub issues a certificate for docs.martiansecurity.ai. The prior GitHub URL currently redirects to HTTP; no TLS validation is bypassed.",
+    "Local QA demonstrates named pinned-source behavior, not whole hosted AWS-beta parity. Local orchestration is unavailable (connectors503), native-view reads still have intermittent502/timeouts with successful normal read recovery, and Discovery needs a compatible collector/Backend pair plus operator-approved scope.",
     "SDK task guides and current tutorial install the latest release;exact persisted Evals/hosted redteam/combined-CI qualification remains on0.1.2. Account-free current-install steps and the local suite guide were exercised on0.1.3,with one judge model/provider route. Newer installation does not requalify hosted workflows.",
     "SDK 0.1.3 native bedrock:/ response-judge routing fails through MLflow 3.16.1 AmazonBedrockProvider.get_endpoint_url; use the verified OpenAI-compatible Bedrock endpoint. A native-routing SDK fix and release remain follow-up work."
   ]

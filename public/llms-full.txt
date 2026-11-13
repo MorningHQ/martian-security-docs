@@ -1917,9 +1917,7 @@ Next, [apply a reusable suite](https://raw.githubusercontent.com/MorningHQ/marti
 
 Source: [Web version](https://docs.martiansecurity.ai/evals/overview/)
 
-> **Page qualification:** Current beta console · Any customer role · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
-
-> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+> **Page qualification:** Current beta console · Any customer role · Verified 2026-11-13 · Isolated local QA; native traces. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
 Use the project dashboard to understand the native traces retained for your selected scope. It summarizes recorded activity; it does not launch an evaluation or schedule model calls.
 
@@ -1927,7 +1925,7 @@ Use the project dashboard to understand the native traces retained for your sele
 
 Any customer role can read authorized evidence. Choose a ready Evals project with retained native traces. This is **Evals → Overview**, distinct from an individual evaluation run’s Overview tab and from saved-score Monitoring.
 
-The instructions below are source reviewed. In the latest synthetic QA attempt, sign-in succeeded but the overview request timed out; dashboard values and screenshots were not newly qualified.
+The screenshots use the two retained requests from the [native conversation walkthrough](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/traces-and-sessions.md#3-group-recorded-conversations). You can use any authorized traces in your selected project; opening this dashboard does not call the agent again.
 
 ## 1\. Choose the trace selection
 
@@ -1935,6 +1933,10 @@ The instructions below are source reviewed. In the latest synthetic QA attempt, 
 2.  Use **Search trace content**, **Trace state** and **Trace order** to select the activity you need.
 3.  Open **Filters** (accessible name **More filters**) for session, user, time, latency or assessment criteria.
 4.  Choose **Apply filters**. Read the applied scope and incomplete-coverage notice before interpreting totals. **Refresh overview** rereads the selection.
+
+![Real Evals project dashboard with two requests, zero errors, latency metrics and unavailable recorded usage.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/evals-project-overview.png)
+
+The two retained HTTP traces are included. The dashboard reports zero execution errors, P50 41 ms and P95 67 ms; usage remains unavailable.
 
 ## 2\. Read performance and usage
 
@@ -1950,11 +1952,17 @@ The instructions below are source reviewed. In the latest synthetic QA attempt, 
 2.  Treat missing reports as unavailable. No reported bill is not an independently established zero bill; partial coverage is not total provider spend.
 3.  Check the selected time window and coverage again before comparing two selections.
 
+![Recorded usage showing zero reporting coverage beside Boolean, numeric and categorical feedback summaries.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/evals-overview-recorded-usage.png)
+
+Neither trace reports tokens or cost. Three saved feedback definitions produce their own typed summaries; the separate expectation is excluded.
+
 ## 3\. Interpret Quality summary
 
 1.  Read **Assessment**, **Type**, **Recorded values** and **Result** together.
 2.  Boolean feedback can show pass rates. Numeric feedback can show means. Categorical/text values retain their recorded-value counts rather than becoming pass percentages.
 3.  [Inspect the underlying traces](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/traces-and-sessions.md) when a summary needs explanation. Use [native annotations](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/trace-annotations.md) when you intend to add a human opinion or expectation.
+
+For example, feedback named `response_correct` appears as **response correct**. A single Pass gives **100% pass** for that one recorded judgment; a numeric rating of `4.5` gives **Mean 4.5**. Text feedback appears as **Categorical**, with the text and its count. These examples describe the saved opinions, rather than independently verifying the response.
 
 These are native feedback aggregates. They do not replace canonical exact-match results, a versioned suite gate or verified security outcomes. For gate history, choose **Monitoring** and follow [suites and monitoring](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/suites-and-monitoring.md).
 
@@ -2501,9 +2509,7 @@ Next, [compare matching suite jobs](https://raw.githubusercontent.com/MorningHQ/
 
 Source: [Web version](https://docs.martiansecurity.ai/evals/trace-annotations/)
 
-> **Page qualification:** Current beta console · member/admin/owner writes; authorized roles read · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
-
-> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+> **Page qualification:** Current beta console · member/admin/owner writes; authorized roles read · Verified 2026-11-13 · Isolated local QA; native traces. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
 Attach a human opinion or expected behavior to a native trace, including a conversation trace that has no dataset evaluation run. This is separate from [assigned human-review queues](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/human-reviews.md). Saving an annotation does not execute a target or model.
 
@@ -2511,7 +2517,7 @@ Attach a human opinion or expected behavior to a native trace, including a conve
 
 Any authorized customer role can read annotations. A **member/admin/owner** can add one in a ready, writable project. Archived projects are read-only. Start from an existing trace you are authorized to inspect.
 
-This write workflow is source reviewed; it was not exercised by the earlier verified trace/session reading walkthrough. The latest QA overview read timed out, and no annotation write was attempted during that check.
+The screenshots annotate the retained **recall → BLUE** trace from the [native conversation walkthrough](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/traces-and-sessions.md#3-group-recorded-conversations). Adding feedback to that trace does not repeat either conversation turn.
 
 ## 1\. Open the annotation form
 
@@ -2519,6 +2525,10 @@ This write workflow is source reviewed; it was not exercised by the earlier veri
 2.  Choose **Add annotation** in **Annotations**.
 3.  Select **Annotation type**: **Feedback** or **Expectation**.
 4.  Enter **Name**: start with a lowercase letter, then use lowercase letters, digits or underscores, up to 60 characters. `exact_match` is reserved.
+
+![Actual Add annotation form for response\_correct with Feedback, Pass, rationale and Save annotation.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/evals-trace-annotation-form.png)
+
+This real form rates the saved recall response. Save appends feedback to that trace without calling the target again.
 
 ## 2\. Enter the value and save once
 
@@ -2532,11 +2542,17 @@ This write workflow is source reviewed; it was not exercised by the earlier veri
 1.  Choose **Value type** for Feedback and enter its **Rating** or **Feedback text**. **Rationale (optional)** supports up to 2,000 characters.
 2.  For Expectation, enter **Expected response or behavior**, up to 4,000 characters. It has no separate rationale field.
 3.  Review the trace, name, type and value, then select **Save annotation** once. **Close** leaves the form without submitting it.
-4.  Read the saved annotation’s type, value and author. Refresh and reopen the same trace to confirm it remains in **Annotations**.
+4.  Read the saved annotation’s type, value and author. Your own annotation shows **You**. Refresh and reopen the same trace to confirm it remains in **Annotations**.
+
+![Refreshed trace details retaining response\_correct, Feedback, You, Pass and the saved rationale.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/evals-trace-annotation-saved.png)
+
+After page refresh and a supported Refresh traces recovery, the same Boolean annotation remains beside the original recall input and BLUE output.
 
 ## 3\. Recover an uncertain save
 
 An uncertain response can leave the form locked to its original submission. Use **Retry annotation** for that same submission; it retains the request identity and reads back the corresponding native assessment.
+
+If the form closed successfully but a later trace read fails, use **Refresh traces**, reopen the trace and inspect **Annotations**. A read failure does not establish that the save failed.
 
 If that form/browser intent is no longer available, reopen the trace and inspect its existing annotations before beginning a fresh submission. A new submission creates another annotation rather than editing the previous one. The current UI does not offer annotation edit/delete; do not use repeated fresh saves as a retry strategy.
 
@@ -3181,7 +3197,7 @@ Every documentation page has **Copy page** above its title. It copies the articl
 2.  Select **Copy page** and paste it into your assistant’s chat.
 3.  To share a link instead, open the arrow beside **Copy page** and select **Copy agent link**. Paste the link into your chat and ask the assistant to read it.
 
-The agent link opens a public, plain-text Markdown copy on GitHub. It needs no account, JavaScript or product access. This separate HTTPS route also works while the documentation domain’s HTTPS certificate is being provisioned. The content includes a link back to the web version.
+The agent link opens a public, plain-text Markdown copy on GitHub. It needs no account, JavaScript or product access. This is an independent HTTPS access path alongside the documentation website. The content includes a link back to the web version.
 
 **View Markdown** opens the same plain-text page. Use it if your browser blocks clipboard access, or if JavaScript is disabled. Select and copy its text manually.
 
@@ -3212,11 +3228,13 @@ These guides are being qualified against actual running application/backend stat
 
 The site is being published iteratively. Each task guide shows its current walkthrough status above the instructions. The initial public build includes source-reviewed instructions; authenticated captures and complete execution checks are added as they pass.
 
-Of **37 task guides**, **22 are verified**, **9 are partly verified** and **6 await walkthrough verification**. The screenshot record contains **116 captured references** across **104 unique PNGs**. These counts come from the current coverage and screenshot manifests.
+Of **37 task guides**, **24 are verified**, **9 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **120 captured references** across **108 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 
-The latest completeness audit added the missing project dashboard, native annotation and network-observer instructions and a [console map](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/console-navigation.md). Those three new task guides are source reviewed and await runtime qualification. A fresh synthetic QA sign-in succeeded, but Evals Overview returned a read failure and its supported refresh timed out; no annotation was submitted. The existing Discovery authorization/collector and privileged-sensor prerequisites were not bypassed. Earlier successful walkthroughs below remain historical evidence for their named paths.
+The public site now passes trusted HTTPS checks, including nested guides, Markdown, screenshots, diagrams and example downloads. HTTP and the earlier GitHub Pages address redirect to HTTPS. The GitHub Markdown mirror remains an independent access path for assistants. These publication checks are separate from the application walkthroughs below.
+
+The latest completeness audit added the missing project dashboard, native annotation and network-observer instructions and a [console map](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/console-navigation.md). The dashboard and annotation guides now have real console captures and successful walkthroughs in isolated QA. Network observation still awaits an authorized compatible source and privileged sensors. Earlier failed reads remain recorded; the successful checks below do not establish hosted-beta parity or general service reliability.
 
 ## Observed walkthroughs — 13 November 2026
 
@@ -3248,6 +3266,8 @@ The isolated QA application uses the source baseline below, real Backend/Agents 
 -   Model judging rejected a missing cost acknowledgement, stale judge-version updates, unauthorized role writes and cross-organization run access. Numeric, categorical and text model-rubric execution remains unverified.
 -   Trace filters, native inspection, bounded CSV/JSON exports and private/shared view lifecycle passed. A view-save timeout was preserved; a fresh save followed an explicit absence check. The SDK does not forward conversation-session metadata in these uploads: its tested selection showed **0 sessions / 1 ungrouped trace**.
 -   A separate fresh QA workspace qualified native conversation viewing. An actual HTTP memory application, instrumented with MLflow 3.16.1 and a dedicated operator-provisioned non-admin writer, stored `BLUE` and then recalled it in two real requests. Independent native and Backend reads retained two completed root traces, each with a real memory span. Session filtering, **Group by session**, **View turns**, both trace inspectors and refresh showed one session, **2 turns**, **0 errors** and no ungrouped traces. Initial trace/view read timeouts were preserved; normal read refresh recovered without repeating either HTTP turn. Native token/cost/model fields remained unavailable. This is a separately provisioned native integration, not an SDK 0.1.2/API-key trace-ingestion feature.
+-   The project dashboard retained those **2 requests**, **0 execution errors**, **P50 41 ms** and **P95 67 ms**. Content/state/session filters and a Boolean-feedback filter selected the expected single trace; clearing them restored both. Recorded usage stayed unavailable with **0 of 2** reporting coverage. Refresh reread the same scope. Three saved feedback definitions appeared as a Boolean pass rate, numeric mean and categorical text count; the separate expectation did not become a feedback score.
+-   The Owner saved Boolean, numeric and text feedback plus one expectation through the real annotation form. All four returned native **201** receipts and remained in independent native readback. The Boolean value, rationale and **You** attribution survived page refresh and a supported **Refresh traces** recovery. Repeating its exact request returned the original native ID and creation time; changing that request’s content returned **409**. Invalid/reserved names returned **422**, anonymous writes **401**, viewer writes **403** and a foreign organization’s Owner **404**. The original spans, inputs, outputs and missing usage stayed unchanged. The browser’s uncertain-submission **Retry annotation** state was not artificially induced; its same-request API contract was exercised. These synthetic accounts were AI-operated, with no human reviewer or new target/model call.
 -   Real Boolean failure groups supported owner investigation and member dismissal. Refresh retained their rationale, account and timestamp. Viewer triage was denied. After a separate organization had a ready native context, it received **404** for the same trace its owning customer read with **200**. These quality signals are separate from verified security findings.
 -   Additional dataset authoring verified real CSV/JSON imports, edit/archive/delete and retained draft counts. Viewer draft access/creation and member publication returned **403**; a foreign owner received **404**. A genuine read-only Martian teaching pack copied into an editable three-record organization draft. Its publication stalled after an evaluation-service timeout, and one supported Resume did not establish completion. That copy is not a second successfully published version.
 -   A saved canonical failure from **EV-1003** became one editable regression case with the original expected answer `4`. Direct copying returned **201/200**; a separate cleaned-export import returned **200**. Both drafts retained revision 2, one usable record and source metadata after refresh. The complete export wrapper was rejected **422**; extracting its unchanged `items` array resolved the format error. [The regression-case guide](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/regression-cases.md) keeps these different-ID paths separate. Neither draft was published or rerun in this qualification.

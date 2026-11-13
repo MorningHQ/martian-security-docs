@@ -12,7 +12,7 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 - [Install and configure the SDK](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/install-and-configure.md?v=587f1ec3d05b): Install the Martian SDK, create a scoped API key, and connect Python or CI to your organization.
 
-- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=ca04708ff010): Review source revisions, real captures, completed checks and remaining gaps.
+- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=5e6fe9baf525): Review source revisions, real captures, completed checks and remaining gaps.
 
 ## Documentation
 
@@ -54,7 +54,7 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 - [Score saved outputs and define judges](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/judging.md?v=6a0d9156b0b7): Apply code criteria or versioned model rubrics to completed outputs with explicit cost and provenance controls.
 
-- [Read the Evals dashboard](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/overview.md?v=9cb0a38d64d4): Interpret project trace volume, errors, latency, recorded usage and typed quality summaries without rerunning a target.
+- [Read the Evals dashboard](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/overview.md?v=e3855e82f9d1): Interpret project trace volume, errors, latency, recorded usage and typed quality summaries without rerunning a target.
 
 - [Organize evaluation projects](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/projects.md?v=a37f80789375): Select, create and archive projects while preserving organization boundaries and historical evaluation evidence.
 
@@ -68,7 +68,7 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 - [Use scoring suites and monitoring](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/suites-and-monitoring.md?v=48ad1464d813): Save immutable scoring criteria and thresholds, apply an exact suite version, and inspect retained quality-gate history.
 
-- [Annotate a native trace](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/trace-annotations.md?v=f9dc129a9c9e): Add typed human feedback or an expectation to a retained trace and recover an uncertain save without creating a duplicate.
+- [Annotate a native trace](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/trace-annotations.md?v=320d8f7cbcc1): Add typed human feedback or an expectation to a retained trace and recover an uncertain save without creating a duplicate.
 
 - [Inspect traces and sessions](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/traces-and-sessions.md?v=4740fd894967): Search native trace evidence, inspect spans, group recorded sessions, save views and export bounded results.
 
@@ -92,9 +92,9 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 - [Troubleshooting](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/troubleshooting.md?v=762425c12a2f): Resolve common access, connection, run, dataset and scoring failures safely.
 
-- [Use these docs with an AI assistant](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/using-with-agents.md?v=1d3fc58b073b): Copy a complete page or share a public Markdown link that an assistant can read without signing in.
+- [Use these docs with an AI assistant](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/using-with-agents.md?v=3b2004ac5113): Copy a complete page or share a public Markdown link that an assistant can read without signing in.
 
-- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=ca04708ff010): Review source revisions, real captures, completed checks and remaining gaps.
+- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=5e6fe9baf525): Review source revisions, real captures, completed checks and remaining gaps.
 
 - [Gate CI on Evals and redteam](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/ci.md?v=c7f51b51e806): Run evaluations and adversarial probes in one persisted CI session, verify its result, and retain safe reports.
 
@@ -110,6 +110,6 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 ## Complete reference
 
-- [All documentation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/llms-full.txt?v=3a7077c9b6b7): all 46 pages in one text file.
+- [All documentation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/llms-full.txt?v=a06215cb654b): all 46 pages in one text file.
 
 - [Website](https://docs.martiansecurity.ai/): the human-readable site. The Markdown mirror is an independent HTTPS access path.
