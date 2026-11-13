@@ -72,7 +72,7 @@
       ],
       "qualification": "partial",
       "validationStatus": "The HTTP connection path passed real HTTPS validation, approval and refresh in isolated local QA. MCP/browser execution and credential rotation/disable checks remain pending.",
-      "documentationRoute": "/martian-security-docs/agents/connections/",
+      "documentationRoute": "/agents/connections/",
       "role": "owner, admin",
       "route": "/#/agents/onboard",
       "interfaces": [
@@ -158,7 +158,7 @@
         "Refresh/read back persisted connection and approval",
         "Run three-record Evals dataset through real Backend/Agents and confirm retained outputs; source example alone does not prove this"
       ],
-      "documentationRoute": "/martian-security-docs/agents/http-adapter/",
+      "documentationRoute": "/agents/http-adapter/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -223,7 +223,7 @@
       ],
       "qualification": "pending",
       "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
-      "documentationRoute": "/martian-security-docs/agents/sandbox-bindings/",
+      "documentationRoute": "/agents/sandbox-bindings/",
       "role": "owner, admin",
       "route": "/#/agents",
       "interfaces": [
@@ -312,7 +312,7 @@
       ],
       "qualification": "partial",
       "validationStatus": "In isolated local QA, endpoint-only HTTP goals, outcome/technique selection, anonymous identity, Light and serial controls were exercised. MR-1002 retained its selected scope. Sandbox bindings, signed-in/browser targets and prepared scenarios remain unverified.",
-      "documentationRoute": "/martian-security-docs/assessments/configure/",
+      "documentationRoute": "/assessments/configure/",
       "role": "member, admin, owner",
       "route": "/#/assessment",
       "interfaces": [
@@ -415,7 +415,7 @@
       ],
       "qualification": "partial",
       "validationStatus": "In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review.",
-      "documentationRoute": "/martian-security-docs/assessments/evidence-and-results/",
+      "documentationRoute": "/assessments/evidence-and-results/",
       "role": "viewer, member, admin, owner",
       "route": "/#/runs/<run-id>",
       "interfaces": [
@@ -521,7 +521,7 @@
       ],
       "qualification": "partial",
       "validationStatus": "In isolated local QA, Assessments/Replay selection and filtering, refreshed MR-1002 evidence, Reports JSON and legacy finding-page JSON were checked. Domain-outcome and published redacted-review ZIP exports remain unverified.",
-      "documentationRoute": "/martian-security-docs/assessments/history-and-exports/",
+      "documentationRoute": "/assessments/history-and-exports/",
       "role": "viewer, member, admin, owner",
       "route": "/#/replay",
       "interfaces": [
@@ -608,7 +608,7 @@
       ],
       "qualification": "partial",
       "validationStatus": "In isolated local QA, MR-1002 was followed from running to retained completion. MR-1003 reached Needs attention after HTTP 530 before its stop control could be used; its action remains uncertain. Successful cooperative cancellation remains unverified.",
-      "documentationRoute": "/martian-security-docs/assessments/progress-and-cancellation/",
+      "documentationRoute": "/assessments/progress-and-cancellation/",
       "role": "member, admin, owner",
       "route": "/#/runs/<run-id>",
       "interfaces": [
@@ -715,7 +715,7 @@
       ],
       "qualification": "partial",
       "validationStatus": "In isolated local QA, MR-1002 had unverifiable disclosure coverage and no deterministic oracle. Model opinions and requested-versus-used budgets were inspected. Clean-world reproduction and negative controls remain unverified.",
-      "documentationRoute": "/martian-security-docs/assessments/reproduction-and-limits/",
+      "documentationRoute": "/assessments/reproduction-and-limits/",
       "role": "viewer, member, admin, owner",
       "route": "/#/runs/<run-id>",
       "interfaces": [
@@ -815,7 +815,7 @@
       ],
       "qualification": "pending",
       "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
-      "documentationRoute": "/martian-security-docs/discovery/call-gates/",
+      "documentationRoute": "/discovery/call-gates/",
       "role": "owner, admin",
       "route": "/#/discovery?tab=kill-switch",
       "interfaces": [
@@ -912,7 +912,7 @@
       ],
       "qualification": "partial",
       "validationStatus": "Own beta QA Owner inspected Connect source/Add a read-only source: no authorized Kubernetes aliases and Create source disabled. Deployment-matched Discovery schema/API/config bytes also expose an incompatibility with the available collector snapshot. Enrollment, real collection, inventory and source lifecycle remain unverified; operator-approved scope and a compatible collector/Backend pair are prerequisites.",
-      "documentationRoute": "/martian-security-docs/discovery/inventory/",
+      "documentationRoute": "/discovery/inventory/",
       "role": "owner, admin",
       "route": "/#/discovery?tab=sources",
       "interfaces": [
@@ -1018,7 +1018,7 @@
       ],
       "qualification": "pending",
       "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
-      "documentationRoute": "/martian-security-docs/discovery/runtime-and-blast-radius/",
+      "documentationRoute": "/discovery/runtime-and-blast-radius/",
       "role": "owner, admin",
       "route": "/#/discovery",
       "interfaces": [
@@ -1137,7 +1137,7 @@
       ],
       "qualification": "partial",
       "validationStatus": "Own beta Gmail environment save/reopen, built-in sandbox readiness, real seeded Gmail login/refresh, expiry extension and stop were observed. Shared generation failed before QA. Generated/personal worlds, optional file inputs, other simulations and agent binding/business checks remain unverified.",
-      "documentationRoute": "/martian-security-docs/environments/create-and-launch/",
+      "documentationRoute": "/environments/create-and-launch/",
       "role": "member, admin, owner",
       "route": "/#/environments",
       "interfaces": [
@@ -1276,7 +1276,7 @@
       ],
       "validationStatus": "Canonical and matching v1 supplementary comparison, both native trace contexts, criterion/filter/export readback, refresh/reselection and same-run/one-sided-job guards passed. Changed suite policies return compatible false and three supplementary Not Comparable rows; different datasets return zero paired and five Not Comparable rows. Comparison/scoring did not replay the target.",
       "qualification": "verified",
-      "documentationRoute": "/martian-security-docs/evals/compare/",
+      "documentationRoute": "/evals/compare/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -1383,7 +1383,7 @@
       ],
       "validationStatus": "JSONL/CSV/JSON import, edit/archive/delete, original organization publication/native readback, a genuine Martian read-only source and editable copy, refresh and role/foreign-tenant boundaries passed in isolated QA. Copy publication stalled after evaluation-service timeout; a second published version remains unverified. Saved-failure authoring is qualified in evals/regression-cases.",
       "qualification": "partial",
-      "documentationRoute": "/martian-security-docs/evals/datasets/",
+      "documentationRoute": "/evals/datasets/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -1465,7 +1465,7 @@
       ],
       "validationStatus": "The three-record owner tutorial passed with actual HTTP responses, retained exact-match results, native trace/provenance and viewer launch denial in isolated local QA.",
       "qualification": "verified",
-      "documentationRoute": "/martian-security-docs/evals/first-run/",
+      "documentationRoute": "/evals/first-run/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -1532,7 +1532,7 @@
       ],
       "validationStatus": "A real queue with Boolean, numeric, categorical and text answers reached Complete with four latest native feedback records verified. Refresh/history attribution, immutable question reuse/versioning and member reassignment denial passed.",
       "qualification": "verified",
-      "documentationRoute": "/martian-security-docs/evals/human-reviews/",
+      "documentationRoute": "/evals/human-reviews/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -1633,7 +1633,7 @@
       ],
       "validationStatus": "Code scoring, built-in correctness/safety and Boolean custom v1/v2/historical-v1 execution passed without target replay. Fifteen model assessments retained native IDs; three existing deliveries needed one explicit sync each. Version history, exact JSON export provenance, refresh, model cost422, stale version409, member definition403, viewer application403/read200 and foreign run404 passed. Numeric/category/text model execution is outside this recorded Boolean walkthrough.",
       "qualification": "verified",
-      "documentationRoute": "/martian-security-docs/evals/judging/",
+      "documentationRoute": "/evals/judging/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -1707,7 +1707,7 @@
       ],
       "validationStatus": "Owner created a ready project, ran its three-record evaluation, switched scopes, refreshed and archived it. Historical results/traces remained readable; new work was disabled. Member/viewer creation and archive requests403; owner archived target admission409.",
       "qualification": "verified",
-      "documentationRoute": "/martian-security-docs/evals/projects/",
+      "documentationRoute": "/evals/projects/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -1790,7 +1790,7 @@
       ],
       "validationStatus": "Real Boolean failure groups, native evidence, owner investigation/member dismissal, attributed retained decisions, filtered coverage and viewer write rejection passed in isolated local QA. A separately ready organization could read its own native context but received404 for the same customer-owned trace that its owning organization read200.",
       "qualification": "verified",
-      "documentationRoute": "/martian-security-docs/evals/quality-issues/",
+      "documentationRoute": "/evals/quality-issues/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -1873,7 +1873,7 @@
       ],
       "validationStatus": "Results, native trace/provenance, filtered exports, nine persisted supplementary code assessments and original exact-match results passed after refresh. Viewer read-only controls were checked.",
       "qualification": "verified",
-      "documentationRoute": "/martian-security-docs/evals/results-and-scores/",
+      "documentationRoute": "/evals/results-and-scores/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -1951,7 +1951,7 @@
       ],
       "validationStatus": "Real HTTP stop retained two successful responses, one skipped record, zero errors and matching native KILLED after refresh under supported 90-second QA budgets. Code stop retained eight native assessments with partial coverage and unchanged target results. Owner/member same-intent readback202, viewer denial403, foreign denial404 and first-late-stop409 passed. Original timeout case and telemetry-only recovery are retained separately.",
       "qualification": "verified",
-      "documentationRoute": "/martian-security-docs/evals/stopping-and-recovery/",
+      "documentationRoute": "/evals/stopping-and-recovery/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -2023,7 +2023,7 @@
       ],
       "validationStatus": "Code-only suite creation, exact-version application, full native feedback, passing/failed gates, immutable prior policy, monitoring and viewer restrictions passed. Model criteria remain covered by the separately partial judging guide.",
       "qualification": "verified",
-      "documentationRoute": "/martian-security-docs/evals/suites-and-monitoring/",
+      "documentationRoute": "/evals/suites-and-monitoring/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -2115,7 +2115,7 @@
       ],
       "validationStatus": "Trace filters, inspection, exports, private/shared views and tenant checks passed in named local QA scopes. A fresh own native integration produced two actual stateful HTTP turns, independently persisted as two completed root traces. Session filter/grouping, View turns, both inspectors, Ungroup traces and full refresh passed. Initial read timeouts were preserved; no HTTP turn was repeated. SDK 0.1.2 does not provide this native ingestion/credential path.",
       "qualification": "verified",
-      "documentationRoute": "/martian-security-docs/evals/traces-and-sessions/",
+      "documentationRoute": "/evals/traces-and-sessions/",
       "validation": [
         {
           "date": "2026-11-13",
@@ -2178,7 +2178,7 @@
       "id": "get-started/access",
       "role": "All invited customer roles",
       "route": "/#/overview",
-      "documentationRoute": "/martian-security-docs/get-started/access/",
+      "documentationRoute": "/get-started/access/",
       "interfaces": [
         "Current beta console"
       ],
@@ -2216,7 +2216,7 @@
       "id": "get-started/concepts",
       "role": "All customer roles",
       "route": "/#/overview",
-      "documentationRoute": "/martian-security-docs/get-started/concepts/",
+      "documentationRoute": "/get-started/concepts/",
       "interfaces": [
         "Current beta console"
       ],
@@ -2259,7 +2259,7 @@
       "id": "get-started/first-assessment",
       "role": "Member, admin or owner; admin required for connection approval",
       "route": "/#/assessment",
-      "documentationRoute": "/martian-security-docs/get-started/first-assessment/",
+      "documentationRoute": "/get-started/first-assessment/",
       "interfaces": [
         "Current beta console"
       ],
@@ -2354,7 +2354,7 @@
       ],
       "qualification": "verified",
       "validationStatus": "Available MT-01 versus declared-gap MT-20, disabled execution action, taxonomy selection, catalogue refresh, actual Tests selection, requested-versus-attempted coverage and no-live-feed view were checked.",
-      "documentationRoute": "/martian-security-docs/library/coverage/",
+      "documentationRoute": "/library/coverage/",
       "role": "viewer, member, admin, owner",
       "route": "/#/library",
       "interfaces": [
@@ -2396,7 +2396,7 @@
       "guide": "Gate CI on Evals and redteam",
       "role": "Scoped machine key; owner/admin issues key and publishes tutorial dataset",
       "route": "/#/evals",
-      "documentationRoute": "/martian-security-docs/sdk/ci/",
+      "documentationRoute": "/sdk/ci/",
       "interfaces": [
         "martian ci CLI",
         "martian.ci Python runner",
@@ -2486,7 +2486,7 @@
       "guide": "Evaluate with Python",
       "role": "No account for local preview; scoped machine key for persistence; owner/admin publishes dataset",
       "route": "/#/evals",
-      "documentationRoute": "/martian-security-docs/sdk/evaluations/",
+      "documentationRoute": "/sdk/evaluations/",
       "interfaces": [
         "Local traced Python prediction callable",
         "martian.evals",
@@ -2563,7 +2563,7 @@
       "guide": "Install and configure the SDK",
       "role": "Owner/admin to create a key; scoped machine key for SDK execution",
       "route": "/#/evals",
-      "documentationRoute": "/martian-security-docs/sdk/install-and-configure/",
+      "documentationRoute": "/sdk/install-and-configure/",
       "interfaces": [
         "Released Python package 0.1.2",
         "CLI",
@@ -2625,7 +2625,7 @@
       "guide": "Run a redteam probe",
       "role": "Owner/admin issues key; machine key with redteam:run executes",
       "route": "/#/evals",
-      "documentationRoute": "/martian-security-docs/sdk/redteam/",
+      "documentationRoute": "/sdk/redteam/",
       "interfaces": [
         "Synchronous/asynchronous local str or Turn callback",
         "Modern martian.redteam Python API",
@@ -2756,7 +2756,7 @@
       ],
       "qualification": "verified",
       "validationStatus": "Owner-issued member/viewer invitations, actual acceptance and sign-in, retained Team roles, viewer boundaries and consumed/replaced/revoked link rejection passed. Manual delivery only; email delivery and natural expiry were not exercised.",
-      "documentationRoute": "/martian-security-docs/workspace/team-and-roles/",
+      "documentationRoute": "/workspace/team-and-roles/",
       "role": "owner, admin",
       "route": "/#/team",
       "interfaces": [
@@ -2883,7 +2883,7 @@
       "verifiedAt": "2026-11-13",
       "verifiedEnvironment": "Isolated local QA; Owner; saved-case authoring",
       "validationStatus": "One stored canonical failure was copied with original expected output into a new draft. The exported wrapper was rejected422; its unchanged items array previewed/applied200 in a separate empty draft. Both GET/refresh readbacks retained revision2/one usable record/expected4 and source metadata. Actual-output substitution, publication and rerunning the cases are outside this qualification.",
-      "documentationRoute": "/martian-security-docs/evals/regression-cases/",
+      "documentationRoute": "/evals/regression-cases/",
       "validation": [
         {
           "date": "2026-11-13",

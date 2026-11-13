@@ -16,15 +16,15 @@ Use sandbox bindings when a red-team assessment must exercise synthetic business
 
 An **Owner** or **Admin** can configure this feature through the console and customer API. It is not restricted to platform operators, but it requires a customer application developer: the agent must already implement the protected session contract below and accept the run-scoped sandbox tools. Pasting JSON does not add session management or tool execution to an arbitrary chat endpoint.
 
-For a stateless first connection, start with the [HTTP adapter](/martian-security-docs/agents/http-adapter/) and [endpoint-only tutorial](/martian-security-docs/get-started/first-assessment/). Browser chat remains endpoint-only. This advanced guide uses a session-capable HTTP target, anonymous conversation identity and a payment sandbox; it does not enable an Assurance pack or synthetic signed-in fixture profile.
+For a stateless first connection, start with the [HTTP adapter](/agents/http-adapter/) and [endpoint-only tutorial](/get-started/first-assessment/). Browser chat remains endpoint-only. This advanced guide uses a session-capable HTTP target, anonymous conversation identity and a payment sandbox; it does not enable an Assurance pack or synthetic signed-in fixture profile.
 
 ## Prerequisites
 
 - **Owner** or **Admin** role in the intended organization.
 - An HTTP agent whose registration includes **Session API base (optional)** and its matching **Session-management bearer token**. An existing registration without them must be replaced with one configured for session management; the endpoint fields are fixed after saving.
-- A [saved environment](/martian-security-docs/environments/create-and-launch/) containing only connector `stripe`, with its supported `paypal` simulation Ready and a synthetic account/transaction ledger. The payment account needs at least one transaction, no existing duplicate refund per capture, and an authorized paid order if you intend to investigate duplicate refunds.
+- A [saved environment](/environments/create-and-launch/) containing only connector `stripe`, with its supported `paypal` simulation Ready and a synthetic account/transaction ledger. The payment account needs at least one transaction, no existing duplicate refund per capture, and an authorized paid order if you intend to investigate duplicate refunds.
 - Your operator's sandbox DNS/TLS and runtime services are available. The agent can reach the supplied run-scoped MCP gateway over its approved network path.
-- The matching [application/source baseline](/martian-security-docs/reference/verification/#source-baseline). The example's fixed system mapping must match your environment before you use it.
+- The matching [application/source baseline](/reference/verification/#source-baseline). The example's fixed system mapping must match your environment before you use it.
 
 ## 1. Find the actual system, environment and agent IDs
 
@@ -32,7 +32,7 @@ The environment picker shows readable names. Binding keys use connector IDs, whi
 
 The customer read APIs are `GET /v1/connectors`, `GET /v1/environments` and `GET /v1/agents`. They require an authenticated human tenant session. A scoped SDK machine API key does not substitute for that human-session authority.
 
-1. Download the [read-only setup inspector](/martian-security-docs/examples/connections/inspect-sandbox-setup.py).
+1. Download the [read-only setup inspector](/examples/connections/inspect-sandbox-setup.py).
 2. Run it against your approved Backend origin, without `/v1`:
 
 ```sh
@@ -49,8 +49,8 @@ If your environment includes other systems, create a separate payment-only envir
 
 Download these two complete examples:
 
-- [API request JSON](/martian-security-docs/examples/connections/payment-sandbox-bindings.request.json), for `PUT /v1/agents/{agent_id}/connection/sandbox-bindings`.
-- [Console editor JSON](/martian-security-docs/examples/connections/payment-sandbox-bindings.console.json), for the **Sandbox bindings** editor.
+- [API request JSON](/examples/connections/payment-sandbox-bindings.request.json), for `PUT /v1/agents/{agent_id}/connection/sandbox-bindings`.
+- [Console editor JSON](/examples/connections/payment-sandbox-bindings.console.json), for the **Sandbox bindings** editor.
 
 They express the same configuration with different outer shapes. The API requires a `bindings` object. The console editor expects system keys at the top level and wraps them itself; **do not paste the API wrapper into that editor**.
 
@@ -272,7 +272,7 @@ For example, a session-capable health response can be:
 {"mcp_enabled": true}
 ```
 
-Download the [complete session-request shape](/martian-security-docs/examples/connections/customer-session.request.json). It includes `session_id`, `campaign_id`, `target_id`, aware `expires_at`, and a `mcp_connections` entry containing `name`, gateway `url`, run-scoped `headers` and `allowed_tools`. Its IDs, 2030 timestamp and capability placeholder are illustrative; **never submit them as issued authority or hard-code them in the application**. At admission Martian provides the real current values and short-lived capability to your approved session endpoint.
+Download the [complete session-request shape](/examples/connections/customer-session.request.json). It includes `session_id`, `campaign_id`, `target_id`, aware `expires_at`, and a `mcp_connections` entry containing `name`, gateway `url`, run-scoped `headers` and `allowed_tools`. Its IDs, 2030 timestamp and capability placeholder are illustrative; **never submit them as issued authority or hard-code them in the application**. At admission Martian provides the real current values and short-lived capability to your approved session endpoint.
 
 For the anonymous sandbox request, a minimal successful registration response is:
 
@@ -306,4 +306,4 @@ Use the SDK's `mcp` extra in this customer application. `parse_session_payload` 
 | Stored state changes while a run is admitted | Stop and inspect its retained status; configuration edits revoke leases and do not silently retarget a campaign. |
 | Need a scenario implant or signed-in identity | Configure its separate compatible profile and prerequisites, then revalidate/reapprove. This basic payment binding does not provide them. |
 
-Bindings and business predicates are integrator-owned contracts, not facts inferred from a customer's system names. The public configuration endpoint exists for customer admins, while hosted cluster provisioning and publishing reviewed Wiki scenarios remain operator responsibilities. Continue with [assessment configuration](/martian-security-docs/assessments/configure/) and [reproduction limits](/martian-security-docs/assessments/reproduction-and-limits/).
+Bindings and business predicates are integrator-owned contracts, not facts inferred from a customer's system names. The public configuration endpoint exists for customer admins, while hosted cluster provisioning and publishing reviewed Wiki scenarios remain operator responsibilities. Continue with [assessment configuration](/assessments/configure/) and [reproduction limits](/assessments/reproduction-and-limits/).

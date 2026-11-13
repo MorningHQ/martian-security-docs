@@ -18,7 +18,7 @@ Request a bounded stop without discarding results that have already arrived, and
 
 Use a deliberately bounded, authorized example when learning the controls. A stop is cooperative: a target request or model judgment already admitted can finish and may incur its normal charge. Stop is not a way to revoke an already sent request or undo external side effects.
 
-For optional practice with the [HTTP teaching adapter](/martian-security-docs/agents/http-adapter/), its [complete example README](/martian-security-docs/examples/http-agent/README.md) includes `slow_agent:answer`. That genuine callback waits ten seconds. Confirm deadline headroom with your administrator before using it; the recorded local QA success used a 90-second request budget. Keep the original three-record dataset and stop after at least one record finishes.
+For optional practice with the [HTTP teaching adapter](/agents/http-adapter/), its [complete example README](/examples/http-agent/README.md) includes `slow_agent:answer`. That genuine callback waits ten seconds. Confirm deadline headroom with your administrator before using it; the recorded local QA success used a 90-second request budget. Keep the original three-record dataset and stop after at least one record finishes.
 
 ## 1. Stop a target evaluation
 
@@ -79,11 +79,11 @@ Keep the original configuration while reconciling. These actions reuse the saved
 
 ## 5. Handle setup, publication or telemetry failures
 
-- **Dataset updates are in progress**: new runs are paused while publication completes. Existing admitted runs may finish. An owner/admin can inspect **Datasets → Publish activity** for a stalled operation; use the [dataset recovery guidance](/martian-security-docs/evals/datasets/#failures-and-recovery).
+- **Dataset updates are in progress**: new runs are paused while publication completes. Existing admitted runs may finish. An owner/admin can inspect **Datasets → Publish activity** for a stalled operation; use the [dataset recovery guidance](/evals/datasets/#failures-and-recovery).
 - **Refresh setup**: refreshes the readiness read after the underlying problem is resolved. It cannot authorize an unapproved connection or create missing model access.
 - Saved results with telemetry errors need administrator review. Retain the run/job code and error, rather than deleting evidence or rerunning the target to repair export.
-- A rotated, changed, expired or revoked agent connection can stop later target calls. Revalidate/approve through [Agents](/martian-security-docs/agents/connections/) before admitting new work.
+- A rotated, changed, expired or revoked agent connection can stop later target calls. Revalidate/approve through [Agents](/agents/connections/) before admitting new work.
 
 If uncertainty remains after refreshing and reconciling the saved request, give your administrator the run code, job identity, time and displayed error. Avoid including tokens, passwords or unneeded response content in support messages.
 
-Next, [inspect retained results](/martian-security-docs/evals/results-and-scores/) or [start another bounded evaluation](/martian-security-docs/evals/first-run/) once the organization is ready for new work.
+Next, [inspect retained results](/evals/results-and-scores/) or [start another bounded evaluation](/evals/first-run/) once the organization is ready for new work.

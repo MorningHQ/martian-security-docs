@@ -16,7 +16,7 @@ Use the trace explorer to follow recorded requests and inspect the spans, inputs
 
 Any customer role can inspect authorized native traces in the current beta console. Your organization must have ready Evals setup and retained trace evidence in the selected project. **Members** or higher can save views; viewers can use organization-shared views. You do not need a separate MLflow login or MLflow credentials.
 
-Complete a [first evaluation](/martian-security-docs/evals/first-run/) to create fresh evidence. Not every request reports a session, user, token count, cost or model identity. Missing fields stay unavailable.
+Complete a [first evaluation](/evals/first-run/) to create fresh evidence. Not every request reports a session, user, token count, cost or model identity. Missing fields stay unavailable.
 
 ## 1. Find the trace selection
 
@@ -94,4 +94,4 @@ Use **Refresh traces** after a temporary read failure. A stale cursor or changed
 
 If a view save reports **Failed to fetch** or another uncertain result, refresh and inspect **Saved trace view** before saving again. A new save can create another view; confirm whether the earlier one exists first.
 
-Next, [review saved responses](/martian-security-docs/evals/human-reviews/) or [triage quality issues](/martian-security-docs/evals/quality-issues/).
+Next, [review saved responses](/evals/human-reviews/) or [triage quality issues](/evals/quality-issues/).

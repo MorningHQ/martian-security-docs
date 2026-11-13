@@ -14,7 +14,7 @@ Build a reviewed set of input/expected-output records, then publish an immutable
 
 ## Before you start
 
-Use the current beta Evals console; see the [source baseline](/martian-security-docs/reference/verification/#source-baseline). Your organization’s setup must be **Ready**. **Members**, **admins** and **owners** can author drafts; **admins** and **owners** publish organization datasets. **Viewers** browse published datasets without editing them. See [permissions](/martian-security-docs/reference/permissions/).
+Use the current beta Evals console; see the [source baseline](/reference/verification/#source-baseline). Your organization’s setup must be **Ready**. **Members**, **admins** and **owners** can author drafts; **admins** and **owners** publish organization datasets. **Viewers** browse published datasets without editing them. See [permissions](/reference/permissions/).
 
 Use synthetic records for a tutorial. Confirm that you have permission to send their inputs to the chosen target before running them. Dataset creation and import do not call your target.
 
@@ -65,7 +65,7 @@ The draft editor automatically displays **records**, **usable in runs**, **archi
 
 For a straightforward exact-match dataset, use nonempty input and expected-output strings. Review missing values before publishing. An entire invalid upload is rejected, so an import error does not mean that its valid-looking rows were partially applied.
 
-A draft supports up to 100,000 records, while an individual evaluation selects at most 1,000 active records. Keep tutorial datasets small. See [limits](/martian-security-docs/reference/limits/) before importing a large corpus.
+A draft supports up to 100,000 records, while an individual evaluation selects at most 1,000 active records. Keep tutorial datasets small. See [limits](/reference/limits/) before importing a large corpus.
 
 ## 4. Publish and verify the version
 
@@ -93,7 +93,7 @@ The observed **martian:documentation-response-pack** is a synthetic three-record
 
 The copy opened as **documentation-response-pack**, revision 1, with three usable records and editable controls. Its displayed version hash differs from the source; compare the copied name and records rather than assuming the two versions have the same identity. Copying did not publish it. Its subsequent publication stalled with **Evaluation service is unreachable**, and one supported Resume did not establish completion. The draft remained read-only while publishing; a second published version remains unverified.
 
-To save failed records from an existing run, follow [Turn failed results into regression cases](/martian-security-docs/evals/regression-cases/). That walkthrough verifies direct copying and the alternative file-import path, including their different record IDs and the export-wrapper conversion.
+To save failed records from an existing run, follow [Turn failed results into regression cases](/evals/regression-cases/). That walkthrough verifies direct copying and the alternative file-import path, including their different record IDs and the export-wrapper conversion.
 
 ## Failures and recovery
 
@@ -102,4 +102,4 @@ To save failed records from an existing run, follow [Turn failed results into re
 - If publication becomes **Stalled** or **Needs review**, an owner/admin can open the **Publish activity** tab and inspect **Publish operations**. Resume or abort only after reviewing what was submitted; do not assert that a native creation was never sent unless that is established. An accepted Resume queues recovery; it does not prove publication completed. Keep the same operation while investigating an uncertain result.
 - **Discard** removes unpublished draft work. Deleting draft records does not remove earlier published versions.
 
-Next, [run the dataset](/martian-security-docs/evals/first-run/) or [organize evaluation projects](/martian-security-docs/evals/projects/).
+Next, [run the dataset](/evals/first-run/) or [organize evaluation projects](/evals/projects/).

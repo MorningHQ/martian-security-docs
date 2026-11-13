@@ -14,7 +14,7 @@ Save a failed record as a test case that can catch the same problem in a later e
 
 ## Before you start
 
-Use a **Member**, **Admin** or **Owner** account in a ready Evals organization. The observed walkthrough used an Owner; viewers cannot author drafts. Start with a completed run containing a failed record, such as the [changed-answer comparison example](/martian-security-docs/evals/compare/).
+Use a **Member**, **Admin** or **Owner** account in a ready Evals organization. The observed walkthrough used an Owner; viewers cannot author drafts. Start with a completed run containing a failed record, such as the [changed-answer comparison example](/evals/compare/).
 
 This example uses **EV-1003**: expected `4`, actual `4.`. Keep the correct answer `4` as ground truth. Your run code and downloaded filename can differ. A separate publication paused new-run admission during this example; saved-result authoring remained available.
 
@@ -73,8 +73,8 @@ PY
 
 ## Verify and continue
 
-Both paths retained one usable record after refresh in their separate drafts. Neither changed the original run or published dataset. Review and [publish the draft](/martian-security-docs/evals/datasets/#4-publish-and-verify-the-version) before using it in a new evaluation.
+Both paths retained one usable record after refresh in their separate drafts. Neither changed the original run or published dataset. Review and [publish the draft](/evals/datasets/#4-publish-and-verify-the-version) before using it in a new evaluation.
 
 - If creating a draft succeeds but adding the result fails, reuse that confirmed draft during recovery; another new draft can leave extra copies.
 - Import updates match IDs, rather than matching prompts. Inspect the new/updated counts before merging files into an existing draft.
-- A saved case does not establish that a later target has been fixed. [Run the published dataset](/martian-security-docs/evals/first-run/) to measure that.
+- A saved case does not establish that a later target has been fixed. [Run the published dataset](/evals/first-run/) to measure that.

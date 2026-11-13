@@ -257,16 +257,34 @@
       "details": "Two actual once-only HTTP stateful turns persisted as two completed native roots/two spans each. Independent native/Backend search/details and UI filter/group/turns/both inspectors/ungroup/full refresh passed. Initial read timeouts preserved; latest refresh9/9Evals200 and final navigation9/9Evals200/no page errors. Background local connectors503 remain. Dedicated nonadmin app writer uses fresh-workspaceUSE+exact experimentEDIT; this is separately provisioned native ingestion, not SDK0.1.2/API-key self-service. Beta ownQA Noauthorizedclusters/Createdisabled observed; actual three owning Discovery file hashes match pinned Backend, incompatible with available collector observation field. No enrollment/collection/runtime-source/IAM change."
     },
     {
-      "scope": "PR12 build, links, import fixtures and four capture files",
+      "scope": "PR13 build, links, import fixtures and four capture files",
       "environment": "Node26;41-page production build; native1440\u00d71000PNG captures",
       "result": "production build/Pagefind, default checks, PNG integrity and diff check passed; full-release audit remains incomplete",
       "details": "41pages;3478local link/anchor/asset refs;116captured IDs/104uniquePNGs;two console-import fixtures/fiverecords. Four new PNGs retain original capture bytes, valid CRCs/dimensions, no textual/EXIF metadata and individual visual/secret review. Coverage33guides:21verified/9partial/3pending. Strict release audit remains enabled and fails for17pending screenshot refs/12unverified full guides/30findings."
     },
     {
-      "scope": "PR12 independent source and AI-simulated novice/aesthetic review",
+      "scope": "PR13 independent source and AI-simulated novice/aesthetic review",
       "environment": "Pinned source/private real-operation receipts;production preview1440\u00d71000 and390\u00d7844 light/dark",
       "result": "No outstanding P1/P2; caption contradiction resolved; no human participant",
       "details": "Independent session review confirmed real once-only HTTP state callbacks, native completed root/spans/metadata, separate scoped native writer and actual Backend/UIreadback. Independent Discovery review confirmed attested schema/provider scope caveat and actual blocked form. Momreview caught old SDKempty-statecaption saying positivegroupingunqualified; caption now explicitly contrasts separateSDK0.1.2no-ID path with newlyqualifiednativeexample. Rendered action/figuresequence2/3/4confirmed. Bothguides/all4newfullsize1440images,390lightdark/noglobaloverflow,naturalsearchconversationturns/authorizedclusters(intendedguidefirst),anchors/deeprefreshanddynamiccounts passed. Docsconsole/image-tab0errorswarnings. Final50-requesttail200/304exceptoneduplicateverificationGET ERR_ABORTEDwithmatchingGET200/page-rendered. FourteenignoredQA capturesretained. No productactions by reviewers."
+    },
+    {
+      "scope": "Custom-domain root build and navigation",
+      "environment": "Node26.13.1; local production preview at 127.0.0.1:4339; Chrome",
+      "result": "passed local build, default checks and root-path browser checks; public domain pending DNS access",
+      "details": "41 pages built and indexed; 3466 link/anchor/asset references and five import-example records passed. Homepage SDK navigation, real Pagefind search for regression cases, result navigation and deep refresh used root paths, with canonical URLs on https://docs.martiansecurity.ai. Sampled page, favicon, search and both ZIP requests returned 200; exact ZIP hashes, screenshot provenance, recorded SDK receipt and lockfile stayed unchanged. Chrome reported extension localization/message errors during preview; no clean-console claim. Existing product-walkthrough qualification gaps remain unchanged."
+    },
+    {
+      "scope": "PR13 concurrent custom-domain integration and trusted HTTPS probe",
+      "environment": "Merged custom-domain main ed1749a; root production build; trusted public TLS requests on 2026-11-13",
+      "result": "Root build/default checks passed; hosted trusted HTTPS/browser qualification incomplete",
+      "details": "Preserved existing https://docs.martiansecurity.ai root config, root link-checker normalization,33coverage routes and custom-domain validation entry. Structurally combined only coverage/validation JSON conflicts. All three changed customer MDX texts exactly equal independently reviewed e95af40 content after changing root-relative project paths; external repository links stay intact. Four new PNG bytes unchanged. Trusted HTTPS on docs.martiansecurity.ai failed hostname certificate validation; old GitHub HTTPS URL redirected to publicHTTP. No certificate validation was disabled and no DNS/Pages certificate settings were changed by this integration."
+    },
+    {
+      "scope": "PR13 root-path simulated novice follow-up",
+      "environment": "Current production dist root preview127.0.0.1:4330;canonicalhttpsdocs.martiansecurity.ai;1440desktop/390dark",
+      "result": "Passed bounded local root-path follow-up; hosted HTTPS remains incomplete; no human participant",
+      "details": "Bothrootroutes/canonicals,no stale same-origin projectprefixlinks,realPagefindconversationturns7results/traceguidefirst/actualclick,all8inlineimages,native+Discoveryfullsize1440\u00d71000,390darknoglobaloverflow,Verificationlinkand21/9/3+116/104counters passed. Docsconsole0errorswarnings;final26rootdocsrequestsall200/304. RawnativePNGtabrootfavicon.ico404retainedasnonblocking. Twoadditionalignoredcaptures;initialfullreviewpreserved. NoTLSbypassorhosting/productactionsbyreviewer."
     }
   ],
   "remainingGaps": [
@@ -275,6 +293,7 @@
     "Sandbox-backed verified effects, fresh-world repetitions/negative controls and published artifact-backed Recorded review/domain/redacted-bundle exports remain unverified.",
     "MR-1003 retains an uncertain teaching-tunnel action; positive cooperative cancellation and evidence-based resolution are not yet qualified.",
     "Dataset second-version publication, successful generated/personal worlds, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification. Native session views are verified through separately provisioned instrumentation; SDK0.1.2 native-ingestion/credential issuance is not provided.",
-    "Local QA demonstrates named pinned-source behavior, not whole hosted AWS-beta parity. Local orchestration is unavailable (connectors503), initial native-view reads had recoverable timeouts, and Discovery needs a compatible collector/Backend pair plus operator-approved scope."
+    "Local QA demonstrates named pinned-source behavior, not whole hosted AWS-beta parity. Local orchestration is unavailable (connectors503), initial native-view reads had recoverable timeouts, and Discovery needs a compatible collector/Backend pair plus operator-approved scope.",
+    "Custom-domain trusted HTTPS, HTTPS enforcement and final hosted-browser checks remain incomplete while GitHub issues a certificate for docs.martiansecurity.ai. The prior GitHub URL currently redirects to HTTP; no TLS validation is bypassed."
   ]
 }

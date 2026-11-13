@@ -17,13 +17,13 @@ The supplied callback is deterministic teaching code, not an LLM. It recognizes 
 ## Before you start
 
 - Local preflight needs Python **3.12 or newer** and a terminal. No third-party Python package or provider account is required.
-- Hosted onboarding requires an **Owner** or **Admin**, the [current qualification status](/martian-security-docs/reference/verification/), and a public HTTPS host reachable from Martian's servers. Localhost is not reachable merely because the console opens in your browser.
-- For the tested disposable HTTPS recipe, use Docker Desktop and outbound internet access. Alternatively, supply a dedicated Linux host, public DNS, reachable ports 80/443 and Caddy. The [complete hosting instructions](/martian-security-docs/examples/http-agent/README.md) explain both options; the Caddy alternative is source-reviewed rather than walkthrough-tested.
-- If public hosting is unavailable, use [SDK local evaluations](/martian-security-docs/sdk/evaluations/) instead. The callback and its provider credentials can remain in your own process.
+- Hosted onboarding requires an **Owner** or **Admin**, the [current qualification status](/reference/verification/), and a public HTTPS host reachable from Martian's servers. Localhost is not reachable merely because the console opens in your browser.
+- For the tested disposable HTTPS recipe, use Docker Desktop and outbound internet access. Alternatively, supply a dedicated Linux host, public DNS, reachable ports 80/443 and Caddy. The [complete hosting instructions](/examples/http-agent/README.md) explain both options; the Caddy alternative is source-reviewed rather than walkthrough-tested.
+- If public hosting is unavailable, use [SDK local evaluations](/sdk/evaluations/) instead. The callback and its provider credentials can remain in your own process.
 
 ## 1. Download and start the service
 
-1. [Download the complete example](/martian-security-docs/examples/http-agent/martian-http-agent.zip), extract it, and enter its `http-agent` directory. The archive includes the server, callback, request, preflight, matching dataset and hosting recipe.
+1. [Download the complete example](/examples/http-agent/martian-http-agent.zip), extract it, and enter its `http-agent` directory. The archive includes the server, callback, request, preflight, matching dataset and hosting recipe.
 2. Run:
 
 ```sh
@@ -48,7 +48,7 @@ The wire request is a JSON object containing `campaign_id`, `target_id`, `conver
 ## 2. Protect and host the endpoint
 
 1. Inject a strong adapter-specific token as `MARTIAN_ADAPTER_TOKEN` and restart the server. `/chat` now requires `Authorization: Bearer ...`; `/health` stays public. This is separate from a Martian API key and a provider key.
-2. For the disposable tutorial on Docker Desktop, keep the protected Python service running locally and start the [exact tested tunnel command in the README](/martian-security-docs/examples/http-agent/README.md). Use the generated `https://…trycloudflare.com` origin; it needs no account or domain. Keep both processes running. [Quick Tunnel limits](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/)
+2. For the disposable tutorial on Docker Desktop, keep the protected Python service running locally and start the [exact tested tunnel command in the README](/examples/http-agent/README.md). Use the generated `https://…trycloudflare.com` origin; it needs no account or domain. Keep both processes running. [Quick Tunnel limits](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/)
 3. For a durable host instead, follow `Caddyfile.example`: use your public DNS name and satisfy its DNS/network prerequisites. Keep Python on the host's loopback address behind ingress. [Caddy HTTPS requirements](https://caddyserver.com/docs/automatic-https)
 4. From another machine/network, run the README's authenticated HTTPS curl checks and:
 
@@ -68,12 +68,12 @@ Keep a tutorial tunnel running through onboarding and evaluation. If its hostnam
 
 <Screenshot id="agents-http-adapter-settings" />
 
-4. Follow **Save and validate → Validate connection**, then review the approval conditions and choose **Approve connection**. See [connection onboarding](/martian-security-docs/agents/connections/) for those exact screens.
+4. Follow **Save and validate → Validate connection**, then review the approval conditions and choose **Approve connection**. See [connection onboarding](/agents/connections/) for those exact screens.
 5. Confirm **active** and **Ready for assessments**. Refresh and reopen the agent to verify the saved state.
 
 <Screenshot id="agents-http-adapter-approved" />
 
-Connectivity validation reads the supplied health URL; it does not prove that every chat prompt or business workflow succeeds. Import the included `first-evaluation.jsonl`, publish it, select **Default**, and [run your first evaluation](/martian-security-docs/evals/first-run/) to exercise the actual POST and retained results. The sample supports stateless endpoint-only testing; a sandbox-backed assessment needs additional customer integration.
+Connectivity validation reads the supplied health URL; it does not prove that every chat prompt or business workflow succeeds. Import the included `first-evaluation.jsonl`, publish it, select **Default**, and [run your first evaluation](/evals/first-run/) to exercise the actual POST and retained results. The sample supports stateless endpoint-only testing; a sandbox-backed assessment needs additional customer integration.
 
 ## Replace the teaching callback
 
@@ -89,4 +89,4 @@ This small server has no durable side-effect idempotency, rate limiting, session
 - TLS/DNS/timeout errors: resolve public reachability before onboarding. Keep certificate checks enabled; a local successful curl does not prove SaaS reachability.
 - Local preflight passed but no app screenshot/walkthrough qualification is recorded above: end-to-end onboarding remains unverified. Do not treat a source example as a deployed product run.
 
-Next, [connect and manage the agent](/martian-security-docs/agents/connections/), [run the three-record evaluation](/martian-security-docs/evals/first-run/), or use [the SDK callback alternative](/martian-security-docs/sdk/evaluations/).
+Next, [connect and manage the agent](/agents/connections/), [run the three-record evaluation](/evals/first-run/), or use [the SDK callback alternative](/sdk/evaluations/).
