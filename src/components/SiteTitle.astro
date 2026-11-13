@@ -3,10 +3,7 @@ import wordmark from '../assets/martian-wordmark.svg?raw';
 const { siteTitleHref } = Astro.locals.starlightRoute;
 ---
 
-<a class="martian-brand" href={siteTitleHref} aria-label="Martian Security — customer documentation">
+<a class="martian-brand" href={siteTitleHref} aria-label="Martian Security">
   <span class="martian-brand-mark" aria-hidden="true"></span>
-  <span class="martian-brand-type">
-    <span class="martian-brand-wordmark" set:html={wordmark} />
-    <span class="martian-brand-caption">Customer documentation</span>
-  </span>
+  <span class="martian-brand-wordmark" set:html={wordmark} />
 </a>
