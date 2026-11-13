@@ -12,6 +12,12 @@ import Screenshot from '../../../components/Screenshot.astro';
 
 Install the Python package and create the platform connection used by Evals and red teaming. At the end, you will have a verified SDK installation, a scoped API key, and a validated tutorial configuration.
 
+:::note[SDK 0.1.3 is available]
+`martian-sdk` 0.1.3 adds [suite-file evals that run locally](/sdk/local-evals/), LLM judges and deterministic checks. Start with that guide if you only want to run evals on your own machine; it needs no Martian account.
+
+This tutorial, its download and its recorded qualification use **0.1.2**. The install, local preview and YAML validation steps were run again on 0.1.3 with the same results. The API-key, persisted CI and hosted red teaming steps were not re-run on 0.1.3. To follow the tutorial on 0.1.3, replace `0.1.2` with `0.1.3` in the install command and expect `martian --version` to print `0.1.3`.
+:::
+
 ## Before you start
 
 For the account-free [local Evals preview](/sdk/evaluations/#1-run-the-free-local-preview), complete **step 1** below using Python and Git. API keys, a Backend origin and organization services are needed when you continue to platform persistence.

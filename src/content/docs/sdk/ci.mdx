@@ -2,7 +2,7 @@
 title: Gate CI on Evals and redteam
 description: Run evaluations and adversarial probes in one persisted CI session, verify its result, and retain safe reports.
 sidebar:
-  order: 4
+  order: 5
 ---
 
 import GuideMeta from '../../../components/GuideMeta.astro';
@@ -201,6 +201,18 @@ Before committing, make these application-specific replacements:
 6. **Attribution:** bind the key to the intended existing registration, resolve its UUID with `key_agent_id.py`, then configure that UUID as the CI variable. The registration does not make a different local callback become the deployed agent.
 
 Create the local environment in this repository, install the SDK and the application's dependencies, and repeat the free preview and YAML validation before any paid run. Commit the merged source, tests, config and workflow; then set `MARTIAN_EVALS_GIT_SHA` from this repository's new commit for local CI. GitHub Actions takes the checked-out commit automatically. Do not use the extracted tutorial's old revision to label different customer application code.
+
+## Run a local suite on pull requests (SDK 0.1.3)
+
+SDK 0.1.3 adds a second, lighter check for CI: a [suite file](/sdk/local-evals/) that runs with no Martian secret. It suits pull requests from branches that must not see your platform key.
+
+```sh
+.venv/bin/martian evals run evals.yaml --fresh --output eval-results
+```
+
+The command exits `0` when every case passes, `1` when a case fails and `2` when a case has no verdict or the suite file is invalid. Publish `eval-results/junit.xml` to your CI system's test report. A suite that uses an LLM judge needs that provider's key as a CI secret; a suite of deterministic checks needs no secret at all.
+
+This run is separate from the persisted gate on this page. It creates no CI session, has no agent or revision attribution and does not appear in the console. Keep `martian ci` as the recorded gate for trusted branches.
 
 ## Retained reports, failures and recovery
 
