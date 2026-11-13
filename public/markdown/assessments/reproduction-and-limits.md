@@ -8,6 +8,10 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/reproduction-a
 
 > **Walkthrough limits:** In isolated local QA, MR-1002 had unverifiable disclosure coverage and no deterministic oracle. Model opinions and requested-versus-used budgets were inspected. Clean-world reproduction and negative controls remain unverified.
 
+Partly verified guide
+
+The endpoint-only example is checked. Clean-world reproduction and negative controls still need a complete walkthrough.
+
 Use the strongest retained evidence for the question you are answering. A reproducible reply, an executed tool call and a reproducible change in a restored business world support different conclusions.
 
 ## Before you start

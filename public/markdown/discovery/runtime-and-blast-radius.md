@@ -6,7 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/discovery/runtime-and-blas
 
 > **Page qualification:** Current beta console · owner, admin · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+> **Walkthrough limits:** Source reviewed; live walkthrough and required screenshots pending.
+
+Guide in progress
+
+The local reporter setup is checked. Delivery to Discovery and the runtime and blast-radius views still need a complete walkthrough.
 
 Follow application-reported model/tool activity for one deployment and compare it with collected potential access. Success means the intended binding receives real instrumented calls and you can trace each visible relationship to its evidence and time boundary.
 

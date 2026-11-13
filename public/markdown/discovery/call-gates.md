@@ -6,7 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/discovery/call-gates/)
 
 > **Page qualification:** Current beta console · owner, admin · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+> **Walkthrough limits:** Source reviewed; live walkthrough and required screenshots pending.
+
+Guide in progress
+
+Local setup checks have passed. Live enrollment, gate decisions, blocking and resuming calls still need a complete walkthrough.
 
 Block entry to one explicitly enrolled model or tool call in an instrumented customer application. Success requires an activated control, a real denied decision and the SDK’s acknowledgment that it stopped before calling the target. This is separate from the CI release gate and from network-containment previews.
 

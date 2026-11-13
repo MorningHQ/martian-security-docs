@@ -6,7 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/discovery/network-observat
 
 > **Page qualification:** Current beta console · owner/admin manages; authorized roles read · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+> **Walkthrough limits:** Source reviewed only. No eligible authorized QA source/compatible collector and no privileged sensors were provisioned. No capture, observer or reporting success is claimed.
+
+Guide in progress
+
+This setup is source reviewed. A compatible authorized source and customer-operated sensors are required; capture and reporting still need a live walkthrough.
 
 Observe scoped TCP activity from customer-operated Kubernetes sensors. A one-time capture and a continuous observer have separate grants and lifecycles. Neither grants model/tool reporting, blocks calls or activates network isolation.
 

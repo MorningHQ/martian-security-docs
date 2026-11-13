@@ -8,6 +8,10 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/history-and-ex
 
 > **Walkthrough limits:** In isolated local QA, Assessments/Replay selection and filtering, refreshed MR-1002 evidence, Reports JSON and legacy finding-page JSON were checked. Domain-outcome and published redacted-review ZIP exports remain unverified.
 
+Partly verified guide
+
+Recorded history and the documented JSON downloads have been checked. Domain-outcome and redacted-review ZIP exports are still being verified.
+
 Find a recorded assessment after leaving its wizard, inspect retained evidence and download the right report. These history and replay actions read existing work; **Replay** does not execute the assessment again.
 
 ## Before you start

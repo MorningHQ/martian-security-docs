@@ -8,6 +8,10 @@ Source: [Web version](https://docs.martiansecurity.ai/environments/create-and-la
 
 > **Walkthrough limits:** Own beta Gmail environment save/reopen, built-in sandbox readiness, real seeded Gmail login/refresh, expiry extension and stop were observed. Shared generation failed before QA. Generated/personal worlds, optional file inputs, other simulations and agent binding/business checks remain unverified.
 
+Partly verified guide
+
+The built-in Gmail sandbox lifecycle has been checked in one beta workspace. Generated/personal worlds, other simulations and agent business checks are still being verified.
+
 Create an isolated copy of the systems needed by a red-team assessment. Success means the intended environment revision and data are saved, each required sandbox is **Ready**, and the approved agent can use its configured bindings.
 
 ## Before you start

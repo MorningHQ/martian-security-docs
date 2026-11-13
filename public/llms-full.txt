@@ -77,6 +77,10 @@ Source: [Web version](https://docs.martiansecurity.ai/agents/connections/)
 
 > **Walkthrough limits:** The HTTP connection path passed real HTTPS validation, approval and refresh in isolated local QA. MCP/browser execution and credential rotation/disable checks remain pending.
 
+Partly verified guide
+
+The HTTP setup walkthrough is complete. MCP/browser execution and credential rotation or disabling connections are still being verified.
+
 Connect a customer-controlled test agent so Martian can send an approved assessment to it. A successful setup ends with an **active** connection and **Ready for assessments**.
 
 ## Before you start
@@ -297,7 +301,11 @@ Source: [Web version](https://docs.martiansecurity.ai/agents/sandbox-bindings/)
 
 > **Page qualification:** Current beta console · owner, admin · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+> **Walkthrough limits:** Source reviewed; live walkthrough and required screenshots pending.
+
+Guide in progress
+
+This setup has been reviewed against the implementation. The connection and independent business checks still need a complete live walkthrough.
 
 Use sandbox bindings when a red-team assessment must exercise synthetic business systems rather than only the agent’s replies. Success means the intended session-capable HTTP agent is approved for the exact seeded account and tools, and its admitted run retains independent before/after business checks.
 
@@ -607,6 +615,10 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/configure/)
 
 > **Walkthrough limits:** In isolated local QA, endpoint-only HTTP goals, outcome/technique selection, anonymous identity, Light and serial controls were exercised. MR-1002 retained its selected scope. Sandbox bindings, signed-in/browser targets and prepared scenarios remain unverified.
 
+Partly verified guide
+
+The basic endpoint-only HTTP walkthrough is complete. Sandbox bindings, signed-in/browser targets and prepared scenarios are still being verified.
+
 Define the authorized scope before sending adversarial requests to a customer agent. The wizard has six steps: **Environment → Agent → Goals → Tests → Run → Report**. This guide covers configuration through admission; the [first-assessment tutorial](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/get-started/first-assessment.md) provides a complete introductory run.
 
 ## Before you start
@@ -692,6 +704,10 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/evidence-and-r
 
 > **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review.
 
+Partly verified guide
+
+The endpoint-only trace and export walkthrough is complete. Independent business outcomes and published recorded reviews are still being verified.
+
 Inspect what an assessment tested, what it observed and how strongly a finding is supported. A useful result includes the actual scope and coverage, not just a verdict badge.
 
 ## Before you start
@@ -762,6 +778,10 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/history-and-ex
 
 > **Walkthrough limits:** In isolated local QA, Assessments/Replay selection and filtering, refreshed MR-1002 evidence, Reports JSON and legacy finding-page JSON were checked. Domain-outcome and published redacted-review ZIP exports remain unverified.
 
+Partly verified guide
+
+Recorded history and the documented JSON downloads have been checked. Domain-outcome and redacted-review ZIP exports are still being verified.
+
 Find a recorded assessment after leaving its wizard, inspect retained evidence and download the right report. These history and replay actions read existing work; **Replay** does not execute the assessment again.
 
 ## Before you start
@@ -817,6 +837,10 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/progress-and-c
 > **Page qualification:** Current beta console · member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
 > **Walkthrough limits:** In isolated local QA, MR-1002 was followed from running to retained completion. MR-1003 reached Needs attention after HTTP 530 before its stop control could be used; its action remains uncertain. Successful cooperative cancellation remains unverified.
+
+Partly verified guide
+
+Run progress and completion have been checked. Successful cancellation and recovery from an uncertain target action are not yet verified.
 
 Follow the run Martian actually admitted and stop further work when appropriate. Success means you can identify the retained run, its final execution state, available evidence and any unresolved action requiring attention.
 
@@ -877,6 +901,10 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/reproduction-a
 
 > **Walkthrough limits:** In isolated local QA, MR-1002 had unverifiable disclosure coverage and no deterministic oracle. Model opinions and requested-versus-used budgets were inspected. Clean-world reproduction and negative controls remain unverified.
 
+Partly verified guide
+
+The endpoint-only example is checked. Clean-world reproduction and negative controls still need a complete walkthrough.
+
 Use the strongest retained evidence for the question you are answering. A reproducible reply, an executed tool call and a reproducible change in a restored business world support different conclusions.
 
 ## Before you start
@@ -935,7 +963,11 @@ Source: [Web version](https://docs.martiansecurity.ai/discovery/call-gates/)
 
 > **Page qualification:** Current beta console · owner, admin · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+> **Walkthrough limits:** Source reviewed; live walkthrough and required screenshots pending.
+
+Guide in progress
+
+Local setup checks have passed. Live enrollment, gate decisions, blocking and resuming calls still need a complete walkthrough.
 
 Block entry to one explicitly enrolled model or tool call in an instrumented customer application. Success requires an activated control, a real denied decision and the SDK’s acknowledgment that it stopped before calling the target. This is separate from the CI release gate and from network-containment previews.
 
@@ -1066,6 +1098,10 @@ Source: [Web version](https://docs.martiansecurity.ai/discovery/inventory/)
 
 > **Walkthrough limits:** Own beta QA Owner inspected Connect source/Add a read-only source: no authorized Kubernetes aliases and Create source disabled. Deployment-matched Discovery schema/API/config bytes also expose an incompatibility with the available collector snapshot. Enrollment, real collection, inventory and source lifecycle remain unverified; operator-approved scope and a compatible collector/Backend pair are prerequisites.
 
+Partly verified guide
+
+Collection needs an authorized source and a compatible collector. Enrollment, retained inventory and source lifecycle are still being verified.
+
 Build an inventory from authorized infrastructure evidence and inspect what qualifies each record as an agent, candidate or supporting workload. Enrollment succeeds when the source is saved, its intended collector reports and retained inventory appears with a clear freshness boundary.
 
 ## Before you start
@@ -1127,7 +1163,11 @@ Source: [Web version](https://docs.martiansecurity.ai/discovery/network-observat
 
 > **Page qualification:** Current beta console · owner/admin manages; authorized roles read · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+> **Walkthrough limits:** Source reviewed only. No eligible authorized QA source/compatible collector and no privileged sensors were provisioned. No capture, observer or reporting success is claimed.
+
+Guide in progress
+
+This setup is source reviewed. A compatible authorized source and customer-operated sensors are required; capture and reporting still need a live walkthrough.
 
 Observe scoped TCP activity from customer-operated Kubernetes sensors. A one-time capture and a continuous observer have separate grants and lifecycles. Neither grants model/tool reporting, blocks calls or activates network isolation.
 
@@ -1186,7 +1226,11 @@ Source: [Web version](https://docs.martiansecurity.ai/discovery/runtime-and-blas
 
 > **Page qualification:** Current beta console · owner, admin · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+> **Walkthrough limits:** Source reviewed; live walkthrough and required screenshots pending.
+
+Guide in progress
+
+The local reporter setup is checked. Delivery to Discovery and the runtime and blast-radius views still need a complete walkthrough.
 
 Follow application-reported model/tool activity for one deployment and compare it with collected potential access. Success means the intended binding receives real instrumented calls and you can trace each visible relationship to its evidence and time boundary.
 
@@ -1277,6 +1321,10 @@ Source: [Web version](https://docs.martiansecurity.ai/environments/create-and-la
 > **Page qualification:** Current beta console · member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
 > **Walkthrough limits:** Own beta Gmail environment save/reopen, built-in sandbox readiness, real seeded Gmail login/refresh, expiry extension and stop were observed. Shared generation failed before QA. Generated/personal worlds, optional file inputs, other simulations and agent binding/business checks remain unverified.
+
+Partly verified guide
+
+The built-in Gmail sandbox lifecycle has been checked in one beta workspace. Generated/personal worlds, other simulations and agent business checks are still being verified.
 
 Create an isolated copy of the systems needed by a red-team assessment. Success means the intended environment revision and data are saved, each required sandbox is **Ready**, and the approved agent can use its configured bindings.
 
@@ -1483,6 +1531,10 @@ Source: [Web version](https://docs.martiansecurity.ai/evals/datasets/)
 > **Page qualification:** Current beta console · member+ edits; owner/admin publishes; viewer reads published · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
 > **Walkthrough limits:** JSONL/CSV/JSON import, edit/archive/delete, original organization publication/native readback, a genuine Martian read-only source and editable copy, refresh and role/foreign-tenant boundaries passed in isolated QA. Copy publication stalled after evaluation-service timeout; a second published version remains unverified. Saved-failure authoring is qualified in evals/regression-cases.
+
+Partly verified guide
+
+Imports, editing and an original dataset publication have been checked. Publishing a copied dataset or a second version is still being verified.
 
 Build a reviewed set of input/expected-output records, then publish an immutable version that your team can select in Evals. Draft edits do not change the version pinned by an earlier run.
 
@@ -3226,7 +3278,7 @@ These guides are being qualified against actual running application/backend stat
 
 ## Current publication status
 
-The site is being published iteratively. Each task guide shows its current walkthrough status above the instructions. The initial public build includes source-reviewed instructions; authenticated captures and complete execution checks are added as they pass.
+The site is being published iteratively. Guides with unfinished walkthroughs show a short notice above the instructions. Detailed roles, dates, tested environments and qualification records are collected here and retained in **Copy page** Markdown. Authenticated captures and complete execution checks are added as they pass.
 
 Of **37 task guides**, **24 are verified**, **9 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **120 captured references** across **108 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 

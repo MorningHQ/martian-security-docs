@@ -8,6 +8,10 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/progress-and-c
 
 > **Walkthrough limits:** In isolated local QA, MR-1002 was followed from running to retained completion. MR-1003 reached Needs attention after HTTP 530 before its stop control could be used; its action remains uncertain. Successful cooperative cancellation remains unverified.
 
+Partly verified guide
+
+Run progress and completion have been checked. Successful cancellation and recovery from an uncertain target action are not yet verified.
+
 Follow the run Martian actually admitted and stop further work when appropriate. Success means you can identify the retained run, its final execution state, available evidence and any unresolved action requiring attention.
 
 ## Before you start
