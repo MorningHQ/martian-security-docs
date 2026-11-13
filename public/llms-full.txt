@@ -626,7 +626,7 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/configure/)
 
 > **Page qualification:** Current beta console · member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** Endpoint-only HTTP configuration and saved scope were exercised previously. A separate anonymous endpoint-only MCP campaign retained edited goals, a data outcome, Light and serial settings, then made three real tool calls. Its admission acknowledgment failed and required operator-assisted reconciliation of the original campaign. Browser, sandbox, signed-in and prepared-scenario execution remain unverified.
+> **Walkthrough limits:** Endpoint-only HTTP configuration and saved scope were exercised previously. A separate anonymous endpoint-only MCP campaign retained edited goals, a data outcome, Light and serial settings, then made three real tool calls. Its admission acknowledgment failed and required operator-assisted reconciliation of the original campaign. Browser, sandbox, signed-in and prepared-scenario execution remain unverified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified.
 
 Partly verified guide
 
@@ -686,6 +686,20 @@ The advanced signed-in and Assurance-pack options select **already-provisioned**
 
 Only Customer records leave is selected. Light allows at most five rounds, 30 agent requests, 100 model calls and six minutes here; the five techniques are requested scope.
 
+## Configure a browser chat run
+
+Start with an approved **Browser chat** connection from the Agent step. Browser runs use the public website, endpoint-only scope and one conversation at a time.
+
+1.  In **Tests**, confirm **Configured website account** if you supplied website credentials during onboarding. This signs in to the website; it does not establish an independently verified customer identity or connected-system permissions.
+2.  Choose **By outcome** and one supported outcome. The example below selects **Customer records leave** and **Light**. Read the allowance shown for your workspace; the disabled parallel option remains unchecked.
+
+![Browser assessment Tests step with Configured website account, only Customer records leave selected, Light depth and the disabled parallel option unchecked.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-browser-tests.png)
+
+Choose a supported outcome and read the current allowance. Website sign-in is separate from a verified customer identity; browser conversations remain serial.
+
+3.  Click **Start assessment** once. In the saved trace, confirm **Website access**, **Effective target concurrency** and **Time limit**, along with the target and edited goals.
+4.  Inspect the actual execution result. The executor sends two neutral setup messages before probing, and those messages consume the run allowance. Successful sign-in and setup do not establish a completed assessment. See the [browser failure example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-a-browser-run-that-needs-attention).
+
 ## Use an Assurance pack
 
 This section covers selecting a prepared pack, not provisioning one. Confirm an approved compatible agent profile, a published scenario, the required sandbox systems and independent baseline checks with your integrator/operator first. The setup and positive outcome walkthrough remain unqualified here.
@@ -717,7 +731,7 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/evidence-and-r
 
 > **Page qualification:** Current beta console · viewer, member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified.
+> **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified.
 
 Partly verified guide
 
@@ -797,6 +811,25 @@ Read the probe outcome and its own counters. This operator-reconciled campaign a
 
 4.  Refresh and reopen the saved run, then use **Download legacy JSON evidence**. In this check, the downloaded `MR-1001.json` retained the same agent, completed state, inconclusive verdict, attempt, trace and coverage. This JSON is separate from a published redacted review bundle.
 
+## Read a browser run that needs attention
+
+This example belongs to the separate **Documentation Browser Execution QA** workspace. Its **MR-1001** targeted an approved website with configured sign-in, endpoint-only scope, one disclosure outcome, Light depth and serial execution. Website sign-in and two neutral setup messages succeeded. Starting a fresh conversation for the first probe then timed out; this is an incomplete walkthrough, not a successful browser assessment.
+
+1.  Open the saved trace and read both summaries. **Assessment execution** shows **Needs attention**, while **Security outcome** shows **No verdict recorded**. The **Waiting on a decision** panel retains `BrowserError: fresh_conversation_unavailable:fresh_timeout` and an uncertain action. Zero detailed attempts and zero findings do not establish protection.
+
+![Saved browser run showing Waiting on a decision, an uncertain fresh-conversation timeout, Needs attention and No verdict recorded.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-browser-needs-attention.png)
+
+Preserve the original action for inspection. Successful website sign-in and setup messages did not produce a completed probe or a security verdict.
+
+2.  Open **Probe coverage**. Here the disclosure probe remains **Scheduled**, with **No outcome recorded** and **0 / 30** target calls. These are probe counters; the two earlier neutral setup requests are a separate part of the campaign. A scheduled goal is not completed coverage, and a dash in the summary counters does not mean no requests were made.
+
+![Browser probe coverage showing Scheduled, No outcome recorded, zero of thirty probe target calls and zero of one hundred probe model calls.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-browser-coverage.png)
+
+The disclosure goal was scheduled, with no probe outcome recorded. These probe counters exclude the campaign’s earlier neutral setup messages.
+
+3.  Refresh and reopen the same run, then use **Download legacy JSON evidence**. The observed reload and download retained the incomplete state, absent verdict and original campaign identity. Native inspection confirmed **awaiting recovery** with one unresolved action; no replacement assessment or recovery decision was submitted.
+4.  Preserve the run and have the original action inspected before deciding how to recover. **The action did not execute** is an evidence-based decision, not a general retry button. Keep successful cancellation, a completed browser assessment and a security verdict separate from this failure observation. See [execution-failure recovery](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md#handle-submission-and-execution-failures).
+
 ## Exports and limitations
 
 **Download report** exports run/finding JSON. The trace’s legacy JSON download includes its currently displayed findings page; read its pagination flags. Artifact-backed **Recorded review** can offer **Download redacted review** when a published revision is available. See [history and exports](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/history-and-exports.md) for the differences.
@@ -875,7 +908,7 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/progress-and-c
 
 > **Page qualification:** Current beta console · member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** MR-1002 was followed from running to retained completion. The original MR-1003 HTTP530 action remains uncertain and untouched. A separate MCP campaign executed despite an initial HTTP503; public refresh200 left the error unchanged, and one operator-assisted reconciliation restored its original completed/inconclusive evidence. Positive cooperative cancellation remains unverified.
+> **Walkthrough limits:** MR-1002 was followed from running to retained completion. The original MR-1003 HTTP530 action remains uncertain and untouched. A separate MCP campaign executed despite an initial HTTP503; public refresh200 left the error unchanged, and one operator-assisted reconciliation restored its original completed/inconclusive evidence. Positive cooperative cancellation remains unverified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified.
 
 Partly verified guide
 
@@ -895,6 +928,14 @@ Any tenant user can inspect an accessible run. **Member**, **Admin** or **Owner*
 ![MR-1002 running with Open trace and Stop run controls](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/first-assessment-running.png)
 
 The acknowledged MR-1002 run shows its five requested techniques. Open trace follows execution; the header Cancel leaves the wizard.
+
+Browser example: Running precedes the execution result
+
+An approved browser target also passes through the real **Run** step. This separate example reached **Running** after admission, with its five requested techniques visible. The later [browser failure example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-a-browser-run-that-needs-attention) explains why it did not become a completed assessment.
+
+![The admitted browser assessment MR-1001 showing Running, five requested techniques, Open trace and Stop run.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-browser-run.png)
+
+Running confirms admission to the runtime. This browser example later needed attention; the selected techniques do not establish completed coverage.
 
 3.  Inspect agent requests, model calls and execution limits. A queued/submitted state is not proof that the downstream target or model executed. Missing or incomplete evidence must remain visible.
 4.  Use **Refresh evidence** when you need the current projection from the existing runtime campaign. This does not start another assessment. After a submission error, an unchanged result can still require operator inspection; refresh is not proof that no work was admitted.
@@ -927,6 +968,8 @@ An admission error can appear even while the original campaign is executing. In 
 | Run incomplete or needs attention | Preserve its ID and inspect the retained evidence/recovery notice. If refresh leaves the submission error unchanged, ask your operator to inspect the original campaign. The console’s ended message does not independently establish that downstream execution stopped. |
 | Connection changed or was revoked | Have an Owner/Admin verify the intended target and approval. An old run may still require inspection against its original runtime identity. |
 | Historical imported record | Inspect its retained original evidence. It has no new runtime campaign here to cancel. |
+
+For a browser failure, **Waiting on a decision** can retain an uncertain action even after sign-in and neutral setup messages succeeded. In the observed `fresh_conversation_unavailable:fresh_timeout` case, the first probe could not establish a fresh conversation. Keep the same run and inspect its evidence before making a recovery decision; the presence of **The action did not execute** does not establish that assertion for you.
 
 The wizard’s header **Cancel** leaves configuration; it is not the runtime **Stop run** action. Keep execution state separate from the security verdict and [review what the evidence establishes](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/reproduction-and-limits.md).
 
@@ -3112,7 +3155,7 @@ The console sidebar groups current work, adversary material, history and organiz
 | Discovery | Collect inventory; inspect runtime/network evidence and explicitly enrolled call controls | [Sources](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/inventory.md), [runtime](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/runtime-and-blast-radius.md), [network observation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/network-observation.md) and [call gates](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/call-gates.md) |
 | Replay | Read retained assessment evidence without executing it again | [History and exports](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/history-and-exports.md) |
 | Environments | Prepare synthetic systems and manage their sandbox lifecycle | [Environments](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/environments/create-and-launch.md) |
-| Pipeline | Download an illustrative policy template; its displayed `martian scan` command is not a supported SDK command | [Supported SDK/CI workflow](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/ci.md) |
+| Pipeline | Preview and download a policy template; automated pipeline runs and waiver management are not connected to the console | [Supported SDK/CI workflow](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/ci.md) |
 | Attack Library | Inspect catalogue availability, taxonomy and declared gaps, then choose supported tests | [Library coverage](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/library/coverage.md) |
 | Threat Intel | Inspect the feed state; the recorded interface has no live feed connected | [Library and feed limits](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/library/coverage.md) |
 | Assessments / Findings / Reports | Find saved runs, inspect observations and download the appropriate retained evidence | [Reports and exports](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/history-and-exports.md) |
@@ -3288,6 +3331,8 @@ MCP validation discovers tools and binds approval to the selected schema. Revali
 
 The browser executor supports the approved website flow and optional username/password website sign-in. URL validation checks URL/access configuration, not successful login. SSO, MFA, CAPTCHA, handoff and unsupported chat discovery can stop execution. Website sign-in is distinct from an attested synthetic business identity.
 
+A reusable fresh conversation must also work after setup. The [recorded browser example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-a-browser-run-that-needs-attention) signed in and sent two neutral messages, then stopped with an uncertain action when fresh-conversation verification timed out. That observation does not qualify a completed browser assessment.
+
 ## Evals and saved outputs
 
 A dataset run sends selected active inputs to its approved HTTP target. Saved-output scoring, reviews and comparisons use retained values; they do not resend the target request. Paid model judging requires its own readiness and acknowledgement.
@@ -3380,7 +3425,7 @@ These guides are being qualified against actual running application/backend stat
 
 The site is being published iteratively. Guides with unfinished walkthroughs show a short notice above the instructions. Detailed roles, dates, tested environments and qualification records are collected here and retained in **Copy page** Markdown. Authenticated captures and complete execution checks are added as they pass.
 
-Of **37 task guides**, **26 are verified**, **7 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **136 captured references** across **124 unique PNGs**. These counts come from the current coverage and screenshot manifests.
+Of **37 task guides**, **26 are verified**, **7 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **140 captured references** across **128 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 
@@ -3398,6 +3443,7 @@ The isolated QA application uses the source baseline below, real Backend/Agents 
 -   The unused HTTP registration also passed deployed-revision declaration, credential rotation, re-approval and disable. Rotation returned **draft**, cleared the form and revoked its saved approval; the target rejected the old bearer and accepted the replacement. **Validate and approve** restored **active**. The Owner deleted only that unused registration: **204**, absent after refresh, **404** on independent read and no stored credential. The target application remained available. No assessment/evaluation or campaign lease had used this registration; active-run deletion guards and retention of populated history remain source reviewed.
 -   Connection-management boundary checks returned **401** for anonymous requests, **403** for Member/Viewer administrative actions and **404** for another organization’s Owner. Three relevant Frontend files and three Backend files matched the recorded source pins. Initial read/proxy timeouts and one aborted-refresh sign-in recovery were preserved separately; no connection mutation was repeated to repair them.
 -   A separate bounded MCP assessment used the approved `chat(message)` tool, anonymous endpoint-only identity, one data outcome, Light and serial settings. Its original admission returned a downstream **503**, yet the native campaign executed **3 target calls** and **16 model calls**, then ended with **search\_round\_budget\_exhausted** and no pending recovery actions. Two real **Refresh evidence** requests returned **200** without reconciling its missing admission link. An operator invoked the existing Backend reconciliation routine against that one original campaign, without a replacement submission, native-state edit or product-source patch. The customer console then retained **Completed / INCONCLUSIVE**, one detailed attempt, the three actual refusals and attempted/unverifiable probe coverage. Reload and the actual legacy JSON download agreed. The new [MCP evidence example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-an-mcp-endpoint-example) shows this explicitly operator-assisted result; automatic admission recovery, browser execution and positive cancellation remain unqualified.
+-   A separate Browser Execution QA Owner registered, validated and approved a website target, then retained its active connection after reload. One endpoint-only, configured-account, disclosure-outcome, Light and serial assessment returned **202** with its original runtime handle. The unchanged executor passed its real sandbox preflight; website sign-in and **two neutral setup messages** completed. Starting the first probe’s fresh conversation then failed with **fresh\_conversation\_unavailable:fresh\_timeout**. The console retained **Needs attention**, **No verdict recorded** and scheduled probe coverage. Reload and the actual legacy JSON download agreed; native reads retained one unresolved action in **awaiting recovery**, with no active run lease and all six budget reservations settled. No recovery decision, replacement run or product-source change was used. The [browser failure example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-a-browser-run-that-needs-attention) qualifies that observed failure path; a completed browser assessment and positive cancellation remain unqualified.
 -   The owner imported three JSONL records, published them and reopened their immutable content after refresh.
 -   **EV-1001** executed the three actual HTTP requests and retained **3 passed, 0 failed, 0 errors, 0 skipped**. Native provenance reported **FINISHED**, with the same dataset content hash. The first record’s native trace contains exact-match and target-chat spans with the observed input/output.
 -   The actual result controls downloaded one filtered READY record as JSON and all three records as CSV. The terminal run and answers survived a full page refresh.
@@ -3459,12 +3505,15 @@ Installing a newer release does not extend those recorded results automatically.
 | Component | Reviewed source revision |
 | --- | --- |
 | Frontend | 06d0d0c96a9627c383b85670929dfe8bdc33aa30 |
+| Frontend for browser failure and Pipeline follow-up | 5361d1f241278e19c79e68d1d8f9325920a04d12 |
 | Backend | 01343fa93feb518f6c7cd1928b63a01d2ec5ee0b |
 | Agents | f7de3e068d66fe478f642d43a658ed9b3ed321f5 |
 | Evals service | 60c25994958105db4baa91f377ba46c24fdf253d |
 | SDK release | martian-sdk 0.1.2 |
 | SDK release for the local suite-file guide | martian-sdk 0.1.3 |
 | Hermes styling foundation | 3593a4bae03e96cf6c7597ececf99fbfc32997ae |
+
+The follow-up frontend was served from a clean source archive against the same Backend/Agents runtime baseline. Seventeen relevant served/runtime files matched their recorded source bytes. The newer Backend and Agents heads contained documentation-only changes. The current Pipeline preview and its actual template download were also inspected; these checks do not requalify every earlier screenshot against the newer frontend.
 
 ## Inspectable records
 
@@ -3479,7 +3528,7 @@ The public repository retains the guide coverage matrix, screenshot provenance a
 
 **Verified** means the recorded guide walkthrough passed against its named environment. **Source reviewed** means implementation was inspected but its live walkthrough remains pending. **Preview** describes a visible non-enforcing or otherwise limited capability. **Unsupported** means the current contract does not provide that operation. The guides preserve these boundaries.
 
-Product gaps already identified include the Pipeline view’s illustrative martian scan text, unsupported target interfaces for dataset Evals, a Threat Intel view without a live feed, and network containment that remains a preview. Use the actual supported SDK CLI and controls documented here.
+The current Pipeline view explicitly labels its configuration as a preview: automated runs and waiver management are not connected. Its earlier illustrative command has been removed. Other limits include unsupported target interfaces for dataset Evals, a Threat Intel view without a live feed, and network containment that remains a preview. Use the supported SDK CLI and controls documented here.
 
 ---
 

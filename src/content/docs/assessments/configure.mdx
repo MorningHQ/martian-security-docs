@@ -54,6 +54,18 @@ The advanced signed-in and Assurance-pack options select **already-provisioned**
 
 <Screenshot id="assessment-tests" />
 
+## Configure a browser chat run
+
+Start with an approved **Browser chat** connection from the Agent step. Browser runs use the public website, endpoint-only scope and one conversation at a time.
+
+1. In **Tests**, confirm **Configured website account** if you supplied website credentials during onboarding. This signs in to the website; it does not establish an independently verified customer identity or connected-system permissions.
+2. Choose **By outcome** and one supported outcome. The example below selects **Customer records leave** and **Light**. Read the allowance shown for your workspace; the disabled parallel option remains unchecked.
+
+<Screenshot id="assessment-browser-tests" />
+
+3. Click **Start assessment** once. In the saved trace, confirm **Website access**, **Effective target concurrency** and **Time limit**, along with the target and edited goals.
+4. Inspect the actual execution result. The executor sends two neutral setup messages before probing, and those messages consume the run allowance. Successful sign-in and setup do not establish a completed assessment. See the [browser failure example](/assessments/evidence-and-results/#read-a-browser-run-that-needs-attention).
+
 ## Use an Assurance pack
 
 This section covers selecting a prepared pack, not provisioning one. Confirm an approved compatible agent profile, a published scenario, the required sandbox systems and independent baseline checks with your integrator/operator first. The setup and positive outcome walkthrough remain unqualified here.

@@ -633,6 +633,26 @@
         "The earlier copied-draft and other guarded publications in the original QA organization remain incomplete/uncertain; this separate successful scope does not repair or replay them.",
         "Abort of this revised operation was not exercised. There is no customer older-version selector on the published catalog screen."
       ]
+    },
+    {
+      "task": "Browser assessment admission, website setup and retained fresh-conversation failure",
+      "date": "2026-11-14",
+      "environment": "Separate Documentation Browser Execution QA organization; non-platform-admin Owner; clean Frontend5361d1f and unchanged pinned Backend/Agents/browser images; real synthetic HTTPS website",
+      "result": "Observed real admission, sign-in, two setup messages and retained Needs attention failure; completed browser assessment and positive cancellation remain unqualified",
+      "observed": [
+        "The shipped executor passed its real --check preflight with sandbox true, desktop Chromium and cleanup complete under the unchanged non-root/read-only/cap-drop/seccomp profile. Agents-to-executor private RPC matched the revision. Runtime/native database remained the same QA identity; no product source, hosted deployment or IAM policy was patched.",
+        "Owner Save and validate201 created one browser registration. Validate200 reported public-url-only and configured website sign-in. Approve200 activated it; a full reload retained Ready for assessments. The four real UI mutations in this walkthrough were one registration, validation, approval and assessment admission; none was repeated after an observation timeout.",
+        "Start assessment202 admitted one original request and retained its runtime handle: endpoint-only, API target_mode anonymous with browser_auth password, edited purpose and one behavior, disclosure outcome, five requested techniques, quick/Light, adaptive serial execution and effective target concurrency1. The actual allowance was five rounds,30 target calls,100 model calls and360seconds. Configured website account does not assert an attested synthetic customer identity.",
+        "The task-owned website observed real sign-in and exactly two additional neutral chat messages. Native journals retained two completed setup actions. The first probe then failed fresh-conversation verification with BrowserError: fresh_conversation_unavailable:fresh_timeout; native recovery retained one unresolved uncertain action and the Aegra run ended error. No replacement submission, non-execution assertion, recovery decision or target reply was invented.",
+        "The console moved from Running to Needs attention with No verdict recorded. Probe coverage remained Scheduled/No outcome recorded,0of30targetcalls and0of100modelcalls. These probe counters exclude setup; dash summary counters do not establish that no model/target work ran. Reload and the real MR-1001.json download retained the incomplete state, absent verdict, original target and awaiting-recovery identity.",
+        "Native read-only checks found no active run lease and all six budget reservations settled. The original older MR-1003 and publication guards remained untouched. Seventeen relevant served/runtime files matched recorded source bytes. Four actual1440x1000 Martian Security captures passed individual visual/privacy and PNG integrity/metadata review.",
+        "The retained product observer recorded386 Backend responses:358successful and28HTTP503 responses (26connectors,2assurance-packcatalog). Thirty console errors and17navigation/font/runtime-binding aborts were preserved; no page exception occurred. One read-only reload waited for networkidle on the polling app and timed out; one screenshot read used a duplicate MR-1001 heading and failed before download. DOM-contentloaded/read controls and the level1heading corrected those observation checks without repeating a write."
+      ],
+      "remaining": [
+        "The first probe fresh-conversation failure needs diagnosis against the compatible website/executor contract. This is a recorded failure path, not completed Browser assessment qualification or a security finding.",
+        "The uncertain action remains awaiting evidence-based recovery. No successful stop, general service reliability, business-state outcome or hosted-beta parity is established.",
+        "Local sandbox orchestration/assurance-pack services are unavailable. Existing sandbox, synthetic signed-in identity, prepared-scenario, modern review and Discovery qualification gaps remain unchanged."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
@@ -646,6 +666,7 @@
     "A transient Evals readiness warning during initial route loading cleared before final EV-1009 render/refreshed readback; known unconfigured connector/sidebar errors remain separate from these completed flows.",
     "Hosted beta own provisioned Gmail environment passed the named built-in lifecycle; shared data generation failed before QA. New QA organization Evals/cluster readiness remains unavailable. This does not repair the unconfigured local orchestrator or attest whole hosted deployment parity.",
     "Positive native sessions are now qualified only through a fresh separately provisioned MLflow3.16.1 application writer. SDK0.1.2 uploads remain a separate sessionless path. Initial UI evaluation-service read timeouts and background local connectors503 are preserved.",
-    "A real MCP admission returned503 after native submission. Public Refresh evidence200 did not reconcile the missing admission link. One guarded operator invocation of the existing reconciliation routine restored that original run, with no duplicate dispatch or native-state edit; this is not proof that the customer refresh path works."
+    "A real MCP admission returned503 after native submission. Public Refresh evidence200 did not reconcile the missing admission link. One guarded operator invocation of the existing reconciliation routine restored that original run, with no duplicate dispatch or native-state edit; this is not proof that the customer refresh path works.",
+    "A distinct browser campaign admitted202 and completed real website sign-in/two neutral setup messages, then stopped with fresh_conversation_unavailable:fresh_timeout before recording a probe outcome. One uncertain action remains awaiting recovery; completed browser execution and positive cancellation are unqualified."
   ]
 }

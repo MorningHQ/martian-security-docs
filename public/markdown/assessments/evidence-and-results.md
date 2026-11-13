@@ -6,7 +6,7 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/evidence-and-r
 
 > **Page qualification:** Current beta console · viewer, member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified.
+> **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified.
 
 Partly verified guide
 
@@ -85,6 +85,25 @@ Compare the actual request, reply and action journal. This turn belongs to the s
 Read the probe outcome and its own counters. This operator-reconciled campaign attempted the disclosure probe but retained no decisive verified result.
 
 4.  Refresh and reopen the saved run, then use **Download legacy JSON evidence**. In this check, the downloaded `MR-1001.json` retained the same agent, completed state, inconclusive verdict, attempt, trace and coverage. This JSON is separate from a published redacted review bundle.
+
+## Read a browser run that needs attention
+
+This example belongs to the separate **Documentation Browser Execution QA** workspace. Its **MR-1001** targeted an approved website with configured sign-in, endpoint-only scope, one disclosure outcome, Light depth and serial execution. Website sign-in and two neutral setup messages succeeded. Starting a fresh conversation for the first probe then timed out; this is an incomplete walkthrough, not a successful browser assessment.
+
+1.  Open the saved trace and read both summaries. **Assessment execution** shows **Needs attention**, while **Security outcome** shows **No verdict recorded**. The **Waiting on a decision** panel retains `BrowserError: fresh_conversation_unavailable:fresh_timeout` and an uncertain action. Zero detailed attempts and zero findings do not establish protection.
+
+![Saved browser run showing Waiting on a decision, an uncertain fresh-conversation timeout, Needs attention and No verdict recorded.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-browser-needs-attention.png)
+
+Preserve the original action for inspection. Successful website sign-in and setup messages did not produce a completed probe or a security verdict.
+
+2.  Open **Probe coverage**. Here the disclosure probe remains **Scheduled**, with **No outcome recorded** and **0 / 30** target calls. These are probe counters; the two earlier neutral setup requests are a separate part of the campaign. A scheduled goal is not completed coverage, and a dash in the summary counters does not mean no requests were made.
+
+![Browser probe coverage showing Scheduled, No outcome recorded, zero of thirty probe target calls and zero of one hundred probe model calls.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-browser-coverage.png)
+
+The disclosure goal was scheduled, with no probe outcome recorded. These probe counters exclude the campaign’s earlier neutral setup messages.
+
+3.  Refresh and reopen the same run, then use **Download legacy JSON evidence**. The observed reload and download retained the incomplete state, absent verdict and original campaign identity. Native inspection confirmed **awaiting recovery** with one unresolved action; no replacement assessment or recovery decision was submitted.
+4.  Preserve the run and have the original action inspected before deciding how to recover. **The action did not execute** is an evidence-based decision, not a general retry button. Keep successful cancellation, a completed browser assessment and a security verdict separate from this failure observation. See [execution-failure recovery](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md#handle-submission-and-execution-failures).
 
 ## Exports and limitations
 

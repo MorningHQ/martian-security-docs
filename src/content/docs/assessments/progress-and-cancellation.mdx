@@ -24,6 +24,15 @@ Any tenant user can inspect an accessible run. **Member**, **Admin** or **Owner*
 
 <Screenshot id="assessment-run" />
 
+<details>
+<summary>Browser example: Running precedes the execution result</summary>
+
+An approved browser target also passes through the real **Run** step. This separate example reached **Running** after admission, with its five requested techniques visible. The later [browser failure example](/assessments/evidence-and-results/#read-a-browser-run-that-needs-attention) explains why it did not become a completed assessment.
+
+<Screenshot id="assessment-browser-run" />
+
+</details>
+
 3. Inspect agent requests, model calls and execution limits. A queued/submitted state is not proof that the downstream target or model executed. Missing or incomplete evidence must remain visible.
 4. Use **Refresh evidence** when you need the current projection from the existing runtime campaign. This does not start another assessment. After a submission error, an unchanged result can still require operator inspection; refresh is not proof that no work was admitted.
 5. When execution ends, reopen the run from **Assessments** or **Replay**, refresh the browser and confirm the same run code, state and retained results. The wizard advances to **Report** for terminal completed, failed, incomplete or stopped runs.
@@ -55,6 +64,8 @@ The local QA cancellation attempt did not establish a successful stop: **MR-1003
 | Run incomplete or needs attention | Preserve its ID and inspect the retained evidence/recovery notice. If refresh leaves the submission error unchanged, ask your operator to inspect the original campaign. The console's ended message does not independently establish that downstream execution stopped. |
 | Connection changed or was revoked | Have an Owner/Admin verify the intended target and approval. An old run may still require inspection against its original runtime identity. |
 | Historical imported record | Inspect its retained original evidence. It has no new runtime campaign here to cancel. |
+
+For a browser failure, **Waiting on a decision** can retain an uncertain action even after sign-in and neutral setup messages succeeded. In the observed `fresh_conversation_unavailable:fresh_timeout` case, the first probe could not establish a fresh conversation. Keep the same run and inspect its evidence before making a recovery decision; the presence of **The action did not execute** does not establish that assertion for you.
 
 The wizard's header **Cancel** leaves configuration; it is not the runtime **Stop run** action. Keep execution state separate from the security verdict and [review what the evidence establishes](/assessments/reproduction-and-limits/).
 

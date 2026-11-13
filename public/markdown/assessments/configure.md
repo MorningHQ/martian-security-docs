@@ -6,7 +6,7 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/configure/)
 
 > **Page qualification:** Current beta console · member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** Endpoint-only HTTP configuration and saved scope were exercised previously. A separate anonymous endpoint-only MCP campaign retained edited goals, a data outcome, Light and serial settings, then made three real tool calls. Its admission acknowledgment failed and required operator-assisted reconciliation of the original campaign. Browser, sandbox, signed-in and prepared-scenario execution remain unverified.
+> **Walkthrough limits:** Endpoint-only HTTP configuration and saved scope were exercised previously. A separate anonymous endpoint-only MCP campaign retained edited goals, a data outcome, Light and serial settings, then made three real tool calls. Its admission acknowledgment failed and required operator-assisted reconciliation of the original campaign. Browser, sandbox, signed-in and prepared-scenario execution remain unverified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified.
 
 Partly verified guide
 
@@ -65,6 +65,20 @@ The advanced signed-in and Assurance-pack options select **already-provisioned**
 ![Only Customer records leave selected with Light and serial execution](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/first-assessment-tests.png)
 
 Only Customer records leave is selected. Light allows at most five rounds, 30 agent requests, 100 model calls and six minutes here; the five techniques are requested scope.
+
+## Configure a browser chat run
+
+Start with an approved **Browser chat** connection from the Agent step. Browser runs use the public website, endpoint-only scope and one conversation at a time.
+
+1.  In **Tests**, confirm **Configured website account** if you supplied website credentials during onboarding. This signs in to the website; it does not establish an independently verified customer identity or connected-system permissions.
+2.  Choose **By outcome** and one supported outcome. The example below selects **Customer records leave** and **Light**. Read the allowance shown for your workspace; the disabled parallel option remains unchecked.
+
+![Browser assessment Tests step with Configured website account, only Customer records leave selected, Light depth and the disabled parallel option unchecked.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-browser-tests.png)
+
+Choose a supported outcome and read the current allowance. Website sign-in is separate from a verified customer identity; browser conversations remain serial.
+
+3.  Click **Start assessment** once. In the saved trace, confirm **Website access**, **Effective target concurrency** and **Time limit**, along with the target and edited goals.
+4.  Inspect the actual execution result. The executor sends two neutral setup messages before probing, and those messages consume the run allowance. Successful sign-in and setup do not establish a completed assessment. See the [browser failure example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-a-browser-run-that-needs-attention).
 
 ## Use an Assurance pack
 

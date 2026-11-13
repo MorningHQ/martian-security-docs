@@ -3148,6 +3148,98 @@
       "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability.",
       "reviewedForSecrets": true,
       "sha256": "758ba29179461b4b9066f62944655b1a849dd57bbcb8f813b29562c1fc61404b"
+    },
+    {
+      "id": "assessment-browser-tests",
+      "file": "assessment-browser-tests.png",
+      "alt": "Browser assessment Tests step with Configured website account, only Customer records leave selected, Light depth and the disabled parallel option unchecked.",
+      "caption": "Choose a supported outcome and read the current allowance. Website sign-in is separate from a verified customer identity; browser conversations remain serial.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/configure: Configure a browser chat run, steps 1–2"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend, Agents, browser executor and synthetic public HTTPS support website; Documentation Browser Execution QA organization",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T06:13:25.453065+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged release images; 17 relevant source-file byte matches. Shipped executor sandbox preflight passed. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI admission202, website sign-in and two neutral setup turns, followed by a retained fresh-conversation failure. Reload, native recovery read and actual legacy JSON download agree. The uncertain action is unchanged; a completed browser assessment and cancellation remain unqualified. Each direct capture was individually viewed for readability and secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "1530d996dcb9fa12121d35d87b51020e8600086f84a5798ac8273cd6ea3d42ed"
+    },
+    {
+      "id": "assessment-browser-run",
+      "file": "assessment-browser-run.png",
+      "alt": "The admitted browser assessment MR-1001 showing Running, five requested techniques, Open trace and Stop run.",
+      "caption": "Running confirms admission to the runtime. This browser example later needed attention; the selected techniques do not establish completed coverage.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/progress-and-cancellation: Follow the admitted run, optional browser example"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend, Agents, browser executor and synthetic public HTTPS support website; Documentation Browser Execution QA organization",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T06:15:34.943837+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged release images; 17 relevant source-file byte matches. Shipped executor sandbox preflight passed. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI admission202, website sign-in and two neutral setup turns, followed by a retained fresh-conversation failure. Reload, native recovery read and actual legacy JSON download agree. The uncertain action is unchanged; a completed browser assessment and cancellation remain unqualified. Each direct capture was individually viewed for readability and secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "46d8bc2c128aaa27af941d734b93368e1986774d875427ff885caa79f7e756f4"
+    },
+    {
+      "id": "assessment-browser-needs-attention",
+      "file": "assessment-browser-needs-attention.png",
+      "alt": "Saved browser run showing Waiting on a decision, an uncertain fresh-conversation timeout, Needs attention and No verdict recorded.",
+      "caption": "Preserve the original action for inspection. Successful website sign-in and setup messages did not produce a completed probe or a security verdict.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/evidence-and-results: Read a browser run that needs attention, step 1"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend, Agents, browser executor and synthetic public HTTPS support website; Documentation Browser Execution QA organization",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T06:21:26.460957+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged release images; 17 relevant source-file byte matches. Shipped executor sandbox preflight passed. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI admission202, website sign-in and two neutral setup turns, followed by a retained fresh-conversation failure. Reload, native recovery read and actual legacy JSON download agree. The uncertain action is unchanged; a completed browser assessment and cancellation remain unqualified. Each direct capture was individually viewed for readability and secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "53a12ba98c2e42064c33a7307ad3b6281fc0d9d8b3f1480921cc62d1e880a38e"
+    },
+    {
+      "id": "assessment-browser-coverage",
+      "file": "assessment-browser-coverage.png",
+      "alt": "Browser probe coverage showing Scheduled, No outcome recorded, zero of thirty probe target calls and zero of one hundred probe model calls.",
+      "caption": "The disclosure goal was scheduled, with no probe outcome recorded. These probe counters exclude the campaign’s earlier neutral setup messages.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/evidence-and-results: Read a browser run that needs attention, step 2"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend, Agents, browser executor and synthetic public HTTPS support website; Documentation Browser Execution QA organization",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T06:22:52.677608+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged release images; 17 relevant source-file byte matches. Shipped executor sandbox preflight passed. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI admission202, website sign-in and two neutral setup turns, followed by a retained fresh-conversation failure. Reload, native recovery read and actual legacy JSON download agree. The uncertain action is unchanged; a completed browser assessment and cancellation remain unqualified. Each direct capture was individually viewed for readability and secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "91c96f7bb64a255cad3aab6cc3b9f80b7ec10832b8dd1b71c282e88b83c0dc7c"
     }
   ]
 }
