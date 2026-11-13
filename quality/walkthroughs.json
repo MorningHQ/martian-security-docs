@@ -591,6 +591,27 @@
         "Local connectors and Wiki reference-twin reads returned known503 responses. One refresh was aborted and later returned401; ordinary password sign-in recovered, and subsequent MCP/browser full refreshes passed. Initial read timeouts, a delayed MCP validation screen and failed preflight/automation attempts remain preserved privately; no connection mutation was replayed to repair them."
       ],
       "fixtureDocumentation": "https://github.com/modelcontextprotocol/python-sdk/blob/main/docs/run/asgi.md"
+    },
+    {
+      "task": "MCP endpoint assessment with operator-assisted evidence recovery",
+      "date": "2026-11-14",
+      "result": "Real MCP execution and retained evidence observed; admission recovery required the operator and is not a self-service pass",
+      "observed": [
+        "The non-platform-admin Owner configured one approved MCP chat(message) target, anonymous endpoint-only identity, edited synthetic purpose/behavior, one data outcome, Light and serial settings. A guard committed the request intent before the one Start assessment click; POST /v1/assessments returned202 with saved incomplete/attention and a downstream503.",
+        "Read-only tenant-bound runtime diagnostics identified exactly one original native run. The fixture received three real MCP tool calls; the native checkpoint retained one attempt, three target calls, sixteen model calls and search_round_budget_exhausted. Native execution ended success with no awaiting recovery, cancellation request or pending recovery actions.",
+        "Two actual Refresh evidence requests returned200 while the public API retained the earlier incomplete/attention submission error. The missing campaign_id caused the API route to return early even though the uniquely identified campaign had executed. This observed product gap is preserved and documented; no new intent, duplicate dispatch, recovery replay or product-source patch was used.",
+        "With the original native run terminal and no pending recovery, the operator invoked the unchanged Backend synchronize_requested routine once for the exact original run and organization. No admission fields were assigned manually and no native state was edited. It retained Completed/INCONCLUSIVE, one detailed attempt, three actual refusals, attempted/unverifiable probe coverage and no findings.",
+        "The real customer console reloaded the same run through GET200. Trace Turn1 retained the actual prompt/refusal, action identity and prepared-to-submitted-to-completed journal. Probe coverage showed three target calls and fifteen probe model calls; campaign totals separately showed sixteen. The actual Download legacy JSON evidence action produced MR-1001.json with matching saved state, verdict, native identity, summary, trace and findings-page flags.",
+        "Three actual1440x1000 application PNGs were individually viewed, checked for absent text/EXIF metadata and registered with hashes. Two Frontend files, three Backend files and the Agents MCP adapter exactly matched their recorded pins."
+      ],
+      "downloadSha256": {
+        "MR-1001.json": "93ca63a16e9ef7fe39caef137286e19babd1ca9581b5dfda1b94fdd8ec744836"
+      },
+      "remaining": [
+        "The public lost-admission refresh gap requires a product fix in the owning Backend repository; automatic/customer-only admission recovery is not qualified.",
+        "Browser and sandbox execution, signed-in/prepared scenarios, deterministic outcome verification, positive cancellation and modern artifact-backed export remain separate pending scopes.",
+        "The original MR-1003 teaching-tunnel action and earlier guarded publication failures were left unchanged. Background connectors/Wiki503 and existing intermittent read failures remain visible. No human participant or independent reviewer is claimed."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
@@ -603,6 +624,7 @@
     "The MR-1003 teaching-tunnel HTTP530 action remains uncertain and preserved. Positive cooperative cancellation is not established by that terminal failure.",
     "A transient Evals readiness warning during initial route loading cleared before final EV-1009 render/refreshed readback; known unconfigured connector/sidebar errors remain separate from these completed flows.",
     "Hosted beta own provisioned Gmail environment passed the named built-in lifecycle; shared data generation failed before QA. New QA organization Evals/cluster readiness remains unavailable. This does not repair the unconfigured local orchestrator or attest whole hosted deployment parity.",
-    "Positive native sessions are now qualified only through a fresh separately provisioned MLflow3.16.1 application writer. SDK0.1.2 uploads remain a separate sessionless path. Initial UI evaluation-service read timeouts and background local connectors503 are preserved."
+    "Positive native sessions are now qualified only through a fresh separately provisioned MLflow3.16.1 application writer. SDK0.1.2 uploads remain a separate sessionless path. Initial UI evaluation-service read timeouts and background local connectors503 are preserved.",
+    "A real MCP admission returned503 after native submission. Public Refresh evidence200 did not reconcile the missing admission link. One guarded operator invocation of the existing reconciliation routine restored that original run, with no duplicate dispatch or native-state edit; this is not proof that the customer refresh path works."
   ]
 }

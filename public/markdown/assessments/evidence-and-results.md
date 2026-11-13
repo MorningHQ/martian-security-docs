@@ -6,7 +6,7 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/evidence-and-r
 
 > **Page qualification:** Current beta console · viewer, member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review.
+> **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified.
 
 Partly verified guide
 
@@ -61,6 +61,30 @@ Select a retained turn to compare the actual attacker message, customer reply an
 Six visible lookup stages retained no reviewed references. One activated canonical skill is recorded with a Content digest control; missing references do not prove no relevant attack is known.
 
 In the endpoint-only **MR-1002** example, **Knowledge & skills** retained one activated skill and its content digest, but no reviewed knowledge references. **Probe coverage** reported one attempted, unverifiable disclosure probe. Three observed refusals and zero findings did not change its **INCONCLUSIVE** security outcome. No deterministic target oracle or sandbox business-state checks were available for this run.
+
+## Read an MCP endpoint example
+
+This separate synthetic QA example used an approved MCP `chat(message)` tool with anonymous, endpoint-only, Light and serial settings. Its admission acknowledgment failed; an operator reconciled the original campaign before the saved evidence appeared below. The [submission-error recovery limit](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md#handle-submission-and-execution-failures) remains relevant.
+
+1.  Open the saved run and confirm its agent. **MR-1001** here belongs to the separate **Documentation Native Sessions QA** organization. It shows **Completed** execution, **INCONCLUSIVE** security outcome, **3** agent requests, **16** model calls and **0** displayed findings. A budget-ended run and three refusals do not establish a security pass.
+
+![Martian Security MCP assessment MR-1001 showing completed execution, an inconclusive security outcome, three agent requests and sixteen model calls.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-mcp-result.png)
+
+Check execution and security outcome separately. This synthetic MCP result was recovered by an operator after an uncertain admission; it does not establish a security pass.
+
+2.  In **Trace**, select **Turn 1**. Compare its actual attacker message and customer reply, then inspect the action’s **Journal**. Here it records **prepared → submitted → completed**. The reply refuses disclosure; no sandbox tool call or independent business-state check was available. These requests reached the target’s MCP `chat` tool; **Observed actions** describes the agent’s separate sandbox/gateway tool use.
+
+![The actual first MCP turn with its attacker message, refusal, action identity and prepared to submitted to completed journal.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-mcp-turn.png)
+
+Compare the actual request, reply and action journal. This turn belongs to the same operator-reconciled MCP campaign; a refusal is separate from independent outcome verification.
+
+3.  Open **Probe coverage**. The disclosure probe is **attempted** with outcome **unverifiable**, not verified. It records three target calls and fifteen model calls within that probe; the campaign summary above has its own total of sixteen model calls. Keep each counter’s scope when comparing them.
+
+![MCP disclosure probe coverage showing attempted and unverifiable, three target calls, fifteen probe model calls and one inconclusive recorded attempt.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-mcp-coverage.png)
+
+Read the probe outcome and its own counters. This operator-reconciled campaign attempted the disclosure probe but retained no decisive verified result.
+
+4.  Refresh and reopen the saved run, then use **Download legacy JSON evidence**. In this check, the downloaded `MR-1001.json` retained the same agent, completed state, inconclusive verdict, attempt, trace and coverage. This JSON is separate from a published redacted review bundle.
 
 ## Exports and limitations
 

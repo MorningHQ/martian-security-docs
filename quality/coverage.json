@@ -94,7 +94,7 @@
         "realBackendWalkthrough": "passed for all required connection-management stages",
         "screenshots": "captured; four additional direct application images individually reviewed",
         "remainingGaps": [
-          "MCP/browser assessment execution is tracked separately in assessments/configure and is not established by setup approval.",
+          "Setup approval alone does not establish executor behavior. A later MCP campaign was exercised with operator-assisted evidence recovery in assessments/evidence-and-results; browser execution remains unqualified.",
           "Active-run deletion guards, preservation of populated historical runs, browser credential rotation and every authentication variant remain source reviewed.",
           "No campaign leases were issued to the disposable HTTP registration; approval revocation was read back, while revocation of an in-flight lease was not exercised."
         ]
@@ -111,6 +111,13 @@
           "environment": "Isolated local QA; HTTP/MCP/browser connection setup; disposable HTTP credential lifecycle",
           "task": "HTTP, MCP and browser connection setup and disposable HTTP lifecycle",
           "result": "passed all existing required connection-management stages; protocol-specific assessment execution remains separate",
+          "record": "quality/walkthroughs.json"
+        },
+        {
+          "date": "2026-11-14",
+          "environment": "Isolated local QA; one original bounded MCP campaign; explicitly operator-assisted evidence reconciliation",
+          "task": "MCP endpoint assessment with operator-assisted evidence recovery",
+          "result": "Observed three target requests/sixteen model calls, retained Completed/INCONCLUSIVE and actual refusal/coverage/export evidence. Original503 and two no-op200 refreshes preserved; no replacement execution or product patch.",
           "record": "quality/walkthroughs.json"
         }
       ],
@@ -324,7 +331,7 @@
         "assessment-tests"
       ],
       "qualification": "partial",
-      "validationStatus": "In isolated local QA, endpoint-only HTTP goals, outcome/technique selection, anonymous identity, Light and serial controls were exercised. MR-1002 retained its selected scope. Sandbox bindings, signed-in/browser targets and prepared scenarios remain unverified.",
+      "validationStatus": "Endpoint-only HTTP configuration and saved scope were exercised previously. A separate anonymous endpoint-only MCP campaign retained edited goals, a data outcome, Light and serial settings, then made three real tool calls. Its admission acknowledgment failed and required operator-assisted reconciliation of the original campaign. Browser, sandbox, signed-in and prepared-scenario execution remain unverified.",
       "documentationRoute": "/assessments/configure/",
       "role": "member, admin, owner",
       "route": "/#/assessment",
@@ -345,7 +352,8 @@
         "realBackendWalkthrough": "partial; see validationStatus",
         "screenshots": "captured",
         "remainingGaps": [
-          "Sandbox-backed, signed-in/browser and prepared-scenario configuration execution remain unverified."
+          "Sandbox-backed, signed-in/browser and prepared-scenario configuration execution remain unverified.",
+          "The MCP admission returned HTTP503; the public sync endpoint returned200 without reconciling the missing admission link. Its observed result required an explicitly recorded operator reconciliation; self-service recovery is not qualified."
         ]
       },
       "validation": [
@@ -354,6 +362,13 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "First endpoint-only assessment and admission failure boundary",
           "result": "Endpoint-only HTTP goals, outcome/technique selection, anonymous identity, Light and serial controls were exercised. MR-1002 retained its exact selected scope. Sandbox bindings, signed-in/browser targets and prepared scenarios remain unverified."
+        },
+        {
+          "date": "2026-11-14",
+          "environment": "Isolated local QA; one original bounded MCP campaign; explicitly operator-assisted evidence reconciliation",
+          "task": "MCP endpoint assessment with operator-assisted evidence recovery",
+          "result": "Observed three target requests/sixteen model calls, retained Completed/INCONCLUSIVE and actual refusal/coverage/export evidence. Original503 and two no-op200 refreshes preserved; no replacement execution or product patch.",
+          "record": "quality/walkthroughs.json"
         }
       ],
       "screenshots": [
@@ -362,7 +377,7 @@
         "assessment-tests"
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
-      "customerNotice": "The basic endpoint-only HTTP walkthrough is complete. Sandbox bindings, signed-in/browser targets and prepared scenarios are still being verified."
+      "customerNotice": "The basic HTTP walkthrough is complete. MCP execution was checked with operator-assisted recovery. Browser, sandbox, signed-in and prepared-scenario workflows still need complete walkthroughs."
     },
     {
       "id": "assessments/evidence-and-results",
@@ -425,10 +440,13 @@
         "assessment-coverage",
         "assessment-trace",
         "assessment-outcome-checks",
-        "assessment-knowledge"
+        "assessment-knowledge",
+        "assessment-mcp-result",
+        "assessment-mcp-turn",
+        "assessment-mcp-coverage"
       ],
       "qualification": "partial",
-      "validationStatus": "In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review.",
+      "validationStatus": "In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified.",
       "documentationRoute": "/assessments/evidence-and-results/",
       "role": "viewer, member, admin, owner",
       "route": "/#/runs/<run-id>",
@@ -460,6 +478,13 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "First endpoint-only assessment and admission failure boundary",
           "result": "MR-1002 legacy trace, actual turns, probe coverage, missing-knowledge/skill records, final state and exports passed after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review."
+        },
+        {
+          "date": "2026-11-14",
+          "environment": "Isolated local QA; one original bounded MCP campaign; explicitly operator-assisted evidence reconciliation",
+          "task": "MCP endpoint assessment with operator-assisted evidence recovery",
+          "result": "Observed three target requests/sixteen model calls, retained Completed/INCONCLUSIVE and actual refusal/coverage/export evidence. Original503 and two no-op200 refreshes preserved; no replacement execution or product patch.",
+          "record": "quality/walkthroughs.json"
         }
       ],
       "screenshots": [
@@ -467,7 +492,10 @@
         "assessment-coverage",
         "assessment-trace",
         "assessment-outcome-checks",
-        "assessment-knowledge"
+        "assessment-knowledge",
+        "assessment-mcp-result",
+        "assessment-mcp-turn",
+        "assessment-mcp-coverage"
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
       "customerNotice": "The endpoint-only trace and export walkthrough is complete. Independent business outcomes and published recorded reviews are still being verified."
@@ -608,6 +636,18 @@
           "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
           "path": "app/api/assessments.py",
           "line": 919
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/assessments.py",
+          "line": 779
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/assessment_execution.py",
+          "line": 1085
         }
       ],
       "numberedTaskStages": [
@@ -623,7 +663,7 @@
         "assessment-needs-attention"
       ],
       "qualification": "partial",
-      "validationStatus": "In isolated local QA, MR-1002 was followed from running to retained completion. MR-1003 reached Needs attention after HTTP 530 before its stop control could be used; its action remains uncertain. Successful cooperative cancellation remains unverified.",
+      "validationStatus": "MR-1002 was followed from running to retained completion. The original MR-1003 HTTP530 action remains uncertain and untouched. A separate MCP campaign executed despite an initial HTTP503; public refresh200 left the error unchanged, and one operator-assisted reconciliation restored its original completed/inconclusive evidence. Positive cooperative cancellation remains unverified.",
       "documentationRoute": "/assessments/progress-and-cancellation/",
       "role": "member, admin, owner",
       "route": "/#/runs/<run-id>",
@@ -642,7 +682,8 @@
         "realBackendWalkthrough": "partial; see validationStatus",
         "screenshots": "partial",
         "remainingGaps": [
-          "Positive cooperative cancellation and evidence-based resolution of the retained uncertain MR-1003 action remain unverified."
+          "Positive cooperative cancellation and evidence-based resolution of the retained uncertain MR-1003 action remain unverified.",
+          "A successful public refresh response after an uncertain admission did not establish that the original campaign was absent or stopped. The operator-assisted MCP reconciliation does not qualify automatic recovery."
         ]
       },
       "validation": [
@@ -657,6 +698,13 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "Cancellation attempt and uncertain target action",
           "result": "A running MR-1002 was followed to retained completion. Separate MR-1003 reached Needs attention after HTTP530 before its stop control could be used; its uncertain action is retained. No positive cancellation is claimed."
+        },
+        {
+          "date": "2026-11-14",
+          "environment": "Isolated local QA; one original bounded MCP campaign; explicitly operator-assisted evidence reconciliation",
+          "task": "MCP endpoint assessment with operator-assisted evidence recovery",
+          "result": "Observed three target requests/sixteen model calls, retained Completed/INCONCLUSIVE and actual refusal/coverage/export evidence. Original503 and two no-op200 refreshes preserved; no replacement execution or product patch.",
+          "record": "quality/walkthroughs.json"
         }
       ],
       "screenshots": [

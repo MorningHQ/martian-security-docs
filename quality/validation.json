@@ -461,6 +461,25 @@
       "environment": "Bounded author review of exact public diff, four captures and explicitly scoped private QA receipts; no independent human reviewer",
       "result": "No material mismatch found in the named setup/lifecycle scope",
       "details": "Matched fifteen real UI mutation receipts across exactly three new synthetic registrations, twelve actual role/auth/tenant denials, independent saved states, one MCP and one website chat preflight, six owning source-file hashes and four individually viewed PNGs. All five original required connection-management stages remain unchanged; the other36 coverage entries are unchanged. Only Connect an agent is promoted, for setup and disposable HTTP management. MCP/browser assessment execution, active-run guards, populated historical retention and in-flight lease behavior retain explicit limits. No runtime source, IAM, workflow gate or original uncertain operation was changed."
+    },
+    {
+      "scope": "MCP endpoint assessment with operator-assisted evidence recovery",
+      "environment": "Isolated local QA; actual model-backed MCP campaign; unchanged pinned product code; six runtime/archive source matches",
+      "result": "Observed bounded execution, explicit operator-assisted reconciliation, customer trace/coverage/reload and actual legacy JSON export",
+      "record": "quality/walkthroughs.json",
+      "details": "Exactly one original campaign;3target calls/16model calls/1attempt/0findings. Initial202 retained downstream503;two public refresh200 responses were no-ops because campaign_id was absent. After terminal native success/no pending recovery, the existing control-plane routine reconciled the same original handle once. No provider or target replay, manual admission-field assignment, native-state edit or product source patch. UI and downloaded JSON retained Completed/INCONCLUSIVE. Three individually inspected1440x1000 captures added. Broader assessment guides remain partial; no required qualification stage or pending image was removed."
+    },
+    {
+      "scope": "MCP evidence guide simulated novice and aesthetic review",
+      "environment": "Five changed articles;11 desktop/narrow light/dark combinations;real browser/clipboard;author-operated AI simulation with no human participant",
+      "result": "All three new full-size images,step numbering,exact page copy,agent-link copy,search,nested refresh and callout readability passed",
+      "details": "222 local responses with no document console/page errors,HTTP failures,request failures or overflow.1440px light/390px dark checks covered all five changed articles;MCP evidence also passed320px dark. Three new actual PNGs decoded at1440x1000;full-size turn image opened. Exact Markdown retained operator-assisted qualification and all three images. The caution card measured8.05:1 light/8.76:1 dark body contrast. Four rendered desktop/mobile captures were individually viewed. Reader fixes name the run code/page URL to hand to the operator, distinguish target MCP requests from agent sandbox tool use,and separate campaign16/probe15 model-call counters. The logo-only header and hidden provenance row remain intact."
+    },
+    {
+      "scope": "MCP result final real-backend history and refresh readback",
+      "environment": "Original isolated QA organization and original campaign;actual console and Backend;no further target/model calls",
+      "result": "History selection and full page refresh retained the original completed/inconclusive MCP run",
+      "details": "32 observed Backend responses included two expected unconfigured connectors503 and30successful reads/refreshes. The run detail and tool-call endpoints returned200;no page errors. The two connector errors account for the observed console errors. A preceding helper waited for an unnecessary detail fetch on a cached history navigation and timed out;fresh snapshot showed the reopened run,then a real full reload independently verified its retained state. No write or execution was repeated to repair this observation failure."
     }
   ],
   "remainingGaps": [
@@ -468,7 +487,7 @@
     "Twenty-five guides are verified in named local/CI scopes; eight are partial and four pending. Eighteen remaining screenshot references and twelve full walkthroughs stay enforced by the strict release audit.",
     "Sandbox-backed verified effects, fresh-world repetitions/negative controls and published artifact-backed Recorded review/domain/redacted-bundle exports remain unverified.",
     "MR-1003 retains an uncertain teaching-tunnel action; positive cooperative cancellation and evidence-based resolution are not yet qualified.",
-    "Dataset second-version publication, successful generated/personal worlds, non-Boolean model execution, MCP/browser assessment execution and untested connection-management variants still need qualification. Native session views are verified through separately provisioned instrumentation; SDK0.1.2 native-ingestion/credential issuance is not provided.",
+    "Dataset second-version publication, successful generated/personal worlds, non-Boolean model execution, browser assessment execution and untested connection-management variants still need qualification. MCP endpoint execution was observed with explicitly operator-assisted recovery; the public lost-admission sync path remains a product gap. Native session views are verified through separately provisioned instrumentation; SDK0.1.2 native-ingestion/credential issuance is not provided.",
     "Local QA demonstrates named pinned-source behavior, not whole hosted AWS-beta parity. Local orchestration is unavailable (connectors503), native-view reads still have intermittent502/timeouts with successful normal read recovery, and Discovery needs a compatible collector/Backend pair plus operator-approved scope.",
     "SDK task guides and current tutorial install the latest release;exact persisted Evals/hosted redteam/combined-CI qualification remains on0.1.2. Account-free current-install steps and the local suite guide were exercised on0.1.3,with one judge model/provider route. Newer installation does not requalify hosted workflows.",
     "SDK 0.1.3 native bedrock:/ response-judge routing fails through MLflow 3.16.1 AmazonBedrockProvider.get_endpoint_url; use the verified OpenAI-compatible Bedrock endpoint. A native-routing SDK fix and release remain follow-up work."

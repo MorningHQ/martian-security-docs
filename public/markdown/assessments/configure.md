@@ -6,11 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/configure/)
 
 > **Page qualification:** Current beta console · member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, endpoint-only HTTP goals, outcome/technique selection, anonymous identity, Light and serial controls were exercised. MR-1002 retained its selected scope. Sandbox bindings, signed-in/browser targets and prepared scenarios remain unverified.
+> **Walkthrough limits:** Endpoint-only HTTP configuration and saved scope were exercised previously. A separate anonymous endpoint-only MCP campaign retained edited goals, a data outcome, Light and serial settings, then made three real tool calls. Its admission acknowledgment failed and required operator-assisted reconciliation of the original campaign. Browser, sandbox, signed-in and prepared-scenario execution remain unverified.
 
 Partly verified guide
 
-The basic endpoint-only HTTP walkthrough is complete. Sandbox bindings, signed-in/browser targets and prepared scenarios are still being verified.
+The basic HTTP walkthrough is complete. MCP execution was checked with operator-assisted recovery. Browser, sandbox, signed-in and prepared-scenario workflows still need complete walkthroughs.
 
 Define the authorized scope before sending adversarial requests to a customer agent. The wizard has six steps: **Environment → Agent → Goals → Tests → Run → Report**. This guide covers configuration through admission; the [first-assessment tutorial](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/get-started/first-assessment.md) provides a complete introductory run.
 
@@ -82,5 +82,7 @@ The normal wizard selects scenario-backed packs. Arbitrary Wiki `scenario_id` se
 1.  Resolve any message above **Start assessment**. Typical blockers are an unapproved connection, missing sandbox, no runnable technique, unavailable pack catalogue or paused admission during dataset updates.
 2.  Click **Start assessment** once. Acknowledgment creates a run code and opens **Run**. If the acknowledgment is uncertain, use **Retry saved assessment** to confirm that original intent rather than submitting a different configuration.
 3.  Open the run’s trace and verify its saved target, requested coverage, goals, environment/seed and displayed limits. Refresh and reopen it from **Assessments** to confirm persistence.
+
+For an MCP target, the approved entry tool and message argument come from its [connection setup](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/connections.md#register-the-target). A bounded anonymous, endpoint-only MCP example made real tool calls, but its lost admission acknowledgment required operator-assisted reconciliation of the original campaign. See the [MCP evidence example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-an-mcp-endpoint-example) and [submission-failure recovery](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md#handle-submission-and-execution-failures) before repeating work after an error.
 
 Continue with [progress and cancellation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md) and [evidence and results](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md). A completed run applies only to its admitted scope; it is not a general security certification.

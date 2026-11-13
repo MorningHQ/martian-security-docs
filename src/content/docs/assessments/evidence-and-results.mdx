@@ -54,6 +54,24 @@ Use any signed-in role with access to the organization's run. Complete or retain
 
 In the endpoint-only **MR-1002** example, **Knowledge & skills** retained one activated skill and its content digest, but no reviewed knowledge references. **Probe coverage** reported one attempted, unverifiable disclosure probe. Three observed refusals and zero findings did not change its **INCONCLUSIVE** security outcome. No deterministic target oracle or sandbox business-state checks were available for this run.
 
+## Read an MCP endpoint example
+
+This separate synthetic QA example used an approved MCP `chat(message)` tool with anonymous, endpoint-only, Light and serial settings. Its admission acknowledgment failed; an operator reconciled the original campaign before the saved evidence appeared below. The [submission-error recovery limit](/assessments/progress-and-cancellation/#handle-submission-and-execution-failures) remains relevant.
+
+1. Open the saved run and confirm its agent. **MR-1001** here belongs to the separate **Documentation Native Sessions QA** organization. It shows **Completed** execution, **INCONCLUSIVE** security outcome, **3** agent requests, **16** model calls and **0** displayed findings. A budget-ended run and three refusals do not establish a security pass.
+
+<Screenshot id="assessment-mcp-result" />
+
+2. In **Trace**, select **Turn 1**. Compare its actual attacker message and customer reply, then inspect the action's **Journal**. Here it records **prepared → submitted → completed**. The reply refuses disclosure; no sandbox tool call or independent business-state check was available. These requests reached the target's MCP `chat` tool; **Observed actions** describes the agent's separate sandbox/gateway tool use.
+
+<Screenshot id="assessment-mcp-turn" />
+
+3. Open **Probe coverage**. The disclosure probe is **attempted** with outcome **unverifiable**, not verified. It records three target calls and fifteen model calls within that probe; the campaign summary above has its own total of sixteen model calls. Keep each counter's scope when comparing them.
+
+<Screenshot id="assessment-mcp-coverage" />
+
+4. Refresh and reopen the saved run, then use **Download legacy JSON evidence**. In this check, the downloaded `MR-1001.json` retained the same agent, completed state, inconclusive verdict, attempt, trace and coverage. This JSON is separate from a published redacted review bundle.
+
 ## Exports and limitations
 
 **Download report** exports run/finding JSON. The trace's legacy JSON download includes its currently displayed findings page; read its pagination flags. Artifact-backed **Recorded review** can offer **Download redacted review** when a published revision is available. See [history and exports](/assessments/history-and-exports/) for the differences.

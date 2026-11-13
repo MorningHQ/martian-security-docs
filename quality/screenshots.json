@@ -2881,6 +2881,75 @@
       "validationStatus": "Real UI plus normal-session API readback; individually viewed for framing and secrets. Setup and disposable HTTP lifecycle only; protocol-specific assessment execution remains separate.",
       "reviewedForSecrets": true,
       "sha256": "356b441caa4beb3218e3c5e2909e6976c7149ce5d33b594ff71329701b87637f"
+    },
+    {
+      "id": "assessment-mcp-result",
+      "file": "assessment-mcp-result.png",
+      "alt": "Martian Security MCP assessment MR-1001 showing completed execution, an inconclusive security outcome, three agent requests and sixteen model calls.",
+      "caption": "Check execution and security outcome separately. This synthetic MCP result was recovered by an operator after an uncertain admission; it does not establish a security pass.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/evidence-and-results: Read an MCP endpoint example, step 1"
+      ],
+      "environment": "Isolated local QA; real Frontend/Backend/Agents; synthetic Documentation Native Sessions QA organization; operator-assisted reconciliation of the original MCP campaign",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T02:19:44.959886+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; six owning source files matched their pins. This is not hosted-beta parity.",
+      "validationStatus": "Real model-backed MCP execution; original uncertain admission preserved, then reconciled once by the operator using the existing Backend routine. UI reload, turn/coverage views and actual legacy export agreed. Images individually reviewed for readability and secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "3cade9a1d7b26a66ed8363a5f1148781600080547f3a757a4d4d753f2d336e31"
+    },
+    {
+      "id": "assessment-mcp-turn",
+      "file": "assessment-mcp-turn.png",
+      "alt": "The actual first MCP turn with its attacker message, refusal, action identity and prepared to submitted to completed journal.",
+      "caption": "Compare the actual request, reply and action journal. This turn belongs to the same operator-reconciled MCP campaign; a refusal is separate from independent outcome verification.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/evidence-and-results: Read an MCP endpoint example, step 2"
+      ],
+      "environment": "Isolated local QA; real Frontend/Backend/Agents; synthetic Documentation Native Sessions QA organization; operator-assisted reconciliation of the original MCP campaign",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T02:20:58.110538+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; six owning source files matched their pins. This is not hosted-beta parity.",
+      "validationStatus": "Real model-backed MCP execution; original uncertain admission preserved, then reconciled once by the operator using the existing Backend routine. UI reload, turn/coverage views and actual legacy export agreed. Images individually reviewed for readability and secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "c54dfd69a67840d19eb79e95223f44124e90cfe6a2efa0a83d911da1336fc311"
+    },
+    {
+      "id": "assessment-mcp-coverage",
+      "file": "assessment-mcp-coverage.png",
+      "alt": "MCP disclosure probe coverage showing attempted and unverifiable, three target calls, fifteen probe model calls and one inconclusive recorded attempt.",
+      "caption": "Read the probe outcome and its own counters. This operator-reconciled campaign attempted the disclosure probe but retained no decisive verified result.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/evidence-and-results: Read an MCP endpoint example, step 3"
+      ],
+      "environment": "Isolated local QA; real Frontend/Backend/Agents; synthetic Documentation Native Sessions QA organization; operator-assisted reconciliation of the original MCP campaign",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T02:21:56.794129+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; six owning source files matched their pins. This is not hosted-beta parity.",
+      "validationStatus": "Real model-backed MCP execution; original uncertain admission preserved, then reconciled once by the operator using the existing Backend routine. UI reload, turn/coverage views and actual legacy export agreed. Images individually reviewed for readability and secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "f37729a1b6b159b1381f28d3fca7364f7c24922e36aa83b37a05f2059d681ba1"
     }
   ]
 }
