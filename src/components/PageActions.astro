@@ -1,0 +1,97 @@
+---
+import { mirrorAsset, pageLinks } from '../lib/agent-links.mjs';
+const links = pageLinks(Astro.url.pathname);
+---
+
+<docs-page-actions data-pagefind-ignore data-markdown-url={links.local} data-agent-url={links.mirror}>
+  <div class="page-action-group">
+    <button class="page-copy" type="button" data-copy-page disabled title="Copy this page as Markdown">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3"/></svg>
+      <span>Copy page</span>
+    </button>
+    <details class="page-action-menu">
+      <summary aria-label="More page actions" title="More page actions">
+        <svg aria-hidden="true" viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m5 8 5 5 5-5"/></svg>
+      </summary>
+      <div class="page-action-options">
+        <button type="button" data-copy-agent disabled>Copy agent link<span>Share this page with an assistant</span></button>
+        <a data-agent-markdown href={links.mirror} target="_blank" rel="noopener">View Markdown<span>Read the plain-text version ↗</span></a>
+        <a data-agent-index href={mirrorAsset('llms.txt')} target="_blank" rel="noopener">Agent index<span>Browse all documentation ↗</span></a>
+      </div>
+    </details>
+  </div>
+  <span class="sr-only" role="status" aria-live="polite"></span>
+</docs-page-actions>
+
+<script>
+  class DocsPageActions extends HTMLElement {
+    connectedCallback() {
+      if (this.dataset.ready) return;
+      this.dataset.ready = 'true';
+      const pageButton = this.querySelector<HTMLButtonElement>('[data-copy-page]')!;
+      const linkButton = this.querySelector<HTMLButtonElement>('[data-copy-agent]')!;
+      const menu = this.querySelector<HTMLDetailsElement>('details')!;
+      const status = this.querySelector<HTMLElement>('[role="status"]')!;
+      const label = pageButton.querySelector('span')!;
+      let markdown = '';
+      let feedbackTimer: ReturnType<typeof setTimeout>;
+      const feedback = (message: string) => {
+        clearTimeout(feedbackTimer);
+        status.textContent = message;
+        label.textContent = message === 'Page copied' ? 'Copied' : message === 'Agent link copied' ? 'Link copied' : 'Copy failed';
+        pageButton.title = message.includes('copied') ? 'Copy this page as Markdown' : 'Open more page actions and select View Markdown';
+        feedbackTimer = setTimeout(() => { status.textContent = ''; label.textContent = 'Copy page'; pageButton.title = 'Copy this page as Markdown'; }, 5000);
+      };
+      const fallbackCopy = (value: string) => {
+        const previousFocus = document.activeElement as HTMLElement | null;
+        const field = document.createElement('textarea');
+        field.value = value;
+        field.setAttribute('readonly', '');
+        field.setAttribute('aria-label', 'Text to copy');
+        Object.assign(field.style, { position: 'fixed', top: '0', left: '0', width: '1px', height: '1px', opacity: '0' });
+        document.body.append(field);
+        field.select();
+        let copied = false;
+        try { copied = document.execCommand('copy'); }
+        finally { field.remove(); previousFocus?.focus({ preventScroll: true }); }
+        if (!copied) throw new Error('Clipboard unavailable');
+      };
+      const copy = async (value: string, message: string) => {
+        try {
+          if (navigator.clipboard?.writeText) {
+            try { await navigator.clipboard.writeText(value); }
+            catch { fallbackCopy(value); }
+          } else fallbackCopy(value);
+          feedback(message);
+        } catch { feedback('Copy failed. Use View Markdown.'); }
+      };
+      // Load before the click so the HTTP clipboard fallback retains user activation.
+      fetch(this.dataset.markdownUrl!, { credentials: 'omit' })
+        .then(async (response) => {
+          if (!response.ok) throw new Error('Markdown unavailable');
+          const content = await response.text();
+          if (!content.startsWith('# ')) throw new Error('Unexpected Markdown response');
+          markdown = content;
+          pageButton.disabled = false;
+        })
+        .catch(() => { feedback('Page copy unavailable. Use View Markdown.'); });
+      linkButton.disabled = false;
+      pageButton.addEventListener('click', () => copy(markdown, 'Page copied'));
+      linkButton.addEventListener('click', () => {
+        copy(this.dataset.agentUrl!, 'Agent link copied');
+        menu.open = false;
+        this.querySelector<HTMLElement>('summary')!.focus();
+      });
+      this.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && menu.open) {
+          menu.open = false;
+          this.querySelector<HTMLElement>('summary')!.focus();
+        }
+      });
+      document.addEventListener('click', (event) => {
+        if (!this.contains(event.target as Node)) menu.open = false;
+      });
+    }
+  }
+  if (!customElements.get('docs-page-actions')) customElements.define('docs-page-actions', DocsPageActions);
+</script>

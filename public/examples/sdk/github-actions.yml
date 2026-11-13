@@ -33,7 +33,7 @@ jobs:
       - name: Install the verified released SDK
         run: |
           uv venv .venv
-          uv pip install --python .venv --index-url https://pypi.org/simple 'martian-sdk[evals]==0.1.2'
+          uv pip install --python .venv --index-url https://pypi.org/simple 'martian-sdk[evals]'
           .venv/bin/martian --version
           .venv/bin/martian redteam validate redteam.yaml
       - name: Run one persisted Evals and redteam session

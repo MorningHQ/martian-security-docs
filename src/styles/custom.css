@@ -65,6 +65,25 @@ site-search dialog { border: 1px solid var(--sl-color-hairline); border-radius: 
 .sidebar-content [aria-current='page'], .sidebar-content [aria-current='page']:hover { background: var(--sl-color-bg-inline-code); color: var(--sl-color-white); font-weight: 550; }
 .sidebar-content a:not([aria-current='page']):hover { background: var(--sl-color-bg-inline-code); color: var(--sl-color-white); }
 .doc-section-label { margin: 0 0 8px; color: var(--sl-color-gray-3); font-size: 12px; font-weight: 500; line-height: 1.5; }
+.doc-title-tools { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; margin-bottom: .75rem; }
+.doc-title-tools .doc-section-label { margin: 0; }
+.doc-title-tools + #_top { scroll-margin-top: calc(var(--sl-nav-height) + 5rem); }
+docs-page-actions { position: relative; display: block; font-size: 12px; line-height: 1.5; }
+.page-action-group { display: flex; align-items: stretch; border: 1px solid var(--sl-color-hairline); border-radius: 7px; background: var(--sl-color-bg); }
+.page-action-group :is(button, summary) { font: inherit; color: var(--sl-color-gray-2); cursor: pointer; }
+.page-copy { display: inline-flex; gap: .45rem; align-items: center; justify-content: center; border: 0; border-radius: 6px 0 0 6px; background: transparent; padding: .45rem .65rem; min-width: 6.75rem; min-height: 36px; font-weight: 500 !important; white-space: nowrap; }
+.page-action-group :is(button, summary):hover { background: var(--sl-color-bg-inline-code); color: var(--sl-color-white); }
+.page-action-group :is(button, summary, a):focus-visible { outline: 2px solid var(--color-rust); outline-offset: 2px; }
+.page-action-group button:disabled { opacity: .55; cursor: wait; }
+.page-action-menu { position: relative; border-inline-start: 1px solid var(--sl-color-hairline); }
+.page-action-menu summary { display: flex; align-items: center; justify-content: center; list-style: none; width: 34px; min-height: 36px; height: 100%; border-radius: 0 6px 6px 0; }
+.page-action-menu summary::-webkit-details-marker { display: none; }
+.page-action-options { position: absolute; inset-block-start: calc(100% + 7px); inset-inline-end: -1px; z-index: 30; width: 250px; padding: 5px; border: 1px solid var(--sl-color-hairline); border-radius: 9px; background: var(--sl-color-bg); box-shadow: 0 8px 28px #00000012; }
+.page-action-options :is(button, a) { display: block; width: 100%; padding: .65rem .7rem; border: 0; border-radius: 5px; text-align: start; text-decoration: none; background: transparent; font: inherit; font-weight: 550; color: var(--sl-color-white); }
+.page-action-options a:hover { background: var(--sl-color-bg-inline-code); }
+.page-action-options span { display: block; margin-top: 3px; font-size: 11px; font-weight: 400; color: var(--sl-color-gray-3); }
+@media (max-width: 49.99rem) { .page-copy, .page-action-menu summary { min-height: 44px; } .page-action-menu summary { width: 40px; } }
+@media print { docs-page-actions { display: none; } }
 h1 { margin: 0; letter-spacing: -.03em; line-height: 1.25; font-weight: 600; }
 .sl-markdown-content { font-size: var(--sl-text-body); }
 .sl-markdown-content > p:first-child { font-size: 15px; line-height: 1.65; max-width: 68ch; }

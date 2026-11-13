@@ -14,7 +14,7 @@ Run the Evals tests and one YAML redteam suite in a single pytest execution and 
 
 ## Before you start
 
-- Use Python 3.12+ and **`martian-sdk[evals]==0.1.2`** from [installation](/sdk/install-and-configure/).
+- Use Python 3.12+ and **`martian-sdk[evals]`** from [installation](/sdk/install-and-configure/).
 - Complete the [published dataset setup](/sdk/evaluations/), [prepare redteam.yaml](/sdk/redteam/#1-inspect-the-one-probe-plan), and [validate it without a paid call](/sdk/redteam/#2-validate-without-a-paid-call). You do not need to execute a standalone redteam probe first; combined CI executes its own probe.
 - An owner/admin supplies a key with `evals:read`, `evals:write`, `ci:read`, `ci:write`, and `redteam:run`, with restrictions matching this dataset and agent. Hosted generation/judging must be enabled and configured for the organization.
 - Set `MARTIAN_API_URL`, `MARTIAN_API_TOKEN`, `MARTIAN_AGENT_ID`, and `MARTIAN_EVALS_GIT_SHA`. The agent must belong to the organization; the revision must identify the code tested.
@@ -60,7 +60,7 @@ export MARTIAN_EVALS_GIT_SHA="$(git rev-parse HEAD)"
 .venv/bin/martian redteam validate redteam.yaml
 ```
 
-Commit any intended callback, tests or configuration changes before taking the revision. Expect `0.1.2` and valid configuration. Ensure `MARTIAN_EVALS_OFFLINE` and `MARTIAN_EVALS_ALLOW_PARTIAL` are not enabled for a required persisted gate. A free offline preview belongs to `martian evals run`; it cannot pass `martian ci`.
+Commit any intended callback, tests or configuration changes before taking the revision. Expect an installed SDK release and valid configuration. Ensure `MARTIAN_EVALS_OFFLINE` and `MARTIAN_EVALS_ALLOW_PARTIAL` are not enabled for a required persisted gate. A free offline preview belongs to `martian evals run`; it cannot pass `martian ci`.
 
 ## 3. Run one combined attempt
 
@@ -119,7 +119,7 @@ Open `results/ci-session.json`. A successful persisted gate has:
 
 ### Observed qualification results
 
-The exact downloadable tutorial ZIP passed one original combined CLI attempt on a GitHub-hosted Ubuntu runner with SDK **0.1.2**. Its receipt and Backend readback agreed: **exit 0**, **3 of 3 test groups passed**, **persisted** upload and **exported** evidence. Independent readback confirmed three native exports and exactly two settled generation/judging model calls. The 12 tutorial files remained unchanged.
+An earlier tutorial snapshot passed one original combined CLI attempt on a GitHub-hosted Ubuntu runner. Its receipt and Backend readback agreed: **exit 0**, **3 of 3 test groups passed**, **persisted** upload and **exported** evidence. Independent readback confirmed three native exports and exactly two settled generation/judging model calls. The [verification record](/reference/verification/#sdk-compatibility) identifies the tested package and artifact; the current download installs the latest release.
 
 The three groups contain the **two dataset records**, **two inline scorer checks**, and **one adversarial probe**. Each group produces one CI test record; “3 of 3” does not mean only three individual assertions ran.
 
@@ -155,7 +155,7 @@ git commit -m 'Run Martian tutorial checks in CI'
 git status --short
 ```
 
-The workflow expects `demo_agent.py`, `pytest.ini`, `redteam.yaml` and `tests/evals/` in the checked-out repository root. Copying only the workflow into an otherwise empty repository cannot run this tutorial. Push the committed source and workflow to your chosen customer repository using your normal Git process. The example runs on `main` pushes or manual dispatch, installs the exact SDK release and uses SHA-pinned Actions.
+The workflow expects `demo_agent.py`, `pytest.ini`, `redteam.yaml` and `tests/evals/` in the checked-out repository root. Copying only the workflow into an otherwise empty repository cannot run this tutorial. Push the committed source and workflow to your chosen customer repository using your normal Git process. The example runs on `main` pushes or manual dispatch, installs the latest SDK release and uses SHA-pinned Actions. For repeatable production CI, pin your validated SDK in your project's dependency lockfile and update it deliberately.
 
 Configure the `agent-evals` environment and the trusted refs/protection policy available to your GitHub plan:
 
@@ -202,9 +202,9 @@ Before committing, make these application-specific replacements:
 
 Create the local environment in this repository, install the SDK and the application's dependencies, and repeat the free preview and YAML validation before any paid run. Commit the merged source, tests, config and workflow; then set `MARTIAN_EVALS_GIT_SHA` from this repository's new commit for local CI. GitHub Actions takes the checked-out commit automatically. Do not use the extracted tutorial's old revision to label different customer application code.
 
-## Run a local suite on pull requests (SDK 0.1.3)
+## Run a local suite on pull requests
 
-SDK 0.1.3 adds a second, lighter check for CI: a [suite file](/sdk/local-evals/) that runs with no Martian secret. It suits pull requests from branches that must not see your platform key.
+A [suite file](/sdk/local-evals/) provides a lighter check for CI that runs with no Martian secret. It suits pull requests from branches that must not see your platform key.
 
 ```sh
 .venv/bin/martian evals run evals.yaml --fresh --output eval-results
@@ -233,4 +233,4 @@ Reports use digests by default. Do not upload `.martian-local-mlflow/`, credenti
 - Recover an unknown redteam operation by its original operation UUID. Do not submit new generation/judging to replace uncertain evidence. Score `0` is a valid failing judgment, not a retry condition.
 - Sync callbacks need their own network timeouts; cancellation cannot kill their threads or undo already issued calls. Keep the example's concurrency and volume bounds until your service allowance and target behavior are qualified.
 
-There is no `martian scan` command in SDK 0.1.2. Use the released `martian ci` contract shown here. Continue with [troubleshooting](/reference/troubleshooting/), [permissions](/reference/permissions/), or the browser [first evaluation](/evals/first-run/) guide.
+Use `martian ci` for the persisted gate; `martian scan` is not a supported command. Continue with [troubleshooting](/reference/troubleshooting/), [permissions](/reference/permissions/), or the browser [first evaluation](/evals/first-run/) guide.

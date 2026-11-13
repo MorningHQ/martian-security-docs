@@ -1,4 +1,4 @@
-# Martian SDK 0.1.2 runnable tutorial
+# Martian SDK runnable tutorial
 
 Use Python 3.12 or newer and Git. Run all commands from the extracted tutorial
 folder. The ZIP has no Git history: create and commit this isolated demo repository
@@ -11,7 +11,7 @@ git add -- .gitignore README.md demo_agent.py pytest.ini \
   key_agent_id.py github-actions.yml tests/evals
 git commit -m 'Add Martian SDK tutorial'
 python3 -m venv .venv
-.venv/bin/python -m pip install 'martian-sdk[evals]==0.1.2'
+.venv/bin/python -m pip install --upgrade 'martian-sdk[evals]'
 .venv/bin/martian --version
 .venv/bin/martian redteam validate redteam.yaml
 ```
@@ -242,7 +242,7 @@ ID remains attribution and an access binding rather than proof of callback ident
   These differ from the console's admitted Evals run budgets.
 - `--require-export` waits for bounded export readback; it does not rerun the
   target or a judge. The local and Backend result must agree.
-- There is no `martian scan` command in release 0.1.2.
+- Use `martian ci` for a persisted gate; `martian scan` is not a supported command.
 
 The free preview and CLI validation can be checked without a platform account.
 Hosted dataset/redteam/combined steps require independent live Backend validation.

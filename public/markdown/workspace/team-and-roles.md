@@ -1,0 +1,65 @@
+# Invite teammates and understand roles
+
+> Join the correct workspace, issue a scoped team invitation and understand the owner, admin, member and viewer boundaries.
+
+Source: [Web version](https://docs.martiansecurity.ai/workspace/team-and-roles/)
+
+> **Page qualification:** Current beta console · owner, admin · Verified 2026-11-13 · Isolated local QA. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
+
+Give a teammate the appropriate access to your organization and verify that the invitation and membership are retained. Each email address belongs to one organization in the current product.
+
+## Before you start
+
+An **Owner** or **Admin** can invite teammates. Any tenant role can inspect the member list. Use the organization address returned during account setup. New organizations are provisioned through an operator-issued owner invitation; a normal team invite joins an existing organization.
+
+| Role | Typical customer authority |
+| --- | --- |
+| Viewer | Inspect organization data and supported saved-result exports; no assessment, dataset-authoring or control writes |
+| Member | Run assessments/Evals, create supported environments/data, and perform permitted authoring/review tasks |
+| Admin | Member actions plus connection approval, invitations, publishing/management and scoped API-key/control administration |
+| Owner | The highest organization role, including admin authority |
+
+Feature-specific restrictions still apply. An API key has its own scopes and restrictions; it is not an Owner browser session. See the [permissions reference](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/permissions.md).
+
+## Invite a teammate
+
+1.  Open **Team** and verify the organization name and current **Members**.
+2.  Under **Invite a teammate**, fill **Recipient name**, **Email** and **Role**: Member, Admin or Viewer. Grant only the role the task needs.
+3.  Optionally enter **Internal description** and **Welcome note**. Internal description is visible to invitation administrators, not included in the email. The welcome note is shown to the recipient or included in an email, depending on delivery mode.
+
+![Owner invitation form for a synthetic member before generating a private link.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/workspace-invite-form.png)
+
+Choose the recipient and role before generating an invitation. No live invitation link or password appears in this capture.
+
+4.  In manual mode, click **Generate invitation link**. Privately copy it with **Copy link**, then **Done**. No email was sent. The live link is a bearer credential; do not put it in screenshots or public tickets.
+5.  In configured email mode, the button is **Send invitation**. Verify the intended recipient before sending. An unconfigured sender must be repaired by your operator; an accepted mail submission is not proof of inbox delivery.
+6.  Check the invitation row’s recipient, pending/delivery state and expiry. The recipient confirms their role on acceptance; after joining, verify it in **Members**. Refresh **Team** to verify the retained invitation. Keep manual links in the approved private channel only.
+
+## Accept an invitation and sign in
+
+1.  The recipient opens the complete private link while signed out of any other account.
+2.  Confirm the organization, invited email, role and expiry. Enter **Your name**, **Password** and **Confirm password**, then **Join organization**. Use a password between 12 and 72 characters.
+3.  For an organization-owner invitation, complete **Organization name**, **Organization subdomain** and **About your organization**, then **Create organization**. This is distinct from joining an existing team.
+
+![Real member invitation acceptance form with empty password fields.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/workspace-accept-invitation.png)
+
+The signed-out recipient confirms Martian Docs Lab and the member role before joining. The private invitation URL is outside the captured page.
+
+4.  Confirm **You joined your organization**, **Your workspace is ready**, or **Your account is ready**, then **Continue to sign in** at the returned organization address.
+5.  Sign in with the invited email and chosen password. Open **Team** and verify the member/role after refresh. Account readiness and Evals readiness are separate: **Eval setup needs attention** requires operator completion even when sign-in succeeds.
+
+![Retained Team list with synthetic owner, member and viewer accounts.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/workspace-team.png)
+
+After signing in, the member can read all three retained organization roles. Invitation administration is reserved for owners/admins.
+
+## Replace, revoke or recover an invitation
+
+-   Use **Generate new link** or the displayed replace/resend action when a private link is lost. Replacing a link invalidates the old one and can be subject to a cooldown.
+-   **Revoke invitation** prevents future acceptance. It is not a promise that an already accepted member was removed.
+-   An incomplete, expired, revoked or consumed link needs the inviter’s help. If acceptance may already have completed, try signing in before requesting another invitation.
+-   A user signed in as another account must sign out before accepting for a different email.
+-   A wrong tenant host or foreign organization resource is rejected. Visible navigation does not override the role enforced by the API.
+
+The Team screen lists existing members and manages invitations. Do not assume it provides a complete existing-member role-change or removal workflow when those controls are absent in your release.
+
+Next: [connect an agent](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/connections.md), [run your first assessment](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/get-started/first-assessment.md), or review [permissions](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/permissions.md).

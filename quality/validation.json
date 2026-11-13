@@ -321,6 +321,24 @@
       "environment": "Exact public tutorial ZIP extracted and committed unchanged; Python 3.12.14; martian-sdk[evals] 0.1.3 from public PyPI",
       "result": "passed for the account-free steps only",
       "details": "Install, martian --version (0.1.3), the offline local preview (1 test passed, receipt state offline, no session ID) and martian redteam validate redteam.yaml (exit 0) gave the same results as on 0.1.2, with no tracked tutorial file changed. API-key creation, persisted Evals, hosted red teaming and combined CI were not re-run on 0.1.3; their recorded qualification remains on 0.1.2."
+    },
+    {
+      "scope": "Agent-readable documentation exports and page actions",
+      "environment": "Node26;43-page production build;42 public articles;local static preview127.0.0.1:4330",
+      "result": "Build/default checks,conversion regressions and real local clipboard checks passed;public mirror publication pending",
+      "details": "Generated42Markdown pages plus llms.txt/llms-full.txt and robots.txt from rendered public articles. All58 exact code-copy payloads and117 rendered screenshot captions retained;qualifications/roles/limits retained;diagrams expose Mermaid. CI compares committed public exports to current rendering and rejects stale mirrors. Actual Clipboard API clicks copied the complete SDK page byte-for-byte with Page copied feedback and the exact versioned raw link with Agent link copied feedback;Escape closed dropdown and restored summary focus. No page errors in that run. Links and discovery metadata target public HTTPS GitHub assets without login/JavaScript;trusted custom-domain HTTPS still fails hostname validation. Public HTTP fallback and external agent fetch will be checked after publication."
+    },
+    {
+      "scope": "Evergreen SDK guides and refreshed tutorial download",
+      "environment": "Fresh CPython3.12.10 virtualenv;unpinned pip install from public PyPI resolved martian-sdk0.1.3;account-free local execution only",
+      "result": "Install,local preview,YAML validation and suite first-run checks passed",
+      "details": "Removed release announcement and repeated numeric SDK labels/headings/install pins from task guides and tutorial README/workflow. Linked PyPI release history;exact test versions and persisted-service qualification limits remain in reference/verification and quality records. Rebuilt ZIP with all12 members byte-equal to public files. Fresh install printed installed version;offline preview exited0 with offline receipt/no Backend session;redteam YAML validation exited0;suite example exited1 with its intended failing case. No Backend/model run,requalification of hosted flows or PyPI metadata publication claimed. Production CI advice keeps validated dependencies in a lockfile."
+    },
+    {
+      "scope": "Agent page actions novice/aesthetic review and final feedback repair",
+      "environment": "AI-simulated independent novice review; no human participant; local production preview at1440x1000 and390x844 in light/dark themes",
+      "result": "Bounded review passed; top-anchor and mobile feedback overlap findings fixed and rechecked",
+      "details": "Independent review checked visible controls, menu labels/destinations, same-origin Markdown200, evergreen introduction, focused keyboard/Escape/focus and successful copy feedback. Root verified fresh final HTML after an initial stale browser-cache observation: #_top actions remained below header; no numeric SDK announcement. Replaced the transient overlay with a stable-width in-button Copied/Link copied label plus screen-reader status. Final390dark actual clipboard payload still matched the full page, status width1px, tools bottom170/title top182 and no page overflow. Final desktop light dropdown and mobile dark captures were visually inspected. Public mirror, HTTP fallback and JavaScript-disabled checks remain publication follow-ups."
     }
   ],
   "remainingGaps": [

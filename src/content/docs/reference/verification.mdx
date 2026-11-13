@@ -66,6 +66,15 @@ The local QA stack has no sandbox orchestrator: its connector request returns 50
 
 The beginner and visual review is an **AI-simulated novice review**, with no human participant. Desktop and narrow navigation, search, themes, image viewing and keyboard checks passed. Follow-up light/dark checks at 1440 × 1000 and 390 × 844 verified the revised comparison layout and explicit source-baseline links without overflow or documentation console errors.
 
+## SDK compatibility
+
+The task guides install the latest SDK and keep release announcements in [PyPI release history](https://pypi.org/project/martian-sdk/#history). Verification remains tied to the releases actually exercised:
+
+- **SDK 0.1.2:** API-key management, persisted Evals, red teaming and combined CI were qualified against the recorded isolated services. The [combined CI receipt](/examples/validation/sdk-ci-0.1.2-2026-11-13.json) identifies the original tutorial snapshot and package hashes. Its original ZIP is historical; the current download uses an unpinned install.
+- **SDK 0.1.3:** installation, the account-free local preview, YAML validation, suite-file evaluations, deterministic checks, one LLM judge/provider route and local MLflow logging were exercised. API-key management, persisted CI and hosted red teaming were not requalified on this release.
+
+Installing a newer release does not extend those recorded results automatically. Validate your workflow before upgrading production CI, and record its selected dependency version in your lockfile.
+
 ## Source baseline
 
 | Component | Reviewed source revision |

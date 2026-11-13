@@ -1,6 +1,6 @@
 ---
 title: Run evals locally with a suite file
-description: Run an eval suite from one YAML file on your own machine with SDK 0.1.3, using deterministic checks and LLM judges with your own model key.
+description: Run an eval suite from one YAML file on your own machine, using deterministic checks and LLM judges with your own model key.
 sidebar:
   order: 3
 ---
@@ -11,11 +11,11 @@ import GuideMeta from '../../../components/GuideMeta.astro';
 
 Run a set of test cases against your agent from one YAML file, with no Martian account. At the end, you will have a passing-or-failing run, result files you can read and attach to CI, and an optional LLM judge using your own model key.
 
-This guide is new in **SDK 0.1.3**. A local run is not recorded on the Martian platform. When a result must be saved against a tested revision, use the [persisted CI gate](/sdk/ci/).
+A local run is not recorded on the Martian platform. When a result must be saved against a tested revision, use the [persisted CI gate](/sdk/ci/).
 
 ## Before you start
 
-- Use **Python 3.12 or newer** and **`martian-sdk[evals]==0.1.3`**. Verification used Python 3.12.14.
+- Use **Python 3.12 or newer** and install **`martian-sdk[evals]`**.
 - You do **not** need a Martian account, API key or Backend origin. The command sends nothing to Martian.
 - Deterministic checks need no model. An **LLM judge** needs a key for a model provider you choose; your test inputs, the agent's replies and your criteria are sent to that provider.
 - The example agent is a small deterministic program with one deliberate flaw, so the first run shows a failure. It demonstrates the wiring; it is not evidence about a production agent.
@@ -34,11 +34,11 @@ From that folder, install the SDK into an isolated environment:
 ```sh
 python3 --version
 python3 -m venv .venv
-.venv/bin/python -m pip install 'martian-sdk[evals]==0.1.3'
+.venv/bin/python -m pip install --upgrade 'martian-sdk[evals]'
 .venv/bin/martian --version
 ```
 
-The last command should print `0.1.3`.
+The last command prints your installed SDK version. See [PyPI release history](https://pypi.org/project/martian-sdk/#history) for releases and the [verification record](/reference/verification/#sdk-compatibility) for tested versions.
 
 ## 2. Read the suite file
 

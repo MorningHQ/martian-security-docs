@@ -1,6 +1,6 @@
 ---
 title: Install and configure the SDK
-description: Install Martian SDK 0.1.2, create a scoped API key, and connect Python or CI to your organization.
+description: Install the Martian SDK, create a scoped API key, and connect Python or CI to your organization.
 sidebar:
   order: 1
 ---
@@ -12,17 +12,13 @@ import Screenshot from '../../../components/Screenshot.astro';
 
 Install the Python package and create the platform connection used by Evals and red teaming. At the end, you will have a verified SDK installation, a scoped API key, and a validated tutorial configuration.
 
-:::note[SDK 0.1.3 is available]
-`martian-sdk` 0.1.3 adds [suite-file evals that run locally](/sdk/local-evals/), LLM judges and deterministic checks. Start with that guide if you only want to run evals on your own machine; it needs no Martian account.
-
-This tutorial, its download and its recorded qualification use **0.1.2**. The install, local preview and YAML validation steps were run again on 0.1.3 with the same results. The API-key, persisted CI and hosted red teaming steps were not re-run on 0.1.3. To follow the tutorial on 0.1.3, replace `0.1.2` with `0.1.3` in the install command and expect `martian --version` to print `0.1.3`.
-:::
+Only need local evaluations? Start with [a suite file](/sdk/local-evals/); it needs no Martian account. For package releases, see [PyPI release history](https://pypi.org/project/martian-sdk/#history). Recorded test versions and execution limits live in the [verification record](/reference/verification/#sdk-compatibility).
 
 ## Before you start
 
 For the account-free [local Evals preview](/sdk/evaluations/#1-run-the-free-local-preview), complete **step 1** below using Python and Git. API keys, a Backend origin and organization services are needed when you continue to platform persistence.
 
-- Use **Python 3.12 or newer**. The commands below use a macOS/Linux shell or WSL; verification used Python 3.12.10 and **`martian-sdk==0.1.2`**.
+- Use **Python 3.12 or newer**. The commands below use a macOS/Linux shell or WSL.
 - Install Git. The tutorial creates a local Git repository so a persisted CI result can name the exact committed code revision.
 - An **owner or admin** creates API keys. Running the SDK uses that key's permissions and restrictions; the key does not grant console administration.
 - Your organization must have the compatible Backend services enabled. Hosted red teaming also needs enabled organization entitlement and configured generation/judging. Installing the package does not activate those services.
@@ -42,7 +38,7 @@ git add -- .gitignore README.md demo_agent.py pytest.ini \
 git commit -m 'Add Martian SDK tutorial'
 python3 --version
 python3 -m venv .venv
-.venv/bin/python -m pip install 'martian-sdk[evals]==0.1.2'
+.venv/bin/python -m pip install --upgrade 'martian-sdk[evals]'
 .venv/bin/martian --version
 ```
 
@@ -68,7 +64,7 @@ martian-sdk-tutorial/
 
 `git rev-parse --show-toplevel` should identify this folder. The callback, test imports, YAML-relative callback path and CI commands all use this layout. To use an existing customer repository instead, follow the [complete copy and adaptation checklist](/sdk/ci/#use-an-existing-customer-repository); copying the workflow alone is insufficient.
 
-The final command should print `0.1.2`. The `evals` extra adds the pytest/MLflow dependencies needed for evaluations and persisted CI; base redteam support is part of the distribution. The optional `mcp` extra is for customer-side MCP integration, not a requirement for this tutorial.
+The final command prints your installed SDK version. The `evals` extra adds the pytest/MLflow dependencies needed for evaluations and persisted CI; base redteam support is part of the distribution. The optional `mcp` extra is for customer-side MCP integration, not a requirement for this tutorial.
 
 Use a fresh environment when migrating from old code-bearing `martian-redteam` or `martian-evals-kit` installations. The modern package retains compatibility imports, but the examples here use `martian.evals` and `martian.redteam`.
 
@@ -165,7 +161,7 @@ Review `git status --short`: commit any intended callback, test or configuration
 
 ## Verify success and handle failures
 
-- **Installed:** `martian --version` reports `0.1.2`.
+- **Installed:** `martian --version` reports an installed release.
 - **Configured:** the origin is correct and the key is available only to the intended process or trusted CI job.
 - **Validated:** the tutorial YAML exits `0`. A later authenticated command is still required to establish service access.
 - **Permission denied:** check capabilities, agent/dataset restrictions, organization, expiration and revocation. Do not switch to an operator credential.

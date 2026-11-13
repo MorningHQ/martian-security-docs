@@ -1,0 +1,240 @@
+# Gate CI on Evals and redteam
+
+> Run evaluations and adversarial probes in one persisted CI session, verify its result, and retain safe reports.
+
+Source: [Web version](https://docs.martiansecurity.ai/sdk/ci/)
+
+> **Page qualification:** Python SDK · Scoped machine key; owner/admin issues key and publishes tutorial dataset · Verified 2026-11-13 · Named local QA for standalone probes and console persistence; GitHub-hosted Ubuntu 24.04/Python 3.12 for exact public ZIP combined CLI on disposable pinned services. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
+
+Run the Evals tests and one YAML redteam suite in a single pytest execution and retain one Backend CI session. A successful required gate needs complete test coverage, policy satisfaction, a valid persisted acknowledgment, and any explicitly required exports.
+
+## Before you start
+
+-   Use Python 3.12+ and **`martian-sdk[evals]`** from [installation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/install-and-configure.md).
+-   Complete the [published dataset setup](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/evaluations.md), [prepare redteam.yaml](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/redteam.md#1-inspect-the-one-probe-plan), and [validate it without a paid call](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/redteam.md#2-validate-without-a-paid-call). You do not need to execute a standalone redteam probe first; combined CI executes its own probe.
+-   An owner/admin supplies a key with `evals:read`, `evals:write`, `ci:read`, `ci:write`, and `redteam:run`, with restrictions matching this dataset and agent. Hosted generation/judging must be enabled and configured for the organization.
+-   Set `MARTIAN_API_URL`, `MARTIAN_API_TOKEN`, `MARTIAN_AGENT_ID`, and `MARTIAN_EVALS_GIT_SHA`. The agent must belong to the organization; the revision must identify the code tested.
+-   Run trusted code. Keep platform and callback/provider secrets out of unreviewed pull-request code. Paid redteam/judge calls need your approved execution allowance.
+
+## 1\. Check the complete suite
+
+Run this guide from the **Git repository root prepared in the installation guide**, where the tutorial source has already been committed. Check the working directory before running commands:
+
+```sh
+pwd
+git rev-parse --show-toplevel
+git status --short
+```
+
+The two directory paths should identify the same tutorial/customer repository. The complete runnable layout includes all of these files:
+
+```text
+demo_agent.py
+pytest.ini
+support-regressions.jsonl
+redteam.yaml
+redteam.py
+key_agent_id.py
+tests/evals/test_quality.py
+tests/evals/test_dataset.py
+combined_ci.py
+github-actions.yml
+```
+
+`test_quality.py` records two inline exact-match checks. `test_dataset.py` pulls the published two-record **`docs-support-regressions`** dataset, runs the callback and asserts Backend-compatible exact match. `redteam.yaml` plans one gated prompt-leakage probe.
+
+Keep the YAML redteam suite out of the pytest tests themselves: the combined runner adds it as a required test item. Including it a second time would repeat paid work.
+
+Obtain `MARTIAN_AGENT_ID` with the installation guide’s [agent-bound key lookup](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/install-and-configure.md#5-resolve-the-exact-ci-agent-uuid). The existing registration is attribution and an access binding; the callback under test is still the committed local `demo_agent.answer` function.
+
+## 2\. Validate the configuration
+
+```sh
+git status --short
+export MARTIAN_EVALS_GIT_SHA="$(git rev-parse HEAD)"
+.venv/bin/martian --version
+.venv/bin/martian redteam validate redteam.yaml
+```
+
+Commit any intended callback, tests or configuration changes before taking the revision. Expect an installed SDK release and valid configuration. Ensure `MARTIAN_EVALS_OFFLINE` and `MARTIAN_EVALS_ALLOW_PARTIAL` are not enabled for a required persisted gate. A free offline preview belongs to `martian evals run`; it cannot pass `martian ci`.
+
+## 3\. Run one combined attempt
+
+```sh
+export MARTIAN_EVALS_STORE_DIR="$PWD/.martian-local-mlflow"
+.venv/bin/martian ci --evals-path tests/evals --redteam-config redteam.yaml \
+  --require-export --output results
+```
+
+The command executes one pytest session, keeps dataset/check/redteam records, uploads dataset results and then persists one CI session. It does not combine independent subprocess exit codes. The combined runner is serial; use the supported Evals pytest path for distributed Evals rather than adding xdist flags here.
+
+Choose the CLI command or this equivalent Python entry point for an attempt, not both:
+
+```python
+from pathlib import Path
+from martian.ci import CiSuite, run
+
+result = run(CiSuite(
+    evals_paths=(Path("tests/evals"),),
+    redteam_config=Path("redteam.yaml"),
+    output_dir=Path("results"),
+    require_export=True,
+))
+print(f"CI state: {result.state}; session: {result.session_id}")
+raise SystemExit(result.exit_code)
+```
+
+The complete file is [combined\_ci.py](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/examples/sdk/combined_ci.py). Call the runner serially within a Python process and finish any active MLflow run first; pytest and MLflow maintain process-wide state.
+
+## 4\. Inspect the receipt before trusting the exit
+
+Open `results/ci-session.json`. A successful persisted gate has:
+
+-   `state: passed` and `exit_code: 0`.
+-   `upload: persisted` and a nonempty `session_id`.
+-   Every planned test present, with its kind, result and provenance.
+-   A consistent Backend verdict and completed exports when required.
+
+`SessionResult.passed` requires persisted success; an offline receipt cannot satisfy it. A lower explicitly declared score threshold can produce a **relaxed** verdict. That distinction remains visible and does not excuse execution errors, missing scores or incomplete coverage.
+
+`--require-export` waits up to 30 seconds for required export readback. It does not invoke a target or judge again. A locally passing prediction with a failed required upload/export is a failed required gate.
+
+## 5\. Verify the saved console session
+
+1.  In the intended organization, select **Evals** in the main sidebar to return to its default **Runs** view.
+2.  Scroll to **CI sessions** and select **Refresh**.
+3.  Find the tested **Commit** and **Agent**. Check **Tests**, **Result** and **MLflow** before opening details.
+
+![Evals-only CI session with two passed tests and its retained export recovered to Exported to MLflow.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/sdk-ci-test-results.png)
+
+The Evals-only session is exported after owner recovery. Its original strict CLI receipt still records exit 1; this image does not establish a clean original gate or a combined redteam run.
+
+4.  Select **Show tests**. Verify the dataset, scorer-check and adversarial-probe test records.
+5.  For the dataset test, open its linked run and inspect record-level scores. For checks/redteam, inspect the retained rows and judgments in the expanded session.
+6.  Refresh the browser and reopen the session. The saved result and test records should remain available.
+
+![Expanded saved CI session containing a dataset test and an inline scorer-check test.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/sdk-ci-test-results.png)
+
+Show tests retains the server-scored dataset result and the client-scored inline checks. Inline content is represented by digests. The stored export was recovered without running the tests again.
+
+### Observed qualification results
+
+An earlier tutorial snapshot passed one original combined CLI attempt on a GitHub-hosted Ubuntu runner. Its receipt and Backend readback agreed: **exit 0**, **3 of 3 test groups passed**, **persisted** upload and **exported** evidence. Independent readback confirmed three native exports and exactly two settled generation/judging model calls. The [verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md#sdk-compatibility) identifies the tested package and artifact; the current download installs the latest release.
+
+The three groups contain the **two dataset records**, **two inline scorer checks**, and **one adversarial probe**. Each group produces one CI test record; “3 of 3” does not mean only three individual assertions ran.
+
+See the [public validation receipt](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/examples/validation/sdk-ci-0.1.2-2026-11-13.json) for the source and package hashes, run/attempt, original outcome and native accounting. This used disposable pinned services and the deterministic tutorial callback. The extracted `github-actions.yml` template was not dispatched directly; its installation and CLI path ran in a reviewed qualification wrapper. This is not a hosted-beta or production-agent security attestation.
+
+The separate Evals-only qualification passed its original `--require-export` command with exit `0`, two passing tests, a persisted session and completed export. Its result is distinct from combined CI:
+
+![Fresh Evals-only session passed both tests and exported to MLflow](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/sdk-ci-strict-pass.png)
+
+The new Evals-only session passed its original required-export gate. The separate failed combined session and earlier recovered session remain visible as their own outcomes.
+
+One real combined attempt in isolated QA retained **2 of 4 tests passed**, **Failed**, and **Exported to MLflow** after refresh. Its dataset and inline checks passed; redteam and the session-execution check failed because the runner could not verify generation’s response. The saved receipt recorded `state: failed`, `exit_code: 1`, `upload: persisted`, and `export_state: exported`.
+
+Reading that exact generation operation later returned `succeeded`. No target or judging stage followed it, and the saved failed session was not rewritten. An exported session can accurately contain a failing gate; export success alone does not satisfy CI. This earlier failure remains distinct from the later passing combined qualification above.
+
+![Combined CI saved a failed two-of-four result with exported evidence](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/sdk-combined-ci-failed.png)
+
+The original combined attempt retained Failed and Exported to MLflow. Its generation acknowledgement was uncertain, so target execution and judging did not follow; later same-operation readback did not change this failed session.
+
+Dataset tests are labelled **pinned dataset** with client-executed/server-scored provenance. Inline tests are **scorer checks**, and redteam tests are **adversarial probes**, both reported as client-executed/client-scored. The runner declares the Git revision and callback attribution; this is a regression signal, not binary attestation or release authorization.
+
+If export is retryable and your role permits it, **Retry export** retries delivery of retained evidence. It does not repeat the evaluation or attack. Preserve the original session ID while investigating.
+
+The retry acknowledgement can still contain the previous failed state while work is queued. Use **Refresh** and wait for **Exported to MLflow**; avoid overlapping retries. Keep an original `exit_code: 1` receipt unchanged even if the retained export is later recovered. A dataset run’s telemetry is separate from the session’s checks export, so inspect both when either reports a warning.
+
+## 6\. Add the trusted CI workflow
+
+In the already prepared tutorial Git repository, install [github-actions.yml](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/examples/sdk/github-actions.yml) at its GitHub Actions path and commit the workflow together with the required source:
+
+```sh
+mkdir -p .github/workflows
+cp github-actions.yml .github/workflows/martian-checks.yml
+git add -- .github/workflows/martian-checks.yml .gitignore \
+  demo_agent.py pytest.ini redteam.yaml redteam.py combined_ci.py \
+  key_agent_id.py support-regressions.jsonl tests/evals
+git commit -m 'Run Martian tutorial checks in CI'
+git status --short
+```
+
+The workflow expects `demo_agent.py`, `pytest.ini`, `redteam.yaml` and `tests/evals/` in the checked-out repository root. Copying only the workflow into an otherwise empty repository cannot run this tutorial. Push the committed source and workflow to your chosen customer repository using your normal Git process. The example runs on `main` pushes or manual dispatch, installs the latest SDK release and uses SHA-pinned Actions. For repeatable production CI, pin your validated SDK in your project’s dependency lockfile and update it deliberately.
+
+Configure the `agent-evals` environment and the trusted refs/protection policy available to your GitHub plan:
+
+| Setting | Store as |
+| --- | --- |
+| `MARTIAN_API_URL` | Environment variable |
+| `MARTIAN_AGENT_ID` | Environment variable |
+| `MARTIAN_API_TOKEN` | Environment secret |
+| Any provider/target credential your replacement callback needs | A separate secret consumed by that callback |
+
+The example sets `MARTIAN_EVALS_GIT_SHA` from the workflow’s tested commit. If adapting the workflow to pull requests, preserve the actual tested head revision and keep secrets away from unreviewed code. Make any deployment job depend on this successful gate and deploy the same tested artifact/revision.
+
+### Use an existing customer repository
+
+Instead of pushing the isolated tutorial, copy the full runnable set into an existing Git checkout. Replace both example paths below. Start from that checkout’s root and review existing files before copying; merge any filename collisions rather than replacing application code or test configuration.
+
+```sh
+cd /absolute/path/to/customer-repository
+MARTIAN_TUTORIAL_SOURCE='/absolute/path/to/extracted/martian-sdk-tutorial'
+git switch -c add-martian-checks
+mkdir -p tests/evals .github/workflows
+cp -n "$MARTIAN_TUTORIAL_SOURCE/demo_agent.py" \
+  "$MARTIAN_TUTORIAL_SOURCE/redteam.yaml" \
+  "$MARTIAN_TUTORIAL_SOURCE/redteam.py" \
+  "$MARTIAN_TUTORIAL_SOURCE/combined_ci.py" \
+  "$MARTIAN_TUTORIAL_SOURCE/key_agent_id.py" \
+  "$MARTIAN_TUTORIAL_SOURCE/support-regressions.jsonl" .
+cp -n "$MARTIAN_TUTORIAL_SOURCE/tests/evals/test_quality.py" \
+  "$MARTIAN_TUTORIAL_SOURCE/tests/evals/test_dataset.py" tests/evals/
+cp -n "$MARTIAN_TUTORIAL_SOURCE/github-actions.yml" \
+  .github/workflows/martian-checks.yml
+```
+
+`cp -n` preserves existing destinations; check and merge any skipped file. If the repository has no pytest configuration, copy the tutorial’s `pytest.ini` to the root. Otherwise add `pythonpath = .` to its existing pytest settings so the test imports resolve from that root. Keep the existing project’s other test selection settings; the workflow selects `tests/evals` explicitly. Merge the tutorial’s `.gitignore` entries for `.venv/`, `results/`, `.martian-local-mlflow/`, caches and `.env` into the existing ignore file.
+
+Before committing, make these application-specific replacements:
+
+1.  **Callback:** replace `demo_agent.answer` with your own application call, or adapt that wrapper to call your application. Return `str` or a supported `Turn`. Add your application’s dependency installation to the workflow and keep its provider/target credential in a separate secret.
+2.  **Imports:** the two tests import `answer` from `demo_agent`. If you rename or move the wrapper, update both tests and ensure their imports work from the chosen working directory.
+3.  **YAML path:** `redteam.yaml` resolves `callback.file` relative to the YAML file. Update `file` and `function` if the callback moves.
+4.  **Expected data:** revise the inline examples and published dataset for the real application’s contract. If using another dataset name, update `DEMO_DATASET_NAME` in the workflow and local environment.
+5.  **Runner paths:** keep the CLI’s `--evals-path`, `--redteam-config`, Python `CiSuite` paths and workflow artifact paths consistent. If using a subdirectory, set the workflow’s working directory and adjust the artifact paths too.
+6.  **Attribution:** bind the key to the intended existing registration, resolve its UUID with `key_agent_id.py`, then configure that UUID as the CI variable. The registration does not make a different local callback become the deployed agent.
+
+Create the local environment in this repository, install the SDK and the application’s dependencies, and repeat the free preview and YAML validation before any paid run. Commit the merged source, tests, config and workflow; then set `MARTIAN_EVALS_GIT_SHA` from this repository’s new commit for local CI. GitHub Actions takes the checked-out commit automatically. Do not use the extracted tutorial’s old revision to label different customer application code.
+
+## Run a local suite on pull requests
+
+A [suite file](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/local-evals.md) provides a lighter check for CI that runs with no Martian secret. It suits pull requests from branches that must not see your platform key.
+
+```sh
+.venv/bin/martian evals run evals.yaml --fresh --output eval-results
+```
+
+The command exits `0` when every case passes, `1` when a case fails and `2` when a case has no verdict or the suite file is invalid. Publish `eval-results/junit.xml` to your CI system’s test report. A suite that uses an LLM judge needs that provider’s key as a CI secret; a suite of deterministic checks needs no secret at all.
+
+This run is separate from the persisted gate on this page. It creates no CI session, has no agent or revision attribution and does not appear in the console. Keep `martian ci` as the recorded gate for trusted branches.
+
+## Retained reports, failures and recovery
+
+The safe receipt is written before uploads and updated atomically. Retain these files even when the job fails:
+
+```text
+results/ci-session.json
+results/redteam/risk-assessment.json
+results/redteam/risk-assessment.md
+results/redteam/probes.jsonl
+```
+
+Reports use digests by default. Do not upload `.martian-local-mlflow/`, credentials, raw target data or arbitrary logs as public artifacts. Its SQLite store contains inputs, outputs, expected values and traces.
+
+-   Missing credentials, no selected suite, invalid attribution or setup/usage errors cannot pass; inspect the safe receipt and process exit.
+-   Wrong answers, incomplete/missing scores, target errors, skipped/deselected tests, caught gate failures and unasserted evaluations fail the required gate. Even an otherwise passing pytest body cannot hide a missing assertion.
+-   An upload failure retains local evidence. Fix delivery before claiming a persisted result; a process killed mid-run may leave an incomplete receipt and cannot upload a success afterward.
+-   Recover an unknown redteam operation by its original operation UUID. Do not submit new generation/judging to replace uncertain evidence. Score `0` is a valid failing judgment, not a retry condition.
+-   Sync callbacks need their own network timeouts; cancellation cannot kill their threads or undo already issued calls. Keep the example’s concurrency and volume bounds until your service allowance and target behavior are qualified.
+
+Use `martian ci` for the persisted gate; `martian scan` is not a supported command. Continue with [troubleshooting](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/troubleshooting.md), [permissions](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/permissions.md), or the browser [first evaluation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/evals/first-run.md) guide.

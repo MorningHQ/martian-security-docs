@@ -1,5 +1,6 @@
 ---
 import Default from '@astrojs/starlight/components/PageTitle.astro';
+import PageActions from './PageActions.astro';
 const section = Astro.locals.starlightRoute.entry.id.split('/')[0];
 const labels: Record<string, string> = {
   'get-started': 'Get started', agents: 'Agents and connections', environments: 'Environments',
@@ -8,5 +9,8 @@ const labels: Record<string, string> = {
 };
 ---
 
-<p class="doc-section-label">{labels[section] ?? 'Customer documentation'}</p>
+<div class="doc-title-tools">
+  <p class="doc-section-label">{labels[section] ?? 'Customer documentation'}</p>
+  {section !== '404' && <PageActions />}
+</div>
 <Default {...Astro.props}><slot /></Default>
