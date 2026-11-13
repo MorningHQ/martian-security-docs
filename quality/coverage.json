@@ -310,8 +310,8 @@
         "assessment-goals",
         "assessment-tests"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "partial",
+      "validationStatus": "In isolated local QA, endpoint-only HTTP goals, outcome/technique selection, anonymous identity, Light and serial controls were exercised. MR-1002 retained its selected scope. Sandbox bindings, signed-in/browser targets and prepared scenarios remain unverified.",
       "documentationRoute": "/martian-security-docs/assessments/configure/",
       "role": "member, admin, owner",
       "route": "/#/assessment",
@@ -329,20 +329,26 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
+        "realBackendWalkthrough": "partial; see validationStatus",
+        "screenshots": "captured",
         "remainingGaps": [
-          "Live current wizard and selected target screenshots",
-          "Actual admission with matching saved scope",
-          "Pack readiness and unsupported-mode boundaries"
+          "Sandbox-backed, signed-in/browser and prepared-scenario configuration execution remain unverified."
         ]
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "First endpoint-only assessment and admission failure boundary",
+          "result": "Endpoint-only HTTP goals, outcome/technique selection, anonymous identity, Light and serial controls were exercised. MR-1002 retained its exact selected scope. Sandbox bindings, signed-in/browser targets and prepared scenarios remain unverified."
+        }
+      ],
       "screenshots": [
         "assessment-environment-agent",
         "assessment-goals",
         "assessment-tests"
-      ]
+      ],
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization"
     },
     {
       "id": "assessments/evidence-and-results",
@@ -404,10 +410,11 @@
         "assessment-report",
         "assessment-coverage",
         "assessment-trace",
-        "assessment-outcome-checks"
+        "assessment-outcome-checks",
+        "assessment-knowledge"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "partial",
+      "validationStatus": "In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review.",
       "documentationRoute": "/martian-security-docs/assessments/evidence-and-results/",
       "role": "viewer, member, admin, owner",
       "route": "/#/runs/<run-id>",
@@ -427,22 +434,28 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
+        "realBackendWalkthrough": "partial; see validationStatus",
+        "screenshots": "partial",
         "remainingGaps": [
-          "Actual reports/turn/coverage/outcome-check screenshots",
-          "Returned export content inspected",
-          "Current storage mode recorded",
-          "Read-only inspection creates no target calls"
+          "Positive verified findings, independent outcome checks and artifact-backed Recorded review remain unverified."
         ]
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "First endpoint-only assessment and admission failure boundary",
+          "result": "MR-1002 legacy trace, actual turns, probe coverage, missing-knowledge/skill records, final state and exports passed after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review."
+        }
+      ],
       "screenshots": [
         "assessment-report",
         "assessment-coverage",
         "assessment-trace",
-        "assessment-outcome-checks"
-      ]
+        "assessment-outcome-checks",
+        "assessment-knowledge"
+      ],
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization"
     },
     {
       "id": "assessments/history-and-exports",
@@ -506,8 +519,8 @@
         "assessment-replay",
         "assessment-reports"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "partial",
+      "validationStatus": "In isolated local QA, Assessments/Replay selection and filtering, refreshed MR-1002 evidence, Reports JSON and legacy finding-page JSON were checked. Domain-outcome and published redacted-review ZIP exports remain unverified.",
       "documentationRoute": "/martian-security-docs/assessments/history-and-exports/",
       "role": "viewer, member, admin, owner",
       "route": "/#/replay",
@@ -523,20 +536,25 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
+        "realBackendWalkthrough": "partial; see validationStatus",
+        "screenshots": "captured",
         "remainingGaps": [
-          "Actual Replay/Reports screenshots",
-          "Download and inspect real exported JSON/ZIP",
-          "Match run and evidence revision",
-          "History reads do not re-execute"
+          "Modern domain-outcome and published redacted-review bundle export remain unverified."
         ]
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "First endpoint-only assessment and admission failure boundary",
+          "result": "Actual Assessments/Replay selection and filter, refreshed MR-1002 evidence, Reports JSON and legacy finding-page JSON were checked. Domain-outcome and published redacted-review ZIP export remain unverified."
+        }
+      ],
       "screenshots": [
         "assessment-replay",
         "assessment-reports"
-      ]
+      ],
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization"
     },
     {
       "id": "assessments/progress-and-cancellation",
@@ -585,10 +603,11 @@
       ],
       "screenshotIds": [
         "assessment-run",
-        "assessment-stopped"
+        "assessment-stopped",
+        "assessment-needs-attention"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "partial",
+      "validationStatus": "In isolated local QA, MR-1002 was followed from running to retained completion. MR-1003 reached Needs attention after HTTP 530 before its stop control could be used; its action remains uncertain. Successful cooperative cancellation remains unverified.",
       "documentationRoute": "/martian-security-docs/assessments/progress-and-cancellation/",
       "role": "member, admin, owner",
       "route": "/#/runs/<run-id>",
@@ -604,20 +623,32 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
+        "realBackendWalkthrough": "partial; see validationStatus",
+        "screenshots": "partial",
         "remainingGaps": [
-          "Live progress screenshot",
-          "Real cancellation request and persisted terminal state",
-          "Uncertain-admission same-request readback",
-          "No claim that acknowledgment proves provider completion"
+          "Positive cooperative cancellation and evidence-based resolution of the retained uncertain MR-1003 action remain unverified."
         ]
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "First endpoint-only assessment and admission failure boundary",
+          "result": "A running MR-1002 was followed to retained completion. Separate MR-1003 reached Needs attention after HTTP530 before its stop control could be used; its uncertain action is retained. No positive cancellation is claimed."
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Cancellation attempt and uncertain target action",
+          "result": "A running MR-1002 was followed to retained completion. Separate MR-1003 reached Needs attention after HTTP530 before its stop control could be used; its uncertain action is retained. No positive cancellation is claimed."
+        }
+      ],
       "screenshots": [
         "assessment-run",
-        "assessment-stopped"
-      ]
+        "assessment-stopped",
+        "assessment-needs-attention"
+      ],
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization"
     },
     {
       "id": "assessments/reproduction-and-limits",
@@ -682,8 +713,8 @@
         "assessment-verification",
         "assessment-outcome-checks"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "partial",
+      "validationStatus": "In isolated local QA, MR-1002 had unverifiable disclosure coverage and no deterministic oracle. Model opinions and requested-versus-used budgets were inspected. Clean-world reproduction and negative controls remain unverified.",
       "documentationRoute": "/martian-security-docs/assessments/reproduction-and-limits/",
       "role": "viewer, member, admin, owner",
       "route": "/#/runs/<run-id>",
@@ -699,19 +730,25 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
+        "realBackendWalkthrough": "partial; see validationStatus",
+        "screenshots": "partial",
         "remainingGaps": [
-          "Actual verification and outcome screenshots",
-          "Record exact repetition/control evidence and uncertainty",
-          "Do not copy stale docs/usage.md unimplemented claim"
+          "Independent business effects, clean-world repetitions and negative-control receipts remain unverified."
         ]
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "First endpoint-only assessment and admission failure boundary",
+          "result": "Actual MR-1002 unverifiable disclosure coverage, absent deterministic oracle, model-critic interpretation and requested-versus-used budgets were inspected. No clean-world reproduction or negative control was exercised."
+        }
+      ],
       "screenshots": [
         "assessment-verification",
         "assessment-outcome-checks"
-      ]
+      ],
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization"
     },
     {
       "id": "discovery/call-gates",
@@ -1146,10 +1183,10 @@
       "screenshots": [
         "evals-compare-selection",
         "evals-compare-results",
-        "evals-compare-trace",
         "evals-compare-suite-numeric",
         "evals-compare-suite-scorecards",
-        "evals-compare-incompatible-suite"
+        "evals-compare-incompatible-suite",
+        "evals-compare-trace"
       ],
       "screenshotStages": [
         {
@@ -1447,14 +1484,14 @@
       ],
       "screenshots": [
         "evals-judging-code",
-        "evals-judging-definition",
-        "evals-judging-feedback",
         "evals-judging-code-feedback",
         "evals-model-judges-selection",
         "evals-model-judges-feedback",
+        "evals-judging-definition",
         "evals-judging-next-version",
-        "evals-judging-historical-version",
-        "evals-judging-version-history"
+        "evals-judging-version-history",
+        "evals-judging-feedback",
+        "evals-judging-historical-version"
       ],
       "screenshotStages": [
         {
@@ -1723,8 +1760,8 @@
       "screenshots": [
         "evals-results-table",
         "evals-results-inspector",
-        "evals-results-provenance",
-        "evals-results-supplementary"
+        "evals-results-supplementary",
+        "evals-results-provenance"
       ],
       "screenshotStages": [
         {
@@ -1788,9 +1825,9 @@
       "screenshots": [
         "evals-stopping-request",
         "evals-stopping-cancelled",
+        "evals-stopping-native-killed",
         "evals-stopping-scoring",
-        "evals-stopping-scorecard",
-        "evals-stopping-native-killed"
+        "evals-stopping-scorecard"
       ],
       "screenshotStages": [
         {
@@ -1871,10 +1908,10 @@
       ],
       "screenshots": [
         "evals-suites-definition",
-        "evals-suites-scorecard",
-        "evals-suites-monitoring",
         "evals-suites-apply",
-        "evals-suites-failed-gate"
+        "evals-suites-scorecard",
+        "evals-suites-failed-gate",
+        "evals-suites-monitoring"
       ],
       "screenshotStages": [
         {
@@ -2054,9 +2091,9 @@
       ],
       "screenshots": [
         "access-invitation",
+        "access-ready",
         "access-sign-in",
         "access-workspace",
-        "access-ready",
         "access-viewer-results"
       ],
       "requiredValidation": [
@@ -2096,8 +2133,30 @@
         "Check expected visible outcomes and persisted state after refresh",
         "Inspect relevant permission/failure boundaries"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough pending."
+      "qualification": "verified",
+      "validationStatus": "The contrast was exercised through real remote HTTP Evals, a completed bounded HTTP assessment and released SDK local-callback results. Security findings, exact-match regressions and inconclusive evidence remain distinct.",
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA; named HTTP/catalogue walkthrough",
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "First endpoint-only assessment and admission failure boundary",
+          "result": "The contrast was exercised through real remote HTTP Evals, a completed bounded HTTP assessment and released SDK local-callback results. Security findings, exact-match regressions and inconclusive evidence remain distinct."
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Fresh Evals-only strict SDK CI",
+          "result": "The contrast was exercised through real remote HTTP Evals, a completed bounded HTTP assessment and released SDK local-callback results. Security findings, exact-match regressions and inconclusive evidence remain distinct."
+        }
+      ],
+      "sourceReview": {
+        "realBackendWalkthrough": "passed for named scope",
+        "screenshots": "captured",
+        "remainingGaps": []
+      }
     },
     {
       "id": "get-started/first-assessment",
@@ -2125,8 +2184,24 @@
         "Check expected visible outcomes and persisted state after refresh",
         "Inspect relevant permission/failure boundaries"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough pending."
+      "qualification": "verified",
+      "validationStatus": "Anonymous endpoint-only HTTP, By outcome with only Customer records leave, Light and serial execution passed through MR-1002 completion, actual turns/coverage, refresh, JSON exports and role/tenant boundaries. INCONCLUSIVE is retained, not presented as a security pass.",
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA; named HTTP/catalogue walkthrough",
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "First endpoint-only assessment and admission failure boundary",
+          "result": "Anonymous endpoint-only HTTP, By outcome with only Customer records leave, Light and serial execution passed through MR-1002 completion, actual turns/coverage, refresh, JSON exports and role/tenant boundaries. INCONCLUSIVE is retained, not presented as a security pass."
+        }
+      ],
+      "sourceReview": {
+        "realBackendWalkthrough": "passed for named scope",
+        "screenshots": "captured",
+        "remainingGaps": []
+      }
     },
     {
       "id": "library/coverage",
@@ -2177,10 +2252,11 @@
       ],
       "screenshotIds": [
         "library-coverage",
+        "library-gap",
         "library-threat-intel"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "verified",
+      "validationStatus": "Available MT-01 versus declared-gap MT-20, disabled execution action, taxonomy selection, catalogue refresh, actual Tests selection, requested-versus-attempted coverage and no-live-feed view were checked.",
       "documentationRoute": "/martian-security-docs/library/coverage/",
       "role": "viewer, member, admin, owner",
       "route": "/#/library",
@@ -2197,20 +2273,26 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
-        "remainingGaps": [
-          "Actual coverage/Threat Intel screenshots",
-          "Catalogue and technique IDs match Backend",
-          "Unavailable items not presented as executable",
-          "No claim of live Wiki mirroring or live threat feed"
-        ]
+        "realBackendWalkthrough": "passed for named scope",
+        "screenshots": "captured",
+        "remainingGaps": []
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Attack Library, runnable coverage and Threat Intelligence",
+          "result": "Available MT-01 versus declared-gap MT-20, disabled execution action, taxonomy selection, catalogue refresh, actual Tests selection, requested-versus-attempted coverage and no-live-feed view were checked."
+        }
+      ],
       "screenshots": [
         "library-coverage",
+        "library-gap",
         "library-threat-intel"
-      ]
+      ],
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA; named HTTP/catalogue walkthrough"
     },
     {
       "id": "sdk/ci",
@@ -2234,7 +2316,9 @@
       ],
       "screenshots": [
         "sdk-ci-session",
-        "sdk-ci-test-results"
+        "sdk-ci-test-results",
+        "sdk-ci-strict-pass",
+        "sdk-ci-combined-failed"
       ],
       "qualification": "partial",
       "sources": [
@@ -2259,7 +2343,7 @@
           ]
         }
       ],
-      "validationStatus": "In isolated local QA, both Evals tests passed and the dataset result/session were retained. The original required-export command exited1; supported recovery later confirmed native exports without rerunning callbacks. A clean original strict-CI pass, combined model-based execution and hosted GitHub runner execution remain unverified.",
+      "validationStatus": "In isolated local QA, Evals-only strict CI passed with 2 of 2 tests and completed exports. Standalone probes passed, but combined CI failed after uncertain generation. A clean combined pass and hosted GitHub runner execution remain unverified.",
       "requiredValidation": [
         "Verify released commands and configuration",
         "Exercise hosted real-service success and relevant failure paths",
@@ -2271,9 +2355,28 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "Released SDK Evals and retained CI recovery",
           "result": "tests, persistence and recovery passed; original strict gate exit1 is preserved"
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Fresh Evals-only strict SDK CI",
+          "result": "A distinct Evals-only original strict command exited0 with persisted/exported2/2 and native FINISHED evidence. Standalone Python/CLI model probes passed; original combined2/4 failed/exported after uncertain generation. Clean combined CI and hosted GitHub runner execution remain unverified."
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Original combined SDK CI failed gate and same-operation recovery",
+          "result": "In isolated local QA, Evals-only strict CI passed with 2 of 2 tests and completed exports. Standalone probes passed, but combined CI failed after uncertain generation. A clean combined pass and hosted GitHub runner execution remain unverified."
         }
       ],
-      "environment": "Released SDK 0.1.2 and real isolated local QA Backend/MLflow"
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "sourceReview": {
+        "realBackendWalkthrough": "partial; see validationStatus",
+        "screenshots": "captured",
+        "remainingGaps": [
+          "A clean complete combined-CI pass and hosted GitHub runner execution remain unverified."
+        ]
+      }
     },
     {
       "id": "sdk/evaluations",
@@ -2294,11 +2397,13 @@
         "Organization agent UUID and tested Git revision for persistence"
       ],
       "screenshots": [
+        "sdk-dataset-published",
         "sdk-evaluation-result",
         "sdk-ci-test-results",
-        "sdk-dataset-published"
+        "sdk-evaluation-strict-result",
+        "sdk-ci-strict-tests"
       ],
-      "qualification": "partial",
+      "qualification": "verified",
       "sources": [
         {
           "repository": "MorningHQ/martian-redteam",
@@ -2321,7 +2426,7 @@
           ]
         }
       ],
-      "validationStatus": "In isolated local QA, both Evals tests passed and the dataset result/session were retained. The original required-export command exited1; supported recovery later confirmed native exports without rerunning callbacks. A clean original strict-CI pass, combined model-based execution and hosted GitHub runner execution remain unverified.",
+      "validationStatus": "SDK0.1.2 local preview and published-dataset checks passed. The distinct EV-1009 original strict command exited0 with two passing tests, persisted/exported session, native FINISHED and refreshed records; the original EV-1004 exit1 and supported recovery remain separate.",
       "requiredValidation": [
         "Verify released commands and configuration",
         "Exercise hosted real-service success and relevant failure paths",
@@ -2333,9 +2438,22 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "Released SDK Evals and retained CI recovery",
           "result": "tests, persistence and recovery passed; original strict gate exit1 is preserved"
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Fresh Evals-only strict SDK CI",
+          "result": "SDK0.1.2 local preview and published-dataset checks passed. The distinct EV-1009 original strict command exited0 with two passing tests, persisted/exported session, native FINISHED and refreshed records; the original EV-1004 exit1 and supported recovery remain separate."
         }
       ],
-      "environment": "Released SDK 0.1.2 and real isolated local QA Backend/MLflow"
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA; SDK 0.1.2",
+      "sourceReview": {
+        "realBackendWalkthrough": "passed for named scope",
+        "screenshots": "captured",
+        "remainingGaps": []
+      }
     },
     {
       "id": "sdk/install-and-configure",
@@ -2419,9 +2537,10 @@
         "CI scopes and agent/revision only for optional persistence"
       ],
       "screenshots": [
+        "sdk-redteam-key",
         "sdk-redteam-result"
       ],
-      "qualification": "pending",
+      "qualification": "partial",
       "sources": [
         {
           "repository": "MorningHQ/martian-redteam",
@@ -2444,13 +2563,34 @@
           ]
         }
       ],
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "validationStatus": "In isolated local QA, the Python and CLI standalone probes each passed with one score of 1 and no execution errors. Their four native stages succeeded and settled. A complete passing persisted redteam or combined CI session remains unverified.",
       "requiredValidation": [
         "Verify released commands and configuration",
         "Exercise hosted real-service success and relevant failure paths",
         "Verify retained reports and UI state after refresh"
       ],
-      "validation": []
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Released standalone SDK Python and CLI model probes",
+          "result": "In isolated local QA, the Python and CLI standalone probes each passed with one score of 1 and no execution errors. Their four native stages succeeded and settled. A complete passing persisted redteam or combined CI session remains unverified."
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Original combined SDK CI failed gate and same-operation recovery",
+          "result": "In isolated local QA, the Python and CLI standalone probes each passed with one score of 1 and no execution errors. Their four native stages succeeded and settled. A complete passing persisted redteam or combined CI session remains unverified."
+        }
+      ],
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "sourceReview": {
+        "realBackendWalkthrough": "partial; see validationStatus",
+        "screenshots": "captured",
+        "remainingGaps": [
+          "A complete passing persisted redteam/combined CI probe is not established by the original failed combined attempt."
+        ]
+      }
     },
     {
       "id": "workspace/team-and-roles",

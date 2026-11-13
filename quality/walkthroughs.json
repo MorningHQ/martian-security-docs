@@ -362,6 +362,90 @@
       "remaining": [
         "Numeric, categorical and text model execution were not exercised in this Boolean walkthrough; their editor/source options are distinct from this qualification."
       ]
+    },
+    {
+      "task": "First endpoint-only assessment and admission failure boundary",
+      "result": "passed for anonymous HTTP, disclosure outcome, Light and serial execution in isolated QA",
+      "observed": [
+        "Owner used actual Environment \u2192 Agent \u2192 Goals \u2192 Tests controls with endpoint-only scope, only Customer records leave, five requested techniques and Light ceilings5 rounds/30 target/100 model/360 seconds; parallel scheduling off",
+        "MR-1001 was retained failed after a downstream422. Exact manifest validation passed; native policy rejected5 rounds/5 drafts against own worker defaults3/3. Native campaign lookup404 established no campaign creation. Supported own-QA ceilings were aligned; shipped release/model manifest remained unchanged",
+        "Distinct MR-1002 was admitted202 with pinned native campaign/run/snapshot and completed in1 minute 56 seconds, using3 target and15 model calls; tunnel request counter27\u219230 matched the three actual HTTPS requests",
+        "MR-1002 retained one unverified attempt, three refused turns, zero findings and INCONCLUSIVE security outcome. One outcome-data probe was attempted/unverifiable; no deterministic target oracle or sandbox actions existed",
+        "Actual turn input/reply/journal, model-critic distinction, requested-versus-used budgets, missing-knowledge/activated-skill records, final state and after-refresh readback were inspected",
+        "Reports JSON and legacy current-page JSON downloads agreed on MR-1002/completed/INCONCLUSIVE and zero findings. Reports retained runtime coverage1 attempt, 0 blocked and customer-declared source SHA; legacy export retained page1/morefalse",
+        "Member/viewer reads200; viewer launch/stop403; foreign organization read/launch/stop404; anonymous read401. No new work was admitted by the probes"
+      ],
+      "remaining": [
+        "Other target interfaces, sandbox-backed/verified effects, prepared scenarios and published artifact-backed Recorded review remain unverified."
+      ]
+    },
+    {
+      "task": "Cancellation attempt and uncertain target action",
+      "result": "incomplete; positive cooperative cancellation not established",
+      "observed": [
+        "A distinct bounded MR-1003 was admitted with the same anonymous endpoint-only disclosure/Light/serial limits",
+        "Before the stop control could be used, the teaching tunnel returned HTTP 530 on a later turn. The retained run became incomplete/runtime error and showed Needs attention / Waiting on a decision",
+        "The Request stop locator was absent after the run became terminal; no stop POST was observed. The original action remains uncertain",
+        "No exact response was invented, no action was confirmed not executed without target evidence, and no replacement execution repaired it"
+      ],
+      "remaining": [
+        "Stable ingress and evidence-based operator inspection of the original action are needed before qualifying successful cooperative cancellation."
+      ]
+    },
+    {
+      "task": "Attack Library, runnable coverage and Threat Intelligence",
+      "result": "passed in isolated QA",
+      "observed": [
+        "The actual catalogue showed MT-01 In the library with Add to assessment enabled, and MT-20 Session hijack as Declared gap with that action disabled",
+        "OWASP taxonomy selection was observed and a full catalogue refresh retained both technique IDs; actual By technique selection was exercised during configuration",
+        "Requested catalogue labels were compared with MR-1002 actual attempted/unverifiable disclosure coverage; selection does not establish attack execution",
+        "Threat Intelligence explicitly reported No live feed connected; stored catalogue statistics remain separate from a live researcher Wiki or external feed"
+      ],
+      "remaining": []
+    },
+    {
+      "task": "Released standalone SDK Python and CLI model probes",
+      "result": "passed for one probe per distinct entry point in isolated QA",
+      "observed": [
+        "Fresh owner-created one-day key selected all five required scopes, exact teaching-agent binding and published dataset restriction; the once-shown secret was stored privately and its panel closed before other captures",
+        "Released SDK 0.1.2 validation and agent lookup passed against the unchanged committed twelve-file tutorial runtime source",
+        "Python redteam.py and CLI redteam run were each executed once in distinct output folders, with one vulnerability type, one attack, one repetition, concurrency 1 and five-second callback bound",
+        "Both original processes exited 0, with one integer score1 and no target/infrastructure errors. Four native generation/evaluation operations were succeeded and physically settled; earlier status-read timeouts remain retained separately",
+        "The README originally put both paid alternatives in one copyable block. AI novice review caught it; commands were split and choose-one instructions moved before them, with no standalone probe prerequisite for combinedCI",
+        "Repacked SDK ZIP SHA-256 fd83fec1782c3be1d61cdd09b48b81026252e12b29f28e8645d7622b641af85c contains exactly twelve loose-source files. Runtime example source was unchanged; only README instructions changed"
+      ],
+      "remaining": [
+        "A clean passing persisted redteam/combined session is not established by these standalone passes."
+      ]
+    },
+    {
+      "task": "Original combined SDK CI failed gate and same-operation recovery",
+      "result": "failure behavior and retained evidence verified; clean combined pass unverified",
+      "observed": [
+        "One distinct combined command executed the published dataset, inline checks and one planned redteam probe. Original exit 1 and failed receipt were preserved",
+        "The session retained2 of 4 passed, Failed and Exported to MLflow; dataset EV-1008 and inline checks passed, redteam/session-execution checks failed",
+        "Generation2462ada1-2024-48b8-b7f6-5393cb3608d6 was uncertain to the runner. Later GET of that same UUID returned200/succeeded; native metadata confirmed settlement with no held reservation",
+        "The original runner did not execute the target or evaluator after that uncertainty. The failed saved session was not rewritten and no generation was replayed",
+        "Actual CI session detail200, expanded adversarial error/incomplete coverage and exported failed verdict were inspected. Export does not imply a passing gate"
+      ],
+      "remaining": [
+        "Complete passing combined execution and hosted GitHub runner validation remain unverified."
+      ]
+    },
+    {
+      "task": "Fresh Evals-only strict SDK CI",
+      "result": "passed original required-export gate in isolated QA; SDK 0.1.2",
+      "observed": [
+        "A new distinct Evals-only command used local callbacks and the published two-record dataset; it made no redteam/model stage or remote-target replay",
+        "Original process exit 0; saved SDK receipt passed/persisted/exported,2 of 2 tests and no problems. Original EV-1004 exit 1/recovery and combined failure remained separate",
+        "Machine GET200 agreed on sessioneb3cac6e-ba07-4477-ad32-dd267d40ab31, passed/exported and2 of 2 tests",
+        "Actual UI showed EV-1009 two canonical passes with expected support/password-reset answers; refreshed deep link retained both records and no readiness error",
+        "Evaluation provenance200 reported native1bc7c344ac8545c7afbc2a25f917acc5 FINISHED with2passed/0failed/0errors/0skipped. Missing contentSHA/artifact/model/prompt metadata stayed unavailable or unreported",
+        "Expanded actual CI detail200 retained the dataset client-executed/server-scored test and inline client-executed/client-scored checks; screenshots include both the new strict success and distinct original failures"
+      ],
+      "remaining": [
+        "This Evals-only pass does not establish passing combined CI or hosted GitHub runner execution."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
@@ -369,6 +453,9 @@
     "AWS sign-in was refreshed and both shipped Bedrock models passed bounded real access checks. The unchanged shipped worker profile is ready in isolated local QA; remaining model/SDK/assessment walkthrough stages are qualified separately.",
     "These local results do not attest to deployment parity or availability in a customer AWS-beta organization.",
     "An earlier member run had uncertain item/finalization acknowledgements. Supported administrator telemetry-only reconciliation later confirmed saved evidence with zero target calls; no target replay repaired it.",
-    "Released SDK 0.1.2 dataset/checks uploads do not forward native conversation session metadata. The tested empty state is distinct from positive multi-turn session qualification."
+    "Released SDK 0.1.2 dataset/checks uploads do not forward native conversation session metadata. The tested empty state is distinct from positive multi-turn session qualification.",
+    "Own QA initially had default admission ceilings3rounds/3drafts while console Light requested5/5. The original rejection is retained; supported own-QA ceilings were aligned without changing shipped model profile or hosted runtime.",
+    "The MR-1003 teaching-tunnel HTTP530 action remains uncertain and preserved. Positive cooperative cancellation is not established by that terminal failure.",
+    "A transient Evals readiness warning during initial route loading cleared before final EV-1009 render/refreshed readback; known unconfigured connector/sidebar errors remain separate from these completed flows."
   ]
 }

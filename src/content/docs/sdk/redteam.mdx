@@ -20,6 +20,8 @@ Run one adversarial probe against a local callback using platform-hosted generat
 - The included target is a deterministic support callback. It verifies the integration; a passing result does not qualify a production LLM, connected tools or business outcomes.
 - Standalone redteam does not require an agent UUID/Git revision. Respect a key's agent restriction; persisted CI additionally requires attribution and CI permissions.
 
+<Screenshot id="sdk-redteam-key" />
+
 ## 1. Inspect the one-probe plan
 
 Open [redteam.yaml](/martian-security-docs/examples/sdk/redteam.yaml):
@@ -132,6 +134,8 @@ Authentication, scope, retention, timeout and unknown-outcome errors have contro
 
 If execution status is unknown, recover the same operation with `client.get_operation(operation_id)`. Do not send another execution POST to obtain a passing result. `client.cancel_operation(operation_id)` requests cancellation; cancellation is not a passing judgment and does not prove an already issued provider request stopped.
 
+In the isolated QA walkthrough, the Python and CLI entry points were each run once as separate one-probe attempts. Each exited `0`, saved one score of `1`, and reported no infrastructure or target errors. Their four generation/judging operations were confirmed succeeded and settled. These results qualify the tutorial wiring against a deterministic callback, not a production agent's security.
+
 Async callback cancellation is cooperative. Synchronous callbacks use bounded workers and need their own network timeouts: Python cannot kill a worker thread, and the SDK awaits cleanup. Late output cannot turn a timed-out probe into a pass.
 
 ## 6. Persist a redteam result in the console
@@ -148,6 +152,8 @@ This is a **new** one-probe execution. For the main combined tutorial, use [comb
 Select **Evals** in the main sidebar to return to the default **Runs** view. Find **CI sessions**, select **Refresh**, then **Show tests** on the matching commit. The redteam test is labelled **adversarial probes**, with its policy, counts, judgments and provenance.
 
 <Screenshot id="sdk-redteam-result" />
+
+The captured combined-CI attempt is a **failed** result: its generation response was uncertain to the runner, so target execution and judging did not proceed. A later read of that same operation confirmed generation succeeded. The original failed CI verdict remained saved and exported; retrieving the generation result did not complete the missing probe or turn the gate into a pass. A clean combined-CI pass remains unverified.
 
 Redteam judgments saved by the runner are **client-executed/client-scored**, including judgments originally obtained from Agents. They are useful regression evidence, not a release authorization or independent proof of the executed binary. SDK callback testing also does not establish sandbox reproduction or verified business effects from a console assessment.
 

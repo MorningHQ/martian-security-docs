@@ -1615,6 +1615,654 @@
       "validationStatus": "Real observed application state, actual API operations and retained evidence; image manually reviewed for secrets.",
       "reviewedForSecrets": true,
       "sha256": "d3d1bdbae537c0bd69ba161abf0b8d492ce44853cb53fb1c740e2033a8ca6af3"
+    },
+    {
+      "id": "first-assessment-environment",
+      "file": "first-assessment-environment.png",
+      "alt": "Environment step with endpoint-only testing selected",
+      "caption": "Select No environment \u2014 test the endpoint only to use the approved connection without sandbox systems.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "get-started/first-assessment: 1. Choose the scope, after step 3"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "524e744f9e5d3a3219d800d91f859c627039a734bc36643015cc4f52aad5ad5b"
+    },
+    {
+      "id": "first-assessment-agent",
+      "file": "first-assessment-agent.png",
+      "alt": "Approved Docs teaching agent selected in the assessment wizard",
+      "caption": "Select the approved teaching agent. HTTP connected describes its connection; NOT TESTED describes its assessment history.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "get-started/first-assessment: 1. Choose the scope, after step 3"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "49ed4abc5b5d203469ee7046f3a58a50138470f9cb14c646a140dc187f0a9cd5"
+    },
+    {
+      "id": "first-assessment-goals",
+      "file": "first-assessment-goals.png",
+      "alt": "Synthetic target purpose and one behavior boundary in Goals",
+      "caption": "Declare the actual task and its behavior boundary. This deterministic teaching target has no private records, business tools or account actions.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "get-started/first-assessment: 2. Choose one goal and a small test, after step 5"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior. Reframed from a subsequent unsubmitted draft of the same goals used for MR-1002; no extra assessment was launched for the capture.",
+      "reviewedForSecrets": true,
+      "sha256": "db2e4f3bf37ecebc68e5434c9fe5603ab4ca1c6989fca4cffffd01fba537e49c"
+    },
+    {
+      "id": "first-assessment-tests",
+      "file": "first-assessment-tests.png",
+      "alt": "Only Customer records leave selected with Light and serial execution",
+      "caption": "Only Customer records leave is selected. Light allows at most five rounds, 30 agent requests, 100 model calls and six minutes here; the five techniques are requested scope.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "get-started/first-assessment: 2. Choose one goal and a small test, after step 5"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "7cc8e992b2eb0808795bb43c45b773ccebf7a6ee4de484caa53a084b832cecbe"
+    },
+    {
+      "id": "first-assessment-running",
+      "file": "first-assessment-running.png",
+      "alt": "MR-1002 running with Open trace and Stop run controls",
+      "caption": "The acknowledged MR-1002 run shows its five requested techniques. Open trace follows execution; the header Cancel leaves the wizard.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "get-started/first-assessment: 3. Launch and follow progress, after step 4"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "124ce072acc592d7259b8e0cc4ab2c2e10014911900b8de6764824316b5147bf"
+    },
+    {
+      "id": "first-assessment-report",
+      "file": "first-assessment-trace-overview.png",
+      "alt": "Completed MR-1002 with INCONCLUSIVE security outcome",
+      "caption": "MR-1002 completed with three agent requests and 15 model calls, but its one attempt remained unverified and its security outcome INCONCLUSIVE. Zero findings is not a security pass.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "get-started/first-assessment: 4. Inspect the result and report, after step 2"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "4f33a23ef98305af1cf6e16f91804a7ce6cb7e87761e9d0bc95f82e5095cce0a"
+    },
+    {
+      "id": "first-assessment-trace",
+      "file": "first-assessment-trace.png",
+      "alt": "Recorded attacker message and actual teaching-target refusal in Turn 1",
+      "caption": "Select a retained turn to compare the actual attacker message, customer reply and action journal. The critic below is model interpretation, not an independent oracle.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "get-started/first-assessment: 4. Inspect the result and report, after step 3"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "d4b4bf6a407c9e953fedc13c853a45e34805da0fa0e46543cf5315ec6136db22"
+    },
+    {
+      "id": "assessment-coverage",
+      "file": "assessment-coverage.png",
+      "alt": "Attempted disclosure probe with unverifiable outcome and actual call counts",
+      "caption": "One outcome-data probe was attempted. Its unverifiable outcome and 3/30 target, 15/100 model usage are separate from the five requested technique labels.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/evidence-and-results: Read the report and run summary, after step 4"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "d05d81c13a70e046a8cd4f00bcb7f9211f4bcdff76e6436f1f73a9d0772fbaa4"
+    },
+    {
+      "id": "assessment-reports",
+      "file": "assessment-reports.png",
+      "alt": "Reports lists completed and failed synthetic assessment evidence",
+      "caption": "Download selects JSON evidence for the matching run code. MR-1002 retained INCONCLUSIVE; the earlier rejected MR-1001 has no verdict.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/history-and-exports: Choose an export, after step 1"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "89b61dd3fb518d7697a0b278f9da35f1dfeb8aade17569db893b784b85923962"
+    },
+    {
+      "id": "assessment-replay",
+      "file": "assessment-replay.png",
+      "alt": "Replay filtered to recorded MR-1002 with Completed and INCONCLUSIVE labels",
+      "caption": "Filter displayed runs narrowed this loaded page to MR-1002. Selecting its run code reads retained evidence; Replay does not execute it again.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/history-and-exports: Find and inspect a run, after step 2"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "ae30ddf151d3de658e27e09a1ce90bbce7e1d597cb823ad8427e827cf29791a0"
+    },
+    {
+      "id": "assessment-knowledge",
+      "file": "assessment-knowledge.png",
+      "alt": "Knowledge and skills shows zero reviewed references and one activated skill",
+      "caption": "Six visible lookup stages retained no reviewed references. One activated canonical skill is recorded with a Content digest control; missing references do not prove no relevant attack is known.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/evidence-and-results: Inspect findings and independent outcomes, after step 5"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "fefe71dc8fc9bbebf6d3dd7c16a5249b905f6f1bd1f053281f44b3ce6b628479"
+    },
+    {
+      "id": "library-coverage",
+      "file": "library-coverage.png",
+      "alt": "MT-01 technique detail with In the library and enabled Add to assessment",
+      "caption": "MT-01 is in the runnable library. Its illustrative payload and taxonomy labels describe a technique, not an observed finding or compliance verdict.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "library/coverage: Explore technique coverage, after step 3"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "de37d493392c10c2d3fe15d2629761de5b591774b6d1fb3c5627560a9e3eb779"
+    },
+    {
+      "id": "library-gap",
+      "file": "library-gap.png",
+      "alt": "MT-20 Session hijack declared gap with Add to assessment disabled",
+      "caption": "MT-20 remains a Declared gap. Its disabled Add to assessment action keeps reference coverage separate from runnable tests.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "library/coverage: Explore technique coverage, after step 3"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "2db218b337bf71d133a01b9ce809c30a168ade436d22527de7664161dab95bbf"
+    },
+    {
+      "id": "library-threat-intel",
+      "file": "library-threat-intel.png",
+      "alt": "Threat Intelligence explicitly says No live feed connected",
+      "caption": "The workspace reports No live feed connected. Published-attack statistics provide catalogue context and do not establish live threat ingestion.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "library/coverage: Read Threat Intel accurately, after step 3"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "c870a3600ceb880aa31c2714acd25592d81cedf371df91c850c0d83470f366b2"
+    },
+    {
+      "id": "sdk-redteam-key",
+      "file": "sdk-redteam-create-key.png",
+      "alt": "Create API key with hosted redteam permission and teaching-agent restriction selected",
+      "caption": "Select the needed permissions and restrictions before issuing the key. This capture precedes creation; the once-shown secret is excluded.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/redteam: Before you start"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "26178e175ec0463487d5d35319cb0af875a35023b59c05fd93b1f749460fc10c"
+    },
+    {
+      "id": "sdk-ci-combined-failed",
+      "file": "sdk-combined-ci-failed.png",
+      "alt": "Combined CI saved a failed two-of-four result with exported evidence",
+      "caption": "The original combined attempt retained Failed and Exported to MLflow. Its generation acknowledgement was uncertain, so target execution and judging did not follow; later same-operation readback did not change this failed session.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/ci: Observed combined attempt"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "65a600fb8682024e3e4e16392a7679f6bdab1fe9558a33f07ec610d8b66615f3"
+    },
+    {
+      "id": "assessment-needs-attention",
+      "file": "assessment-needs-attention.png",
+      "alt": "MR-1003 Needs attention with an uncertain teaching-tunnel action",
+      "caption": "An HTTP 530 left one action uncertain before cancellation could be requested. The recovery panel requires evidence; no response was invented and no replacement execution resolved this action.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/progress-and-cancellation: Request cancellation, after step 4"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "111aebe68e6799aea6cff13429339b78f65e39b4467a18b72a4cfd82a9d70e7f"
+    },
+    {
+      "id": "sdk-ci-strict-pass",
+      "file": "sdk-ci-strict-pass.png",
+      "alt": "Fresh Evals-only session passed both tests and exported to MLflow",
+      "caption": "The new Evals-only session passed its original required-export gate. The separate failed combined session and earlier recovered session remain visible as their own outcomes.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/ci: Observed combined attempt"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "5c6d6b2befce764e46c5449e23c99a7d0ebb5976d5b4ac501305dd96c509be8c"
+    },
+    {
+      "id": "sdk-ci-strict-tests",
+      "file": "sdk-ci-strict-tests.png",
+      "alt": "Expanded passing SDK session with dataset and inline scorer-check tests",
+      "caption": "EV-1009 and the inline scorer checks both passed. Dataset results are client-executed/server-scored; inline checks are client-executed/client-scored.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/evaluations: 5. Verify the retained result, after step 4"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "c4f487a4794922a24cf9842e7b1333bf77cd8b7f27b57a3db973df09b2121def"
+    },
+    {
+      "id": "sdk-evaluation-strict-result",
+      "file": "sdk-evaluation-strict-result.png",
+      "alt": "EV-1009 retains two exact-match passes with the actual local callback answers",
+      "caption": "The fresh strict SDK session retained both expected support answers with two passes and no errors or skips. Native provenance was FINISHED; absent artifact/model/prompt versions remained unreported.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/evaluations: 5. Verify the retained result, after step 4"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "3bac13280e372002ede92f0cadb2d860e7fbdd689cc801756dac8b39e8e0c0a3"
+    },
+    {
+      "id": "assessment-environment-agent",
+      "file": "first-assessment-agent.png",
+      "alt": "Approved Docs teaching agent selected in the assessment wizard",
+      "caption": "Select the approved teaching agent. HTTP connected describes its connection; NOT TESTED describes its assessment history.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/configure: Choose the environment and target, after step 4"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "49ed4abc5b5d203469ee7046f3a58a50138470f9cb14c646a140dc187f0a9cd5"
+    },
+    {
+      "id": "assessment-goals",
+      "file": "first-assessment-goals.png",
+      "alt": "Synthetic target purpose and one behavior boundary in Goals",
+      "caption": "Declare the actual task and its behavior boundary. This deterministic teaching target has no private records, business tools or account actions.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/configure: Declare the expected behavior, after step 3"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior. Reframed from a subsequent unsubmitted draft of the same goals used for MR-1002; no extra assessment was launched for the capture.",
+      "reviewedForSecrets": true,
+      "sha256": "db2e4f3bf37ecebc68e5434c9fe5603ab4ca1c6989fca4cffffd01fba537e49c"
+    },
+    {
+      "id": "assessment-tests",
+      "file": "first-assessment-tests.png",
+      "alt": "Only Customer records leave selected with Light and serial execution",
+      "caption": "Only Customer records leave is selected. Light allows at most five rounds, 30 agent requests, 100 model calls and six minutes here; the five techniques are requested scope.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/configure: Select identity, coverage and budget, after step 5"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "7cc8e992b2eb0808795bb43c45b773ccebf7a6ee4de484caa53a084b832cecbe"
+    },
+    {
+      "id": "assessment-report",
+      "file": "first-assessment-trace-overview.png",
+      "alt": "Completed MR-1002 with INCONCLUSIVE security outcome",
+      "caption": "MR-1002 completed with three agent requests and 15 model calls, but its one attempt remained unverified and its security outcome INCONCLUSIVE. Zero findings is not a security pass.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/evidence-and-results: Read the report and run summary, after step 2"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "4f33a23ef98305af1cf6e16f91804a7ce6cb7e87761e9d0bc95f82e5095cce0a"
+    },
+    {
+      "id": "assessment-trace",
+      "file": "first-assessment-trace.png",
+      "alt": "Recorded attacker message and actual teaching-target refusal in Turn 1",
+      "caption": "Select a retained turn to compare the actual attacker message, customer reply and action journal. The critic below is model interpretation, not an independent oracle.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/evidence-and-results: Inspect the actual conversations and actions, after step 3"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "d4b4bf6a407c9e953fedc13c853a45e34805da0fa0e46543cf5315ec6136db22"
+    },
+    {
+      "id": "assessment-run",
+      "file": "first-assessment-running.png",
+      "alt": "MR-1002 running with Open trace and Stop run controls",
+      "caption": "The acknowledged MR-1002 run shows its five requested techniques. Open trace follows execution; the header Cancel leaves the wizard.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/progress-and-cancellation: Follow the admitted run, after step 2"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "124ce072acc592d7259b8e0cc4ab2c2e10014911900b8de6764824316b5147bf"
+    },
+    {
+      "id": "sdk-redteam-result",
+      "file": "sdk-combined-ci-failed.png",
+      "alt": "Combined CI saved a failed two-of-four result with exported evidence",
+      "caption": "The original combined attempt retained Failed and Exported to MLflow. Its generation acknowledgement was uncertain, so target execution and judging did not follow; later same-operation readback did not change this failed session.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "sdk/redteam: 6. Persist a redteam result in the console"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab",
+      "role": "Owner; non-platform-admin customer account",
+      "capturedAt": "2026-11-13",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sdk": "8fb884cbfea0a2cee78eee02eda615d8823b7718"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and source-tagged Backend/Agents images; not a hosted beta attestation",
+      "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
+      "reviewedForSecrets": true,
+      "sha256": "65a600fb8682024e3e4e16392a7679f6bdab1fe9558a33f07ec610d8b66615f3"
     }
   ]
 }
