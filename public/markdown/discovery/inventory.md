@@ -8,6 +8,10 @@ Source: [Web version](https://docs.martiansecurity.ai/discovery/inventory/)
 
 > **Walkthrough limits:** Own beta QA Owner inspected Connect source/Add a read-only source: no authorized Kubernetes aliases and Create source disabled. Deployment-matched Discovery schema/API/config bytes also expose an incompatibility with the available collector snapshot. Enrollment, real collection, inventory and source lifecycle remain unverified; operator-approved scope and a compatible collector/Backend pair are prerequisites.
 
+Partly verified guide
+
+Collection needs an authorized source and a compatible collector. Enrollment, retained inventory and source lifecycle are still being verified.
+
 Build an inventory from authorized infrastructure evidence and inspect what qualifies each record as an agent, candidate or supporting workload. Enrollment succeeds when the source is saved, its intended collector reports and retained inventory appears with a clear freshness boundary.
 
 ## Before you start

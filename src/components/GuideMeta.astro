@@ -1,5 +1,6 @@
 ---
 import coverage from '../../quality/coverage.json';
+import { Aside } from '@astrojs/starlight/components';
 interface Props { id: string; }
 const { id } = Astro.props;
 const guide = coverage.guides.find((item) => item.id === id);
@@ -12,7 +13,8 @@ const environmentLabel = isSdk
   ? guide?.verifiedEnvironment?.split(';').filter((part) => !/\bSDK \d+\.\d+\.\d+/.test(part)).join(';').trim() || 'See verification record'
   : guide?.verifiedEnvironment;
 ---
-<div data-pagefind-ignore class:list={['guide-meta', { 'guide-pending': !verified }]}>
+{/* Preserve provenance for Markdown exports without a second header in the reading UI. */}
+<div hidden data-pagefind-ignore class="guide-meta">
   <span>{productLabel}</span>
   <span aria-hidden="true">·</span>
   <span>{guide?.role ?? 'See prerequisites below'}</span>
@@ -20,4 +22,11 @@ const environmentLabel = isSdk
   <span>{verified ? `Verified ${guide.verifiedAt} · ${environmentLabel}` : partial ? 'Walkthrough partly verified' : 'Walkthrough verification in progress'}</span>
   <a href={`${base}/reference/verification/`}>Verification details</a>
 </div>
-{!verified && <aside data-pagefind-ignore class="qualification-note">{partial ? guide?.validationStatus : 'The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.'}</aside>}
+{!verified && <>
+  <div hidden data-pagefind-ignore class="qualification-note">{guide?.validationStatus}</div>
+  <div data-pagefind-ignore class="guide-notice">
+    <Aside type="note" title={partial ? 'Partly verified guide' : 'Guide in progress'}>
+      {guide?.customerNotice ?? 'This workflow has been reviewed against the implementation. A complete live walkthrough is still in progress.'}
+    </Aside>
+  </div>
+</>}

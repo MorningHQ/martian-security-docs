@@ -8,6 +8,10 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/configure/)
 
 > **Walkthrough limits:** In isolated local QA, endpoint-only HTTP goals, outcome/technique selection, anonymous identity, Light and serial controls were exercised. MR-1002 retained its selected scope. Sandbox bindings, signed-in/browser targets and prepared scenarios remain unverified.
 
+Partly verified guide
+
+The basic endpoint-only HTTP walkthrough is complete. Sandbox bindings, signed-in/browser targets and prepared scenarios are still being verified.
+
 Define the authorized scope before sending adversarial requests to a customer agent. The wizard has six steps: **Environment → Agent → Goals → Tests → Run → Report**. This guide covers configuration through admission; the [first-assessment tutorial](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/get-started/first-assessment.md) provides a complete introductory run.
 
 ## Before you start

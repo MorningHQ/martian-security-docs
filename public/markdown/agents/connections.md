@@ -8,6 +8,10 @@ Source: [Web version](https://docs.martiansecurity.ai/agents/connections/)
 
 > **Walkthrough limits:** The HTTP connection path passed real HTTPS validation, approval and refresh in isolated local QA. MCP/browser execution and credential rotation/disable checks remain pending.
 
+Partly verified guide
+
+The HTTP setup walkthrough is complete. MCP/browser execution and credential rotation or disabling connections are still being verified.
+
 Connect a customer-controlled test agent so Martian can send an approved assessment to it. A successful setup ends with an **active** connection and **Ready for assessments**.
 
 ## Before you start

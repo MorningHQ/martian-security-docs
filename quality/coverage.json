@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-13",
+  "updatedAt": "2026-11-14",
   "guides": [
     {
       "id": "agents/connections",
@@ -114,7 +114,8 @@
         "agents-approval",
         "agents-ready"
       ],
-      "environment": "Isolated local QA; synthetic organization; current pinned source baseline"
+      "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
+      "customerNotice": "The HTTP setup walkthrough is complete. MCP/browser execution and credential rotation or disabling connections are still being verified."
     },
     {
       "id": "agents/http-adapter",
@@ -248,7 +249,8 @@
       "validation": [],
       "screenshots": [
         "agents-sandbox-bindings"
-      ]
+      ],
+      "customerNotice": "This setup has been reviewed against the implementation. The connection and independent business checks still need a complete live walkthrough."
     },
     {
       "id": "assessments/configure",
@@ -348,7 +350,8 @@
         "assessment-goals",
         "assessment-tests"
       ],
-      "environment": "Isolated local QA; pinned source baseline; synthetic organization"
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "customerNotice": "The basic endpoint-only HTTP walkthrough is complete. Sandbox bindings, signed-in/browser targets and prepared scenarios are still being verified."
     },
     {
       "id": "assessments/evidence-and-results",
@@ -455,7 +458,8 @@
         "assessment-outcome-checks",
         "assessment-knowledge"
       ],
-      "environment": "Isolated local QA; pinned source baseline; synthetic organization"
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "customerNotice": "The endpoint-only trace and export walkthrough is complete. Independent business outcomes and published recorded reviews are still being verified."
     },
     {
       "id": "assessments/history-and-exports",
@@ -554,7 +558,8 @@
         "assessment-replay",
         "assessment-reports"
       ],
-      "environment": "Isolated local QA; pinned source baseline; synthetic organization"
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "customerNotice": "Recorded history and the documented JSON downloads have been checked. Domain-outcome and redacted-review ZIP exports are still being verified."
     },
     {
       "id": "assessments/progress-and-cancellation",
@@ -648,7 +653,8 @@
         "assessment-stopped",
         "assessment-needs-attention"
       ],
-      "environment": "Isolated local QA; pinned source baseline; synthetic organization"
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "customerNotice": "Run progress and completion have been checked. Successful cancellation and recovery from an uncertain target action are not yet verified."
     },
     {
       "id": "assessments/reproduction-and-limits",
@@ -748,7 +754,8 @@
         "assessment-verification",
         "assessment-outcome-checks"
       ],
-      "environment": "Isolated local QA; pinned source baseline; synthetic organization"
+      "environment": "Isolated local QA; pinned source baseline; synthetic organization",
+      "customerNotice": "The endpoint-only example is checked. Clean-world reproduction and negative controls still need a complete walkthrough."
     },
     {
       "id": "discovery/call-gates",
@@ -857,7 +864,8 @@
         "discovery-gate-active",
         "discovery-gate-resumed",
         "discovery-containment-preview"
-      ]
+      ],
+      "customerNotice": "Local setup checks have passed. Live enrollment, gate decisions, blocking and resuming calls still need a complete walkthrough."
     },
     {
       "id": "discovery/inventory",
@@ -949,7 +957,8 @@
         "discovery-source-form",
         "discovery-sources",
         "discovery-inventory"
-      ]
+      ],
+      "customerNotice": "Collection needs an authorized source and a compatible collector. Enrollment, retained inventory and source lifecycle are still being verified."
     },
     {
       "id": "discovery/runtime-and-blast-radius",
@@ -1049,7 +1058,8 @@
         "discovery-runtime-setup",
         "discovery-runtime",
         "discovery-blast-radius"
-      ]
+      ],
+      "customerNotice": "The local reporter setup is checked. Delivery to Discovery and the runtime and blast-radius views still need a complete walkthrough."
     },
     {
       "id": "environments/create-and-launch",
@@ -1201,7 +1211,8 @@
           "alt": "Assessment Environment step showing Sandboxes ready for the synthetic Gmail environment.",
           "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
         }
-      ]
+      ],
+      "customerNotice": "The built-in Gmail sandbox lifecycle has been checked in one beta workspace. Generated/personal worlds, other simulations and agent business checks are still being verified."
     },
     {
       "id": "evals/compare",
@@ -1403,7 +1414,8 @@
           "observedPath": "Stored canonical failure to reviewed drafts",
           "result": "Saved-failure direct copying and separate cleaned-export import passed; second published version remains unverified."
         }
-      ]
+      ],
+      "customerNotice": "Imports, editing and an original dataset publication have been checked. Publishing a copied dataset or a second version is still being verified."
     },
     {
       "id": "evals/first-run",
@@ -3181,7 +3193,8 @@
       ],
       "qualification": "pending",
       "validationStatus": "Source reviewed only. No eligible authorized QA source/compatible collector and no privileged sensors were provisioned. No capture, observer or reporting success is claimed.",
-      "validation": []
+      "validation": [],
+      "customerNotice": "This setup is source reviewed. A compatible authorized source and customer-operated sensors are required; capture and reporting still need a live walkthrough."
     }
   ]
 }

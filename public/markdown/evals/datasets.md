@@ -8,6 +8,10 @@ Source: [Web version](https://docs.martiansecurity.ai/evals/datasets/)
 
 > **Walkthrough limits:** JSONL/CSV/JSON import, edit/archive/delete, original organization publication/native readback, a genuine Martian read-only source and editable copy, refresh and role/foreign-tenant boundaries passed in isolated QA. Copy publication stalled after evaluation-service timeout; a second published version remains unverified. Saved-failure authoring is qualified in evals/regression-cases.
 
+Partly verified guide
+
+Imports, editing and an original dataset publication have been checked. Publishing a copied dataset or a second version is still being verified.
+
 Build a reviewed set of input/expected-output records, then publish an immutable version that your team can select in Evals. Draft edits do not change the version pinned by an earlier run.
 
 ## Before you start

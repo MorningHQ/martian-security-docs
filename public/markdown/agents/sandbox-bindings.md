@@ -6,7 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/agents/sandbox-bindings/)
 
 > **Page qualification:** Current beta console · owner, admin · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.
+> **Walkthrough limits:** Source reviewed; live walkthrough and required screenshots pending.
+
+Guide in progress
+
+This setup has been reviewed against the implementation. The connection and independent business checks still need a complete live walkthrough.
 
 Use sandbox bindings when a red-team assessment must exercise synthetic business systems rather than only the agent’s replies. Success means the intended session-capable HTTP agent is approved for the exact seeded account and tools, and its admitted run retains independent before/after business checks.
 

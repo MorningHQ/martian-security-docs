@@ -86,7 +86,7 @@ docs-page-actions { position: relative; display: block; font-size: 12px; line-he
 @media print { docs-page-actions { display: none; } }
 h1 { margin: 0; letter-spacing: -.03em; line-height: 1.25; font-weight: 600; }
 .sl-markdown-content { font-size: var(--sl-text-body); }
-.sl-markdown-content > p:first-child { font-size: 15px; line-height: 1.65; max-width: 68ch; }
+.sl-markdown-content > p:first-of-type { font-size: 15px; line-height: 1.65; max-width: 68ch; }
 .sl-markdown-content :is(h2, h3, h4) { font-weight: 600; letter-spacing: -.02em; line-height: 1.4; }
 .sl-markdown-content .level-h2 { margin-top: 2rem; padding-top: 0; border-top: 0; }
 .sl-markdown-content .level-h2 h2 { margin: 0; border: 0; }
@@ -153,10 +153,39 @@ starlight-toc a[aria-current='true'] { color: var(--sl-color-white); font-weight
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print { .doc-section-label { color: #4e4e4e; } .sl-markdown-content h2 { break-after: avoid; } }
 
+/* Machine-readable provenance belongs in page copies, not the article header. */
+.sl-markdown-content :is(.guide-meta, .qualification-note)[hidden] { display: none !important; }
+
+/* Keep secondary guidance distinct and readable in both themes. */
+.starlight-aside {
+  --callout-bg: #211e1a; --callout-border: #494139; --callout-accent: #e6d6c1;
+  --sl-color-asides-border: var(--callout-border);
+  --sl-color-asides-text-accent: var(--callout-accent);
+  margin-block: 1.25rem;
+  padding: 1rem 1.125rem;
+  border: 1px solid var(--callout-border);
+  border-inline-start-width: 3px;
+  border-radius: 9px;
+  background: var(--callout-bg);
+  color: var(--sl-color-text);
+  font-size: var(--sl-text-body);
+  line-height: 1.65;
+}
+.starlight-aside--tip { --callout-bg: #18241c; --callout-border: #36523e; --callout-accent: #b4d8be; }
+.starlight-aside--caution { --callout-bg: #2a2215; --callout-border: #6a542b; --callout-accent: #f1d29b; }
+.starlight-aside--danger { --callout-bg: #2c1b19; --callout-border: #72443d; --callout-accent: #f2b9ae; }
+:root[data-theme='light'] .starlight-aside { --callout-bg: #f8f7f5; --callout-border: #d8d2c9; --callout-accent: #5d4630; }
+:root[data-theme='light'] .starlight-aside--tip { --callout-bg: #f3f8f4; --callout-border: #c2d8c8; --callout-accent: #285137; }
+:root[data-theme='light'] .starlight-aside--caution { --callout-bg: #fffbf1; --callout-border: #e7d3a2; --callout-accent: #78500e; }
+:root[data-theme='light'] .starlight-aside--danger { --callout-bg: #fff5f3; --callout-border: #e6bbb3; --callout-accent: #942f25; }
+.starlight-aside .starlight-aside__title { margin: 0; gap: .55rem; font-size: .90625rem; font-weight: 600; line-height: 1.5; }
+.starlight-aside .starlight-aside__icon { width: 1.125rem; height: 1.125rem; flex: 0 0 auto; }
+.starlight-aside .starlight-aside__content { margin-top: .45rem; overflow-wrap: anywhere; }
+.starlight-aside__content > :first-child { margin-top: 0; }
+.starlight-aside__content > :last-child { margin-bottom: 0; }
+.guide-notice .starlight-aside { margin-block: .25rem 1.5rem; }
+
 /* Customer-task summaries retain the Hermes paper, type and spacing. */
-.guide-meta { display: flex; flex-wrap: wrap; gap: .35rem .55rem; color: var(--sl-color-gray-3); font-size: 11.5px; margin: .5rem 0 1.25rem; }
-.guide-meta a { margin-left: auto; }
-.qualification-note { border-left: 2px solid var(--sl-color-gray-4); padding: .6rem .85rem; margin: 1rem 0; color: var(--sl-color-gray-3); font-size: 12px; line-height: 1.6; }
 .capture-pending { color: var(--sl-color-gray-3); font-size: 11.5px; font-style: italic; }
 .start-paths { display: grid; gap: .75rem; margin: 1.5rem 0 2rem; }
 .start-path { display: grid; grid-template-columns: 2rem 1fr auto; gap: .85rem; align-items: center; border: 1px solid var(--sl-color-hairline); border-radius: 8px; padding: 1.15rem 1.25rem; text-decoration: none; background: var(--sl-color-bg); }
@@ -165,7 +194,7 @@ starlight-toc a[aria-current='true'] { color: var(--sl-color-white); font-weight
 .start-path strong { display: block; font-size: 15px; line-height: 1.4; }
 .start-path .path-description { display: block; margin-top: .3rem; font-size: 12.5px; line-height: 1.65; color: var(--sl-color-gray-3); }
 .start-path .path-arrow { font-size: 20px; color: var(--sl-color-gray-3); }
-@media (max-width: 49.99rem) { .start-path { padding: 1rem; grid-template-columns: 1.4rem 1fr auto; gap: .65rem; } .guide-meta a { margin-left: 0; } }
+@media (max-width: 49.99rem) { .start-path { padding: 1rem; grid-template-columns: 1.4rem 1fr auto; gap: .65rem; } }
 
 .workflow-options { display: grid; gap: 0; margin-block: 1.25rem; border: 1px solid var(--sl-color-hairline); border-radius: 8px; }
 .workflow-options > div { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: 1rem 1.15rem; }

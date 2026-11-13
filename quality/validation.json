@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-13",
+  "updatedAt": "2026-11-14",
   "checks": [
     {
       "scope": "Historical PR5: Production Astro build and Pagefind index",
@@ -429,6 +429,12 @@
       "environment": "Current production build preview;1440x1000 light and390x844 dark;real browser and native clipboard;AI-simulated review by the author",
       "result": "Four changed articles,all four new images,real search and exact page/agent-link copy passed;no human participant",
       "details": "Dashboard,annotations,using-with-agents and verification pages rendered without page-wide overflow,image failures,console warnings/errors,failed requests or HTTP failures. The two task guides show their named isolated-QA verification; four new captures are readable with captions/full-size links. Search opened the annotation guide. Copy page matched the generated Markdown byte-for-byte,including qualification and screenshots;Copy agent link matched its advertised secure mirror URL. Direct desktop/mobile screenshots were visually inspected. The owner read/write prerequisite,concrete trace example,typed summary labels,save-once and read-failure recovery are clear. No new reader P1/P2 found in this bounded author review;the earlier complete47-page audit remains separately recorded."
+    },
+    {
+      "scope": "Guide-header simplification and callout styling",
+      "environment": "Production preview;26 real-browser page/theme/viewport combinations across all13 unfinished guides plus verified SDK/Evals examples;1440x1000 and390x844 light/dark",
+      "result": "Metadata row removed from visible reading UI;readable concise callouts and exact agent-context copy passed",
+      "details": "The product/role/date/Verification details row is nonvisual;full qualification and provenance remain in generated Markdown and the reference record. Unfinished guides keep concise customer-facing limits in native Starlight Aside cards. All13 customer notices were checked against existing qualification records; no guide was promoted. Theme-aware note/tip/caution/danger tokens, borders, titles, icons, padding and14.5px body type replace the tiny gray note. Actual note/caution body/title contrast was at least6.88:1 in both themes.26 UI combinations had no overflow,document errors,failed requests or HTTP failures. Actual Copy page matched generated Markdown exactly and retained full original limits and role metadata. Desktop/mobile screenshots were visually reviewed. The first automation attempt tried the theme control after switching to mobile,where it is hidden;the corrected check selected the theme through the visible desktop control before resizing. No product backend/model flow was changed or rerun. Existing three export-regression tests passed,including the updated nonvisual-provenance fixture. Native Aside API checked against official Starlight docs through Context7."
     }
   ],
   "remainingGaps": [

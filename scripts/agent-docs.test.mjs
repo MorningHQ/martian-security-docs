@@ -21,8 +21,8 @@ test('rendered exports preserve exact executable code, including indentation and
   assert.throws(() => render('<pre>Unrecoverable code</pre>'), /no exact copy payload/);
 });
 
-test('qualification limits, role, table, screenshot caption and accessible links survive conversion', () => {
-  const result = render('<div class="guide-meta"><span>SDK 0.1.3</span><span aria-hidden="true">·</span><span>Owner</span><span>Walkthrough partly verified</span><a href="/reference/verification/">Verification details</a></div><aside class="qualification-note">Remote CI is not verified.</aside><table><thead><tr><th>Role</th><th>Access</th></tr></thead><tbody><tr><td>Owner</td><td>Configure</td></tr></tbody></table><figure><a href="/media/screenshots/example.png"><img src="/media/screenshots/example.png" alt="Actual settings"></a><figcaption>Real screenshot caption.<a class="visual-open" href="/media/screenshots/example.png">Open full size</a></figcaption></figure>');
+test('nonvisual provenance, qualification limits, role, table and screenshot caption survive conversion', () => {
+  const result = render('<div hidden class="guide-meta"><span>SDK 0.1.3</span><span aria-hidden="true">·</span><span>Owner</span><span>Walkthrough partly verified</span><a href="/reference/verification/">Verification details</a></div><div hidden class="qualification-note">Remote CI is not verified.</div><table><thead><tr><th>Role</th><th>Access</th></tr></thead><tbody><tr><td>Owner</td><td>Configure</td></tr></tbody></table><figure><a href="/media/screenshots/example.png"><img src="/media/screenshots/example.png" alt="Actual settings"></a><figcaption>Real screenshot caption.<a class="visual-open" href="/media/screenshots/example.png">Open full size</a></figcaption></figure>');
   assert.match(result.markdown, /SDK 0\.1\.3 · Owner · Walkthrough partly verified/);
   assert.match(result.markdown, /> \*\*Walkthrough limits:\*\* Remote CI is not verified\./);
   assert.match(result.markdown, /\| Role \| Access \|/);

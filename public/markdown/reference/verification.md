@@ -8,7 +8,7 @@ These guides are being qualified against actual running application/backend stat
 
 ## Current publication status
 
-The site is being published iteratively. Each task guide shows its current walkthrough status above the instructions. The initial public build includes source-reviewed instructions; authenticated captures and complete execution checks are added as they pass.
+The site is being published iteratively. Guides with unfinished walkthroughs show a short notice above the instructions. Detailed roles, dates, tested environments and qualification records are collected here and retained in **Copy page** Markdown. Authenticated captures and complete execution checks are added as they pass.
 
 Of **37 task guides**, **24 are verified**, **9 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **120 captured references** across **108 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
