@@ -10,7 +10,7 @@ These guides are being qualified against actual running application/backend stat
 
 The site is being published iteratively. Guides with unfinished walkthroughs show a short notice above the instructions. Detailed roles, dates, tested environments and qualification records are collected here and retained in **Copy page** Markdown. Authenticated captures and complete execution checks are added as they pass.
 
-Of **37 task guides**, **24 are verified**, **9 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **120 captured references** across **108 unique PNGs**. These counts come from the current coverage and screenshot manifests.
+Of **37 task guides**, **25 are verified**, **8 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **124 captured references** across **112 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 
@@ -18,12 +18,15 @@ The public site now passes trusted HTTPS checks, including nested guides, Markdo
 
 The latest completeness audit added the missing project dashboard, native annotation and network-observer instructions and a [console map](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/console-navigation.md). The dashboard and annotation guides now have real console captures and successful walkthroughs in isolated QA. Network observation still awaits an authorized compatible source and privileged sensors. Earlier failed reads remain recorded; the successful checks below do not establish hosted-beta parity or general service reliability.
 
-## Observed walkthroughs — 13 November 2026
+## Observed walkthroughs — 13–14 November 2026
 
 The isolated QA application uses the source baseline below, real Backend/Agents release images and MLflow 3.16.1. The organization, accounts, target and dataset contain synthetic data. These checks do not attest to a hosted customer workspace.
 
 -   An invited organization owner created a workspace, signed in, opened the Default Evals project and retained access after refresh.
 -   The downloadable HTTP adapter passed trusted HTTPS health/chat checks and rejected missing or incorrect bearer credentials. The owner saved, validated and approved its actual connection; active readiness survived refresh.
+-   A separate synthetic Owner completed HTTP, MCP and browser registration, protocol-specific validation, approval and full refresh. MCP discovery found a real `chat(message)` tool and retained the selected entry tool and argument. Browser validation returned **public-url-only**; website login/chat passed a separate target preflight, while Martian browser-assessment execution remains unqualified. Four new application captures show browser details, MCP selection, rotation recovery and the named deletion confirmation.
+-   The unused HTTP registration also passed deployed-revision declaration, credential rotation, re-approval and disable. Rotation returned **draft**, cleared the form and revoked its saved approval; the target rejected the old bearer and accepted the replacement. **Validate and approve** restored **active**. The Owner deleted only that unused registration: **204**, absent after refresh, **404** on independent read and no stored credential. The target application remained available. No assessment/evaluation or campaign lease had used this registration; active-run deletion guards and retention of populated history remain source reviewed.
+-   Connection-management boundary checks returned **401** for anonymous requests, **403** for Member/Viewer administrative actions and **404** for another organization’s Owner. Three relevant Frontend files and three Backend files matched the recorded source pins. Initial read/proxy timeouts and one aborted-refresh sign-in recovery were preserved separately; no connection mutation was repeated to repair them.
 -   The owner imported three JSONL records, published them and reopened their immutable content after refresh.
 -   **EV-1001** executed the three actual HTTP requests and retained **3 passed, 0 failed, 0 errors, 0 skipped**. Native provenance reported **FINISHED**, with the same dataset content hash. The first record’s native trace contains exact-match and target-chat spans with the observed input/output.
 -   The actual result controls downloaded one filtered READY record as JSON and all three records as CSV. The terminal run and answers survived a full page refresh.
@@ -62,7 +65,7 @@ The separate shared-generation attempt failed before QA. No generated or persona
 
 The new beta QA Owner also inspected **Connect source → Add a read-only source**. The Kubernetes list had no authorized alias and **Create source** stayed disabled. Read-only checks of the deployed Discovery schema, API and configuration files matched the Backend baseline below. That schema rejects a Kubernetes observation field emitted by the available collector snapshot. Compatible collection and operator-approved scope remain prerequisites; no source, collector credential or inventory was created for this check.
 
-The teaching callbacks are deterministic. These checks verify wiring and retained evidence; they do not establish production model quality or security. Other interfaces, sandbox-backed assessments, positive cooperative cancellation and the remaining screenshot-dependent journeys are still being qualified. Verified labels name the local or GitHub-runner QA scope; they do not imply hosted-beta parity. Partly verified guides identify their remaining limits above the steps.
+The teaching callbacks are deterministic. These checks verify wiring and retained evidence; they do not establish production model quality or security. Protocol-specific MCP/browser assessment execution, sandbox-backed assessments, positive cooperative cancellation and the remaining screenshot-dependent journeys are still being qualified. Verified labels name the local or GitHub-runner QA scope; they do not imply hosted-beta parity. Partly verified guides identify their remaining limits above the steps.
 
 A second three-record member run initially retained canonical passes while some telemetry acknowledgements were uncertain. Administrator reconciliation later confirmed the saved evidence with **zero target calls**. A stalled, never-submitted SDK dataset publication was safely aborted and its restored draft published after that recovery. A manually repeated numeric review save after a delayed acknowledgement also produced an additional history entry; queue completion was checked against its four latest verified answers.
 

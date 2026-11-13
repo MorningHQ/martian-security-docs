@@ -12,13 +12,13 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 - [Install and configure the SDK](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/install-and-configure.md?v=587f1ec3d05b): Install the Martian SDK, create a scoped API key, and connect Python or CI to your organization.
 
-- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=aefe6bc8fd76): Review source revisions, real captures, completed checks and remaining gaps.
+- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=a109230992e2): Review source revisions, real captures, completed checks and remaining gaps.
 
 ## Documentation
 
 - [Martian Security](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/index.md?v=837ffda38711): Practical customer guides for red teaming, evaluations, and the Martian SDK.
 
-- [Connect an agent](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/connections.md?v=af63aa1614c1): Register, validate and approve an HTTP, MCP or browser target, then manage its connection safely.
+- [Connect an agent](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/connections.md?v=de776812d84f): Register, validate and approve an HTTP, MCP or browser target, then manage its connection safely.
 
 - [Add an HTTP chat adapter](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/http-adapter.md?v=bdcd97c4ccac): Run a complete callback-backed HTTP service, preflight its contract, and provide the public HTTPS endpoint required by console onboarding.
 
@@ -94,7 +94,7 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 - [Use these docs with an AI assistant](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/using-with-agents.md?v=3b2004ac5113): Copy a complete page or share a public Markdown link that an assistant can read without signing in.
 
-- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=aefe6bc8fd76): Review source revisions, real captures, completed checks and remaining gaps.
+- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=a109230992e2): Review source revisions, real captures, completed checks and remaining gaps.
 
 - [Gate CI on Evals and redteam](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/ci.md?v=c7f51b51e806): Run evaluations and adversarial probes in one persisted CI session, verify its result, and retain safe reports.
 
@@ -110,6 +110,6 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 ## Complete reference
 
-- [All documentation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/llms-full.txt?v=1c2297a7dd8f): all 46 pages in one text file.
+- [All documentation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/llms-full.txt?v=b0b93a9f1b93): all 46 pages in one text file.
 
 - [Website](https://docs.martiansecurity.ai/): the human-readable site. The Markdown mirror is an independent HTTPS access path.

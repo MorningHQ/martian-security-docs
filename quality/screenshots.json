@@ -2793,6 +2793,94 @@
       "validationStatus": "Real UI and native API readback; individually viewed for readable framing and secrets. Intermittent read failures and successful normal refresh are recorded separately; no target/model replay.",
       "reviewedForSecrets": true,
       "sha256": "f2d826327e101f47e3aafc9f16ccd0f4b7d7a58e322ed4763766721da0d51330"
+    },
+    {
+      "id": "agents-browser-details",
+      "file": "agents-browser-details.png",
+      "alt": "Browser chat setup with Requires sign-in selected and empty website username and password fields.",
+      "caption": "Choose Browser chat and Requires sign-in to enter website credentials in the separate fields. URL validation checks the public HTTPS address; login and chat are checked during assessment setup.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "agents/connections: Register the target, step 5"
+      ],
+      "environment": "Isolated local QA; synthetic Documentation Native Sessions QA; real pinned Frontend/Backend; customer-operated deterministic public HTTPS target",
+      "role": "Organization Owner; platform_admin false; AI-operated synthetic account",
+      "capturedAt": "2026-11-13T17:13:10.261354+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Three owning Frontend files and three Backend files exactly match the recorded pins. This is local QA, not a hosted-beta parity attestation.",
+      "validationStatus": "Real UI plus normal-session API readback; individually viewed for framing and secrets. Setup and disposable HTTP lifecycle only; protocol-specific assessment execution remains separate.",
+      "reviewedForSecrets": true,
+      "sha256": "89fbb7667a925989b3bc41f509f021c27c6894c1cf5eb8b87264e3ae88e527f8"
+    },
+    {
+      "id": "agents-mcp-approval",
+      "file": "agents-mcp-approval.png",
+      "alt": "A real discovered MCP chat tool selected with its top-level message argument before connection approval.",
+      "caption": "Choose the entry tool and its top-level message argument from the discovered schema, then review the expiry and stop conditions before approval.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "agents/connections: Validate and approve, step 3"
+      ],
+      "environment": "Isolated local QA; synthetic Documentation Native Sessions QA; real pinned Frontend/Backend; customer-operated deterministic public HTTPS target",
+      "role": "Organization Owner; platform_admin false; AI-operated synthetic account",
+      "capturedAt": "2026-11-13T17:10:31.217840+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Three owning Frontend files and three Backend files exactly match the recorded pins. This is local QA, not a hosted-beta parity attestation.",
+      "validationStatus": "Real UI plus normal-session API readback; individually viewed for framing and secrets. Setup and disposable HTTP lifecycle only; protocol-specific assessment execution remains separate.",
+      "reviewedForSecrets": true,
+      "sha256": "7b1a2493c0a6726973afec5903fcb8002c6a1c4e4ea98dcc17f922c4e27526b9"
+    },
+    {
+      "id": "agents-credentials-rotated",
+      "file": "agents-credentials-rotated.png",
+      "alt": "Connection drawer after HTTP credential rotation, with a cleared secret field and Validate and approve action.",
+      "caption": "Rotation cleared the credential field and returned the HTTP connection to draft. Use Validate and approve to restore active readiness before testing again.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "agents/connections: Manage an existing connection, steps 3\u20134"
+      ],
+      "environment": "Isolated local QA; synthetic Documentation Native Sessions QA; real pinned Frontend/Backend; customer-operated deterministic public HTTPS target",
+      "role": "Organization Owner; platform_admin false; AI-operated synthetic account",
+      "capturedAt": "2026-11-13T17:01:50.640570+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Three owning Frontend files and three Backend files exactly match the recorded pins. This is local QA, not a hosted-beta parity attestation.",
+      "validationStatus": "Real UI plus normal-session API readback; individually viewed for framing and secrets. Setup and disposable HTTP lifecycle only; protocol-specific assessment execution remains separate.",
+      "reviewedForSecrets": true,
+      "sha256": "082eeb7bc1041f37a9c476a0705e53a828ead8400de8315b7adac4883849339e"
+    },
+    {
+      "id": "agents-delete-confirmation",
+      "file": "agents-delete-confirmation.png",
+      "alt": "Delete confirmation naming the unused Synthetic HTTP lifecycle QA registration and explaining saved-credential removal.",
+      "caption": "Confirm the exact retired registration before choosing Delete agent. Deleting the registration removes its saved credentials and leaves the target application running.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "agents/connections: Delete a retired registration, step 3"
+      ],
+      "environment": "Isolated local QA; synthetic Documentation Native Sessions QA; real pinned Frontend/Backend; customer-operated deterministic public HTTPS target",
+      "role": "Organization Owner; platform_admin false; AI-operated synthetic account",
+      "capturedAt": "2026-11-13T17:17:49.944436+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Three owning Frontend files and three Backend files exactly match the recorded pins. This is local QA, not a hosted-beta parity attestation.",
+      "validationStatus": "Real UI plus normal-session API readback; individually viewed for framing and secrets. Setup and disposable HTTP lifecycle only; protocol-specific assessment execution remains separate.",
+      "reviewedForSecrets": true,
+      "sha256": "356b441caa4beb3218e3c5e2909e6976c7149ce5d33b594ff71329701b87637f"
     }
   ]
 }
