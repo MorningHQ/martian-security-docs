@@ -1,0 +1,10 @@
+---
+import coverage from '../../quality/coverage.json';
+import screenshots from '../../quality/screenshots.json';
+
+const guides = coverage.guides;
+const count = (status: string) => guides.filter((guide) => guide.qualification === status).length;
+const uniqueImages = new Set(screenshots.screenshots.map((capture) => capture.file)).size;
+---
+
+<p>Of <strong>{guides.length} task guides</strong>, <strong>{count('verified')} are verified</strong>, <strong>{count('partial')} are partly verified</strong> and <strong>{count('pending')} await walkthrough verification</strong>. The screenshot record contains <strong>{screenshots.screenshots.length} captured references</strong> across <strong>{uniqueImages} unique PNGs</strong>. These counts come from the current coverage and screenshot manifests.</p>
