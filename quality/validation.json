@@ -495,6 +495,19 @@
       "environment": "Node26; local production preview; actual browser at1440/390/320px in light/dark themes; no API interception",
       "result": "passed build, existing standard checks and bounded author novice/aesthetic browser review; full release qualification remains incomplete",
       "details": "Ordinary build47pages with no stale agent assets.4406local links/anchors/assets passed;46agent pages retain66exactcode blocks and133captions.270actual browser responses had zero console/page/HTTP/request failures across11viewport/theme combinations on dataset,verification,overview andSDK pages. Exact page/code/agent-link clipboard equality, real search/result click, nested refresh, full-size image, all12inline screenshots, optional editing disclosure and continued step numbering passed. Recovery callout body contrast8.05light/8.76dark. Individually viewed actual application PNGs plus rendered desktop code/header and mobile recovery captures. The beginner/aesthetic review is AI-simulated, without a human participant. Initial local browser run retained one raw-image ERR_ABORTED when its popup was closed before the navigation stream settled; waiting for networkidle fixed the observation and the final run passed, without a site-code change. Registry136references/124unique PNGs;26verified/7partial/4pending guides. Unweakened check:release exited1 with30findings:18pending captures,11incomplete walkthroughs and their summary."
+    },
+    {
+      "scope": "Browser assessment admission, website setup and retained fresh-conversation failure",
+      "environment": "Separate Documentation Browser Execution QA organization; non-platform-admin Owner; clean Frontend5361d1f and unchanged pinned Backend/Agents/browser images; real synthetic HTTPS website",
+      "result": "Observed real admission, sign-in, two setup messages and retained Needs attention failure; completed browser assessment and positive cancellation remain unqualified",
+      "record": "quality/walkthroughs.json",
+      "details": "One UI202 admission with the original runtime handle; real sign-in/two setup messages, then one retained uncertain first-probe action. Native/error/recovery reads, UI reload and actual legacy JSON agree. Four direct application PNGs/17source-file byte matches. No recovery assertion, target replay, product patch or guide promotion; all37required-stage lists and the other34guide records preserved."
+    },
+    {
+      "scope": "Browser failure documentation build, invariant checks and author reader review",
+      "environment": "Node26; production preview; real browser at1440/390/320px in light/dark themes; no API interception; AI-simulated novice/aesthetic review, no human participant",
+      "result": "Build, existing default checks and local browser review passed; full release qualification remains incomplete",
+      "details": "47builtpages,4429localreferences,46agentexports,66exactcodepayloads,137captions and3existingexportregressions passed.283browserresponses/no console/page/HTTP/requesterrors;13explicit viewport/theme combinations across6changedarticles plusSDKcodecopy/search. All4newPNGdecodes/fullsize,exactpage/code/agentlinkclipboard,deeprefresh,continuednumbering andoptionalbrowserdisclosure open/close passed. Partial-guide callout body contrast8.23light/11.66dark;logo-only navbar and nonvisual provenance retained. Author reviewed the actual4applicationimages and desktop/mobile rendering, without an independent human participant. Initial UI checks used the wrong accessible-brand expectation; corrected to the existing Martian Security name from source, with no site-component change. Strict check:release remains exit1/30findings:18captures+11walkthroughs+summary. All37required-stage lists/qualifications,other34guide records and136older capture entries unchanged;140references/128uniqueimages. No dependencies,Actions orcheckscript changes."
     }
   ],
   "remainingGaps": [

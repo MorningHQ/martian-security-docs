@@ -35,5 +35,24 @@
       "MorningHQ/martian-redteam": "f3caf8bcc5f8aad176d2c843562fe468cd755218"
     },
     "comparison": "Newer service/console commits refresh repository documentation, except a Frontend resizable-panel ID adjustment. Runtime qualification remains tied to the original recorded pins; these remote heads are source-audit context, not deployed image attestations."
-  }
+  },
+  "additionalSourceReviews": [
+    {
+      "reviewedAt": "2026-11-14",
+      "remoteHeads": {
+        "MorningHQ/MartianFrontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "MorningHQ/MartianBackend": "d18960e4937a1632a3f1773facecd8377cc0caab",
+        "MorningHQ/martian-agents": "d021180e92156ff6b4f442ed21c8d87a13582dc2"
+      },
+      "comparison": "Backend/Agents differences from the original runtime pins contain documentation/instruction files only. Frontend42changedfiles include docs and UI polish; package manifest/lock unchanged. Actual Pipeline now explicitly Preview/unavailable and downloads a template without the old illustrative scan command. CI/key navigation and action contracts retained; current browser failure capture uses the newer frontend. Earlier screenshot pins remain historical and unchanged.",
+      "runtimeByteMatches": 17,
+      "fullHostedParity": false,
+      "usedBy": [
+        "assessments/configure browser example",
+        "assessments/evidence-and-results browser failure example",
+        "assessments/progress-and-cancellation browser illustration",
+        "reference/console-navigation Pipeline entry"
+      ]
+    }
+  ]
 }

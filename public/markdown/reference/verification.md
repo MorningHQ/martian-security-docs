@@ -10,7 +10,7 @@ These guides are being qualified against actual running application/backend stat
 
 The site is being published iteratively. Guides with unfinished walkthroughs show a short notice above the instructions. Detailed roles, dates, tested environments and qualification records are collected here and retained in **Copy page** Markdown. Authenticated captures and complete execution checks are added as they pass.
 
-Of **37 task guides**, **26 are verified**, **7 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **136 captured references** across **124 unique PNGs**. These counts come from the current coverage and screenshot manifests.
+Of **37 task guides**, **26 are verified**, **7 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **140 captured references** across **128 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 
@@ -28,6 +28,7 @@ The isolated QA application uses the source baseline below, real Backend/Agents 
 -   The unused HTTP registration also passed deployed-revision declaration, credential rotation, re-approval and disable. Rotation returned **draft**, cleared the form and revoked its saved approval; the target rejected the old bearer and accepted the replacement. **Validate and approve** restored **active**. The Owner deleted only that unused registration: **204**, absent after refresh, **404** on independent read and no stored credential. The target application remained available. No assessment/evaluation or campaign lease had used this registration; active-run deletion guards and retention of populated history remain source reviewed.
 -   Connection-management boundary checks returned **401** for anonymous requests, **403** for Member/Viewer administrative actions and **404** for another organization’s Owner. Three relevant Frontend files and three Backend files matched the recorded source pins. Initial read/proxy timeouts and one aborted-refresh sign-in recovery were preserved separately; no connection mutation was repeated to repair them.
 -   A separate bounded MCP assessment used the approved `chat(message)` tool, anonymous endpoint-only identity, one data outcome, Light and serial settings. Its original admission returned a downstream **503**, yet the native campaign executed **3 target calls** and **16 model calls**, then ended with **search\_round\_budget\_exhausted** and no pending recovery actions. Two real **Refresh evidence** requests returned **200** without reconciling its missing admission link. An operator invoked the existing Backend reconciliation routine against that one original campaign, without a replacement submission, native-state edit or product-source patch. The customer console then retained **Completed / INCONCLUSIVE**, one detailed attempt, the three actual refusals and attempted/unverifiable probe coverage. Reload and the actual legacy JSON download agreed. The new [MCP evidence example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-an-mcp-endpoint-example) shows this explicitly operator-assisted result; automatic admission recovery, browser execution and positive cancellation remain unqualified.
+-   A separate Browser Execution QA Owner registered, validated and approved a website target, then retained its active connection after reload. One endpoint-only, configured-account, disclosure-outcome, Light and serial assessment returned **202** with its original runtime handle. The unchanged executor passed its real sandbox preflight; website sign-in and **two neutral setup messages** completed. Starting the first probe’s fresh conversation then failed with **fresh\_conversation\_unavailable:fresh\_timeout**. The console retained **Needs attention**, **No verdict recorded** and scheduled probe coverage. Reload and the actual legacy JSON download agreed; native reads retained one unresolved action in **awaiting recovery**, with no active run lease and all six budget reservations settled. No recovery decision, replacement run or product-source change was used. The [browser failure example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-a-browser-run-that-needs-attention) qualifies that observed failure path; a completed browser assessment and positive cancellation remain unqualified.
 -   The owner imported three JSONL records, published them and reopened their immutable content after refresh.
 -   **EV-1001** executed the three actual HTTP requests and retained **3 passed, 0 failed, 0 errors, 0 skipped**. Native provenance reported **FINISHED**, with the same dataset content hash. The first record’s native trace contains exact-match and target-chat spans with the observed input/output.
 -   The actual result controls downloaded one filtered READY record as JSON and all three records as CSV. The terminal run and answers survived a full page refresh.
@@ -89,12 +90,15 @@ Installing a newer release does not extend those recorded results automatically.
 | Component | Reviewed source revision |
 | --- | --- |
 | Frontend | 06d0d0c96a9627c383b85670929dfe8bdc33aa30 |
+| Frontend for browser failure and Pipeline follow-up | 5361d1f241278e19c79e68d1d8f9325920a04d12 |
 | Backend | 01343fa93feb518f6c7cd1928b63a01d2ec5ee0b |
 | Agents | f7de3e068d66fe478f642d43a658ed9b3ed321f5 |
 | Evals service | 60c25994958105db4baa91f377ba46c24fdf253d |
 | SDK release | martian-sdk 0.1.2 |
 | SDK release for the local suite-file guide | martian-sdk 0.1.3 |
 | Hermes styling foundation | 3593a4bae03e96cf6c7597ececf99fbfc32997ae |
+
+The follow-up frontend was served from a clean source archive against the same Backend/Agents runtime baseline. Seventeen relevant served/runtime files matched their recorded source bytes. The newer Backend and Agents heads contained documentation-only changes. The current Pipeline preview and its actual template download were also inspected; these checks do not requalify every earlier screenshot against the newer frontend.
 
 ## Inspectable records
 
@@ -109,4 +113,4 @@ The public repository retains the guide coverage matrix, screenshot provenance a
 
 **Verified** means the recorded guide walkthrough passed against its named environment. **Source reviewed** means implementation was inspected but its live walkthrough remains pending. **Preview** describes a visible non-enforcing or otherwise limited capability. **Unsupported** means the current contract does not provide that operation. The guides preserve these boundaries.
 
-Product gaps already identified include the Pipeline view’s illustrative martian scan text, unsupported target interfaces for dataset Evals, a Threat Intel view without a live feed, and network containment that remains a preview. Use the actual supported SDK CLI and controls documented here.
+The current Pipeline view explicitly labels its configuration as a preview: automated runs and waiver management are not connected. Its earlier illustrative command has been removed. Other limits include unsupported target interfaces for dataset Evals, a Threat Intel view without a live feed, and network containment that remains a preview. Use the supported SDK CLI and controls documented here.

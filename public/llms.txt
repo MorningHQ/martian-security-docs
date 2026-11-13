@@ -12,7 +12,7 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 - [Install and configure the SDK](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/install-and-configure.md?v=587f1ec3d05b): Install the Martian SDK, create a scoped API key, and connect Python or CI to your organization.
 
-- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=0a4198805f99): Review source revisions, real captures, completed checks and remaining gaps.
+- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=c610628ac9dc): Review source revisions, real captures, completed checks and remaining gaps.
 
 ## Documentation
 
@@ -24,13 +24,13 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 - [Connect an agent to sandbox systems](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/sandbox-bindings.md?v=9321cff2206c): Configure a session-capable HTTP agent using a complete payment-system binding and independent duplicate-refund checks.
 
-- [Configure a red-team assessment](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/configure.md?v=de95fb8e1c1a): Choose the current wizard's environment, agent, goals, coverage and execution settings without overstating readiness.
+- [Configure a red-team assessment](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/configure.md?v=e9ca43e8a823): Choose the current wizard's environment, agent, goals, coverage and execution settings without overstating readiness.
 
-- [Inspect assessment evidence and results](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md?v=098b7434a3b4): Read reports, trace turns, findings, probe coverage and independent outcome checks at the correct evidence level.
+- [Inspect assessment evidence and results](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md?v=8e128af1bf78): Read reports, trace turns, findings, probe coverage and independent outcome checks at the correct evidence level.
 
 - [Find recorded runs and export reports](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/history-and-exports.md?v=43a56a0288a4): Use Assessments, Findings, Reports and Replay to inspect persisted history and choose the appropriate export.
 
-- [Follow progress and stop a run](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md?v=aa3163fee72d): Track an admitted assessment, distinguish execution from security outcome and handle cancellation or uncertain submission.
+- [Follow progress and stop a run](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md?v=d4664a089a16): Track an admitted assessment, distinguish execution from security outcome and handle cancellation or uncertain submission.
 
 - [Understand reproduction and coverage limits](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/reproduction-and-limits.md?v=02a72e9c4152): Distinguish observed replies, independently verified effects, clean reproduction, negative controls and incomplete coverage.
 
@@ -80,7 +80,7 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 - [Use the Attack Library and coverage views](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/library/coverage.md?v=2a3ababf378b): Explore catalogued techniques, distinguish runnable coverage from reference material and understand the current Threat Intel view.
 
-- [Find your way around the console](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/console-navigation.md?v=47fd97631f0e): Locate every customer console area, its guide and the boundary between available workflows, templates and previews.
+- [Find your way around the console](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/console-navigation.md?v=544357b96ab4): Locate every customer console area, its guide and the boundary between available workflows, templates and previews.
 
 - [Glossary](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/glossary.md?v=017f44f48482): Plain definitions for the words used in Martian customer workflows.
 
@@ -88,13 +88,13 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 - [Roles and permissions](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/permissions.md?v=18189b055d81): Check the minimum role for each customer task.
 
-- [Supported agent targets](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/supported-targets.md?v=66cfb6e66d4f): Choose an interface supported by the workflow you intend to run.
+- [Supported agent targets](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/supported-targets.md?v=b9be5b3ee824): Choose an interface supported by the workflow you intend to run.
 
 - [Troubleshooting](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/troubleshooting.md?v=2bc24b880a68): Resolve common access, connection, run, dataset and scoring failures safely.
 
 - [Use these docs with an AI assistant](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/using-with-agents.md?v=3b2004ac5113): Copy a complete page or share a public Markdown link that an assistant can read without signing in.
 
-- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=0a4198805f99): Review source revisions, real captures, completed checks and remaining gaps.
+- [Guide verification record](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md?v=c610628ac9dc): Review source revisions, real captures, completed checks and remaining gaps.
 
 - [Gate CI on Evals and redteam](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/ci.md?v=c7f51b51e806): Run evaluations and adversarial probes in one persisted CI session, verify its result, and retain safe reports.
 
@@ -110,6 +110,6 @@ These public Markdown documents require no login or JavaScript. Each guide retai
 
 ## Complete reference
 
-- [All documentation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/llms-full.txt?v=b276f422072f): all 46 pages in one text file.
+- [All documentation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/llms-full.txt?v=c3cd4338db95): all 46 pages in one text file.
 
 - [Website](https://docs.martiansecurity.ai/): the human-readable site. The Markdown mirror is an independent HTTPS access path.
