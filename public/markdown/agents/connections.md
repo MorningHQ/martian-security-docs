@@ -4,13 +4,7 @@
 
 Source: [Web version](https://docs.martiansecurity.ai/agents/connections/)
 
-> **Page qualification:** Current beta console · owner, admin · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
-
-> **Walkthrough limits:** The HTTP connection path passed real HTTPS validation, approval and refresh in isolated local QA. MCP/browser execution and credential rotation/disable checks remain pending.
-
-Partly verified guide
-
-The HTTP setup walkthrough is complete. MCP/browser execution and credential rotation or disabling connections are still being verified.
+> **Page qualification:** Current beta console · owner, admin · Verified 2026-11-14 · Isolated local QA; HTTP/MCP/browser connection setup; disposable HTTP credential lifecycle. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
 Connect a customer-controlled test agent so Martian can send an approved assessment to it. A successful setup ends with an **active** connection and **Ready for assessments**.
 
@@ -48,7 +42,11 @@ The SDK’s local callback is another integration path; registering a browser or
 Configure your own reachable HTTPS chat and health URLs. This capture was taken before entering the adapter credential.
 
 4.  For an API-key header, enter its **Header** and **Target credential**. For HTTP, **Health endpoint (optional)** can verify reachability. **Session API base (optional)** and **Session-management bearer token** must be configured together when your agent implements session management.
-5.  For a browser target that requires a simple website login, select **Requires sign-in**, then enter **Website username or email** and **Website password**. Browser connections do not use the HTTP Authentication selector. SSO, MFA, CAPTCHA and unidentified chats are unsupported and stop execution.
+5.  For a browser target that requires a simple website login, select **Requires sign-in**, then enter **Website username or email** and **Website password**. Use a public HTTPS page on the standard port, 443. The HTTP **Authentication** selector stays disabled; website sign-in uses these separate fields. SSO, MFA, CAPTCHA and unidentified chats are unsupported and stop execution.
+
+![Browser chat setup with Requires sign-in selected and empty website username and password fields.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/agents-browser-details.png)
+
+Choose Browser chat and Requires sign-in to enter website credentials in the separate fields. URL validation checks the public HTTPS address; login and chat are checked during assessment setup.
 
 6.  Click **Save and validate**. This saves a draft; validation is a separate action on the next screen. Credentials are write-only and cleared from this form after saving.
 
@@ -63,6 +61,10 @@ Save and validate stores the draft. The next step is Validate connection, which 
 
 3.  On **Approve**, an MCP connection requires **Entry tool** and **Message argument**. Select the discovered tool that accepts the assessment message and its top-level message argument. Set **Response text path (optional JSON path)** only when the response needs that extraction.
 
+![A real discovered MCP chat tool selected with its top-level message argument before connection approval.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/agents-mcp-approval.png)
+
+Choose the entry tool and its top-level message argument from the discovered schema, then review the expiry and stop conditions before approval.
+
 4.  Review **Approval expires (optional)** and **Stop conditions (one per line)**. Keep at least one meaningful condition; an expiry must be in the future. Click **Approve connection**.
 
 ![HTTP connection after successful real validation, with approval and stop-condition controls.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/agents-approval.png)
@@ -74,6 +76,8 @@ Successful server-side validation unlocks Approve. Review the recorded approver 
 ![Active HTTP connection showing Ready for assessments after approval and a page refresh.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/agents-ready.png)
 
 The approved HTTP adapter remains active and Ready for assessments after a full page refresh.
+
+Approval makes the saved endpoint available for assessments. Verify the target’s login and conversation behavior in a bounded [first assessment](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/get-started/first-assessment.md), then review its recorded execution coverage.
 
 ## HTTP chat contract
 
@@ -106,16 +110,25 @@ These examples describe the wire format; they are not an assessment result. A di
 
 1.  Open the agent from **Agents**, then select **Connection**.
 2.  Inspect status, endpoint, approver and declared deployed revision. **Current deployed code or build revision → Save revision** records your declaration; Martian does not independently read the target’s build ID.
-3.  To change a credential, use **Rotate credential → Rotate**. Browser rotation also requires the website username. Rotation returns the connection to draft and revokes its active approval/leases: validate and approve again before testing.
-4.  Use **Disable** to disable the connection and revoke its assessment authority. To change a saved endpoint, onboard a replacement connection. Retain historical runs when retiring a registration.
+3.  After issuing a replacement credential for your target, enter it in **Rotate credential**, then click **Rotate**. Browser rotation also requires the website username. The secret field clears and the connection returns to **draft**, revoking its active approval and leases.
+
+![Connection drawer after HTTP credential rotation, with a cleared secret field and Validate and approve action.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/agents-credentials-rotated.png)
+
+Rotation cleared the credential field and returned the HTTP connection to draft. Use Validate and approve to restore active readiness before testing again.
+
+4.  Click **Validate and approve** in the same **Connection** tab. Confirm the connection returns to **active**, then refresh Agents and reopen it. A previous **Approved by** label can remain visible while the connection is draft; use the current connection status to check whether it is ready.
+5.  Use **Disable** to disable the connection and revoke its assessment authority. Refresh Agents and confirm **disabled**. To change a saved endpoint, onboard a replacement connection. Retain historical runs when retiring a registration.
 
 ## Delete a retired registration
-
-This lifecycle path is source reviewed; the verified HTTP onboarding does not qualify deletion.
 
 1.  As an owner/admin, confirm the organization and exact agent on **Agents**. **Disable** removes connection authority; deleting the registration is a separate action.
 2.  Check for active or unresolved assessments and active evaluations. Resolve their recorded state through supported recovery before deletion; do not reset an uncertain run to remove the guard.
 3.  Choose **Delete** on the intended agent row, read the confirmation, then choose **Delete agent** for that registration.
+
+![Delete confirmation naming the unused Synthetic HTTP lifecycle QA registration and explaining saved-credential removal.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/agents-delete-confirmation.png)
+
+Confirm the exact retired registration before choosing Delete agent. Deleting the registration removes its saved credentials and leaves the target application running.
+
 4.  Refresh Agents and confirm it is absent. Saved connection credentials are removed and past assessments, evaluations and findings remain. Deleting a registration does not shut down the customer application.
 
 ## Failure and recovery

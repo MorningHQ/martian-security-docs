@@ -41,7 +41,7 @@ The SDK's local callback is another integration path; registering a browser or M
 <Screenshot id="agents-details" />
 
 4. For an API-key header, enter its **Header** and **Target credential**. For HTTP, **Health endpoint (optional)** can verify reachability. **Session API base (optional)** and **Session-management bearer token** must be configured together when your agent implements session management.
-5. For a browser target that requires a simple website login, select **Requires sign-in**, then enter **Website username or email** and **Website password**. Browser connections do not use the HTTP Authentication selector. SSO, MFA, CAPTCHA and unidentified chats are unsupported and stop execution.
+5. For a browser target that requires a simple website login, select **Requires sign-in**, then enter **Website username or email** and **Website password**. Use a public HTTPS page on the standard port, 443. The HTTP **Authentication** selector stays disabled; website sign-in uses these separate fields. SSO, MFA, CAPTCHA and unidentified chats are unsupported and stop execution.
 <Screenshot id="agents-browser-details" />
 
 6. Click **Save and validate**. This saves a draft; validation is a separate action on the next screen. Credentials are write-only and cleared from this form after saving.
@@ -63,6 +63,8 @@ The SDK's local callback is another integration path; registering a browser or M
 5. Confirm status **active**, **Ready for assessments**, the endpoint and recorded approver. Refresh the page and reopen the agent to verify the saved state. Click **Start an assessment**, or **Use in this assessment** if onboarding began in the wizard.
 
 <Screenshot id="agents-ready" />
+
+Approval makes the saved endpoint available for assessments. Verify the target's login and conversation behavior in a bounded [first assessment](/get-started/first-assessment/), then review its recorded execution coverage.
 
 ## HTTP chat contract
 
@@ -95,16 +97,21 @@ These examples describe the wire format; they are not an assessment result. A di
 
 1. Open the agent from **Agents**, then select **Connection**.
 2. Inspect status, endpoint, approver and declared deployed revision. **Current deployed code or build revision → Save revision** records your declaration; Martian does not independently read the target's build ID.
-3. To change a credential, use **Rotate credential → Rotate**. Browser rotation also requires the website username. Rotation returns the connection to draft and revokes its active approval/leases: validate and approve again before testing.
-4. Use **Disable** to disable the connection and revoke its assessment authority. To change a saved endpoint, onboard a replacement connection. Retain historical runs when retiring a registration.
+3. After issuing a replacement credential for your target, enter it in **Rotate credential**, then click **Rotate**. Browser rotation also requires the website username. The secret field clears and the connection returns to **draft**, revoking its active approval and leases.
+
+<Screenshot id="agents-credentials-rotated" />
+
+4. Click **Validate and approve** in the same **Connection** tab. Confirm the connection returns to **active**, then refresh Agents and reopen it. A previous **Approved by** label can remain visible while the connection is draft; use the current connection status to check whether it is ready.
+5. Use **Disable** to disable the connection and revoke its assessment authority. Refresh Agents and confirm **disabled**. To change a saved endpoint, onboard a replacement connection. Retain historical runs when retiring a registration.
 
 ## Delete a retired registration
-
-This lifecycle path is source reviewed; the verified HTTP onboarding does not qualify deletion.
 
 1. As an owner/admin, confirm the organization and exact agent on **Agents**. **Disable** removes connection authority; deleting the registration is a separate action.
 2. Check for active or unresolved assessments and active evaluations. Resolve their recorded state through supported recovery before deletion; do not reset an uncertain run to remove the guard.
 3. Choose **Delete** on the intended agent row, read the confirmation, then choose **Delete agent** for that registration.
+
+<Screenshot id="agents-delete-confirmation" />
+
 4. Refresh Agents and confirm it is absent. Saved connection credentials are removed and past assessments, evaluations and findings remain. Deleting a registration does not shut down the customer application.
 
 ## Failure and recovery

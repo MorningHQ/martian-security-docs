@@ -68,10 +68,12 @@
         "agents-validation",
         "agents-mcp-approval",
         "agents-approval",
-        "agents-ready"
+        "agents-ready",
+        "agents-credentials-rotated",
+        "agents-delete-confirmation"
       ],
-      "qualification": "partial",
-      "validationStatus": "The HTTP connection path passed real HTTPS validation, approval and refresh in isolated local QA. MCP/browser execution and credential rotation/disable checks remain pending.",
+      "qualification": "verified",
+      "validationStatus": "Owner completed real HTTP/MCP/browser draft registration, protocol-specific validation, approval and refresh. MCP chat/message selections persisted. Disposable HTTP revision declaration, credential rotation, re-approval, disable and unused-registration deletion passed; role/auth/tenant denials and independent state reads agreed. This qualifies connection setup and HTTP lifecycle, not MCP/browser assessment execution.",
       "documentationRoute": "/agents/connections/",
       "role": "owner, admin",
       "route": "/#/agents/onboard",
@@ -89,13 +91,12 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
+        "realBackendWalkthrough": "passed for all required connection-management stages",
+        "screenshots": "captured; four additional direct application images individually reviewed",
         "remainingGaps": [
-          "Real HTTP/MCP/browser validation and approval screenshots",
-          "After-refresh connection readback",
-          "Member/viewer denial",
-          "Rotation and disable boundary"
+          "MCP/browser assessment execution is tracked separately in assessments/configure and is not established by setup approval.",
+          "Active-run deletion guards, preservation of populated historical runs, browser credential rotation and every authentication variant remain source reviewed.",
+          "No campaign leases were issued to the disposable HTTP registration; approval revocation was read back, while revocation of an in-flight lease was not exercised."
         ]
       },
       "validation": [
@@ -104,6 +105,13 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "Teaching HTTP target",
           "result": "passed for the named path; remaining guide checks explicitly pending"
+        },
+        {
+          "date": "2026-11-14",
+          "environment": "Isolated local QA; HTTP/MCP/browser connection setup; disposable HTTP credential lifecycle",
+          "task": "HTTP, MCP and browser connection setup and disposable HTTP lifecycle",
+          "result": "passed all existing required connection-management stages; protocol-specific assessment execution remains separate",
+          "record": "quality/walkthroughs.json"
         }
       ],
       "screenshots": [
@@ -112,10 +120,13 @@
         "agents-validation",
         "agents-mcp-approval",
         "agents-approval",
-        "agents-ready"
+        "agents-ready",
+        "agents-credentials-rotated",
+        "agents-delete-confirmation"
       ],
       "environment": "Isolated local QA; synthetic organization; current pinned source baseline",
-      "customerNotice": "The HTTP setup walkthrough is complete. MCP/browser execution and credential rotation or disabling connections are still being verified."
+      "verifiedAt": "2026-11-14",
+      "verifiedEnvironment": "Isolated local QA; HTTP/MCP/browser connection setup; disposable HTTP credential lifecycle"
     },
     {
       "id": "agents/http-adapter",

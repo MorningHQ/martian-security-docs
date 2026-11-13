@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-13",
+  "updatedAt": "2026-11-14",
   "environment": "Isolated local QA; real pinned Frontend, Backend, Agents and MLflow3.16.1; synthetic Martian Docs Lab organization. No API interception or fabricated UI.",
   "sourceRevisions": {
     "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
@@ -571,6 +571,26 @@
         "The uncertain-submission Retry annotation UI state was not artificially induced. Its same-request API identity contract was exercised; no failed or uncertain mutation was resubmitted with a fresh UUID.",
         "Archived-project annotation handling and other member/admin actor combinations remain source-reviewed. Initial read failures and pre-submit automation locator failures were preserved; those failed locator attempts did not submit annotations."
       ]
+    },
+    {
+      "task": "HTTP, MCP and browser connection setup and disposable HTTP lifecycle",
+      "date": "2026-11-14",
+      "result": "passed existing required connection-management stages; no assessment or model call was launched",
+      "observed": [
+        "A non-platform-admin Owner registered three new synthetic targets through the actual console. Each save returned201/draft; HTTP, MCP and browser validation returned200/validated; each approval returned200/active. Independent normal-session reads and full UI refresh retained active setup.",
+        "MCP discovery through the real Backend found one chat(message: str) tool. The selected entry tool and top-level message argument, schema hash and active approval persisted. The target used the official MCP Python SDK2.3.0; the unchanged Backend used MCP2.2.0. Independent direct HTTPS SDK discovery and one deterministic tool preflight also passed.",
+        "Browser registration stored write-only website sign-in credentials. Validation explicitly returned public-url-only, browser_auth password, chat_discovery at-campaign-start and max_concurrency1. A separate real website sign-in/chat preflight passed; it is not a Martian browser-assessment execution result.",
+        "On the fresh HTTP registration, Save revision returned200 and kept approval active. Rotating its credential returned200/draft, cleared the form and revoked the saved grant. The target rejected the old bearer with401 and accepted the replacement with204. Validate and approve issued actual validation200 and activation200, with independent active readback.",
+        "Disable returned200/disabled, retained after refresh and independent readback. The Owner then deleted only this unused, unbound registration through the named confirmation:204, absent after refresh, normal-session GET404, stored credential removed and saved grant revoked. No assessment or evaluation had ever used this registration; no leases existed. The target application still accepted an authenticated connectivity request after deletion.",
+        "Anonymous connection reads/disables/deletes returned401; Member rotation/disable/delete and Viewer activation/disable/delete returned403. A different organization Owner received404 for reads, disable and delete. The owning Owner retained200 before deletion. These were real authenticated requests against the disposable QA resources, with no forged roles or response interception.",
+        "Four new1440x1000 light-theme application PNGs were individually inspected for readability and secrets. Website credentials and rotated secret fields are empty in the captures. PNG hashes/dimensions/metadata were checked. Three relevant Frontend files and three owning Backend files exactly matched the pinned source bytes."
+      ],
+      "remaining": [
+        "This completes connection setup and the tested HTTP management path. MCP/browser assessment execution, sandbox sessions and security outcomes remain separate qualification work.",
+        "The deletion fixture had no historical runs. Retention of populated history and active/unresolved-run deletion guards remain source reviewed. No in-flight lease was revoked in this fixture.",
+        "Local connectors and Wiki reference-twin reads returned known503 responses. One refresh was aborted and later returned401; ordinary password sign-in recovered, and subsequent MCP/browser full refreshes passed. Initial read timeouts, a delayed MCP validation screen and failed preflight/automation attempts remain preserved privately; no connection mutation was replayed to repair them."
+      ],
+      "fixtureDocumentation": "https://github.com/modelcontextprotocol/python-sdk/blob/main/docs/run/asgi.md"
     }
   ],
   "knownEnvironmentLimits": [
