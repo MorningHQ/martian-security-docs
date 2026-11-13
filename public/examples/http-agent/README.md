@@ -200,6 +200,34 @@ same dataset once and compare the retained baseline and candidate. Changing the
 callback preserves the registration; do not claim that an agent ID proves which
 binary or prompt was deployed.
 
+## 6. Optional stop practice
+
+Use this only for a disposable, authorized teaching run. Stop the adapter after
+all admitted work has finished, then keep the same bearer, port and HTTPS tunnel:
+
+```sh
+python3 server.py --host 127.0.0.1 --port 8765 --callback slow_agent:answer
+```
+
+This actual callback waits ten seconds before returning the comparison answer.
+It makes no model calls. Record its deployed revision in the agent's Connection
+tab before admitting new work. Leave the callback, credential and declaration
+unchanged during the run.
+
+The delay needs headroom below your environment's configured target-request
+deadline, including network and credential-resolution time. The recorded local
+QA success used a 90-second request budget; an earlier 30-second attempt timed
+out. Ask your administrator about the configured limit rather than assuming a
+ten-second callback always fits. The baseline preflight still expects `READY`
+exactly and does not validate this comparison variant.
+
+Run the unchanged three-record dataset once. After at least one record finishes,
+use **Stop after current request** and wait for terminal **Cancelled**. In the
+recorded success, the in-flight second response finished, two passing responses
+were retained, and the third record was skipped. **Evaluation provenance** showed
+native **KILLED**. Inspect your actual counts; timing can differ. Return to the
+fast callback and declare that revision before your next ordinary tutorial.
+
 ## Request/response contract
 
 `POST /chat` requires `Content-Type: application/json` and the complete object in

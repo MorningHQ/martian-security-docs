@@ -34,7 +34,23 @@ Inspect a result's **Assessments** after the job completes. The teaching respons
 
 <Screenshot id="evals-judging-code-feedback" />
 
-## 2. Define a custom model rubric
+## 2. Add built-in model opinions
+
+1. Open **Score saved outputs** on the completed run and leave **Suite version** at **Ad hoc criteria**.
+2. Clear criteria you do not want, then select **Correctness judge** and **Safety judge** when they are available.
+3. Read and select **I acknowledge that model judging can incur provider charges.**
+4. Click **Apply scorers** once. Reopen **Score saved outputs** to follow the job, then wait for its terminal state.
+5. Select the corresponding **Assessment job** and inspect a result's **Assessments**. Read the value, explanation and **Model opinion** persistence state together.
+
+<Screenshot id="evals-model-judges-selection" />
+
+The local teaching example produced six values across three saved responses, with zero judgment errors. Correctness and safety were both rated true for these benign examples. **Assessment identity** retained the model/judge revision; the original exact-match outcomes stayed unchanged. These ratings describe this small sample, not the target's general security.
+
+<Screenshot id="evals-model-judges-feedback" />
+
+If a saved value and explanation exist but their MLflow state is pending, use **Sync saved feedback** to reconcile that assessment's delivery. Wait, refresh and reselect the original job. This does not request another model judgment. One assessment in the recorded example needed this action before all six native feedback records were retained.
+
+## 3. Define a custom model rubric
 
 1. As an owner/admin, open **Evals → Judges** and click **New judge**.
 2. Enter a stable **Judge name**, such as `answer_quality`, and a useful **Description**.
@@ -54,7 +70,7 @@ the saved text; do not assume external actions or unrecorded facts.
 
 A judge name begins with a lowercase letter and uses lowercase letters, digits or underscores. Keep the rubric specific and review it against examples before relying on its ratings. Saving a rubric does not establish judge accuracy.
 
-## 3. Apply a particular judge version
+## 4. Apply a particular judge version
 
 1. Return to the completed run and open **Score saved outputs**.
 2. Under **Ad hoc criteria**, select the custom judge. Use the version selector beside it to choose the intended version, including a historical version if needed.
@@ -63,13 +79,43 @@ A judge name begins with a lowercase letter and uses lowercase letters, digits o
 5. Click **Apply scorers** and wait for the job’s terminal state.
 6. Select that **Assessment job**, inspect a result’s **Assessments**, and check its typed value, rationale and persistence state. Refresh and verify the same job and feedback remain recorded.
 
+### Create and apply v2
+
+For the pictured differences, use the completed [comparison-variant run](/martian-security-docs/evals/compare/) with the saved outputs ` ready `, `hello` and `4.`. Your own responses can receive identical opinions when both rubrics accept them.
+
+1. Open **Evals → Judges**, find the same judge, and choose **Create next version**.
+2. Edit **Description** and **Instructions**. In this example, v2 requires the expected letter case and punctuation; v1 accepts the required answer despite those differences.
+3. Click **Save version 2**. Reopen the judge to read **Version history** and confirm that both definitions remain available. Saving v2 does not apply it to a run.
+
+<Screenshot id="evals-judging-next-version" />
+
+<Screenshot id="evals-judging-version-history" />
+
+<ol start="4">
+  <li>Return to the same completed run and open <strong>Score saved outputs</strong>. Under <strong>Ad hoc criteria</strong>, select the custom judge and choose <strong>v2</strong> in its adjacent version selector.</li>
+  <li>Read and select <strong>I acknowledge that model judging can incur provider charges.</strong> Then click <strong>Apply scorers</strong> once.</li>
+  <li>Wait for the new job to finish, select its <strong>Assessment job</strong>, and inspect the retained <strong>Assessments</strong>. Refresh and reselect that job to verify persistence.</li>
+</ol>
+
 <Screenshot id="evals-judging-feedback" />
 
-To revise a rubric, open Judges and choose **Create next version**. Existing scoring jobs retain their original definition and version. Do not describe a change in rubric as a change in the target’s answer.
+The recorded v1 and v2 jobs produced three true and three false opinions on the same saved responses. Those ratings reflect different instructions. The target's two canonical passes and one failure stayed unchanged; existing jobs retained their original rubric version.
+
+### Use a historical version
+
+The catalogue checkbox label names the latest version. Use the adjacent version selector to pin an older one; the historical v1 remains selectable after v2 exists.
+
+To score another completed run with that older rubric, repeat the application steps at the start of this section, selecting **v1** before cost acknowledgement and **Apply scorers**. To inspect an existing v1 result, reselect its saved **Assessment job**.
+
+<Screenshot id="evals-judging-historical-version" />
+
+For a retained version record, select the relevant **Assessment job**, use **Results → Export JSON**, and inspect `assessments[].provenance["martian.native_scorer_version"]`. **Assessment identity** shows the job, definition digest and runtime source. A source suffix such as `martian-eval-judge-v2` is the judging engine's revision; it is separate from your rubric's version number.
 
 ## Interpret and recover
 
 Boolean results can form pass rates; numeric, category and text outputs retain their own types. Coverage and errors matter alongside scores. A model opinion is separate from a verified security finding or independently observed business outcome.
+
+Ad hoc judgments do not automatically define a passing gate. **Unconfigured** means no threshold policy was supplied, even if every Boolean rating is true. For built-in criteria, a [scoring suite](/martian-security-docs/evals/suites-and-monitoring/) can supply a threshold and minimum coverage. Registered custom rubrics cannot be attached to suite versions in the current console; their jobs have no suite-threshold control. Review their typed values and coverage directly.
 
 A scoring request supports one to seven unique criteria. One active scoring job is allowed per organization. Completed runs are required. If submission is unresolved, use **Retry saved scoring request** to inspect that same operation. Stop controls are cooperative and may allow the in-flight judgment to finish; see [stopping and recovery](/martian-security-docs/evals/stopping-and-recovery/).
 
