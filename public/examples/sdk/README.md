@@ -128,17 +128,31 @@ checks must use `assert_checks`/`assert_gate`, not `assert result.passed`.
 
 ## One redteam probe
 
+Validate first. This command does not execute a probe:
+
 ```sh
 .venv/bin/martian redteam validate redteam.yaml
+```
+
+Then choose **one** entry point for the attempt. Running both executes two probes
+and incurs generation/judging twice.
+
+CLI:
+
+```sh
 .venv/bin/martian redteam run redteam.yaml -o results/redteam
-# Equivalent Python API example; this is a separate run and incurs new generation/judging:
+```
+
+Or the equivalent Python example:
+
+```sh
 .venv/bin/python redteam.py
 ```
 
 The YAML suite plans one PromptLeakage/system_prompt probe with PromptInjection,
 one local callback call, and hosted generation/judging. Validation is offline;
-execution requires the enabled platform and can incur model costs. Each command
-is a separate assessment. Expect JSON and Markdown reports, then a strict gate
+execution requires the enabled platform and can incur model costs. Each execution
+entry point starts a separate assessment. Expect JSON and Markdown reports, then a strict gate
 result. CLI `run` exits 0 for a complete pass, 1 for a failed gate and 2 for setup
 or execution/usage failures. A score of 0 is a completed failing judgment, never a
 reason to rerun until green. Standalone redteam writes local reports; it does not
@@ -146,18 +160,27 @@ create the combined Backend CI session.
 
 ## Combined CI
 
+Choose **one** entry point for each CI attempt. Running both repeats the work.
+You only need to prepare and validate the redteam configuration above; do not
+execute a standalone probe as a prerequisite for combined CI.
+
+CLI:
+
 ```sh
 .venv/bin/martian ci --evals-path tests/evals --redteam-config redteam.yaml \
   --require-export --output results
-# Equivalent Python entry point, also a new run:
+```
+
+Or the equivalent Python entry point:
+
+```sh
 .venv/bin/python combined_ci.py
 ```
 
 Both commands run from this Git repository's root, with `redteam.yaml`,
 `demo_agent.py`, `pytest.ini` and the two files under `tests/evals/` present there.
 
-Choose the CLI or Python entry point for each CI attempt; running both repeats the
-work. The runner executes one pytest session, adds the YAML redteam item to it,
+The runner executes one pytest session, adds the YAML redteam item to it,
 then persists one Backend CI session. It is serial. Do not also call the same YAML
 assessment from a pytest test. Exit 0 requires a complete acknowledged session;
 missing credentials or execution failures cannot pass. A lowered declared

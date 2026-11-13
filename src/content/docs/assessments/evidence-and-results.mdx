@@ -50,6 +50,10 @@ Use any signed-in role with access to the organization's run. Complete or retain
 4. Check missing-knowledge notices, truncated payloads, dropped customer events and evidence availability. A missing event/reference cannot prove no action or relevant attack existed.
 5. Refresh the page and reopen the saved run to verify that the selected evidence, findings and final execution state persist.
 
+<Screenshot id="assessment-knowledge" />
+
+In the endpoint-only **MR-1002** example, **Knowledge & skills** retained one activated skill and its content digest, but no reviewed knowledge references. **Probe coverage** reported one attempted, unverifiable disclosure probe. Three observed refusals and zero findings did not change its **INCONCLUSIVE** security outcome. No deterministic target oracle or sandbox business-state checks were available for this run.
+
 ## Exports and limitations
 
 **Download report** exports run/finding JSON. The trace's legacy JSON download includes its currently displayed findings page; read its pagination flags. Artifact-backed **Recorded review** can offer **Download redacted review** when a published revision is available. See [history and exports](/martian-security-docs/assessments/history-and-exports/) for the differences.

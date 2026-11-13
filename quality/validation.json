@@ -140,13 +140,45 @@
       "environment": "Exact pinned product sources, changed docs/assets and explicitly named nonsecret QA receipts",
       "result": "no outstanding P1/P2",
       "details": "All15 new PNG hashes/dimensions and metadata chunks checked; HTTPZIP9 matches loose files and tested slow-callback SHA. Positive cancellation, partial code stop, comparisons, all15 distinct persisted model native IDs and role/cost/version/tenant guards agree with receipts. Custom-suite guidance and historical aggregate labels corrected. Exact reviewed-file snapshot is retained separately."
+    },
+    {
+      "scope": "PR8 real assessment, catalogue, SDK and role qualification",
+      "environment": "Pinned isolated QA; synthetic organization; released SDK0.1.2",
+      "result": "named paths verified; explicit partial failures retained",
+      "details": "MR-1002 endpoint-only completion/INCONCLUSIVE, real turns/coverage/JSON exports/refresh and role/tenant denials passed. Library availability/gaps/taxonomy/refresh/no-live-feed passed. Standalone Python/CLI probes exited0. Distinct Evals-only original strictCI exited0, persisted/exported2/2, EV-1009/nativeFINISHED. Original strict failure, failed combined and uncertain MR-1003 remain separate; no replay or fabricated response repaired them."
+    },
+    {
+      "scope": "PR8 screenshot inspection and SDK package repair",
+      "environment": "20 direct1440x1000 application PNGs;27 manifest references; exact SDK download",
+      "result": "manually reviewed and exact archive checked",
+      "details": "All20 images individually viewed for framing and secrets; no image edits, invented DOM or API mocking. Subsequent unsubmitted Goals draft was used only to improve framing. AI novice P2 about double paid command blocks and P3 configuration-only combined prerequisite resolved. SDKZIPfd83fec1782c3be1d61cdd09b48b81026252e12b29f28e8645d7622b641af85c has12 exact source members including.gitignore; runtime example code unchanged."
+    },
+    {
+      "scope": "PR8 production build, link/example checks and strict release audit",
+      "environment": "Final 40-page Astro/Starlight production preview; current source and manifests",
+      "result": "production checks passed; complete release qualification remains incomplete",
+      "details": "Production build and Pagefind indexed 40 pages. Default checks passed 3,301 local links/assets/anchors/base references and five import-example records. Registry has 97 captured references across 85 unique PNGs. Coverage is 17 verified, 10 partial and five pending guides. Strict audit deliberately remains exit 1: 23 pending screenshot references, 15 unverified full guides and 39 findings; no assertions or gates were weakened."
+    },
+    {
+      "scope": "PR8 independent source, package and evidence review",
+      "environment": "Exact changed public source/assets plus nine explicitly scoped nonsecret qualification receipts",
+      "result": "no outstanding P1/P2 after correction",
+      "details": "Twenty new PNGs independently checked for hashes, 1440\u00d71000 framing, provenance and metadata; no embedded text/EXIF. SDK ZIP has 12 exact source members; only README differs from the prior bundle. The coverage-to-walkthrough evidence references were corrected to actual task names and independently rechecked. Source review distinguishes every recorded success, failed original gate, later same-operation recovery and unverified cancellation; exact reviewed-file snapshot is retained separately."
+    },
+    {
+      "scope": "PR8 AI-simulated novice and visual review",
+      "environment": "Production preview; desktop 1440\u00d71000 and narrow 390\u00d7844, light/dark",
+      "result": "passed bounded rendered review; no human participant",
+      "details": "First assessment, SDK Evals/redteam/CI, Library and verification summary were clicked through. All 21 scoped inline image instances loaded; 15 new captures were independently viewed at full resolution. Search/result clicks, free-validation anchor, full-size image, nested refresh, themes, readable captions and no page-wide overflow passed. SDK partial-notice P2 was fixed to name isolated local QA and use readable counts, then rechecked at both widths. Final console had zero errors/warnings. One transient aborted document navigation is retained; a fresh navigation/refresh then had 30 requests all 200/304 and correct content. This review adds no product execution claim."
     }
   ],
   "remainingGaps": [
-    "Remaining interfaces, advanced Evals, red teaming and their application screenshots still need qualification.",
-    "SDK setup/key boundaries and Evals persistence/recovery passed in local QA. A clean original strict-CI pass, combined model-based execution and hosted GitHub runner execution remain unverified.",
-    "Working inference, matching local worker readiness and the Boolean model-judge walkthrough are established. Remaining assessments, SDK redteam and seed-generation stages still need actual walkthrough evidence.",
-    "Sandbox orchestration/readiness is not available in the SDK-derived local QA stack; connectors503 is recorded.",
-    "Local QA proves the named pinned-source behavior, not hosted AWS-beta parity."
+    "Five guides still await their first walkthrough: sandbox bindings, environment launch and three Discovery workflows.",
+    "Seventeen guides are verified in their named local scope; ten are partial. Remaining screenshot references and full walkthroughs stay enforced by the strict release audit.",
+    "Sandbox-backed verified effects, fresh-world repetitions/negative controls and published artifact-backed Recorded review/domain/redacted-bundle exports remain unverified.",
+    "MR-1003 retains an uncertain teaching-tunnel action; positive cooperative cancellation and evidence-based resolution are not yet qualified.",
+    "Remaining dataset operations, positive native conversation-session grouping, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification.",
+    "A fresh Evals-only original strict gate passed. The original failed combined attempt is not a clean complete combined pass; hosted GitHub runner execution also remains unverified.",
+    "Local QA demonstrates the named pinned-source behavior, not hosted AWS-beta parity. Local sandbox orchestration is unavailable (connectors503)."
   ]
 }

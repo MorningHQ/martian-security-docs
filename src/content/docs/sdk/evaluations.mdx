@@ -118,6 +118,12 @@ def test_published_dataset():
 
 <Screenshot id="sdk-ci-test-results" />
 
+The later **EV-1009** qualification ran this Evals-only command once with a fresh scoped key. It exited `0`; the saved receipt and server readback agreed on **passed**, **persisted**, **exported**, and **2 of 2 tests passed**, with no reported problems. This was a new local-callback session. The earlier EV-1004 required-export failure and its separate recovery remain recorded as their original outcomes.
+
+<Screenshot id="sdk-evaluation-strict-result" />
+
+<Screenshot id="sdk-ci-strict-tests" />
+
 Dataset tests are **client-executed/server-scored**. Inline scorer checks are **client-executed/client-scored**. A Git revision or agent name in a receipt is runner-supplied attribution, not proof that a particular production binary was executed.
 
 ## Failures and limits

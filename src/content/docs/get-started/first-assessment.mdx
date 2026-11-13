@@ -32,9 +32,9 @@ Finish with one retained security assessment and an understanding of its report.
 
 ## 2. Choose one goal and a small test
 
-1. In **Goals**, fill in **Declared purpose** with the test agent’s intended task. For a synthetic support agent, an example is “Answer support questions using only the synthetic shop information provided for this test.” Replace that purpose if your agent has a different intended task.
+1. In **Goals**, fill in **Declared purpose** with the test agent’s intended task. For the downloadable deterministic target, describe its fixed teaching answers, fallback refusal and absence of business tools or private records. For your own target, describe its actual task and access.
 2. Under **Declared behaviors**, enter one relevant rule in **New behavior**, then click **Add**. For example: “Do not reveal private instructions or records when an untrusted message asks for them.” Click **Continue**.
-3. In **Tests**, use **Anonymous caller** unless your approved test specifically needs another supported identity. Select **By technique**, then choose one available, enabled technique that matches your rule. If none is available, resolve the catalogue/readiness message before continuing.
+3. In **Tests**, use **Anonymous caller** unless your approved test specifically needs another supported identity. Select **By outcome**, keep only **Customer records leave** selected, and clear the other outcome cards. This example requests a disclosure probe. The console shows five requested techniques; that count does not mean five attacks will execute. If the catalogue is unavailable, resolve its readiness message before continuing.
 4. Choose **Light** for the first run. Review the displayed ceilings and execution settings before continuing. Light is a maximum budget, not a promise that every possible attempt will run or a guarantee of a particular charge.
 5. Keep **Plan independent rounds up front and run probe lanes in parallel** off for this introductory run. Browser targets are endpoint-only and serial, with their own supported outcome choices.
 
@@ -50,21 +50,24 @@ Finish with one retained security assessment and an understanding of its report.
 
 <Screenshot id="first-assessment-running" />
 
-## 4. Inspect the report
+## 4. Inspect the result and report
 
-1. Open **Report** when the run reaches a final state.
-2. Read the verdict and the recorded errors or skipped checks before the finding count. A failed or incomplete run is not evidence that the agent passed.
-3. Open the run’s trace and inspect an attempt: attacker input, agent reply and the evidence supporting any result.
-4. Read **Outcome checks** and reproduction information where present. Endpoint-only evidence does not independently establish a sandbox business effect.
-5. Refresh the run. Confirm that the same final state and retained evidence remain visible.
+1. Select **Open trace** from **Run**, or from **Report** if the wizard has already advanced. Wait for a final **Assessment execution** state. Read **Security outcome** separately from execution and the finding count.
+2. In the observed **MR-1002** example, execution was **Completed**, but the security outcome was **INCONCLUSIVE**. It used three agent requests and 15 model calls, retained one unverified attempt and recorded zero findings. A completed run with no findings is not a security pass; your generated attempts and counts can differ.
 
 <Screenshot id="first-assessment-report" />
+
+3. In **Trace**, use **Tree → Expand all** and select a turn. Compare **Attacker message**, **Customer agent reply**, and the recorded actions. The teaching target refused all three observed requests. Its model-generated critic is an opinion; this example had no deterministic target oracle.
+
 <Screenshot id="first-assessment-trace" />
+
+4. Open **Probe coverage**. The example's single disclosure probe was **attempted** with an **unverifiable** outcome. Read missing evidence, budget limits and reproduction information before interpreting coverage. Endpoint-only evidence does not establish a sandbox business effect.
+5. Refresh and reopen the same run. Confirm its final state, verdict and retained turns. Then open **Reports** in the sidebar, find the matching run code and select **Download**. Inspect the JSON's run, state, verdict and coverage; this is not a PDF. See [history and exports](/martian-security-docs/assessments/history-and-exports/) for export scopes.
 
 ## What success looks like
 
 You have one retained assessment with its selected scope, a final status and inspectable evidence. A finding is a useful result; zero findings are also a recorded result, with the run’s coverage and verification limits. Neither should be described as a certification of the agent’s security.
 
-If the run fails admission, resolve the named connection, capability, compatibility or budget error before retrying. If submission is uncertain, inspect the saved run/history first so you do not create duplicate paid work. [Troubleshooting](/martian-security-docs/reference/troubleshooting/) covers those boundaries.
+If the run fails admission, resolve the named connection, capability, compatibility or budget error before a new attempt. A local QA attempt was rejected before campaign creation because the worker's three-round ceiling was smaller than the console's five-round Light profile; it remains recorded as failed. A workspace operator must align those supported limits. If submission is uncertain, inspect the saved run/history first so you do not create duplicate paid work. [Troubleshooting](/martian-security-docs/reference/troubleshooting/) covers those boundaries.
 
 **Next:** [Read evidence and results](/martian-security-docs/assessments/evidence-and-results/), then [create an environment](/martian-security-docs/environments/create-and-launch/) for supported business-outcome checks.
