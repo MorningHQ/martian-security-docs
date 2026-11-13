@@ -8,7 +8,9 @@ const partial = guide?.qualification === 'partial';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const isSdk = id.startsWith('sdk/');
 const productLabel = isSdk ? 'Python SDK' : 'Current beta console';
-const environmentLabel = isSdk ? guide?.verifiedEnvironment?.replace(/; SDK \d+\.\d+\.\d+(?: from public PyPI)?/g, '') : guide?.verifiedEnvironment;
+const environmentLabel = isSdk
+  ? guide?.verifiedEnvironment?.split(';').filter((part) => !/\bSDK \d+\.\d+\.\d+/.test(part)).join(';').trim() || 'See verification record'
+  : guide?.verifiedEnvironment;
 ---
 <div data-pagefind-ignore class:list={['guide-meta', { 'guide-pending': !verified }]}>
   <span>{productLabel}</span>

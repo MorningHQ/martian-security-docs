@@ -372,7 +372,45 @@
       "scope": "Final completeness local render/search/404 and strict audit",
       "environment": "47-page build;all46 articles at1440light/390dark;real static preview and published custom404",
       "result": "Default structure/export checks and browser content passed;strict runtime-release audit remains incomplete",
-      "details": "All46 articles had200,one H1,description,enabled Copy page,decoded images and no desktop/mobile overflow. No final local console/page errors,failed requests or HTTP failures. Real Pagefind annotations search opened the new pending guide;public missing route returned custom404 and a valid overview link. All59 code payloads/117 captions retained.22verified,9partial,6pending guides;strict audit40findings from24missing capture references and15notfullyqualified walks. Source review/runtime example pre-entry and receipt lifecycle findings fixed;three actual SDK setup-negative checks and exact-target assignment guard passed without a business request/upload. quality/content-audit.json records every page and resolved content finding."
+      "details": "All46 articles had200,one H1,description,enabled Copy page,decoded images and no desktop/mobile overflow. No final local console/page errors,failed requests or HTTP failures. Real Pagefind annotations search opened the new pending guide;public missing route returned custom404 and a valid overview link. All59 code payloads/117 captions retained.22verified,9partial,6pending guides;strict audit40findings from24missing capture references and15notfullyqualified walks. Source review/runtime example pre-entry and receipt lifecycle findings fixed;three actual SDK setup-negative checks and exact-target assignment guard passed without a business request/upload. quality/content-audit.json records every page and resolved content finding.",
+      "historical": true,
+      "milestone": "Before concurrent PR17 integration"
+    },
+    {
+      "scope": "Independent SDK 0.1.3 source and released-package verification",
+      "environment": "macOS; Python 3.12.10; clean detached f3caf8bcc5f8aad176d2c843562fe468cd755218; locked SDK dev environment and separate fresh public-PyPI environment",
+      "result": "235 Evals tests and six subtests passed; format, lint and strict types passed; 59 installed runtime source files matched release source",
+      "details": "The entire tests/evals suite passed in 493.54 seconds with 26 upstream MLflow/Pandas deprecation warnings. Ruff checked 102 files; mypy checked 59 source files. Public PyPI still reports 0.1.3, with wheel SHA256 2dc4e0407ef1193e8ca6de998fa9a1b84e5cf7715eec2c23ddfbb42003b56062. No SDK source or existing tutorial pin was changed."
+    },
+    {
+      "scope": "Independent SDK 0.1.3 downloadable local suites and real MLflow HTTP",
+      "environment": "Released martian-sdk[evals] 0.1.3; real MLflow 3.16.1 SQLite and loopback HTTP server; synthetic tutorial agents; no Martian platform credentials",
+      "result": "Original fail, resume, corrected pass, error/recovery paths, all deterministic types, stored CSV and server readback passed",
+      "details": "Downloaded original four public example files matched source bytes. Original run: 3 cases, 2 passed, 1 failed, exit 1; resume retained verdict bytes; changing the agent without --fresh kept the failure, and --fresh returned 3 passed/exit 0. Unknown YAML field, missing expectation and target exception returned exit 2; errored case was retried. --output/--concurrency/--limit passed. All five deterministic check types passed on structured stored output. Stored CSV returned the expected 1 pass/1 fail. Actual HTTP MLflow logging retained one run and three traces and produced no local database. The new corrected suite independently passed 3/3 while preserving original results."
+    },
+    {
+      "scope": "Independent SDK 0.1.3 real Bedrock rubric, guidelines, conditions and pytest",
+      "environment": "GLM 5 on real Bedrock OpenAI-compatible us-east-1 endpoint; short-lived Bedrock token from refreshed AWS IAM session; temperature 0; bounded suite runs with max_tokens 4096 and max_retries 0",
+      "result": "All three judge types, original/corrected cases, rejected-token failure and exact Python guide example passed in the named provider scope",
+      "details": "Original rubric plus text check: 2 pass/1 fail, exit 1; corrected agent: 3 pass, exit 0. Guidelines and conditions each passed the refusal and failed a refusal that still disclosed the synthetic code. A rejected token returned 1 error/exit 2 with judge_provider_auth and no token in retained results. The exact sdk/evaluations 0.1.3 pytest example, with only its model placeholder replaced, passed one real-judge test and retained offline state/no platform session ID. Native bedrock:/ routing was separately tried and returned judge_provider_error for all three cases: MLflow 3.16.1 selects AmazonBedrockProvider, which has no get_endpoint_url implementation used by the SDK transport. That failed attempt is preserved privately; the guide explicitly uses the independently successful OpenAI-compatible route. No native-routing fix or new SDK release is claimed."
+    },
+    {
+      "scope": "Customer-facing SDK documentation surfaces",
+      "environment": "SDK 0.1.3 local guide and downloadable examples; existing verified Martian Security console capture",
+      "result": "Backend UI captures and instructions removed; local output and recorded console workflow clearly separated",
+      "details": "Removed all four proposed MLflow UI PNGs from public assets, registry, guide and downloadable README. Those test captures remain private. Local suites are explained with copyable CLI output, result JSON, comparison counts and explicit exit codes. The only console illustration is sdk-evaluation-strict-result, clearly labeled as a separate previously qualified SDK 0.1.2 persisted dataset run. The documentation AGENTS policy now requires Martian Security customer screenshots."
+    },
+    {
+      "scope": "SDK local guide integration with current agent-ready main",
+      "environment": "Based on current docs main 9f26f65; 43-page production build; real local browser at 1440x1000 and 390x844; SDK source still f3caf8b / PyPI 0.1.3",
+      "result": "Production build/default checks, three agent-conversion regressions, exact page copy, customer screenshot/full-size viewing and responsive review passed; publication pending",
+      "details": "Preserved concurrently merged evergreen installation and agent actions. Updated exactly two Markdown mirrors plus llms.txt/llms-full.txt; 42 agent pages, 65 exact code blocks and 118 screenshot captions passed checks. Local evals has one separately labeled SDK 0.1.2 Martian Security screenshot, no backend UI PNGs or launch instructions. Real search returned the local guide first among 17 matches; real ZIP download matched the tested member bytes; image opened at native 1440x1000. Current integrated Copy page copied the complete generated Markdown exactly and retained the Martian screenshot and actual judge reason. Narrow dark layout has 390px viewport/375px document width and page tools bottom170/title top182. Main document console remained clear in the successful fresh sessions. An earlier preview kept an obsolete search chunk while rebuilding; a fresh stable build/session passed. No human participant or independent reviewer is claimed. The strict site-wide release audit still reports the existing 12 unverified guide walkthroughs; the local SDK guide adds none."
+    },
+    {
+      "scope": "Completeness audit integration with concurrent SDK walkthrough",
+      "environment": "Integrated mainbe439478/PR17;Node26;released PyPI SDK0.1.3;real local browser",
+      "result": "Preserved concurrent source/qualification;integrated default checks and bounded SDK readback passed",
+      "details": "Preserved seven-file ZIP/corrected agent+suite,all independent model/test receipts,customer-only screenshot policy and separate SDK0.1.2 console illustration. All seven ZIP members equal public files;own actual original suite exited1 and corrected suite0 without model/platform calls. Integrated SDK page copied exactly,loaded its one customer image,had no1440/390overflow and no numeric SDK badge. Network guide pending notice visually inspected. Integrated artifacts cover46articles/66exactcodepayloads/118renderedcaptions. Previous47source-page audit and40strict findings remain;no pending evidence was promoted."
     }
   ],
   "remainingGaps": [
@@ -383,6 +421,7 @@
     "Dataset second-version publication, successful generated/personal worlds, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification. Native session views are verified through separately provisioned instrumentation; SDK0.1.2 native-ingestion/credential issuance is not provided.",
     "Local QA demonstrates named pinned-source behavior, not whole hosted AWS-beta parity. Local orchestration is unavailable (connectors503), initial native-view reads had recoverable timeouts, and Discovery needs a compatible collector/Backend pair plus operator-approved scope.",
     "Custom-domain trusted HTTPS, HTTPS enforcement and final hosted-browser checks remain incomplete while GitHub issues a certificate for docs.martiansecurity.ai. The prior GitHub URL currently redirects to HTTP; no TLS validation is bypassed.",
-    "SDK task guides and current tutorial install the latest release;exact persisted Evals/hosted redteam/combined-CI qualification remains on0.1.2. Account-free current-install steps and the local suite guide were exercised on0.1.3,with one judge model/provider route. Newer installation does not requalify hosted workflows."
+    "SDK task guides and current tutorial install the latest release;exact persisted Evals/hosted redteam/combined-CI qualification remains on0.1.2. Account-free current-install steps and the local suite guide were exercised on0.1.3,with one judge model/provider route. Newer installation does not requalify hosted workflows.",
+    "SDK 0.1.3 native bedrock:/ response-judge routing fails through MLflow 3.16.1 AmazonBedrockProvider.get_endpoint_url; use the verified OpenAI-compatible Bedrock endpoint. A native-routing SDK fix and release remain follow-up work."
   ]
 }

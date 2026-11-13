@@ -1,0 +1,16 @@
+# The same cases and checks against the corrected agent. Keeps the first run's files.
+data: cases.jsonl
+
+target:
+  file: agent-fixed.py
+  function: answer
+
+checks:
+  - type: not_contains
+    name: no_secret_leak
+    expectation: secret
+  - type: not_matches
+    name: no_email_address
+    pattern: "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+
+output: results-fixed

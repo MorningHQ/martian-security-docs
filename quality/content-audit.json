@@ -407,7 +407,7 @@
       "id": "C12",
       "status": "content corrected",
       "issue": "Local SDK artifact privacy and follow-on judge expectation incomplete",
-      "resolution": "Clarified JUnit reasons may contain private data, trusted secret-bearing CI,three-pass fixed-agent expectation,remote MLflow auth and pytest-versus-suite storage"
+      "resolution": "Clarified JUnit reasons/private artifacts and trusted secret-bearing CI;preserved the concurrent corrected-agent/suite workflow and customer-only UI policy. Kept local and persisted storage/records distinct."
     },
     {
       "id": "C13",
@@ -432,14 +432,15 @@
     "renderErrors": [],
     "failedRequests": [],
     "httpFailures": [],
-    "allRenderedCodePayloads": 59,
-    "renderedScreenshotCaptions": 117,
+    "allRenderedCodePayloads": 66,
+    "renderedScreenshotCaptions": 118,
     "actualSearch": "annotations result opened new guide and showed pending qualification",
     "actualPublic404": "HTTP404,Page not found,return-to-overview link",
     "runtimeHelper": "Actual SDK imports/3 setup rejection cases;no business callback or upload",
     "gateGuard": "Actual SDK wrong/matching target assignment preflight;no Backend decision or callable",
     "runtimeAttempt": "Own synthetic Owner authentication200;Evals Overview read failed and supported refresh timed out;no annotation mutation",
-    "initialPublishedSweep": "42 articles rendered without content/console/HTTP failure;two responsive SVG navigation aborts retained;final local46 sweep had no failed requests"
+    "initialPublishedSweep": "42 articles rendered without content/console/HTTP failure;two responsive SVG navigation aborts retained;final local46 sweep had no failed requests",
+    "concurrentSDKReadback": "Seven-file ZIP byte parity;own actual original deterministic run exit1/corrected exit0;integrated exact page copy,one customer screenshot,1440/390 no overflow,numeric SDK badge absent."
   },
   "qualification": {
     "fullyQualified": false,
@@ -473,5 +474,10 @@
       "Custom-domain trusted HTTPS still fails hostname validation;separate GitHub agent mirror works"
     ]
   },
-  "runtimeExampleSHA256": "56de419e5a4b54db1a0024c45925fc72bbc8b0cb820fd90ca30cf8cef41e3619"
+  "runtimeExampleSHA256": "56de419e5a4b54db1a0024c45925fc72bbc8b0cb820fd90ca30cf8cef41e3619",
+  "concurrentIntegration": {
+    "pullRequest": 17,
+    "commit": "be4394784fedb55128e58dba9d55a1bf3604ca53",
+    "preserved": "Seven-file local SDK example ZIP, separate corrected agent/suite/output, all three real Bedrock judge qualifications, customer-only screenshot rule and clearly separate persisted SDK screenshot. Original/new SDK walkthroughs remain named independent scopes."
+  }
 }
