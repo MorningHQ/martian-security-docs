@@ -1374,7 +1374,7 @@
         "Refresh retained records/version",
         "Verify viewer edit and member publish restrictions"
       ],
-      "validationStatus": "JSONL/CSV/JSON import, edit/archive/delete, original organization publication/native readback, a genuine Martian read-only source and editable copy, refresh and role/foreign-tenant boundaries passed in isolated QA. Copy publication stalled after evaluation-service timeout; a second published version and selected-result authoring remain unverified.",
+      "validationStatus": "JSONL/CSV/JSON import, edit/archive/delete, original organization publication/native readback, a genuine Martian read-only source and editable copy, refresh and role/foreign-tenant boundaries passed in isolated QA. Copy publication stalled after evaluation-service timeout; a second published version remains unverified. Saved-failure authoring is qualified in evals/regression-cases.",
       "qualification": "partial",
       "documentationRoute": "/martian-security-docs/evals/datasets/",
       "validation": [
@@ -1389,6 +1389,12 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "Dataset editing, formats, Martian copy and publication limits",
           "result": "JSONL/CSV/JSON import, edit/archive/delete, original organization publication/native readback, a genuine Martian read-only source and editable copy, refresh and role/foreign-tenant boundaries passed in isolated QA. Copy publication stalled after evaluation-service timeout; a second published version and selected-result authoring remain unverified."
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Stored canonical failure to reviewed drafts",
+          "result": "Saved-failure direct copying and separate cleaned-export import passed; second published version remains unverified."
         }
       ]
     },
@@ -2767,6 +2773,121 @@
       "environment": "Isolated local QA; synthetic organization",
       "verifiedAt": "2026-11-13",
       "verifiedEnvironment": "Isolated local QA"
+    },
+    {
+      "id": "evals/regression-cases",
+      "title": "Turn failed results into regression cases",
+      "description": "Copy a stored failed record into a reviewed editable draft, or import a cleaned failure export.",
+      "customerTask": "Retain a canonical failure as a reviewed regression case without repeating target execution.",
+      "requiredRoles": [
+        "member",
+        "admin",
+        "owner"
+      ],
+      "role": "Member, admin or owner; observed Owner walkthrough",
+      "route": "/#/evals?run=<run-id>",
+      "uiRoute": "/#/evals?run=<run-id>",
+      "environment": "Isolated local QA; synthetic organization; retained EV-1003 canonical failure",
+      "sourceRevisions": {
+        "MorningHQ/MartianFrontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "MorningHQ/MartianBackend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "prerequisites": [
+        "Ready organization Evals access",
+        "Completed own run with a saved canonical failure",
+        "Draft-authoring role and reviewed expected answer"
+      ],
+      "interfaces": [
+        "customer console",
+        "JSON items-array import"
+      ],
+      "screenshots": [
+        "evals-regression-selection",
+        "evals-regression-dialog",
+        "evals-regression-draft",
+        "evals-regression-wrapper-error",
+        "evals-regression-array-preview",
+        "evals-regression-imported"
+      ],
+      "screenshotStages": [
+        {
+          "id": "evals-regression-selection",
+          "caption": "Select only the canonical failed row. One result is selected; saved-result authoring remains available while a separate publication pauses new runs.",
+          "alt": "One canonical failed EV-1003 record selected, expected 4 and actual 4.",
+          "validationStatus": "Actual real-backend capture; see provenance and walkthrough."
+        },
+        {
+          "id": "evals-regression-dialog",
+          "caption": "Choose New draft and Keep the run's expected output. The correct answer stays 4; the failing answer 4. is not accepted as ground truth.",
+          "alt": "Add one saved result to a new draft while keeping the original expected output.",
+          "validationStatus": "Actual real-backend capture; see provenance and walkthrough."
+        },
+        {
+          "id": "evals-regression-draft",
+          "caption": "The direct-copy draft retained revision 2 and one usable record after refresh. Its source-run/result metadata was inspected without another save.",
+          "alt": "Refreshed Regression cases from EV-1003 draft with one usable record and expected output 4.",
+          "validationStatus": "Actual real-backend capture; see provenance and walkthrough."
+        },
+        {
+          "id": "evals-regression-wrapper-error",
+          "caption": "The export's top-level provenance fields are not accepted by dataset import. This real rejected dry run changed no records.",
+          "alt": "Import preview rejecting the complete failure-export wrapper and disabling Import.",
+          "validationStatus": "Actual real-backend capture; see provenance and walkthrough."
+        },
+        {
+          "id": "evals-regression-array-preview",
+          "caption": "The extracted items array previews one new record, zero updates and one final record. The draft behind the preview is still empty until Import.",
+          "alt": "Corrected items-array import preview in a separate empty draft, showing one new record.",
+          "validationStatus": "Actual real-backend capture; see provenance and walkthrough."
+        },
+        {
+          "id": "evals-regression-imported",
+          "caption": "The separate file-import draft retained one usable record after one Import and refresh. Metadata preserves the source run/result and the observed answer, including its trailing period.",
+          "alt": "Refreshed Imported failure from EV-1003 draft with one usable record and expected output 4.",
+          "validationStatus": "Actual real-backend capture; see provenance and walkthrough."
+        }
+      ],
+      "requiredValidation": [
+        "Inspect a stored canonical failure and select only that record",
+        "Create one draft with original expected output and add the selected result",
+        "Navigate through Datasets/Drafts and refresh retained case/provenance",
+        "Download selected-failure export and inspect its context/items wrapper",
+        "Confirm unsupported full-wrapper dry-run rejection without applying records",
+        "Extract unchanged items and preview in a separate empty draft",
+        "Apply once and refresh the one-record draft with original expected answer"
+      ],
+      "qualification": "verified",
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA; Owner; saved-case authoring",
+      "validationStatus": "One stored canonical failure was copied with original expected output into a new draft. The exported wrapper was rejected422; its unchanged items array previewed/applied200 in a separate empty draft. Both GET/refresh readbacks retained revision2/one usable record/expected4 and source metadata. Actual-output substitution, publication and rerunning the cases are outside this qualification.",
+      "documentationRoute": "/martian-security-docs/evals/regression-cases/",
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Stored canonical failure to reviewed drafts",
+          "result": "passed the named original-expected-output/direct-copy and separate items-array import paths"
+        }
+      ],
+      "sources": [
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "paths": [
+            "src/components/EvalsWorkbench.jsx",
+            "src/components/DatasetAuthoring.jsx",
+            "src/lib/eval-datasets.js"
+          ]
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "paths": [
+            "app/api/evals_datasets.py",
+            "app/evals_dataset_drafts.py"
+          ]
+        }
+      ]
     }
   ]
 }
