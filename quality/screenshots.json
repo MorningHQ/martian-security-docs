@@ -2471,6 +2471,147 @@
       "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
       "reviewedForSecrets": true,
       "sha256": "8ad3048c1dc168a44449b2fdb6d983a186b577bd5f53c7d01b0b0cacf4a6697f"
+    },
+    {
+      "id": "evals-regression-selection",
+      "file": "evals-regression-selection.png",
+      "alt": "One canonical failed EV-1003 record selected, expected 4 and actual 4.",
+      "caption": "Select only the canonical failed row. One result is selected; saved-result authoring remains available while a separate publication pauses new runs.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/regression-cases: Copy the selected result directly, after step 2"
+      ],
+      "environment": "Isolated local QA; real Backend and retained Evals data; synthetic Martian Docs Lab",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T17:20:15.208277+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not a hosted-beta deployment attestation.",
+      "validationStatus": "Actual UI after native operations, individually viewed for readable framing and secrets; original failed probes and later readback remain distinct.",
+      "reviewedForSecrets": true,
+      "sha256": "db5c47b197538c973f97f434e636d5cb1d3c7a84290c3dc386a7ac5f696cd5e7",
+      "captureNotes": "Recaptured through normal UI after an unrelated old toast/transient project-read error cleared. Wrapper capture repeated only a rejected dry-run preview, with no import applied."
+    },
+    {
+      "id": "evals-regression-dialog",
+      "file": "evals-regression-dialog.png",
+      "alt": "Add one saved result to a new draft while keeping the original expected output.",
+      "caption": "Choose New draft and Keep the run's expected output. The correct answer stays 4; the failing answer 4. is not accepted as ground truth.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/regression-cases: Copy the selected result directly, after step 3"
+      ],
+      "environment": "Isolated local QA; real Backend and retained Evals data; synthetic Martian Docs Lab",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T17:20:15.515412+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not a hosted-beta deployment attestation.",
+      "validationStatus": "Actual UI after native operations, individually viewed for readable framing and secrets; original failed probes and later readback remain distinct.",
+      "reviewedForSecrets": true,
+      "sha256": "7cb718967a62c5c425dd1efcf9454850771f7536e92581cf433693a0fe59d636",
+      "captureNotes": "After original native create201/copy200, the same real form was configured again for a clean read-only capture and Cancelled; no second draft creation or addition."
+    },
+    {
+      "id": "evals-regression-draft",
+      "file": "evals-regression-draft.png",
+      "alt": "Refreshed Regression cases from EV-1003 draft with one usable record and expected output 4.",
+      "caption": "The direct-copy draft retained revision 2 and one usable record after refresh. Its source-run/result metadata was inspected without another save.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/regression-cases: Copy the selected result directly, after step 5"
+      ],
+      "environment": "Isolated local QA; real Backend and retained Evals data; synthetic Martian Docs Lab",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T17:13:11.511434+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not a hosted-beta deployment attestation.",
+      "validationStatus": "Actual UI after native operations, individually viewed for readable framing and secrets; original failed probes and later readback remain distinct.",
+      "reviewedForSecrets": true,
+      "sha256": "0fdddfe684fb019ea90a59c157b268f8af1b1f63015b739a8d0d9cccdb2dd432"
+    },
+    {
+      "id": "evals-regression-wrapper-error",
+      "file": "evals-regression-wrapper-error.png",
+      "alt": "Import preview rejecting the complete failure-export wrapper and disabling Import.",
+      "caption": "The export's top-level provenance fields are not accepted by dataset import. This real rejected dry run changed no records.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/regression-cases: Alternative: import an exported failure, after step 1"
+      ],
+      "environment": "Isolated local QA; real Backend and retained Evals data; synthetic Martian Docs Lab",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T17:20:15.743697+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not a hosted-beta deployment attestation.",
+      "validationStatus": "Actual UI after native operations, individually viewed for readable framing and secrets; original failed probes and later readback remain distinct.",
+      "reviewedForSecrets": true,
+      "sha256": "de332c8388529b197ef96fad69850b1d2232ea187e50e609e0ec837367873484",
+      "captureNotes": "Recaptured through normal UI after an unrelated old toast/transient project-read error cleared. Wrapper capture repeated only a rejected dry-run preview, with no import applied."
+    },
+    {
+      "id": "evals-regression-array-preview",
+      "file": "evals-regression-array-preview.png",
+      "alt": "Corrected items-array import preview in a separate empty draft, showing one new record.",
+      "caption": "The extracted items array previews one new record, zero updates and one final record. The draft behind the preview is still empty until Import.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/regression-cases: Alternative: import an exported failure, after step 4"
+      ],
+      "environment": "Isolated local QA; real Backend and retained Evals data; synthetic Martian Docs Lab",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T17:06:22.685612+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not a hosted-beta deployment attestation.",
+      "validationStatus": "Actual UI after native operations, individually viewed for readable framing and secrets; original failed probes and later readback remain distinct.",
+      "reviewedForSecrets": true,
+      "sha256": "7dde8c652abefca80b8db150927a5ecea5690a47d941e68f1c86825153666ce0"
+    },
+    {
+      "id": "evals-regression-imported",
+      "file": "evals-regression-imported.png",
+      "alt": "Refreshed Imported failure from EV-1003 draft with one usable record and expected output 4.",
+      "caption": "The separate file-import draft retained one usable record after one Import and refresh. Metadata preserves the source run/result and the observed answer, including its trailing period.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/regression-cases: Alternative: import an exported failure, after step 5"
+      ],
+      "environment": "Isolated local QA; real Backend and retained Evals data; synthetic Martian Docs Lab",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T17:13:10.738651+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not a hosted-beta deployment attestation.",
+      "validationStatus": "Actual UI after native operations, individually viewed for readable framing and secrets; original failed probes and later readback remain distinct.",
+      "reviewedForSecrets": true,
+      "sha256": "f1a751cac71a2b09bfef86340eb80943dd75c6956e0aeb8b951253930b414396"
     }
   ]
 }

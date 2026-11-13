@@ -225,14 +225,38 @@
       "environment": "Production preview;1440\u00d71000desktop and390\u00d7844narrow;light/dark",
       "result": "passed bounded review; no human participant",
       "details": "Environment/dataset guides and beta verification subsection passed readability, exact scoped partial notices, natural search/result clicks, anchors, theme controls and nested refresh without page overflow. All12inline image instances loaded; all9new captures viewed natively and new full-size controls passed. Dataset chronology suggestion was resolved and rechecked in rendered final order at both widths. Final console0errors/0warnings. Sampled134-request tail retained one duplicate verificationGET ERR_ABORTED with matching successful request; freshreload12/12responses200/304. Seventeen ignored QA screenshots retained. No product actions, paid calls, workflow execution or source edits by reviewer."
+    },
+    {
+      "scope": "Stored canonical failure direct copy and cleaned-export import",
+      "environment": "Isolated local QA; native real API/UI; Owner; synthetic stored EV1003",
+      "result": "passed named case-authoring paths without a new evaluation/target/model submission",
+      "details": "Direct create201/copy200 inserted1/rev2; full export-wrapper dry-run422; unchanged items-array preview200 and separate draft original Import200 inserted1/dry_runfalse/rev2. Both nativeGET200/refresh/metadata retained one usable record/expected4. Original observer failure from its incorrect explicit-false request-field expectation is retained; Frontend omits dry_run on Apply, Backend defaultsfalse. Native original response proved persisted success; no Apply repeated. Separate drafts avoid the source-derived different-ID duplication hazard. Earlier project-read failure and old toast preserved separately; clean screenshots recaptured only via normal read-only UI/Cancel/rejected dry-run. Publication and actual-output substitution stay outside scope."
+    },
+    {
+      "scope": "PR11 independent source, native evidence and screenshot review",
+      "environment": "New regression-case guide, six real PNGs, linked dataset/reference prose and four quality records",
+      "result": "no outstanding P1/P2; verified label supported for named Owner saved-case authoring",
+      "details": "Reviewed native direct copy201/200 and corrected-import original200 plus bothGET/refresh results against pinned source. Preserved wrong observer request-field assumption/failure separately from actual original import success; no Apply repeated. Different-ID duplicate hazard is source-derived, not an executed mixed-path test. All6newPNG hashes/dimensions/CRC/chunks and visible privacy/readability passed; no secrets/transient project errors. Publication, rerun and actual-answer substitution remain outside the new verified scope; dataset guide stays partial."
+    },
+    {
+      "scope": "PR11 AI-simulated novice and visual review",
+      "environment": "Production preview;1440\u00d71000desktop and390\u00d7844narrow;light/dark",
+      "result": "passed bounded review; no human participant",
+      "details": "New guide, dataset/reference/sidebar links, explicit alternative paths/expected4vsactual4., Datasets/Drafts navigation, conversion instructions, natural save-failed-results search (guide first), anchors/deeprefresh and scope/counters passed. All6inlineimages loaded and6newcaptures viewed natively; fullsize1440image passed. Docs console0errors/0warnings. RawPNGtab separately requested origin-rootfavicon.ico404 while image and projectfavicon loaded. Docs150-request snapshot retained one duplicate verificationGET ERR_ABORTED with matching successful GET; freshreload12/12responses200/304. Ten ignoredQA screenshots retained. No product actions, model calls or source edits by reviewer."
+    },
+    {
+      "scope": "PR11 build, runnable conversion example and source checks",
+      "environment": "Node26;41-page production site; exact rendered shell/Python3 command with native synthetic export",
+      "result": "production build, Pagefind, default checks, conversion command and diff check passed",
+      "details": "41pages built/indexed;3466link/anchor/assetreferences,112registeredcapturedIDs/100uniquePNGs and five import-example records passed. Exact guide conversion command exited0 and output semantically equaled nativeexport.items, preserving all values/metadata. Coverage33guides:20verified/9partial/4pending. Strict full-release audit remains enabled and intentionally fails with19pending screenshotreferences/13unverifiedfullguides/33findings."
     }
   ],
   "remainingGaps": [
     "Four guides still await walkthrough qualification: sandbox bindings and three Discovery workflows. Environment creation/lifecycle is partly verified in the named hosted-beta Gmail scope.",
-    "Nineteen guides are verified in their named local/CI scope; nine are partial. Remaining screenshot references and full walkthroughs stay enforced by the strict release audit.",
+    "Twenty guides are verified in their named local/CI scope; nine are partial. Remaining screenshot references and full walkthroughs stay enforced by the strict release audit.",
     "Sandbox-backed verified effects, fresh-world repetitions/negative controls and published artifact-backed Recorded review/domain/redacted-bundle exports remain unverified.",
     "MR-1003 retains an uncertain teaching-tunnel action; positive cooperative cancellation and evidence-based resolution are not yet qualified.",
-    "Dataset second-version/selected-result workflows, successful generated/personal worlds, positive native conversation-session grouping, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification.",
+    "Dataset second-version publication, successful generated/personal worlds, positive native conversation-session grouping, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification.",
     "Local QA demonstrates the named pinned-source behavior, not hosted AWS-beta parity. Local sandbox orchestration is unavailable (connectors503)."
   ]
 }

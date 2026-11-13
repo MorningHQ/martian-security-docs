@@ -474,7 +474,7 @@
         "A separate edited draft publication returned409 while staging its own operation due to unresolved work/reconciliation. It remains distinct from the copied draft and retained uncertain assessment; original published versions are unchanged."
       ],
       "remaining": [
-        "Second published version, selected-run-result authoring and selected-failure export transformation are not exercised.",
+        "Second published version remains unverified. Selected-result authoring/export transformation were unverified at the PR10 checkpoint; the later Stored canonical failure to reviewed drafts task now qualifies their named paths.",
         "The two staged publications remain incomplete; native submission state of the copied publication is unknown."
       ]
     },
@@ -493,6 +493,24 @@
       "remaining": [
         "Successful generated/shared/personal/new-world data, optional schema/sample file uploads, other simulation types, agent bindings and independent business-outcome assessment checks remain unverified.",
         "A separate new QA organization is not Evals-ready and has no authorized clusters; no tenant guard or provisioning rule was bypassed."
+      ]
+    },
+    {
+      "task": "Stored canonical failure to reviewed drafts",
+      "result": "passed original-expected-output direct copy and separate exported-items import; isolated local Owner QA",
+      "observed": [
+        "Saved EV1003canonicalfailure expected4/actual4. selected once; Export selected failures downloaded context wrapper with one unchanged item.",
+        "Add selected to dataset(1)/New draft/Keep run expected output returned create201 and copy200 inserted1 updated0 revision2. Datasets/Drafts navigation and GET/refresh retained one usable record/expected4 with source=eval_run/expected_from=expected/run/result metadata.",
+        "Complete export wrapper dry-run merge returned422: JSON datasets accept only name, description and items. Import stayed disabled; no records applied.",
+        "Extracted export.items unchanged into a bare JSON array. A separate empty draft create201; dry-run200 inserted1 updated0 revision1. Original real Import request6815 returned200/dry_runfalse/inserted1/revision2/record_count1.",
+        "Observer then threw because it wrongly expected an explicit false request property. Frontend Apply omits dry_run; Backend defaults it false. Original native response and request log preserved; no Apply was repeated.",
+        "Final normal GET200 plus UI refresh and Edit inspection/Cancel confirmed both drafts editing/rev2/one usable record/expected4. Import metadata retained observed_output4. and source run/result. Default project toolbar was ready after earlier transient read failures.",
+        "Direct-copy ID run-90c3af4ec3474069aaf3 differs from exported dataset_item_id dr-ae14e471f531449abad691499a721843. Same-draft duplicate hazard follows source ID-only upsert; mixed-path duplication was not executed.",
+        "Clean selection/dialog/error captures were made through normal UI without a second creation/addition/import. Reopened new-draft configuration was Cancelled; repeated raw-wrapper request was a rejected dry run only."
+      ],
+      "remaining": [
+        "Actual-output substitution, publication and later evaluation of the cases were not executed in this task.",
+        "Existing stalled publication operations and uncertain MR1003 remain preserved."
       ]
     }
   ],
