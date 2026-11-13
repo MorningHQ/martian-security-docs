@@ -626,11 +626,11 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/configure/)
 
 > **Page qualification:** Current beta console · member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, endpoint-only HTTP goals, outcome/technique selection, anonymous identity, Light and serial controls were exercised. MR-1002 retained its selected scope. Sandbox bindings, signed-in/browser targets and prepared scenarios remain unverified.
+> **Walkthrough limits:** Endpoint-only HTTP configuration and saved scope were exercised previously. A separate anonymous endpoint-only MCP campaign retained edited goals, a data outcome, Light and serial settings, then made three real tool calls. Its admission acknowledgment failed and required operator-assisted reconciliation of the original campaign. Browser, sandbox, signed-in and prepared-scenario execution remain unverified.
 
 Partly verified guide
 
-The basic endpoint-only HTTP walkthrough is complete. Sandbox bindings, signed-in/browser targets and prepared scenarios are still being verified.
+The basic HTTP walkthrough is complete. MCP execution was checked with operator-assisted recovery. Browser, sandbox, signed-in and prepared-scenario workflows still need complete walkthroughs.
 
 Define the authorized scope before sending adversarial requests to a customer agent. The wizard has six steps: **Environment → Agent → Goals → Tests → Run → Report**. This guide covers configuration through admission; the [first-assessment tutorial](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/get-started/first-assessment.md) provides a complete introductory run.
 
@@ -703,6 +703,8 @@ The normal wizard selects scenario-backed packs. Arbitrary Wiki `scenario_id` se
 2.  Click **Start assessment** once. Acknowledgment creates a run code and opens **Run**. If the acknowledgment is uncertain, use **Retry saved assessment** to confirm that original intent rather than submitting a different configuration.
 3.  Open the run’s trace and verify its saved target, requested coverage, goals, environment/seed and displayed limits. Refresh and reopen it from **Assessments** to confirm persistence.
 
+For an MCP target, the approved entry tool and message argument come from its [connection setup](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/connections.md#register-the-target). A bounded anonymous, endpoint-only MCP example made real tool calls, but its lost admission acknowledgment required operator-assisted reconciliation of the original campaign. See the [MCP evidence example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-an-mcp-endpoint-example) and [submission-failure recovery](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md#handle-submission-and-execution-failures) before repeating work after an error.
+
 Continue with [progress and cancellation](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md) and [evidence and results](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md). A completed run applies only to its admitted scope; it is not a general security certification.
 
 ---
@@ -715,7 +717,7 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/evidence-and-r
 
 > **Page qualification:** Current beta console · viewer, member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review.
+> **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified.
 
 Partly verified guide
 
@@ -770,6 +772,30 @@ Select a retained turn to compare the actual attacker message, customer reply an
 Six visible lookup stages retained no reviewed references. One activated canonical skill is recorded with a Content digest control; missing references do not prove no relevant attack is known.
 
 In the endpoint-only **MR-1002** example, **Knowledge & skills** retained one activated skill and its content digest, but no reviewed knowledge references. **Probe coverage** reported one attempted, unverifiable disclosure probe. Three observed refusals and zero findings did not change its **INCONCLUSIVE** security outcome. No deterministic target oracle or sandbox business-state checks were available for this run.
+
+## Read an MCP endpoint example
+
+This separate synthetic QA example used an approved MCP `chat(message)` tool with anonymous, endpoint-only, Light and serial settings. Its admission acknowledgment failed; an operator reconciled the original campaign before the saved evidence appeared below. The [submission-error recovery limit](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md#handle-submission-and-execution-failures) remains relevant.
+
+1.  Open the saved run and confirm its agent. **MR-1001** here belongs to the separate **Documentation Native Sessions QA** organization. It shows **Completed** execution, **INCONCLUSIVE** security outcome, **3** agent requests, **16** model calls and **0** displayed findings. A budget-ended run and three refusals do not establish a security pass.
+
+![Martian Security MCP assessment MR-1001 showing completed execution, an inconclusive security outcome, three agent requests and sixteen model calls.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-mcp-result.png)
+
+Check execution and security outcome separately. This synthetic MCP result was recovered by an operator after an uncertain admission; it does not establish a security pass.
+
+2.  In **Trace**, select **Turn 1**. Compare its actual attacker message and customer reply, then inspect the action’s **Journal**. Here it records **prepared → submitted → completed**. The reply refuses disclosure; no sandbox tool call or independent business-state check was available. These requests reached the target’s MCP `chat` tool; **Observed actions** describes the agent’s separate sandbox/gateway tool use.
+
+![The actual first MCP turn with its attacker message, refusal, action identity and prepared to submitted to completed journal.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-mcp-turn.png)
+
+Compare the actual request, reply and action journal. This turn belongs to the same operator-reconciled MCP campaign; a refusal is separate from independent outcome verification.
+
+3.  Open **Probe coverage**. The disclosure probe is **attempted** with outcome **unverifiable**, not verified. It records three target calls and fifteen model calls within that probe; the campaign summary above has its own total of sixteen model calls. Keep each counter’s scope when comparing them.
+
+![MCP disclosure probe coverage showing attempted and unverifiable, three target calls, fifteen probe model calls and one inconclusive recorded attempt.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-mcp-coverage.png)
+
+Read the probe outcome and its own counters. This operator-reconciled campaign attempted the disclosure probe but retained no decisive verified result.
+
+4.  Refresh and reopen the saved run, then use **Download legacy JSON evidence**. In this check, the downloaded `MR-1001.json` retained the same agent, completed state, inconclusive verdict, attempt, trace and coverage. This JSON is separate from a published redacted review bundle.
 
 ## Exports and limitations
 
@@ -849,7 +875,7 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/progress-and-c
 
 > **Page qualification:** Current beta console · member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, MR-1002 was followed from running to retained completion. MR-1003 reached Needs attention after HTTP 530 before its stop control could be used; its action remains uncertain. Successful cooperative cancellation remains unverified.
+> **Walkthrough limits:** MR-1002 was followed from running to retained completion. The original MR-1003 HTTP530 action remains uncertain and untouched. A separate MCP campaign executed despite an initial HTTP503; public refresh200 left the error unchanged, and one operator-assisted reconciliation restored its original completed/inconclusive evidence. Positive cooperative cancellation remains unverified.
 
 Partly verified guide
 
@@ -871,7 +897,7 @@ Any tenant user can inspect an accessible run. **Member**, **Admin** or **Owner*
 The acknowledged MR-1002 run shows its five requested techniques. Open trace follows execution; the header Cancel leaves the wizard.
 
 3.  Inspect agent requests, model calls and execution limits. A queued/submitted state is not proof that the downstream target or model executed. Missing or incomplete evidence must remain visible.
-4.  Use **Refresh evidence** when you need the current projection from the existing runtime campaign. This synchronizes evidence; it does not intentionally start another assessment.
+4.  Use **Refresh evidence** when you need the current projection from the existing runtime campaign. This does not start another assessment. After a submission error, an unchanged result can still require operator inspection; refresh is not proof that no work was admitted.
 5.  When execution ends, reopen the run from **Assessments** or **Replay**, refresh the browser and confirm the same run code, state and retained results. The wizard advances to **Report** for terminal completed, failed, incomplete or stopped runs.
 
 ## Request cancellation
@@ -889,12 +915,16 @@ An HTTP 530 left one action uncertain before cancellation could be requested. Th
 
 ## Handle submission and execution failures
 
+Needs attention can hide an admitted campaign
+
+An admission error can appear even while the original campaign is executing. In a real MCP QA run, a downstream HTTP 503 left the console at **Needs attention** while the runtime made three target requests. **Refresh evidence** returned successfully without updating that record; an operator reconciled the same campaign afterward. Keep the run code and page URL, and ask for inspection before starting another assessment or cleaning up its target.
+
 | Situation | Recovery |
 | --- | --- |
 | Starting the assessment / acknowledgment lost | Use **Retry saved assessment**. It confirms the saved request identity rather than creating a new intent. |
 | Submission or scenario preparation in progress | Inspect and synchronize the original run first. Control can be refused while admission or scenario preparation is being committed. |
 | Run failed or timed out | Read the recorded error and coverage. Fix the actual prerequisite, then explicitly configure a new bounded run when appropriate. |
-| Run incomplete or needs attention | Preserve its ID and inspect the retained evidence/recovery notice. Ask your operator to resolve uncertain work; do not blindly replay paid or mutating actions. |
+| Run incomplete or needs attention | Preserve its ID and inspect the retained evidence/recovery notice. If refresh leaves the submission error unchanged, ask your operator to inspect the original campaign. The console’s ended message does not independently establish that downstream execution stopped. |
 | Connection changed or was revoked | Have an Owner/Admin verify the intended target and approval. An old run may still require inspection against its original runtime identity. |
 | Historical imported record | Inspect its retained original evidence. It has no new runtime campaign here to cancel. |
 
@@ -3227,6 +3257,7 @@ Start with the action’s recorded state and exact error. Refresh retained histo
 | Evals says setup is pending or needs review | Organization readiness, selected project | Use Refresh setup; ask an admin to resolve a failed/uncertain setup |
 | A run is refused as busy | Organization-wide target/scoring admission | Wait for the active work; inspect its stop/final state |
 | Launch response was lost | Existing saved run and launch request | Inspect/recover saved work before creating another request |
+| Needs attention retains a submission error after refresh | Original run ID and runtime admission | Ask your operator to inspect that same campaign; a successful refresh response or an ended label does not prove downstream execution stopped |
 | Dataset import is rejected | Preview row errors, fields, duplicate IDs, file format | Correct the entire upload; invalid input is not partially merged |
 | Draft changed during publish | Current revision and validation hash | Refresh and review; publish the intended new revision |
 | Published global dataset is read-only | Reserved martian: catalogue entry | Use Copy to my datasets, then edit your organization’s copy |
@@ -3293,7 +3324,7 @@ These guides are being qualified against actual running application/backend stat
 
 The site is being published iteratively. Guides with unfinished walkthroughs show a short notice above the instructions. Detailed roles, dates, tested environments and qualification records are collected here and retained in **Copy page** Markdown. Authenticated captures and complete execution checks are added as they pass.
 
-Of **37 task guides**, **25 are verified**, **8 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **124 captured references** across **112 unique PNGs**. These counts come from the current coverage and screenshot manifests.
+Of **37 task guides**, **25 are verified**, **8 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **127 captured references** across **115 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 
@@ -3310,6 +3341,7 @@ The isolated QA application uses the source baseline below, real Backend/Agents 
 -   A separate synthetic Owner completed HTTP, MCP and browser registration, protocol-specific validation, approval and full refresh. MCP discovery found a real `chat(message)` tool and retained the selected entry tool and argument. Browser validation returned **public-url-only**; website login/chat passed a separate target preflight, while Martian browser-assessment execution remains unqualified. Four new application captures show browser details, MCP selection, rotation recovery and the named deletion confirmation.
 -   The unused HTTP registration also passed deployed-revision declaration, credential rotation, re-approval and disable. Rotation returned **draft**, cleared the form and revoked its saved approval; the target rejected the old bearer and accepted the replacement. **Validate and approve** restored **active**. The Owner deleted only that unused registration: **204**, absent after refresh, **404** on independent read and no stored credential. The target application remained available. No assessment/evaluation or campaign lease had used this registration; active-run deletion guards and retention of populated history remain source reviewed.
 -   Connection-management boundary checks returned **401** for anonymous requests, **403** for Member/Viewer administrative actions and **404** for another organization’s Owner. Three relevant Frontend files and three Backend files matched the recorded source pins. Initial read/proxy timeouts and one aborted-refresh sign-in recovery were preserved separately; no connection mutation was repeated to repair them.
+-   A separate bounded MCP assessment used the approved `chat(message)` tool, anonymous endpoint-only identity, one data outcome, Light and serial settings. Its original admission returned a downstream **503**, yet the native campaign executed **3 target calls** and **16 model calls**, then ended with **search\_round\_budget\_exhausted** and no pending recovery actions. Two real **Refresh evidence** requests returned **200** without reconciling its missing admission link. An operator invoked the existing Backend reconciliation routine against that one original campaign, without a replacement submission, native-state edit or product-source patch. The customer console then retained **Completed / INCONCLUSIVE**, one detailed attempt, the three actual refusals and attempted/unverifiable probe coverage. Reload and the actual legacy JSON download agreed. The new [MCP evidence example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md#read-an-mcp-endpoint-example) shows this explicitly operator-assisted result; automatic admission recovery, browser execution and positive cancellation remain unqualified.
 -   The owner imported three JSONL records, published them and reopened their immutable content after refresh.
 -   **EV-1001** executed the three actual HTTP requests and retained **3 passed, 0 failed, 0 errors, 0 skipped**. Native provenance reported **FINISHED**, with the same dataset content hash. The first record’s native trace contains exact-match and target-chat spans with the observed input/output.
 -   The actual result controls downloaded one filtered READY record as JSON and all three records as CSV. The terminal run and answers survived a full page refresh.
@@ -3348,7 +3380,7 @@ The separate shared-generation attempt failed before QA. No generated or persona
 
 The new beta QA Owner also inspected **Connect source → Add a read-only source**. The Kubernetes list had no authorized alias and **Create source** stayed disabled. Read-only checks of the deployed Discovery schema, API and configuration files matched the Backend baseline below. That schema rejects a Kubernetes observation field emitted by the available collector snapshot. Compatible collection and operator-approved scope remain prerequisites; no source, collector credential or inventory was created for this check.
 
-The teaching callbacks are deterministic. These checks verify wiring and retained evidence; they do not establish production model quality or security. Protocol-specific MCP/browser assessment execution, sandbox-backed assessments, positive cooperative cancellation and the remaining screenshot-dependent journeys are still being qualified. Verified labels name the local or GitHub-runner QA scope; they do not imply hosted-beta parity. Partly verified guides identify their remaining limits above the steps.
+The teaching callbacks are deterministic. These checks verify wiring and retained evidence; they do not establish production model quality or security. MCP endpoint execution was observed in the operator-assisted scope above. Self-service admission recovery, browser execution, sandbox-backed assessments, positive cooperative cancellation and the remaining screenshot-dependent journeys are still being qualified. Verified labels name the local or GitHub-runner QA scope; they do not imply hosted-beta parity. Partly verified guides identify their remaining limits above the steps.
 
 A second three-record member run initially retained canonical passes while some telemetry acknowledgements were uncertain. Administrator reconciliation later confirmed the saved evidence with **zero target calls**. A stalled, never-submitted SDK dataset publication was safely aborted and its restored draft published after that recovery. A manually repeated numeric review save after a delayed acknowledgement also produced an additional history entry; queue completion was checked against its four latest verified answers.
 

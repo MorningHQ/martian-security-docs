@@ -20,6 +20,7 @@ Start with the action’s recorded state and exact error. Refresh retained histo
 | Evals says setup is pending or needs review | Organization readiness, selected project | Use Refresh setup; ask an admin to resolve a failed/uncertain setup |
 | A run is refused as busy | Organization-wide target/scoring admission | Wait for the active work; inspect its stop/final state |
 | Launch response was lost | Existing saved run and launch request | Inspect/recover saved work before creating another request |
+| Needs attention retains a submission error after refresh | Original run ID and runtime admission | Ask your operator to inspect that same campaign; a successful refresh response or an ended label does not prove downstream execution stopped |
 | Dataset import is rejected | Preview row errors, fields, duplicate IDs, file format | Correct the entire upload; invalid input is not partially merged |
 | Draft changed during publish | Current revision and validation hash | Refresh and review; publish the intended new revision |
 | Published global dataset is read-only | Reserved martian: catalogue entry | Use Copy to my datasets, then edit your organization’s copy |

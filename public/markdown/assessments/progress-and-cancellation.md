@@ -6,7 +6,7 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/progress-and-c
 
 > **Page qualification:** Current beta console · member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, MR-1002 was followed from running to retained completion. MR-1003 reached Needs attention after HTTP 530 before its stop control could be used; its action remains uncertain. Successful cooperative cancellation remains unverified.
+> **Walkthrough limits:** MR-1002 was followed from running to retained completion. The original MR-1003 HTTP530 action remains uncertain and untouched. A separate MCP campaign executed despite an initial HTTP503; public refresh200 left the error unchanged, and one operator-assisted reconciliation restored its original completed/inconclusive evidence. Positive cooperative cancellation remains unverified.
 
 Partly verified guide
 
@@ -28,7 +28,7 @@ Any tenant user can inspect an accessible run. **Member**, **Admin** or **Owner*
 The acknowledged MR-1002 run shows its five requested techniques. Open trace follows execution; the header Cancel leaves the wizard.
 
 3.  Inspect agent requests, model calls and execution limits. A queued/submitted state is not proof that the downstream target or model executed. Missing or incomplete evidence must remain visible.
-4.  Use **Refresh evidence** when you need the current projection from the existing runtime campaign. This synchronizes evidence; it does not intentionally start another assessment.
+4.  Use **Refresh evidence** when you need the current projection from the existing runtime campaign. This does not start another assessment. After a submission error, an unchanged result can still require operator inspection; refresh is not proof that no work was admitted.
 5.  When execution ends, reopen the run from **Assessments** or **Replay**, refresh the browser and confirm the same run code, state and retained results. The wizard advances to **Report** for terminal completed, failed, incomplete or stopped runs.
 
 ## Request cancellation
@@ -46,12 +46,16 @@ An HTTP 530 left one action uncertain before cancellation could be requested. Th
 
 ## Handle submission and execution failures
 
+Needs attention can hide an admitted campaign
+
+An admission error can appear even while the original campaign is executing. In a real MCP QA run, a downstream HTTP 503 left the console at **Needs attention** while the runtime made three target requests. **Refresh evidence** returned successfully without updating that record; an operator reconciled the same campaign afterward. Keep the run code and page URL, and ask for inspection before starting another assessment or cleaning up its target.
+
 | Situation | Recovery |
 | --- | --- |
 | Starting the assessment / acknowledgment lost | Use **Retry saved assessment**. It confirms the saved request identity rather than creating a new intent. |
 | Submission or scenario preparation in progress | Inspect and synchronize the original run first. Control can be refused while admission or scenario preparation is being committed. |
 | Run failed or timed out | Read the recorded error and coverage. Fix the actual prerequisite, then explicitly configure a new bounded run when appropriate. |
-| Run incomplete or needs attention | Preserve its ID and inspect the retained evidence/recovery notice. Ask your operator to resolve uncertain work; do not blindly replay paid or mutating actions. |
+| Run incomplete or needs attention | Preserve its ID and inspect the retained evidence/recovery notice. If refresh leaves the submission error unchanged, ask your operator to inspect the original campaign. The console’s ended message does not independently establish that downstream execution stopped. |
 | Connection changed or was revoked | Have an Owner/Admin verify the intended target and approval. An old run may still require inspection against its original runtime identity. |
 | Historical imported record | Inspect its retained original evidence. It has no new runtime campaign here to cancel. |
 
