@@ -446,6 +446,21 @@
       "remaining": [
         "This Evals-only pass does not establish passing combined CI or hosted GitHub runner execution."
       ]
+    },
+    {
+      "task": "Exact published SDK 0.1.2 tutorial combined CLI on GitHub Actions",
+      "result": "passed original attempt and independent retained/native evidence",
+      "observed": [
+        "PublicZIP12files and official wheel identities verified; separate Python3.12 consumer committed its own source revision.",
+        "Original command exited0; session31ace842-2642-4419-af6f-5f720697cd58 passed/persisted/exported3of3 kinds dataset/checks/redteam.",
+        "Three native MLflow runs FINISHED; two distinct native operations each used one model call and settled with physical_active0.",
+        "Artifact14014600088/six metadatafiles downloaded and SHA256cc79ff5d verified; all12customerfiles unchanged; credential scan and cleanup passed."
+      ],
+      "remaining": [
+        "Extracted customer github-actions.yml template was not itself dispatched.",
+        "Deterministic callback and pinned disposable runtime qualification does not attest hosted beta or production security."
+      ],
+      "record": "public/examples/validation/sdk-ci-0.1.2-2026-11-13.json"
     }
   ],
   "knownEnvironmentLimits": [

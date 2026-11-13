@@ -2320,7 +2320,7 @@
         "sdk-ci-strict-pass",
         "sdk-ci-combined-failed"
       ],
-      "qualification": "partial",
+      "qualification": "verified",
       "sources": [
         {
           "repository": "MorningHQ/martian-redteam",
@@ -2343,7 +2343,7 @@
           ]
         }
       ],
-      "validationStatus": "In isolated local QA, Evals-only strict CI passed with 2 of 2 tests and completed exports. Standalone probes passed, but combined CI failed after uncertain generation. A clean combined pass and hosted GitHub runner execution remain unverified.",
+      "validationStatus": "The exact published SDK 0.1.2 tutorial ZIP passed one original combined CLI attempt on GitHub Actions: exit 0, persisted/exported 3 of 3 test groups, three native FINISHED exports and two settled model calls. Earlier local Python/CLI standalone passes and failed/recovered CI sessions remain distinct. The extracted customer workflow template was not itself dispatched.",
       "requiredValidation": [
         "Verify released commands and configuration",
         "Exercise hosted real-service success and relevant failure paths",
@@ -2360,23 +2360,29 @@
           "date": "2026-11-13",
           "record": "quality/walkthroughs.json",
           "observedPath": "Fresh Evals-only strict SDK CI",
-          "result": "A distinct Evals-only original strict command exited0 with persisted/exported2/2 and native FINISHED evidence. Standalone Python/CLI model probes passed; original combined2/4 failed/exported after uncertain generation. Clean combined CI and hosted GitHub runner execution remain unverified."
+          "result": "Earlier checkpoint: A distinct Evals-only original strict command exited0 with persisted/exported2/2 and native FINISHED evidence. Standalone Python/CLI model probes passed; original combined2/4 failed/exported after uncertain generation. Clean combined CI and hosted GitHub runner execution remain unverified. See the subsequent exact-ZIP combined qualification below."
         },
         {
           "date": "2026-11-13",
           "record": "quality/walkthroughs.json",
           "observedPath": "Original combined SDK CI failed gate and same-operation recovery",
-          "result": "In isolated local QA, Evals-only strict CI passed with 2 of 2 tests and completed exports. Standalone probes passed, but combined CI failed after uncertain generation. A clean combined pass and hosted GitHub runner execution remain unverified."
+          "result": "Earlier checkpoint: In isolated local QA, Evals-only strict CI passed with 2 of 2 tests and completed exports. Standalone probes passed, but combined CI failed after uncertain generation. A clean combined pass and hosted GitHub runner execution remain unverified. See the subsequent exact-ZIP combined qualification below."
+        },
+        {
+          "date": "2026-11-13",
+          "record": "public/examples/validation/sdk-ci-0.1.2-2026-11-13.json",
+          "observedPath": "Exact published SDK ZIP combined CLI on a GitHub-hosted runner",
+          "result": "Original exit0; passed/persisted/exported3/3; three native FINISHED exports; exactly two settled model calls; source hashes, unchanged12files, safe artifacts and own-resource cleanup verified. Customer workflow template setup remains source reviewed rather than directly dispatched."
         }
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
       "sourceReview": {
-        "realBackendWalkthrough": "partial; see validationStatus",
+        "realBackendWalkthrough": "passed for named scope",
         "screenshots": "captured",
-        "remainingGaps": [
-          "A clean complete combined-CI pass and hosted GitHub runner execution remain unverified."
-        ]
-      }
+        "remainingGaps": []
+      },
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Named local QA for standalone probes and console persistence; GitHub-hosted Ubuntu 24.04/Python 3.12 for exact public ZIP combined CLI on disposable pinned services"
     },
     {
       "id": "sdk/evaluations",
@@ -2540,7 +2546,7 @@
         "sdk-redteam-key",
         "sdk-redteam-result"
       ],
-      "qualification": "partial",
+      "qualification": "verified",
       "sources": [
         {
           "repository": "MorningHQ/martian-redteam",
@@ -2563,7 +2569,7 @@
           ]
         }
       ],
-      "validationStatus": "In isolated local QA, the Python and CLI standalone probes each passed with one score of 1 and no execution errors. Their four native stages succeeded and settled. A complete passing persisted redteam or combined CI session remains unverified.",
+      "validationStatus": "The exact published SDK 0.1.2 tutorial ZIP passed one original combined CLI attempt on GitHub Actions: exit 0, persisted/exported 3 of 3 test groups, three native FINISHED exports and two settled model calls. Earlier local Python/CLI standalone passes and failed/recovered CI sessions remain distinct. The extracted customer workflow template was not itself dispatched.",
       "requiredValidation": [
         "Verify released commands and configuration",
         "Exercise hosted real-service success and relevant failure paths",
@@ -2574,23 +2580,29 @@
           "date": "2026-11-13",
           "record": "quality/walkthroughs.json",
           "observedPath": "Released standalone SDK Python and CLI model probes",
-          "result": "In isolated local QA, the Python and CLI standalone probes each passed with one score of 1 and no execution errors. Their four native stages succeeded and settled. A complete passing persisted redteam or combined CI session remains unverified."
+          "result": "Earlier checkpoint: In isolated local QA, the Python and CLI standalone probes each passed with one score of 1 and no execution errors. Their four native stages succeeded and settled. A complete passing persisted redteam or combined CI session remains unverified. See the subsequent exact-ZIP combined qualification below."
         },
         {
           "date": "2026-11-13",
           "record": "quality/walkthroughs.json",
           "observedPath": "Original combined SDK CI failed gate and same-operation recovery",
-          "result": "In isolated local QA, the Python and CLI standalone probes each passed with one score of 1 and no execution errors. Their four native stages succeeded and settled. A complete passing persisted redteam or combined CI session remains unverified."
+          "result": "Earlier checkpoint: In isolated local QA, the Python and CLI standalone probes each passed with one score of 1 and no execution errors. Their four native stages succeeded and settled. A complete passing persisted redteam or combined CI session remains unverified. See the subsequent exact-ZIP combined qualification below."
+        },
+        {
+          "date": "2026-11-13",
+          "record": "public/examples/validation/sdk-ci-0.1.2-2026-11-13.json",
+          "observedPath": "Exact published SDK ZIP combined CLI on a GitHub-hosted runner",
+          "result": "Original exit0; passed/persisted/exported3/3; three native FINISHED exports; exactly two settled model calls; source hashes, unchanged12files, safe artifacts and own-resource cleanup verified. Customer workflow template setup remains source reviewed rather than directly dispatched."
         }
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
       "sourceReview": {
-        "realBackendWalkthrough": "partial; see validationStatus",
+        "realBackendWalkthrough": "passed for named scope",
         "screenshots": "captured",
-        "remainingGaps": [
-          "A complete passing persisted redteam/combined CI probe is not established by the original failed combined attempt."
-        ]
-      }
+        "remainingGaps": []
+      },
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Named local QA for standalone probes and console persistence; GitHub-hosted Ubuntu 24.04/Python 3.12 for exact public ZIP combined CLI on disposable pinned services"
     },
     {
       "id": "workspace/team-and-roles",

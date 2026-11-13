@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-11-13T05:54:04Z",
+  "environment": "GitHub-hosted Ubuntu 24.04 runner; Python 3.12 customer; disposable pinned services and synthetic data; not a hosted-beta attestation",
+  "sdk": {
+    "version": "0.1.2",
+    "wheel": "martian_sdk-0.1.2-py3-none-any.whl",
+    "wheelSha256": "57dc1115d3b5cb8333146131b116835b986889d599485abfc402f2070b93d3e9"
+  },
+  "tutorial": {
+    "url": "https://morninghq.github.io/martian-security-docs/examples/sdk/martian-sdk-tutorial.zip",
+    "sha256": "fd83fec1782c3be1d61cdd09b48b81026252e12b29f28e8645d7622b641af85c",
+    "fileCount": 12,
+    "documentationCommit": "62948af09fb181741d0fc9ea066d61eaf7a17c32",
+    "customerGitCommit": "c65757c49fdb6c7fec34a835926ed8295979e96c",
+    "filesUnchanged": true
+  },
+  "command": [
+    ".venv/bin/martian",
+    "ci",
+    "--evals-path",
+    "tests/evals",
+    "--redteam-config",
+    "redteam.yaml",
+    "--require-export",
+    "--output",
+    "results"
+  ],
+  "originalExitCode": 0,
+  "workflow": {
+    "repository": "MorningHQ/martian-sdk-example-agent",
+    "commit": "c003976763efe5be8162f42c01daef4002a4457a",
+    "runId": 43374595574,
+    "attempt": 1,
+    "url": "https://github.com/MorningHQ/martian-sdk-example-agent/actions/runs/43374595574",
+    "access": "MorningHQ organization access required for the private workflow; this metadata receipt is public"
+  },
+  "session": {
+    "session_id": "31ace842-2642-4419-af6f-5f720697cd58",
+    "local": {
+      "sdk_version": "0.1.2",
+      "state": "passed",
+      "exit_code": 0,
+      "verdict": "passed",
+      "upload": "persisted",
+      "export_state": "exported"
+    },
+    "local_test_count": 3,
+    "local_test_kinds": [
+      "checks",
+      "dataset",
+      "redteam"
+    ],
+    "stored": {
+      "verdict": "passed",
+      "test_count": 3,
+      "export_state": "exported"
+    },
+    "tests": [
+      {
+        "kind": "dataset",
+        "passed": true
+      },
+      {
+        "kind": "checks",
+        "passed": true
+      },
+      {
+        "kind": "redteam",
+        "passed": true
+      }
+    ]
+  },
+  "nativeExports": [
+    {
+      "kind": "dataset",
+      "status": "FINISHED",
+      "run_id": "63ca58452be34837a9ec8832f4439176"
+    },
+    {
+      "kind": "checks",
+      "status": "FINISHED",
+      "run_id": "cfe7930133e84c948abc9776c1b2b680"
+    },
+    {
+      "kind": "redteam",
+      "status": "FINISHED",
+      "run_id": "0f370d51d9af45d79090339605148fa0"
+    }
+  ],
+  "nativeAccounting": {
+    "native_operations": [
+      {
+        "operation_id": "33ffc916-5611-4cb0-ad2c-5733b26d0a9b",
+        "model_calls": 1,
+        "settled": true,
+        "physical_active": 0
+      },
+      {
+        "operation_id": "a518efa0-1499-4eb6-bcdc-ac4ddae9c2c8",
+        "model_calls": 1,
+        "settled": true,
+        "physical_active": 0
+      }
+    ],
+    "no_repeated_model_calls": true
+  },
+  "runtimeSourceCommits": {
+    "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+    "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+    "evals": "60c25994958105db4baa91f377ba46c24fdf253d",
+    "skills": "3ecc77f2f55a068d711f24662019819418633784"
+  },
+  "receiptArchiveSha256": "cc79ff5dce96a956dce0f5adb78d43a6164c71b3fb082a535079d1626102a858",
+  "cleanupCompleted": true,
+  "credentialScanPassed": true,
+  "limits": [
+    "The extracted github-actions.yml template was not dispatched directly; the unchanged CLI ran in a reviewed qualification wrapper.",
+    "The callback is the deterministic tutorial application; this does not establish production-agent security or model quality.",
+    "Earlier failed local attempts remain distinct and were not rewritten."
+  ]
+}
