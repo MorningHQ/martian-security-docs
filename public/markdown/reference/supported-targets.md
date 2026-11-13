@@ -1,0 +1,31 @@
+# Supported agent targets
+
+> Choose an interface supported by the workflow you intend to run.
+
+Source: [Web version](https://docs.martiansecurity.ai/reference/supported-targets/)
+
+An approved connection defines how Martian reaches your agent. Registering a URL does not establish every workflow is compatible with it.
+
+| Interface | Assessments | Dataset Evals | Main prerequisite |
+| --- | --- | --- | --- |
+| Stateless HTTP chat | Supported | Supported | Validated, approved and active connection with chat authorization |
+| Streamable HTTP MCP | Supported | Unsupported | Selected entry tool and approved argument/response contract |
+| Public HTTPS browser chat | Supported, endpoint-only and serial | Unsupported | Compatible chat interface; public HTTPS on port 443 |
+| Session-backed HTTP | Supported where the approved session contract applies | Unsupported | Approved session create/use/cleanup contract |
+| Customer local callback through SDK | SDK redteam workflow | SDK prediction function | Correct SDK connection/scopes; target/provider credentials remain in your process |
+
+## HTTP and MCP access
+
+Normal customer endpoints require public HTTPS. Internal demo host allowlists and local-HTTP development settings are operator-owned exceptions; they are not a way to register an arbitrary private address from the customer console.
+
+MCP validation discovers tools and binds approval to the selected schema. Revalidate after the contract, credentials or sandbox bindings change. A changed dynamic connection does not silently fall back to a legacy target.
+
+## Browser chat
+
+The browser executor supports the approved website flow and optional username/password website sign-in. URL validation checks URL/access configuration, not successful login. SSO, MFA, CAPTCHA, handoff and unsupported chat discovery can stop execution. Website sign-in is distinct from an attested synthetic business identity.
+
+## Evals and saved outputs
+
+A dataset run sends selected active inputs to its approved HTTP target. Saved-output scoring, reviews and comparisons use retained values; they do not resend the target request. Paid model judging requires its own readiness and acknowledgement.
+
+**Next:** [Set up a connection](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/connections.md) or [use SDK callbacks](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/redteam.md).

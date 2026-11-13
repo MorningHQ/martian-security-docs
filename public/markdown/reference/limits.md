@@ -1,0 +1,40 @@
+# Budgets, limits and evidence
+
+> Understand bounded execution, stopping, provenance and evidence coverage.
+
+Source: [Web version](https://docs.martiansecurity.ai/reference/limits/)
+
+Use the live launch form and readiness messages for the active environment’s policy. These are ceilings and evidence boundaries, not security guarantees.
+
+## Assessments
+
+The chosen depth controls admitted work. The examined Light profile defaults to ceilings of **30 target calls**, **100 model calls** and **360 seconds**; organization/server policy can reduce or reject that request. The interface, target authorization and compatible execution mode can further limit concurrency, supported checks and reproduction.
+
+Cancellation requests a stop. It does not undo a request already sent or prove a provider has physically finished. Inspect final state, skipped/failed checks and retained evidence.
+
+## Evals
+
+| Area | Current boundary |
+| --- | --- |
+| Target-call budget | API 1–1,000 selected records; UI choices 100 / 250 / 500 / 1,000 |
+| Small tutorial | Use a three-record dataset: budget 100 is an upper bound, not 100 mandatory requests |
+| Concurrent target runs | One queued/running evaluation per organization, across projects |
+| Concurrent scoring jobs | One active scoring job per organization, separate from target admission |
+| Target execution | Sequential; ACTIVE usable records within the selected budget |
+| Human queue | 1–100 selected results, 1–8 unique required questions |
+| Bulk dataset/review actions | Up to 100 selected records per action |
+| Trace query page | Up to 100 rows; default 25 |
+| Bounded trace exports/scans | Limits apply at 1,000 matches; narrow filters when a complete export is refused |
+| Dataset import | Up to 20 MiB and 100,000 records; the whole invalid upload is rejected |
+
+**Stop after current request** retains an in-flight result, prevents the next target call and marks remaining selected records skipped. Scoring stop similarly retains the in-flight judgment. Reopening, exporting or reviewing saved values does not execute the target again.
+
+## Scores
+
+Canonical exact match compares stripped, case-folded actual and expected strings. Punctuation and extra text still matter. Other scores preserve their own definition and type. Numeric/category/text feedback must not be presented as a Boolean pass rate. Missing token or cost data is unknown, not zero.
+
+## Provenance and coverage
+
+Published dataset versions and runs retain pinned identities/digests. A declared agent artifact revision is useful provenance; an agent’s name cannot establish its model or prompt version. Historical data and bounded runtime observations do not independently verify effective access, predict an incident or prove a loss ceiling.
+
+A clean reproduction, negative control, independent business check and model opinion establish different things. Read [assessment evidence](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/reproduction-and-limits.md) and [Discovery evidence](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/runtime-and-blast-radius.md) before interpreting them.

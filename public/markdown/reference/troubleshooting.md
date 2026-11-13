@@ -1,0 +1,35 @@
+# Troubleshooting
+
+> Resolve common access, connection, run, dataset and scoring failures safely.
+
+Source: [Web version](https://docs.martiansecurity.ai/reference/troubleshooting/)
+
+Start with the action’s recorded state and exact error. Refresh retained history before submitting duplicate work.
+
+| Symptom | Check | Safe next action |
+| --- | --- | --- |
+| Invitation is incomplete, expired or revoked | Correct recipient, organization address, latest link | Ask the inviter to replace it; keep links private |
+| Sign-in works but a control is missing | Role and selected organization | Use the permissions table; ask for the specific required authority |
+| Agent exists but cannot run | Draft/validation/approval/connection changes | Complete validation and approval; rotate/reapprove changed credentials |
+| Browser URL validates but assessment fails | Website login, SSO/MFA/CAPTCHA/chat discovery | Inspect the run error; URL validation was not login success |
+| Evals says setup is pending or needs review | Organization readiness, selected project | Use Refresh setup; ask an admin to resolve a failed/uncertain setup |
+| A run is refused as busy | Organization-wide target/scoring admission | Wait for the active work; inspect its stop/final state |
+| Launch response was lost | Existing saved run and launch request | Inspect/recover saved work before creating another request |
+| Dataset import is rejected | Preview row errors, fields, duplicate IDs, file format | Correct the entire upload; invalid input is not partially merged |
+| Draft changed during publish | Current revision and validation hash | Refresh and review; publish the intended new revision |
+| Published global dataset is read-only | Reserved martian: catalogue entry | Use Copy to my datasets, then edit your organization’s copy |
+| Exact match is false unexpectedly | Complete actual/expected text | Check punctuation, extra prose and formatting; stripped case differences alone are ignored |
+| Model judging unavailable | Model access, organization readiness, acknowledgement | Use supported code scoring or ask the admin; never invent missing feedback |
+| Review saved but queue still pending | All required questions and native feedback verification | Wait/refresh; verify each latest required answer, not only the last clicked row |
+| Export refuses too many results | Match count and active filters | Narrow the query; do not treat a partial page as the whole dataset |
+| SDK exits with a setup error | Exact installed version, variables, scopes and supported command | Follow SDK configuration; martian scan is not the current supported CLI |
+
+## Keep evidence useful
+
+Record the run ID, approximate time, action, visible error and the steps already tried. Exclude passwords, tokens, cookies, customer prompts and private exports from shared issues. Use synthetic examples when reproducing a problem.
+
+## Stop and uncertainty
+
+A stop acknowledgement is not proof that an in-flight provider call has completed. Wait for final state and inspect retained work. Do not repeatedly retry an uncertain paid operation just to obtain a passing result.
+
+**Next:** [Permissions](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/permissions.md), [limits](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/limits.md) or the [SDK configuration guide](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/install-and-configure.md).

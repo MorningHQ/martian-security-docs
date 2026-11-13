@@ -23,10 +23,10 @@ const prohibited = [
   /arn:aws:[^\s]+:\d{12}:/,
   /eyJ[A-Za-z0-9_-]{15,}\.[A-Za-z0-9_-]{15,}\.[A-Za-z0-9_-]{10,}/,
 ];
-for (const file of [...source, ...diagramSources]) {
+for (const file of [...source, ...diagramSources, ...files('public/markdown', '.md'), 'public/llms.txt', 'public/llms-full.txt']) {
   const text = readFileSync(file, 'utf8');
   const metadata = text.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1] ?? '';
-  if (!file.endsWith('.mmd') && (!/^title: .+$/m.test(metadata) || !/^description: .+$/m.test(metadata))) failures.push(`${file}: missing metadata`);
+  if (source.includes(file) && (!/^title: .+$/m.test(metadata) || !/^description: .+$/m.test(metadata))) failures.push(`${file}: missing metadata`);
   if (prohibited.some(pattern => pattern.test(text))) failures.push(`${file}: possible private identifier or credential`);
 }
 if (!existsSync(path.join(root, 'index.html'))) throw new Error('Build the documentation before checking generated links.');

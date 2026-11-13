@@ -1,0 +1,51 @@
+# Find recorded runs and export reports
+
+> Use Assessments, Findings, Reports and Replay to inspect persisted history and choose the appropriate export.
+
+Source: [Web version](https://docs.martiansecurity.ai/assessments/history-and-exports/)
+
+> **Page qualification:** Current beta console · viewer, member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
+
+> **Walkthrough limits:** In isolated local QA, Assessments/Replay selection and filtering, refreshed MR-1002 evidence, Reports JSON and legacy finding-page JSON were checked. Domain-outcome and published redacted-review ZIP exports remain unverified.
+
+Find a recorded assessment after leaving its wizard, inspect retained evidence and download the right report. These history and replay actions read existing work; **Replay** does not execute the assessment again.
+
+## Before you start
+
+Use any signed-in role with access to the organization and know a run code or agent name. Reports require a retained finished run. Some historical records can have terminal evidence without a recorded end timestamp; do not invent a completion time.
+
+## Find and inspect a run
+
+1.  Open **Assessments** to browse saved runs. Use the search/pagination controls and inspect the requested scope, security outcome and execution state.
+2.  Open **Replay** to explore recorded assessments. **Filter displayed runs** filters the rows currently shown; use the supplied collection search and pages for broader history. The execution-state and sorting controls change the selection, not the run.
+
+![Replay filtered to recorded MR-1002 with Completed and INCONCLUSIVE labels](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-replay.png)
+
+Filter displayed runs narrowed this loaded page to MR-1002. Selecting its run code reads retained evidence; Replay does not execute it again.
+
+3.  Select the intended **run code**, or its open-run arrow. Check the run code and agent before reviewing evidence. Open the appropriate trace/review section and retain its evidence revision when relevant.
+4.  Open **Findings** for recorded security observations, then follow the associated assessment to inspect its evidence. A title/severity alone is insufficient for verification.
+5.  Refresh the browser and reopen the run. Confirm the final execution state, recorded verdict and retained evidence are still available.
+
+## Choose an export
+
+1.  Open **Reports**, locate the finished run on the displayed assessment page and click **Download**. The file is JSON evidence, not a generated PDF. It includes safe run metadata, coverage summary and all retrieved findings for that run.
+
+![Reports lists completed and failed synthetic assessment evidence](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-reports.png)
+
+Download selects JSON evidence for the matching run code. MR-1002 retained INCONCLUSIVE; the earlier rejected MR-1001 has no verdict.
+
+2.  From the wizard’s **Report** step, **Download report** also retrieves the run’s findings for a JSON report.
+3.  In a legacy trace, **Download legacy JSON evidence** contains the currently displayed findings page plus `findings_page` and `findings_may_have_more`. Do not treat this narrower export as the full finding catalogue.
+4.  In a modern run, **Download domain outcomes** retains the domain result summary. A published artifact-backed **Recorded review** can separately offer **Download redacted review** for a revision-pinned ZIP. A live source or unsupported snapshot selection can disable that download until a published revision is available.
+5.  Inspect the downloaded file locally: confirm the run code, agent, state, verdict and evidence/coverage scope match the UI. Save it under your organization’s retention policy and keep any synthetic/private content within its approved audience.
+
+## Failure and recovery
+
+-   **No finished reports on this page** may mean your current page/filter contains no terminal run. Search or page to the intended run; it does not establish that all organization history is empty.
+-   A failed download should retain an error. Retry the read after checking service/evidence availability; downloading does not justify starting a new assessment.
+-   Missing retained content or expired artifact custody cannot be reconstructed by a screenshot of an old report. Keep the availability limitation visible.
+-   Imported history reflects its original execution and evidence. It does not prove that the current deployment executed that run.
+-   The modern redacted bundle, domain JSON and legacy JSON have different scopes. Redaction and an export filename are not substitutes for checking what the file actually contains.
+
+Continue with [evidence and results](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/evidence-and-results.md) or [configure a new assessment](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/configure.md) when you intentionally need new execution.

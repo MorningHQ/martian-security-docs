@@ -14,7 +14,7 @@ Use `martian.evals` to run your prediction function locally and record regressio
 
 ## Before you start
 
-- For the local preview, complete only [installation step 1](/sdk/install-and-configure/#1-download-the-runnable-tutorial-and-install-the-release). Use **`martian-sdk[evals]==0.1.2`**, Python 3.12+, from the tutorial **Git repository root** prepared there.
+- For the local preview, complete only [installation step 1](/sdk/install-and-configure/#1-download-the-runnable-tutorial-and-install-the-release). Use **`martian-sdk[evals]`**, Python 3.12+, from the tutorial **Git repository root** prepared there.
 - The included `demo_agent.answer` is a deterministic support program. It demonstrates wiring and repeatable assertions; it is not an LLM or evidence about a production agent.
 - A local inline preview needs no platform account or model API key.
 - Before hosted persistence, complete the remaining [SDK configuration](/sdk/install-and-configure/#2-open-api-key-management). It needs a compatible enabled organization, a key with `evals:read`, `evals:write`, `ci:read`, and `ci:write`, and an organization-owned agent UUID/tested Git revision. Commit the source before taking that revision. Dataset restrictions must permit the dataset below.
@@ -126,12 +126,12 @@ The later **EV-1009** qualification ran this Evals-only command once with a fres
 
 Dataset tests are **client-executed/server-scored**. Inline scorer checks are **client-executed/client-scored**. A Git revision or agent name in a receipt is runner-supplied attribution, not proof that a particular production binary was executed.
 
-## Judges and deterministic checks (SDK 0.1.3)
+## Judges and deterministic checks
 
-SDK 0.1.3 adds scorers you can pass to `evaluate` next to `exact_match`. They need `martian-sdk[evals]==0.1.3`; the tutorial download is pinned to 0.1.2, so upgrade its environment first:
+You can pass these scorers to `evaluate` next to `exact_match`. If you are using an older environment, update the SDK first:
 
 ```sh
-.venv/bin/python -m pip install 'martian-sdk[evals]==0.1.3'
+.venv/bin/python -m pip install --upgrade 'martian-sdk[evals]'
 ```
 
 | Scorer | Use it for | Model call |
@@ -185,7 +185,7 @@ MARTIAN_EVALS_STORE_DIR="$PWD/.martian-local-mlflow" \
 
 Expect one passing test. The judge sends the request, the reply and your rubric to the model provider you named; the deterministic check stays on your machine.
 
-Three behaviours are new in 0.1.3:
+Keep these execution rules in mind:
 
 - **Scorer names must differ from expectation keys.** A scorer called `rubric` with `expectations.rubric` now raises `ValueError` before anything runs, because the result column would be overwritten. Give the scorer its own name, as above.
 - **A judgment that is invalid or uncertain is an error, never a pass.** If the provider rate-limits or is unavailable, a judge retries up to five times by default (`max_retries`) and never asks again once it has a judgment.
@@ -199,7 +199,7 @@ To run a whole file of cases without writing tests, use a [suite file](/sdk/loca
 - A wrong answer, missing score, target error, skipped/deselected required test, swallowed gate exception or missing final assertion fails the gate. Do not lower thresholds to hide incomplete execution.
 - Strict policy requires every pinned row to pass. A lower declared threshold can produce a visibly **relaxed** verdict; it does not excuse missing rows or execution errors.
 - SDK dataset CI pulls are capped at **100 active records per dataset test**. Checks support up to **100 rows and 20 scorers** per test; sessions support **100 tests and 1,000 combined rows/probes**, within the request-body limit. These limits differ from the console's admitted run budgets.
-- These limits apply to tests recorded through the gate. A [local suite-file run](/sdk/local-evals/) in SDK 0.1.3 has no row limit and records nothing on the platform.
+- These limits apply to tests recorded through the gate. A [local suite-file run](/sdk/local-evals/) has no row limit and records nothing on the platform.
 - Do not set a remote `MLFLOW_TRACKING_URI`. Do not publish `.martian-local-mlflow/` as a CI artifact. Retain the safe receipt instead.
 - `--require-export` waits for bounded export confirmation. An export problem does not justify rerunning the target; inspect the saved session and available **Retry export** action first.
 

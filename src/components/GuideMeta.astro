@@ -6,14 +6,16 @@ const guide = coverage.guides.find((item) => item.id === id);
 const verified = guide?.qualification === 'verified';
 const partial = guide?.qualification === 'partial';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const supportedVersion = id.startsWith('sdk/') ? `SDK ${guide?.sdkVersion ?? '0.1.2'}` : 'Current beta console';
+const isSdk = id.startsWith('sdk/');
+const productLabel = isSdk ? 'Python SDK' : 'Current beta console';
+const environmentLabel = isSdk ? guide?.verifiedEnvironment?.replace(/; SDK \d+\.\d+\.\d+(?: from public PyPI)?/g, '') : guide?.verifiedEnvironment;
 ---
 <div data-pagefind-ignore class:list={['guide-meta', { 'guide-pending': !verified }]}>
-  <span>{supportedVersion}</span>
+  <span>{productLabel}</span>
   <span aria-hidden="true">·</span>
   <span>{guide?.role ?? 'See prerequisites below'}</span>
   <span aria-hidden="true">·</span>
-  <span>{verified ? `Verified ${guide.verifiedAt} · ${guide.verifiedEnvironment}` : partial ? 'Walkthrough partly verified' : 'Walkthrough verification in progress'}</span>
+  <span>{verified ? `Verified ${guide.verifiedAt} · ${environmentLabel}` : partial ? 'Walkthrough partly verified' : 'Walkthrough verification in progress'}</span>
   <a href={`${base}/reference/verification/`}>Verification details</a>
 </div>
 {!verified && <aside data-pagefind-ignore class="qualification-note">{partial ? guide?.validationStatus : 'The instructions below have been checked against the implementation. Live walkthrough and screenshot qualification are still in progress; check the verification record before relying on an unverified step.'}</aside>}
