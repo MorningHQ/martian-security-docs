@@ -1384,21 +1384,67 @@
         "CSV"
       ],
       "screenshots": [
-        "evals-datasets-import",
+        "evals-dataset-version-import",
+        "evals-dataset-version-publish-review",
+        "evals-dataset-version-first-published",
+        "evals-dataset-version-revised-draft",
+        "evals-dataset-version-revised-published",
+        "evals-dataset-version-martian-source",
+        "evals-dataset-version-martian-copy",
+        "evals-dataset-version-copy-published",
         "evals-datasets-archived",
         "evals-datasets-delete",
         "evals-datasets-json-import",
-        "evals-datasets-validation",
-        "evals-datasets-publication",
-        "evals-datasets-martian",
-        "evals-datasets-copy"
+        "evals-dataset-version-publish-activity"
       ],
       "screenshotStages": [
         {
-          "id": "evals-datasets-import",
-          "caption": "Check the preview before Import: this example adds three records and updates none.",
-          "alt": "Import preview with three new synthetic records and no existing records updated.",
-          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+          "id": "evals-dataset-version-import",
+          "caption": "Confirm two new records and zero updates before Import. This preview matches the two-line JSONL example.",
+          "alt": "JSONL import preview with two new records, zero updates and two records after import.",
+          "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability."
+        },
+        {
+          "id": "evals-dataset-version-publish-review",
+          "caption": "Review the usable count and version, then enter a rationale before confirming Publish.",
+          "alt": "Publish dialog reviewing two usable records, a version hash and a filled synthetic publication rationale.",
+          "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability."
+        },
+        {
+          "id": "evals-dataset-version-first-published",
+          "caption": "Published confirms the first two-record version. Refresh retained READY, HELLO and the same version hash.",
+          "alt": "Published Support response checks version with two usable records and their expected outputs.",
+          "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability."
+        },
+        {
+          "id": "evals-dataset-version-revised-draft",
+          "caption": "Check the new draft before publishing: three usable records and a changed content version. The earlier published version is kept.",
+          "alt": "A separate Support response checks revision draft with the added arithmetic record, three usable records and a new version hash.",
+          "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability."
+        },
+        {
+          "id": "evals-dataset-version-revised-published",
+          "caption": "The revised version is Published with three records after refresh. The original two-record native version remained unchanged.",
+          "alt": "Published revised Support response checks version with three usable records, including the arithmetic case.",
+          "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability."
+        },
+        {
+          "id": "evals-dataset-version-martian-source",
+          "caption": "This synthetic Martian pack is read-only. Copy to my datasets creates an editable organization draft; your available packs may differ.",
+          "alt": "Read-only martian:documentation-versioning-pack with three records and Copy to my datasets.",
+          "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability."
+        },
+        {
+          "id": "evals-dataset-version-martian-copy",
+          "caption": "Copy removes the reserved prefix and opens an editable three-record draft. Publication is still required.",
+          "alt": "Editable documentation-versioning-pack organization copy with three usable records and Publish controls.",
+          "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability."
+        },
+        {
+          "id": "evals-dataset-version-copy-published",
+          "caption": "The organization copy is Published and survives refresh. Its separate native identity preserves the original read-only Martian pack.",
+          "alt": "Published organization copy of the Martian teaching pack with three usable records and its own content version.",
+          "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability."
         },
         {
           "id": "evals-datasets-archived",
@@ -1419,28 +1465,10 @@
           "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
         },
         {
-          "id": "evals-datasets-validation",
-          "caption": "After Import, all three synthetic records are usable in runs and the draft has a content version. No target requests have been sent.",
-          "alt": "First evaluation draft with three usable records, expected outputs and version hash.",
-          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
-        },
-        {
-          "id": "evals-datasets-publication",
-          "caption": "Published confirms the reviewed draft has become version 8251bde88c01; editing the original draft no longer changes this version.",
-          "alt": "Published First evaluation draft showing three usable records and immutable content version.",
-          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
-        },
-        {
-          "id": "evals-datasets-martian",
-          "caption": "The actual Martian teaching pack is published and read-only. Copy to my datasets creates a separate editable organization draft.",
-          "alt": "Read-only Martian documentation response pack with three published teaching records.",
-          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
-        },
-        {
-          "id": "evals-datasets-copy",
-          "caption": "Copy returned an editable organization draft with three usable records. This capture precedes its stalled publication; it is not a published-copy success.",
-          "alt": "Editable organization copy with three usable records and revision 1.",
-          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+          "id": "evals-dataset-version-publish-activity",
+          "caption": "This initial interruption kept the earlier two-record version published. Resume later completed the same three-record operation without asserting that native creation was never submitted.",
+          "alt": "Publish activity showing an interrupted three-record revision beside the earlier published two-record version, with Resume and Abort actions.",
+          "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability."
         }
       ],
       "requiredValidation": [
@@ -1451,8 +1479,8 @@
         "Refresh retained records/version",
         "Verify viewer edit and member publish restrictions"
       ],
-      "validationStatus": "JSONL/CSV/JSON import, edit/archive/delete, original organization publication/native readback, a genuine Martian read-only source and editable copy, refresh and role/foreign-tenant boundaries passed in isolated QA. Copy publication stalled after evaluation-service timeout; a second published version remains unverified. Saved-failure authoring is qualified in evals/regression-cases.",
-      "qualification": "partial",
+      "validationStatus": "JSONL/CSV/JSON import, edit/archive/delete and role/foreign-tenant boundaries passed in the original named QA scope. Separate fresh Owner UI published two records, revised to three, resumed that same interrupted operation once, and published a genuine read-only Martian teaching-pack copy. Native identities/manifests/contents, original-version immutability, read-only source preservation and UI/catalog refresh passed. Earlier unknown publications and failed reads remain preserved; no hosted-beta reliability claim.",
+      "qualification": "verified",
       "documentationRoute": "/evals/datasets/",
       "validation": [
         {
@@ -1472,9 +1500,17 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "Stored canonical failure to reviewed drafts",
           "result": "Saved-failure direct copying and separate cleaned-export import passed; second published version remains unverified."
+        },
+        {
+          "date": "2026-11-14",
+          "environment": "Isolated local QA; original JSONL/CSV/JSON editing and role boundaries in Martian Docs Lab; separate immutable-version and Martian-copy publication in Documentation Browser Execution QA; pinned source baseline",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Immutable dataset revision and published Martian copy",
+          "result": "All six unchanged required stages are covered by the combined named QA evidence. Second-version native immutability and separate Martian-copy publication now passed, including the original-operation Resume and refreshed customer catalog."
         }
       ],
-      "customerNotice": "Imports, editing and an original dataset publication have been checked. Publishing a copied dataset or a second version is still being verified."
+      "verifiedAt": "2026-11-14",
+      "verifiedEnvironment": "Isolated local QA; original JSONL/CSV/JSON editing and role boundaries in Martian Docs Lab; separate immutable-version and Martian-copy publication in Documentation Browser Execution QA; pinned source baseline"
     },
     {
       "id": "evals/first-run",
