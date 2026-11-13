@@ -53,7 +53,7 @@
       "environment": "Isolated local QA and actual temporary public HTTPS teaching adapter",
       "result": "passed for canonical path; advanced compatibility pending",
       "record": "quality/walkthroughs.json",
-      "details": "Actual changed callback completed2passes/1failure, native FINISHED and pinned customer-declared SHA. Compared three paired records with one regression; both native outputs, CSV3/filteredCSV1, refresh and selection guards checked. Target counter14\u219217 for execution and stayed17 during inspection."
+      "details": "Actual changed callback completed2passes/1failure, native FINISHED and pinned customer-declared SHA. Compared three paired records with one regression; both native outputs, CSV3/filteredCSV1, refresh and selection guards checked. Target counter14→17 for execution and stayed17 during inspection."
     },
     {
       "scope": "Historical PR5: Complete end-to-end qualification audit",
@@ -163,11 +163,11 @@
       "scope": "PR8 independent source, package and evidence review",
       "environment": "Exact changed public source/assets plus nine explicitly scoped nonsecret qualification receipts",
       "result": "no outstanding P1/P2 after correction",
-      "details": "Twenty new PNGs independently checked for hashes, 1440\u00d71000 framing, provenance and metadata; no embedded text/EXIF. SDK ZIP has 12 exact source members; only README differs from the prior bundle. The coverage-to-walkthrough evidence references were corrected to actual task names and independently rechecked. Source review distinguishes every recorded success, failed original gate, later same-operation recovery and unverified cancellation; exact reviewed-file snapshot is retained separately."
+      "details": "Twenty new PNGs independently checked for hashes, 1440×1000 framing, provenance and metadata; no embedded text/EXIF. SDK ZIP has 12 exact source members; only README differs from the prior bundle. The coverage-to-walkthrough evidence references were corrected to actual task names and independently rechecked. Source review distinguishes every recorded success, failed original gate, later same-operation recovery and unverified cancellation; exact reviewed-file snapshot is retained separately."
     },
     {
       "scope": "PR8 AI-simulated novice and visual review",
-      "environment": "Production preview; desktop 1440\u00d71000 and narrow 390\u00d7844, light/dark",
+      "environment": "Production preview; desktop 1440×1000 and narrow 390×844, light/dark",
       "result": "passed bounded rendered review; no human participant",
       "details": "First assessment, SDK Evals/redteam/CI, Library and verification summary were clicked through. All 21 scoped inline image instances loaded; 15 new captures were independently viewed at full resolution. Search/result clicks, free-validation anchor, full-size image, nested refresh, themes, readable captions and no page-wide overflow passed. SDK partial-notice P2 was fixed to name isolated local QA and use readable counts, then rechecked at both widths. Final console had zero errors/warnings. One transient aborted document navigation is retained; a fresh navigation/refresh then had 30 requests all 200/304 and correct content. This review adds no product execution claim."
     },
@@ -186,7 +186,7 @@
     },
     {
       "scope": "PR9 AI-simulated novice and visual review",
-      "environment": "Production preview; 1440\u00d71000 desktop and 390\u00d7844 narrow; light and dark",
+      "environment": "Production preview; 1440×1000 desktop and 390×844 narrow; light and dark",
       "result": "passed bounded review; no human participant",
       "details": "CI, Redteam, verification and the public JSON receipt were read and clicked through. One P3 was resolved by explicitly mapping two dataset records, two inline checks and one adversarial probe into three CI test records/groups. Search found combined CI first; qualification anchor, nested refresh, theme persistence and full-size image passed. All six scoped inline image instances loaded. No page-wide overflow or remaining aesthetic finding. Final console had zero errors/warnings. One duplicate navigation was aborted; fresh reload had 12/12 requests 200/304 without failures. No paid execution was rerun during review."
     },
@@ -200,7 +200,9 @@
       "scope": "Additional dataset formats, editing, Martian copy and role boundaries",
       "environment": "Isolated local QA; real Backend, Agents and MLflow; synthetic own organizations",
       "result": "passed named authoring/copy checks; publication recovery remains incomplete",
-      "details": "Actual CSV/JSON preview and import retained five usable records after refresh. Temporary record add/edit/archive/delete preserved the original published version. Viewer draft read/create and Member publication returned403; foreign Owner draft read404 with revision/state/operation unchanged. Genuine published Martian pack copied201 into editable three-record draft. Copy publication stalled after MLflow transport timeout/502; one supported Resume202 with confirmed_not_submitted false did not complete it. Second version/selected-result authoring remain unverified."
+      "details": "Actual CSV/JSON preview and import retained five usable records after refresh. Temporary record add/edit/archive/delete preserved the original published version. Viewer draft read/create and Member publication returned403; foreign Owner draft read404 with revision/state/operation unchanged. Genuine published Martian pack copied201 into editable three-record draft. Copy publication stalled after MLflow transport timeout/502; one supported Resume202 with confirmed_not_submitted false did not complete it. Second version/selected-result authoring remain unverified.",
+      "historical": true,
+      "milestone": "Earlier authoring/copy qualification; original uncertain operations preserved"
     },
     {
       "scope": "Hosted beta Gmail built-in environment lifecycle",
@@ -212,7 +214,7 @@
       "scope": "PR10 independent source, receipt and screenshot review",
       "environment": "Seven changed source/quality files and nine new PNGs; selected nonsecret native/boundary receipts",
       "result": "no outstanding P1/P2 after correction",
-      "details": "Independently viewed all nine new PNGs and verified SHA-256, 1440\u00d71000 dimensions, PNG CRC/chunks and no text/EXIF metadata. Native privacy masks cover only other background environment names; own error/state remains visible. Dataset archive/delete then import count-order P2 corrected and rechecked. Boundary, beta source-hash and lifecycle receipts agree. Gmail child-app login200/Inbox/Compose/refresh is the primary agent's actual browser observation, without a separately retained login receipt for this independent reviewer. No generated-world, copied-publication, provider-deletion or whole-deployment claim added."
+      "details": "Independently viewed all nine new PNGs and verified SHA-256, 1440×1000 dimensions, PNG CRC/chunks and no text/EXIF metadata. Native privacy masks cover only other background environment names; own error/state remains visible. Dataset archive/delete then import count-order P2 corrected and rechecked. Boundary, beta source-hash and lifecycle receipts agree. Gmail child-app login200/Inbox/Compose/refresh is the primary agent's actual browser observation, without a separately retained login receipt for this independent reviewer. No generated-world, copied-publication, provider-deletion or whole-deployment claim added."
     },
     {
       "scope": "PR10 production build and source checks",
@@ -222,7 +224,7 @@
     },
     {
       "scope": "PR10 AI-simulated novice and visual review",
-      "environment": "Production preview;1440\u00d71000desktop and390\u00d7844narrow;light/dark",
+      "environment": "Production preview;1440×1000desktop and390×844narrow;light/dark",
       "result": "passed bounded review; no human participant",
       "details": "Environment/dataset guides and beta verification subsection passed readability, exact scoped partial notices, natural search/result clicks, anchors, theme controls and nested refresh without page overflow. All12inline image instances loaded; all9new captures viewed natively and new full-size controls passed. Dataset chronology suggestion was resolved and rechecked in rendered final order at both widths. Final console0errors/0warnings. Sampled134-request tail retained one duplicate verificationGET ERR_ABORTED with matching successful request; freshreload12/12responses200/304. Seventeen ignored QA screenshots retained. No product actions, paid calls, workflow execution or source edits by reviewer."
     },
@@ -240,7 +242,7 @@
     },
     {
       "scope": "PR11 AI-simulated novice and visual review",
-      "environment": "Production preview;1440\u00d71000desktop and390\u00d7844narrow;light/dark",
+      "environment": "Production preview;1440×1000desktop and390×844narrow;light/dark",
       "result": "passed bounded review; no human participant",
       "details": "New guide, dataset/reference/sidebar links, explicit alternative paths/expected4vsactual4., Datasets/Drafts navigation, conversion instructions, natural save-failed-results search (guide first), anchors/deeprefresh and scope/counters passed. All6inlineimages loaded and6newcaptures viewed natively; fullsize1440image passed. Docs console0errors/0warnings. RawPNGtab separately requested origin-rootfavicon.ico404 while image and projectfavicon loaded. Docs150-request snapshot retained one duplicate verificationGET ERR_ABORTED with matching successful GET; freshreload12/12responses200/304. Ten ignoredQA screenshots retained. No product actions, model calls or source edits by reviewer."
     },
@@ -258,13 +260,13 @@
     },
     {
       "scope": "PR13 build, links, import fixtures and four capture files",
-      "environment": "Node26;41-page production build; native1440\u00d71000PNG captures",
+      "environment": "Node26;41-page production build; native1440×1000PNG captures",
       "result": "production build/Pagefind, default checks, PNG integrity and diff check passed; full-release audit remains incomplete",
       "details": "41pages;3478local link/anchor/asset refs;116captured IDs/104uniquePNGs;two console-import fixtures/fiverecords. Four new PNGs retain original capture bytes, valid CRCs/dimensions, no textual/EXIF metadata and individual visual/secret review. Coverage33guides:21verified/9partial/3pending. Strict release audit remains enabled and fails for17pending screenshot refs/12unverified full guides/30findings."
     },
     {
       "scope": "PR13 independent source and AI-simulated novice/aesthetic review",
-      "environment": "Pinned source/private real-operation receipts;production preview1440\u00d71000 and390\u00d7844 light/dark",
+      "environment": "Pinned source/private real-operation receipts;production preview1440×1000 and390×844 light/dark",
       "result": "No outstanding P1/P2; caption contradiction resolved; no human participant",
       "details": "Independent session review confirmed real once-only HTTP state callbacks, native completed root/spans/metadata, separate scoped native writer and actual Backend/UIreadback. Independent Discovery review confirmed attested schema/provider scope caveat and actual blocked form. Momreview caught old SDKempty-statecaption saying positivegroupingunqualified; caption now explicitly contrasts separateSDK0.1.2no-ID path with newlyqualifiednativeexample. Rendered action/figuresequence2/3/4confirmed. Bothguides/all4newfullsize1440images,390lightdark/noglobaloverflow,naturalsearchconversationturns/authorizedclusters(intendedguidefirst),anchors/deeprefreshanddynamiccounts passed. Docsconsole/image-tab0errorswarnings. Final50-requesttail200/304exceptoneduplicateverificationGET ERR_ABORTEDwithmatchingGET200/page-rendered. FourteenignoredQA capturesretained. No productactions by reviewers."
     },
@@ -284,7 +286,7 @@
       "scope": "PR13 root-path simulated novice follow-up",
       "environment": "Current production dist root preview127.0.0.1:4330;canonicalhttpsdocs.martiansecurity.ai;1440desktop/390dark",
       "result": "Passed bounded local root-path follow-up; hosted HTTPS remains incomplete; no human participant",
-      "details": "Bothrootroutes/canonicals,no stale same-origin projectprefixlinks,realPagefindconversationturns7results/traceguidefirst/actualclick,all8inlineimages,native+Discoveryfullsize1440\u00d71000,390darknoglobaloverflow,Verificationlinkand21/9/3+116/104counters passed. Docsconsole0errorswarnings;final26rootdocsrequestsall200/304. RawnativePNGtabrootfavicon.ico404retainedasnonblocking. Twoadditionalignoredcaptures;initialfullreviewpreserved. NoTLSbypassorhosting/productactionsbyreviewer."
+      "details": "Bothrootroutes/canonicals,no stale same-origin projectprefixlinks,realPagefindconversationturns7results/traceguidefirst/actualclick,all8inlineimages,native+Discoveryfullsize1440×1000,390darknoglobaloverflow,Verificationlinkand21/9/3+116/104counters passed. Docsconsole0errorswarnings;final26rootdocsrequestsall200/304. RawnativePNGtabrootfavicon.ico404retainedasnonblocking. Twoadditionalignoredcaptures;initialfullreviewpreserved. NoTLSbypassorhosting/productactionsbyreviewer."
     },
     {
       "scope": "PR13 actual Pages publication and public HTTP content",
@@ -294,7 +296,7 @@
     },
     {
       "scope": "Readable code blocks and exact clipboard controls",
-      "environment": "Node26;41-page root production preview;ExpressiveCodebuiltin;1440\u00d71000/390\u00d7844lightdark",
+      "environment": "Node26;41-page root production preview;ExpressiveCodebuiltin;1440×1000/390×844lightdark",
       "result": "Build/defaultchecks,42exactcopypayloads,threeactualclipboardchecks andboundedvisualreview passed",
       "details": "RetainedexistingExpressiveCodeclipboard/fallback/livefeedbackandbothGithubthemes;removedforcedmonochrometokens/bodyfont. Buildtimeheaderspreserveexplicit titles,showlanguageandvisibleCopylabel;no new dependency/clientclipboardimplementation. All42renderedcopy payloadsacrossHTTP/JSON/JSONL/Python/shell/text/YAMLmatchsourcefencesexactly,includingquotes/backslashes/newlines/indentation;no examplecodechanged. ActualmouseShell/config/install andkeyboardEnterPythoncopiesmatchedclipboardwithCopiedfeedback;visible2pxorangefocus. IndependentAI-novicevisualreview(nohuman)passeddesktop/narrowthemes,headers/font/syntax,alwaysvisibleCopy,internalhscroll/no pageoverflow,deeprefresh,realPagefindinstallSDK10results/intendedguidefirst/clickandYAMLsample. Reviewerleftclipboarduntouched. Finalsample15requestsall200;console0errorswarnings. Sixignoredvisualcapturesretained. HostedHTTPfallbackwillbecheckedafterdeployment;trustedHTTPSisstillindependentlyblocked."
     },
@@ -480,14 +482,27 @@
       "environment": "Original isolated QA organization and original campaign;actual console and Backend;no further target/model calls",
       "result": "History selection and full page refresh retained the original completed/inconclusive MCP run",
       "details": "32 observed Backend responses included two expected unconfigured connectors503 and30successful reads/refreshes. The run detail and tool-call endpoints returned200;no page errors. The two connector errors account for the observed console errors. A preceding helper waited for an unnecessary detail fetch on a cached history navigation and timed out;fresh snapshot showed the reopened run,then a real full reload independently verified its retained state. No write or execution was repeated to repair this observation failure."
+    },
+    {
+      "scope": "Immutable dataset revision and published Martian copy",
+      "environment": "Isolated local QA; original JSONL/CSV/JSON editing and role boundaries in Martian Docs Lab; separate immutable-version and Martian-copy publication in Documentation Browser Execution QA; pinned source baseline",
+      "result": "passed all six unchanged guide stages using the combined real QA evidence",
+      "record": "quality/walkthroughs.json",
+      "details": "Two-record publication, separate three-record revision, original-operation Resume with confirmed_not_submitted false, preserved exact original native records, genuine managed Martian source and independently published editable copy all passed UI/native/refresh readback. Ten owning source files matched; nine actual1440x1000 captures individually inspected. Final UI63responses:60success/3knownconnectors503,zero page errors. Earlier API timeouts/navigation aborts/observation failures retained. No target/model replay, source patch or weakening of required qualification stages."
+    },
+    {
+      "scope": "Dataset versioning documentation build and reader review",
+      "environment": "Node26; local production preview; actual browser at1440/390/320px in light/dark themes; no API interception",
+      "result": "passed build, existing standard checks and bounded author novice/aesthetic browser review; full release qualification remains incomplete",
+      "details": "Ordinary build47pages with no stale agent assets.4406local links/anchors/assets passed;46agent pages retain66exactcode blocks and133captions.270actual browser responses had zero console/page/HTTP/request failures across11viewport/theme combinations on dataset,verification,overview andSDK pages. Exact page/code/agent-link clipboard equality, real search/result click, nested refresh, full-size image, all12inline screenshots, optional editing disclosure and continued step numbering passed. Recovery callout body contrast8.05light/8.76dark. Individually viewed actual application PNGs plus rendered desktop code/header and mobile recovery captures. The beginner/aesthetic review is AI-simulated, without a human participant. Initial local browser run retained one raw-image ERR_ABORTED when its popup was closed before the navigation stream settled; waiting for networkidle fixed the observation and the final run passed, without a site-code change. Registry136references/124unique PNGs;26verified/7partial/4pending guides. Unweakened check:release exited1 with30findings:18pending captures,11incomplete walkthroughs and their summary."
     }
   ],
   "remainingGaps": [
     "Four guides await walkthrough qualification: sandbox bindings, runtime Discovery, call-gates and network observation. Source enrollment and the named hosted-beta Gmail lifecycle remain partial.",
-    "Twenty-five guides are verified in named local/CI scopes; eight are partial and four pending. Eighteen remaining screenshot references and twelve full walkthroughs stay enforced by the strict release audit.",
+    "Twenty-six guides are verified in named local/CI scopes; seven are partial and four pending. Eighteen remaining screenshot references and eleven full walkthroughs stay enforced by the strict release audit.",
     "Sandbox-backed verified effects, fresh-world repetitions/negative controls and published artifact-backed Recorded review/domain/redacted-bundle exports remain unverified.",
     "MR-1003 retains an uncertain teaching-tunnel action; positive cooperative cancellation and evidence-based resolution are not yet qualified.",
-    "Dataset second-version publication, successful generated/personal worlds, non-Boolean model execution, browser assessment execution and untested connection-management variants still need qualification. MCP endpoint execution was observed with explicitly operator-assisted recovery; the public lost-admission sync path remains a product gap. Native session views are verified through separately provisioned instrumentation; SDK0.1.2 native-ingestion/credential issuance is not provided.",
+    "Successful generated/personal worlds, non-Boolean model execution, browser assessment execution and untested connection-management variants still need qualification. MCP endpoint execution was observed with explicitly operator-assisted recovery; the public lost-admission sync path remains a product gap. Native session views are verified through separately provisioned instrumentation; SDK0.1.2 native-ingestion/credential issuance is not provided.",
     "Local QA demonstrates named pinned-source behavior, not whole hosted AWS-beta parity. Local orchestration is unavailable (connectors503), native-view reads still have intermittent502/timeouts with successful normal read recovery, and Discovery needs a compatible collector/Backend pair plus operator-approved scope.",
     "SDK task guides and current tutorial install the latest release;exact persisted Evals/hosted redteam/combined-CI qualification remains on0.1.2. Account-free current-install steps and the local suite guide were exercised on0.1.3,with one judge model/provider route. Newer installation does not requalify hosted workflows.",
     "SDK 0.1.3 native bedrock:/ response-judge routing fails through MLflow 3.16.1 AmazonBedrockProvider.get_endpoint_url; use the verified OpenAI-compatible Bedrock endpoint. A native-routing SDK fix and release remain follow-up work."

@@ -53,7 +53,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "get-started/access: Join your workspace, steps 3\u20134 (completion and sign-in address)"
+        "get-started/access: Join your workspace, steps 3–4 (completion and sign-in address)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Invited owner (signed out)",
@@ -191,7 +191,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "agents/connections: Register the target, steps 2\u20133 (before entering the private credential)"
+        "agents/connections: Register the target, steps 2–3 (before entering the private credential)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -214,7 +214,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "agents/http-adapter: 3. Register the real HTTPS address, steps 2\u20133 (before entering the private credential)"
+        "agents/http-adapter: 3. Register the real HTTPS address, steps 2–3 (before entering the private credential)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -329,7 +329,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/first-run: 2. Configure the run, steps 2\u20134 (before Start evaluation)"
+        "evals/first-run: 2. Configure the run, steps 2–4 (before Start evaluation)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -628,7 +628,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/human-reviews: 1. Create the review queue, steps 3\u20136 (before Create queue)"
+        "evals/human-reviews: 1. Create the review queue, steps 3–6 (before Create queue)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -720,7 +720,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/compare: 1. Choose the pair, steps 2\u20134 (before Compare runs)"
+        "evals/compare: 1. Choose the pair, steps 2–4 (before Compare runs)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -761,12 +761,12 @@
     {
       "id": "evals-compare-trace",
       "file": "evals-compare-trace.png",
-      "alt": "Candidate native trace opened from the punctuation regression and retaining output \u201c4.\u201d.",
-      "caption": "The candidate native trace retains \u201c4.\u201d for the same arithmetic input; the baseline trace retained \u201c4\u201d. Both contexts were inspected. Reported tokens remain Unavailable for this deterministic callback.",
+      "alt": "Candidate native trace opened from the punctuation regression and retaining output “4.”.",
+      "caption": "The candidate native trace retains “4.” for the same arithmetic input; the baseline trace retained “4”. Both contexts were inspected. Reported tokens remain Unavailable for this deterministic callback.",
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "evals/compare: 4. Follow evidence and retain the comparison, steps 1\u20132 (candidate native context)"
+        "evals/compare: 4. Follow evidence and retain the comparison, steps 1–2 (candidate native context)"
       ],
       "environment": "Isolated local QA: real Backend, Agents and MLflow; synthetic Martian Docs Lab organization",
       "role": "Organization owner; platform_admin false",
@@ -785,7 +785,7 @@
       "id": "sdk-api-keys",
       "file": "sdk-api-keys.png",
       "alt": "Actual SDK key metadata with four Evals and CI permissions and an agent restriction.",
-      "caption": "The owner can manage SDK keys on Evals \u2192 Runs. This list shows permissions, restriction, expiry and a prefix; the once-shown credential was closed and is absent from the image.",
+      "caption": "The owner can manage SDK keys on Evals → Runs. This list shows permissions, restriction, expiry and a prefix; the once-shown credential was closed and is absent from the image.",
       "width": 1440,
       "height": 1000,
       "guideSteps": [
@@ -1045,7 +1045,7 @@
       "id": "evals-suites-scorecard",
       "file": "evals-suites-scorecard.png",
       "alt": "Version1 code-suite scorecard passes both gates with three of three records evaluated.",
-      "caption": "The completed v1 job has full coverage and no missing or error scores. Its response-length gate compares a mean of 3.67 with the ceiling of 80; the recorded range is 1\u20135.",
+      "caption": "The completed v1 job has full coverage and no missing or error scores. Its response-length gate compares a mean of 3.67 with the ceiling of 80; the recorded range is 1–5.",
       "width": 1440,
       "height": 1000,
       "guideSteps": [
@@ -1620,7 +1620,7 @@
       "id": "first-assessment-environment",
       "file": "first-assessment-environment.png",
       "alt": "Environment step with endpoint-only testing selected",
-      "caption": "Select No environment \u2014 test the endpoint only to use the approved connection without sandbox systems.",
+      "caption": "Select No environment — test the endpoint only to use the approved connection without sandbox systems.",
       "width": 1440,
       "height": 1000,
       "guideSteps": [
@@ -2333,7 +2333,7 @@
       "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
       "reviewedForSecrets": true,
       "sha256": "c6ede37f26c579179e5b3e092f78dc297c43c0348d564f7178a711077697a80d",
-      "privacy": "Native Playwright screenshot masks hide only eight other environment-name buttons behind the drawer (including offscreen names). Own name, error, status, controls and full 1440\u00d71000 framing are unchanged; no DOM edits or mocked responses."
+      "privacy": "Native Playwright screenshot masks hide only eight other environment-name buttons behind the drawer (including offscreen names). Own name, error, status, controls and full 1440×1000 framing are unchanged; no DOM edits or mocked responses."
     },
     {
       "id": "environments-ready",
@@ -2846,7 +2846,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "agents/connections: Manage an existing connection, steps 3\u20134"
+        "agents/connections: Manage an existing connection, steps 3–4"
       ],
       "environment": "Isolated local QA; synthetic Documentation Native Sessions QA; real pinned Frontend/Backend; customer-operated deterministic public HTTPS target",
       "role": "Organization Owner; platform_admin false; AI-operated synthetic account",
@@ -2950,6 +2950,204 @@
       "validationStatus": "Real model-backed MCP execution; original uncertain admission preserved, then reconciled once by the operator using the existing Backend routine. UI reload, turn/coverage views and actual legacy export agreed. Images individually reviewed for readability and secrets.",
       "reviewedForSecrets": true,
       "sha256": "f37729a1b6b159b1381f28d3fca7364f7c24922e36aa83b37a05f2059d681ba1"
+    },
+    {
+      "id": "evals-dataset-version-import",
+      "file": "evals-dataset-version-import.png",
+      "alt": "JSONL import preview with two new records, zero updates and two records after import.",
+      "caption": "Confirm two new records and zero updates before Import. This preview matches the two-line JSONL example.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 2. Import or add records"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and MLflow; synthetic Documentation Browser Execution QA organization; no target or model execution",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T03:58:50.287750+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Four served Frontend archive files and six Backend runtime files matched the pinned revisions. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability.",
+      "reviewedForSecrets": true,
+      "sha256": "19ce11bf3b83ab27371302b88c448dfd993b2bdda67e5d822ff5b718dc4b2bb0"
+    },
+    {
+      "id": "evals-dataset-version-publish-review",
+      "file": "evals-dataset-version-publish-review.png",
+      "alt": "Publish dialog reviewing two usable records, a version hash and a filled synthetic publication rationale.",
+      "caption": "Review the usable count and version, then enter a rationale before confirming Publish.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 4. Publish and verify the version, steps 1–3"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and MLflow; synthetic Documentation Browser Execution QA organization; no target or model execution",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T04:01:40.351351+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Four served Frontend archive files and six Backend runtime files matched the pinned revisions. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability.",
+      "reviewedForSecrets": true,
+      "sha256": "3a7fb511ab8d28f0204dd058638d06f487d4d0f9b0abc602abfee599e8d519f7"
+    },
+    {
+      "id": "evals-dataset-version-first-published",
+      "file": "evals-dataset-version-first-published.png",
+      "alt": "Published Support response checks version with two usable records and their expected outputs.",
+      "caption": "Published confirms the first two-record version. Refresh retained READY, HELLO and the same version hash.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 4. Publish and verify the version, steps 4–5"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and MLflow; synthetic Documentation Browser Execution QA organization; no target or model execution",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T04:05:22.912886+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Four served Frontend archive files and six Backend runtime files matched the pinned revisions. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability.",
+      "reviewedForSecrets": true,
+      "sha256": "4888e59456e99bfcd8fba6886af31b64563d4c0c33e0d9afbeff486c80120dfa"
+    },
+    {
+      "id": "evals-dataset-version-revised-draft",
+      "file": "evals-dataset-version-revised-draft.png",
+      "alt": "A separate Support response checks revision draft with the added arithmetic record, three usable records and a new version hash.",
+      "caption": "Check the new draft before publishing: three usable records and a changed content version. The earlier published version is kept.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 5. Publish a revised version, steps 1–3"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and MLflow; synthetic Documentation Browser Execution QA organization; no target or model execution",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T04:14:01.011098+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Four served Frontend archive files and six Backend runtime files matched the pinned revisions. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability.",
+      "reviewedForSecrets": true,
+      "sha256": "dacfbd88d4bca03da9a209613635f6494c8a0936e4e71e609bdad667ba3cf37a"
+    },
+    {
+      "id": "evals-dataset-version-revised-published",
+      "file": "evals-dataset-version-revised-published.png",
+      "alt": "Published revised Support response checks version with three usable records, including the arithmetic case.",
+      "caption": "The revised version is Published with three records after refresh. The original two-record native version remained unchanged.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 5. Publish a revised version, steps 4–5"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and MLflow; synthetic Documentation Browser Execution QA organization; no target or model execution",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T04:23:59.010487+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Four served Frontend archive files and six Backend runtime files matched the pinned revisions. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability.",
+      "reviewedForSecrets": true,
+      "sha256": "3aed9925be21e621b47b9f4ba81c7f63905eedf13f08e4d7c30fe69127722367"
+    },
+    {
+      "id": "evals-dataset-version-martian-source",
+      "file": "evals-dataset-version-martian-source.png",
+      "alt": "Read-only martian:documentation-versioning-pack with three records and Copy to my datasets.",
+      "caption": "This synthetic Martian pack is read-only. Copy to my datasets creates an editable organization draft; your available packs may differ.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 6. Copy a Martian dataset, step 1"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and MLflow; synthetic Documentation Browser Execution QA organization; no target or model execution",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T04:27:28.598149+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Four served Frontend archive files and six Backend runtime files matched the pinned revisions. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability.",
+      "reviewedForSecrets": true,
+      "sha256": "4b5fa17524e764fd15e6cdb0d70c05d7f5f432de7c18257935b73cfc4745e283"
+    },
+    {
+      "id": "evals-dataset-version-martian-copy",
+      "file": "evals-dataset-version-martian-copy.png",
+      "alt": "Editable documentation-versioning-pack organization copy with three usable records and Publish controls.",
+      "caption": "Copy removes the reserved prefix and opens an editable three-record draft. Publication is still required.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 6. Copy a Martian dataset, step 2"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and MLflow; synthetic Documentation Browser Execution QA organization; no target or model execution",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T04:28:33.427443+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Four served Frontend archive files and six Backend runtime files matched the pinned revisions. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability.",
+      "reviewedForSecrets": true,
+      "sha256": "c4bb628a459f5ebf470a23e24daf9ef7388af04a7e97f84715419b98eea02550"
+    },
+    {
+      "id": "evals-dataset-version-copy-published",
+      "file": "evals-dataset-version-copy-published.png",
+      "alt": "Published organization copy of the Martian teaching pack with three usable records and its own content version.",
+      "caption": "The organization copy is Published and survives refresh. Its separate native identity preserves the original read-only Martian pack.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 6. Copy a Martian dataset, steps 3–4"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and MLflow; synthetic Documentation Browser Execution QA organization; no target or model execution",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T04:31:46.635134+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Four served Frontend archive files and six Backend runtime files matched the pinned revisions. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability.",
+      "reviewedForSecrets": true,
+      "sha256": "c535c5c0c3acb9ebd2f24b8146ed23313f666c5e64b7596a642d47cb3cfd02c4"
+    },
+    {
+      "id": "evals-dataset-version-publish-activity",
+      "file": "evals-dataset-version-publish-activity.png",
+      "alt": "Publish activity showing an interrupted three-record revision beside the earlier published two-record version, with Resume and Abort actions.",
+      "caption": "This initial interruption kept the earlier two-record version published. Resume later completed the same three-record operation without asserting that native creation was never submitted.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: Failures and recovery: Publication recovery"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and MLflow; synthetic Documentation Browser Execution QA organization; no target or model execution",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T04:19:45.751791+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Four served Frontend archive files and six Backend runtime files matched the pinned revisions. No product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual UI actions and retained refresh; separate native record/manifest/tenant checks passed for both versions and the Martian source/copy. The revised publication used one supported Resume of its original operation. Each image was individually viewed and checked for secrets and readability.",
+      "reviewedForSecrets": true,
+      "sha256": "758ba29179461b4b9066f62944655b1a849dd57bbcb8f813b29562c1fc61404b"
     }
   ]
 }

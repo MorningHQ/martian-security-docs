@@ -135,7 +135,7 @@
         "Restarted only the task-owned teaching callback with comparison_agent:answer, preserving bearer, port and HTTPS origin",
         "Owner declared actual callback file SHA as customer_declared, then launched one new three-record target evaluation",
         "EV-1003 completed with2 passed /1 failed /0 errors /0 skipped; actual outputs were space-padded ready, hello and4.",
-        "Same immutable dataset content hash was admitted; target request counter increased14\u219217 for the three real requests",
+        "Same immutable dataset content hash was admitted; target request counter increased14→17 for the three real requests",
         "Canonical comparison returned compatible true, three paired records,0 improved /1 regressed /2 unchanged /0 not comparable",
         "Opened and downloaded both real native traces for the arithmetic record; target-chat outputs were4 and4.",
         "Export comparison downloaded3 rows; regressed filter downloaded exactly1 row containing expected4, baseline4 and candidate4.",
@@ -367,9 +367,9 @@
       "task": "First endpoint-only assessment and admission failure boundary",
       "result": "passed for anonymous HTTP, disclosure outcome, Light and serial execution in isolated QA",
       "observed": [
-        "Owner used actual Environment \u2192 Agent \u2192 Goals \u2192 Tests controls with endpoint-only scope, only Customer records leave, five requested techniques and Light ceilings5 rounds/30 target/100 model/360 seconds; parallel scheduling off",
+        "Owner used actual Environment → Agent → Goals → Tests controls with endpoint-only scope, only Customer records leave, five requested techniques and Light ceilings5 rounds/30 target/100 model/360 seconds; parallel scheduling off",
         "MR-1001 was retained failed after a downstream422. Exact manifest validation passed; native policy rejected5 rounds/5 drafts against own worker defaults3/3. Native campaign lookup404 established no campaign creation. Supported own-QA ceilings were aligned; shipped release/model manifest remained unchanged",
-        "Distinct MR-1002 was admitted202 with pinned native campaign/run/snapshot and completed in1 minute 56 seconds, using3 target and15 model calls; tunnel request counter27\u219230 matched the three actual HTTPS requests",
+        "Distinct MR-1002 was admitted202 with pinned native campaign/run/snapshot and completed in1 minute 56 seconds, using3 target and15 model calls; tunnel request counter27→30 matched the three actual HTTPS requests",
         "MR-1002 retained one unverified attempt, three refused turns, zero findings and INCONCLUSIVE security outcome. One outcome-data probe was attempted/unverifiable; no deterministic target oracle or sandbox actions existed",
         "Actual turn input/reply/journal, model-critic distinction, requested-versus-used budgets, missing-knowledge/activated-skill records, final state and after-refresh readback were inspected",
         "Reports JSON and legacy current-page JSON downloads agreed on MR-1002/completed/INCONCLUSIVE and zero findings. Reports retained runtime coverage1 attempt, 0 blocked and customer-declared source SHA; legacy export retained page1/morefalse",
@@ -474,9 +474,10 @@
         "A separate edited draft publication returned409 while staging its own operation due to unresolved work/reconciliation. It remains distinct from the copied draft and retained uncertain assessment; original published versions are unchanged."
       ],
       "remaining": [
-        "Second published version remains unverified. Selected-result authoring/export transformation were unverified at the PR10 checkpoint; the later Stored canonical failure to reviewed drafts task now qualifies their named paths.",
+        "Second-version publication was unverified at that earlier checkpoint. The later Immutable dataset revision and published Martian copy task qualifies separate fresh operations; the older uncertain publications remain unchanged. Selected-result authoring is qualified separately in Stored canonical failure to reviewed drafts.",
         "The two staged publications remain incomplete; native submission state of the copied publication is unknown."
-      ]
+      ],
+      "historical": true
     },
     {
       "task": "Beta Gmail environment and bounded sandbox lifecycle",
@@ -488,7 +489,7 @@
         "A distinct one-time lifecycle launch reachedReady with built-in fixtures. Extend30min returned200 and expiry moved later. Owner privately used the real seeded Gmail credentials from Details; native loginPOST200 and actual Inbox/Compose plus refresh proved retained authentication. No message was sent and no credential-bearing Details/Accounts view was captured.",
         "Stop sandbox returned202/Terminating. Subsequent ordinary instancesGET200 omitted that exact lifecycle instance, while the older own Expired instance remained. Own environment row returned Launch/noDetails. This is not an independent Kubernetes/provider-deletion attestation.",
         "Separate isolated local Viewer environment creation returned403 with environment IDs unchanged before/after; no launch or model request.",
-        "All four public beta captures are actual1440\u00d71000 states. One data-drawer capture uses native privacy masks for other background environment names only; own failure/status is untouched. Relevant deployed Backend source hashes match the pinned baseline; whole hosted deployment parity is not claimed."
+        "All four public beta captures are actual1440×1000 states. One data-drawer capture uses native privacy masks for other background environment names only; own failure/status is untouched. Relevant deployed Backend source hashes match the pinned baseline; whole hosted deployment parity is not claimed."
       ],
       "remaining": [
         "Successful generated/shared/personal/new-world data, optional schema/sample file uploads, other simulation types, agent bindings and independent business-outcome assessment checks remain unverified.",
@@ -611,6 +612,26 @@
         "The public lost-admission refresh gap requires a product fix in the owning Backend repository; automatic/customer-only admission recovery is not qualified.",
         "Browser and sandbox execution, signed-in/prepared scenarios, deterministic outcome verification, positive cancellation and modern artifact-backed export remain separate pending scopes.",
         "The original MR-1003 teaching-tunnel action and earlier guarded publication failures were left unchanged. Background connectors/Wiki503 and existing intermittent read failures remain visible. No human participant or independent reviewer is claimed."
+      ]
+    },
+    {
+      "task": "Immutable dataset revision and published Martian copy",
+      "date": "2026-11-14",
+      "environment": "Isolated local QA; original JSONL/CSV/JSON editing and role boundaries in Martian Docs Lab; separate immutable-version and Martian-copy publication in Documentation Browser Execution QA; pinned source baseline",
+      "result": "Passed named versioning, same-operation recovery and published-copy paths; original role/import/edit evidence retained",
+      "observed": [
+        "The non-platform-admin Owner created Support response checks, previewed two JSONL rows200 and applied the original import once200. Revision2 retained READY and HELLO. The import observer initially expected an explicit false default field that the UI omits; its timeout did not repeat the successful write.",
+        "First Publish202 reached Published, native two-record content and managed manifest validation passed, and UI/catalog refresh retained version01a5a93d8ca8. Actual published-detail Edit201 created a separate populated draft; Add record201 added the arithmetic record and automatic validation showed three usable records/version1fc87b52fa5e.",
+        "The second Publish202 retained the original operation and entered Needs review/migration_outcome_unknown after evaluation-service read timeouts. One actual Publish activity/Resume202 sent confirmed_not_submitted false. That same operation reached Published; no new publication, unproven reissue assertion, native-state edit or database reset replaced it.",
+        "Native readback verified a distinct three-record current identity and managed manifest. The exact two original native records, IDs, content and timestamps matched their before-publication snapshot after the second version. Tenant-owned experiment associations were verified for both physical datasets. The customer UI retained both read-only published drafts at two and three records, while the catalog selected the new version; no old-version picker is claimed.",
+        "Through the normal platform-admin global draft/import/publish API in the separate two-organization QA database, a synthetic three-record teaching pack was installed into the only ready QA organization. This is operator setup, not a customer prerequisite or public operator tutorial. Customer catalog200 showed scope global/name martian:documentation-versioning-pack and its immutable native identity.",
+        "Owner Copy to my datasets201 opened an editable three-record organization draft without the reserved prefix. Publish202 completed Published without recovery. UI reload, published catalog, copy detail and reopening the original read-only source retained all records. Independent tenant-bound native reads verified both managed manifests, distinct native IDs, equal usable input/expected-output pairs, and the unchanged Martian source identity/version.",
+        "Final customer UI readback recorded63 Backend responses:60 successful and3 known connectors503; no page errors. Earlier navigation aborts, catalog transport/read failures, local DNS/memory pressure and helper locator/observation timeouts remain private evidence. Source-byte comparison passed for four served Frontend and six Backend files. Nine direct1440x1000 application captures were individually viewed and inspected for secrets/PNG metadata. No target or model call was launched."
+      ],
+      "remaining": [
+        "This qualification does not establish hosted-beta parity or general service reliability; local evaluation reads initially timed out under resource pressure, then recovered.",
+        "The earlier copied-draft and other guarded publications in the original QA organization remain incomplete/uncertain; this separate successful scope does not repair or replay them.",
+        "Abort of this revised operation was not exercised. There is no customer older-version selector on the published catalog screen."
       ]
     }
   ],
