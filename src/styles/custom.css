@@ -46,10 +46,8 @@ body { letter-spacing: 0; -webkit-font-smoothing: antialiased; }
 ::selection { background: #e7e5e4; color: #0c0a09; }
 .martian-brand { display: inline-flex; align-items: center; gap: 8px; color: var(--sl-color-white); text-decoration: none; min-width: 0; min-height: 44px; }
 .martian-brand-mark { display: block; width: 24px; height: 24px; flex: 0 0 auto; background: var(--color-rust); mask: url('../assets/martian-mark.png') center / contain no-repeat; }
-.martian-brand-type { display: grid; gap: 4px; }
 .martian-brand-wordmark { display: block; line-height: 1; }
 .martian-brand-wordmark svg { display: block; width: 148px; height: auto; }
-.martian-brand-caption { font-size: 10px; line-height: 1.25; color: var(--sl-color-gray-3); }
 .header .right-group { gap: .75rem; }
 .header .social-icons { border-inline-end-color: var(--sl-color-hairline); }
 site-search button[data-open-modal] { border: 1px solid var(--sl-color-hairline); border-radius: 6px; background: var(--sl-color-bg); color: var(--sl-color-gray-3); box-shadow: none; font-size: 12px; height: 32px; max-width: 26rem; }
@@ -148,7 +146,6 @@ starlight-toc a[aria-current='true'] { color: var(--sl-color-white); font-weight
 }
 @media (max-width: 360px) {
   .martian-brand-wordmark svg { width: 124px; }
-  .martian-brand-caption { font-size: 9px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print { .doc-section-label { color: #4e4e4e; } .sl-markdown-content h2 { break-after: avoid; } }
