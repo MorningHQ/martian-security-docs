@@ -45,6 +45,18 @@ JSON accepts a bare record array or an object containing `items`. CSV uses a hea
 
 You can also choose **Add record**, enter **Record ID**, **Input**, **Expected output**, **Status** and optional metadata, then save. Select a row’s **Edit** action to change it and **Save record** to retain the revision. **Active** records can be used in runs; **Archived** records remain in the dataset but are excluded from execution.
 
+The editing example starts from a separate **Dataset editing practice** draft with three existing records, before the CSV/JSON additions below. To practice safely, add a temporary record, edit its expected output, then set its **Status** to **Archived** and save. The observed draft retained four records with three usable and one archived. The record ID is fixed when editing an existing record.
+
+<Screenshot id="evals-datasets-archived" />
+
+To remove that temporary draft record, select only its checkbox, choose **Delete selected (1)**, inspect **Delete 1 record?**, then confirm **Delete**. Earlier published versions are kept. Refresh the draft and confirm its usable and archived counts.
+
+<Screenshot id="evals-datasets-delete" />
+
+After deleting the temporary record, the draft returned to three usable records. The walkthrough then imported one new CSV record and one new JSON-array record. Each preview showed one new record and zero updates; after both imports, refresh retained five usable records.
+
+<Screenshot id="evals-datasets-json-import" />
+
 ## 3. Check automatic validation
 
 The draft editor automatically displays **records**, **usable in runs**, **archived**, missing input/expected-output counts and a **Version** hash. There is no separate Validate button.
@@ -73,7 +85,13 @@ On an organization dataset, choose **Edit** to open a draft populated with its r
 
 For a `martian:` dataset, choose **Copy to my datasets**. The editable copy belongs to your organization; the original Martian dataset stays read-only. Review and publish the copy before using your changes in a run.
 
+The observed **martian:documentation-response-pack** is a synthetic three-record teaching pack. Its published view offers **Copy to my datasets** rather than an Edit action; your workspace's available Martian packs can differ.
+
+<Screenshot id="evals-datasets-martian" />
+
 <Screenshot id="evals-datasets-copy" />
+
+The copy opened as **documentation-response-pack**, revision 1, with three usable records and editable controls. Its displayed version hash differs from the source; compare the copied name and records rather than assuming the two versions have the same identity. Copying did not publish it. Its subsequent publication stalled with **Evaluation service is unreachable**, and one supported Resume did not establish completion. The draft remained read-only while publishing; a second published version and selected-run-result authoring remain unverified.
 
 From completed run results, you can also select up to 100 rows, choose **Add selected to dataset**, pick an existing draft or **New draft…**, and choose whether expected outputs come from the original expectation or the agent’s actual answer. Review actual answers before accepting them as future ground truth.
 
@@ -81,7 +99,7 @@ From completed run results, you can also select up to 100 rows, choose **Add sel
 
 - For a stale revision or “reload” error, refresh the draft and review intervening edits before retrying.
 - Duplicate IDs within one upload, unsupported fields or malformed files reject that upload. Correct the reported rows and preview again.
-- If publication becomes **Stalled** or **Needs review**, an owner/admin can inspect **Publish activity** and its **Publish operations**. Resume or abort only after reviewing what was submitted; do not assert that a native creation was never sent unless that is established.
+- If publication becomes **Stalled** or **Needs review**, an owner/admin can open the **Publish activity** tab and inspect **Publish operations**. Resume or abort only after reviewing what was submitted; do not assert that a native creation was never sent unless that is established. An accepted Resume queues recovery; it does not prove publication completed. Keep the same operation while investigating an uncertain result.
 - **Discard** removes unpublished draft work. Deleting draft records does not remove earlier published versions.
 
 Next, [run the dataset](/martian-security-docs/evals/first-run/) or [organize evaluation projects](/martian-security-docs/evals/projects/).

@@ -1124,11 +1124,12 @@
       ],
       "screenshotIds": [
         "environments-create",
+        "environments-save-options",
         "environments-data",
         "environments-ready"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "partial",
+      "validationStatus": "Own beta Gmail environment save/reopen, built-in sandbox readiness, real seeded Gmail login/refresh, expiry extension and stop were observed. Shared generation failed before QA. Generated/personal worlds, optional file inputs, other simulations and agent binding/business checks remain unverified.",
       "documentationRoute": "/martian-security-docs/environments/create-and-launch/",
       "role": "member, admin, owner",
       "route": "/#/environments",
@@ -1146,20 +1147,53 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
+        "realBackendWalkthrough": "partial; named beta Gmail lifecycle and local Viewer boundary",
+        "screenshots": "captured",
         "remainingGaps": [
-          "Real creation/data generation/ready screenshots",
-          "After-refresh retained revision/data/instance states",
-          "Viewer write denial",
-          "No credential-bearing Accounts captures"
+          "Successful shared/personal/new-world generation and optional schema/sample upload remain unverified.",
+          "Other simulation types, agent bindings and independent assessment business outcomes remain unverified."
         ]
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Beta Gmail environment and bounded sandbox lifecycle",
+          "result": "Own beta Gmail environment save/reopen, built-in sandbox readiness, real seeded Gmail login/refresh, expiry extension and stop were observed. Shared generation failed before QA. Generated/personal worlds, optional file inputs, other simulations and agent binding/business checks remain unverified."
+        }
+      ],
       "screenshots": [
         "environments-create",
+        "environments-save-options",
         "environments-data",
         "environments-ready"
+      ],
+      "environment": "Hosted AWS beta own synthetic Gmail fixture; separate local Viewer authorization check",
+      "screenshotStages": [
+        {
+          "id": "environments-create",
+          "caption": "The actual saved revision is reopened for inspection: Gmail is selected and the workflow uses synthetic contacts. The original save returned 201; this capture does not create a duplicate environment.",
+          "alt": "Saved Gmail environment reopened at revision 1 with its synthetic workflow.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+        },
+        {
+          "id": "environments-save-options",
+          "caption": "Save environment and the separate Generate data after saving option. This reopened revision was inspected and cancelled without another save.",
+          "alt": "Environment save controls with Generate data after saving unchecked.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+        },
+        {
+          "id": "environments-data",
+          "caption": "One accepted generation attempt ended Failed before QA. No generated data is ready; built-in fixtures remain available. Only other environment names behind the drawer are hidden for privacy.",
+          "alt": "Environment data drawer showing failed World and Gmail generation.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+        },
+        {
+          "id": "environments-ready",
+          "caption": "The selected environment reports Sandboxes ready with Gmail running. This is simulation readiness, separate from an agent binding or independently verified business outcome.",
+          "alt": "Assessment Environment step showing Sandboxes ready for the synthetic Gmail environment.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+        }
       ]
     },
     {
@@ -1274,34 +1308,62 @@
       ],
       "screenshots": [
         "evals-datasets-import",
+        "evals-datasets-archived",
+        "evals-datasets-delete",
+        "evals-datasets-json-import",
         "evals-datasets-validation",
         "evals-datasets-publication",
+        "evals-datasets-martian",
         "evals-datasets-copy"
       ],
       "screenshotStages": [
         {
           "id": "evals-datasets-import",
-          "caption": "Import preview showing new and updated records before applying the file.",
-          "alt": "Import preview showing new and updated records before applying the file",
-          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+          "caption": "Check the preview before Import: this example adds three records and updates none.",
+          "alt": "Import preview with three new synthetic records and no existing records updated.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+        },
+        {
+          "id": "evals-datasets-archived",
+          "caption": "Archiving preserves the temporary record in this draft while excluding it from execution: four records, three usable and one archived.",
+          "alt": "Dataset editing practice with one archived temporary record and three usable records.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+        },
+        {
+          "id": "evals-datasets-delete",
+          "caption": "Review the selected count before Delete. The actual deletion removed only the temporary draft record; the earlier published version was kept.",
+          "alt": "Delete 1 record confirmation for only the temporary archived draft record.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+        },
+        {
+          "id": "evals-datasets-json-import",
+          "caption": "The second additional import previews one new JSON-array record. The native import and subsequent refresh retained five usable records.",
+          "alt": "JSON import preview showing one new record, zero updates and five final records.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
         },
         {
           "id": "evals-datasets-validation",
-          "caption": "Draft records and automatic usable/missing-value/version summary.",
-          "alt": "Draft records and automatic usable/missing-value/version summary",
-          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+          "caption": "After Import, all three synthetic records are usable in runs and the draft has a content version. No target requests have been sent.",
+          "alt": "First evaluation draft with three usable records, expected outputs and version hash.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
         },
         {
           "id": "evals-datasets-publication",
-          "caption": "Reviewed dataset publication and immutable Published result.",
-          "alt": "Reviewed dataset publication and immutable Published result",
-          "validationStatus": "Real capture registered; see screenshot provenance and guide validation."
+          "caption": "Published confirms the reviewed draft has become version 8251bde88c01; editing the original draft no longer changes this version.",
+          "alt": "Published First evaluation draft showing three usable records and immutable content version.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+        },
+        {
+          "id": "evals-datasets-martian",
+          "caption": "The actual Martian teaching pack is published and read-only. Copy to my datasets creates a separate editable organization draft.",
+          "alt": "Read-only Martian documentation response pack with three published teaching records.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
         },
         {
           "id": "evals-datasets-copy",
-          "caption": "Editable organization draft copied from a read-only Martian dataset.",
-          "alt": "Editable organization draft copied from a read-only Martian dataset",
-          "validationStatus": "pending actual capture and walkthrough"
+          "caption": "Copy returned an editable organization draft with three usable records. This capture precedes its stalled publication; it is not a published-copy success.",
+          "alt": "Editable organization copy with three usable records and revision 1.",
+          "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
         }
       ],
       "requiredValidation": [
@@ -1312,7 +1374,7 @@
         "Refresh retained records/version",
         "Verify viewer edit and member publish restrictions"
       ],
-      "validationStatus": "JSONL import, automatic validation, publication and after-refresh readback passed in isolated local QA. Other import formats, editing, Martian dataset copying and role-boundary checks remain pending.",
+      "validationStatus": "JSONL/CSV/JSON import, edit/archive/delete, original organization publication/native readback, a genuine Martian read-only source and editable copy, refresh and role/foreign-tenant boundaries passed in isolated QA. Copy publication stalled after evaluation-service timeout; a second published version and selected-result authoring remain unverified.",
       "qualification": "partial",
       "documentationRoute": "/martian-security-docs/evals/datasets/",
       "validation": [
@@ -1321,6 +1383,12 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "Three-record dataset",
           "result": "passed for the named path; remaining guide checks explicitly pending"
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Dataset editing, formats, Martian copy and publication limits",
+          "result": "JSONL/CSV/JSON import, edit/archive/delete, original organization publication/native readback, a genuine Martian read-only source and editable copy, refresh and role/foreign-tenant boundaries passed in isolated QA. Copy publication stalled after evaluation-service timeout; a second published version and selected-result authoring remain unverified."
         }
       ]
     },

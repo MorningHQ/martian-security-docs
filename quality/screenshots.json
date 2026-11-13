@@ -2263,6 +2263,214 @@
       "validationStatus": "Actual application state following real API operations; individually inspected for readable framing and secrets. No invented UI, DOM edits or mocked API behavior.",
       "reviewedForSecrets": true,
       "sha256": "65a600fb8682024e3e4e16392a7679f6bdab1fe9558a33f07ec610d8b66615f3"
+    },
+    {
+      "id": "environments-create",
+      "file": "environment-configuration.png",
+      "alt": "Saved Gmail environment reopened at revision 1 with its synthetic workflow.",
+      "caption": "The actual saved revision is reopened for inspection: Gmail is selected and the workflow uses synthetic contacts. The original save returned 201; this capture does not create a duplicate environment.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Create the environment, after step 3"
+      ],
+      "environment": "Hosted AWS beta; own synthetic Gmail environment in an existing provisioned organization",
+      "role": "Organization Owner; existing platform_admin true; ordinary customer environment/dataset views",
+      "capturedAt": "2026-11-13T16:10:43.307757+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Relevant Backend environments.py, data.py and sandboxes.py hashes read from the running beta pod matched the pinned Backend. Frontend source baseline used for labels; whole Frontend/Agents deployment parity is not attested.",
+      "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "742a35a8e95ac45e1cc91b348c90b8daecb22b09619745240cd147176892e9c3"
+    },
+    {
+      "id": "environments-save-options",
+      "file": "environment-save-options.png",
+      "alt": "Environment save controls with Generate data after saving unchecked.",
+      "caption": "Save environment and the separate Generate data after saving option. This reopened revision was inspected and cancelled without another save.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Create the environment, after step 6"
+      ],
+      "environment": "Hosted AWS beta; own synthetic Gmail environment in an existing provisioned organization",
+      "role": "Organization Owner; existing platform_admin true; ordinary customer environment/dataset views",
+      "capturedAt": "2026-11-13T16:11:56.452982+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Relevant Backend environments.py, data.py and sandboxes.py hashes read from the running beta pod matched the pinned Backend. Frontend source baseline used for labels; whole Frontend/Agents deployment parity is not attested.",
+      "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "9c67ddcbcfa48f2296a32cea11167ed516a83603fdd3b7c5d6a53bdc598bca20"
+    },
+    {
+      "id": "environments-data",
+      "file": "environment-generation-failed.png",
+      "alt": "Environment data drawer showing failed World and Gmail generation.",
+      "caption": "One accepted generation attempt ended Failed before QA. No generated data is ready; built-in fixtures remain available. Only other environment names behind the drawer are hidden for privacy.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Generate or reuse synthetic data, after step 3"
+      ],
+      "environment": "Hosted AWS beta; own synthetic Gmail environment in an existing provisioned organization",
+      "role": "Organization Owner; existing platform_admin true; ordinary customer environment/dataset views",
+      "capturedAt": "2026-11-13T16:19:35.815239+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Relevant Backend environments.py, data.py and sandboxes.py hashes read from the running beta pod matched the pinned Backend. Frontend source baseline used for labels; whole Frontend/Agents deployment parity is not attested.",
+      "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "c6ede37f26c579179e5b3e092f78dc297c43c0348d564f7178a711077697a80d",
+      "privacy": "Native Playwright screenshot masks hide only eight other environment-name buttons behind the drawer (including offscreen names). Own name, error, status, controls and full 1440\u00d71000 framing are unchanged; no DOM edits or mocked responses."
+    },
+    {
+      "id": "environments-ready",
+      "file": "environment-sandbox-ready.png",
+      "alt": "Assessment Environment step showing Sandboxes ready for the synthetic Gmail environment.",
+      "caption": "The selected environment reports Sandboxes ready with Gmail running. This is simulation readiness, separate from an agent binding or independently verified business outcome.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Launch and verify readiness, after step 2"
+      ],
+      "environment": "Hosted AWS beta; own synthetic Gmail environment in an existing provisioned organization",
+      "role": "Organization Owner; existing platform_admin true; ordinary customer environment/dataset views",
+      "capturedAt": "2026-11-13T14:43:09.911682+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Relevant Backend environments.py, data.py and sandboxes.py hashes read from the running beta pod matched the pinned Backend. Frontend source baseline used for labels; whole Frontend/Agents deployment parity is not attested.",
+      "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "68822cbc2388bb2c7753339aceb6696043972ca6ca2a1e1d47a27d407f1089b4"
+    },
+    {
+      "id": "evals-datasets-json-import",
+      "file": "dataset-json-import-preview.png",
+      "alt": "JSON import preview showing one new record, zero updates and five final records.",
+      "caption": "The second additional import previews one new JSON-array record. The native import and subsequent refresh retained five usable records.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 2. Import or add records, JSON-array preview"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab organization",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T13:30:15.746511+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "388718c094a856c8b2acbae5e67b768022a1b295e8fef1fd617b5f0076cc1399"
+    },
+    {
+      "id": "evals-datasets-archived",
+      "file": "dataset-record-archived.png",
+      "alt": "Dataset editing practice with one archived temporary record and three usable records.",
+      "caption": "Archiving preserves the temporary record in this draft while excluding it from execution: four records, three usable and one archived.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 2. Import or add records, archive a temporary record"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab organization",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T12:28:04.194683+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "fab9ee4f1ee30fc86f3b53dc31069fa897ed241e0d1f06ce3e3a4b3576904f7d"
+    },
+    {
+      "id": "evals-datasets-delete",
+      "file": "dataset-delete-confirmation.png",
+      "alt": "Delete 1 record confirmation for only the temporary archived draft record.",
+      "caption": "Review the selected count before Delete. The actual deletion removed only the temporary draft record; the earlier published version was kept.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 2. Import or add records, delete selected record"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Lab organization",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T12:33:05.424168+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "cc107a403aca62e41f9d2ef27892206f53a9d5830c584f9b4bc11cf207cc8570"
+    },
+    {
+      "id": "evals-datasets-martian",
+      "file": "dataset-martian-readonly.png",
+      "alt": "Read-only Martian documentation response pack with three published teaching records.",
+      "caption": "The actual Martian teaching pack is published and read-only. Copy to my datasets creates a separate editable organization draft.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 5. Revise or copy a published dataset, read-only source"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Demo organization",
+      "role": "Organization Owner; existing platform_admin true; ordinary customer environment/dataset views",
+      "capturedAt": "2026-11-13T14:20:14.725319+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "ad5b166655470cc02c907194b522a448795d1452022d09e70e32f2cb19459a78"
+    },
+    {
+      "id": "evals-datasets-copy",
+      "file": "dataset-martian-copy.png",
+      "alt": "Editable organization copy with three usable records and revision 1.",
+      "caption": "Copy returned an editable organization draft with three usable records. This capture precedes its stalled publication; it is not a published-copy success.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/datasets: 5. Revise or copy a published dataset, editable copy"
+      ],
+      "environment": "Isolated local QA; synthetic Martian Docs Demo organization",
+      "role": "Organization Owner; existing platform_admin true; ordinary customer environment/dataset views",
+      "capturedAt": "2026-11-13T14:29:12.348876+08:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend archive and matching Backend/Agents release images; not an AWS-beta deployment attestation.",
+      "validationStatus": "Actual real-backend UI state after native operations; individually viewed for readable framing and secrets. Whole guide qualification tracked separately.",
+      "reviewedForSecrets": true,
+      "sha256": "8ad3048c1dc168a44449b2fdb6d983a186b577bd5f53c7d01b0b0cacf4a6697f"
     }
   ]
 }

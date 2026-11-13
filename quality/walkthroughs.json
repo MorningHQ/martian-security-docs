@@ -461,6 +461,39 @@
         "Deterministic callback and pinned disposable runtime qualification does not attest hosted beta or production security."
       ],
       "record": "public/examples/validation/sdk-ci-0.1.2-2026-11-13.json"
+    },
+    {
+      "task": "Dataset editing, formats, Martian copy and publication limits",
+      "result": "passed named local authoring/copy/boundaries; copy publication incomplete",
+      "observed": [
+        "A draft seeded from a real published organization dataset was renamed. One temporary record was added, edited, archived and then selected/deleted; revision and summary persisted after refresh, and the earlier published version remained unchanged.",
+        "One CSV and one JSON-array import each added exactly one record; revision 8 retained five usable records after refresh. Original JSONL import and immutable publication/native-content proof remain separate completed evidence.",
+        "Viewer draft read/create and Member publication returned403; foreign Owner draft read returned404. Before/after revision, state and operation were unchanged.",
+        "A genuine published Martian teaching pack installed via the supported operator path; its customer read-only view retained three records. Copy to my datasets returned201 and opened an editable three-record organization draft. No operator installation instructions are added to the public guide.",
+        "The copied draft publication returned202 then stalled with Evaluation service is unreachable/HTTP502 after MLflow read timeout. One normal Resume returned202 with confirmed_not_submitted false and did not establish completion. No new publication POST, blind retry, native-not-submitted assertion or database reset repaired it.",
+        "A separate edited draft publication returned409 while staging its own operation due to unresolved work/reconciliation. It remains distinct from the copied draft and retained uncertain assessment; original published versions are unchanged."
+      ],
+      "remaining": [
+        "Second published version, selected-run-result authoring and selected-failure export transformation are not exercised.",
+        "The two staged publications remain incomplete; native submission state of the copied publication is unknown."
+      ]
+    },
+    {
+      "task": "Beta Gmail environment and bounded sandbox lifecycle",
+      "result": "passed named built-in Gmail lifecycle; shared generation failed before QA",
+      "observed": [
+        "Ordinary Owner UI created one own synthetic Gmail environment via201, with Generate data after saving unchecked. Reopening retained revision1, Gmail and the synthetic workflow. No hosted runtime, IAM or source changes.",
+        "One shared generation request returned202, then World/Gmail reported Failed because synthetic_data ended without a result before QA. Usage is not inferred as zero. No Regenerate, personal world or New world attempt followed.",
+        "First ordinary launch returned202 and reachedReady with built-in seed source. Prepare assessment showed Sandboxes ready for Gmail. This instance later read Expired after its recorded lifetime.",
+        "A distinct one-time lifecycle launch reachedReady with built-in fixtures. Extend30min returned200 and expiry moved later. Owner privately used the real seeded Gmail credentials from Details; native loginPOST200 and actual Inbox/Compose plus refresh proved retained authentication. No message was sent and no credential-bearing Details/Accounts view was captured.",
+        "Stop sandbox returned202/Terminating. Subsequent ordinary instancesGET200 omitted that exact lifecycle instance, while the older own Expired instance remained. Own environment row returned Launch/noDetails. This is not an independent Kubernetes/provider-deletion attestation.",
+        "Separate isolated local Viewer environment creation returned403 with environment IDs unchanged before/after; no launch or model request.",
+        "All four public beta captures are actual1440\u00d71000 states. One data-drawer capture uses native privacy masks for other background environment names only; own failure/status is untouched. Relevant deployed Backend source hashes match the pinned baseline; whole hosted deployment parity is not claimed."
+      ],
+      "remaining": [
+        "Successful generated/shared/personal/new-world data, optional schema/sample file uploads, other simulation types, agent bindings and independent business-outcome assessment checks remain unverified.",
+        "A separate new QA organization is not Evals-ready and has no authorized clusters; no tenant guard or provisioning rule was bypassed."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
@@ -471,6 +504,7 @@
     "Released SDK 0.1.2 dataset/checks uploads do not forward native conversation session metadata. The tested empty state is distinct from positive multi-turn session qualification.",
     "Own QA initially had default admission ceilings3rounds/3drafts while console Light requested5/5. The original rejection is retained; supported own-QA ceilings were aligned without changing shipped model profile or hosted runtime.",
     "The MR-1003 teaching-tunnel HTTP530 action remains uncertain and preserved. Positive cooperative cancellation is not established by that terminal failure.",
-    "A transient Evals readiness warning during initial route loading cleared before final EV-1009 render/refreshed readback; known unconfigured connector/sidebar errors remain separate from these completed flows."
+    "A transient Evals readiness warning during initial route loading cleared before final EV-1009 render/refreshed readback; known unconfigured connector/sidebar errors remain separate from these completed flows.",
+    "Hosted beta own provisioned Gmail environment passed the named built-in lifecycle; shared data generation failed before QA. New QA organization Evals/cluster readiness remains unavailable. This does not repair the unconfigured local orchestrator or attest whole hosted deployment parity."
   ]
 }
