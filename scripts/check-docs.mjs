@@ -2,7 +2,7 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { siteOrigin, siteBase } from '../site.config.mjs';
 
-const base = `${siteBase}/`;
+const base = `${siteBase.replace(/\/$/, '')}/`;
 const origin = siteOrigin;
 const root = path.resolve('dist');
 const failures = [];

@@ -17,8 +17,8 @@ Finish with one retained security assessment and an understanding of its report.
 
 - Sign in to the correct current-beta workspace as a **member, admin or owner**.
 - Use an agent and endpoint you are authorized to test. For this tutorial, use a synthetic demo or test agent, not customer data.
-- Have an **active, approved connection**. If none is listed, an admin must complete [register, validate and approve an agent](/martian-security-docs/agents/connections/). That guide documents the HTTP contract and each supported interface.
-- Read [supported targets](/martian-security-docs/reference/supported-targets/). Dataset Evals has a narrower interface policy than assessments.
+- Have an **active, approved connection**. If none is listed, an admin must complete [register, validate and approve an agent](/agents/connections/). That guide documents the HTTP contract and each supported interface.
+- Read [supported targets](/reference/supported-targets/). Dataset Evals has a narrower interface policy than assessments.
 - Confirm the organization is allowed to run assessments and that the chosen test is available. The live controls are authoritative if your environment applies smaller budgets.
 
 ## 1. Choose the scope
@@ -46,7 +46,7 @@ Finish with one retained security assessment and an understanding of its report.
 1. In **Tests**, review the selected agent, scope, goal, test and budget. Resolve any message above **Start assessment**.
 2. Click **Start assessment** once. The wizard opens **Run** with the acknowledged run code. Keep that run open; do not submit another run because the first response is slow.
 3. Follow its progress and reported target/model budgets. A running status records work in progress, not a verified finding.
-4. If you must stop, use the run’s stop/cancellation control and wait for the final state. Cancellation cannot undo a request already sent. See [progress and cancellation](/martian-security-docs/assessments/progress-and-cancellation/).
+4. If you must stop, use the run’s stop/cancellation control and wait for the final state. Cancellation cannot undo a request already sent. See [progress and cancellation](/assessments/progress-and-cancellation/).
 
 <Screenshot id="first-assessment-running" />
 
@@ -62,12 +62,12 @@ Finish with one retained security assessment and an understanding of its report.
 <Screenshot id="first-assessment-trace" />
 
 4. Open **Probe coverage**. The example's single disclosure probe was **attempted** with an **unverifiable** outcome. Read missing evidence, budget limits and reproduction information before interpreting coverage. Endpoint-only evidence does not establish a sandbox business effect.
-5. Refresh and reopen the same run. Confirm its final state, verdict and retained turns. Then open **Reports** in the sidebar, find the matching run code and select **Download**. Inspect the JSON's run, state, verdict and coverage; this is not a PDF. See [history and exports](/martian-security-docs/assessments/history-and-exports/) for export scopes.
+5. Refresh and reopen the same run. Confirm its final state, verdict and retained turns. Then open **Reports** in the sidebar, find the matching run code and select **Download**. Inspect the JSON's run, state, verdict and coverage; this is not a PDF. See [history and exports](/assessments/history-and-exports/) for export scopes.
 
 ## What success looks like
 
 You have one retained assessment with its selected scope, a final status and inspectable evidence. A finding is a useful result; zero findings are also a recorded result, with the run’s coverage and verification limits. Neither should be described as a certification of the agent’s security.
 
-If the run fails admission, resolve the named connection, capability, compatibility or budget error before a new attempt. A local QA attempt was rejected before campaign creation because the worker's three-round ceiling was smaller than the console's five-round Light profile; it remains recorded as failed. A workspace operator must align those supported limits. If submission is uncertain, inspect the saved run/history first so you do not create duplicate paid work. [Troubleshooting](/martian-security-docs/reference/troubleshooting/) covers those boundaries.
+If the run fails admission, resolve the named connection, capability, compatibility or budget error before a new attempt. A local QA attempt was rejected before campaign creation because the worker's three-round ceiling was smaller than the console's five-round Light profile; it remains recorded as failed. A workspace operator must align those supported limits. If submission is uncertain, inspect the saved run/history first so you do not create duplicate paid work. [Troubleshooting](/reference/troubleshooting/) covers those boundaries.
 
-**Next:** [Read evidence and results](/martian-security-docs/assessments/evidence-and-results/), then [create an environment](/martian-security-docs/environments/create-and-launch/) for supported business-outcome checks.
+**Next:** [Read evidence and results](/assessments/evidence-and-results/), then [create an environment](/environments/create-and-launch/) for supported business-outcome checks.

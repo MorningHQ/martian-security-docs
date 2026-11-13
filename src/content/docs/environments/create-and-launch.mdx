@@ -16,7 +16,7 @@ Create an isolated copy of the systems needed by a red-team assessment. Success 
 
 Use a **Member**, **Admin** or **Owner** account. Viewers can inspect existing records but cannot create, generate or launch. Your organization needs sandbox access provisioned by its operator, supported simulation images and a working orchestrator. Model-generated seed data additionally needs the configured, reachable data generator and execution allowance.
 
-Use synthetic or approved samples. Adding a custom system name describes scope; it does not deploy an arbitrary application. For an assessment without sandbox tools, choose [endpoint-only testing](/martian-security-docs/get-started/first-assessment/) instead.
+Use synthetic or approved samples. Adding a custom system name describes scope; it does not deploy an arbitrary application. For an assessment without sandbox tools, choose [endpoint-only testing](/get-started/first-assessment/) instead.
 
 The observed beta walkthrough used **Documentation mail lab 2026-11-13**, with **Gmail** as its only system. It saved revision 1, launched a working sandbox with built-in fixtures, and verified Gmail sign-in, refresh, extension and stop. Shared data generation failed before QA. Generated and personal worlds, optional file inputs and agent bindings remain outside this result.
 
@@ -79,4 +79,4 @@ Sandbox details can show seeded account credentials. Store those privately and k
 
 The walkthrough's first instance expired naturally. A separate lifecycle instance was deliberately launched once for the Gmail/extension/stop checks; an uncertain launch was not resubmitted to obtain a clean result. If your organization reports **No authorized clusters**, ask its operator to provision sandbox access before launching.
 
-Continue with [agent sandbox bindings](/martian-security-docs/agents/sandbox-bindings/) and [configure an assessment](/martian-security-docs/assessments/configure/).
+Continue with [agent sandbox bindings](/agents/sandbox-bindings/) and [configure an assessment](/assessments/configure/).

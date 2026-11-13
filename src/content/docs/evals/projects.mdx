@@ -16,7 +16,7 @@ Use projects to group evaluation runs, traces, judge definitions and review work
 
 Use an organization with ready Evals setup in the current beta console. Any customer role can browse authorized projects. Creating or archiving a project requires **owner** or **admin** access. A project is an evaluation grouping, not another organization or a permission grant to a different tenant.
 
-To verify run history in the new project, have an approved agent and a small published dataset ready. Complete the setup in [your first evaluation](/martian-security-docs/evals/first-run/) if these are missing.
+To verify run history in the new project, have an approved agent and a small published dataset ready. Complete the setup in [your first evaluation](/evals/first-run/) if these are missing.
 
 ## 1. Select a project
 
@@ -43,7 +43,7 @@ Creating a project establishes its evaluation context; it does not call an agent
 ## 3. Verify retained scope
 
 1. Refresh the page and confirm the named project is still selected.
-2. If the project is empty, click **Run eval** and follow [Configure the run](/martian-security-docs/evals/first-run/#2-configure-the-run), keeping your new project selected instead of Default. Use the approved agent and small published dataset prepared above, then wait for the admitted run to finish.
+2. If the project is empty, click **Run eval** and follow [Configure the run](/evals/first-run/#2-configure-the-run), keeping your new project selected instead of Default. Use the approved agent and small published dataset prepared above, then wait for the admitted run to finish.
 3. Open that run and confirm its run code and dataset identity.
 4. Change to **Default** and check that the project-specific run list changes.
 5. Return to the named project and confirm its saved work remains available.
@@ -66,7 +66,7 @@ Archiving is an administrative terminal state in the current console: there is n
 
 - A project whose state is not ready cannot admit new evaluation work.
 - Active target or scoring jobs can prevent archiving. Let them finish or use their documented cooperative stop controls before retrying.
-- Archiving does not delete historical evidence or revoke an agent connection. Manage connections through [Agents](/martian-security-docs/agents/connections/).
+- Archiving does not delete historical evidence or revoke an agent connection. Manage connections through [Agents](/agents/connections/).
 - Organization-wide concurrency still applies across projects: creating projects does not create extra target-run capacity.
 
-Next, [run an evaluation](/martian-security-docs/evals/first-run/) or [inspect traces and sessions](/martian-security-docs/evals/traces-and-sessions/).
+Next, [run an evaluation](/evals/first-run/) or [inspect traces and sessions](/evals/traces-and-sessions/).

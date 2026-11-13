@@ -14,7 +14,7 @@ Install the Python package and create the platform connection used by Evals and 
 
 ## Before you start
 
-For the account-free [local Evals preview](/martian-security-docs/sdk/evaluations/#1-run-the-free-local-preview), complete **step 1** below using Python and Git. API keys, a Backend origin and organization services are needed when you continue to platform persistence.
+For the account-free [local Evals preview](/sdk/evaluations/#1-run-the-free-local-preview), complete **step 1** below using Python and Git. API keys, a Backend origin and organization services are needed when you continue to platform persistence.
 
 - Use **Python 3.12 or newer**. The commands below use a macOS/Linux shell or WSL; verification used Python 3.12.10 and **`martian-sdk==0.1.2`**.
 - Install Git. The tutorial creates a local Git repository so a persisted CI result can name the exact committed code revision.
@@ -24,7 +24,7 @@ For the account-free [local Evals preview](/martian-security-docs/sdk/evaluation
 
 ## 1. Download the runnable tutorial and install the release
 
-[Download the complete tutorial](/martian-security-docs/examples/sdk/martian-sdk-tutorial.zip). Start in the directory containing that download. The following commands extract a new folder, make that folder an isolated Git repository, commit the tutorial source, and install the SDK there:
+[Download the complete tutorial](/examples/sdk/martian-sdk-tutorial.zip). Start in the directory containing that download. The following commands extract a new folder, make that folder an isolated Git repository, commit the tutorial source, and install the SDK there:
 
 ```sh
 unzip martian-sdk-tutorial.zip -d martian-sdk-tutorial
@@ -60,7 +60,7 @@ martian-sdk-tutorial/
   .venv/                         # local; ignored by Git
 ```
 
-`git rev-parse --show-toplevel` should identify this folder. The callback, test imports, YAML-relative callback path and CI commands all use this layout. To use an existing customer repository instead, follow the [complete copy and adaptation checklist](/martian-security-docs/sdk/ci/#use-an-existing-customer-repository); copying the workflow alone is insufficient.
+`git rev-parse --show-toplevel` should identify this folder. The callback, test imports, YAML-relative callback path and CI commands all use this layout. To use an existing customer repository instead, follow the [complete copy and adaptation checklist](/sdk/ci/#use-an-existing-customer-repository); copying the workflow alone is insufficient.
 
 The final command should print `0.1.2`. The `evals` extra adds the pytest/MLflow dependencies needed for evaluations and persisted CI; base redteam support is part of the distribution. The optional `mcp` extra is for customer-side MCP integration, not a requirement for this tutorial.
 
@@ -92,7 +92,7 @@ In **Create API key**, enter **Key name**, set **Expires in days**, then select 
 
 For the complete Evals/CI tutorial, keep the four evaluation/CI permissions. Add **Run hosted redteam generation and judging** for redteam or combined runs. If that option is disabled, the dialog explains that hosted redteam is not enabled and configured; request access from your workspace administrator instead of changing credentials or retrying execution.
 
-For the persisted CI tutorial, select the intended existing registration **by name** under **Agent restriction**. If no registration exists, complete [agent connection onboarding](/martian-security-docs/agents/connections/) first or have your workspace owner identify the existing demo registration to use. Running a local Python callback does not create a registration.
+For the persisted CI tutorial, select the intended existing registration **by name** under **Agent restriction**. If no registration exists, complete [agent connection onboarding](/agents/connections/) first or have your workspace owner identify the existing demo registration to use. Running a local Python callback does not create a registration.
 
 **All agents / standalone use** is available for an unrestricted key, but it does not identify one agent UUID for the lookup below. **Dataset restrictions** accepts one dataset name per line; an empty list permits datasets otherwise available to the key. Restrictions and permissions cannot be edited after creation.
 
@@ -125,7 +125,7 @@ Supply one `MartianConfig` or the complete URL/token pair. The default request t
 
 ## 5. Resolve the exact CI agent UUID
 
-With the agent-bound key loaded, run the included [key_agent_id.py](/martian-security-docs/examples/sdk/key_agent_id.py) helper:
+With the agent-bound key loaded, run the included [key_agent_id.py](/examples/sdk/key_agent_id.py) helper:
 
 ```sh
 MARTIAN_AGENT_ID="$(.venv/bin/python key_agent_id.py)" && export MARTIAN_AGENT_ID
@@ -164,6 +164,6 @@ Review `git status --short`: commit any intended callback, test or configuration
 - **Validated:** the tutorial YAML exits `0`. A later authenticated command is still required to establish service access.
 - **Permission denied:** check capabilities, agent/dataset restrictions, organization, expiration and revocation. Do not switch to an operator credential.
 - **Key lost or restrictions changed:** create a replacement, update consumers, and select **Revoke** on the old key. Revocation blocks later requests; already admitted work may finish. Issuer removal or disablement also revokes issuer keys.
-- **Network or setup failure:** preserve the safe error code/operation ID and follow [troubleshooting](/martian-security-docs/reference/troubleshooting/). An uncertain execution is not a reason to submit the same work again.
+- **Network or setup failure:** preserve the safe error code/operation ID and follow [troubleshooting](/reference/troubleshooting/). An uncertain execution is not a reason to submit the same work again.
 
-Continue with [SDK evaluations](/martian-security-docs/sdk/evaluations/), [one redteam probe](/martian-security-docs/sdk/redteam/), or [combined CI](/martian-security-docs/sdk/ci/). See [permissions](/martian-security-docs/reference/permissions/) for role and capability boundaries.
+Continue with [SDK evaluations](/sdk/evaluations/), [one redteam probe](/sdk/redteam/), or [combined CI](/sdk/ci/). See [permissions](/reference/permissions/) for role and capability boundaries.

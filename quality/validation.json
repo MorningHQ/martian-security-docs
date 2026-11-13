@@ -249,6 +249,12 @@
       "environment": "Node26;41-page production site; exact rendered shell/Python3 command with native synthetic export",
       "result": "production build, Pagefind, default checks, conversion command and diff check passed",
       "details": "41pages built/indexed;3466link/anchor/assetreferences,112registeredcapturedIDs/100uniquePNGs and five import-example records passed. Exact guide conversion command exited0 and output semantically equaled nativeexport.items, preserving all values/metadata. Coverage33guides:20verified/9partial/4pending. Strict full-release audit remains enabled and intentionally fails with19pending screenshotreferences/13unverifiedfullguides/33findings."
+    },
+    {
+      "scope": "Custom-domain root build and navigation",
+      "environment": "Node26.13.1; local production preview at 127.0.0.1:4339; Chrome",
+      "result": "passed local build, default checks and root-path browser checks; public domain pending DNS access",
+      "details": "41 pages built and indexed; 3466 link/anchor/asset references and five import-example records passed. Homepage SDK navigation, real Pagefind search for regression cases, result navigation and deep refresh used root paths, with canonical URLs on https://docs.martiansecurity.ai. Sampled page, favicon, search and both ZIP requests returned 200; exact ZIP hashes, screenshot provenance, recorded SDK receipt and lockfile stayed unchanged. Chrome reported extension localization/message errors during preview; no clean-console claim. Existing product-walkthrough qualification gaps remain unchanged."
     }
   ],
   "remainingGaps": [

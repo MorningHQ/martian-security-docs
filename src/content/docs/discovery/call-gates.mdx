@@ -14,7 +14,7 @@ Block entry to one explicitly enrolled model or tool call in an instrumented cus
 
 ## Before you start
 
-Use an **Owner** or **Admin** account, an enabled [runtime binding](/martian-security-docs/discovery/runtime-and-blast-radius/), a compatible deployed gate API and an SDK-integrated customer application. Use a synthetic test workload for your first block. Enrollment does not install instrumentation or prove every replica uses it.
+Use an **Owner** or **Admin** account, an enabled [runtime binding](/discovery/runtime-and-blast-radius/), a compatible deployed gate API and an SDK-integrated customer application. Use a synthetic test workload for your first block. Enrollment does not install instrumentation or prove every replica uses it.
 
 Selected calls require a live allow decision even when no block is active. A decision outage, stale process or revoked gate credential stops them. Other calls and calls already admitted or in flight remain outside this control.
 
@@ -132,4 +132,4 @@ Revoking the gate credential is not Resume: configured SDK calls fail closed. **
 - Active block after a mistaken credential revoke: restore the valid decision path and explicitly resume; revocation does not remove the control.
 - Direct SDK-bypassing calls, other targets, replicas without instrumentation and already admitted calls remain outside scope. The gate cannot reverse completed effects or stop network connectivity.
 
-Continue with [runtime evidence](/martian-security-docs/discovery/runtime-and-blast-radius/) and [permissions](/martian-security-docs/reference/permissions/).
+Continue with [runtime evidence](/discovery/runtime-and-blast-radius/) and [permissions](/reference/permissions/).

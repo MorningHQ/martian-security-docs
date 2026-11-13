@@ -81,7 +81,7 @@ A judge name begins with a lowercase letter and uses lowercase letters, digits o
 
 ### Create and apply v2
 
-For the pictured differences, use the completed [comparison-variant run](/martian-security-docs/evals/compare/) with the saved outputs ` ready `, `hello` and `4.`. Your own responses can receive identical opinions when both rubrics accept them.
+For the pictured differences, use the completed [comparison-variant run](/evals/compare/) with the saved outputs ` ready `, `hello` and `4.`. Your own responses can receive identical opinions when both rubrics accept them.
 
 1. Open **Evals → Judges**, find the same judge, and choose **Create next version**.
 2. Edit **Description** and **Instructions**. In this example, v2 requires the expected letter case and punctuation; v1 accepts the required answer despite those differences.
@@ -115,10 +115,10 @@ For a retained version record, select the relevant **Assessment job**, use **Res
 
 Boolean results can form pass rates; numeric, category and text outputs retain their own types. Coverage and errors matter alongside scores. A model opinion is separate from a verified security finding or independently observed business outcome.
 
-Ad hoc judgments do not automatically define a passing gate. **Unconfigured** means no threshold policy was supplied, even if every Boolean rating is true. For built-in criteria, a [scoring suite](/martian-security-docs/evals/suites-and-monitoring/) can supply a threshold and minimum coverage. Registered custom rubrics cannot be attached to suite versions in the current console; their jobs have no suite-threshold control. Review their typed values and coverage directly.
+Ad hoc judgments do not automatically define a passing gate. **Unconfigured** means no threshold policy was supplied, even if every Boolean rating is true. For built-in criteria, a [scoring suite](/evals/suites-and-monitoring/) can supply a threshold and minimum coverage. Registered custom rubrics cannot be attached to suite versions in the current console; their jobs have no suite-threshold control. Review their typed values and coverage directly.
 
-A scoring request supports one to seven unique criteria. One active scoring job is allowed per organization. Completed runs are required. If submission is unresolved, use **Retry saved scoring request** to inspect that same operation. Stop controls are cooperative and may allow the in-flight judgment to finish; see [stopping and recovery](/martian-security-docs/evals/stopping-and-recovery/).
+A scoring request supports one to seven unique criteria. One active scoring job is allowed per organization. Completed runs are required. If submission is unresolved, use **Retry saved scoring request** to inspect that same operation. Stop controls are cooperative and may allow the in-flight judgment to finish; see [stopping and recovery](/evals/stopping-and-recovery/).
 
 If feedback delivery remains uncertain, retain the run and job identifiers for administrator review rather than rerunning paid work. Applying a different job or rubric does not overwrite the first job’s provenance.
 
-Next, [apply a reusable suite](/martian-security-docs/evals/suites-and-monitoring/) or [collect human reviews](/martian-security-docs/evals/human-reviews/).
+Next, [apply a reusable suite](/evals/suites-and-monitoring/) or [collect human reviews](/evals/human-reviews/).
