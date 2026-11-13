@@ -333,6 +333,12 @@
       "environment": "Fresh CPython3.12.10 virtualenv;unpinned pip install from public PyPI resolved martian-sdk0.1.3;account-free local execution only",
       "result": "Install,local preview,YAML validation and suite first-run checks passed",
       "details": "Removed release announcement and repeated numeric SDK labels/headings/install pins from task guides and tutorial README/workflow. Linked PyPI release history;exact test versions and persisted-service qualification limits remain in reference/verification and quality records. Rebuilt ZIP with all12 members byte-equal to public files. Fresh install printed installed version;offline preview exited0 with offline receipt/no Backend session;redteam YAML validation exited0;suite example exited1 with its intended failing case. No Backend/model run,requalification of hosted flows or PyPI metadata publication claimed. Production CI advice keeps validated dependencies in a lockfile."
+    },
+    {
+      "scope": "Agent page actions novice/aesthetic review and final feedback repair",
+      "environment": "AI-simulated independent novice review; no human participant; local production preview at1440x1000 and390x844 in light/dark themes",
+      "result": "Bounded review passed; top-anchor and mobile feedback overlap findings fixed and rechecked",
+      "details": "Independent review checked visible controls, menu labels/destinations, same-origin Markdown200, evergreen introduction, focused keyboard/Escape/focus and successful copy feedback. Root verified fresh final HTML after an initial stale browser-cache observation: #_top actions remained below header; no numeric SDK announcement. Replaced the transient overlay with a stable-width in-button Copied/Link copied label plus screen-reader status. Final390dark actual clipboard payload still matched the full page, status width1px, tools bottom170/title top182 and no page overflow. Final desktop light dropdown and mobile dark captures were visually inspected. Public mirror, HTTP fallback and JavaScript-disabled checks remain publication follow-ups."
     }
   ],
   "remainingGaps": [

@@ -20,7 +20,7 @@ const links = pageLinks(Astro.url.pathname);
       </div>
     </details>
   </div>
-  <span class="page-action-status" role="status" aria-live="polite"></span>
+  <span class="sr-only" role="status" aria-live="polite"></span>
 </docs-page-actions>
 
 <script>
@@ -32,12 +32,15 @@ const links = pageLinks(Astro.url.pathname);
       const linkButton = this.querySelector<HTMLButtonElement>('[data-copy-agent]')!;
       const menu = this.querySelector<HTMLDetailsElement>('details')!;
       const status = this.querySelector<HTMLElement>('[role="status"]')!;
+      const label = pageButton.querySelector('span')!;
       let markdown = '';
       let feedbackTimer: ReturnType<typeof setTimeout>;
       const feedback = (message: string) => {
         clearTimeout(feedbackTimer);
         status.textContent = message;
-        feedbackTimer = setTimeout(() => { status.textContent = ''; }, 5000);
+        label.textContent = message === 'Page copied' ? 'Copied' : message === 'Agent link copied' ? 'Link copied' : 'Copy failed';
+        pageButton.title = message.includes('copied') ? 'Copy this page as Markdown' : 'Open more page actions and select View Markdown';
+        feedbackTimer = setTimeout(() => { status.textContent = ''; label.textContent = 'Copy page'; pageButton.title = 'Copy this page as Markdown'; }, 5000);
       };
       const fallbackCopy = (value: string) => {
         const previousFocus = document.activeElement as HTMLElement | null;

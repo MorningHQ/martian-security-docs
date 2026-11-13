@@ -71,7 +71,7 @@ site-search dialog { border: 1px solid var(--sl-color-hairline); border-radius: 
 docs-page-actions { position: relative; display: block; font-size: 12px; line-height: 1.5; }
 .page-action-group { display: flex; align-items: stretch; border: 1px solid var(--sl-color-hairline); border-radius: 7px; background: var(--sl-color-bg); }
 .page-action-group :is(button, summary) { font: inherit; color: var(--sl-color-gray-2); cursor: pointer; }
-.page-copy { display: inline-flex; gap: .45rem; align-items: center; border: 0; border-radius: 6px 0 0 6px; background: transparent; padding: .45rem .65rem; min-height: 36px; font-weight: 500 !important; white-space: nowrap; }
+.page-copy { display: inline-flex; gap: .45rem; align-items: center; justify-content: center; border: 0; border-radius: 6px 0 0 6px; background: transparent; padding: .45rem .65rem; min-width: 6.75rem; min-height: 36px; font-weight: 500 !important; white-space: nowrap; }
 .page-action-group :is(button, summary):hover { background: var(--sl-color-bg-inline-code); color: var(--sl-color-white); }
 .page-action-group :is(button, summary, a):focus-visible { outline: 2px solid var(--color-rust); outline-offset: 2px; }
 .page-action-group button:disabled { opacity: .55; cursor: wait; }
@@ -82,8 +82,6 @@ docs-page-actions { position: relative; display: block; font-size: 12px; line-he
 .page-action-options :is(button, a) { display: block; width: 100%; padding: .65rem .7rem; border: 0; border-radius: 5px; text-align: start; text-decoration: none; background: transparent; font: inherit; font-weight: 550; color: var(--sl-color-white); }
 .page-action-options a:hover { background: var(--sl-color-bg-inline-code); }
 .page-action-options span { display: block; margin-top: 3px; font-size: 11px; font-weight: 400; color: var(--sl-color-gray-3); }
-.page-action-status { position: absolute; inset-inline-end: 0; inset-block-start: calc(100% + 4px); z-index: 20; white-space: nowrap; color: var(--sl-color-gray-2); font-size: 11px; background: var(--sl-color-bg); border-radius: 4px; }
-.page-action-status:not(:empty) { padding: 3px 6px; border: 1px solid var(--sl-color-hairline); }
 @media (max-width: 49.99rem) { .page-copy, .page-action-menu summary { min-height: 44px; } .page-action-menu summary { width: 40px; } }
 @media print { docs-page-actions { display: none; } }
 h1 { margin: 0; letter-spacing: -.03em; line-height: 1.25; font-weight: 600; }
