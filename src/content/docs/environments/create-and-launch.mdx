@@ -18,6 +18,8 @@ Use a **Member**, **Admin** or **Owner** account. Viewers can inspect existing r
 
 Use synthetic or approved samples. Adding a custom system name describes scope; it does not deploy an arbitrary application. For an assessment without sandbox tools, choose [endpoint-only testing](/martian-security-docs/get-started/first-assessment/) instead.
 
+The observed beta walkthrough used **Documentation mail lab 2026-11-13**, with **Gmail** as its only system. It saved revision 1, launched a working sandbox with built-in fixtures, and verified Gmail sign-in, refresh, extension and stop. Shared data generation failed before QA. Generated and personal worlds, optional file inputs and agent bindings remain outside this result.
+
 ## Create the environment
 
 1. Open **Environments → Create environment**.
@@ -29,6 +31,10 @@ Use synthetic or approved samples. Adding a custom system name describes scope; 
 4. If useful, expand **Schema & sample data**. Choose **Schema or API definition** for `.json`/`.sql`, or **Sample records** for `.json`/`.csv`. Scope an input to the whole environment or one selected system. The maximum is 1 MB per input and 20 inputs. Inspect parsing errors before continuing.
 5. Click **Save environment**. When entered from the assessment wizard, the button is **Save and use**. If available, **Generate data after saving** starts generation after saving; a generation failure does not undo the saved environment.
 6. Reopen the row and check its saved revision and selected systems. Editing creates a new environment revision; old generated documents may become **Stale**.
+
+For the bounded example, enter a workflow such as “Triage synthetic support messages and draft replies using only docs-example.test contacts.” Leave **Generate data after saving** unchecked if you want to inspect generation separately. Saving alone does not launch a sandbox.
+
+<Screenshot id="environments-save-options" />
 
 ## Generate or reuse synthetic data
 
@@ -43,15 +49,18 @@ Use synthetic or approved samples. Adding a custom system name describes scope; 
 
 Advanced API clients can explicitly choose `seed: "auto"`, `"built-in"` or a stored seed-document ID when launching. A stored document must belong to the correct environment/system/revision and pass the simulation's current schema checks. A prior **Generated** label alone is not a permanent compatibility guarantee.
 
+In the observed example, one **Generate data** request was accepted, then both **World** and **Gmail** became **Failed** with “the graph failed before QA.” The saved revision remained available. The later launch reported **built-in** as its seed source; no generated-world success is claimed. The generator can incur model usage before failing, so a failed status does not establish zero cost.
+
 ## Launch and verify readiness
 
 1. Return to **Environments** and click **Launch** on the intended revision. Each supported system gets its own sandbox. Unmapped/custom systems are reported as skipped.
+   Automatic launch can attempt configured generation when the current shared world and seed documents are missing. Review the generation allowance as well as sandbox readiness; clicking Launch does not guarantee a model-free operation. An API client can explicitly request `seed: "built-in"`.
 2. Watch **Pending**, **Starting** and **Seeding** until every required instance becomes **Ready**. **Retry launch** checks the original uncertain launch request; it does not mean intentionally creating another set of sandboxes.
 
 <Screenshot id="environments-ready" />
 
-3. Open a sandbox's details to inspect its Application, API or MCP endpoints. Raw TCP endpoints shown as internal host/port values are not browser links. Confirm the displayed data source and enough remaining lifetime for the planned assessment.
-4. If needed, click **Extend 30 min** on a live instance. Use **Stop sandbox** when finished, then wait for the retained row to show that it is gone. A stop request is not immediate proof of deletion.
+3. Open a sandbox's **Details** to inspect its Application, API or MCP endpoints. Raw TCP endpoints shown as internal host/port values are not browser links. Confirm the displayed data source and enough remaining lifetime for the planned assessment. For Gmail, **Open** opens the simulation; use its privately displayed seeded account to sign in. Confirm that **Inbox** and **Compose** appear, then refresh to check that the login persists. You do not need to send a message for this check.
+4. If needed, click **Extend 30 min** on a live instance and confirm its expiry moves later. Use **Stop sandbox** when finished. The observed stop returned **Terminating** first; after refresh, that specific instance no longer appeared in the normal instance list. An older **Expired** instance could remain. Do not treat the accepted stop request or an empty live strip as independent proof that every underlying resource has been deleted.
 5. Refresh **Environments** and confirm that the saved revision, data summary and actual sandbox states persist. Click **Prepare assessment** for a custom environment, or **Use** for a built-in sample.
 6. In the wizard's **Environment** step, check **Sandboxes ready**. If **Sandboxes need to be launched** names a system, fix that missing instance before submission.
 
@@ -67,5 +76,7 @@ Advanced API clients can explicitly choose `seed: "auto"`, `"built-in"` or a sto
 | Environment cannot be deleted | Stop its running sandboxes first. Assessment history remains separate. |
 
 Sandbox details can show seeded account credentials. Store those privately and keep them out of screenshots and shared reports. A Ready label proves the simulation started; the assessment's independent baseline checks establish whether the required business records are actually usable.
+
+The walkthrough's first instance expired naturally. A separate lifecycle instance was deliberately launched once for the Gmail/extension/stop checks; an uncertain launch was not resubmitted to obtain a clean result. If your organization reports **No authorized clusters**, ask its operator to provision sandbox access before launching.
 
 Continue with [agent sandbox bindings](/martian-security-docs/agents/sandbox-bindings/) and [configure an assessment](/martian-security-docs/assessments/configure/).

@@ -53,7 +53,7 @@
       "environment": "Isolated local QA and actual temporary public HTTPS teaching adapter",
       "result": "passed for canonical path; advanced compatibility pending",
       "record": "quality/walkthroughs.json",
-      "details": "Actual changed callback completed2passes/1failure, native FINISHED and pinned customer-declared SHA. Compared three paired records with one regression; both native outputs, CSV3/filteredCSV1, refresh and selection guards checked. Target counter14→17 for execution and stayed17 during inspection."
+      "details": "Actual changed callback completed2passes/1failure, native FINISHED and pinned customer-declared SHA. Compared three paired records with one regression; both native outputs, CSV3/filteredCSV1, refresh and selection guards checked. Target counter14\u219217 for execution and stayed17 during inspection."
     },
     {
       "scope": "Historical PR5: Complete end-to-end qualification audit",
@@ -163,11 +163,11 @@
       "scope": "PR8 independent source, package and evidence review",
       "environment": "Exact changed public source/assets plus nine explicitly scoped nonsecret qualification receipts",
       "result": "no outstanding P1/P2 after correction",
-      "details": "Twenty new PNGs independently checked for hashes, 1440×1000 framing, provenance and metadata; no embedded text/EXIF. SDK ZIP has 12 exact source members; only README differs from the prior bundle. The coverage-to-walkthrough evidence references were corrected to actual task names and independently rechecked. Source review distinguishes every recorded success, failed original gate, later same-operation recovery and unverified cancellation; exact reviewed-file snapshot is retained separately."
+      "details": "Twenty new PNGs independently checked for hashes, 1440\u00d71000 framing, provenance and metadata; no embedded text/EXIF. SDK ZIP has 12 exact source members; only README differs from the prior bundle. The coverage-to-walkthrough evidence references were corrected to actual task names and independently rechecked. Source review distinguishes every recorded success, failed original gate, later same-operation recovery and unverified cancellation; exact reviewed-file snapshot is retained separately."
     },
     {
       "scope": "PR8 AI-simulated novice and visual review",
-      "environment": "Production preview; desktop 1440×1000 and narrow 390×844, light/dark",
+      "environment": "Production preview; desktop 1440\u00d71000 and narrow 390\u00d7844, light/dark",
       "result": "passed bounded rendered review; no human participant",
       "details": "First assessment, SDK Evals/redteam/CI, Library and verification summary were clicked through. All 21 scoped inline image instances loaded; 15 new captures were independently viewed at full resolution. Search/result clicks, free-validation anchor, full-size image, nested refresh, themes, readable captions and no page-wide overflow passed. SDK partial-notice P2 was fixed to name isolated local QA and use readable counts, then rechecked at both widths. Final console had zero errors/warnings. One transient aborted document navigation is retained; a fresh navigation/refresh then had 30 requests all 200/304 and correct content. This review adds no product execution claim."
     },
@@ -186,7 +186,7 @@
     },
     {
       "scope": "PR9 AI-simulated novice and visual review",
-      "environment": "Production preview; 1440×1000 desktop and 390×844 narrow; light and dark",
+      "environment": "Production preview; 1440\u00d71000 desktop and 390\u00d7844 narrow; light and dark",
       "result": "passed bounded review; no human participant",
       "details": "CI, Redteam, verification and the public JSON receipt were read and clicked through. One P3 was resolved by explicitly mapping two dataset records, two inline checks and one adversarial probe into three CI test records/groups. Search found combined CI first; qualification anchor, nested refresh, theme persistence and full-size image passed. All six scoped inline image instances loaded. No page-wide overflow or remaining aesthetic finding. Final console had zero errors/warnings. One duplicate navigation was aborted; fresh reload had 12/12 requests 200/304 without failures. No paid execution was rerun during review."
     },
@@ -195,14 +195,44 @@
       "environment": "Node 26; final SDK prose and qualification records",
       "result": "40 pages built and indexed; content/example/qualification checks passed",
       "details": "Production build/Pagefind 40 pages. Default checks passed 3304 references and both import fixtures (five records); git diff --check passed. Strict release audit remains enabled and intentionally fails with 23 pending screenshot references, 13 unverified full guides and 37 findings. Coverage is 19 verified, 8 partly verified and 5 pending; SDK verification is explicitly limited to the named installation and CLI scope."
+    },
+    {
+      "scope": "Additional dataset formats, editing, Martian copy and role boundaries",
+      "environment": "Isolated local QA; real Backend, Agents and MLflow; synthetic own organizations",
+      "result": "passed named authoring/copy checks; publication recovery remains incomplete",
+      "details": "Actual CSV/JSON preview and import retained five usable records after refresh. Temporary record add/edit/archive/delete preserved the original published version. Viewer draft read/create and Member publication returned403; foreign Owner draft read404 with revision/state/operation unchanged. Genuine published Martian pack copied201 into editable three-record draft. Copy publication stalled after MLflow transport timeout/502; one supported Resume202 with confirmed_not_submitted false did not complete it. Second version/selected-result authoring remain unverified."
+    },
+    {
+      "scope": "Hosted beta Gmail built-in environment lifecycle",
+      "environment": "Own synthetic environment in an existing provisioned beta organization; normal Owner UI/API; separate local Viewer refusal",
+      "result": "passed named configuration/Ready/login/extend/stop; shared generation failed",
+      "details": "Create201 and reopen retained revision1/Gmail. One generation202 failed beforeQA; no personal/regenerate/new-world retry. First built-in sandbox reachedReady and expired naturally. Separate lifecycle launch reachedReady; native seeded Gmail login200 and UI refresh retained Inbox/Compose. Extension200 moved expiry later. Stop202/Terminating then ordinary instancesGET200 omitted that own instance while olderExpired own instance remained; own row had Launch/noDetails. No mail sent, credential-bearing capture, hosted configuration/IAM change or provider-deletion attestation. Local Viewer valid create403 preserved environment IDs."
+    },
+    {
+      "scope": "PR10 independent source, receipt and screenshot review",
+      "environment": "Seven changed source/quality files and nine new PNGs; selected nonsecret native/boundary receipts",
+      "result": "no outstanding P1/P2 after correction",
+      "details": "Independently viewed all nine new PNGs and verified SHA-256, 1440\u00d71000 dimensions, PNG CRC/chunks and no text/EXIF metadata. Native privacy masks cover only other background environment names; own error/state remains visible. Dataset archive/delete then import count-order P2 corrected and rechecked. Boundary, beta source-hash and lifecycle receipts agree. Gmail child-app login200/Inbox/Compose/refresh is the primary agent's actual browser observation, without a separately retained login receipt for this independent reviewer. No generated-world, copied-publication, provider-deletion or whole-deployment claim added."
+    },
+    {
+      "scope": "PR10 production build and source checks",
+      "environment": "Node26; final environment/dataset prose and provenance records",
+      "result": "40 pages built/indexed; default checks and diff check passed",
+      "details": "Production build and Pagefind40pages;3334link/anchor/assetreferences,106capturedscreenshotreferences/94uniquePNGs and five import-example records passed. Strict release audit remains enabled and intentionally fails with19pending screenshotreferences,13unverifiedfullguides and33findings. Coverage19verified/9partial/4pending; beta environment lifecycle remains explicitly partial."
+    },
+    {
+      "scope": "PR10 AI-simulated novice and visual review",
+      "environment": "Production preview;1440\u00d71000desktop and390\u00d7844narrow;light/dark",
+      "result": "passed bounded review; no human participant",
+      "details": "Environment/dataset guides and beta verification subsection passed readability, exact scoped partial notices, natural search/result clicks, anchors, theme controls and nested refresh without page overflow. All12inline image instances loaded; all9new captures viewed natively and new full-size controls passed. Dataset chronology suggestion was resolved and rechecked in rendered final order at both widths. Final console0errors/0warnings. Sampled134-request tail retained one duplicate verificationGET ERR_ABORTED with matching successful request; freshreload12/12responses200/304. Seventeen ignored QA screenshots retained. No product actions, paid calls, workflow execution or source edits by reviewer."
     }
   ],
   "remainingGaps": [
-    "Five guides still lack complete published qualification: sandbox bindings, environment launch and three Discovery workflows.",
-    "Nineteen guides are verified in their named local/CI scope; eight are partial. Remaining screenshot references and full walkthroughs stay enforced by the strict release audit.",
+    "Four guides still await walkthrough qualification: sandbox bindings and three Discovery workflows. Environment creation/lifecycle is partly verified in the named hosted-beta Gmail scope.",
+    "Nineteen guides are verified in their named local/CI scope; nine are partial. Remaining screenshot references and full walkthroughs stay enforced by the strict release audit.",
     "Sandbox-backed verified effects, fresh-world repetitions/negative controls and published artifact-backed Recorded review/domain/redacted-bundle exports remain unverified.",
     "MR-1003 retains an uncertain teaching-tunnel action; positive cooperative cancellation and evidence-based resolution are not yet qualified.",
-    "Remaining dataset operations, positive native conversation-session grouping, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification.",
+    "Dataset second-version/selected-result workflows, successful generated/personal worlds, positive native conversation-session grouping, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification.",
     "Local QA demonstrates the named pinned-source behavior, not hosted AWS-beta parity. Local sandbox orchestration is unavailable (connectors503)."
   ]
 }
