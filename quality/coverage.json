@@ -910,8 +910,8 @@
         "discovery-sources",
         "discovery-inventory"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "partial",
+      "validationStatus": "Own beta QA Owner inspected Connect source/Add a read-only source: no authorized Kubernetes aliases and Create source disabled. Deployment-matched Discovery schema/API/config bytes also expose an incompatibility with the available collector snapshot. Enrollment, real collection, inventory and source lifecycle remain unverified; operator-approved scope and a compatible collector/Backend pair are prerequisites.",
       "documentationRoute": "/discovery/inventory/",
       "role": "owner, admin",
       "route": "/#/discovery?tab=sources",
@@ -928,16 +928,23 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
+        "realBackendWalkthrough": "blocked form/prerequisite check only; no enrollment or collection",
+        "screenshots": "source form captured; collection/inventory pending",
         "remainingGaps": [
-          "Actual safe source setup/retained collection/inventory screenshots",
-          "Real authorized inventory receipt",
-          "No synthetic model-call invention",
-          "Collector installation contract verified separately"
+          "Operator-approved provider scope",
+          "Deployment-compatible collector and Backend contract",
+          "Real collection receipt and retained inventory",
+          "Pause/resume/credential lifecycle and remaining screenshots"
         ]
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Beta Discovery authorization and contract prerequisites",
+          "result": "Actual blocked form observed; three owning deployed files matched source; no source, credential or inventory fabricated."
+        }
+      ],
       "screenshots": [
         "discovery-source-form",
         "discovery-sources",
@@ -2074,7 +2081,9 @@
         "evals-traces-inspector",
         "evals-traces-sessions",
         "evals-traces-no-sessions",
-        "evals-traces-saved-view"
+        "evals-traces-saved-view",
+        "evals-session-turns",
+        "evals-session-memory"
       ],
       "screenshotStages": [
         {
@@ -2093,7 +2102,7 @@
           "id": "evals-traces-sessions",
           "caption": "Recorded sessions and turns grouped by a reported session ID.",
           "alt": "Recorded sessions and turns grouped by a reported session ID",
-          "validationStatus": "pending actual capture and walkthrough"
+          "validationStatus": "Real two-turn native capture registered; see separate native-integration scope and provenance."
         }
       ],
       "requiredValidation": [
@@ -2104,8 +2113,8 @@
         "Verify private versus org shared view visibility",
         "Download and count bounded export without mocking"
       ],
-      "validationStatus": "Real content/state filters, table-native inspection, payload/CSV/JSON downloads, private/organization view lifecycle and access boundaries passed in isolated local QA. A view-save database timeout was retained and recovered after absence readback. SDK 0.1.2 does not forward native session metadata: 0 sessions and 1 ungrouped trace were observed. Positive conversation grouping remains unverified.",
-      "qualification": "partial",
+      "validationStatus": "Trace filters, inspection, exports, private/shared views and tenant checks passed in named local QA scopes. A fresh own native integration produced two actual stateful HTTP turns, independently persisted as two completed root traces. Session filter/grouping, View turns, both inspectors, Ungroup traces and full refresh passed. Initial read timeouts were preserved; no HTTP turn was repeated. SDK 0.1.2 does not provide this native ingestion/credential path.",
+      "qualification": "verified",
       "documentationRoute": "/evals/traces-and-sessions/",
       "validation": [
         {
@@ -2118,7 +2127,13 @@
           "date": "2026-11-13",
           "record": "quality/walkthroughs.json",
           "observedPath": "Native trace filters and saved views",
-          "result": "named read/view paths passed; positive conversation grouping remains pending"
+          "result": "Earlier checkpoint: named trace/read/view paths passed while positive conversation grouping remained pending. See the subsequent separately provisioned native HTTP conversation check."
+        },
+        {
+          "date": "2026-11-13",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Genuine native HTTP conversation and session viewing",
+          "result": "Two actual turns, native/Backend persistence, session grouping, turns/inspectors and full refresh passed; native integration is separate from Martian SDK 0.1.2 ingestion."
         }
       ],
       "sources": [
@@ -2149,7 +2164,15 @@
             "docs/customer-integration.md"
           ]
         }
-      ]
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Local QA; trace/view workflows and separately provisioned native sessions",
+      "sourceReview": {
+        "sourceReviewed": true,
+        "realBackendWalkthrough": "passed for named read/view and separately provisioned native-instrumentation scopes",
+        "screenshots": "captured",
+        "remainingGaps": []
+      }
     },
     {
       "id": "get-started/access",

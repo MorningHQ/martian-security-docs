@@ -1160,7 +1160,7 @@
       "id": "evals-traces-no-sessions",
       "file": "evals-traces-no-sessions.png",
       "alt": "Sessions reports zero recorded sessions and one matching trace without a session ID.",
-      "caption": "This bounded selection contains one independent evaluation request and no conversation session ID. It verifies the empty state; positive multi-turn grouping remains unqualified.",
+      "caption": "This separate SDK 0.1.2 selection contains one independent evaluation request with no conversation session ID. Its empty state differs from the two-turn native example above, which uses separately provisioned instrumentation.",
       "width": 1440,
       "height": 1000,
       "guideSteps": [
@@ -2612,6 +2612,94 @@
       "validationStatus": "Actual UI after native operations, individually viewed for readable framing and secrets; original failed probes and later readback remain distinct.",
       "reviewedForSecrets": true,
       "sha256": "f1a751cac71a2b09bfef86340eb80943dd75c6956e0aeb8b951253930b414396"
+    },
+    {
+      "id": "discovery-source-form",
+      "file": "discovery-source-form-blocked.png",
+      "alt": "Beta QA source dialog showing No authorized clusters and disabled Create source.",
+      "caption": "This beta QA Owner can inspect the source form, but no cluster alias is authorized. Stop for operator setup; no source or collector credential was created.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "discovery/inventory: Enroll a read-only source, after step 2"
+      ],
+      "environment": "AWS beta; own synthetic Martian Documentation QA; real Backend; blocked scope prerequisite",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T11:10:05.265790+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Beta Discovery schema/API/config file hashes match pinned Backend; Frontend labels agree with pinned source, without whole deployed bundle attestation.",
+      "validationStatus": "Actual UI with real Backend; individually viewed for readable framing and secrets. Initial read failures and later successful refresh remain separately recorded.",
+      "reviewedForSecrets": true,
+      "sha256": "ee70a5734af90218279e6fcce35e7394cceaee4cbb09bac29fc53cf56bc75187"
+    },
+    {
+      "id": "evals-traces-sessions",
+      "file": "evals-native-session-group.png",
+      "alt": "One real native conversation session with two turns, zero errors and no ungrouped traces.",
+      "caption": "Two real HTTP requests share a reported native session ID. Recorded sessions includes both completed traces; tokens stay unavailable. This uses separately provisioned native instrumentation.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/traces-and-sessions: Group recorded conversations, after step 2"
+      ],
+      "environment": "Isolated local QA; fresh Documentation Native Sessions QA; MLflow 3.16.1 native instrumentation",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T11:18:29.539096+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend and Backend fixture; MLflow 3.16.1 native readback; not a hosted-beta attestation.",
+      "validationStatus": "Actual UI with real Backend; individually viewed for readable framing and secrets. Initial read failures and later successful refresh remain separately recorded.",
+      "reviewedForSecrets": true,
+      "sha256": "6f82cb1685e4c05b571a1d494ee5d2bc09ca1631a4be41c809b751b45dba885e"
+    },
+    {
+      "id": "evals-session-turns",
+      "file": "evals-native-session-turns.png",
+      "alt": "Session-filtered trace table showing remember BLUE to Stored BLUE, then recall to BLUE.",
+      "caption": "View turns opens the two persisted requests in the same session. The actual HTTP application stored and recalled BLUE; these reads do not run the application again.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/traces-and-sessions: Group recorded conversations, after step 3"
+      ],
+      "environment": "Isolated local QA; fresh Documentation Native Sessions QA; MLflow 3.16.1 native instrumentation",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T11:19:19.536414+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend and Backend fixture; MLflow 3.16.1 native readback; not a hosted-beta attestation.",
+      "validationStatus": "Actual UI with real Backend; individually viewed for readable framing and secrets. Initial read failures and later successful refresh remain separately recorded.",
+      "reviewedForSecrets": true,
+      "sha256": "8fa31e46f230902c165a4a1bc7411231882d6293f889adcb8030cd6d17fedc54"
+    },
+    {
+      "id": "evals-session-memory",
+      "file": "evals-native-session-memory.png",
+      "alt": "Real recall trace with a completed chat-turn span, memory span and BLUE response.",
+      "caption": "The recall request retained its real memory operation and BLUE output. There are no model spans, and missing token/cost values remain unavailable.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/traces-and-sessions: Group recorded conversations, after step 4"
+      ],
+      "environment": "Isolated local QA; fresh Documentation Native Sessions QA; MLflow 3.16.1 native instrumentation",
+      "role": "Organization Owner; platform_admin false",
+      "capturedAt": "2026-11-13T11:20:54.356800+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b"
+      },
+      "sourceMatchesDeployment": "Clean pinned Frontend and Backend fixture; MLflow 3.16.1 native readback; not a hosted-beta attestation.",
+      "validationStatus": "Actual UI with real Backend; individually viewed for readable framing and secrets. Initial read failures and later successful refresh remain separately recorded.",
+      "reviewedForSecrets": true,
+      "sha256": "24cb84665e5c0b0a42a13d49ee939bc207de60c3d935b1e678db55864dc686cc"
     }
   ]
 }

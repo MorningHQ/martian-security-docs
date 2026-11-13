@@ -46,16 +46,24 @@ A missing usage field is not zero usage. Reported model names, costs and span ev
 
 ## 3. Group recorded conversations
 
-1. Return to Traces and set **Group traces by** to **Group by session**.
-2. Inspect each session’s turns, errors and first/last recorded times.
-3. Choose **View turns** to inspect one session while retaining its applied filters.
-4. Use **Ungroup traces** to return to individual traces.
+The example below uses a separate synthetic HTTP application with native MLflow 3.16.1 instrumentation and an operator-provisioned application writer. Two actual requests stored `BLUE`, then recalled it. Each request produced a separate completed trace with the same reported session ID. This verifies the conversation view; it does not qualify SDK 0.1.2 ingestion or model behavior. Viewing these records in Martian needs only your normal customer sign-in.
+
+1. Return to Traces. To inspect a known conversation, open **Filters** (**More filters** to assistive tools), enter its **Session ID** and click **Apply filters**. Set **Group traces by** to **Group by session**.
+2. Inspect **Recorded sessions**, turns, errors and first/last recorded times. This bounded example contains one session, **2** turns, **0** errors and no ungrouped traces.
 
 <Screenshot id="evals-traces-sessions" />
 
+3. Choose **View turns** to inspect one session while retaining its applied filters.
+
+<Screenshot id="evals-session-turns" />
+
+4. Open each trace to compare the real request and response. Refresh and confirm that both turns remain. **Ungroup traces** returns from Sessions to the individual trace table.
+
+<Screenshot id="evals-session-memory" />
+
 Sessions require a reported session ID. A set of independent dataset requests is not automatically a multi-turn conversation. If you see **No sessions recorded**, inspect individual traces and confirm that the target/instrumentation reports the session identifiers you expect.
 
-An SDK **CI session** identifies a pytest upload; it is a different identifier from a conversation session. SDK 0.1.2 dataset and inline-check uploads do not forward local trace session metadata. The teaching example below therefore has **0 sessions and 1 matching trace without a session ID**. Positive conversation grouping requires an approved session-bearing tracing integration and remains outside this tutorial's verified path.
+An SDK **CI session** identifies a pytest upload; it is a different identifier from a conversation session. SDK 0.1.2 dataset and inline-check uploads do not forward local trace session metadata. The separate SDK teaching example below therefore has **0 sessions and 1 matching trace without a session ID**. A native integration requires separately provisioned writer access; Martian SDK 0.1.2/API keys do not issue those credentials or provide an equivalent customer trace-ingestion route. Ask your operator about a supported session-bearing integration rather than copying a CI upload ID into this filter.
 
 <Screenshot id="evals-traces-no-sessions" />
 
