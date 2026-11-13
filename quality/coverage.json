@@ -3027,9 +3027,18 @@
         "Read request/error/latency coverage",
         "Read recorded usage and typed quality summary"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed. Latest own native QA login succeeded, but the Overview read returned Failed to fetch and the single supported refresh timed out. Dashboard values and images remain unqualified.",
-      "validation": []
+      "qualification": "verified",
+      "validationStatus": "Owner read/refresh, content/state/session/order and Boolean-feedback selection passed against two retained native HTTP traces. Metrics, unavailable usage, typed feedback and expectation exclusion were checked in UI/API. Intermittent read failures remain recorded; this is not hosted-beta or general reliability qualification.",
+      "validation": [
+        {
+          "environment": "Isolated local QA; Owner; real Backend/Evals",
+          "task": "Native Evals project dashboard and typed feedback summaries",
+          "result": "passed for the named two-trace scope; normal reads only",
+          "record": "quality/walkthroughs.json"
+        }
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA; native traces"
     },
     {
       "id": "evals/trace-annotations",
@@ -3086,9 +3095,18 @@
         "Verify native author/value after refresh",
         "Retry the same uncertain submission"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed only. No annotation write was attempted during the latest QA read failure. Existing verified native-session reads do not qualify this write workflow.",
-      "validation": []
+      "qualification": "verified",
+      "validationStatus": "Owner saved Boolean/numeric/text feedback and one expectation through the real UI; native 201 receipts, four unique retained identities, Boolean author/value/rationale after refresh, unchanged spans and eight API boundary checks passed. The uncertain-form Retry button was not artificially induced; same-request API retry was verified.",
+      "validation": [
+        {
+          "environment": "Isolated local QA; Owner; real Backend/Evals",
+          "task": "Native trace annotation authoring and request identity",
+          "result": "passed for four typed UI writes, native retention and named API boundaries; no target/model calls",
+          "record": "quality/walkthroughs.json"
+        }
+      ],
+      "verifiedAt": "2026-11-13",
+      "verifiedEnvironment": "Isolated local QA; native traces"
     },
     {
       "id": "discovery/network-observation",

@@ -542,6 +542,35 @@
         "A compatible collector/Backend pair, organization-approved scope and reachable real reader are independent prerequisites.",
         "Enrollment, actual collection, retained inventory and source lifecycle remain unverified. No WIP Backend or stripped observation was substituted."
       ]
+    },
+    {
+      "task": "Native Evals project dashboard and typed feedback summaries",
+      "result": "passed in named isolated Owner scope",
+      "observed": [
+        "Existing two native HTTP traces were read without rerunning either request: 2 requests, 0 execution errors, P50 41 ms and P95 67 ms. Search recall with OK state/session filtering selected one trace; clearing filters restored both. Trace order and normal Refresh overview were exercised.",
+        "Recorded usage showed 0 of 2 traces reporting tokens and cost, with null totals. The UI retained unavailable markers rather than inventing zero usage.",
+        "Real Boolean response_correct feedback showed one recorded value/100% pass; numeric response_rating showed Mean 4.5; text response_note showed its recorded value/count as Categorical. The separate expectation did not appear as feedback. The dashboard humanizes annotation names by replacing underscores with spaces.",
+        "A true response_correct filter returned one matching trace. Clearing it restored both. The final three refresh/filter responses were native200. Two actual1440x1000 console images were viewed and registered."
+      ],
+      "remaining": [
+        "Read timeouts and intermittent502 Evaluation service is unreachable responses were preserved. Normal read refresh recovered; service reliability and hosted-beta parity are not attested.",
+        "Other time/user/latency selections and the1000-trace ceiling remain source-reviewed limits, rather than a large-history load test."
+      ]
+    },
+    {
+      "task": "Native trace annotation authoring and request identity",
+      "result": "passed for four typed Owner UI writes, native retention and eight API boundaries",
+      "observed": [
+        "The real Add annotation form saved Boolean true response_correct, numeric4.5 response_rating, text response_note and one expected_response expectation. Each actual UI Save returned native201 with a unique retained identity. No target or model call was made.",
+        "After page refresh, a failed trace read recovered through normal Refresh traces. The same Boolean native identity, Pass, rationale and You attribution were retained in the reopened trace. Later independent native detail200 retained all four typed assessments.",
+        "Reposting the exact original Boolean request returned201 with the same native assessment ID and creation time. Changing content for that UUID returned409. Reserved exact_match and invalid mixed-case names returned422. Anonymous write401, viewer write403 and foreign-organization Owner write404 were checked against the real endpoint.",
+        "Independent readback verified original span inputs/outputs/status/usage unchanged, four unique native IDs and three feedback values plus one expectation. Two real1440x1000 customer UI images were viewed and registered.",
+        "Relevant source bytes matched the runtime: four Frontend files and three Backend files equal their recorded pins. All accounts/data are synthetic and AI-operated; no human reviewer is claimed."
+      ],
+      "remaining": [
+        "The uncertain-submission Retry annotation UI state was not artificially induced. Its same-request API identity contract was exercised; no failed or uncertain mutation was resubmitted with a fresh UUID.",
+        "Archived-project annotation handling and other member/admin actor combinations remain source-reviewed. Initial read failures and pre-submit automation locator failures were preserved; those failed locator attempts did not submit annotations."
+      ]
     }
   ],
   "knownEnvironmentLimits": [

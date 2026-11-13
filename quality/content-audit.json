@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-13",
+  "reviewedAt": "2026-11-13T15:36:52.318376+00:00",
   "scope": "Every public source page and rendered article; content/source audit, not full product or hosted parity signoff",
   "aiReview": true,
   "humanParticipant": false,
@@ -144,7 +144,8 @@
       "title": "Read the Evals dashboard",
       "contentReview": "reviewed",
       "renderCheck": "passed desktop1440light/mobile390dark real browser",
-      "walkthroughQualification": "pending"
+      "walkthroughQualification": "verified",
+      "qualificationScope": "Named isolated native QA walkthrough; see coverage and walkthrough records."
     },
     {
       "page": "evals/projects",
@@ -193,7 +194,8 @@
       "title": "Annotate a native trace",
       "contentReview": "reviewed",
       "renderCheck": "passed desktop1440light/mobile390dark real browser",
-      "walkthroughQualification": "pending"
+      "walkthroughQualification": "verified",
+      "qualificationScope": "Named isolated native QA walkthrough; see coverage and walkthrough records."
     },
     {
       "page": "evals/traces-and-sessions",
@@ -433,20 +435,24 @@
     "failedRequests": [],
     "httpFailures": [],
     "allRenderedCodePayloads": 66,
-    "renderedScreenshotCaptions": 118,
+    "renderedScreenshotCaptions": 122,
     "actualSearch": "annotations result opened new guide and showed pending qualification",
     "actualPublic404": "HTTP404,Page not found,return-to-overview link",
     "runtimeHelper": "Actual SDK imports/3 setup rejection cases;no business callback or upload",
     "gateGuard": "Actual SDK wrong/matching target assignment preflight;no Backend decision or callable",
-    "runtimeAttempt": "Own synthetic Owner authentication200;Evals Overview read failed and supported refresh timed out;no annotation mutation",
     "initialPublishedSweep": "42 articles rendered without content/console/HTTP failure;two responsive SVG navigation aborts retained;final local46 sweep had no failed requests",
-    "concurrentSDKReadback": "Seven-file ZIP byte parity;own actual original deterministic run exit1/corrected exit0;integrated exact page copy,one customer screenshot,1440/390 no overflow,numeric SDK badge absent."
+    "concurrentSDKReadback": "Seven-file ZIP byte parity;own actual original deterministic run exit1/corrected exit0;integrated exact page copy,one customer screenshot,1440/390 no overflow,numeric SDK badge absent.",
+    "initialRuntimeAttempt": "Own synthetic Owner authentication200;Evals Overview read failed and supported refresh timed out;no annotation mutation",
+    "runtimeFollowup": "Owner dashboard filters/refresh/typed summaries passed; four typed annotation UI writes201/native retention passed; eight API boundary checks and five retention assertions passed. Intermittent reads502/timeouts remain recorded, not silently reclassified as successes.",
+    "newCapturedImages": 4,
+    "localReferencesAfterFollowup": 4352,
+    "scopedFollowup": "Four changed articles rendered at1440light/390dark;four new images loaded;real Search/exact page copy/agent link passed;no doc browser errors/HTTP failures/overflow. Author AI-simulated reader review;no human."
   },
   "qualification": {
     "fullyQualified": false,
-    "verified": 22,
+    "verified": 24,
     "partial": 9,
-    "pending": 6,
+    "pending": 4,
     "pendingWalkthroughs": [
       "agents/connections",
       "agents/sandbox-bindings",
@@ -460,19 +466,16 @@
       "discovery/runtime-and-blast-radius",
       "environments/create-and-launch",
       "evals/datasets",
-      "evals/overview",
-      "evals/trace-annotations",
       "discovery/network-observation"
     ],
-    "missingScreenshotReferences": 24,
-    "strictReleaseFindings": 40,
+    "missingScreenshotReferences": 20,
+    "strictReleaseFindings": 34,
     "structuralFailures": [],
     "blockers": [
       "Compatible authorized Discovery source/collector and privileged sensors not available",
-      "Native Overview read timeout prevents new dashboard/annotation proof",
-      "Existing sandbox business-effect,assurance/reproduction,assessment cancellation and remaining connection/dataset flows unqualified",
-      "Custom-domain trusted HTTPS still fails hostname validation;separate GitHub agent mirror works"
-    ]
+      "Existing sandbox business-effect,assurance/reproduction,assessment cancellation and remaining connection/dataset flows unqualified"
+    ],
+    "publicationHTTPS": "Resolved after audit publication: 262 complete deployed-resource checks plus eight generated-diagram checks passed with OS CA and hostname validation; HTTP and prior GitHub Pages URLs redirect to HTTPS."
   },
   "runtimeExampleSHA256": "56de419e5a4b54db1a0024c45925fc72bbc8b0cb820fd90ca30cf8cef41e3619",
   "concurrentIntegration": {

@@ -16,7 +16,7 @@ Use the project dashboard to understand the native traces retained for your sele
 
 Any customer role can read authorized evidence. Choose a ready Evals project with retained native traces. This is **Evals → Overview**, distinct from an individual evaluation run's Overview tab and from saved-score Monitoring.
 
-The instructions below are source reviewed. In the latest synthetic QA attempt, sign-in succeeded but the overview request timed out; dashboard values and screenshots were not newly qualified.
+The screenshots use the two retained requests from the [native conversation walkthrough](/evals/traces-and-sessions/#3-group-recorded-conversations). You can use any authorized traces in your selected project; opening this dashboard does not call the agent again.
 
 ## 1. Choose the trace selection
 
@@ -48,6 +48,8 @@ The instructions below are source reviewed. In the latest synthetic QA attempt, 
 1. Read **Assessment**, **Type**, **Recorded values** and **Result** together.
 2. Boolean feedback can show pass rates. Numeric feedback can show means. Categorical/text values retain their recorded-value counts rather than becoming pass percentages.
 3. [Inspect the underlying traces](/evals/traces-and-sessions/) when a summary needs explanation. Use [native annotations](/evals/trace-annotations/) when you intend to add a human opinion or expectation.
+
+For example, feedback named `response_correct` appears as **response correct**. A single Pass gives **100% pass** for that one recorded judgment; a numeric rating of `4.5` gives **Mean 4.5**. Text feedback appears as **Categorical**, with the text and its count. These examples describe the saved opinions, rather than independently verifying the response.
 
 These are native feedback aggregates. They do not replace canonical exact-match results, a versioned suite gate or verified security outcomes. For gate history, choose **Monitoring** and follow [suites and monitoring](/evals/suites-and-monitoring/).
 

@@ -2701,6 +2701,98 @@
       "validationStatus": "Actual UI with real Backend; individually viewed for readable framing and secrets. Initial read failures and later successful refresh remain separately recorded.",
       "reviewedForSecrets": true,
       "sha256": "24cb84665e5c0b0a42a13d49ee939bc207de60c3d935b1e678db55864dc686cc"
+    },
+    {
+      "id": "evals-project-overview",
+      "file": "evals-project-overview.png",
+      "alt": "Real Evals project dashboard with two requests, zero errors, latency metrics and unavailable recorded usage.",
+      "caption": "The two retained HTTP traces are included. The dashboard reports zero execution errors, P50 41 ms and P95 67 ms; usage remains unavailable.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/overview: 1. Choose the trace selection, after step 4"
+      ],
+      "environment": "Isolated local QA; synthetic Documentation Native Sessions QA; real Backend and MLflow 3.16.1",
+      "role": "Organization Owner; platform_admin false; AI-operated synthetic account",
+      "capturedAt": "2026-11-13T15:10:18.763014+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "evals": "60c25994958105db4baa91f377ba46c24fdf253d"
+      },
+      "sourceMatchesDeployment": "Four relevant Frontend source files and three owning Backend files exactly match the recorded pins; real native data; not a hosted-beta attestation.",
+      "validationStatus": "Real UI and native API readback; individually viewed for readable framing and secrets. Intermittent read failures and successful normal refresh are recorded separately; no target/model replay.",
+      "reviewedForSecrets": true,
+      "sha256": "251922f4024f81b37feb7e3ef7d2edbd294a3d8d267494767bcd64eba02b817a"
+    },
+    {
+      "id": "evals-overview-recorded-usage",
+      "file": "evals-overview-recorded-usage.png",
+      "alt": "Recorded usage showing zero reporting coverage beside Boolean, numeric and categorical feedback summaries.",
+      "caption": "Neither trace reports tokens or cost. Three saved feedback definitions produce their own typed summaries; the separate expectation is excluded.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/overview: 2. Read performance and usage; 3. Interpret Quality summary"
+      ],
+      "environment": "Isolated local QA; synthetic Documentation Native Sessions QA; real Backend and MLflow 3.16.1",
+      "role": "Organization Owner; platform_admin false; AI-operated synthetic account",
+      "capturedAt": "2026-11-13T15:33:57.656494+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "evals": "60c25994958105db4baa91f377ba46c24fdf253d"
+      },
+      "sourceMatchesDeployment": "Four relevant Frontend source files and three owning Backend files exactly match the recorded pins; real native data; not a hosted-beta attestation.",
+      "validationStatus": "Real UI and native API readback; individually viewed for readable framing and secrets. Intermittent read failures and successful normal refresh are recorded separately; no target/model replay.",
+      "reviewedForSecrets": true,
+      "sha256": "88bbead1ab33a4e334b2b1d7e9ac806683622d395ee90356a745ac1a5494674a"
+    },
+    {
+      "id": "evals-trace-annotation-form",
+      "file": "evals-trace-annotation-form.png",
+      "alt": "Actual Add annotation form for response_correct with Feedback, Pass, rationale and Save annotation.",
+      "caption": "This real form rates the saved recall response. Save appends feedback to that trace without calling the target again.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/trace-annotations: 1. Open the annotation form; 2. Enter the value and save once"
+      ],
+      "environment": "Isolated local QA; synthetic Documentation Native Sessions QA; real Backend and MLflow 3.16.1",
+      "role": "Organization Owner; platform_admin false; AI-operated synthetic account",
+      "capturedAt": "2026-11-13T15:11:59.886217+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "evals": "60c25994958105db4baa91f377ba46c24fdf253d"
+      },
+      "sourceMatchesDeployment": "Four relevant Frontend source files and three owning Backend files exactly match the recorded pins; real native data; not a hosted-beta attestation.",
+      "validationStatus": "Real UI and native API readback; individually viewed for readable framing and secrets. Intermittent read failures and successful normal refresh are recorded separately; no target/model replay.",
+      "reviewedForSecrets": true,
+      "sha256": "cd331a151c2ef7481ff8bf623c39c42d63d5432950efa6ba6804942d355937dc"
+    },
+    {
+      "id": "evals-trace-annotation-saved",
+      "file": "evals-trace-annotation-saved.png",
+      "alt": "Refreshed trace details retaining response_correct, Feedback, You, Pass and the saved rationale.",
+      "caption": "After page refresh and a supported Refresh traces recovery, the same Boolean annotation remains beside the original recall input and BLUE output.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "evals/trace-annotations: 2. Enter the value and save once, after step 4"
+      ],
+      "environment": "Isolated local QA; synthetic Documentation Native Sessions QA; real Backend and MLflow 3.16.1",
+      "role": "Organization Owner; platform_admin false; AI-operated synthetic account",
+      "capturedAt": "2026-11-13T15:19:09.501071+00:00",
+      "sourceRevisions": {
+        "frontend": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "evals": "60c25994958105db4baa91f377ba46c24fdf253d"
+      },
+      "sourceMatchesDeployment": "Four relevant Frontend source files and three owning Backend files exactly match the recorded pins; real native data; not a hosted-beta attestation.",
+      "validationStatus": "Real UI and native API readback; individually viewed for readable framing and secrets. Intermittent read failures and successful normal refresh are recorded separately; no target/model replay.",
+      "reviewedForSecrets": true,
+      "sha256": "f2d826327e101f47e3aafc9f16ccd0f4b7d7a58e322ed4763766721da0d51330"
     }
   ]
 }
