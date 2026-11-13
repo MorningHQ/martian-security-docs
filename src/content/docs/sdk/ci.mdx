@@ -117,7 +117,13 @@ Open `results/ci-session.json`. A successful persisted gate has:
 
 <Screenshot id="sdk-ci-test-results" />
 
-### Observed combined attempt
+### Observed qualification results
+
+The exact downloadable tutorial ZIP passed one original combined CLI attempt on a GitHub-hosted Ubuntu runner with SDK **0.1.2**. Its receipt and Backend readback agreed: **exit 0**, **3 of 3 test groups passed**, **persisted** upload and **exported** evidence. Independent readback confirmed three native exports and exactly two settled generation/judging model calls. The 12 tutorial files remained unchanged.
+
+The three groups contain the **two dataset records**, **two inline scorer checks**, and **one adversarial probe**. Each group produces one CI test record; “3 of 3” does not mean only three individual assertions ran.
+
+See the [public validation receipt](/martian-security-docs/examples/validation/sdk-ci-0.1.2-2026-11-13.json) for the source and package hashes, run/attempt, original outcome and native accounting. This used disposable pinned services and the deterministic tutorial callback. The extracted `github-actions.yml` template was not dispatched directly; its installation and CLI path ran in a reviewed qualification wrapper. This is not a hosted-beta or production-agent security attestation.
 
 The separate Evals-only qualification passed its original `--require-export` command with exit `0`, two passing tests, a persisted session and completed export. Its result is distinct from combined CI:
 
@@ -125,7 +131,7 @@ The separate Evals-only qualification passed its original `--require-export` com
 
 One real combined attempt in isolated QA retained **2 of 4 tests passed**, **Failed**, and **Exported to MLflow** after refresh. Its dataset and inline checks passed; redteam and the session-execution check failed because the runner could not verify generation's response. The saved receipt recorded `state: failed`, `exit_code: 1`, `upload: persisted`, and `export_state: exported`.
 
-Reading that exact generation operation later returned `succeeded`. No target or judging stage followed it, and the saved failed session was not rewritten. An exported session can accurately contain a failing gate; export success alone does not satisfy CI. A clean combined pass and execution on a hosted GitHub runner remain unverified.
+Reading that exact generation operation later returned `succeeded`. No target or judging stage followed it, and the saved failed session was not rewritten. An exported session can accurately contain a failing gate; export success alone does not satisfy CI. This earlier failure remains distinct from the later passing combined qualification above.
 
 <Screenshot id="sdk-ci-combined-failed" />
 

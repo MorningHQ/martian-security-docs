@@ -153,7 +153,9 @@ Select **Evals** in the main sidebar to return to the default **Runs** view. Fin
 
 <Screenshot id="sdk-redteam-result" />
 
-The captured combined-CI attempt is a **failed** result: its generation response was uncertain to the runner, so target execution and judging did not proceed. A later read of that same operation confirmed generation succeeded. The original failed CI verdict remained saved and exported; retrieving the generation result did not complete the missing probe or turn the gate into a pass. A clean combined-CI pass remains unverified.
+The captured local combined-CI attempt is a **failed** result: its generation response was uncertain to the runner, so target execution and judging did not proceed. A later read of that same operation confirmed generation succeeded. The original failed CI verdict remained saved and exported; retrieving the generation result did not complete the missing probe or turn the gate into a pass.
+
+A subsequent, distinct qualification ran the exact public ZIP on a GitHub-hosted runner with SDK **0.1.2**. The combined CLI passed all three test groups, persisted and exported its session, and independently verified one generation plus one judging model call, both settled. See [CI qualification results](/martian-security-docs/sdk/ci/#observed-qualification-results). The deterministic callback checks wiring and retained evidence; it does not establish production-agent security.
 
 Redteam judgments saved by the runner are **client-executed/client-scored**, including judgments originally obtained from Agents. They are useful regression evidence, not a release authorization or independent proof of the executed binary. SDK callback testing also does not establish sandbox reproduction or verified business effects from a console assessment.
 

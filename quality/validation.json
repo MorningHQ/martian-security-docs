@@ -53,7 +53,7 @@
       "environment": "Isolated local QA and actual temporary public HTTPS teaching adapter",
       "result": "passed for canonical path; advanced compatibility pending",
       "record": "quality/walkthroughs.json",
-      "details": "Actual changed callback completed2passes/1failure, native FINISHED and pinned customer-declared SHA. Compared three paired records with one regression; both native outputs, CSV3/filteredCSV1, refresh and selection guards checked. Target counter14\u219217 for execution and stayed17 during inspection."
+      "details": "Actual changed callback completed2passes/1failure, native FINISHED and pinned customer-declared SHA. Compared three paired records with one regression; both native outputs, CSV3/filteredCSV1, refresh and selection guards checked. Target counter14→17 for execution and stayed17 during inspection."
     },
     {
       "scope": "Historical PR5: Complete end-to-end qualification audit",
@@ -163,22 +163,46 @@
       "scope": "PR8 independent source, package and evidence review",
       "environment": "Exact changed public source/assets plus nine explicitly scoped nonsecret qualification receipts",
       "result": "no outstanding P1/P2 after correction",
-      "details": "Twenty new PNGs independently checked for hashes, 1440\u00d71000 framing, provenance and metadata; no embedded text/EXIF. SDK ZIP has 12 exact source members; only README differs from the prior bundle. The coverage-to-walkthrough evidence references were corrected to actual task names and independently rechecked. Source review distinguishes every recorded success, failed original gate, later same-operation recovery and unverified cancellation; exact reviewed-file snapshot is retained separately."
+      "details": "Twenty new PNGs independently checked for hashes, 1440×1000 framing, provenance and metadata; no embedded text/EXIF. SDK ZIP has 12 exact source members; only README differs from the prior bundle. The coverage-to-walkthrough evidence references were corrected to actual task names and independently rechecked. Source review distinguishes every recorded success, failed original gate, later same-operation recovery and unverified cancellation; exact reviewed-file snapshot is retained separately."
     },
     {
       "scope": "PR8 AI-simulated novice and visual review",
-      "environment": "Production preview; desktop 1440\u00d71000 and narrow 390\u00d7844, light/dark",
+      "environment": "Production preview; desktop 1440×1000 and narrow 390×844, light/dark",
       "result": "passed bounded rendered review; no human participant",
       "details": "First assessment, SDK Evals/redteam/CI, Library and verification summary were clicked through. All 21 scoped inline image instances loaded; 15 new captures were independently viewed at full resolution. Search/result clicks, free-validation anchor, full-size image, nested refresh, themes, readable captions and no page-wide overflow passed. SDK partial-notice P2 was fixed to name isolated local QA and use readable counts, then rechecked at both widths. Final console had zero errors/warnings. One transient aborted document navigation is retained; a fresh navigation/refresh then had 30 requests all 200/304 and correct content. This review adds no product execution claim."
+    },
+    {
+      "scope": "Exact published SDK 0.1.2 combined CLI on GitHub Actions",
+      "environment": "GitHub-hosted Ubuntu 24.04 runner; Python 3.12 customer; disposable pinned services and synthetic data; not a hosted-beta attestation",
+      "result": "passed original strict gate and independent native readback",
+      "details": "Run43374595574 attempt1/mainc003976; exact12-file ZIP fd83fec1 and official wheel57dc1115. Originalexit0/session31ace842 passed/persisted/exported3/3. Three native FINISHED runs and exactly two settled model calls; physical_active0. Six metadata artifacts downloaded and archiveSHA256verified; customer source unchanged, credential scan and own cleanup passed. The extracted github-actions.yml was not itself dispatched. Earlier failed original receipts preserved.",
+      "record": "public/examples/validation/sdk-ci-0.1.2-2026-11-13.json"
+    },
+    {
+      "scope": "PR9 independent SDK claim and evidence review",
+      "environment": "Exact public SDK prose, receipt, coverage and walkthrough records against the retained six-file GitHub Actions artifact",
+      "result": "no material mismatch; scoped verified labels supported",
+      "details": "Independently verified the 3658-byte archive SHA-256 and all six members; public receipt projections match exact ZIP, released wheel, source/customer/run identities, original exit 0, three passed/persisted/exported groups, three FINISHED native exports and two settled model calls. Extracted workflow dispatch, automatic customer GitHub attribution and production security are explicitly outside this qualification. Earlier original failure remains unchanged."
+    },
+    {
+      "scope": "PR9 AI-simulated novice and visual review",
+      "environment": "Production preview; 1440×1000 desktop and 390×844 narrow; light and dark",
+      "result": "passed bounded review; no human participant",
+      "details": "CI, Redteam, verification and the public JSON receipt were read and clicked through. One P3 was resolved by explicitly mapping two dataset records, two inline checks and one adversarial probe into three CI test records/groups. Search found combined CI first; qualification anchor, nested refresh, theme persistence and full-size image passed. All six scoped inline image instances loaded. No page-wide overflow or remaining aesthetic finding. Final console had zero errors/warnings. One duplicate navigation was aborted; fresh reload had 12/12 requests 200/304 without failures. No paid execution was rerun during review."
+    },
+    {
+      "scope": "PR9 production build and source checks",
+      "environment": "Node 26; final SDK prose and qualification records",
+      "result": "40 pages built and indexed; content/example/qualification checks passed",
+      "details": "Production build/Pagefind 40 pages. Default checks passed 3304 references and both import fixtures (five records); git diff --check passed. Strict release audit remains enabled and intentionally fails with 23 pending screenshot references, 13 unverified full guides and 37 findings. Coverage is 19 verified, 8 partly verified and 5 pending; SDK verification is explicitly limited to the named installation and CLI scope."
     }
   ],
   "remainingGaps": [
-    "Five guides still await their first walkthrough: sandbox bindings, environment launch and three Discovery workflows.",
-    "Seventeen guides are verified in their named local scope; ten are partial. Remaining screenshot references and full walkthroughs stay enforced by the strict release audit.",
+    "Five guides still lack complete published qualification: sandbox bindings, environment launch and three Discovery workflows.",
+    "Nineteen guides are verified in their named local/CI scope; eight are partial. Remaining screenshot references and full walkthroughs stay enforced by the strict release audit.",
     "Sandbox-backed verified effects, fresh-world repetitions/negative controls and published artifact-backed Recorded review/domain/redacted-bundle exports remain unverified.",
     "MR-1003 retains an uncertain teaching-tunnel action; positive cooperative cancellation and evidence-based resolution are not yet qualified.",
     "Remaining dataset operations, positive native conversation-session grouping, non-Boolean model execution and MCP/browser/connection lifecycle variants still need qualification.",
-    "A fresh Evals-only original strict gate passed. The original failed combined attempt is not a clean complete combined pass; hosted GitHub runner execution also remains unverified.",
     "Local QA demonstrates the named pinned-source behavior, not hosted AWS-beta parity. Local sandbox orchestration is unavailable (connectors503)."
   ]
 }

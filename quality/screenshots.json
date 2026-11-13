@@ -2032,7 +2032,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "sdk/ci: Observed combined attempt"
+        "sdk/ci: Observed qualification results"
       ],
       "environment": "Isolated local QA; synthetic Martian Docs Lab",
       "role": "Owner; non-platform-admin customer account",
