@@ -48,7 +48,9 @@ jobs:
                           payload = json.load(response)
                   except urllib.error.HTTPError as error:
                       status = error.code
-                      payload = {"message": "GitHub API request returned HTTP " + str(status)}
+                      detail = json.load(error)
+                      payload = {key: detail.get(key) for key in ("message", "documentation_url")}
+                      payload["accepted_permissions"] = error.headers.get("X-Accepted-GitHub-Permissions")
                   if status != 202:
                       break
                   time.sleep(10)
