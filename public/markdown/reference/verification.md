@@ -10,7 +10,7 @@ These guides are being qualified against actual running application/backend stat
 
 The site is being published iteratively. Guides with unfinished walkthroughs show a short notice above the instructions. Detailed roles, dates, tested environments and qualification records are collected here and retained in **Copy page** Markdown. Authenticated captures and complete execution checks are added as they pass.
 
-Of **37 task guides**, **27 are verified**, **6 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **145 captured references** across **133 unique PNGs**. These counts come from the current coverage and screenshot manifests.
+Of **37 task guides**, **28 are verified**, **5 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **152 captured references** across **140 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 
@@ -64,7 +64,21 @@ The isolated QA application uses the source baseline below, real Backend/Agents 
 
 An own synthetic Gmail environment in an existing provisioned beta organization saved revision 1 and launched with **built-in** fixtures. Real seeded Gmail sign-in and refresh, **Extend 30 min**, and **Stop sandbox** passed. The stop first returned **Terminating**; the specific instance later left the ordinary instance list, while an older expired instance remained. This is not independent proof of provider-resource deletion or an assessment business outcome.
 
-The separate shared-generation attempt failed before QA. No generated or personal world was qualified; failed generation can still incur model usage. A new QA organization’s missing Evals readiness and authorized clusters were not bypassed. Relevant deployed Backend environment/data/sandbox files matched the recorded source baseline; these checks do not attest whole Frontend/Agents deployment parity. The data-drawer image hides only unrelated environment names behind it with native screenshot privacy masks.
+The separate shared-generation attempt failed before QA. That earlier beta check did not qualify generated or personal worlds; failed generation can still incur model usage. A new QA organization’s missing Evals readiness and authorized clusters were not bypassed. Relevant deployed Backend environment/data/sandbox files matched the recorded source baseline; these checks do not attest whole Frontend/Agents deployment parity. The data-drawer image hides only unrelated environment names behind it with native screenshot privacy masks.
+
+### Generated data and sandbox readiness
+
+A later, separate **Documentation Browser Execution QA** Owner saved **Documentation support inputs lab**, revision 1, with Gmail only. Real JSON Schema and CSV uploads retained their contents and whole-environment/Gmail scopes after reopening. Invalid JSON was rejected before a save; the corrected CSV parsed as two records. The single successful save returned **201** without starting generation or a sandbox.
+
+The original shared generation returned **202** with a ready world and Gmail document: **three users, five emails**, with no seed QA issues. An initial observation timeout did not cancel that request and it was not resubmitted. The generated mailbox later passed real sign-in and full-page refresh. Its first local execution platform had an application memory failure; a distinct run on a supported local execution platform passed without changing the product images or container resource limits. The original failure remains recorded separately from that success.
+
+Personal generation produced a ready world, then its Gmail projection failed on transport and, during a later request, invalid model output. A subsequent explicit bounded retry reused that same ready personal world and produced **four users, four emails**, with no seed QA issues. **New world** then replaced the shared story and regenerated shared Gmail data as **three users, four emails**. The personal world and document remained unchanged. Full refresh retained both variants. **Fit** still recommended Zendesk for the support-case input structure; that advisory was not removed to obtain the successful Gmail seed result.
+
+One new ordinary UI launch returned **202**, automatically selected the exact ready personal document, and reached **Ready**. The actual instance read after full refresh retained the same document, generated source and world epoch. This is seed selection and application readiness evidence; agent bindings and an independently checked assessment business effect remain separate tasks.
+
+That personal mailbox passed real **200** sign-in and full-page refresh, retaining two Inbox messages: the routine return question and refund request. A QA script initially used a redacted password and expected an unobserved subject format; those failed checks are retained as test errors. The corrected check used the actual private credential and observed subjects, without regenerating data or relaunching the sandbox. Its refresh recorded ten successful responses and no failed request, console error or page exception in that observation window.
+
+**Prepare assessment** opened at **Agent**; **Back** revealed the selected **Environment** and **Sandboxes ready**. **Extend 30 min** returned **200**, moved the same instance’s expiry by exactly 1,800 seconds and retained its 60-minute lifetime after full refresh. **Stop sandbox** returned **202 / Terminating**; a later refreshed instance read omitted that exact instance while retaining the environment and generated data. No assessment was admitted by these readiness checks.
 
 The new beta QA Owner also inspected **Connect source → Add a read-only source**. The Kubernetes list had no authorized alias and **Create source** stayed disabled. Read-only checks of the deployed Discovery schema, API and configuration files matched the Backend baseline below. That schema rejects a Kubernetes observation field emitted by the available collector snapshot. Compatible collection and operator-approved scope remain prerequisites; no source, collector credential or inventory was created for this check.
 
@@ -78,7 +92,7 @@ The teaching callbacks are deterministic. These checks verify wiring and retaine
 
 A second three-record member run initially retained canonical passes while some telemetry acknowledgements were uncertain. Administrator reconciliation later confirmed the saved evidence with **zero target calls**. A stalled, never-submitted SDK dataset publication was safely aborted and its restored draft published after that recovery. A manually repeated numeric review save after a delayed acknowledgement also produced an additional history entry; queue completion was checked against its four latest verified answers.
 
-The local QA stack has no sandbox orchestrator: its connector request returns 503 and the sidebar may report stale data. Sandbox-backed workflows remain unverified in this environment. No substituted catalog or invented results are used.
+Earlier local QA checks had no sandbox orchestrator: connector requests returned **503** and the sidebar sometimes reported stale data. The later generated-data check above provisioned a separate local sandbox deployment using the actual catalog and release images. It does not retrospectively repair those earlier reads, qualify every simulation, or establish sandbox-backed assessment outcomes. No substituted catalog or invented results are used.
 
 The beginner and visual review is an **AI-simulated novice review**, with no human participant. Desktop and narrow navigation, search, themes, image viewing and keyboard checks passed. Follow-up light/dark checks at 1440 × 1000 and 390 × 844 verified the revised comparison layout and explicit source-baseline links without overflow or documentation console errors.
 
@@ -96,15 +110,18 @@ Installing a newer release does not extend those recorded results automatically.
 | Component | Reviewed source revision |
 | --- | --- |
 | Frontend | 06d0d0c96a9627c383b85670929dfe8bdc33aa30 |
-| Frontend for browser, cancellation and Pipeline follow-up | 5361d1f241278e19c79e68d1d8f9325920a04d12 |
+| Frontend for browser, cancellation, generated environments and Pipeline follow-up | 5361d1f241278e19c79e68d1d8f9325920a04d12 |
 | Backend | 01343fa93feb518f6c7cd1928b63a01d2ec5ee0b |
 | Agents | f7de3e068d66fe478f642d43a658ed9b3ed321f5 |
 | Evals service | 60c25994958105db4baa91f377ba46c24fdf253d |
+| Sandbox orchestrator executable and catalog | da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565 |
 | SDK release | martian-sdk 0.1.2 |
 | SDK release for the local suite-file guide | martian-sdk 0.1.3 |
 | Hermes styling foundation | 3593a4bae03e96cf6c7597ececf99fbfc32997ae |
 
 The follow-up frontend was served from a clean source archive against the same Backend/Agents runtime baseline. Seventeen relevant served/runtime files matched their recorded source bytes. The newer Backend and Agents heads contained documentation-only changes. The current Pipeline preview and its actual template download were also inspected; these checks do not requalify every earlier screenshot against the newer frontend.
+
+The generated-environment follow-up separately matched **18** relevant served/runtime files across Frontend, Backend and Agents. The orchestrator executable and catalog remained pinned; its newer source head contained documentation-only changes. The generated Gmail runs used the same pinned simulation images and original resource limits. These local checks do not attest to hosted-beta deployment parity or network-policy enforcement.
 
 ## Inspectable records
 

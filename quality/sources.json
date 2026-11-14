@@ -53,6 +53,22 @@
         "assessments/progress-and-cancellation browser illustration",
         "reference/console-navigation Pipeline entry"
       ]
+    },
+    {
+      "reviewedAt": "2026-11-14",
+      "usedBy": [
+        "environments/create-and-launch",
+        "reference/verification generated data and sandbox readiness"
+      ],
+      "runtimeSourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "runtimeByteMatches": 18,
+      "fullHostedParity": false,
+      "comparison": "Clean served Frontend archive; exact relevant running Backend/Agents file hashes; pinned orchestrator executable/catalog and original Gmail release images/resources. Newer Backend/Agents/orchestrator source heads differ in documentation/instructions only. Disposable local infrastructure/loopback transport setup does not patch product source, models, constraints or IAM."
     }
   ]
 }
