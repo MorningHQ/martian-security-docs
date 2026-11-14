@@ -508,16 +508,37 @@
       "environment": "Node26; production preview; real browser at1440/390/320px in light/dark themes; no API interception; AI-simulated novice/aesthetic review, no human participant",
       "result": "Build, existing default checks and local browser review passed; full release qualification remains incomplete",
       "details": "47builtpages,4429localreferences,46agentexports,66exactcodepayloads,137captions and3existingexportregressions passed.283browserresponses/no console/page/HTTP/requesterrors;13explicit viewport/theme combinations across6changedarticles plusSDKcodecopy/search. All4newPNGdecodes/fullsize,exactpage/code/agentlinkclipboard,deeprefresh,continuednumbering andoptionalbrowserdisclosure open/close passed. Partial-guide callout body contrast8.23light/11.66dark;logo-only navbar and nonvisual provenance retained. Author reviewed the actual4applicationimages and desktop/mobile rendering, without an independent human participant. Initial UI checks used the wrong accessible-brand expectation; corrected to the existing Martian Security name from source, with no site-component change. Strict check:release remains exit1/30findings:18captures+11walkthroughs+summary. All37required-stage lists/qualifications,other34guide records and136older capture entries unchanged;140references/128uniqueimages. No dependencies,Actions orcheckscript changes."
+    },
+    {
+      "scope": "Queued assessment cancellation and retained terminal evidence",
+      "environment": "Separate isolated local QA; synthetic HTTP target; unchanged pinned real services",
+      "result": "passed for queued cancellation; in-progress cancellation and uncertain-action recovery remain separate gaps",
+      "record": "quality/walkthroughs.json",
+      "details": "One actual admission202 and stop200 on the original UUID; native cancelled/cancel_requested/finalization complete, zero target/model/held budget/active leases; one actual sync200, full-page refresh and original-identity JSON export passed. Initial observation timeouts and the wrong /refresh watcher were retained; successful original /sync was recovered without replay. A separate earlier budget exhaustion is not counted as cancellation."
+    },
+    {
+      "scope": "Active assessment stopping follow-up",
+      "environment": "Separate isolated local QA; original bounded HTTP campaign",
+      "result": "incomplete; retained budget outcome and unsettled reservation",
+      "record": "quality/walkthroughs.json",
+      "details": "Three real HTTP200 replies were retained, while live summary counters stayed unavailable. The observer timed out and the eventual stop check exited before clicking. Native cancel_requested false/search_round_budget_exhausted is not cancellation. Fifteen model reservations settled and one remained reserved; no further campaign was admitted to bypass it."
+    },
+    {
+      "scope": "Queued-stop documentation build and reader review",
+      "environment": "Node26 production build; real unauthenticated local browser contexts; desktop1440 and narrow390/320px; light/dark themes",
+      "result": "passed ordinary build/check and focused author novice/visual review; complete release qualification remains incomplete",
+      "details": "47 built pages,4443local references,46agent exports,66exact code payloads,139captions and three existing export regressions passed.211actual browser responses had no console/page/HTTP/request failures across nine viewport/theme combinations on the stop and verification pages plus SDK/search/home controls. Exact page/code/agent-link clipboard equality, nested refresh, both new full-size PNGs, decoded inline images, optional disclosure, continued cancellation step numbering, logo-only branding, hidden header metadata and no overflow passed. Partial-note body contrast8.23light/11.66dark. Individually viewed real application and rendered desktop/mobile captures. This is AI-simulated novice/author visual review, with no human participant. The first browser attempt found the old review session closed before opening a page; an isolated context in the live task browser passed. Full strict audit remains exit1 with29findings:17missing capture references and11unfinished walkthroughs plus their summary. All37stage/qualification lists, other36guide records and all140older capture records are unchanged; no dependency, Actions or gate script was changed."
     }
   ],
   "remainingGaps": [
     "Four guides await walkthrough qualification: sandbox bindings, runtime Discovery, call-gates and network observation. Source enrollment and the named hosted-beta Gmail lifecycle remain partial.",
     "Twenty-six guides are verified in named local/CI scopes; seven are partial and four pending. Eighteen remaining screenshot references and eleven full walkthroughs stay enforced by the strict release audit.",
     "Sandbox-backed verified effects, fresh-world repetitions/negative controls and published artifact-backed Recorded review/domain/redacted-bundle exports remain unverified.",
-    "MR-1003 retains an uncertain teaching-tunnel action; positive cooperative cancellation and evidence-based resolution are not yet qualified.",
+    "The earlier MR-1003 retains an uncertain teaching-tunnel action. A separate queued stop is qualified; cancellation after execution begins and evidence-based resolution of the original uncertain action are not yet qualified.",
     "Successful generated/personal worlds, non-Boolean model execution, browser assessment execution and untested connection-management variants still need qualification. MCP endpoint execution was observed with explicitly operator-assisted recovery; the public lost-admission sync path remains a product gap. Native session views are verified through separately provisioned instrumentation; SDK0.1.2 native-ingestion/credential issuance is not provided.",
     "Local QA demonstrates named pinned-source behavior, not whole hosted AWS-beta parity. Local orchestration is unavailable (connectors503), native-view reads still have intermittent502/timeouts with successful normal read recovery, and Discovery needs a compatible collector/Backend pair plus operator-approved scope.",
     "SDK task guides and current tutorial install the latest release;exact persisted Evals/hosted redteam/combined-CI qualification remains on0.1.2. Account-free current-install steps and the local suite guide were exercised on0.1.3,with one judge model/provider route. Newer installation does not requalify hosted workflows.",
-    "SDK 0.1.3 native bedrock:/ response-judge routing fails through MLflow 3.16.1 AmazonBedrockProvider.get_endpoint_url; use the verified OpenAI-compatible Bedrock endpoint. A native-routing SDK fix and release remain follow-up work."
+    "SDK 0.1.3 native bedrock:/ response-judge routing fails through MLflow 3.16.1 AmazonBedrockProvider.get_endpoint_url; use the verified OpenAI-compatible Bedrock endpoint. A native-routing SDK fix and release remain follow-up work.",
+    "The separate terminal HTTP MR-1004 retained one unsettled model reservation after three target replies. Inspect that original operation before further model-backed QA; no reservation was manually released."
   ]
 }

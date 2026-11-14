@@ -641,13 +641,13 @@
       "sources": [
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/pages/Assessment.jsx",
           "line": 752
         },
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/pages/RunTrace.jsx",
           "line": 559
         },
@@ -679,12 +679,13 @@
       ],
       "screenshotIds": [
         "assessment-run",
+        "assessment-stop-requested",
         "assessment-stopped",
         "assessment-needs-attention",
         "assessment-browser-run"
       ],
       "qualification": "partial",
-      "validationStatus": "MR-1002 was followed from running to retained completion. The original MR-1003 HTTP530 action remains uncertain and untouched. A separate MCP campaign executed despite an initial HTTP503; public refresh200 left the error unchanged, and one operator-assisted reconciliation restored its original completed/inconclusive evidence. Positive cooperative cancellation remains unverified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified.",
+      "validationStatus": "Run progress and completion were checked. In a separate QA workspace, queued MR-1003 admitted202 and Stop run200 on the same campaign; native cancellation finalized with no target/model work or unresolved recovery. Evidence sync200, full-page refresh and JSON export retained Stopped/INCONCLUSIVE and original identities. Cancellation after execution begins and resolution of the earlier HTTP530 uncertain action remain unverified. The separate MCP original admission/reconciliation and browser fresh-conversation failure records remain unchanged.",
       "documentationRoute": "/assessments/progress-and-cancellation/",
       "role": "member, admin, owner",
       "route": "/#/runs/<run-id>",
@@ -703,7 +704,7 @@
         "realBackendWalkthrough": "partial; see validationStatus",
         "screenshots": "partial",
         "remainingGaps": [
-          "Positive cooperative cancellation and evidence-based resolution of the retained uncertain MR-1003 action remain unverified.",
+          "Cancellation after target/model execution starts and evidence-based resolution of the earlier retained HTTP530 action remain unverified; the new queued-stop result does not establish either.",
           "A successful public refresh response after an uncertain admission did not establish that the original campaign was absent or stopped. The operator-assisted MCP reconciliation does not qualify automatic recovery."
         ]
       },
@@ -733,16 +734,24 @@
           "task": "Browser assessment admission, website setup and retained fresh-conversation failure",
           "result": "Observed real admission, sign-in, two setup messages and retained Needs attention failure; completed browser assessment and positive cancellation remain unqualified",
           "record": "quality/walkthroughs.json"
+        },
+        {
+          "date": "2026-11-14",
+          "environment": "Separate isolated local QA; real pinned services and a non-platform-admin Owner; synthetic HTTP target",
+          "task": "Queued assessment cancellation and retained terminal evidence",
+          "result": "Actual admission202/stop200, native cancelled with cancel_requested true and finalization complete, zero actions/reservations/active native leases, evidence sync200 and full-page refresh/export agreed on stopped/INCONCLUSIVE. Stopping after execution begins remains a separate scope.",
+          "record": "quality/walkthroughs.json"
         }
       ],
       "screenshots": [
         "assessment-run",
+        "assessment-stop-requested",
         "assessment-stopped",
         "assessment-needs-attention",
         "assessment-browser-run"
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
-      "customerNotice": "Run progress and completion have been checked. Successful cancellation and recovery from an uncertain target action are not yet verified."
+      "customerNotice": "Queued cancellation and retained results have been checked. Stopping work already in progress and resolving an uncertain target action are still being verified."
     },
     {
       "id": "assessments/reproduction-and-limits",

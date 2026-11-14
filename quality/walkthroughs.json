@@ -653,6 +653,52 @@
         "The uncertain action remains awaiting evidence-based recovery. No successful stop, general service reliability, business-state outcome or hosted-beta parity is established.",
         "Local sandbox orchestration/assurance-pack services are unavailable. Existing sandbox, synthetic signed-in identity, prepared-scenario, modern review and Discovery qualification gaps remain unchanged."
       ]
+    },
+    {
+      "task": "Queued assessment cancellation and retained terminal evidence",
+      "date": "2026-11-14",
+      "environment": "Separate Documentation Browser Execution QA organization; isolated real pinned services and synthetic public HTTPS HTTP target",
+      "role": "Owner; platform_admin false",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "result": "passed for cancellation immediately after admission, before target/model work",
+      "observed": [
+        "A distinct quick/serial/data-outcome run admitted202 as MR-1003; the UI Stop run action posted once to that exact original campaign and returned200/cancelling with cancellation requested.",
+        "The saved trace reached Stopped/INCONCLUSIVE. Runtime error described the interrupted native worker; no target request or completed attempt was claimed.",
+        "Tenant-bound native campaign/recovery/dispatch reads returned200: canonical cancelled, cancel_requested true, finalization pending false, no awaiting recovery and no actions. A later read-only SQL census confirmed zero prepared/submitted/completed/uncertain actions, zero reserved/settled model calls, zero unsettled budget reservations and zero active native run leases.",
+        "One actual Refresh evidence POST /sync returned200/stopped. The test watcher mistakenly waited for /refresh and timed out; the successful original /sync response was recovered from the observer without repeating it.",
+        "Full page refresh and actual Download legacy JSON evidence retained MR-1003, stopped/INCONCLUSIVE, the exact original Backend/native campaign identities, no findings and no attempts. The stopped trace no longer offered Request stop.",
+        "An initial 15-second SQL observation and 45-second trace-load observation timed out; later native/API and real UI observations succeeded. No admission, stop or paid work was repeated to repair those observations.",
+        "An earlier distinct HTTP run ended on wall_clock_exhausted with six target requests and twenty-five model calls before its stop control could be clicked. cancel_requested remained false; it is preserved as a budget outcome, not a successful cancellation.",
+        "The older HTTP530 uncertain action and separate browser fresh-conversation uncertain action remain unchanged."
+      ],
+      "downloadSHA256": {
+        "MR-1003.json": "7a66773ae02a5e093028c0f6da70894748f1498f0720555ddf9f51f7d8ea0454"
+      },
+      "remaining": [
+        "This queued-stop test does not establish successful response retention when cancellation follows target execution.",
+        "The earlier uncertain target actions still require evidence-based inspection; no recovery decision was invented."
+      ]
+    },
+    {
+      "task": "In-progress stop observation and retained budget outcome",
+      "date": "2026-11-14",
+      "environment": "Separate isolated local QA; real synthetic HTTP target and unchanged pinned services",
+      "result": "not qualified as cancellation; original campaign retained a budget outcome",
+      "observed": [
+        "A separate quick/serial assessment admitted202 as MR-1004. The actual public fixture received three correlated HTTP requests, and the live trace retained their HTTP200 refusal replies.",
+        "Agent request/model counters were unavailable while the live trace contained a real attempt. The observer incorrectly waited for nonzero summary counters and timed out; it did not submit a stop.",
+        "A subsequent original-run stop check found the control unavailable and exited before clicking. Native readback reported stopped/search_round_budget_exhausted with cancel_requested false. No stop POST or successful cancellation is claimed.",
+        "A later read-only census found three completed target actions, fifteen settled model reservations, one model reservation still reserved, no submitted/uncertain target actions and no active native run leases. The unsettled reservation remains under inspection.",
+        "The next test was only configured, without admission. No further paid campaign, blind stop, runtime restart or ledger edit was used to bypass the unresolved reservation."
+      ],
+      "remaining": [
+        "Successful cancellation after target execution is still unqualified.",
+        "The original terminal campaign still has one unsettled model reservation; inspect the original operation before admitting further work."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
@@ -662,7 +708,7 @@
     "An earlier member run had uncertain item/finalization acknowledgements. Supported administrator telemetry-only reconciliation later confirmed saved evidence with zero target calls; no target replay repaired it.",
     "Released SDK 0.1.2 dataset/checks uploads do not forward native conversation session metadata. The tested empty state is distinct from positive multi-turn session qualification.",
     "Own QA initially had default admission ceilings3rounds/3drafts while console Light requested5/5. The original rejection is retained; supported own-QA ceilings were aligned without changing shipped model profile or hosted runtime.",
-    "The MR-1003 teaching-tunnel HTTP530 action remains uncertain and preserved. Positive cooperative cancellation is not established by that terminal failure.",
+    "The earlier MR-1003 teaching-tunnel HTTP530 action remains uncertain and preserved. A separate workspace now qualifies queued cancellation; that does not resolve the earlier action or establish cancellation after execution begins.",
     "A transient Evals readiness warning during initial route loading cleared before final EV-1009 render/refreshed readback; known unconfigured connector/sidebar errors remain separate from these completed flows.",
     "Hosted beta own provisioned Gmail environment passed the named built-in lifecycle; shared data generation failed before QA. New QA organization Evals/cluster readiness remains unavailable. This does not repair the unconfigured local orchestrator or attest whole hosted deployment parity.",
     "Positive native sessions are now qualified only through a fresh separately provisioned MLflow3.16.1 application writer. SDK0.1.2 uploads remain a separate sessionless path. Initial UI evaluation-service read timeouts and background local connectors503 are preserved.",

@@ -6,11 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/progress-and-c
 
 > **Page qualification:** Current beta console · member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** MR-1002 was followed from running to retained completion. The original MR-1003 HTTP530 action remains uncertain and untouched. A separate MCP campaign executed despite an initial HTTP503; public refresh200 left the error unchanged, and one operator-assisted reconciliation restored its original completed/inconclusive evidence. Positive cooperative cancellation remains unverified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified.
+> **Walkthrough limits:** Run progress and completion were checked. In a separate QA workspace, queued MR-1003 admitted202 and Stop run200 on the same campaign; native cancellation finalized with no target/model work or unresolved recovery. Evidence sync200, full-page refresh and JSON export retained Stopped/INCONCLUSIVE and original identities. Cancellation after execution begins and resolution of the earlier HTTP530 uncertain action remain unverified. The separate MCP original admission/reconciliation and browser fresh-conversation failure records remain unchanged.
 
 Partly verified guide
 
-Run progress and completion have been checked. Successful cancellation and recovery from an uncertain target action are not yet verified.
+Queued cancellation and retained results have been checked. Stopping work already in progress and resolving an uncertain target action are still being verified.
 
 Follow the run Martian actually admitted and stop further work when appropriate. Success means you can identify the retained run, its final execution state, available evidence and any unresolved action requiring attention.
 
@@ -42,11 +42,26 @@ Running confirms admission to the runtime. This browser example later needed att
 ## Request cancellation
 
 1.  In the wizard’s Run step, click **Stop run**. In an eligible live trace, the corresponding action is **Request stop**.
-2.  Confirm the visible cancellation-request state. Martian must reconcile the runtime before a final stopped state is known; an acknowledgment alone is not proof that all work stopped.
-3.  Wait for the retained execution state and inspect any in-flight result that completed before cancellation took effect. A stop cannot undo an already issued target request or business action.
-4.  Refresh and reopen the same run. Check final execution, retained findings/evidence and any recovery notice. Do not count an unfinished or inconclusive run as a security pass.
+2.  Look for **cancellation requested** or **Stop requested**. The run may still show **Queued** or **Running** while Martian reconciles the runtime. Keep following the same run while that request is reconciled.
 
-The local QA cancellation attempt did not establish a successful stop: **MR-1003** reached **Needs attention** before its stop control could be used, after its teaching tunnel returned HTTP 530. The retained target action remained uncertain. No replacement execution or invented response was used to resolve it; positive cooperative cancellation remains unverified for this walkthrough.
+![The queued MR-1003 showing cancellation requested after the Stop run action.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-stop-requested.png)
+
+Stop requested acknowledges the intent. The run still shows Queued while cancellation is reconciled; wait for its final saved state.
+
+3.  Check the final **Assessment execution** state. A successful stop shows **Stopped**; **Needs attention** requires inspection. Review any result retained before the stop took effect. A stop cannot undo an already issued target request or business action.
+4.  Refresh and reopen the same run. Check its run code, execution state, evidence and any recovery notice. **Download legacy JSON evidence** preserves the displayed legacy run; the [export guide](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/history-and-exports.md) explains the other formats. **INCONCLUSIVE** is not a security pass.
+
+### Example: stop while queued
+
+In a separate synthetic QA workspace, **MR-1003** was stopped immediately after admission. Its saved trace, full-page refresh and JSON export retained **Stopped** and **INCONCLUSIVE**. The runtime confirmed cancellation had finished, with no target actions, model calls or unresolved recovery. This checks the queued-stop path; it does not establish how an already issued request will finish. The trace also displayed **Runtime error** because the interrupted native worker ended in that state; **Assessment execution** was **Stopped**.
+
+![The saved MR-1003 trace showing Stopped execution and an INCONCLUSIVE security outcome after refresh.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-stopped.png)
+
+This separate queued-stop example retained Stopped and INCONCLUSIVE after refresh and export. Runtime error describes the interrupted native worker; it is not a security verdict.
+
+### When a run needs attention instead
+
+An earlier **MR-1003** in a different QA workspace failed before its stop control could be used: the teaching tunnel returned HTTP 530 and left one target action uncertain. That record remains unresolved. No replacement execution or invented response was used to repair it.
 
 ![MR-1003 Needs attention with an uncertain teaching-tunnel action](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-needs-attention.png)
 
