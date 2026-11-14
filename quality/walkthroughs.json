@@ -795,6 +795,34 @@
         "Fresh-world repetitions, negative controls, verified positive findings, prepared scenarios, signed-in identity and published modern review/export are not inherited from this setup.",
         "Current collected-Discovery schema compatibility/authorized sensors and earlier unknown actions/provider usage/publications remain separate unresolved scopes."
       ]
+    },
+    {
+      "task": "Modern recorded review, redacted turn reads and distinct JSON exports",
+      "date": "2026-11-14",
+      "environment": "Isolated Documentation Browser Execution QA; synthetic HTTP fixture; real pinned Frontend, Backend, Agents and MLflow; opt-in artifact review policy; customer Owner with platform_admin false",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "result": "Passed one bounded run, retained history/refresh, Reports and domain JSON downloads, published revision and real redacted turn reads. Redacted ZIP download and archive inspection remain unverified.",
+      "observed": [
+        "A separate approved HTTP teaching target admitted one real endpoint-only, anonymous, Light and serial assessment (202). Its limits were five rounds, thirty target calls, one hundred model calls and six minutes. It produced twelve target replies and forty-four model calls, then Completed / INCONCLUSIVE / search_round_budget_exhausted with zero findings. Final target timestamps matched twelve completed native actions. No stop request was sent after execution had already completed.",
+        "Review setup required opt-in QA configuration, the real Owner redacted-content policy, a private durable Backend spool and missing writable native metadata directories. The source images and original native state were preserved. These are local provisioning and availability prerequisites; hosted parity is not attested.",
+        "The original frozen native telemetry retained 213 spans, three events and an exact source hash. An existing separate master administrator authorized the shipped replay_frozen_export recovery. Focused original-campaign metadata delivery removed its native spool only after verified Backend completion acknowledgment. Target timestamps confirmed zero target calls after replay began. No loss acknowledgment, replacement assessment or manual mapping assignment was used.",
+        "The existing Owner/admin saved-export reconcile route continued 67 immutable parts and the original manifest with confirm_absent_reissue false and no new-revision request. The original revision became persisted; its capture was cleaned only after verified publication. Frozen native-span coverage remained pending while the live header reported native delivery complete.",
+        "Actual Firefox Refresh review returned 200 after earlier 503 errors. Turns (12) returned all twelve unique action records with no next cursor; the first turn detail matched its original record and selected revision. All 48 exported-content envelopes passed SHA and byte checks: 29 present, 19 redacted. The synthetic token-shaped canary was absent and [REDACTED] present. Two checkpoint conversation records and twelve turn records spanning three conversation IDs have distinct counter scopes.",
+        "Actual Assessments and Replay selection and filtering reopened MR-1010. Browser reload retained its exact completed state, inconclusive verdict, source mode and start/end times. Reports downloaded 892-byte JSON; Download domain outcomes downloaded 12,428-byte JSON. Both matched the run, agent, state, verdict, times and zero findings. Neither contained Recorded review turn content.",
+        "Four actual Download redacted review requests returned 503 / review_provider_wait_exceeded before an archive was produced. ZIP download and inspection remain unverified. Anonymous header, record and download reads returned 401. Existing foreign-owner credentials did not sign in to this separate Backend, so new cross-tenant artifact readback is not qualified by that failed prerequisite.",
+        "Substantial Docker VM memory pressure was measured. A reversible 2 GiB artifact-service soft memory reservation preserved its container, process, configuration, mounts, 3 GiB hard memory limit, 6 GiB swap limit, two-CPU limit and exact native custody. A later section/detail read succeeded; ZIP timeouts persisted. The 4.75-second API and five-second provider bounds, model budgets, native reservations and qualification gates were unchanged.",
+        "A private observer initially used textbox for the actual Replay searchbox. The novice pass then found that Replay compact mode omits full run counters; opening its release-decision disclosure does not restore them. The example now opens Assessments and the real Probe coverage tab. Intermediate loading captures were excluded. Two final direct 1440 by 1000 images were individually viewed without DOM changes or network mocks.",
+        "Twenty-eight relevant source files matched the served archive and running images. The current native journal retained zero active leases, two uncertain target actions and three conservative unknown-usage model reservations. None was released or resolved by assertion. Earlier uncertain actions and other publication custody remain separate preserved scopes."
+      ],
+      "remaining": [
+        "Redacted review ZIP download and complete archive inspection remain unverified after actual503 provider waits.",
+        "Positive independently verified business effects, clean-world repetitions/negative controls, completed browser/advanced profile execution and Discovery collection/reporting/gating remain separate incomplete scopes.",
+        "The new artifact flow has actual Owner and anonymous read checks; a foreign-owner sign-in prerequisite failed in this Backend, so cross-tenant artifact readback remains unverified."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
@@ -811,6 +839,7 @@
     "A real MCP admission returned503 after native submission. Public Refresh evidence200 did not reconcile the missing admission link. One guarded operator invocation of the existing reconciliation routine restored that original run, with no duplicate dispatch or native-state edit; this is not proof that the customer refresh path works.",
     "A distinct browser campaign admitted202 and completed real website sign-in/two neutral setup messages, then stopped with fresh_conversation_unavailable:fresh_timeout before recording a probe outcome. One uncertain action remains awaiting recovery; completed browser execution and cancellation on that browser path are unqualified.",
     "Later isolated QA provisioned the actual pinned sandbox orchestrator/catalog and qualified Gmail optional inputs, shared/personal/new-world generation, automatic personal selection, login/refresh, reuse, extension/stop and assessment readiness. Earlier local connectors503 and beta generation failures remain historical; other simulations, agent business outcomes and network-policy enforcement are not inherited from this result.",
-    "Payment binding save/reapproval, exact manual example seed and independent starting-ledger prerequisites passed in separate local QA. Original supplied-tool setup failed with one retained uncertain target action; no business after-state, clean reproduction or no-implant control was qualified. Catalogue profile credentials on a built-in launch are not proof those accounts were seeded; fresh copies remain subject to normal tenant quotas."
+    "Payment binding save/reapproval, exact manual example seed and independent starting-ledger prerequisites passed in separate local QA. Original supplied-tool setup failed with one retained uncertain target action; no business after-state, clean reproduction or no-implant control was qualified. Catalogue profile credentials on a built-in launch are not proof those accounts were seeded; fresh copies remain subject to normal tenant quotas.",
+    "The separate opt-in modern review QA run has verified domain/report JSON and redacted on-screen turn reads, with operator-assisted original metadata/publication recovery. Its four ZIP reads timed out before producing an archive. Local memory pressure and unchanged provider deadlines remain material limits; this does not establish hosted parity or end-to-end ZIP qualification."
   ]
 }

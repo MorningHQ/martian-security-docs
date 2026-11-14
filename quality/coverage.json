@@ -472,6 +472,36 @@
           "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
           "path": "app/assessment_execution.py",
           "line": 642
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+          "path": "src/pages/History.jsx",
+          "line": 98
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+          "path": "src/pages/RunTrace.jsx",
+          "line": 707
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+          "path": "src/components/tracing/AssessmentReview.jsx",
+          "line": 483
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/assessment_reviews.py",
+          "line": 305
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/assessment_review_policy.py",
+          "line": 135
         }
       ],
       "numberedTaskStages": [
@@ -493,10 +523,11 @@
         "assessment-mcp-turn",
         "assessment-mcp-coverage",
         "assessment-browser-needs-attention",
-        "assessment-browser-coverage"
+        "assessment-browser-coverage",
+        "assessment-modern-redacted-turn"
       ],
       "qualification": "partial",
-      "validationStatus": "In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified. A separate payment run passed explicit seeded-account authentication and independent starting-ledger prerequisites, then retained Needs attention after MCP setup failed. Reopened before-only Outcome checks remained ready with no after-state or business-effect verdict; the original uncertain action is unchanged.",
+      "validationStatus": "In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified. A separate payment run passed explicit seeded-account authentication and independent starting-ledger prerequisites, then retained Needs attention after MCP setup failed. Reopened before-only Outcome checks remained ready with no after-state or business-effect verdict; the original uncertain action is unchanged. A separate modern review retained a published revision and12 redacted turn reads;48 content envelope hashes/byte counts passed. Domain/report JSON and refresh matched. Redacted ZIP reads timed out without an archive.",
       "documentationRoute": "/assessments/evidence-and-results/",
       "role": "viewer, member, admin, owner",
       "route": "/#/runs/<run-id>",
@@ -516,10 +547,11 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "partial; see validationStatus",
+        "realBackendWalkthrough": "partial: endpoint/baseline and redacted published record reads passed; business effects and ZIP incomplete",
         "screenshots": "partial",
         "remainingGaps": [
-          "Positive verified findings, complete independent after-state comparisons and artifact-backed Recorded review remain unverified."
+          "Positive verified findings and complete independent after-state comparisons remain unverified.",
+          "Published redacted review ZIP download and archive inspection remain unverified; the on-screen redacted record read is qualified separately."
         ]
       },
       "validation": [
@@ -549,6 +581,13 @@
           "observedPath": "Payment sandbox binding setup, reproducible manual seed and before-only outcome receipt",
           "environment": "Isolated Documentation Browser Execution QA; synthetic organization and payment target; real pinned Frontend, Backend, Agents, released SDK and local Kubernetes payment simulation; Owner with platform_admin false",
           "result": "Passed saved binding/template/reapproval/refresh stages and independent baseline prerequisites. Full business effect, clean reproduction and controls remain unverified."
+        },
+        {
+          "date": "2026-11-14",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Modern recorded review, redacted turn reads and distinct JSON exports",
+          "environment": "Isolated Documentation Browser Execution QA; synthetic HTTP fixture; real pinned Frontend, Backend, Agents and MLflow; opt-in artifact review policy; customer Owner with platform_admin false",
+          "result": "Passed one bounded run, retained history/refresh, Reports and domain JSON downloads, published revision and real redacted turn reads. Redacted ZIP download and archive inspection remain unverified."
         }
       ],
       "screenshots": [
@@ -561,10 +600,11 @@
         "assessment-mcp-turn",
         "assessment-mcp-coverage",
         "assessment-browser-needs-attention",
-        "assessment-browser-coverage"
+        "assessment-browser-coverage",
+        "assessment-modern-redacted-turn"
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
-      "customerNotice": "Endpoint-only evidence and sandbox baseline receipts are checked. Verified business effects and published recorded reviews remain incomplete."
+      "customerNotice": "Endpoint evidence, sandbox baselines and redacted turn reads are checked. Verified business effects and review ZIP downloads remain incomplete."
     },
     {
       "id": "assessments/history-and-exports",
@@ -615,6 +655,36 @@
           "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
           "path": "src/components/tracing/AssessmentReview.jsx",
           "line": 567
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+          "path": "src/pages/History.jsx",
+          "line": 98
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+          "path": "src/pages/RunTrace.jsx",
+          "line": 707
+        },
+        {
+          "repository": "MorningHQ/MartianFrontend",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+          "path": "src/components/tracing/AssessmentReview.jsx",
+          "line": 483
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/api/assessment_reviews.py",
+          "line": 305
+        },
+        {
+          "repository": "MorningHQ/MartianBackend",
+          "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+          "path": "app/assessment_review_policy.py",
+          "line": 135
         }
       ],
       "numberedTaskStages": [
@@ -626,10 +696,12 @@
       ],
       "screenshotIds": [
         "assessment-replay",
-        "assessment-reports"
+        "assessment-reports",
+        "assessment-modern-result",
+        "assessment-modern-redacted-turn"
       ],
       "qualification": "partial",
-      "validationStatus": "In isolated local QA, Assessments/Replay selection and filtering, refreshed MR-1002 evidence, Reports JSON and legacy finding-page JSON were checked. Domain-outcome and published redacted-review ZIP exports remain unverified.",
+      "validationStatus": "Actual retained Assessments/Replay filtering and refresh, Reports JSON, legacy finding-page JSON, modern domain JSON and a published revision with redacted turn/detail reads passed. Four redacted ZIP reads returned503 without an archive; ZIP download/inspection remain unverified.",
       "documentationRoute": "/assessments/history-and-exports/",
       "role": "viewer, member, admin, owner",
       "route": "/#/replay",
@@ -645,10 +717,10 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "partial; see validationStatus",
+        "realBackendWalkthrough": "partial: JSON history/export and published redacted on-screen reads passed; ZIP unavailable",
         "screenshots": "captured",
         "remainingGaps": [
-          "Modern domain-outcome and published redacted-review bundle export remain unverified."
+          "Published redacted review ZIP download and complete archive inspection remain unverified after actual provider timeouts."
         ]
       },
       "validation": [
@@ -657,14 +729,23 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "First endpoint-only assessment and admission failure boundary",
           "result": "Actual Assessments/Replay selection and filter, refreshed MR-1002 evidence, Reports JSON and legacy finding-page JSON were checked. Domain-outcome and published redacted-review ZIP export remain unverified."
+        },
+        {
+          "date": "2026-11-14",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Modern recorded review, redacted turn reads and distinct JSON exports",
+          "environment": "Isolated Documentation Browser Execution QA; synthetic HTTP fixture; real pinned Frontend, Backend, Agents and MLflow; opt-in artifact review policy; customer Owner with platform_admin false",
+          "result": "Passed one bounded run, retained history/refresh, Reports and domain JSON downloads, published revision and real redacted turn reads. Redacted ZIP download and archive inspection remain unverified."
         }
       ],
       "screenshots": [
         "assessment-replay",
-        "assessment-reports"
+        "assessment-reports",
+        "assessment-modern-result",
+        "assessment-modern-redacted-turn"
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
-      "customerNotice": "Recorded history and the documented JSON downloads have been checked. Domain-outcome and redacted-review ZIP exports are still being verified."
+      "customerNotice": "Run/domain JSON downloads and on-screen redacted review are checked. The review ZIP download remains unverified."
     },
     {
       "id": "assessments/progress-and-cancellation",

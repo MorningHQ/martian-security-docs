@@ -3597,6 +3597,53 @@
       "validationStatus": "Direct real application capture individually viewed for readability and secrets, with PNG integrity/metadata checks. Saved setup and before-only checks are qualified separately from the unfinished business-outcome walkthrough.",
       "reviewedForSecrets": true,
       "sha256": "275a97597f905415f1fb6d79505004351c599b4bc91b46fd67b00d6aecd1b976"
+    },
+    {
+      "id": "assessment-modern-result",
+      "file": "assessment-modern-result.png",
+      "alt": "MR-1010 full assessment summary with Completed execution, INCONCLUSIVE security outcome, twelve agent requests, forty-four model calls and zero displayed findings.",
+      "caption": "Open the run from Assessments for the full counters. Probe coverage is selected below the summary; completed execution and zero findings do not establish a security pass.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/history-and-exports: Example: check a modern run and its downloads, step 1"
+      ],
+      "environment": "Isolated Documentation Browser Execution QA; synthetic HTTP fixture; real pinned Frontend, Backend, Agents and MLflow; opt-in artifact review policy; customer Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T10:46:38.557664+00:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents images; 28 affected source files matched. Local opt-in review setup and operator metadata recovery, without hosted-beta parity or product-source changes.",
+      "validationStatus": "Direct real application capture individually viewed for readability and secrets; PNG integrity and metadata checked. JSON downloads and on-screen redaction passed; the redacted ZIP download remains unqualified after real provider timeouts.",
+      "reviewedForSecrets": true,
+      "sha256": "2a7036e3ce2a84703bd26e55eac6c3ddf0ff20adcd68ede48a55779cbfcdca48"
+    },
+    {
+      "id": "assessment-modern-redacted-turn",
+      "file": "assessment-modern-redacted-turn.png",
+      "alt": "First retained turn with redacted target response, credential_scrubbed status, exported byte counts and twelve loaded turn records.",
+      "caption": "The actual target response contains [REDACTED] instead of the fixture’s token-shaped test string. The critic rationale is model interpretation. This on-screen read does not establish a successful ZIP download.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/history-and-exports: Example: check a modern run and its downloads, step 3",
+        "assessments/evidence-and-results: Example: read a redacted turn"
+      ],
+      "environment": "Isolated Documentation Browser Execution QA; synthetic HTTP fixture; real pinned Frontend, Backend, Agents and MLflow; opt-in artifact review policy; customer Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T10:31:01.791584+00:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents images; 28 affected source files matched. Local opt-in review setup and operator metadata recovery, without hosted-beta parity or product-source changes.",
+      "validationStatus": "Direct real application capture individually viewed for readability and secrets; PNG integrity and metadata checked. JSON downloads and on-screen redaction passed; the redacted ZIP download remains unqualified after real provider timeouts.",
+      "reviewedForSecrets": true,
+      "sha256": "8aaabaadce77af47fa4b86c0eba77630bc133edfe04ab5d2858d83f709d4aa8a"
     }
   ]
 }

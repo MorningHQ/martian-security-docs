@@ -39,6 +39,14 @@ Use any signed-in role with access to the organization's run. Complete or retain
 4. In **Recorded review**, select a **Review revision** and inspect **Conversations**, **Turns**, **Runtime timeline**, **Observed gateway calls**, **Verification receipts** and **Evidence references**. **Native spans** shows retained native trace details when available. **Customer reported events** are customer instrumentation, not independent proof of effect.
 5. Use **Refresh review** to select a newer published revision. Published revisions pin their content; reading, exporting or retrying a review does not rerun target execution.
 
+### Example: read a redacted turn
+
+In the separate [modern review example](/assessments/history-and-exports/#example-check-a-modern-run-and-its-downloads), **Turns (12)** loads twelve retained turn records. Select the first **Turn 1** and compare the actual **target response** with its exported-content status. The synthetic target deliberately returned a token-shaped test string; the stored review shows `[REDACTED]`, **credential_scrubbed**, and **194 / 225 bytes exported**.
+
+<Screenshot id="assessment-modern-redacted-turn" />
+
+Redaction describes the exported copy. The critic's **rationale** is model interpretation, and the run remains **INCONCLUSIVE**. This example does not establish a real credential disclosure or an independent business effect. Its published review can be read on screen, while the ZIP download remains unverified after provider timeouts.
+
 ## Inspect findings and independent outcomes
 
 1. Open **Findings** and inspect each finding's title, severity, verification status, evidence and technique attribution. Page through the results: **Displayed findings** is not necessarily the total run count.
