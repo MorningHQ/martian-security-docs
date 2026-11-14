@@ -3355,6 +3355,174 @@
       "validationStatus": "One actual admission202, three original HTTP200 replies, then one Request stop200 on that same running campaign. Native cancellation finalized with no unresolved target actions or active native lease. One evidence sync200, full-page refresh, JSON export and actual Turn1 reply inspection retained stopped/INCONCLUSIVE and matching original action IDs/replies/hashes. One already issued model attempt retains unknown usage; no fabricated settlement or paid replay. Direct capture individually inspected for readability and secrets.",
       "reviewedForSecrets": true,
       "sha256": "d4871e331a7799ac2f60378aa4e1934fb3cfc27dd0bdedd169845a0d212040cf"
+    },
+    {
+      "id": "environment-generated-editor",
+      "file": "environment-generated-editor.png",
+      "alt": "Saved Documentation support inputs lab environment reopened with its synthetic workflow and Gmail selected.",
+      "caption": "The single save returned 201. Reopening retained the workflow and Gmail selection; this inspection was cancelled without another save.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Create the environment, steps 1–3"
+      ],
+      "environment": "Separate isolated Documentation Browser Execution QA; real Frontend, Backend, Agents and local Kubernetes Gmail simulation; synthetic inputs; Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T12:27:10.528847+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents/simulation images. Eighteen relevant served/runtime source files match. Actual pinned orchestrator executable/catalog. Local QA configuration only; no product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked.",
+      "reviewedForSecrets": true,
+      "sha256": "3832fbfdc0568f92c91ba0425a73b3484b99fa56f8030d868e23b8fe1cd0d8ed"
+    },
+    {
+      "id": "environment-optional-inputs",
+      "file": "environment-optional-inputs.png",
+      "alt": "Environment editor with a whole-environment JSON Schema and Gmail-only CSV parsed as two sample records.",
+      "caption": "Inspect each input’s type, scope and parsing result before saving. These two uploaded files and their scopes survived reopening the saved revision.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Create the environment, steps 4–6"
+      ],
+      "environment": "Separate isolated Documentation Browser Execution QA; real Frontend, Backend, Agents and local Kubernetes Gmail simulation; synthetic inputs; Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T10:16:51.873970+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents/simulation images. Eighteen relevant served/runtime source files match. Actual pinned orchestrator executable/catalog. Local QA configuration only; no product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked.",
+      "reviewedForSecrets": true,
+      "sha256": "354172ae367ad73549dc004a5a9f146618991423a5426a5af4b573d1a564bb0f"
+    },
+    {
+      "id": "environment-input-parse-error",
+      "file": "environment-input-parse-error.png",
+      "alt": "Invalid JSON sample with its parsing error and Fix or remove the input marked above before saving message.",
+      "caption": "The invalid input prevented the save before a request was submitted. The corrected CSV then parsed successfully and the environment was saved once.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Create the environment, optional input recovery"
+      ],
+      "environment": "Separate isolated Documentation Browser Execution QA; real Frontend, Backend, Agents and local Kubernetes Gmail simulation; synthetic inputs; Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T10:16:51.698372+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents/simulation images. Eighteen relevant served/runtime source files match. Actual pinned orchestrator executable/catalog. Local QA configuration only; no product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked.",
+      "reviewedForSecrets": true,
+      "sha256": "7e651a7712b0dda8d9a201ce9414d73584d241af69890ac226c46ebfc9185b61"
+    },
+    {
+      "id": "environment-generated-variants",
+      "file": "environment-generated-variants.png",
+      "alt": "Environment data after New world showing ready shared Gmail with three users and four emails, ready personal Gmail with four users and four emails, and the unchanged Fit advice.",
+      "caption": "New world regenerated shared data and retained the separate personal variant. Both system documents are Generated. Fit still recommends Zendesk for the support-case input structure.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Generate or reuse synthetic data, steps 3–5"
+      ],
+      "environment": "Separate isolated Documentation Browser Execution QA; real Frontend, Backend, Agents and local Kubernetes Gmail simulation; synthetic inputs; Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T12:27:09.554049+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents/simulation images. Eighteen relevant served/runtime source files match. Actual pinned orchestrator executable/catalog. Local QA configuration only; no product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked.",
+      "reviewedForSecrets": true,
+      "sha256": "cb456eb28fcc58213600300bcc577c8a32ce0fa9c646f696e66f4d6cb26fdecc"
+    },
+    {
+      "id": "environment-generated-sandbox-ready",
+      "file": "environment-generated-sandbox-ready.png",
+      "alt": "Gmail sandbox Ready with four accounts, generated user data, remaining lifetime and Open and Details controls.",
+      "caption": "Automatic launch selected the exact ready personal document. A real instance read after full refresh retained the generated source, document and Ready state.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Launch and verify readiness, steps 1–3"
+      ],
+      "environment": "Separate isolated Documentation Browser Execution QA; real Frontend, Backend, Agents and local Kubernetes Gmail simulation; synthetic inputs; Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T12:28:06.864263+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents/simulation images. Eighteen relevant served/runtime source files match. Actual pinned orchestrator executable/catalog. Local QA configuration only; no product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked.",
+      "reviewedForSecrets": true,
+      "sha256": "47f36d6c4f060aa57153a3987028a86232dd855355e3c004e072589e1ee6ae7c"
+    },
+    {
+      "id": "environment-generated-lifetime",
+      "file": "environment-generated-lifetime.png",
+      "alt": "Sandbox Details showing generated personal data, a retained 60-minute lifetime and Extend 30 min and Stop sandbox controls, with account values covered.",
+      "caption": "Extend 30 min moved this instance’s expiry by exactly 1,800 seconds. Its 60-minute lifetime persisted after refresh. Native screenshot masking covers the seeded account section for privacy.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Launch and verify readiness, step 4"
+      ],
+      "environment": "Separate isolated Documentation Browser Execution QA; real Frontend, Backend, Agents and local Kubernetes Gmail simulation; synthetic inputs; Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T12:38:12.483507+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents/simulation images. Eighteen relevant served/runtime source files match. Actual pinned orchestrator executable/catalog. Local QA configuration only; no product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked.",
+      "reviewedForSecrets": true,
+      "sha256": "2cd2a95f70dd07d0294e7d1cf4f6dffba16575b9030ee0edc35796ba7932070e"
+    },
+    {
+      "id": "environment-generated-assessment-ready",
+      "file": "environment-generated-assessment-ready.png",
+      "alt": "Assessment Environment step showing Documentation support inputs lab and Sandboxes ready for Gmail, with endpoint-only testing unchecked.",
+      "caption": "Prepare assessment opens at Agent; Back returns here. A distinct post-stop launch reused the same personal seed without another generation request. Sandbox readiness is separate from the agent’s bindings and independent business checks.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "environments/create-and-launch: Launch and verify readiness, steps 5–6"
+      ],
+      "environment": "Separate isolated Documentation Browser Execution QA; real Frontend, Backend, Agents and local Kubernetes Gmail simulation; synthetic inputs; Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T12:41:18.710353+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents/simulation images. Eighteen relevant served/runtime source files match. Actual pinned orchestrator executable/catalog. Local QA configuration only; no product-source patch or hosted-beta parity claim.",
+      "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked.",
+      "reviewedForSecrets": true,
+      "sha256": "3badba5c97b7e53827eb29cfc31e34b3fbae339a33669c3abb9dc3b3576796a3"
     }
   ]
 }

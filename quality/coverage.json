@@ -1220,25 +1220,25 @@
       "sources": [
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/pages/EnvironmentEditor.jsx",
           "line": 416
         },
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/pages/Environments.jsx",
           "line": 154
         },
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/components/EnvironmentDataDrawer.jsx",
           "line": 83
         },
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/components/SandboxDrawer.jsx",
           "line": 78
         },
@@ -1280,10 +1280,17 @@
         "environments-create",
         "environments-save-options",
         "environments-data",
-        "environments-ready"
+        "environments-ready",
+        "environment-generated-editor",
+        "environment-optional-inputs",
+        "environment-input-parse-error",
+        "environment-generated-variants",
+        "environment-generated-sandbox-ready",
+        "environment-generated-lifetime",
+        "environment-generated-assessment-ready"
       ],
-      "qualification": "partial",
-      "validationStatus": "Own beta Gmail environment save/reopen, built-in sandbox readiness, real seeded Gmail login/refresh, expiry extension and stop were observed. Shared generation failed before QA. Generated/personal worlds, optional file inputs, other simulations and agent binding/business checks remain unverified.",
+      "qualification": "verified",
+      "validationStatus": "Passed all seven unchanged environment-guide stages in the named Gmail-only local scope; agent bindings, independent assessment effects and other simulations remain separate qualification",
       "documentationRoute": "/environments/create-and-launch/",
       "role": "member, admin, owner",
       "route": "/#/environments",
@@ -1301,11 +1308,12 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "partial; named beta Gmail lifecycle and local Viewer boundary",
+        "realBackendWalkthrough": "passed all seven unchanged stages; named Gmail-only generated-data scope",
         "screenshots": "captured",
         "remainingGaps": [
-          "Successful shared/personal/new-world generation and optional schema/sample upload remain unverified.",
-          "Other simulation types, agent bindings and independent assessment business outcomes remain unverified."
+          "This qualification is Gmail-only in the named local QA environment, not every supported simulation or hosted-beta parity. Custom-environment deletion remains source reviewed.",
+          "Agent sandbox bindings, prepared scenarios/attested synthetic identity, independently verified business effects, clean-world repetitions/controls and modern reviewed exports require their separate full walkthroughs.",
+          "The local default CNI does not establish network-policy enforcement. Discovery still requires a compatible collector/Backend contract and authorized collection/sensor scope. Earlier uncertain actions, provider-usage reservations and publication state remain untouched."
         ]
       },
       "validation": [
@@ -1314,15 +1322,29 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "Beta Gmail environment and bounded sandbox lifecycle",
           "result": "Own beta Gmail environment save/reopen, built-in sandbox readiness, real seeded Gmail login/refresh, expiry extension and stop were observed. Shared generation failed before QA. Generated/personal worlds, optional file inputs, other simulations and agent binding/business checks remain unverified."
+        },
+        {
+          "date": "2026-11-14",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Generated Gmail environment, shared/personal/new-world data and bounded sandbox lifecycle",
+          "environment": "Separate isolated Documentation Browser Execution QA; real Frontend, Backend, Agents and local Kubernetes Gmail simulation; synthetic inputs; Owner with platform_admin false",
+          "result": "Passed all seven unchanged environment-guide stages in the named Gmail-only local scope; agent bindings, independent assessment effects and other simulations remain separate qualification"
         }
       ],
       "screenshots": [
         "environments-create",
         "environments-save-options",
         "environments-data",
-        "environments-ready"
+        "environments-ready",
+        "environment-generated-editor",
+        "environment-optional-inputs",
+        "environment-input-parse-error",
+        "environment-generated-variants",
+        "environment-generated-sandbox-ready",
+        "environment-generated-lifetime",
+        "environment-generated-assessment-ready"
       ],
-      "environment": "Hosted AWS beta own synthetic Gmail fixture; separate local Viewer authorization check",
+      "environment": "Separate isolated Documentation Browser Execution QA; real Frontend, Backend, Agents and local Kubernetes Gmail simulation; synthetic inputs; Owner with platform_admin false",
       "screenshotStages": [
         {
           "id": "environments-create",
@@ -1347,9 +1369,52 @@
           "caption": "The selected environment reports Sandboxes ready with Gmail running. This is simulation readiness, separate from an agent binding or independently verified business outcome.",
           "alt": "Assessment Environment step showing Sandboxes ready for the synthetic Gmail environment.",
           "validationStatus": "Real capture registered; see source/provenance and scoped guide validation."
+        },
+        {
+          "id": "environment-generated-editor",
+          "caption": "The single save returned 201. Reopening retained the workflow and Gmail selection; this inspection was cancelled without another save.",
+          "alt": "Saved Documentation support inputs lab environment reopened with its synthetic workflow and Gmail selected.",
+          "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked."
+        },
+        {
+          "id": "environment-optional-inputs",
+          "caption": "Inspect each input’s type, scope and parsing result before saving. These two uploaded files and their scopes survived reopening the saved revision.",
+          "alt": "Environment editor with a whole-environment JSON Schema and Gmail-only CSV parsed as two sample records.",
+          "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked."
+        },
+        {
+          "id": "environment-input-parse-error",
+          "caption": "The invalid input prevented the save before a request was submitted. The corrected CSV then parsed successfully and the environment was saved once.",
+          "alt": "Invalid JSON sample with its parsing error and Fix or remove the input marked above before saving message.",
+          "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked."
+        },
+        {
+          "id": "environment-generated-variants",
+          "caption": "New world regenerated shared data and retained the separate personal variant. Both system documents are Generated. Fit still recommends Zendesk for the support-case input structure.",
+          "alt": "Environment data after New world showing ready shared Gmail with three users and four emails, ready personal Gmail with four users and four emails, and the unchanged Fit advice.",
+          "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked."
+        },
+        {
+          "id": "environment-generated-sandbox-ready",
+          "caption": "Automatic launch selected the exact ready personal document. A real instance read after full refresh retained the generated source, document and Ready state.",
+          "alt": "Gmail sandbox Ready with four accounts, generated user data, remaining lifetime and Open and Details controls.",
+          "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked."
+        },
+        {
+          "id": "environment-generated-lifetime",
+          "caption": "Extend 30 min moved this instance’s expiry by exactly 1,800 seconds. Its 60-minute lifetime persisted after refresh. Native screenshot masking covers the seeded account section for privacy.",
+          "alt": "Sandbox Details showing generated personal data, a retained 60-minute lifetime and Extend 30 min and Stop sandbox controls, with account values covered.",
+          "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked."
+        },
+        {
+          "id": "environment-generated-assessment-ready",
+          "caption": "Prepare assessment opens at Agent; Back returns here. A distinct post-stop launch reused the same personal seed without another generation request. Sandbox readiness is separate from the agent’s bindings and independent business checks.",
+          "alt": "Assessment Environment step showing Documentation support inputs lab and Sandboxes ready for Gmail, with endpoint-only testing unchecked.",
+          "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked."
         }
       ],
-      "customerNotice": "The built-in Gmail sandbox lifecycle has been checked in one beta workspace. Generated/personal worlds, other simulations and agent business checks are still being verified."
+      "verifiedAt": "2026-11-14",
+      "verifiedEnvironment": "Separate isolated Documentation Browser Execution QA; real Frontend, Backend, Agents and local Kubernetes Gmail simulation; synthetic inputs; Owner with platform_admin false"
     },
     {
       "id": "evals/compare",
