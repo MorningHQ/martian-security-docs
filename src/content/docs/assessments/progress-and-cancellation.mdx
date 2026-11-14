@@ -33,7 +33,7 @@ An approved browser target also passes through the real **Run** step. This separ
 
 </details>
 
-3. Inspect agent requests, model calls and execution limits. A queued/submitted state is not proof that the downstream target or model executed. Missing or incomplete evidence must remain visible.
+3. Inspect agent requests, model calls and execution limits. An em dash means the count is unavailable, not zero; inspect the retained turns as well. A queued/submitted state is not proof that the downstream target or model executed.
 4. Use **Refresh evidence** when you need the current projection from the existing runtime campaign. This does not start another assessment. After a submission error, an unchanged result can still require operator inspection; refresh is not proof that no work was admitted.
 5. When execution ends, reopen the run from **Assessments** or **Replay**, refresh the browser and confirm the same run code, state and retained results. The wizard advances to **Report** for terminal completed, failed, incomplete or stopped runs.
 
@@ -42,16 +42,43 @@ An approved browser target also passes through the real **Run** step. This separ
 1. In the wizard's Run step, click **Stop run**. In an eligible live trace, the corresponding action is **Request stop**.
 2. Look for **cancellation requested** or **Stop requested**. The run may still show **Queued** or **Running** while Martian reconciles the runtime. Keep following the same run while that request is reconciled.
 
-<Screenshot id="assessment-stop-requested" />
+<Screenshot id="assessment-active-stop-requested" />
 
 3. Check the final **Assessment execution** state. A successful stop shows **Stopped**; **Needs attention** requires inspection. Review any result retained before the stop took effect. A stop cannot undo an already issued target request or business action.
 4. Refresh and reopen the same run. Check its run code, execution state, evidence and any recovery notice. **Download legacy JSON evidence** preserves the displayed legacy run; the [export guide](/assessments/history-and-exports/) explains the other formats. **INCONCLUSIVE** is not a security pass.
 
+### Example: stop an active HTTP run
+
+The synthetic **MR-1005** recorded three HTTP replies before **Request stop** was used. The saved run then reached **Stopped / INCONCLUSIVE**, with **Runtime interrupted** and the stop control removed. A full-page refresh and JSON export retained the same run and all three original replies. The request and model counters remained unavailable; the dashes did not mean no calls had occurred.
+
+<Screenshot id="assessment-active-stopped" />
+
+To inspect a reply kept after stopping:
+
+1. In **Trace**, click **Expand all**, then select **Turn 1**.
+2. Read **Customer agent reply** and its **Journal**. In this example, the journal retained **prepared → submitted → completed**.
+3. Read **Turn assessment** separately. The attacker's critic is model opinion; it is not an independently verified business effect.
+
+<Screenshot id="assessment-active-stop-reply" />
+
+<Aside type="note" title="Already issued calls still count">
+  A stop cannot undo a target request or model request already sent. Model usage can remain unknown when a provider request is interrupted or its response is lost. Keep that uncertainty visible; **Stopped** does not mean zero usage or zero cost.
+</Aside>
+
+These examples check the anonymous HTTP path. Resolving an uncertain action, and stopping browser or sandbox-backed runs, remain outside this qualification.
+
 ### Example: stop while queued
+
+<details>
+<summary>Show the queued-stop example</summary>
 
 In a separate synthetic QA workspace, **MR-1003** was stopped immediately after admission. Its saved trace, full-page refresh and JSON export retained **Stopped** and **INCONCLUSIVE**. The runtime confirmed cancellation had finished, with no target actions, model calls or unresolved recovery. This checks the queued-stop path; it does not establish how an already issued request will finish. The trace also displayed **Runtime error** because the interrupted native worker ended in that state; **Assessment execution** was **Stopped**.
 
+<Screenshot id="assessment-stop-requested" />
+
 <Screenshot id="assessment-stopped" />
+
+</details>
 
 ### When a run needs attention instead
 
