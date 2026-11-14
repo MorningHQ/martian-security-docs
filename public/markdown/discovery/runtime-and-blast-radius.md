@@ -6,11 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/discovery/runtime-and-blas
 
 > **Page qualification:** Current beta console · owner, admin · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** Source reviewed; live walkthrough and required screenshots pending.
+> **Walkthrough limits:** Real local Owner inspected the empty-workspace prerequisite screen against the real Backend; observed Discovery GET200 and blocked creation. Full enrollment, instrumentation, execution and required journey captures remain pending.
 
 Guide in progress
 
-The local reporter setup is checked. Delivery to Discovery and the runtime and blast-radius views still need a complete walkthrough.
+The empty-workspace setup boundary is checked. A compatible authorized source and collected workload are still needed for the complete live walkthrough.
 
 Follow application-reported model/tool activity for one deployment and compare it with collected potential access. Success means the intended binding receives real instrumented calls and you can trace each visible relationship to its evidence and time boundary.
 
@@ -25,6 +25,14 @@ Deployment, environment and version labels attribute reports; they do not attest
 1.  Open **Discovery → Sources → Runtime reporting**, then **Connect runtime reporter**.
 2.  Use **Find workload**, choose **Discovered workload**, then enter **Deployment label**, **Environment** and **Deployed version**. The first 50 search matches are listed; narrow the search if necessary.
 3.  Click **Create runtime binding**.
+
+If no workload is listed
+
+**No matching workloads** means there is no collected workload matching the search. [Connect an authorized source and collect its inventory](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/inventory.md), or change the search. Entering a deployment label does not create the missing workload; **Create runtime binding** stays disabled until you select one.
+
+![Connect runtime reporter with No matching workloads and disabled Create runtime binding.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/discovery-runtime-no-workloads.png)
+
+Runtime setup stops until an authorized source has collected a matching workload. Deployment labels alone do not create that inventory record. No binding or credential was created.
 
 4.  Privately save the Binding ID and once-shown **Runtime credential**. Mount the credential as a read-only secret file in that workload and configure its SDK reporter with the trusted Backend HTTPS origin and binding. Click **Credential saved** to clear the credential panel.
 5.  Start one reporter per customer application process, create a trace for each invocation and instrument the actual model/tool calls. A successful report is metadata about that call, not an assertion that a downstream business action happened.

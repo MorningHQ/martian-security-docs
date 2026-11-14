@@ -580,6 +580,19 @@
       "environment": "Production local preview; actual Chromium browser; 1440 by 1000, 390 by 844 and 320-pixel layouts; light and dark; AI-simulated novice/author review with no human participant",
       "result": "Passed focused source/content/privacy review and actual documentation UI checks; end-to-end qualification remains incomplete",
       "details": "330 actual browser responses with zero HTTP, failed-request, console or page errors. Three changed routes in twelve desktop/narrow theme combinations, plus three 320-pixel checks. Exact page/SDK code/agent-link clipboard, actual search, deep refresh, image decoding, both new full-size captures, logo-only branding, hidden header metadata and continued example numbering passed. Export button words remain intact at 320 and 390 pixels. Actual renders were viewed. The novice pass corrected compact Replay navigation to Assessments for full counters; the visual pass simplified the export comparison to two readable columns. All 37 required-stage lists and qualifications, the other 35 guide records and all 155 earlier capture entries remain unchanged. Coverage stays 28 verified, six partial and three pending; strict release stays exit 1 with 24 findings. No dependency, Actions, check-script or product-source changes."
+    },
+    {
+      "scope": "Discovery empty-workspace prerequisite screens and retained gate binding boundary",
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization; real pinned Frontend and Backend; customer Owner with platform_admin false; no connected Discovery source",
+      "result": "Passed read-only runtime/capture/observer/gate prerequisite views and gate full-refresh retention; no enrollment or live instrumentation qualified.",
+      "record": "quality/walkthroughs.json",
+      "details": "Thirty-seven real read-only Discovery requests returned HTTP 200 with no new page errors. Runtime, capture, observer and gate setup remained blocked by missing prerequisites; the gate retained its exact state after a full reload. Twelve source files matched and four direct 1440 by 1000 captures were individually viewed. An earlier Firefox page crash was preserved separately. No source, binding, credential, gate, grant, observer, sensor, target request or model request was created. All 37 required-stage lists and qualifications, the other 34 guide records and all 157 earlier capture entries remain unchanged."
+    },
+    {
+      "scope": "Discovery prerequisite guide source, simulated novice and visual review",
+      "environment": "Production local preview; actual Chromium; desktop 1440 by 1000, narrow 390 by 844 and 320-pixel layouts; light and dark; AI-simulated novice/author review with no human participant",
+      "result": "Passed focused documentation source, privacy, readability and actual UI checks; full Discovery qualification remains pending",
+      "details": "372 actual browser responses with zero HTTP, failed-request, console or page errors across 23 checks. Four routes in sixteen desktop/narrow theme combinations and four 320-pixel checks passed. Exact page/code/agent-link clipboard, search, nested refresh, full-size viewing of all four new images, decoding, callout contrast, consecutive step numbering, logo-only branding and hidden header metadata passed. Six actual renders were viewed. The simulated novice review checked how to proceed from an empty workload, source or deployment selector; each now has a concrete linked prerequisite. Counts remain 28 verified, six partial and three pending; the strict release audit remains exit 1 with 24 findings."
     }
   ],
   "remainingGaps": [

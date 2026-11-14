@@ -823,6 +823,28 @@
         "Positive independently verified business effects, clean-world repetitions/negative controls, completed browser/advanced profile execution and Discovery collection/reporting/gating remain separate incomplete scopes.",
         "The new artifact flow has actual Owner and anonymous read checks; a foreign-owner sign-in prerequisite failed in this Backend, so cross-tenant artifact readback remains unverified."
       ]
+    },
+    {
+      "task": "Discovery empty-workspace prerequisite screens and retained gate binding boundary",
+      "date": "2026-11-14",
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization; real pinned Frontend and Backend; customer Owner with platform_admin false; no connected Discovery source",
+      "sourceRevisions": {
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12"
+      },
+      "result": "Passed read-only runtime/capture/observer/gate prerequisite views and gate full-refresh retention; no enrollment or live instrumentation qualified.",
+      "observed": [
+        "The actual Owner opened Discovery Overview and Connect runtime reporting. The real workload search returned200 with no matching workload; the selector only offered Choose a workload and Create runtime binding stayed disabled. No invented inventory, binding or reporting credential was submitted.",
+        "Prepare capture grant and Connect continuous observer each loaded their real eligible-source lists. Both showed No eligible sources and only Choose a source; Create capture grant and Register observer stayed disabled. No grant, upload credential, observer, sensor or privileged installation was created.",
+        "The actual Kill switch tab had only Select a deployment binding and instructed the user to connect a runtime reporter under Sources. Create customer assignment was absent. Full browser reload retained the same empty binding and prerequisite message; no gate enrollment, control, block, expiry or resume was exercised.",
+        "Thirty-seven actual observed Discovery requests in this focused Chromium check were GET responses with HTTP 200, with no new page errors. Twelve relevant Frontend/Backend source-file hashes matched the served archive and running image. The current main Discovery schema blob remained identical to the pinned strict schema, so collector compatibility remains a prerequisite.",
+        "An earlier separate Firefox read ended with Page crashed and did not yield a completed form observation. The preserved Chromium context completed the named read-only path without that failure; this is not a claim that every browser or the whole application is error-free. Four final direct 1440 by 1000 captures were individually viewed; earlier loading captures were excluded. No DOM changes, intercepted requests or mocked responses were used."
+      ],
+      "remaining": [
+        "An authorized compatible source/collector pair and actual collected workload are still required before runtime enrollment or call-gate setup.",
+        "Actual reporting, target/resource retention, Blast radius evidence, call decisions/acknowledgment, callable non-entry and resume/expiry remain unverified.",
+        "Capture grants, observer enrollment, approved sensors, fresh network windows/health and revocation remain unverified. No network-policy enforcement is claimed."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
