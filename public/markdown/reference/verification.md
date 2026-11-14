@@ -10,7 +10,7 @@ These guides are being qualified against actual running application/backend stat
 
 The site is being published iteratively. Guides with unfinished walkthroughs show a short notice above the instructions. Detailed roles, dates, tested environments and qualification records are collected here and retained in **Copy page** Markdown. Authenticated captures and complete execution checks are added as they pass.
 
-Of **37 task guides**, **26 are verified**, **7 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **140 captured references** across **128 unique PNGs**. These counts come from the current coverage and screenshot manifests.
+Of **37 task guides**, **26 are verified**, **7 are partly verified** and **4 await walkthrough verification**. The screenshot record contains **142 captured references** across **130 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 
@@ -68,7 +68,9 @@ The separate shared-generation attempt failed before QA. No generated or persona
 
 The new beta QA Owner also inspected **Connect source → Add a read-only source**. The Kubernetes list had no authorized alias and **Create source** stayed disabled. Read-only checks of the deployed Discovery schema, API and configuration files matched the Backend baseline below. That schema rejects a Kubernetes observation field emitted by the available collector snapshot. Compatible collection and operator-approved scope remain prerequisites; no source, collector credential or inventory was created for this check.
 
-The teaching callbacks are deterministic. These checks verify wiring and retained evidence; they do not establish production model quality or security. MCP endpoint execution was observed in the operator-assisted scope above. Self-service admission recovery, browser execution, sandbox-backed assessments, positive cooperative cancellation and the remaining screenshot-dependent journeys are still being qualified. Verified labels name the local or GitHub-runner QA scope; they do not imply hosted-beta parity. Partly verified guides identify their remaining limits above the steps.
+A separate HTTP run qualified [stopping while queued](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/progress-and-cancellation.md#example-stop-while-queued). One admission and one **Stop run** request referred to the same original campaign. The console retained **Stopped / INCONCLUSIVE**; native inspection confirmed cancellation finalized with no target actions, model work, held budget or active native run leases. **Refresh evidence**, full-page refresh and the actual JSON export agreed. The interrupted native worker’s **Runtime error** label remained visible. This does not qualify stopping after target execution begins, and it does not resolve either earlier uncertain action. Seven owning UI, Backend and native cancellation source files matched the recorded baseline.
+
+The teaching callbacks are deterministic. These checks verify wiring and retained evidence; they do not establish production model quality or security. MCP endpoint execution was observed in the operator-assisted scope above. Self-service admission recovery, completed browser execution, sandbox-backed assessments, cancellation after execution begins and the remaining screenshot-dependent journeys are still being qualified. Verified labels name the local or GitHub-runner QA scope; they do not imply hosted-beta parity. Partly verified guides identify their remaining limits above the steps.
 
 A second three-record member run initially retained canonical passes while some telemetry acknowledgements were uncertain. Administrator reconciliation later confirmed the saved evidence with **zero target calls**. A stalled, never-submitted SDK dataset publication was safely aborted and its restored draft published after that recovery. A manually repeated numeric review save after a delayed acknowledgement also produced an additional history entry; queue completion was checked against its four latest verified answers.
 
@@ -90,7 +92,7 @@ Installing a newer release does not extend those recorded results automatically.
 | Component | Reviewed source revision |
 | --- | --- |
 | Frontend | 06d0d0c96a9627c383b85670929dfe8bdc33aa30 |
-| Frontend for browser failure and Pipeline follow-up | 5361d1f241278e19c79e68d1d8f9325920a04d12 |
+| Frontend for browser, cancellation and Pipeline follow-up | 5361d1f241278e19c79e68d1d8f9325920a04d12 |
 | Backend | 01343fa93feb518f6c7cd1928b63a01d2ec5ee0b |
 | Agents | f7de3e068d66fe478f642d43a658ed9b3ed321f5 |
 | Evals service | 60c25994958105db4baa91f377ba46c24fdf253d |

@@ -3240,6 +3240,52 @@
       "validationStatus": "Actual UI admission202, website sign-in and two neutral setup turns, followed by a retained fresh-conversation failure. Reload, native recovery read and actual legacy JSON download agree. The uncertain action is unchanged; a completed browser assessment and cancellation remain unqualified. Each direct capture was individually viewed for readability and secrets.",
       "reviewedForSecrets": true,
       "sha256": "91c96f7bb64a255cad3aab6cc3b9f80b7ec10832b8dd1b71c282e88b83c0dc7c"
+    },
+    {
+      "id": "assessment-stop-requested",
+      "file": "assessment-stop-requested.png",
+      "alt": "The queued MR-1003 showing cancellation requested after the Stop run action.",
+      "caption": "Stop requested acknowledges the intent. The run still shows Queued while cancellation is reconciled; wait for its final saved state.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/progress-and-cancellation: Request cancellation, after step 2"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and Agents; approved synthetic HTTPS HTTP target; Documentation Browser Execution QA organization",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T07:39:48.363091+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged release images; named source baseline, without hosted-beta parity or product-source changes.",
+      "validationStatus": "One actual admission202 and stop200 on the same original queued run. Native cancellation finalized with no actions or budget reservations; one evidence sync200, full-page refresh and actual legacy JSON export retained stopped/INCONCLUSIVE and the same campaign/run IDs. Direct capture individually inspected for readability and secrets. This does not qualify cancellation after target execution.",
+      "reviewedForSecrets": true,
+      "sha256": "87af25a512ea55e5bf2f114ab94928720800e180463cea8dcb4a78dfbd23e627"
+    },
+    {
+      "id": "assessment-stopped",
+      "file": "assessment-stopped.png",
+      "alt": "The saved MR-1003 trace showing Stopped execution and an INCONCLUSIVE security outcome after refresh.",
+      "caption": "This separate queued-stop example retained Stopped and INCONCLUSIVE after refresh and export. Runtime error describes the interrupted native worker; it is not a security verdict.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/progress-and-cancellation: Request cancellation, after step 4"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend and Agents; approved synthetic HTTPS HTTP target; Documentation Browser Execution QA organization",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T07:51:52.915447+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged release images; named source baseline, without hosted-beta parity or product-source changes.",
+      "validationStatus": "One actual admission202 and stop200 on the same original queued run. Native cancellation finalized with no actions or budget reservations; one evidence sync200, full-page refresh and actual legacy JSON export retained stopped/INCONCLUSIVE and the same campaign/run IDs. Direct capture individually inspected for readability and secrets. This does not qualify cancellation after target execution.",
+      "reviewedForSecrets": true,
+      "sha256": "fc9e9b5c5e981efeeea2977b76237bdd50d68fe9f1d94faeb9d75a8ffe2b7b67"
     }
   ]
 }
