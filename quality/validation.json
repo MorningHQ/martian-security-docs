@@ -554,6 +554,19 @@
       "environment": "Production local preview at 1440×1000,390×844 and320px; light/dark; real browser; AI-simulated novice/author review, no human participant",
       "result": "Passed focused source/content/privacy review and actual documentation UI checks",
       "details": "Build/default checks pass across47pages;46agent exports and68exact code payloads. Unchanged strict gate exits1 with27findings:17missing capture references,9unfinished walkthroughs and summary. All7new full-size images opened at1440×1000; visible images decoded. Exact page/JSON/CSV/SDK-code/agent-link copy, all3optional disclosures, continued step numbering, real search/deep refresh/home navigation and logo-only/hidden-header-metadata checks pass.275responses with0HTTP/request/console/page errors. Pending binding note text contrast7.77light/9.27dark. Viewed actual local desktop/mobile top and generation captures. Novice review clarified action/data selection, Fit versus Generated, complete example files, Prepare assessment→Agent→Back, and Draft versus sandbox readiness. Initial UI observer list-segmentation and direct-Aside-text mistakes were corrected without changing the site. Only the named environment guide was promoted after all7existing stages."
+    },
+    {
+      "scope": "Payment sandbox binding setup, reproducible manual seed and before-only outcome receipt",
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization and payment target; real pinned Frontend, Backend, Agents, released SDK and local Kubernetes payment simulation; Owner with platform_admin false",
+      "result": "Passed saved binding/template/reapproval/refresh stages and independent baseline prerequisites. Full business effect, clean reproduction and controls remain unverified.",
+      "record": "quality/walkthroughs.json",
+      "details": "Real saved connection and manual seed helper write/reuse/refusal paths; account login/refresh; admitted independently read before-state only; preserved failed built-in sign-in, unresolved MCP setup action and quota refusal. Nineteen affected source files match. Three individually viewed real Martian captures; no promotion to a passed business walkthrough."
+    },
+    {
+      "scope": "Payment binding guide source, novice and visual review",
+      "environment": "Production local preview at 1440×1000,390×844 and320px; light/dark; actual browser; AI-simulated novice/author review, no human participant",
+      "result": "Passed focused source/content/privacy review and documentation UI checks; full end-to-end qualification remains incomplete",
+      "details": "378 actual browser responses with zero HTTP/request/console/page errors across four changed routes in all16desktop/narrow theme combinations, plus320px checks. Exact seven binding-code payload copies, page and agent-link copy, helper download, all three new full-size1440×1000images, decoded inline images, real search/deep refresh/home navigation, logo-only branding, hidden header metadata and numbered-step continuity passed. Partial-note text contrast7.77light/9.27dark. Actual desktop/narrow renders viewed. Novice review moved the active-connection screenshot after approval and rechecked all affected render paths. An initial observer compared browser innerText, which adds an extra blank line in a highlighted shell fence; the actual copy payload matched its original source bytes and final clipboard equality passed. All37required-stage lists and earlier152capture records are unchanged; coverage remains28verified/6partial/3pending. Strict release remains exit1/24findings:14missing capture references,9unfinished walks and summary. No dependency,Actions,product-source or qualification-gate changes."
     }
   ],
   "remainingGaps": [

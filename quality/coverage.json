@@ -213,7 +213,7 @@
       "sources": [
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/components/AgentDrawer.jsx",
           "line": 126
         },
@@ -238,10 +238,12 @@
         "Qualify admitted independent outcome checks"
       ],
       "screenshotIds": [
-        "agents-sandbox-bindings"
+        "agents-sandbox-bindings",
+        "agents-payment-seed-ready",
+        "assessment-outcome-checks"
       ],
-      "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "qualification": "partial",
+      "validationStatus": "Real Owner save200/draft, editor clearing, template bundle, revalidation/reapproval200, refresh retention, explicit manual seed, account login and independent baseline prerequisites passed. MR1007 retained Needs attention after tool setup failed; no completed after-state, business effect or clean reproduction was qualified.",
       "documentationRoute": "/agents/sandbox-bindings/",
       "role": "owner, admin",
       "route": "/#/agents",
@@ -257,18 +259,48 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "pending",
-        "screenshots": "pending",
+        "realBackendWalkthrough": "partial: four saved-setup stages passed; admitted starting checks passed, completed outcome still missing",
+        "screenshots": "captured",
         "remainingGaps": [
-          "Approved integration/bindings screenshot without write-only details",
-          "Real sandbox-backed walkthrough and baseline/effect readback"
+          "Actual customer business tool execution with an independent completed after-state/effect or no-violation receipt remains unqualified. Original MR1007 action uncertainty is preserved.",
+          "Fresh-world repetitions, negative controls, verified positive findings, prepared scenarios, signed-in identity and published modern review/export are not inherited from this setup."
         ]
       },
-      "validation": [],
-      "screenshots": [
-        "agents-sandbox-bindings"
+      "validation": [
+        {
+          "date": "2026-11-14",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Payment sandbox binding setup, reproducible manual seed and before-only outcome receipt",
+          "environment": "Isolated Documentation Browser Execution QA; synthetic organization and payment target; real pinned Frontend, Backend, Agents, released SDK and local Kubernetes payment simulation; Owner with platform_admin false",
+          "result": "Passed saved binding/template/reapproval/refresh stages and independent baseline prerequisites. Full business effect, clean reproduction and controls remain unverified."
+        }
       ],
-      "customerNotice": "This setup has been reviewed against the implementation. The connection and independent business checks still need a complete live walkthrough."
+      "screenshots": [
+        "agents-sandbox-bindings",
+        "agents-payment-seed-ready",
+        "assessment-outcome-checks"
+      ],
+      "customerNotice": "Saving, approval, retained setup and baseline checks are verified. The business-outcome walkthrough remains incomplete.",
+      "screenshotStages": [
+        {
+          "id": "agents-sandbox-bindings",
+          "alt": "Connection tab showing Martian HTTP active, approver, declared revision and retained stripe and business checks badges with an empty write-only editor.",
+          "caption": "After refresh, Connection reports active and retains stripe / business checks. The header can still say not approved when no expiry was set; use the Connection status. The empty editor displays only its example placeholder.",
+          "validationStatus": "Direct real application capture individually viewed for readability and secrets, with PNG integrity/metadata checks. Saved setup and before-only checks are qualified separately from the unfinished business-outcome walkthrough."
+        },
+        {
+          "id": "agents-payment-seed-ready",
+          "alt": "Payment-only environment with Stripe mapped to paypal, one Ready sandbox, two accounts and your data after an explicit stored-example seed launch.",
+          "caption": "The launch explicitly used the manually stored released example. Generated / your data are the console’s seed-document labels; this setup did not call a model. The Ready instance then passed the seeded account’s real sign-in and refresh.",
+          "validationStatus": "Direct real application capture individually viewed for readability and secrets, with PNG integrity/metadata checks. Saved setup and before-only checks are qualified separately from the unfinished business-outcome walkthrough."
+        },
+        {
+          "id": "assessment-outcome-checks",
+          "alt": "Outcome checks with a ready starting receipt, five ledger records, two met baseline conditions, pending after-state and unavailable cleanly reproduced refund.",
+          "caption": "Both baseline prerequisites passed. Outcome captured and After-state digest remain Pending, and no complete comparison or refund verdict exists. The duplicated-refund sentence describes the configured check.",
+          "validationStatus": "Direct real application capture individually viewed for readability and secrets, with PNG integrity/metadata checks. Saved setup and before-only checks are qualified separately from the unfinished business-outcome walkthrough."
+        }
+      ]
     },
     {
       "id": "assessments/configure",
@@ -295,13 +327,13 @@
       "sources": [
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/pages/Assessment.jsx",
           "line": 30
         },
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/lib/taxonomy.js",
           "line": 100
         },
@@ -332,7 +364,7 @@
         "assessment-browser-tests"
       ],
       "qualification": "partial",
-      "validationStatus": "Endpoint-only HTTP configuration and saved scope were exercised previously. A separate anonymous endpoint-only MCP campaign retained edited goals, a data outcome, Light and serial settings, then made three real tool calls. Its admission acknowledgment failed and required operator-assisted reconciliation of the original campaign. Browser, sandbox, signed-in and prepared-scenario execution remain unverified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified.",
+      "validationStatus": "Endpoint-only HTTP configuration and saved scope were exercised previously. A separate anonymous endpoint-only MCP campaign retained edited goals, a data outcome, Light and serial settings, then made three real tool calls. Its admission acknowledgment failed and required operator-assisted reconciliation of the original campaign. Browser, sandbox, signed-in and prepared-scenario execution remain unverified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified. A separate payment run passed explicit seeded-account authentication and independent starting-ledger prerequisites, then retained Needs attention after MCP setup failed. Reopened before-only Outcome checks remained ready with no after-state or business-effect verdict; the original uncertain action is unchanged.",
       "documentationRoute": "/assessments/configure/",
       "role": "member, admin, owner",
       "route": "/#/assessment",
@@ -353,7 +385,7 @@
         "realBackendWalkthrough": "partial; see validationStatus",
         "screenshots": "captured",
         "remainingGaps": [
-          "Sandbox-backed, attested synthetic signed-in customer, prepared-scenario and completed browser assessment walkthroughs remain unverified. Website sign-in and neutral setup were observed before a retained fresh-conversation failure.",
+          "Sandbox admission and starting-ledger checks were observed; completed business execution, attested signed-in identity, prepared scenarios and completed browser execution remain unverified.",
           "The MCP admission returned HTTP503; the public sync endpoint returned200 without reconciling the missing admission link. Its observed result required an explicitly recorded operator reconciliation; self-service recovery is not qualified."
         ]
       },
@@ -377,6 +409,13 @@
           "task": "Browser assessment admission, website setup and retained fresh-conversation failure",
           "result": "Observed real admission, sign-in, two setup messages and retained Needs attention failure; completed browser assessment and positive cancellation remain unqualified",
           "record": "quality/walkthroughs.json"
+        },
+        {
+          "date": "2026-11-14",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Payment sandbox binding setup, reproducible manual seed and before-only outcome receipt",
+          "environment": "Isolated Documentation Browser Execution QA; synthetic organization and payment target; real pinned Frontend, Backend, Agents, released SDK and local Kubernetes payment simulation; Owner with platform_admin false",
+          "result": "Passed saved binding/template/reapproval/refresh stages and independent baseline prerequisites. Full business effect, clean reproduction and controls remain unverified."
         }
       ],
       "screenshots": [
@@ -386,7 +425,7 @@
         "assessment-browser-tests"
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
-      "customerNotice": "The basic HTTP walkthrough is complete. MCP execution was checked with operator-assisted recovery. Browser, sandbox, signed-in and prepared-scenario workflows still need complete walkthroughs."
+      "customerNotice": "Basic HTTP, operator-assisted MCP and sandbox admission are checked. Complete sandbox outcomes, browser execution and advanced profiles remain unverified."
     },
     {
       "id": "assessments/evidence-and-results",
@@ -412,19 +451,19 @@
       "sources": [
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/pages/Assessment.jsx",
           "line": 826
         },
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/pages/RunTrace.jsx",
           "line": 690
         },
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/components/tracing/AssessmentReview.jsx",
           "line": 528
         },
@@ -457,7 +496,7 @@
         "assessment-browser-coverage"
       ],
       "qualification": "partial",
-      "validationStatus": "In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified.",
+      "validationStatus": "In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified. A separate payment run passed explicit seeded-account authentication and independent starting-ledger prerequisites, then retained Needs attention after MCP setup failed. Reopened before-only Outcome checks remained ready with no after-state or business-effect verdict; the original uncertain action is unchanged.",
       "documentationRoute": "/assessments/evidence-and-results/",
       "role": "viewer, member, admin, owner",
       "route": "/#/runs/<run-id>",
@@ -480,7 +519,7 @@
         "realBackendWalkthrough": "partial; see validationStatus",
         "screenshots": "partial",
         "remainingGaps": [
-          "Positive verified findings, independent outcome checks and artifact-backed Recorded review remain unverified."
+          "Positive verified findings, complete independent after-state comparisons and artifact-backed Recorded review remain unverified."
         ]
       },
       "validation": [
@@ -503,6 +542,13 @@
           "task": "Browser assessment admission, website setup and retained fresh-conversation failure",
           "result": "Observed real admission, sign-in, two setup messages and retained Needs attention failure; completed browser assessment and positive cancellation remain unqualified",
           "record": "quality/walkthroughs.json"
+        },
+        {
+          "date": "2026-11-14",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Payment sandbox binding setup, reproducible manual seed and before-only outcome receipt",
+          "environment": "Isolated Documentation Browser Execution QA; synthetic organization and payment target; real pinned Frontend, Backend, Agents, released SDK and local Kubernetes payment simulation; Owner with platform_admin false",
+          "result": "Passed saved binding/template/reapproval/refresh stages and independent baseline prerequisites. Full business effect, clean reproduction and controls remain unverified."
         }
       ],
       "screenshots": [
@@ -518,7 +564,7 @@
         "assessment-browser-coverage"
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
-      "customerNotice": "The endpoint-only trace and export walkthrough is complete. Independent business outcomes and published recorded reviews are still being verified."
+      "customerNotice": "Endpoint-only evidence and sandbox baseline receipts are checked. Verified business effects and published recorded reviews remain incomplete."
     },
     {
       "id": "assessments/history-and-exports",
@@ -840,7 +886,7 @@
         },
         {
           "repository": "MorningHQ/MartianFrontend",
-          "commit": "06d0d0c96a9627c383b85670929dfe8bdc33aa30",
+          "commit": "5361d1f241278e19c79e68d1d8f9325920a04d12",
           "path": "src/pages/RunTrace.jsx",
           "line": 284
         }
@@ -857,7 +903,7 @@
         "assessment-outcome-checks"
       ],
       "qualification": "partial",
-      "validationStatus": "In isolated local QA, MR-1002 had unverifiable disclosure coverage and no deterministic oracle. Model opinions and requested-versus-used budgets were inspected. Clean-world reproduction and negative controls remain unverified.",
+      "validationStatus": "In isolated local QA, MR-1002 had unverifiable disclosure coverage and no deterministic oracle. Model opinions and requested-versus-used budgets were inspected. Clean-world reproduction and negative controls remain unverified. A separate payment run passed explicit seeded-account authentication and independent starting-ledger prerequisites, then retained Needs attention after MCP setup failed. Reopened before-only Outcome checks remained ready with no after-state or business-effect verdict; the original uncertain action is unchanged.",
       "documentationRoute": "/assessments/reproduction-and-limits/",
       "role": "viewer, member, admin, owner",
       "route": "/#/runs/<run-id>",
@@ -885,6 +931,13 @@
           "record": "quality/walkthroughs.json",
           "observedPath": "First endpoint-only assessment and admission failure boundary",
           "result": "Actual MR-1002 unverifiable disclosure coverage, absent deterministic oracle, model-critic interpretation and requested-versus-used budgets were inspected. No clean-world reproduction or negative control was exercised."
+        },
+        {
+          "date": "2026-11-14",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Payment sandbox binding setup, reproducible manual seed and before-only outcome receipt",
+          "environment": "Isolated Documentation Browser Execution QA; synthetic organization and payment target; real pinned Frontend, Backend, Agents, released SDK and local Kubernetes payment simulation; Owner with platform_admin false",
+          "result": "Passed saved binding/template/reapproval/refresh stages and independent baseline prerequisites. Full business effect, clean reproduction and controls remain unverified."
         }
       ],
       "screenshots": [
@@ -892,7 +945,7 @@
         "assessment-outcome-checks"
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
-      "customerNotice": "The endpoint-only example is checked. Clean-world reproduction and negative controls still need a complete walkthrough."
+      "customerNotice": "Endpoint-only evidence and a sandbox baseline are checked. Clean-world reproduction and negative controls remain incomplete."
     },
     {
       "id": "discovery/call-gates",

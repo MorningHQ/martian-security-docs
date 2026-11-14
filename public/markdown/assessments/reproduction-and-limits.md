@@ -6,11 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/reproduction-a
 
 > **Page qualification:** Current beta console · viewer, member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, MR-1002 had unverifiable disclosure coverage and no deterministic oracle. Model opinions and requested-versus-used budgets were inspected. Clean-world reproduction and negative controls remain unverified.
+> **Walkthrough limits:** In isolated local QA, MR-1002 had unverifiable disclosure coverage and no deterministic oracle. Model opinions and requested-versus-used budgets were inspected. Clean-world reproduction and negative controls remain unverified. A separate payment run passed explicit seeded-account authentication and independent starting-ledger prerequisites, then retained Needs attention after MCP setup failed. Reopened before-only Outcome checks remained ready with no after-state or business-effect verdict; the original uncertain action is unchanged.
 
 Partly verified guide
 
-The endpoint-only example is checked. Clean-world reproduction and negative controls still need a complete walkthrough.
+Endpoint-only evidence and a sandbox baseline are checked. Clean-world reproduction and negative controls remain incomplete.
 
 Use the strongest retained evidence for the question you are answering. A reproducible reply, an executed tool call and a reproducible change in a restored business world support different conclusions.
 
@@ -47,6 +47,12 @@ The normal profiles request two verification repetitions and two successful repr
 2.  For tool use, distinguish a catalogue advertisement, an attempted call, a gateway refusal, an error and an executed call. Execution alone still does not establish the intended downstream effect.
 3.  For state-changing objectives, use independent before/after records rather than the target’s statement that it completed an action. A strong text match can establish disclosure in a reply, but not an unobserved payment or permission change.
 4.  For imported history, retain its original provenance. It does not represent a fresh execution in the current deployment.
+
+The captured sandbox run passed its starting-ledger prerequisites, then retained **Needs attention** after a target setup error. Its **ready** baseline, pending after-state and unavailable cleanly reproduced refund support no business-effect or reproduction claim. [Read the complete example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/sandbox-bindings.md#example-a-passed-baseline-with-no-outcome-verdict).
+
+![Outcome checks with a ready starting receipt, five ledger records, two met baseline conditions, pending after-state and unavailable cleanly reproduced refund.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-outcome-checks.png)
+
+Both baseline prerequisites passed. Outcome captured and After-state digest remain Pending, and no complete comparison or refund verdict exists. The duplicated-refund sentence describes the configured check.
 
 ## Check coverage before deciding what to do
 

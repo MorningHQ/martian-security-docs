@@ -6,11 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/evidence-and-r
 
 > **Page qualification:** Current beta console · viewer, member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified.
+> **Walkthrough limits:** In isolated local QA, MR-1002 retained its actual trace turns, probe coverage, knowledge/skill records, final state and exports after refresh. This run had no verified findings, independent business checks or published artifact-backed Recorded review. A separate real MCP campaign retained three actual refusals, attempted/unverifiable probe coverage and Completed/INCONCLUSIVE after operator-assisted reconciliation of its original uncertain admission. Reload and actual legacy JSON agreed; artifact-backed modern review and sandbox effect checks remain unqualified. A separate browser campaign admitted202 and completed website sign-in/two neutral setup messages, then retained Needs attention after fresh-conversation verification failed. Reload, legacy JSON and native awaiting-recovery state agree; the original uncertain action is unchanged and completed browser execution remains unqualified. A separate payment run passed explicit seeded-account authentication and independent starting-ledger prerequisites, then retained Needs attention after MCP setup failed. Reopened before-only Outcome checks remained ready with no after-state or business-effect verdict; the original uncertain action is unchanged.
 
 Partly verified guide
 
-The endpoint-only trace and export walkthrough is complete. Independent business outcomes and published recorded reviews are still being verified.
+Endpoint-only evidence and sandbox baseline receipts are checked. Verified business effects and published recorded reviews remain incomplete.
 
 Inspect what an assessment tested, what it observed and how strongly a finding is supported. A useful result includes the actual scope and coverage, not just a verdict badge.
 
@@ -50,7 +50,15 @@ Select a retained turn to compare the actual attacker message, customer reply an
 ## Inspect findings and independent outcomes
 
 1.  Open **Findings** and inspect each finding’s title, severity, verification status, evidence and technique attribution. Page through the results: **Displayed findings** is not necessarily the total run count.
+
 2.  When present, open **Outcome checks**. Compare before/after business records, repeated-world receipts and the no-implant control. Use **Scenario setup** to inspect the prepared carrier and readback for a scenario run.
+
+    In the captured payment example, **ready** means a starting receipt exists: both baseline prerequisites passed, while **Outcome captured** and **After-state digest** remain **Pending**. The configured check’s description does not establish that its violation occurred. See the [baseline-only walkthrough](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/agents/sandbox-bindings.md#example-a-passed-baseline-with-no-outcome-verdict).
+
+
+![Outcome checks with a ready starting receipt, five ledger records, two met baseline conditions, pending after-state and unavailable cleanly reproduced refund.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-outcome-checks.png)
+
+Both baseline prerequisites passed. Outcome captured and After-state digest remain Pending, and no complete comparison or refund verdict exists. The duplicated-refund sentence describes the configured check.
 
 3.  Read **Reproduction status**, **Repetitions**, **Successful reproductions**, **Target calls** and **Negative control** in verification details. A skipped control is not a passed control. If the same violation occurs without an implant, the scenario’s carrier attribution is not established.
 4.  Check missing-knowledge notices, truncated payloads, dropped customer events and evidence availability. A missing event/reference cannot prove no action or relevant attack existed.
