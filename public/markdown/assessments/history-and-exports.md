@@ -6,11 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/assessments/history-and-ex
 
 > **Page qualification:** Current beta console · viewer, member, admin, owner · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** In isolated local QA, Assessments/Replay selection and filtering, refreshed MR-1002 evidence, Reports JSON and legacy finding-page JSON were checked. Domain-outcome and published redacted-review ZIP exports remain unverified.
+> **Walkthrough limits:** Actual retained Assessments/Replay filtering and refresh, Reports JSON, legacy finding-page JSON, modern domain JSON and a published revision with redacted turn/detail reads passed. Four redacted ZIP reads returned503 without an archive; ZIP download/inspection remain unverified.
 
 Partly verified guide
 
-Recorded history and the documented JSON downloads have been checked. Domain-outcome and redacted-review ZIP exports are still being verified.
+Run/domain JSON downloads and on-screen redacted review are checked. The review ZIP download remains unverified.
 
 Find a recorded assessment after leaving its wizard, inspect retained evidence and download the right report. These history and replay actions read existing work; **Replay** does not execute the assessment again.
 
@@ -44,12 +44,42 @@ Download selects JSON evidence for the matching run code. MR-1002 retained INCON
 4.  In a modern run, **Download domain outcomes** retains the domain result summary. A published artifact-backed **Recorded review** can separately offer **Download redacted review** for a revision-pinned ZIP. A live source or unsupported snapshot selection can disable that download until a published revision is available.
 5.  Inspect the downloaded file locally: confirm the run code, agent, state, verdict and evidence/coverage scope match the UI. Save it under your organization’s retention policy and keep any synthetic/private content within its approved audience.
 
+| Export | Contains |
+| --- | --- |
+| **Reports → Download** | Run metadata, coverage summary and retrieved findings |
+| **Download domain outcomes** | Domain result, runtime summary and finding-page flags |
+| **Download redacted review** | Published review content under the selected policy |
+
+**Native spans** are read separately from the review ZIP.
+
+## Example: check a modern run and its downloads
+
+This separate example uses **MR-1010** in **Documentation Browser Execution QA**, with a synthetic HTTP target built to check review capture and redaction. Follow the steps with your own retained run. The example’s **INCONCLUSIVE** result is not a production security assessment.
+
+1.  Open **Assessments** and select your run code to see the full summary. Here, **MR-1010** shows **Completed** execution, **INCONCLUSIVE** security outcome, **12** agent requests, **44** model calls and **0** displayed findings. Open **Probe coverage** below the summary to inspect the tested scope.
+
+![MR-1010 full assessment summary with Completed execution, INCONCLUSIVE security outcome, twelve agent requests, forty-four model calls and zero displayed findings.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-modern-result.png)
+
+Open the run from Assessments for the full counters. Probe coverage is selected below the summary; completed execution and zero findings do not establish a security pass.
+
+2.  Use **Download domain outcomes**, then find the same run in **Reports** and click its **Download**. Both actual JSON downloads in this example retained the same run, agent, execution state, verdict and start/end times. Neither file contained the Recorded review’s turn content.
+3.  In **Recorded review**, check **Review revision**, open **Turns** (**Turns (12)** here) and select a turn. The first turn’s **target response** shows **redacted · credential\_scrubbed** and `[REDACTED]` in place of the fixture’s token-shaped test string. Check the exported-content status and byte counts when reading an excerpt.
+
+![First retained turn with redacted target response, credential\_scrubbed status, exported byte counts and twelve loaded turn records.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/assessment-modern-redacted-turn.png)
+
+The actual target response contains \[REDACTED\] instead of the fixture’s token-shaped test string. The critic rationale is model interpretation. This on-screen read does not establish a successful ZIP download.
+
+4.  Keep the counts and coverage separate. This revision has **2 conversation records** and **12 turn records**; those are different retained record types. It also shows **Review delivery: persisted**, **Native delivery: complete** and **Native span coverage: pending**. Current delivery and the coverage frozen into a review revision answer different questions.
+
+The JSON downloads and redacted turn reads passed in this example. **Download redacted review** returned `review_provider_wait_exceeded` without producing a ZIP, so archive download and inspection remain unverified. A published revision and a readable turn do not establish that its ZIP downloaded successfully.
+
 ## Failure and recovery
 
 If **Refresh review** still offers no published revision, ask your workspace owner or Martian operator who manages review publication. Include the run code, displayed review revision/status and error, without credentials or private payloads. Refresh reads availability; it does not publish an artifact. Keep the available run/legacy JSON as its separately described evidence scope; it is not a substitute for a published redacted review ZIP.
 
 -   **No finished reports on this page** may mean your current page/filter contains no terminal run. Search or page to the intended run; it does not establish that all organization history is empty.
 -   A failed download should retain an error. Retry the read after checking service/evidence availability; downloading does not justify starting a new assessment.
+-   `review_provider_wait_exceeded` can appear even when **Review delivery** says **persisted**. Preserve the displayed revision and retry the read after availability recovers. **0 loaded · 12 retained records** beside a read error means the page has not loaded those records; it does not mean the review is empty.
 -   Missing retained content or expired artifact custody cannot be reconstructed by a screenshot of an old report. Keep the availability limitation visible.
 -   Imported history reflects its original execution and evidence. It does not prove that the current deployment executed that run.
 -   The modern redacted bundle, domain JSON and legacy JSON have different scopes. Redaction and an export filename are not substitutes for checking what the file actually contains.

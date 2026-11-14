@@ -10,7 +10,7 @@ These guides are being qualified against actual running application/backend stat
 
 The site is being published iteratively. Guides with unfinished walkthroughs show a short notice above the instructions. Detailed roles, dates, tested environments and qualification records are collected here and retained in **Copy page** Markdown. Authenticated captures and complete execution checks are added as they pass.
 
-Of **37 task guides**, **28 are verified**, **6 are partly verified** and **3 await walkthrough verification**. The screenshot record contains **155 captured references** across **143 unique PNGs**. These counts come from the current coverage and screenshot manifests.
+Of **37 task guides**, **28 are verified**, **6 are partly verified** and **3 await walkthrough verification**. The screenshot record contains **157 captured references** across **145 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 
@@ -98,6 +98,16 @@ Earlier local QA checks had no sandbox orchestrator: connector requests returned
 
 The beginner and visual review is an **AI-simulated novice review**, with no human participant. Desktop and narrow navigation, search, themes, image viewing and keyboard checks passed. Follow-up light/dark checks at 1440 × 1000 and 390 × 844 verified the revised comparison layout and explicit source-baseline links without overflow or documentation console errors.
 
+### Recorded review and export checks
+
+The separate [modern review example](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/assessments/history-and-exports.md#example-check-a-modern-run-and-its-downloads) admitted one bounded endpoint-only assessment against a synthetic redaction fixture. It completed with **12** actual target replies, **44** model calls, **0** findings and **INCONCLUSIVE**. Review availability required opt-in local QA setup, writable private storage, the shipped guarded replay of its original frozen telemetry and attributed continuation of saved artifact publication. Those recovery actions did not rerun the target or model. This is an operator-assisted local result, not a hosted-deployment attestation.
+
+The published revision retained **2 conversation records** and **12 turn records**; the turn journal spans three conversation IDs, so these counts describe different record types. Actual turn-list and detail reads matched the selected revision. All **48** exported-content envelopes passed byte/hash checks; the token-shaped synthetic canary was absent and `[REDACTED]` present. The immutable revision still recorded **pending** native-span coverage after live native delivery became **complete**. Reports JSON (**892 bytes**) and domain-outcome JSON (**12,428 bytes**) downloaded through the UI and matched the run, agent, state, verdict and start/end times. Neither contained Recorded review turn content. Replay selection, filtering and full refresh retained the original result.
+
+Four actual redacted ZIP requests returned **503 / review\_provider\_wait\_exceeded**, without an archive. ZIP download and inspection remain unverified. Heavy local VM memory stalls were observed; a reversible artifact-service memory reservation preserved its process, hard limits, source and native custody. A later turn read succeeded, while ZIP timeouts persisted. Provider deadlines and qualification gates were unchanged. Owner reads and three anonymous **401** boundaries were checked; existing foreign-owner credentials did not sign in to this separate Backend, so new cross-tenant artifact readback remains unqualified.
+
+Twenty-eight relevant source files matched the served archive and running images. Two direct application captures were individually inspected. The simulated novice pass corrected the example to use **Assessments** for full counters: Replay’s compact view and its release-decision disclosure do not expose those counters. Three unknown-usage model reservations and the earlier unresolved target actions remain preserved; they were not manually settled or treated as free work.
+
 ## SDK compatibility
 
 The task guides install the latest SDK and keep release announcements in [PyPI release history](https://pypi.org/project/martian-sdk/#history). Verification remains tied to the releases actually exercised:
@@ -112,7 +122,7 @@ Installing a newer release does not extend those recorded results automatically.
 | Component | Reviewed source revision |
 | --- | --- |
 | Frontend | 06d0d0c96a9627c383b85670929dfe8bdc33aa30 |
-| Frontend for browser, cancellation, generated environments and Pipeline follow-up | 5361d1f241278e19c79e68d1d8f9325920a04d12 |
+| Frontend for browser, cancellation, generated environments, recorded reviews and Pipeline follow-up | 5361d1f241278e19c79e68d1d8f9325920a04d12 |
 | Backend | 01343fa93feb518f6c7cd1928b63a01d2ec5ee0b |
 | Agents | f7de3e068d66fe478f642d43a658ed9b3ed321f5 |
 | Evals service | 60c25994958105db4baa91f377ba46c24fdf253d |
