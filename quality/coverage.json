@@ -668,6 +668,24 @@
           "commit": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
           "path": "app/assessment_execution.py",
           "line": 1085
+        },
+        {
+          "repository": "MorningHQ/martian-agents",
+          "commit": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+          "path": "src/martian_runtime/agents/model.py",
+          "line": 85
+        },
+        {
+          "repository": "MorningHQ/martian-agents",
+          "commit": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+          "path": "src/martian_runtime/budgets/postgres.py",
+          "line": 130
+        },
+        {
+          "repository": "MorningHQ/martian-agents",
+          "commit": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+          "path": "src/martian_runtime/llm/bedrock.py",
+          "line": 80
         }
       ],
       "numberedTaskStages": [
@@ -682,10 +700,13 @@
         "assessment-stop-requested",
         "assessment-stopped",
         "assessment-needs-attention",
-        "assessment-browser-run"
+        "assessment-browser-run",
+        "assessment-active-stop-requested",
+        "assessment-active-stopped",
+        "assessment-active-stop-reply"
       ],
-      "qualification": "partial",
-      "validationStatus": "Run progress and completion were checked. In a separate QA workspace, queued MR-1003 admitted202 and Stop run200 on the same campaign; native cancellation finalized with no target/model work or unresolved recovery. Evidence sync200, full-page refresh and JSON export retained Stopped/INCONCLUSIVE and original identities. Cancellation after execution begins and resolution of the earlier HTTP530 uncertain action remain unverified. The separate MCP original admission/reconciliation and browser fresh-conversation failure records remain unchanged.",
+      "qualification": "verified",
+      "validationStatus": "All five unchanged progress/stop stages passed in the named HTTP QA scope. Queued MR-1003 and active MR-1005 each admitted202 and received one stop200 on their original campaign. MR-1005 retained three actual HTTP200 replies after native cancellation finalized, evidence sync200, full-page refresh and JSON export. Native state was cancelled/cancel_requested true, no pending target recovery or active native lease. One issued model attempt retains unknown usage, conservatively counted. Older HTTP530/browser uncertain actions and MCP operator-assisted recovery remain unchanged; resolving those actions and other target-interface cancellation are outside this qualification.",
       "documentationRoute": "/assessments/progress-and-cancellation/",
       "role": "member, admin, owner",
       "route": "/#/runs/<run-id>",
@@ -701,10 +722,10 @@
       ],
       "sourceReview": {
         "sourceReviewed": true,
-        "realBackendWalkthrough": "partial; see validationStatus",
-        "screenshots": "partial",
+        "realBackendWalkthrough": "passed all five unchanged stages in the named queued/active anonymous HTTP Owner scope",
+        "screenshots": "captured",
         "remainingGaps": [
-          "Cancellation after target/model execution starts and evidence-based resolution of the earlier retained HTTP530 action remain unverified; the new queued-stop result does not establish either.",
+          "Evidence-based resolution of the earlier HTTP530 and browser fresh-conversation uncertain actions remains unverified. The successful HTTP stops do not repair them or qualify browser/sandbox cancellation.",
           "A successful public refresh response after an uncertain admission did not establish that the original campaign was absent or stopped. The operator-assisted MCP reconciliation does not qualify automatic recovery."
         ]
       },
@@ -741,6 +762,20 @@
           "task": "Queued assessment cancellation and retained terminal evidence",
           "result": "Actual admission202/stop200, native cancelled with cancel_requested true and finalization complete, zero actions/reservations/active native leases, evidence sync200 and full-page refresh/export agreed on stopped/INCONCLUSIVE. Stopping after execution begins remains a separate scope.",
           "record": "quality/walkthroughs.json"
+        },
+        {
+          "date": "2026-11-14",
+          "environment": "Isolated local QA; synthetic anonymous HTTP target; non-platform-admin Owner; queued and active cancellation, retained legacy trace and JSON export",
+          "task": "Active HTTP assessment cancellation with retained replies",
+          "result": "All five unchanged required stages passed: live original run, separate security/execution, one real stop request, native cancelled/no unresolved target action, and refresh/export retaining the same IDs and all three replies. Unknown provider usage remains counted rather than settled by assertion.",
+          "stageEvidence": {
+            "Open live run": "Actual MR-1005 running trace and GET of the admitted original campaign",
+            "Inspect outcome/execution separately": "No verdict/In progress before stop; INCONCLUSIVE/Stopped after cancellation",
+            "Request stop": "One actual Request stop POST200 on the original UUID with cancelling acknowledgement",
+            "Wait for terminal/recovery state": "Native canonical cancelled/cancel_requested true/finalization complete, three completed targets, zero submitted/uncertain targets and active native leases; UI Stopped/Runtime interrupted",
+            "Refresh saved run": "One actual /sync200, full-page reload, actual legacy JSON download and Turn1 inspection retained identical original action IDs/reply evidence hashes"
+          },
+          "record": "quality/walkthroughs.json"
         }
       ],
       "screenshots": [
@@ -748,10 +783,15 @@
         "assessment-stop-requested",
         "assessment-stopped",
         "assessment-needs-attention",
-        "assessment-browser-run"
+        "assessment-browser-run",
+        "assessment-active-stop-requested",
+        "assessment-active-stopped",
+        "assessment-active-stop-reply"
       ],
       "environment": "Isolated local QA; pinned source baseline; synthetic organization",
-      "customerNotice": "Queued cancellation and retained results have been checked. Stopping work already in progress and resolving an uncertain target action are still being verified."
+      "customerNotice": "Progress, queued and active HTTP cancellation, retained replies and refresh/export have been checked in isolated QA. Resolving uncertain actions and cancellation on other interfaces remain separate scopes.",
+      "verifiedAt": "2026-11-14",
+      "verifiedEnvironment": "Isolated local QA; synthetic anonymous HTTP target; non-platform-admin Owner; queued and active cancellation, retained legacy trace and JSON export"
     },
     {
       "id": "assessments/reproduction-and-limits",

@@ -3249,7 +3249,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "assessments/progress-and-cancellation: Request cancellation, after step 2"
+        "assessments/progress-and-cancellation: Example: stop while queued, optional acknowledgement"
       ],
       "environment": "Separate isolated local QA; real Frontend, Backend and Agents; approved synthetic HTTPS HTTP target; Documentation Browser Execution QA organization",
       "role": "Owner; platform_admin false",
@@ -3272,7 +3272,7 @@
       "width": 1440,
       "height": 1000,
       "guideSteps": [
-        "assessments/progress-and-cancellation: Request cancellation, after step 4"
+        "assessments/progress-and-cancellation: Example: stop while queued, optional final saved state"
       ],
       "environment": "Separate isolated local QA; real Frontend, Backend and Agents; approved synthetic HTTPS HTTP target; Documentation Browser Execution QA organization",
       "role": "Owner; platform_admin false",
@@ -3286,6 +3286,75 @@
       "validationStatus": "One actual admission202 and stop200 on the same original queued run. Native cancellation finalized with no actions or budget reservations; one evidence sync200, full-page refresh and actual legacy JSON export retained stopped/INCONCLUSIVE and the same campaign/run IDs. Direct capture individually inspected for readability and secrets. This does not qualify cancellation after target execution.",
       "reviewedForSecrets": true,
       "sha256": "fc9e9b5c5e981efeeea2977b76237bdd50d68fe9f1d94faeb9d75a8ffe2b7b67"
+    },
+    {
+      "id": "assessment-active-stop-requested",
+      "file": "assessment-active-stop-requested.png",
+      "alt": "The running MR-1005 immediately after Request stop, with one recorded attempt and the stop control disabled.",
+      "caption": "Request stop was acknowledged after three HTTP replies were recorded. Execution still shows In progress while cancellation is reconciled; this is not the final state.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/progress-and-cancellation: Request cancellation, after step 2"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend, Agents and approved synthetic public HTTPS HTTP target; Documentation Browser Execution QA organization",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T08:36:18.267594+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned release images; no product-source patch or hosted-beta parity claim. Owning cancellation and budget source bytes checked.",
+      "validationStatus": "One actual admission202, three original HTTP200 replies, then one Request stop200 on that same running campaign. Native cancellation finalized with no unresolved target actions or active native lease. One evidence sync200, full-page refresh, JSON export and actual Turn1 reply inspection retained stopped/INCONCLUSIVE and matching original action IDs/replies/hashes. One already issued model attempt retains unknown usage; no fabricated settlement or paid replay. Direct capture individually inspected for readability and secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "52198f7dc6e0dbd4195f2b75bfca993e3f551b027dcb2acbf89903fc492a1668"
+    },
+    {
+      "id": "assessment-active-stopped",
+      "file": "assessment-active-stopped.png",
+      "alt": "MR-1005 after refresh with Stopped execution, Runtime interrupted and an INCONCLUSIVE security outcome.",
+      "caption": "The same active HTTP run retained Stopped / INCONCLUSIVE after refresh and export. Its three original replies remain available even though the request and model counters show unavailable dashes.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/progress-and-cancellation: Example: stop an active HTTP run, final saved state"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend, Agents and approved synthetic public HTTPS HTTP target; Documentation Browser Execution QA organization",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T08:42:58.136236+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned release images; no product-source patch or hosted-beta parity claim. Owning cancellation and budget source bytes checked.",
+      "validationStatus": "One actual admission202, three original HTTP200 replies, then one Request stop200 on that same running campaign. Native cancellation finalized with no unresolved target actions or active native lease. One evidence sync200, full-page refresh, JSON export and actual Turn1 reply inspection retained stopped/INCONCLUSIVE and matching original action IDs/replies/hashes. One already issued model attempt retains unknown usage; no fabricated settlement or paid replay. Direct capture individually inspected for readability and secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "2bf092b52fe8b8698c809fe6397ad2fce2ec839461ef154015e596936cbba783"
+    },
+    {
+      "id": "assessment-active-stop-reply",
+      "file": "assessment-active-stop-reply.png",
+      "alt": "Turn 1 of stopped MR-1005 retaining the original customer agent reply and completed action journal.",
+      "caption": "Expand all and select Turn 1 to read the preserved refusal. The original action journal reached completed; the model critic below remains separate from independently verified effects.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "assessments/progress-and-cancellation: Example: stop an active HTTP run, inspect a reply after steps 1–3"
+      ],
+      "environment": "Separate isolated local QA; real Frontend, Backend, Agents and approved synthetic public HTTPS HTTP target; Documentation Browser Execution QA organization",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T08:42:58.374044+08:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned release images; no product-source patch or hosted-beta parity claim. Owning cancellation and budget source bytes checked.",
+      "validationStatus": "One actual admission202, three original HTTP200 replies, then one Request stop200 on that same running campaign. Native cancellation finalized with no unresolved target actions or active native lease. One evidence sync200, full-page refresh, JSON export and actual Turn1 reply inspection retained stopped/INCONCLUSIVE and matching original action IDs/replies/hashes. One already issued model attempt retains unknown usage; no fabricated settlement or paid replay. Direct capture individually inspected for readability and secrets.",
+      "reviewedForSecrets": true,
+      "sha256": "d4871e331a7799ac2f60378aa4e1934fb3cfc27dd0bdedd169845a0d212040cf"
     }
   ]
 }

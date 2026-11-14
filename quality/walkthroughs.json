@@ -699,6 +699,50 @@
         "Successful cancellation after target execution is still unqualified.",
         "The original terminal campaign still has one unsettled model reservation; inspect the original operation before admitting further work."
       ]
+    },
+    {
+      "task": "Active HTTP assessment cancellation with retained replies",
+      "date": "2026-11-14",
+      "environment": "Isolated local QA; synthetic anonymous HTTP target; non-platform-admin Owner; queued and active cancellation, retained legacy trace and JSON export",
+      "role": "Owner; platform_admin false",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5"
+      },
+      "result": "passed all five unchanged progress/cancellation stages for the named HTTP scope",
+      "observed": [
+        "A distinct Light/serial anonymous disclosure assessment admitted202 as MR-1005 with the original native campaign/run/thread pinned. The existing customer session had expired; actual UI sign-in of the existing non-platform-admin Owner returned200 before configuration. No account was recreated.",
+        "A real GET retained three HTTP200 target replies while that original campaign was running. The same UI action sequence used Request stop once, returning200/cancelling. Its initial runtime cancellation fields were stale; the acknowledgement was not used as final proof.",
+        "Native campaign/recovery/dispatch reads returned200: canonical cancelled, cancel_requested true, finalization complete and no target recovery actions. Read-only SQL counted three completed targets, zero prepared/submitted/uncertain targets, twelve settled model attempts, one unknown-usage model reservation and zero active native run leases.",
+        "The actual trace reached Stopped / INCONCLUSIVE / Runtime interrupted and removed Request stop. Request/model counters remained unavailable, rather than showing zero.",
+        "One actual Refresh evidence POST /sync returned200 with the same original identities and native cancellation fields. Full-page refresh and Download legacy JSON evidence retained the stopped state, one unverified attempt, zero findings and all three original HTTP200 replies with identical action IDs, response references and content hashes.",
+        "Actual Expand all → Turn1 inspection displayed the original Customer agent reply and prepared/submitted/completed journal. The attacker critic remained labelled model opinion, with no deterministic oracle.",
+        "The three real fixture request action IDs matched the three exported original turns. No new target/model execution repaired the result. An earlier twenty-second SQL observation timeout was retained; later authoritative original-campaign reads passed.",
+        "Three direct1440x1000captures were individually viewed and checked for PNG CRC, exact hashes and absence of embedded text/EXIF. Owning cancellation/budget code matched the unchanged pinned runtime source."
+      ],
+      "downloadSHA256": {
+        "MR-1005.json": "1ce9ecb89eed49da22c5de9bfef829d005890569d1bbb2e3ed30b6359c8f7638"
+      },
+      "remaining": [
+        "Resolving earlier uncertain actions and cancellation of browser/sandbox targets are not established by this HTTP test.",
+        "The interrupted provider request has no final usage receipt; its existing conservative reservation remains counted and is not manually settled."
+      ]
+    },
+    {
+      "task": "Provider transport reservation accounting inspection",
+      "date": "2026-11-14",
+      "environment": "Read-only original MR-1004 ledger/native output plus actual pinned runtime byte comparison",
+      "result": "origin identified; conservative unknown-usage entry preserved without replay or accounting edits",
+      "observed": [
+        "The original terminal native run remained success with no lease and an empty active-work set. Its same-generation transport1 entry stayed reserved, while transport2 was settled at3636input/511output tokens.",
+        "The corresponding planner event retained provider_attempts2 and a successful response after104458ms, followed by completed later planning rounds.",
+        "Four actual runtime files matched their pinned source bytes. The gateway reserves each provider attempt, awaits transport failure before its configured retry, and settles only a response carrying usage. Budget totals are campaign-scoped and include the conservative unknown attempt; this is not a shared execution-capacity lease.",
+        "The original MR-1004 entry was preserved. A distinct separately authorized bounded campaign did not replay the original request or assert that the first provider attempt had no cost."
+      ],
+      "remaining": [
+        "Actual provider usage for the failed first transport remains unknown."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
@@ -708,11 +752,11 @@
     "An earlier member run had uncertain item/finalization acknowledgements. Supported administrator telemetry-only reconciliation later confirmed saved evidence with zero target calls; no target replay repaired it.",
     "Released SDK 0.1.2 dataset/checks uploads do not forward native conversation session metadata. The tested empty state is distinct from positive multi-turn session qualification.",
     "Own QA initially had default admission ceilings3rounds/3drafts while console Light requested5/5. The original rejection is retained; supported own-QA ceilings were aligned without changing shipped model profile or hosted runtime.",
-    "The earlier MR-1003 teaching-tunnel HTTP530 action remains uncertain and preserved. A separate workspace now qualifies queued cancellation; that does not resolve the earlier action or establish cancellation after execution begins.",
+    "The earlier MR-1003 teaching-tunnel HTTP530 action remains uncertain and preserved. Separate queued and active HTTP cancellations are now qualified; neither resolves that action or proves safe replay.",
     "A transient Evals readiness warning during initial route loading cleared before final EV-1009 render/refreshed readback; known unconfigured connector/sidebar errors remain separate from these completed flows.",
     "Hosted beta own provisioned Gmail environment passed the named built-in lifecycle; shared data generation failed before QA. New QA organization Evals/cluster readiness remains unavailable. This does not repair the unconfigured local orchestrator or attest whole hosted deployment parity.",
     "Positive native sessions are now qualified only through a fresh separately provisioned MLflow3.16.1 application writer. SDK0.1.2 uploads remain a separate sessionless path. Initial UI evaluation-service read timeouts and background local connectors503 are preserved.",
     "A real MCP admission returned503 after native submission. Public Refresh evidence200 did not reconcile the missing admission link. One guarded operator invocation of the existing reconciliation routine restored that original run, with no duplicate dispatch or native-state edit; this is not proof that the customer refresh path works.",
-    "A distinct browser campaign admitted202 and completed real website sign-in/two neutral setup messages, then stopped with fresh_conversation_unavailable:fresh_timeout before recording a probe outcome. One uncertain action remains awaiting recovery; completed browser execution and positive cancellation are unqualified."
+    "A distinct browser campaign admitted202 and completed real website sign-in/two neutral setup messages, then stopped with fresh_conversation_unavailable:fresh_timeout before recording a probe outcome. One uncertain action remains awaiting recovery; completed browser execution and cancellation on that browser path are unqualified."
   ]
 }
