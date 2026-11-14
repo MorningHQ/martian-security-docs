@@ -20,6 +20,12 @@ Selected calls require a live allow decision even when no block is active. A dec
 
 ## Enroll exact call targets
 
+:::note[If no deployment is listed]
+An empty **Deployment / environment / version** selector needs a [runtime reporting binding](/discovery/runtime-and-blast-radius/) first. The console shows **Connect a runtime reporter under Sources to establish a deployment binding.** Assignment and block controls appear after you select that binding.
+:::
+
+<Screenshot id="discovery-gate-prerequisite" />
+
 1. Open **Discovery → Kill switch** and select **Deployment / environment / version**.
 2. Under **Block model or tool calls**, choose **Add a reported target**, or enter **Kind**, **System**, **Name** and click **Add target**. Enroll 1–32 distinct exact targets. Names must come from trusted application configuration, not a model-generated argument.
 3. Click **Create customer assignment**. Privately save **Download assignment** and **Download gate credential**, then **Clear credential from screen**. The credential is shown once and is separate from the runtime reporting credential.

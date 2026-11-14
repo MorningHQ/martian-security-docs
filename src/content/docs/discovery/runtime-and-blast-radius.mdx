@@ -26,6 +26,12 @@ Deployment, environment and version labels attribute reports; they do not attest
 
 <Screenshot id="discovery-runtime-setup" />
 
+:::note[If no workload is listed]
+**No matching workloads** means there is no collected workload matching the search. [Connect an authorized source and collect its inventory](/discovery/inventory/), or change the search. Entering a deployment label does not create the missing workload; **Create runtime binding** stays disabled until you select one.
+:::
+
+<Screenshot id="discovery-runtime-prerequisite" />
+
 4. Privately save the Binding ID and once-shown **Runtime credential**. Mount the credential as a read-only secret file in that workload and configure its SDK reporter with the trusted Backend HTTPS origin and binding. Click **Credential saved** to clear the credential panel.
 5. Start one reporter per customer application process, create a trace for each invocation and instrument the actual model/tool calls. A successful report is metadata about that call, not an assertion that a downstream business action happened.
 6. Run a bounded legitimate synthetic task through the real application. Check its reporter delivery counters/logs and retained binding after refresh. Missing dashboard events do not establish that no calls occurred: delivery can fail or be dropped.

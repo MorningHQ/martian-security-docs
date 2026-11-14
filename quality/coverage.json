@@ -1089,10 +1089,11 @@
         "discovery-gate-review",
         "discovery-gate-active",
         "discovery-gate-resumed",
-        "discovery-containment-preview"
+        "discovery-containment-preview",
+        "discovery-gate-prerequisite"
       ],
       "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "validationStatus": "Real local Owner inspected the empty-workspace prerequisite screen against the real Backend; observed Discovery GET200 and blocked creation. Full enrollment, instrumentation, execution and required journey captures remain pending.",
       "documentationRoute": "/discovery/call-gates/",
       "role": "owner, admin",
       "route": "/#/discovery?tab=kill-switch",
@@ -1126,17 +1127,27 @@
           "result": "passed-existing-release-consumer-environment",
           "scope": "RuntimeCallGate, GateAssignment, RuntimeReporter and exception imports; constructor signatures; no network operations"
         },
-        "pythonSnippetAst": "passed"
+        "pythonSnippetAst": "passed",
+        "prerequisiteReadback": "Passed actual empty-workspace prerequisite view only; full walkthrough remains pending."
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-14",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Discovery empty-workspace prerequisite screens and retained gate binding boundary",
+          "environment": "Isolated Documentation Browser Execution QA; synthetic organization; real pinned Frontend and Backend; customer Owner with platform_admin false; no connected Discovery source",
+          "result": "Passed read-only runtime/capture/observer/gate prerequisite views and gate full-refresh retention; no enrollment or live instrumentation qualified."
+        }
+      ],
       "screenshots": [
         "discovery-gate-enrollment",
         "discovery-gate-review",
         "discovery-gate-active",
         "discovery-gate-resumed",
-        "discovery-containment-preview"
+        "discovery-containment-preview",
+        "discovery-gate-prerequisite"
       ],
-      "customerNotice": "Local setup checks have passed. Live enrollment, gate decisions, blocking and resuming calls still need a complete walkthrough."
+      "customerNotice": "The empty-workspace setup boundary is checked. A compatible authorized source and collected workload are still needed for the complete live walkthrough."
     },
     {
       "id": "discovery/inventory",
@@ -1294,10 +1305,11 @@
       "screenshotIds": [
         "discovery-runtime-setup",
         "discovery-runtime",
-        "discovery-blast-radius"
+        "discovery-blast-radius",
+        "discovery-runtime-prerequisite"
       ],
       "qualification": "pending",
-      "validationStatus": "Source reviewed; live walkthrough and required screenshots pending.",
+      "validationStatus": "Real local Owner inspected the empty-workspace prerequisite screen against the real Backend; observed Discovery GET200 and blocked creation. Full enrollment, instrumentation, execution and required journey captures remain pending.",
       "documentationRoute": "/discovery/runtime-and-blast-radius/",
       "role": "owner, admin",
       "route": "/#/discovery",
@@ -1322,15 +1334,25 @@
           "Real customer-side emitted calls retained",
           "Delivery counters and bounded coverage checked",
           "Effective-access/business-effect claims remain excluded"
-        ]
+        ],
+        "prerequisiteReadback": "Passed actual empty-workspace prerequisite view only; full walkthrough remains pending."
       },
-      "validation": [],
+      "validation": [
+        {
+          "date": "2026-11-14",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Discovery empty-workspace prerequisite screens and retained gate binding boundary",
+          "environment": "Isolated Documentation Browser Execution QA; synthetic organization; real pinned Frontend and Backend; customer Owner with platform_admin false; no connected Discovery source",
+          "result": "Passed read-only runtime/capture/observer/gate prerequisite views and gate full-refresh retention; no enrollment or live instrumentation qualified."
+        }
+      ],
       "screenshots": [
         "discovery-runtime-setup",
         "discovery-runtime",
-        "discovery-blast-radius"
+        "discovery-blast-radius",
+        "discovery-runtime-prerequisite"
       ],
-      "customerNotice": "The local reporter setup is checked. Delivery to Discovery and the runtime and blast-radius views still need a complete walkthrough."
+      "customerNotice": "The empty-workspace setup boundary is checked. A compatible authorized source and collected workload are still needed for the complete live walkthrough."
     },
     {
       "id": "environments/create-and-launch",
@@ -3549,12 +3571,16 @@
       "screenshots": [
         "discovery-network-capture-grant",
         "discovery-continuous-observer",
-        "discovery-network-reporting-health"
+        "discovery-network-reporting-health",
+        "discovery-network-prerequisite",
+        "discovery-observer-prerequisite"
       ],
       "screenshotIds": [
         "discovery-network-capture-grant",
         "discovery-continuous-observer",
-        "discovery-network-reporting-health"
+        "discovery-network-reporting-health",
+        "discovery-network-prerequisite",
+        "discovery-observer-prerequisite"
       ],
       "requiredValidation": [
         "Prepare bounded capture grant and save private credential",
@@ -3564,9 +3590,17 @@
         "Revoke reporting and stop/remove processes separately"
       ],
       "qualification": "pending",
-      "validationStatus": "Source reviewed only. No eligible authorized QA source/compatible collector and no privileged sensors were provisioned. No capture, observer or reporting success is claimed.",
-      "validation": [],
-      "customerNotice": "This setup is source reviewed. A compatible authorized source and customer-operated sensors are required; capture and reporting still need a live walkthrough."
+      "validationStatus": "Real local Owner inspected the empty-workspace prerequisite screen against the real Backend; observed Discovery GET200 and blocked creation. Full enrollment, instrumentation, execution and required journey captures remain pending.",
+      "validation": [
+        {
+          "date": "2026-11-14",
+          "record": "quality/walkthroughs.json",
+          "observedPath": "Discovery empty-workspace prerequisite screens and retained gate binding boundary",
+          "environment": "Isolated Documentation Browser Execution QA; synthetic organization; real pinned Frontend and Backend; customer Owner with platform_admin false; no connected Discovery source",
+          "result": "Passed read-only runtime/capture/observer/gate prerequisite views and gate full-refresh retention; no enrollment or live instrumentation qualified."
+        }
+      ],
+      "customerNotice": "Empty-source forms are checked. A compatible authorized source and approved customer-operated sensors are still required for live capture and reporting."
     }
   ]
 }

@@ -3644,6 +3644,94 @@
       "validationStatus": "Direct real application capture individually viewed for readability and secrets; PNG integrity and metadata checked. JSON downloads and on-screen redaction passed; the redacted ZIP download remains unqualified after real provider timeouts.",
       "reviewedForSecrets": true,
       "sha256": "8aaabaadce77af47fa4b86c0eba77630bc133edfe04ab5d2858d83f709d4aa8a"
+    },
+    {
+      "id": "discovery-runtime-prerequisite",
+      "file": "discovery-runtime-no-workloads.png",
+      "alt": "Connect runtime reporter with No matching workloads and disabled Create runtime binding.",
+      "caption": "Runtime setup stops until an authorized source has collected a matching workload. Deployment labels alone do not create that inventory record. No binding or credential was created.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "discovery/runtime-and-blast-radius: Connect runtime reporting, after step 3"
+      ],
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization; real pinned Frontend and Backend; customer Owner with platform_admin false; no connected Discovery source",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T12:30:22.700336+00:00",
+      "sourceRevisions": {
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend image; twelve relevant source-file hashes matched. The current Backend main Discovery schema blob also matches the pinned schema. This is local prerequisite evidence, without hosted parity or product-source changes.",
+      "validationStatus": "Direct real application capture individually viewed for readability and secrets; PNG integrity and metadata checked. Empty prerequisites and read-only responses passed. Enrollment, collection, runtime uploads, gate activation and network observation remain unqualified.",
+      "reviewedForSecrets": true,
+      "sha256": "02d815ebbf001c3cc093d6dac715aff15b9225c132897e871ec8ef41674929ad"
+    },
+    {
+      "id": "discovery-network-prerequisite",
+      "file": "discovery-network-no-sources.png",
+      "alt": "Prepare capture grant with No eligible sources and disabled Create capture grant.",
+      "caption": "The capture form requires an enabled customer Kubernetes source. This empty workspace cannot create a grant; no credential, sensor or capture was produced.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "discovery/network-observation: Prepare a one-time capture, after step 5"
+      ],
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization; real pinned Frontend and Backend; customer Owner with platform_admin false; no connected Discovery source",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T12:31:47.648981+00:00",
+      "sourceRevisions": {
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend image; twelve relevant source-file hashes matched. The current Backend main Discovery schema blob also matches the pinned schema. This is local prerequisite evidence, without hosted parity or product-source changes.",
+      "validationStatus": "Direct real application capture individually viewed for readability and secrets; PNG integrity and metadata checked. Empty prerequisites and read-only responses passed. Enrollment, collection, runtime uploads, gate activation and network observation remain unqualified.",
+      "reviewedForSecrets": true,
+      "sha256": "1b2f46deadf95ed4a6fe8b1aa071a799b42583d29cd15ae370b06a905a2812d2"
+    },
+    {
+      "id": "discovery-observer-prerequisite",
+      "file": "discovery-observer-no-sources.png",
+      "alt": "Connect continuous observer with No eligible sources and disabled Register observer.",
+      "caption": "Continuous reporting also requires an enabled customer Kubernetes source. The visible interval, lifetime and retention choices do not create an observer or install sensors.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "discovery/network-observation: Connect a continuous observer, after step 3"
+      ],
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization; real pinned Frontend and Backend; customer Owner with platform_admin false; no connected Discovery source",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T12:33:39.977672+00:00",
+      "sourceRevisions": {
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend image; twelve relevant source-file hashes matched. The current Backend main Discovery schema blob also matches the pinned schema. This is local prerequisite evidence, without hosted parity or product-source changes.",
+      "validationStatus": "Direct real application capture individually viewed for readability and secrets; PNG integrity and metadata checked. Empty prerequisites and read-only responses passed. Enrollment, collection, runtime uploads, gate activation and network observation remain unqualified.",
+      "reviewedForSecrets": true,
+      "sha256": "651311d0a98d335f7c75fa75bf408e097562bdef5f41cf3ec3c7d7faa7c01fdc"
+    },
+    {
+      "id": "discovery-gate-prerequisite",
+      "file": "discovery-gate-no-bindings.png",
+      "alt": "Kill switch with no deployment binding and an instruction to connect a runtime reporter under Sources.",
+      "caption": "With no deployment binding, assignment and call-block controls are not shown. The same empty selector remained after a full refresh; no assignment, credential or control was created.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "discovery/call-gates: Enroll exact call targets, prerequisite"
+      ],
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization; real pinned Frontend and Backend; customer Owner with platform_admin false; no connected Discovery source",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T12:36:43.084122+00:00",
+      "sourceRevisions": {
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend image; twelve relevant source-file hashes matched. The current Backend main Discovery schema blob also matches the pinned schema. This is local prerequisite evidence, without hosted parity or product-source changes.",
+      "validationStatus": "Direct real application capture individually viewed for readability and secrets; PNG integrity and metadata checked. Empty prerequisites and read-only responses passed. Enrollment, collection, runtime uploads, gate activation and network observation remain unqualified.",
+      "reviewedForSecrets": true,
+      "sha256": "7def273edf7c2ac13fc189783f8b2fcc6b110fdf0779b5d4290ae86c35dfd102"
     }
   ]
 }

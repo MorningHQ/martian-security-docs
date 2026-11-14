@@ -6,11 +6,11 @@ Source: [Web version](https://docs.martiansecurity.ai/discovery/call-gates/)
 
 > **Page qualification:** Current beta console · owner, admin · Walkthrough verification in progress. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
 
-> **Walkthrough limits:** Source reviewed; live walkthrough and required screenshots pending.
+> **Walkthrough limits:** Real local Owner inspected the empty-workspace prerequisite screen against the real Backend; observed Discovery GET200 and blocked creation. Full enrollment, instrumentation, execution and required journey captures remain pending.
 
 Guide in progress
 
-Local setup checks have passed. Live enrollment, gate decisions, blocking and resuming calls still need a complete walkthrough.
+The empty-workspace setup boundary is checked. A compatible authorized source and collected workload are still needed for the complete live walkthrough.
 
 Block entry to one explicitly enrolled model or tool call in an instrumented customer application. Success requires an activated control, a real denied decision and the SDK’s acknowledgment that it stopped before calling the target. This is separate from the CI release gate and from network-containment previews.
 
@@ -21,6 +21,14 @@ Use an **Owner** or **Admin** account, an enabled [runtime binding](https://raw.
 Selected calls require a live allow decision even when no block is active. A decision outage, stale process or revoked gate credential stops them. Other calls and calls already admitted or in flight remain outside this control.
 
 ## Enroll exact call targets
+
+If no deployment is listed
+
+An empty **Deployment / environment / version** selector needs a [runtime reporting binding](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/discovery/runtime-and-blast-radius.md) first. The console shows **Connect a runtime reporter under Sources to establish a deployment binding.** Assignment and block controls appear after you select that binding.
+
+![Kill switch with no deployment binding and an instruction to connect a runtime reporter under Sources.](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/media/screenshots/discovery-gate-no-bindings.png)
+
+With no deployment binding, assignment and call-block controls are not shown. The same empty selector remained after a full refresh; no assignment, credential or control was created.
 
 1.  Open **Discovery → Kill switch** and select **Deployment / environment / version**.
 2.  Under **Block model or tool calls**, choose **Add a reported target**, or enter **Kind**, **System**, **Name** and click **Add target**. Enroll 1–32 distinct exact targets. Names must come from trusted application configuration, not a model-generated argument.

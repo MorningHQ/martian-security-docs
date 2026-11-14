@@ -28,6 +28,12 @@ Inventory read permission does not grant privileged node access. The console doe
 
 <Screenshot id="discovery-network-capture-grant" />
 
+:::note[If no source is listed]
+**No eligible sources** means you need to [connect and enable a customer Kubernetes source](/discovery/inventory/) first. Reopen the form after that setup. **Create capture grant** remains disabled while the selector only offers **Choose a source**.
+:::
+
+<Screenshot id="discovery-network-prerequisite" />
+
 6. Have the authorized operator run the scoped observer with that assignment, credential and trusted Backend origin. The upload grant expires after 15 minutes; do not widen scope or change the endpoint to bypass an error.
 7. Ask the operator to return the capture ID and retained result receipt after the observer finishes. An authorized workspace user can retrieve the receipt through `GET /v1/discovery/network-captures/{capture_id}`; the setup form does not open it automatically. Inspect scope, observed time and omission/attribution diagnostics. An issued grant or an empty result is not proof of a successful capture or an idle workload.
 
@@ -40,6 +46,10 @@ Inventory read permission does not grant privileged node access. The console doe
 3. Choose **Register observer**. Privately save **Observer upload credential**, use **Download observer assignment**, then select **Observer credential saved**.
 
 <Screenshot id="discovery-continuous-observer" />
+
+The continuous observer has the same enabled-source prerequisite. In this empty workspace, **No eligible sources** also leaves **Register observer** disabled; no observer or upload credential has been created.
+
+<Screenshot id="discovery-observer-prerequisite" />
 
 4. Have the operator install/configure the separately approved sensors and customer-run process using that exact assignment. Registration alone does not start them or change workload permissions.
 5. On **Discovery → Overview**, inspect **Where workloads connect** and choose the intended **Observer**. **Manage observer** returns to its registration.
