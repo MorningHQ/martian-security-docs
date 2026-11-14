@@ -766,6 +766,35 @@
         "Agent sandbox bindings, prepared scenarios/attested synthetic identity, independently verified business effects, clean-world repetitions/controls and modern reviewed exports require their separate full walkthroughs.",
         "The local default CNI does not establish network-policy enforcement. Discovery still requires a compatible collector/Backend contract and authorized collection/sensor scope. Earlier uncertain actions, provider-usage reservations and publication state remain untouched."
       ]
+    },
+    {
+      "task": "Payment sandbox binding setup, reproducible manual seed and before-only outcome receipt",
+      "date": "2026-11-14",
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization and payment target; real pinned Frontend, Backend, Agents, released SDK and local Kubernetes payment simulation; Owner with platform_admin false",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "result": "Passed saved binding/template/reapproval/refresh stages and independent baseline prerequisites. Full business effect, clean reproduction and controls remain unverified.",
+      "observed": [
+        "A new session-capable HTTP agent registered201, validated200 and approved200. One full console binding replacement returned200/draft, retained stripe/business-check summaries and cleared the write-only editor. Connection Validate and approve issued real validate200/activate200. Full refresh retained active, summaries, anonymous/serial scope and the declared build hash.",
+        "Actual MCP bundle GET200 was configuration_template, credential-free and listed stripe/api_tools_call. It was not treated as a live issued capability or proof of customer tool consumption. A second separate diagnostic target retained the same setup after refresh without any admitted campaign.",
+        "An initial built-in payment launch202 reachedReady and displayed catalogue profile accounts. MR1006 admission202 stoppedfailed/done with Sandbox application sign-in failed before native submission. Source confirms a built-in launch omits the optional default profile; catalogue Accounts alone did not prove those users or ledgers were loaded. The original failed record was preserved.",
+        "GET the current stripe seed-example200 and one supported customer PUTdocument200 stored its exact released example as a ready manual shared seed. Canonical semantic readback200 matched after correcting an observer that had compared JSON key order. No repeated storage mutation or model generation repaired that observer.",
+        "The built-in instance was stopped202 and omitted before a distinct explicit stored-seed launch202. Its exact seed ID, Ready state and expiry were observed. The selected synthetic payment account signed in200, independently read its paid order and ledger200, and retained login after full reload. The starting ledger had5visible rows, including3startup legacy rows and2account rows, with exactly1typed refund for the selected capture. Dependency application captures stay private.",
+        "The exact new downloadable prepare-payment-seed.py ran against the real Backend in its own empty temporary environment. First run exit0 stored/read back the manual example; second exit0 reused the same seed ID and canonical SHA. After one deliberate description-only change to that unused test seed, the same script exited1/refused different data and independent readback retained the changed document exactly. Passwords were absent from the raw PTY output. No helper case launched a sandbox, target or model.",
+        "The real wizard selected the payment environment and target, retained the duplicate-refund behavior, selected only money then MT30/By technique, Anonymous/Light/serial. MR1007 returned202/submitted with the exact explicit seeded instance and native handle. Backend independently authenticated the account, discovered the tool and captured a5record baseline; both nonempty-ledger and no-existing-duplicate prerequisites passed.",
+        "The first target request retainedHTTP502 and an unresolved action during supplied-tool setup. Its target journal recorded ExceptionGroup, without an exact successful reply. No recovery decision, nonexecution assertion or replacement replay resolved it. Observed zero tool/refund counters are not used to settle that uncertainty. Reopening the saved run retained Needs attention and the identical before-only receipt; Outcome checks showed ready, both met prerequisites, pending after-state/outcome and unavailable cleanly reproduced refund. Captured before state opened the actual payment records.",
+        "A separate diagnostic target was implemented to check genuine SDK metadata negotiation before native dispatch, with bounded private error logging and no business call in its setup path. Its attempted admission returned409 because the original sandbox remained held, before that setup check could run; no new run was admitted. A distinct fresh-copy launch202 then failed its normal tenant CPU quota. The unassessed failed copy was stopped202; original uncertain run/world, quota, model budgets and product source were preserved. This diagnostic target has not qualified the business path.",
+        "Eighteen affected Frontend/Backend/Agents files and the additional outcome-panel file matched their pinned source. Three direct Martian captures passed individual visual/privacy and PNG checks. Existing source/role/export/CI/HTML gates and all37required stage lists were unchanged."
+      ],
+      "remaining": [
+        "Actual customer business tool execution with an independent completed after-state/effect or no-violation receipt remains unqualified. Original MR1007 action uncertainty is preserved.",
+        "Fresh-world repetitions, negative controls, verified positive findings, prepared scenarios, signed-in identity and published modern review/export are not inherited from this setup.",
+        "Current collected-Discovery schema compatibility/authorized sensors and earlier unknown actions/provider usage/publications remain separate unresolved scopes."
+      ]
     }
   ],
   "knownEnvironmentLimits": [
@@ -781,6 +810,7 @@
     "Positive native sessions are now qualified only through a fresh separately provisioned MLflow3.16.1 application writer. SDK0.1.2 uploads remain a separate sessionless path. Initial UI evaluation-service read timeouts and background local connectors503 are preserved.",
     "A real MCP admission returned503 after native submission. Public Refresh evidence200 did not reconcile the missing admission link. One guarded operator invocation of the existing reconciliation routine restored that original run, with no duplicate dispatch or native-state edit; this is not proof that the customer refresh path works.",
     "A distinct browser campaign admitted202 and completed real website sign-in/two neutral setup messages, then stopped with fresh_conversation_unavailable:fresh_timeout before recording a probe outcome. One uncertain action remains awaiting recovery; completed browser execution and cancellation on that browser path are unqualified.",
-    "Later isolated QA provisioned the actual pinned sandbox orchestrator/catalog and qualified Gmail optional inputs, shared/personal/new-world generation, automatic personal selection, login/refresh, reuse, extension/stop and assessment readiness. Earlier local connectors503 and beta generation failures remain historical; other simulations, agent business outcomes and network-policy enforcement are not inherited from this result."
+    "Later isolated QA provisioned the actual pinned sandbox orchestrator/catalog and qualified Gmail optional inputs, shared/personal/new-world generation, automatic personal selection, login/refresh, reuse, extension/stop and assessment readiness. Earlier local connectors503 and beta generation failures remain historical; other simulations, agent business outcomes and network-policy enforcement are not inherited from this result.",
+    "Payment binding save/reapproval, exact manual example seed and independent starting-ledger prerequisites passed in separate local QA. Original supplied-tool setup failed with one retained uncertain target action; no business after-state, clean reproduction or no-implant control was qualified. Catalogue profile credentials on a built-in launch are not proof those accounts were seeded; fresh copies remain subject to normal tenant quotas."
   ]
 }

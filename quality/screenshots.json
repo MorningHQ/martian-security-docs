@@ -3523,6 +3523,80 @@
       "validationStatus": "Actual saved inputs, generated shared/personal/new-world data, automatic personal seed selection, Ready state, mailbox login/refresh, extension, stop and assessment readiness are recorded. Direct 1440×1000 capture individually viewed for readability and secrets; PNG chunks/CRC/metadata checked.",
       "reviewedForSecrets": true,
       "sha256": "3badba5c97b7e53827eb29cfc31e34b3fbae339a33669c3abb9dc3b3576796a3"
+    },
+    {
+      "id": "agents-sandbox-bindings",
+      "file": "agents-sandbox-bindings.png",
+      "alt": "Connection tab showing Martian HTTP active, approver, declared revision and retained stripe and business checks badges with an empty write-only editor.",
+      "caption": "After refresh, Connection reports active and retains stripe / business checks. The header can still say not approved when no expiry was set; use the Connection status. The empty editor displays only its example placeholder.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "agents/sandbox-bindings: 3. Save, validate and approve, retained setup"
+      ],
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization and payment target; real pinned Frontend, Backend, Agents, released SDK and local Kubernetes payment simulation; Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T07:14:17.444688+00:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents/simulation images. Nineteen affected source files matched; local QA configuration, without hosted-beta parity or a product-source patch.",
+      "validationStatus": "Direct real application capture individually viewed for readability and secrets, with PNG integrity/metadata checks. Saved setup and before-only checks are qualified separately from the unfinished business-outcome walkthrough.",
+      "reviewedForSecrets": true,
+      "sha256": "4f35b29a4346618ca5098dbc6e819222431a6f11e2f1ac5ece8987cfa1bcfced"
+    },
+    {
+      "id": "agents-payment-seed-ready",
+      "file": "agents-payment-seed-ready.png",
+      "alt": "Payment-only environment with Stripe mapped to paypal, one Ready sandbox, two accounts and your data after an explicit stored-example seed launch.",
+      "caption": "The launch explicitly used the manually stored released example. Generated / your data are the console’s seed-document labels; this setup did not call a model. The Ready instance then passed the seeded account’s real sign-in and refresh.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "agents/sandbox-bindings: Load the payment example’s accounts and ledger, step 5"
+      ],
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization and payment target; real pinned Frontend, Backend, Agents, released SDK and local Kubernetes payment simulation; Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T06:30:32.773923+00:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents/simulation images. Nineteen affected source files matched; local QA configuration, without hosted-beta parity or a product-source patch.",
+      "validationStatus": "Direct real application capture individually viewed for readability and secrets, with PNG integrity/metadata checks. Saved setup and before-only checks are qualified separately from the unfinished business-outcome walkthrough.",
+      "reviewedForSecrets": true,
+      "sha256": "0e8b683d16f2b775f61e0afa3a1dec8fd8631b9c809159a6635685ba81962a19"
+    },
+    {
+      "id": "assessment-outcome-checks",
+      "file": "assessment-outcome-checks.png",
+      "alt": "Outcome checks with a ready starting receipt, five ledger records, two met baseline conditions, pending after-state and unavailable cleanly reproduced refund.",
+      "caption": "Both baseline prerequisites passed. Outcome captured and After-state digest remain Pending, and no complete comparison or refund verdict exists. The duplicated-refund sentence describes the configured check.",
+      "width": 1440,
+      "height": 1000,
+      "guideSteps": [
+        "agents/sandbox-bindings: Example: a passed baseline with no outcome verdict",
+        "assessments/evidence-and-results: Inspect findings and independent outcomes, step 2",
+        "assessments/reproduction-and-limits: Separate evidence from interpretation"
+      ],
+      "environment": "Isolated Documentation Browser Execution QA; synthetic organization and payment target; real pinned Frontend, Backend, Agents, released SDK and local Kubernetes payment simulation; Owner with platform_admin false",
+      "role": "Owner; platform_admin false",
+      "capturedAt": "2026-11-14T07:21:35.975430+00:00",
+      "sourceRevisions": {
+        "frontend": "5361d1f241278e19c79e68d1d8f9325920a04d12",
+        "backend": "01343fa93feb518f6c7cd1928b63a01d2ec5ee0b",
+        "agents": "f7de3e068d66fe478f642d43a658ed9b3ed321f5",
+        "sandbox": "da6cfe0d25fee5cea4ae4d3d52f2f79797dfe565"
+      },
+      "sourceMatchesDeployment": "Clean served Frontend archive and unchanged pinned Backend/Agents/simulation images. Nineteen affected source files matched; local QA configuration, without hosted-beta parity or a product-source patch.",
+      "validationStatus": "Direct real application capture individually viewed for readability and secrets, with PNG integrity/metadata checks. Saved setup and before-only checks are qualified separately from the unfinished business-outcome walkthrough.",
+      "reviewedForSecrets": true,
+      "sha256": "275a97597f905415f1fb6d79505004351c599b4bc91b46fd67b00d6aecd1b976"
     }
   ]
 }

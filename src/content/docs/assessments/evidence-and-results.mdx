@@ -44,6 +44,8 @@ Use any signed-in role with access to the organization's run. Complete or retain
 1. Open **Findings** and inspect each finding's title, severity, verification status, evidence and technique attribution. Page through the results: **Displayed findings** is not necessarily the total run count.
 2. When present, open **Outcome checks**. Compare before/after business records, repeated-world receipts and the no-implant control. Use **Scenario setup** to inspect the prepared carrier and readback for a scenario run.
 
+   In the captured payment example, **ready** means a starting receipt exists: both baseline prerequisites passed, while **Outcome captured** and **After-state digest** remain **Pending**. The configured check's description does not establish that its violation occurred. See the [baseline-only walkthrough](/agents/sandbox-bindings/#example-a-passed-baseline-with-no-outcome-verdict).
+
 <Screenshot id="assessment-outcome-checks" />
 
 3. Read **Reproduction status**, **Repetitions**, **Successful reproductions**, **Target calls** and **Negative control** in verification details. A skipped control is not a passed control. If the same violation occurs without an implant, the scenario's carrier attribution is not established.
