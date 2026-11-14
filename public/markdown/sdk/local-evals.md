@@ -4,7 +4,13 @@
 
 Source: [Web version](https://docs.martiansecurity.ai/sdk/local-evals/)
 
-> **Page qualification:** Python SDK · Any developer; no Martian account; own model key for LLM judges · Verified 2026-11-13 · Local CLI and real Bedrock judge. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
+> **Page qualification:** Python SDK · Any developer; no Martian account; own model key for LLM judges · Walkthrough partly verified. [Verification details](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/reference/verification.md).
+
+> **Walkthrough limits:** Original Linux verification retained. Independent macOS/PyPI verification passed the original and corrected suites, resume/fresh and error paths, all five deterministic checks, stored CSV replies, HTTP logging/readback, real Bedrock GLM 5 rubric/guidelines/conditions, rejected-token failure and the exact Python judge example. The customer guide uses copyable CLI output and a separate, explicitly labeled SDK 0.1.2 Martian Security result screenshot. Backend dependency screenshots and UI instructions were removed at the product owner's request. Native bedrock:/ judge routing failed and is documented; OpenAI-compatible routing passed. Step 8 (URL target) was added on 2026-11-14 and run only on the SDK source at merge commit 3a63157, installed from the repository's main branch, because SDK 0.1.4 was not yet published. Its example server and suite produced the documented table and exit codes, including the unset-variable, wrong-token and unreachable-server cases. Steps 1 to 7 keep their released SDK 0.1.3 verification. The guide is marked partial until step 8 is run again on the released 0.1.4 package from public PyPI. The failure reasons documented for step 8 come from MorningHQ/martian-redteam pull request 46 at commit e83c85e, which was open and not merged when this was recorded; the wrong-token and stopped-server lines were observed on that branch.
+
+Partly verified guide
+
+This workflow has been reviewed against the implementation. A complete live walkthrough is still in progress.
 
 Run test cases against your agent from one YAML file, with no Martian account. Start with checks that need no model key, inspect a deliberate failure, then fix it. Add an LLM judge when you need to evaluate meaning.
 
@@ -83,6 +89,8 @@ Paths are relative to the suite file. Each line of `cases.jsonl` is one case:
 For each case the runner calls `answer(message="...")` from `agent.py` once and applies every check to the text it returns. `no_secret_leak` fails a reply that contains that case’s `secret` value. `no_email_address` fails a reply that matches the regular expression.
 
 To test your own agent, replace the body of `answer` with a call to your application. Keep provider or target credentials your agent needs in your own environment; the suite file does not hold secrets.
+
+If your agent is already behind an HTTP endpoint, SDK 0.1.4 or later can call it directly with no Python file: see [step 8](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/local-evals.md#8-test-an-agent-behind-an-http-endpoint).
 
 ## 3\. Run the suite
 
@@ -320,6 +328,74 @@ The Martian Security screenshot below shows a separately verified **SDK 0.1.2 pe
 
 The fresh strict SDK session retained both expected support answers with two passes and no errors or skips. Native provenance was FINISHED; absent artifact/model/prompt versions remained unreported.
 
+## 8\. Test an agent behind an HTTP endpoint
+
+With **SDK 0.1.4 or later**, `target` can name an HTTP endpoint instead of a Python file. The runner sends each case to that address and grades the reply. Earlier releases reject a `url` target as an unknown key.
+
+1.  Upgrade and check the version. The last command must print `0.1.4` or later:
+
+```sh
+.venv/bin/python -m pip install --upgrade 'martian-sdk[evals]'
+.venv/bin/martian --version
+```
+
+2.  Save these two files into the same folder as the other examples:
+
+-   [agent-server.py](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/examples/sdk-local-evals/agent-server.py): serves the example agent at `http://127.0.0.1:8765/chat`.
+-   [evals-url.yaml](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/examples/sdk-local-evals/evals-url.yaml): the same cases and checks, sent to that address.
+
+3.  Start the example server and leave it running:
+
+```sh
+python3 agent-server.py
+```
+
+4.  In a **second terminal**, from the same folder, set the example token and run the suite:
+
+```sh
+export EXAMPLE_AGENT_KEY='demo-token'
+.venv/bin/martian evals run evals-url.yaml
+```
+
+Expect the same verdicts as step 3, because it is the same flawed agent, and exit code **`1`**:
+
+```text
+            evals-url.yaml: 3 cases
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓
+┃ Check            ┃ Passed ┃ Failed ┃ Errors ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩
+│ no_secret_leak   │ 2      │ 1      │ 0      │
+│ no_email_address │ 3      │ 0      │ 0      │
+│ All checks       │ 2      │ 1      │ 0      │
+└──────────────────┴────────┴────────┴────────┘
+```
+
+Results are in `results-url`. Stop the server with Ctrl+C when you are done.
+
+The target in `evals-url.yaml` is:
+
+```yaml
+target:
+  url: "http://127.0.0.1:8765/chat"
+  headers:
+    Authorization: "Bearer ${EXAMPLE_AGENT_KEY}"   # read from your environment
+  body:
+    message: "{{input}}"                           # this case's input
+    session: "{{uuid}}"                            # a new random ID for every case
+  response_path: reply                             # where the reply is in the JSON response
+```
+
+For each case the runner sends one JSON `POST` with that body and reads the reply from the `reply` field of the JSON response. To test your own agent, change the address, the body and `response_path` to match its API. For an OpenAI-style chat response, the path is `choices.0.message.content`.
+
+-   **Placeholders** are filled into `body` for each case. `{{input}}` is the case’s `input`. `{{inputs.NAME}}` is one value from a case’s `inputs` object. `{{uuid}}` is a new random ID, for agents that keep a conversation per session. The body must use `{{input}}` or `{{inputs.NAME}}`.
+-   **Secrets stay in your environment.** `${NAME}` in `url` or in a header value is replaced from the environment when the suite loads. Only the name is in the suite file, and the value is not written to the result files. `${NAME}` is not replaced inside `body`.
+-   **Case text is sent as written.** `${...}` or `{{...}}` inside a case’s input reaches your agent unchanged.
+-   **One request per case.** There is no retry, redirects are not followed, and proxy settings from the environment are not used.
+
+A URL target cannot be combined with `file` or `function`. Keep using a Python function when your agent needs another HTTP method, a body that is not JSON, several calls per case, or a secret inside the body.
+
+The example token `demo-token` only shows how a credential is passed. Use `https` for any endpoint that is not on your own machine or network, and review a suite file from someone else before running it with your credentials loaded: the file chooses where your cases and headers are sent.
+
 ## Reference
 
 ### Suite file
@@ -328,13 +404,27 @@ The fresh strict SDK session retained both expected support answers with two pas
 | --- | --- | --- |
 | `data` | Yes | Path to a `.jsonl` or `.csv` file of cases |
 | `checks` | Yes | One or more checks, described below |
-| `target` | No | `file` and `function` of the code under test. Omit it to grade replies stored in the data file |
+| `target` | No | `file` and `function` of the code under test, or a [URL target](https://raw.githubusercontent.com/MorningHQ/martian-security-docs/main/public/markdown/sdk/local-evals.md#url-target) in SDK 0.1.4 or later. Omit it to grade replies stored in the data file |
 | `judge` | For LLM judges | `model`, optional `inference_params` (`temperature`, `top_p`, `max_tokens`, `seed`) and `max_retries` (0 to 10) |
 | `concurrency` | No | Cases run at the same time; default 4 |
 | `output` | No | Results folder; default `results` |
 | `input_key` | No | Name of the argument passed to the target for a plain `input`; default `message` |
 
 Unknown keys are rejected, so a misspelt setting stops the run with exit code `2`.
+
+### URL target
+
+Available in SDK 0.1.4 or later. These keys go under `target` in place of `file` and `function`.
+
+| Key | Required | Meaning |
+| --- | --- | --- |
+| `url` | Yes | An `http` or `https` address, without credentials in it. `${NAME}` is read from the environment |
+| `body` | Yes | The JSON body of the `POST`. Its string values can use `{{input}}`, `{{inputs.NAME}}` and `{{uuid}}` |
+| `headers` | No | Request headers. `${NAME}` in a value is read from the environment |
+| `response_path` | No | Dotted path to the reply in a JSON response; a number selects an item in a list. Without it, the whole response text is the reply |
+| `timeout_seconds` | No | Limit for one request, from 1 to 600; default 120 |
+
+A body value that is only a placeholder keeps the input’s type, so a number in `inputs` is sent as a number.
 
 ### Data file
 
@@ -363,6 +453,8 @@ These make no model call and give the same answer every time.
 
 -   **Exit code `2` before any case runs:** the suite file is invalid, a path is wrong, or the target file cannot be imported. The message names the field or file.
 -   **A case with no verdict:** the target raised an error, a check could not find its expectation value, or a judge returned no usable judgment. The case is counted under **Errors**, the run exits `2`, and a rerun tries that case again.
+-   **URL target, before any case runs:** a `${NAME}` variable that is not set stops the run with exit code `2` and names the variable, for example `the target needs the environment variable EXAMPLE_AGENT_KEY`. An invalid target, such as a body with no input placeholder or an unknown placeholder, is rejected the same way.
+-   **URL target, during the run:** a status outside 2xx, a timeout, an address that cannot be reached, or a response with no value at `response_path` gives that case no verdict, and the run exits `2`. The case’s `error` in `results.jsonl` says why, and the command prints a count for each reason after the table. With a wrong token, the example suite reports 3 errors and prints `3 case(s): the target returned HTTP 401`. With the example server stopped, it prints `3 case(s): the target could not be reached: ConnectError`. The reason never includes the address, a header or the response body. A Python function target reports only `the target call failed`.
 -   **Judges can be wrong.** Calibrate a rubric on replies you know should pass and fail before relying on it, and prefer a deterministic check wherever the text itself decides.
 -   **Judge calls cost money and leave your machine.** Each LLM check uses your provider for each case; multiple judges and transport retries add requests.
 -   **Rate limits:** if errors persist after the retries, lower `--concurrency` or raise `judge.max_retries`.
