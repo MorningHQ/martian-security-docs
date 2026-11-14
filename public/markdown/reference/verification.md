@@ -10,7 +10,7 @@ These guides are being qualified against actual running application/backend stat
 
 The site is being published iteratively. Guides with unfinished walkthroughs show a short notice above the instructions. Detailed roles, dates, tested environments and qualification records are collected here and retained in **Copy page** Markdown. Authenticated captures and complete execution checks are added as they pass.
 
-Of **37 task guides**, **28 are verified**, **6 are partly verified** and **3 await walkthrough verification**. The screenshot record contains **157 captured references** across **145 unique PNGs**. These counts come from the current coverage and screenshot manifests.
+Of **37 task guides**, **27 are verified**, **7 are partly verified** and **3 await walkthrough verification**. The screenshot record contains **157 captured references** across **145 unique PNGs**. These counts come from the current coverage and screenshot manifests.
 
 The application supports desktop workflows. The documentation itself is also checked on narrow layouts. Screenshots are direct application captures; no functionality is invented with DOM edits or mocked API responses.
 

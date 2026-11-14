@@ -2953,17 +2953,19 @@
         "martian evals run with a YAML suite file",
         "JSONL and CSV case files",
         "Deterministic checks and LLM judges in martian.evals",
-        "Local results.jsonl, summary.json, junit.xml and MLflow store"
+        "Local results.jsonl, summary.json, junit.xml and MLflow store",
+        "URL target: an agent behind an HTTP endpoint named in the suite file (SDK 0.1.4)"
       ],
       "prerequisites": [
         "Python 3.12 or newer",
         "SDK 0.1.3 evals extra from public PyPI",
-        "A model provider key only when the suite uses an LLM judge"
+        "A model provider key only when the suite uses an LLM judge",
+        "SDK 0.1.4 or later for step 8, the URL target; not yet on public PyPI when this was recorded"
       ],
       "screenshots": [
         "sdk-evaluation-strict-result"
       ],
-      "qualification": "verified",
+      "qualification": "partial",
       "sources": [
         {
           "repository": "MorningHQ/martian-redteam",
@@ -2977,14 +2979,24 @@
             "src/martian/evals/evaluate.py",
             "docs/evals.md"
           ]
+        },
+        {
+          "repository": "MorningHQ/martian-redteam",
+          "commit": "3a631571f49d62b30187261dabc971ff51605168",
+          "paths": [
+            "src/martian/evals/runner.py",
+            "docs/evals.md",
+            "docs/security-and-data.md"
+          ]
         }
       ],
-      "validationStatus": "Original Linux verification retained. Independent macOS/PyPI verification passed the original and corrected suites, resume/fresh and error paths, all five deterministic checks, stored CSV replies, HTTP logging/readback, real Bedrock GLM 5 rubric/guidelines/conditions, rejected-token failure and the exact Python judge example. The customer guide uses copyable CLI output and a separate, explicitly labeled SDK 0.1.2 Martian Security result screenshot. Backend dependency screenshots and UI instructions were removed at the product owner's request. Native bedrock:/ judge routing failed and is documented; OpenAI-compatible routing passed.",
+      "validationStatus": "Original Linux verification retained. Independent macOS/PyPI verification passed the original and corrected suites, resume/fresh and error paths, all five deterministic checks, stored CSV replies, HTTP logging/readback, real Bedrock GLM 5 rubric/guidelines/conditions, rejected-token failure and the exact Python judge example. The customer guide uses copyable CLI output and a separate, explicitly labeled SDK 0.1.2 Martian Security result screenshot. Backend dependency screenshots and UI instructions were removed at the product owner's request. Native bedrock:/ judge routing failed and is documented; OpenAI-compatible routing passed. Step 8 (URL target) was added on 2026-11-14 and run only on the SDK source at merge commit 3a63157, installed from the repository's main branch, because SDK 0.1.4 was not yet published. Its example server and suite produced the documented table and exit codes, including the unset-variable, wrong-token and unreachable-server cases. Steps 1 to 7 keep their released SDK 0.1.3 verification. The guide is marked partial until step 8 is run again on the released 0.1.4 package from public PyPI.",
       "requiredValidation": [
         "Run every documented command against the released package from public PyPI",
         "Exercise the documented failure and resume behaviour",
         "Run at least one suite with a real LLM judge",
-        "Extract and execute the complete downloadable ZIP; verify browser download bytes"
+        "Extract and execute the complete downloadable ZIP; verify browser download bytes",
+        "Run step 8 (URL target) against the released SDK 0.1.4 package from public PyPI"
       ],
       "validation": [
         {
@@ -2998,6 +3010,12 @@
           "record": "quality/validation.json",
           "observedPath": "Independent SDK 0.1.3 tests, released-package walkthroughs, complete ZIP and real Bedrock judgments",
           "result": "235 local Evals tests plus six subtests passed; independent CLI, HTTP and real model checks passed. Native bedrock:/ routing failed and is explicitly documented; separate OpenAI-compatible runs passed."
+        },
+        {
+          "date": "2026-11-14",
+          "record": "quality/validation.json",
+          "observedPath": "URL target example on unreleased SDK source at martian-redteam 3a63157",
+          "result": "documented output and exit codes on source; released-package verification still required"
         }
       ],
       "verifiedAt": "2026-11-13",
